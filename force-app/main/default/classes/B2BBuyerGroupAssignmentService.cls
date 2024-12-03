@@ -11,7 +11,7 @@ public class B2BBuyerGroupAssignmentService {
         
         List<String> buyerGroupIds = new List<String>(buyerGroupIdsSet);
         List<BuyerGroupMember> duplicateBuyerGroupList = 
-            B2BBuyerGroupAssignmentServiceHelper.getExistingBuyerAccounts(buyerGroupIds);
+            B2BBuyerGroupAssignmentServiceHelper.getExistingBuyerGroupAssignments(String.valueOf(iLMA.Account_Id__c), buyerGroupIds);
         
         Set<String> duplicateBuyerGroupIds = new Set<String>();
         for (BuyerGroupMember duplicate : duplicateBuyerGroupList) {
