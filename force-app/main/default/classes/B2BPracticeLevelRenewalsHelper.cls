@@ -1,4 +1,4 @@
-public with sharing class B2BPracticeLevelRenewalsHelper {
+public class B2BPracticeLevelRenewalsHelper {
 
     public static List<Practice_Level_Membership_Assignment__c> getEligibleMembershipAssignments(String businessAccountId) {
         try {
@@ -56,7 +56,7 @@ public with sharing class B2BPracticeLevelRenewalsHelper {
                 AND Admin_Account__c = TRUE
             ].Id;
 
-            return B2BUtils.getProductPriceByAccountId(productId, teamAdminId);
+            return B2BUtils.getProductPriceByAccountId(teamAdminId, productId);
 
         } catch (Exception e) {
             B2BHandleCustomException.LogException(e, 'B2BPracticeLevelRenewalsHelper', 'getRenewalProductPrice');
