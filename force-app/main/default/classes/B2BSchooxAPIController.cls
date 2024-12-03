@@ -16,4 +16,8 @@ public class B2BSchooxAPIController {
         SchooxAPI.updateLMSUser(accountId, combinedJobList);
     }
 
+    public static void getAllJobs() {
+        SchooxAPI.getAllJob();
+    }
+
 }

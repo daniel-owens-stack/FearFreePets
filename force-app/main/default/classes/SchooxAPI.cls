@@ -27,7 +27,7 @@ public with sharing class SchooxAPI {
         private List<String> external_ids;
 
         private List<JobData> jobs;
-        private List<Integer> unit_ids = new List<Integer>{1418705};
+        private List<Integer> unit_ids = new List<Integer>{1532475};
         private List<Integer> above_ids;
         private List<String> roles = new List<String>{'employee'};
 
@@ -72,7 +72,7 @@ public with sharing class SchooxAPI {
     }
 
     private class JobData {
-        private Integer unit_id = 1418705;
+        private Integer unit_id = 1532475;
 		private List<Integer> jobs;
 
         private JobData(Integer jobId) {

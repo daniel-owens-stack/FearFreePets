@@ -1,4 +1,5 @@
 public class B2BHandleJobAssignmentInvokable {
+    //TODO: THIS CLASS IS DEPRECATED
     @InvocableMethod(label='Handle Job Assignment' description='Handles job assignment for a given Account Id and list of job IDs.')
     public static void handleJobAssignment(List<Request> requestList) {
         for (Request req : requestList) {

@@ -1,4 +1,4 @@
-public with sharing class B2BSchooxAPIService {
+public class B2BSchooxAPIService {
     private static String API_URL = Label.SX_API_URL;
     private enum ApiType {User, Users, UserDetails, AllCourse, UserCourse, AllJob, AllUnit, Enrollment, AllAboveUnit, Above, Unit, AboveUnit, Course}
     private static String API_KEY = Label.SX_API_Key;
