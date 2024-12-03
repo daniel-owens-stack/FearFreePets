@@ -1,10 +1,14 @@
-public class B2BPracticeLevelRenewalsHelper {
+public with sharing class B2BPracticeLevelRenewalsHelper {
 
     public static List<Practice_Level_Membership_Assignment__c> getEligibleMembershipAssignments(String businessAccountId) {
         try {
+            Map<String,String> minMaxDates = B2BUtils.calculateMinMaxRenewalOffsetRange();
+            String minDate = minMaxDates.get('minDate');
+            String maxDate = minMaxDates.get('maxDate');
+            
             String queryString = 'SELECT Id, Business_Account__c, Membership__c, Renewal_DVM_Count__c' +
                                  ' FROM Practice_Level_Membership_Assignment__c' +
-                                 ' WHERE Expiration_Date__c = ' + B2BUtils.getTargetRenewalDateForSOQL() + 
+                                 ' WHERE Expiration_Date__c >= ' + minDate + ' AND Expiration_Date__c <= ' + maxDate + 
                                  ' AND Status__c != \'Canceled\'' +
                                  ' AND Business_Account__c = :businessAccountId';
 
