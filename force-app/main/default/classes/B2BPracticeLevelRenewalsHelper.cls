@@ -60,7 +60,7 @@ public with sharing class B2BPracticeLevelRenewalsHelper {
                 AND Admin_Account__c = TRUE
             ].Id;
 
-            return B2BUtils.getProductPriceByAccountId(productId, teamAdminId);
+            return B2BUtils.getProductPriceByAccountId(teamAdminId, productId);
 
         } catch (Exception e) {
             B2BHandleCustomException.LogException(e, 'B2BPracticeLevelRenewalsHelper', 'getRenewalProductPrice');
