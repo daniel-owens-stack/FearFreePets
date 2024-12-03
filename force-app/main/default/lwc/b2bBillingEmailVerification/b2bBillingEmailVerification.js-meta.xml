@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>B2B Billing Email Verification</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs> 
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="templateTitle" type="String" default="Billing Information" label="Template Title"/>
+            <property name="billingEmailLabel" type="String" default="Billing Email" label="Billing Email Label"/>
+            <property name="msgToAddEmail" type="String" default="Add" label="Add Email Label"/>
+            <property name="msgToVerifyEmail" type="String" default="Verify" label="Verify Email Label"/>
+            <property name="msgToChangeEmail" type="String" default="Change" label="Change Email Label"/>
+            <property name="verifyEmailButtonLabel" type="String" default="Verify Email" label="Verify Email Button Label"/>
+            <property name="updateEmailButtonLabel" type="String" default="Save" label="Update Email Button Label"/>
+            <property name="cancelButtonLabel" type="String" default="Cancel" label="Cancel Button Label"/>
+            <property name="resendCodeButtonLabel" type="String" default="Resend Code" label="Resend Code Button Label"/>
+            <property name="codeInputLabel" type="String" default="Enter Verification Code" label="Verification Code Input Label"/>
+            <property name="codeInputPlaceholder" type="String" default="Enter 6-digit code" label="Verification Code Placeholder"/>
+            <property name="verificationErrorMsg" type="String" default="Code is not valid. Please try again." label="Verification Code Error Message"/>
+            <property name="flowApiName" type="String" default="B2B_Send_Email_Verification_Code" label="Flow API Name to Send Email"/>           
+            <property name="flowFinishedMsg" type="String" default="A verification code is sent to the above email address. Please enter the code to verify your email." label="Verification Code Sent Message"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

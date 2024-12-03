@@ -1,0 +1,48 @@
+<template>
+    <template if:true={isEdit}>
+        <lightning-modal-header label="Edit Shipping Address"></lightning-modal-header>
+    </template>
+    <template if:false={isEdit}>
+       <lightning-modal-header label="Add Shipping Address"></lightning-modal-header>
+    </template>
+    <lightning-modal-body>
+       <div if:true={isLoading} class="slds-spinner_container">
+            <div class="slds-spinner slds-spinner--medium slds-spinner_brand" aria-hidden="false" role="alert">
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+       </div>
+       <template if:true={showForm}>
+            <div class="slds-form slds-form_stacked">
+                <lightning-input data-id="country" label="Country" value={shippingAddress.country} disabled></lightning-input>
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_2-of-2 slds-medium-size_6-of-6">
+                        <lightning-input data-id="street" name='street' label="Street" value={shippingAddress.street}
+                            onchange={handleAddressChange} required>
+                        </lightning-input>
+                    </div>
+                </div>
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_2-of-2 slds-medium-size_4-of-6">
+                        <lightning-input data-id="city" name='city' label="City" value={shippingAddress.city}
+                            onchange={handleAddressChange} required>
+                        </lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_2-of-2 slds-medium-size_2-of-6">
+                        <lightning-combobox name="state" data-id="state" label="State" options={stateOptions} required
+                            field-level-help="Select your state" onchange={handleAddressChange}
+                            value={shippingAddress.state}>
+                        </lightning-combobox>
+                    </div>
+                </div>
+                <lightning-input data-id="zip-code" name='postalCode' label="Zip Code" value={shippingAddress.postalCode}
+                    onchange={handleAddressChange} required>
+                </lightning-input>
+            </div>
+            <div class="btn-container slds-text-align_center">
+                <button id="save" class="slds-button slds-button_brand" onclick={saveAddress} disabled={disable}>
+                <label for="save">Save</label></button>
+            </div>
+        </template>
+    </lightning-modal-body>
+ </template>

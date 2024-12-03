@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>B2B Academia Membership Journey</masterLabel>
+    <targets>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightning__AppPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="academiaMembership" type="String" default="Individual Academia Membership" label="Academia Membership Product Group"/>
+            <property name="labelStudentOrFaculty" type="String" default="Are you a Student/Faculty ?" label="Question for Student/Faclity"/>
+            <property name="labelStudent" type="String" default="Student" label="Student Option Label"/>
+            <property name="labelFaculty" type="String" default="Faculty" label="Faculty Option Label"/>
+            <property name="labelGraduationYear" type="String" default="Graduation Year" label="Graduation Year Label"/>
+            <property name="labelJobTitle" type="String" default="Job Title" label="Job Title label"/>
+            <property name="labelSchoolUniversity" type="String" default="School/University" label="School/University Label"/>
+            <property name="labelUploadFile" type="String" default="Please upload proof that you are a student or facility" label="Upload File Label"/>
+            <property name="labeluploadFileButton" type="String" default="Upload File" label="Upload File Button Label"/>
+            <property name="errorMsgTitle" type="String" default="Error" label="File Upload Error Message Title"/>
+            <property name="errorMessage" type="String" default="File is too large to upload" label="File Upload Error Message"/>
+            <property name="jobTitleHelpText" type="String" default="Please select the option that best fits your current role." label="Job Title Help Text"/>
+            <property name="reqErrorMessage" type="String" default="Please select atleast one option." label="Student/Facility Required Message"/>
+            <property name="schoolErrorMessage" type="String" default="Please enter the value for School / University" label="School/University Required Message"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

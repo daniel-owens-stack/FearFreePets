@@ -1,0 +1,19 @@
+<template>
+    <div lwc:dom="manual" class="custom-css-container"></div>
+    <lightning-button
+            variant="brand"
+            class="checkout-button"
+            label="Checkout"
+            onclick={navigateToCheckout}
+            disabled={submitDisabled}>
+    </lightning-button>
+
+    <template if:false={areCheckoutItemsValid}>
+        <div class="error-message">
+           Subscriptions in checkout should have the same subscription interval.
+
+<!--            To proceed to checkout with subscriptions you need to be logged in.-->
+<!--            Please, <a href="/login">login</a> to proceed to Checkout.-->
+        </div>
+    </template>
+</template>

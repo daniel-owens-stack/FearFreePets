@@ -1,0 +1,9 @@
+.flow-modal {
+    max-width: 90rem !important;
+    width: 90% !important;
+    margin: auto;
+}
+
+.checkoutBtn {
+    width: 100%;
+}

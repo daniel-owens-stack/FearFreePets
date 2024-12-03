@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>B2B Checkout Payment</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>  
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="modalTitle" type="String" default="Do you want to update the cart?" label="Enter Modal Heading"/>
+            <property name="modalMessage" type="String" default="Your order is not eligible for Invoice. Click Update Cart to remove Shippable Products from your cart." label="Enter Modal Content"/>
+            <property name="cancelButton" type="String" default="Cancel" label="Enter Cancel Button Label"/>
+            <property name="updateCartButton" type="String" default="Update Cart So I Can Invoice" label="Enter Update Cart Button Label"/>
+            <property name="modalSize" type="String" default="small" label="Enter Modal Window Size"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

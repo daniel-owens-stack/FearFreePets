@@ -1,0 +1,13 @@
+<template>
+    <template lwc:if={showComponent}>
+    <div class="unclaimedKits">
+        <lightning-datatable 
+                key-field="Id" 
+                data={unclaimedKits} 
+                columns={columns} 
+                hide-checkbox-column
+                onrowaction={handleClick}>
+            </lightning-datatable>
+    </div>
+    </template>
+</template>

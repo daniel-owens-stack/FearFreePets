@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <isExposed>true</isExposed>
+	<masterLabel>B2B Custom Add To Cart</masterLabel>
+	<targets>
+		<target>lightning__RecordPage</target>
+		<target>lightning__HomePage</target>
+		<target>lightningCommunity__Page</target>
+		<target>lightningCommunity__Default</target>
+	</targets>
+	<targetConfigs>  
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="academiaMembership" type="String" default="Individual Academia Membership" label="Individual Academia Membership Product Group"/>
+            <property name="individualMembership" type="String" default="Individual Level Membership" label="Individual Level Membership Product Group"/>
+            <property name="practiceMembership" type="String" default="Practice Level Membership" label="Practice Level Membership Product Group"/>
+            <property name="addToCartButtonLabel" type="String" default="Add To Cart" label="Enter Add To Cart Button Label"/>
+            <property name="addToCartErrorTitle" type="String" default="Error" label="Enter Add To Cart Error Title"/>
+            <property name="addToCartErrorMessage" type="String" default="Something went wrong. Please try again." label="Enter Add To Cart Error Message"/>
+            <property name="checkboxText_TOS" type="String" default="I agree to the Terms of Service and Privacy Policy" label="Enter TOS Agreement Checkbox Text"/>
+            <property name="contentText_TOS" type="String" default="Agreement content test" label="Enter TOS Agreement Content Text "/>
+            <property name="addToCartSuccessTitle" type="String" default="Success" label="Enter Add To Cart Success Modal Heading"/>
+            <property name="addToCartSuccessMessage" type="String" default="Product added to cart successfully!" label="Enter Add To Cart Success Modal Content"/>
+            <property name="continueButton" type="String" default="Continue Shopping" label="Enter Continue Shopping Button Label"/>
+            <property name="viewCartButton" type="String" default="View Cart" label="Enter View Cart Button Label"/>
+            <property name="modalSize" type="String" default="small" label="Enter Modal Window Size"/>
+            <property label="Guest SignIn Modal Window Heading" name="headingLabel" type="String" default="SignIn to Add Product to Cart"/>
+            <property label="Flow API Name" name="flowApiName" type="String" default="B2B_Guest_User_Journey"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

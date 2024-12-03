@@ -1,0 +1,20 @@
+<template>
+    <template if:true={showTemplate}>
+        <template lwc:if={showhasBusinessMessage}>
+            <div>{hasBusinessMessage}</div>
+        </template>
+        <template lwc:if={showNoBusinessMessage}>
+            <lightning-input 
+                        type="text" 
+                        name="teamName"
+                        label={labelTeamName}
+                        value={teamName}
+                        onchange={handleTeamNameChange}
+                        onblur={handleLostFocus}
+                        required
+            ></lightning-input>
+            <div if:true={showReqError} class="slds-text-color_error">{reqErrorMessage}</div>
+            <div>{noBusinessMessage}</div>
+        </template>
+    </template>
+</template>

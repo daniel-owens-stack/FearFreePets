@@ -1,0 +1,30 @@
+.customLabel {
+    display: inline-block;
+    position: relative;
+    height: 3rem;
+    width: 15rem;
+}
+
+.customButton {
+    position: absolute;
+    left: 0;
+    top: 1rem;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    border-radius: 0.6rem;
+    background: #ffffff;
+}
+
+.upload-button{
+    color: #ffffff;
+    height: 2.5rem;
+}
+
+.upload {
+    position: relative;
+    left: 0;
+    opacity: 0;
+    bottom: 0;
+    width: 100%;
+}

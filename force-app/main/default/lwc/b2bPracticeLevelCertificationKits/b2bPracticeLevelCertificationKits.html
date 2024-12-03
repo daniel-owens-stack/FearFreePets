@@ -1,0 +1,26 @@
+<template>
+    <template if:true={showTemplate}>
+        <div if:true={showButton}>
+            <lightning-button variant="brand" label={buttonLabel} onclick={handleButtonClick}></lightning-button>
+        </div>
+        <div if:true={hasShippingAddress}>
+            <div class="slds-p-left_xx-small">
+                <h1 class="dxp-text-heading-large slds-p-bottom_small"><b>{shippingAddressLabel}</b></h1>
+                <div class="slds-p-bottom_small">
+                    <lightning-formatted-address street={address.street} 
+                                                 city={address.city}
+                                                 province={address.state}
+                                                 postal-code={address.postalCode} 
+                                                 country={address.country} 
+                                                 disabled="true"
+                    ></lightning-formatted-address>
+                </div>
+                <lightning-button class="slds-p-right_large" variant="brand" label={editAddressButtonLabel} onclick={handleEditAddress}></lightning-button>
+                <lightning-button variant="brand" label={shipMyKitButtonLabel} onclick={handleShipMyKit}></lightning-button>
+            </div>
+        </div>
+        <div if:true={addNewAddress}>
+            <lightning-button variant="brand" label={newAddressButtonLabel} onclick={handleNewAddress}></lightning-button>
+        </div>
+    </template> 
+</template>

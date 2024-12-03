@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>B2B Account Code</masterLabel>
+    <targets>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightning__AppPage</target>
+    </targets>
+    <targetConfigs> 
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="accountCodeLinkLabel" type="String" default="Enter Account Code" label="Account Code Link Text"/>
+            <property name="inputPlaceHolder" type="String" default="Account code..." label="Account Code Input Placeholder"/>
+            <property name="applyButtonLabel" type="String" default="Apply" label="Apply Button Label"/>
+            <property name="updateSuccessTitle" type="String" default="Success" label="Account Code Applied Success Title"/>
+            <property name="updateSuccessMessage" type="String" default="Account Code has been updated successfully." label="Account Code Applied Success Message"/>
+            <property name="updateErrorTitle" type="String" default="Error" label="Account Code Applied Error Title"/>
+            <property name="updateErrorMessage" type="String" default="Account Code didn't match. Please try again." label="Account Code Applied Error Message"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

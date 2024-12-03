@@ -1,0 +1,62 @@
+.errorMessage{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: red;
+}
+
+input[type="number"] {
+    appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.quantity {
+    width: 8.6rem;
+    border: 1px solid black;
+    height: 2.5rem;
+    border-radius: 0.2rem;
+}
+
+.decrement {
+	display: flex;
+    color: black;
+    border-right: 1px solid black;
+    align-items: center;
+	padding: 0.5rem;
+    cursor: pointer;
+}
+
+.qtyInput {
+	display: flex;
+	height: 2.3rem;
+    width: 4rem;
+    border: none;
+	align-items: center;
+}
+
+.increment {
+	display: flex;
+    color: black;
+    border-left: 1px solid black;
+    align-items: center;
+	padding: 0.5rem;
+    cursor: pointer;
+}
+
+.addToCart {
+    height: 2.6rem;
+    display: flex;
+}
+
+input:focus{
+    outline: none;
+}
+
+.flow-modal {
+    max-width: 90rem !important;
+    width: 90% !important;
+    margin: auto;
+}

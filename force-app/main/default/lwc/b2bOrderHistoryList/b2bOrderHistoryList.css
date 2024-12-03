@@ -1,0 +1,104 @@
+.sort-btn button {
+    width: 28%;
+    float: right;
+    --slds-c-input-color-border-focus: none;
+    border: 1px solid
+      var(
+        --slds-c-input-color-border,
+        var(
+          --sds-c-input-color-border,
+          var(--slds-g-color-border-base-4, #c9c9c9)
+        )
+      );
+  
+    --slds-c-button-sizing-border: 0px !important;
+  }
+
+  .slds-combobox__input .slds-input_faux {
+    color: rgba(250, 178, 10, 1) !important;
+    border: 1px solid
+      var(
+        --slds-c-input-color-border,
+        var(
+          --sds-c-input-color-border,
+          var(--slds-g-color-border-base-4, #c9c9c9)
+        )
+      );
+  }
+  
+  .sort-button .slds-button_neutral {
+    border: 1px solid
+      var(
+        --slds-c-input-color-border,
+        var(
+          --sds-c-input-color-border,
+          var(--slds-g-color-border-base-4, #c9c9c9)
+        )
+      );
+  }
+  
+  .sort-button button {
+    border: 1px solid
+      var(
+        --slds-c-input-color-border,
+        var(
+          --sds-c-input-color-border,
+          var(--slds-g-color-border-base-4, #c9c9c9)
+        )
+      );
+  }
+
+  .layout-itm-label {
+    margin: 29px 0px 4px 0px;
+  }
+
+  .layout-itm {
+    margin: 16px 0px 4px 0px;
+  }
+  
+  .input-no-border {
+    --lwc-shadowButtonFocus: 0;
+    --lwc-borderWidthThin: 0;
+    --slds-c-input-shadow-focus: 0;
+    --sds-c-input-shadow-focus: 0;
+  }
+  
+  .remove-border {
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+  
+  .fix-slds-input_faux {
+    border: none !important;
+  }
+  
+  .slds-box {
+    border: 1px solid var(--slds-g-color-border-base-1, #e5e5e5) !important;
+  }
+  
+  .sort-dropdown {
+    float: right;
+  }
+
+  .adjustItems {
+    gap: 0.5rem;
+  }
+
+  @media only screen and (min-width: 64em) {
+    .sort-dropdown {
+      width: 34%;
+    }
+  }
+
+  @media only screen and (min-width: 768px) and (max-width:1340px) {
+    .adjustItems {
+      margin-top: 2rem;
+    }
+  }
+
+  @media only screen and (min-width:1340px) {
+    .adjustItems {
+      margin-top: 0.5rem;
+    }
+  }

@@ -1,0 +1,26 @@
+<template>
+    <lightning-modal-header label={title}>
+    </lightning-modal-header>
+    <lightning-modal-body>
+        <c-b2b-address-form
+            address={address} 
+            country-options={countryOptions}
+            all-region-options={allRegionOptions}
+            required="true"
+            onfocusout={handleAddressOnFocusOutEvent}
+        >
+        </c-b2b-address-form>
+    </lightning-modal-body>
+    <lightning-modal-footer>
+        <lightning-button class="footer-button slds-p-right_medium" 
+                          label="Cancel" 
+                          onclick={handleCancelClick}>
+        </lightning-button>
+        <lightning-button class="footer-button" 
+                          variant="brand"
+                          label="Save Address" 
+                          disabled={saveDisabled} 
+                          onclick={handleSaveClick}>
+        </lightning-button>      
+    </lightning-modal-footer>
+</template>

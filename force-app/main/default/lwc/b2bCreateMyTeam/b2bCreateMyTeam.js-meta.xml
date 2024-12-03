@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>B2B Create My Team</masterLabel>
+    <targets>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightning__AppPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="practiceMembership" type="String" default="Practice Level Membership" label="Practice Level Membership Product Group"/>
+            <property name="hasBusinessMessage" type="String" default="By purchasing a practice level membership you are becoming a team admin." label="Message when user has a Business Account but not a Team Admin"/>
+            <property name="noBusinessMessage" type="String" default="By purchasing this product you are forming a team and becoming a team admin" label="Message when user doesn't have a Business Account"/>
+            <property name="labelTeamName" type="String" default="Team Name" label="Team Name Label"/>
+            <property name="reqErrorMessage" type="String" default="Please enter a Team Name." label="Error Message when Team Name is null"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

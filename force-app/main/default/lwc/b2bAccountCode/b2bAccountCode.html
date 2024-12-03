@@ -1,0 +1,43 @@
+<template>
+    <template lwc:if={showTemplate}>
+        <div>
+            <div lwc:if={showText}>
+                <a class="slds-button" onclick={handleTextClick} style="--dxp-c-base-button-margin: auto auto auto 0;">{accountCodeLinkLabel}</a>
+            </div>
+            <div lwc:if={showInputField}>
+                <div class="slds-grid input-container">
+                    <div class="accountCode">
+                        <lightning-input 
+                        class="accCodeInp"
+                        type="text" 
+                        name="accountCode"
+                        label="Account Code"
+                        placeholder={inputPlaceHolder}
+                        value={accountCode}
+                        onchange={handleCodeChange}
+                        variant="label-hidden"
+                    ></lightning-input>
+                    </div>
+                    <div class="applyButton">
+                        <lightning-button
+                            label={applyButtonLabel}
+                            variant="brand"
+                            onclick={updateAccountCode}
+                            stretch="true"
+                            disabled={disableButton}
+                            class="applyBtn"
+                        ></lightning-button>
+                    </div>
+                </div>
+            </div>
+            <div if:true={showAccountCode}>
+                <div class="code-container">
+                    <span class="code-text">{accountCode}</span>
+                    <span if:true={showDeleteButton}>
+                        <button class="close-btn" onclick={handleClose}>x</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </template>
+</template>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <isExposed>true</isExposed>
+	<masterLabel>B2B Practice Level Certification Kits</masterLabel>
+	<targets>
+		<target>lightning__HomePage</target>
+		<target>lightningCommunity__Page</target>
+		<target>lightningCommunity__Default</target>
+	</targets>
+	<targetConfigs>
+		<targetConfig targets="lightningCommunity__Default">
+			<property name="buttonLabel" type="String" label="Claim Kit Button Label" default="Claim Practice Level Certification Kit"/>
+			<property name="shippingAddressLabel" type="String" label="Shipping Address Heading" default="Shipping Address"/>
+			<property name="editAddressButtonLabel" type="String" label="Edit Address Button Label" default="Edit Address"/>
+			<property name="newAddressButtonLabel" type="String" label="New Address Button Label" default="Add Shipping Address"/>
+			<property name="shipMyKitButtonLabel" type="String" label="Ship My Kit Button Label" default="Ship My Kit"/>
+			<property name="successTitle" type="String" label="Success Title on Order Creation" default="Success"/>
+			<property name="successMessage" type="String" label="Success Message on Order Creation" default="Your Kit will be shipped shortly."/>
+		</targetConfig>
+	</targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,122 @@
+<template>
+
+	<lightning-spinner if:true={showSpinner} alternative-text="Loading" size="x-small"></lightning-spinner>
+
+	<div class="slds-grid slds-wrap slds-align_absolute-center">
+		<div class="slds-size_12-of-12 slds-medium-size_2-of-12 slds-p-left_small adjustItems">
+			<span>Filter by date:</span>
+		</div>
+		<div class="slds-size_6-of-12 slds-medium-size_3-of-12 slds-p-left_small">
+			<lightning-input type="date" data-id="startDate" label="Start Date (MM/DD/YYYY)" date-style="short"
+				onchange={handleStartDate} value={startDate} class="formatHelp">
+			</lightning-input>
+		</div>
+		<div class="slds-size_6-of-12 slds-medium-size_3-of-12 slds-p-left_medium">
+			<lightning-input type="date" data-id="endDate" label="End Date (MM/DD/YYYY)" date-style="short"
+				onchange={handleEndDate} value={endDate} class="formatHelp">
+			</lightning-input>
+		</div>
+		<div class="slds-size_12-of-12 slds-medium-size_4-of-12 slds-grid slds-grid_vertical-align-center slds-p-horizontal_small adjustItems">
+			<button class="slds-button slds-button_brand slds-size_1-of-2" onclick={handleApplyButton}
+				disabled={isApplyBtnDisable}>
+				<label class="button-label">Apply</label>
+			</button>
+			<button class="slds-button slds-button_outline-brand slds-var-p-left_medium slds-size_1-of-2 reset" onclick={handleReset}
+				disabled={isApplyBtnDisable}>
+				<label class="button-label">Reset</label>
+			</button>
+		</div>
+	</div>
+
+	<div>
+		<lightning-combobox class="remove-border sort-dropdown" value={defaultSortingValue} options={sortOptions}
+			onchange={handleSortingChange}></lightning-combobox>
+	</div>
+
+	<template if:true={hasOrders}>
+		<br><br><br>
+		<p style="font-size: 12px !important;">{numberOfItems} item(s)</p>
+
+		<template for:each={orderSummaryList} for:item="order">
+			<div key={order.Id} class="slds-p-around_small slds-box" style="margin-bottom: 10px !important;">
+				<div style="padding-bottom: 18px;" class="slds-grid slds-wrap slds-gutters">
+					<div class="slds-col slds-size_12-of-12 slds-medium-size_4-of-12">
+						<div class="slds-form-element">
+							<label class="slds-form-element__label" for="order-number"><b>Order Number:</b></label>
+							<div class="slds-form-element__control">
+								<label class="slds-form-element__label" for="order-number">{order.orderNumber}</label>
+							</div>
+						</div>
+					</div>
+					<div class="slds-col slds-size_12-of-12 slds-medium-size_4-of-12">
+						<div class="slds-form-element">
+							<label class="slds-form-element__label" for="ordered-date"><b>Ordered Date:</b></label>
+							<div class="slds-form-element__control">
+								<label class="slds-form-element__label" for="ordered-date">{order.orderedDateText}</label>
+							</div>
+						</div>
+					</div>
+					<div class="slds-col slds-size_12-of-12 slds-medium-size_4-of-12">
+						<div class="slds-form-element">
+							<label class="slds-form-element__label" for="order-status"><b>Status:</b></label>
+							<div class="slds-form-element__control">
+								<label class="slds-form-element__label" for="order-status">{order.status}</label>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="slds-grid slds-wrap slds-gutters">
+					<div class="slds-col slds-size_12-of-12 slds-medium-size_4-of-12">
+						<div class="slds-form-element">
+							<label class="slds-form-element__label"><b>Total: </b>
+									<lightning-formatted-number value={order.total} 
+																minimum-fraction-digits="2"
+																maximum-fraction-digits="2" 
+																format-style="currency" 
+																currency-code="USD">
+									</lightning-formatted-number>
+							</label>
+						</div>
+					</div>
+					<div class="slds-col slds-size_12-of-12 slds-medium-size_6-of-12">
+						<div class="slds-form-element">
+							<span class="slds-form-element__label"><b>Order Placed By: </b></span>
+							<span class="slds-form-element__control">
+								<label class="slds-form-element__label">{order.ownerName}</label>
+							</span>
+						</div>
+					</div>
+					<div class="slds-col slds-size_12-of-12 slds-medium-size_2-of-12">
+						<div lwc:if={order.isViewDetailsDisabled} class="slds-form-element">
+							<a href="javascript:void(0)" style="float:right;color:gray;pointer-events:none"><b>View Details</b></a>
+						</div>
+						<div lwc:else class="slds-form-element">
+							<a href="javascript:void(0)" style="float:right;" data-id={order.osId}
+								onclick={handleViewOrderDetail}><b>View Details</b></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</template>
+	</template>
+
+	<template if:true={noOrdersFound}>
+		<div style="text-align: center;">
+			<br><br><br><br>
+			<p><b>No Orders Available</b></p>
+		</div>
+	</template>
+
+	<template if:true={showSpinner}>
+		<div style="text-align: center;">
+			<br><br><br><br>
+			<p><b>Loading...</b></p>
+		</div>
+	</template>
+
+	<div if:true={visbleShowMore} style="text-align: center;">
+		<a onclick={handleShowMore}>Show more</a>
+	</div>
+
+</template>

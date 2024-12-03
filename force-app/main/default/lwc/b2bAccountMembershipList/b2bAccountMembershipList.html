@@ -1,0 +1,25 @@
+<template>
+    <div class="membershipList">
+        <lightning-card title="Account Memberships">
+            <template for:each={groupedData} for:item="group">
+                <div key={group.Name}>
+                    <div class="space"></div>
+                    <div class="membershipName">
+                        <h2>{group.Name}</h2>
+                        <h3> Assigned({group.count.assigned}) Unassigned({group.count.unassigned})</h3>
+                    </div>
+                    <lightning-datatable
+                        key-field={group.Name}
+                        data={group.records}
+                        columns={columns}
+                        hide-checkbox-column>
+                    </lightning-datatable>
+                    <div class="space"></div>
+                </div>
+            </template>
+            <template if:true={error}>
+                {error}
+            </template>
+        </lightning-card>
+    </div>
+</template>

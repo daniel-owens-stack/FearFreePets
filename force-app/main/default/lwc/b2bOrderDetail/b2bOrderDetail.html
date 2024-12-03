@@ -1,0 +1,166 @@
+<template>
+	<div class="order-container">
+		<div if:true={showSpinner}>
+			<lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+		</div>
+		<!-- Order Number -->
+		<div class="slds-p-horizontal_x-small slds-p-bottom_medium">
+			<p class="dxp-text-heading-large"><b>Order: {osDetailSection.orderNumber}</b></p>
+		</div>
+		<div class="slds-grid slds-wrap slds-grid_align-space">
+            <!-- Column 1 -->
+			<div class="slds-size_12-of-12 slds-medium-size_4-of-12">
+                <!-- Details -->
+				<div style="margin-bottom: 22px;" class="slds-box slds-var-m-around_x-small">
+					<label class="slds-form-element__label" for="order-number"><b>Details</b></label>
+					<div class="slds-form-element">
+						<div class="slds-form-element__control">
+							<label class="slds-form-element__label" for="order-number">Ordered Date: {osDetailSection.orderedDate}</label>
+						</div>
+						<div class="slds-form-element__control">
+							<label class="slds-form-element__label" for="order-number">Account: {osDetailSection.accountName}</label>
+						</div>
+						<div class="slds-form-element__control">
+							<label class="slds-form-element__label" for="order-number">Placed By: {osDetailSection.orderPlacedBy}</label>
+						</div>
+						<div class="slds-form-element__control">
+							<label class="slds-form-element__label" for="order-number">Status: {osDetailSection.orderStatus}</label>
+						</div>
+					</div>
+				</div>
+
+                <!-- Totals -->
+				<div class="slds-box slds-var-m-around_x-small">
+					<div class="slds-form-element">
+						<div class="slds-form-element__control">
+							<label class="slds-form-element__label" for="order-number">Subtotal: </label>
+							<lightning-formatted-number minimum-fraction-digits="2" 
+														maximum-fraction-digits="2"
+														class="float-right" 
+														value={osTotalSection.subtotal} 
+														format-style="currency"
+														currency-code="USD" 
+														currency-display-as="symbol">
+							</lightning-formatted-number>
+						</div>
+						<div class="slds-form-element__control">
+							<label class="slds-form-element__label" for="order-number">Shipping: </label>
+							<lightning-formatted-number minimum-fraction-digits="2" 
+														maximum-fraction-digits="2"
+														class="float-right" 
+														value={osTotalSection.shipping} 
+														format-style="currency"
+														currency-code="USD" 
+														currency-display-as="symbol">
+							</lightning-formatted-number>
+						</div>
+						<div class="slds-form-element__control">
+							<label class="slds-form-element__label" for="order-number">Tax: </label>
+							<lightning-formatted-number minimum-fraction-digits="2" 
+														maximum-fraction-digits="2"
+														class="float-right" 
+														value={osTotalSection.tax} 
+														format-style="currency"
+														currency-code="USD" 
+														currency-display-as="symbol">
+							</lightning-formatted-number>
+						</div>
+						<div class="slds-form-element__control">
+							<label class="slds-form-element__label" for="order-number"><b>Total:</b></label>
+							<lightning-formatted-number minimum-fraction-digits="2" 
+														maximum-fraction-digits="2"
+														class="float-right" 
+														value={osTotalSection.total} 
+														format-style="currency"
+														currency-code="USD" 
+														currency-display-as="symbol">
+							</lightning-formatted-number>
+						</div>
+					</div>
+				</div>
+			</div>
+
+            <!-- Column 2 -->
+			<div class="slds-size_12-of-12 slds-medium-size_8-of-12 slds-p-left_small slds-p-top_small">
+                <!-- Shipping Section-->
+				<div if:true={showShipping} class="slds-box_x-small">
+					<!-- Shipping Address -->
+					<div class="slds-form-element__control slds-size_12-of-12">
+						<label class="slds-form-element__label" for="order-number">
+							<span class="slds-p-right_x-small">
+								<lightning-icon icon-name="utility:checkin" 
+												alternative-text="Location" 
+												size="small"
+												variant="inverse"
+												title="Address">
+								</lightning-icon></span>
+							<br class="slds-hide_medium">
+							<span>{formattedAddress}</span>
+						</label>
+					</div>
+					<!-- Shipping Method -->
+					<div class="slds-grid slds-wrap slds-border_bottom slds-p-vertical_small shipping-container">
+						<div class="slds-form-element__control">
+							<label class="slds-form-element__label" for="order-number"><b>Shipping Method: </b>{shippingMethod}</label>
+						</div>
+						<div class="slds-form-element__control">
+							<label class="slds-form-element__label" for="order-number"><b>Shipping Subtotal: </b></label>
+							<lightning-formatted-number minimum-fraction-digits="2" 
+															maximum-fraction-digits="2"
+															value={shippingSubTotal} 
+															format-style="currency" 
+															currency-code="USD"
+															currency-display-as="symbol">
+							</lightning-formatted-number>
+						</div>
+					</div>
+				</div>
+				<!-- Order Summary Items -->
+				<div class="slds-box_x-small">
+					<!-- Products Count -->
+					<div class="slds-form-element__control slds-size_12-of-12 slds-border_bottom slds-p-bottom_small">
+						<div class="slds-form-element__label dxp-text-heading-medium"><b>{osDetailSection.productCount} Products</b></div>
+					</div>
+					<!-- Product Details -->
+					<template for:each={orderSummaryItems} for:item="item">
+						<div key={item.osItemId} class="slds-grid slds-wrap slds-border_bottom">
+							<!-- Product Image -->
+							<div class="slds-size_4-of-12 slds-medium-size_2-of-12">
+								<div class="slds-p-vertical_small">
+									<img src={item.productImgUrl} style="height:150px; width:150px;object-fit:contain;">
+								</div>
+							</div>
+							<!-- Product Info -->
+							<div class="slds-size_8-of-12 slds-medium-size_10-of-12">
+								<div class="slds-box_x-small slds-var-m-around_x-small">
+									<div class="slds-form-element__control">
+										<label class="slds-form-element__label" for="order-number"><b>{item.productName}</b></label>
+									</div>
+									<div class="slds-grid slds-wrap">
+										<div class="slds-form-element__control slds-size_8-of-12">
+											<label class="slds-form-element__label" for="order-number">Product Sku: {item.productSku}</label>
+										</div>
+										<div class="slds-form-element__control slds-size_4-of-12">
+											<label class="slds-form-element__label" for="order-number"></label>
+											<lightning-formatted-number minimum-fraction-digits="2"
+																		maximum-fraction-digits="2" 
+																		class="float-right"
+																		value={item.lineSubtotal}
+																		format-style="currency" 
+																		currency-code="USD"
+																		currency-display-as="symbol">
+											</lightning-formatted-number>
+										</div>
+									</div>
+									<div class="slds-form-element__control">
+										<label class="slds-form-element__label" for="order-number">Quantity: {item.quantity}</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</template>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

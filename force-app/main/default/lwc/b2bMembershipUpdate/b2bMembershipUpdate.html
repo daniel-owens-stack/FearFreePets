@@ -1,0 +1,39 @@
+<template>
+    <lightning-card title="B2B Membership Update" icon-name="standard:account">
+        <div class="slds-p-around_medium">
+            <!-- Record Lookup for Account -->
+            <lightning-record-edit-form object-api-name="Account">
+                <lightning-input-field 
+                    field-name="Id" 
+                    label="Account ID"
+                    onchange={handleAccountIdChange}>
+                </lightning-input-field>
+            </lightning-record-edit-form>
+
+            <!-- Record Lookup for Membership -->
+            <lightning-record-edit-form object-api-name="Membership__c">
+                <lightning-input-field 
+                    field-name="Id" 
+                    label="Membership ID"
+                    onchange={handleMembershipIdChange}>
+                </lightning-input-field>
+            </lightning-record-edit-form>
+        </div>
+
+        <!-- Button to trigger the flow -->
+        <lightning-button 
+            label="Run Flow" 
+            variant="brand" 
+            onclick={handleRunFlow}>
+        </lightning-button>
+
+        <!-- Success and Error Toast Messages -->
+        <template if:true={showSuccessMessage}>
+            <lightning-toast title="Success" message={successMessage} variant="success"></lightning-toast>
+        </template>
+
+        <template if:true={showErrorMessage}>
+            <lightning-toast title="Error" message={errorMessage} variant="error"></lightning-toast>
+        </template>
+    </lightning-card>
+</template>

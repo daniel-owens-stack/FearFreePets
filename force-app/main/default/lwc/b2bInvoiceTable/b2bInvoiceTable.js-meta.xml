@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <isExposed>true</isExposed>
+	<masterLabel>B2B Invoice Table</masterLabel>
+	<targets>
+		<target>lightning__HomePage</target>
+		<target>lightningCommunity__Page</target>
+		<target>lightningCommunity__Default</target>
+	</targets>
+	<targetConfigs>
+		<targetConfig targets="lightningCommunity__Default">
+		  	<property name="recordId" type="String" default="{!recordId}"></property>
+			<property name="labelInvoiceNumber" type="String" label="Invoice Number Column Label" default="Invoice Number"/>
+			<property name="labelTotal" type="String" label="Total Column Label" default="Total"/>
+			<property name="labelAmountCharged" type="String" label="Amount Charged Column Label" default="Amount Charged"/>
+            <property name="labelPeriod" type="String" label="Period Column Label" default="Period"/>
+			<property name="labelCreatedDate" type="String" label="Created Date Column Label" default="Created Date"/>
+			<property name="labelPaidDate" type="String" label="Paid Date Column Label" default="Paid Date"/>
+            <property name="labelDownloadLink" type="String" label="Download Link Column Label" default="Download Link"/>
+            <property name="labelPayNow" type="String" label="Pay Now Column Label" default="Pay Now"/>
+			<property name="buttonLabelDownloadLink" type="String" label="Download Link Button Label" default="PDF"/>
+			<property name="buttonLablePayNow" type="String" label="Pay Now Button Label" default="Pay Now"/>
+		</targetConfig>
+	</targetConfigs>
+</LightningComponentBundle>

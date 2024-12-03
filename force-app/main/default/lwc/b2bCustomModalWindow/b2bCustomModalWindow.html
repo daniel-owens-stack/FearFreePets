@@ -1,0 +1,24 @@
+<template>
+    <lightning-modal-header label={modalHeading}></lightning-modal-header>
+    <lightning-modal-body class="slds-text-align_center">{modalContent}</lightning-modal-body>
+    <lightning-modal-footer>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-button
+                    variant="neutral"
+                    onclick={handleButton1}
+                    label={button1Label}
+                    stretch="true"
+                ></lightning-button>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-button
+                    variant="brand"
+                    onclick={handleButton2}
+                    label={button2Label}
+                    stretch="true"
+                ></lightning-button>
+            </div>
+        </div>
+    </lightning-modal-footer>
+</template>
