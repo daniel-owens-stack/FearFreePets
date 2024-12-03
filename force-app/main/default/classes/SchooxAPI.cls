@@ -59,7 +59,7 @@ public with sharing class SchooxAPI {
         private String firstname;
         private String lastname;
         private String email;
-        private List<Integer> unit_ids = new List<Integer>{1418705};
+        private List<Integer> unit_ids = new List<Integer>{1532475};
         private List<JobData> jobs;
         private LMSEditData(Contact con, List<Integer> jobIdList) {
             this.firstname = con.FirstName;
