@@ -1,10 +1,12 @@
-import { LightningElement, api } from 'lwc';
+import { LightningElement, api, wire } from 'lwc';
 import { CheckoutComponentBase } from 'commerce/checkoutApi';
 import getAccountDetails from '@salesforce/apex/B2BBillingEmailVerificationController.getAccountDetails';
 import updateAccount from '@salesforce/apex/B2BBillingEmailVerificationController.updateAccount';
 import generateVerificationCode from '@salesforce/apex/B2BBillingEmailVerificationController.generateVerificationCode';
 import verifyCode from '@salesforce/apex/B2BBillingEmailVerificationController.verifyCode';
 import Toast from 'lightning/toast';
+import { subscribe, MessageContext } from 'lightning/messageService';
+import MY_MESSAGE_CHANNEL from '@salesforce/messageChannel/MyMessageChannel__c';
 
 const CheckoutStage = {
     CHECK_VALIDITY_UPDATE: 'CHECK_VALIDITY_UPDATE',
@@ -57,7 +59,16 @@ export default class B2bBillingEmailVerification extends (LightningElement, Chec
     flowInputVariables;
     pathName;
 
+    @wire(MessageContext)
+    messageContext;
+
     async connectedCallback(){
+        subscribe(
+            this.messageContext,
+            MY_MESSAGE_CHANNEL,
+            (message) => this.handleMessage(message)
+        );
+
         this.isPreview = this.isInSitePreview();
         if(this.isPreview){
             this.showMyAccountTemplate = true;
@@ -65,6 +76,12 @@ export default class B2bBillingEmailVerification extends (LightningElement, Chec
             this.showAddEmail = true;
         } else {
             await this.getCurrentAccountDetails();
+        }
+    }
+
+    handleMessage(message) {
+        if (message.status === 'completed') {
+            this.getCurrentAccountDetails();
         }
     }
 
@@ -102,6 +119,8 @@ export default class B2bBillingEmailVerification extends (LightningElement, Chec
                 else {
                     this.showAddEmail = true;
                     this.showEmailInput = false;
+                    this.showBillingEmail = false;
+                    this.showChangeEmail = false;
                 }
             }
         })
