@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Message channel for communication between independent LWCs</description>
+    <isExposed>true</isExposed>
+    <masterLabel>MyMessageChannel</masterLabel>
+</LightningMessageChannel>

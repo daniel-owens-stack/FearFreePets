@@ -2,6 +2,8 @@ import { wire, api } from 'lwc';
 import {CartItemsAdapter} from 'commerce/cartApi';
 import { CheckoutComponentBase } from 'commerce/checkoutApi';
 import getAccountDetails from '@salesforce/apex/B2BCreateMyTeamController.getAccountDetails';
+import { publish, MessageContext } from 'lightning/messageService';
+import MY_MESSAGE_CHANNEL from '@salesforce/messageChannel/MyMessageChannel__c';
 
 const CheckoutStage = {
     CHECK_VALIDITY_UPDATE: 'CHECK_VALIDITY_UPDATE',
@@ -30,6 +32,9 @@ export default class B2bCreateMyTeam extends CheckoutComponentBase {
     renderFlow = true;
     teamName;
     successMessage;
+
+    @wire(MessageContext)
+    messageContext;
 
     @wire(CartItemsAdapter, {'cartStateOrId': 'active'}) 
     getCartItems({ data, error }) {
@@ -74,6 +79,7 @@ export default class B2bCreateMyTeam extends CheckoutComponentBase {
                     this.teamName = result.Business__r.Name;
                     this.showSuccessMsg = true;
                     this.successMessage = 'You are now an Admin of the team \'' + this.teamName + '\'.';
+                    this.publishMessage();
                 }
 
                 if(this.hasBusinessAccount && !this.isTeamAdmin) {
@@ -137,5 +143,10 @@ export default class B2bCreateMyTeam extends CheckoutComponentBase {
             || url.indexOf('live-preview') > 0 
             || url.indexOf('live.') > 0
             || url.indexOf('.builder.') > 0);
+    }
+
+    publishMessage() {
+        const message = { status: 'completed' };
+        publish(this.messageContext, MY_MESSAGE_CHANNEL, message);
     }
 }
