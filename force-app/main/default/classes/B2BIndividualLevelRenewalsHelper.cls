@@ -88,6 +88,7 @@ public class B2BIndividualLevelRenewalsHelper {
                 WHERE AccountId = :account.Id 
                 AND IsRenewal__c = true 
                 AND CreatedDate = TODAY
+                ORDER BY CreatedDate DESC
                 LIMIT 1
             ];
             return orders.size() > 0 ? orders[0].Id : null;
