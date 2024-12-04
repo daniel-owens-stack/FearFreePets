@@ -75,12 +75,17 @@ public class B2BBuyerGroupAssignmentService {
 
         List<String> roleSpecificBuyerGroupIds = B2BBuyerGroupAssignmentServiceHelper.getRoleSpecificBuyerGroups(buyerGroupMembershipList, account.Admin_Account__c);
         
-        List<String> uniqueBuyerGroupIds = new List<String>();
+        Set<String> uniqueBuyerGroupSet = new Set<String>();
+
         for (String buyerGroupId : roleSpecificBuyerGroupIds) {
             if (!existingBuyerGroupIds.contains(buyerGroupId)) {
-                uniqueBuyerGroupIds.add(buyerGroupId);
+                uniqueBuyerGroupSet.add(buyerGroupId);
             }
         }
+
+        List<String> uniqueBuyerGroupIds = new List<String>(uniqueBuyerGroupSet);
+
+        System.debug('Final List of Unique Buyer Group IDs: ' + uniqueBuyerGroupIds);
 
         return uniqueBuyerGroupIds;
     }
