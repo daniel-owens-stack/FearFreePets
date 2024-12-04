@@ -1,11 +1,21 @@
 import { LightningElement, api } from 'lwc';
+import { CheckoutComponentBase } from 'commerce/checkoutApi';
 import getAccountDetails from '@salesforce/apex/B2BBillingEmailVerificationController.getAccountDetails';
 import updateAccount from '@salesforce/apex/B2BBillingEmailVerificationController.updateAccount';
 import generateVerificationCode from '@salesforce/apex/B2BBillingEmailVerificationController.generateVerificationCode';
 import verifyCode from '@salesforce/apex/B2BBillingEmailVerificationController.verifyCode';
 import Toast from 'lightning/toast';
 
-export default class B2bBillingEmailVerification extends LightningElement {
+const CheckoutStage = {
+    CHECK_VALIDITY_UPDATE: 'CHECK_VALIDITY_UPDATE',
+    REPORT_VALIDITY_SAVE: 'REPORT_VALIDITY_SAVE',
+    BEFORE_PAYMENT: 'BEFORE_PAYMENT',
+    PAYMENT: 'PAYMENT',
+    BEFORE_PLACE_ORDER: 'BEFORE_PLACE_ORDER',
+    PLACE_ORDER: 'PLACE_ORDER'
+};
+
+export default class B2bBillingEmailVerification extends (LightningElement, CheckoutComponentBase) {
     @api templateTitle;
     @api billingEmailLabel;
     @api msgToAddEmail;
@@ -20,8 +30,9 @@ export default class B2bBillingEmailVerification extends LightningElement {
     @api flowApiName; 
     @api verificationErrorMsg;
     @api flowFinishedMsg;
+    @api requiredExceptionMsg;
 
-    showTemplate = false;
+    showMyAccountTemplate = false;
     showBillingEmail = false;
     showAddEmail = false;
     showEmailInput = false;
@@ -36,17 +47,21 @@ export default class B2bBillingEmailVerification extends LightningElement {
     showCodeError = false;
     disableVerify = true;
     isPreview = false;
+    showCheckoutTemplate = false;
+    emailVerified = false;
 
     existingBillingEmail;
     billingEmail;
     billingEmailVerified;
     verificationCode;
     flowInputVariables;
+    pathName;
 
     async connectedCallback(){
         this.isPreview = this.isInSitePreview();
         if(this.isPreview){
-            this.showTemplate = true;
+            this.showMyAccountTemplate = true;
+            this.showCheckoutTemplate = true;
             this.showAddEmail = true;
         } else {
             await this.getCurrentAccountDetails();
@@ -59,15 +74,15 @@ export default class B2bBillingEmailVerification extends LightningElement {
             if(result.creditOnlyPaymentTerms) {
                 if(result.isOnTeam) {
                     if(result.isAdminAccount) {
-                        this.showTemplate = true;
+                        this.manageTemplateVisibility();
                     }
                 }
                 else {
-                    this.showTemplate = true;
+                    this.manageTemplateVisibility();
                 }
             }
 
-            if(this.showTemplate) {
+            if(this.showMyAccountTemplate || this.showCheckoutTemplate) {
                 if(result.hasBillingEmail) {
                     this.showBillingEmail = true;
                     this.existingBillingEmail = result.billingEmail;
@@ -76,6 +91,7 @@ export default class B2bBillingEmailVerification extends LightningElement {
                         this.showChangeEmail = true;
                         this.showVerifyEmail = false;
                         this.showEmailInput = false;
+                        this.emailVerified = true;
                     }
                     else {
                         this.showChangeEmail = true;
@@ -92,6 +108,20 @@ export default class B2bBillingEmailVerification extends LightningElement {
         .catch(error => {
             console.error('Error in getUserAccountId: ', error);
         })
+    }
+
+    manageTemplateVisibility() {
+        let path = window.location.pathname;
+        this.pathName = path.trim();
+
+        if(this.pathName == '/store/checkout') {
+            this.showCheckoutTemplate = true;
+            this.showMyAccountTemplate = false;
+        }
+        else {
+            this.showMyAccountTemplate = true;
+            this.showCheckoutTemplate = false;
+        }
     }
     
     handleEmailChange(event) {
@@ -173,6 +203,7 @@ export default class B2bBillingEmailVerification extends LightningElement {
                 this.showCodeError = false;
                 this.showCodeInput = false;
                 this.showChangeEmail = true;
+                this.emailVerified = true;
                 Toast.show({
                     label: 'Success',
                     message: 'Email Verified Successfully!',
@@ -182,6 +213,7 @@ export default class B2bBillingEmailVerification extends LightningElement {
             }
             else {
                 this.showCodeError = true;
+                this.emailVerified = false;
             }
         })
         .catch(error => {
@@ -201,5 +233,44 @@ export default class B2bBillingEmailVerification extends LightningElement {
             || url.indexOf('live-preview') > 0 
             || url.indexOf('live.') > 0
             || url.indexOf('.builder.') > 0);
+    }
+
+    get checkValidity() {
+        return (
+            this.existingBillingEmail.trim().length != 0 && 
+            this.existingBillingEmail != undefined && 
+            this.existingBillingEmail != null &&
+            this.emailVerified
+        );
+     }
+ 
+     @api
+     async reportValidity() {
+         let isValid = this.checkValidity;
+ 
+         if (isValid) {
+             return true;
+         } else {
+             this.dispatchUpdateErrorAsync({
+                 groupId: "BillingEmail",
+                 type: "/commerce/errors/checkout-failure",
+                 exception: this.requiredExceptionMsg,
+             });
+         }
+ 
+         return isValid;
+     }
+
+    stageAction(checkoutStage) {
+        switch (checkoutStage) {
+            case CheckoutStage.CHECK_VALIDITY_UPDATE:
+                return Promise.resolve(this.checkValidity);
+            case CheckoutStage.REPORT_VALIDITY_SAVE:
+                return Promise.resolve(this.reportValidity());
+            case CheckoutStage.BEFORE_PAYMENT:
+                return Promise.resolve(this.reportValidity());
+            default:
+                return Promise.resolve(true);
+        }
     }
 }
