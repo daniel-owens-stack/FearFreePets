@@ -266,7 +266,6 @@ export default class B2bBillingEmailVerification extends (LightningElement, Chec
     get checkValidity() {
         if(this.selectedPaymentOption == 'invoice') {
             return (
-                this.existingBillingEmail.trim().length != 0 && 
                 this.existingBillingEmail != undefined && 
                 this.existingBillingEmail != null &&
                 this.emailVerified
