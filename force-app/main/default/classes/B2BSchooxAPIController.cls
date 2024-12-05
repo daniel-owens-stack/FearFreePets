@@ -20,4 +20,19 @@ public class B2BSchooxAPIController {
         SchooxAPI.getAllJob();
     }
 
+    @AuraEnabled
+    public static void handleMembershipAssignmentManual(String recordId) {
+        
+        Account_Membership__c ilma = [
+            SELECT Id, Membership__r.Job_Id__c, Account_Id__c FROM Account_Membership__c
+            WHERE Id =: recordId
+        ];
+        System.debug('ILMA '+ ilma);
+
+        String accountId = ilma.Account_Id__c;
+        List<Integer> jobIdsToAdd = new List<Integer>();
+        jobIdsToAdd.add(Integer.valueOf(ilma.Membership__r.Job_Id__c));
+        handleJobAssignmnet(accountId,jobIdsToAdd);
+    }
+
 }
