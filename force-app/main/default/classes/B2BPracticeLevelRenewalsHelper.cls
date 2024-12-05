@@ -43,6 +43,7 @@ public with sharing class B2BPracticeLevelRenewalsHelper {
                 WHERE Renewal_DVM_Count_MIN__c <= :renewalDVMCount 
                 AND Renewal_DVM_Count_MAX__c >= :renewalDVMCount 
                 AND Membership__c = :membershipId
+                LIMIT 1
             ].Id;
         } catch (Exception e) {
             B2BHandleCustomException.LogException(e, 'B2BPracticeLevelRenewalsHelper', 'getRenewalProductId');
