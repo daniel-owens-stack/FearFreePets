@@ -23,6 +23,7 @@
             <property name="verificationErrorMsg" type="String" default="Code is not valid. Please try again." label="Verification Code Error Message"/>
             <property name="flowApiName" type="String" default="B2B_Send_Email_Verification_Code" label="Flow API Name to Send Email"/>           
             <property name="flowFinishedMsg" type="String" default="A verification code is sent to the above email address. Please enter the code to verify your email." label="Verification Code Sent Message"/>
+            <property name="requiredExceptionMsg" type="String" default="Please verify your Billing Email before proceeding." label="Billing Email Required Exception Message"/>
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>
