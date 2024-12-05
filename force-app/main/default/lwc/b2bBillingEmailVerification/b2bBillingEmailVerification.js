@@ -58,6 +58,7 @@ export default class B2bBillingEmailVerification extends (LightningElement, Chec
     verificationCode;
     flowInputVariables;
     pathName;
+    selectedPaymentOption;
 
     @wire(MessageContext)
     messageContext;
@@ -67,6 +68,12 @@ export default class B2bBillingEmailVerification extends (LightningElement, Chec
             this.messageContext,
             MY_MESSAGE_CHANNEL,
             (message) => this.handleMessage(message)
+        );
+
+        subscribe(
+            this.messageContext,
+            MY_MESSAGE_CHANNEL,
+            (message) => this.SyncCheckoutPayment(message)
         );
 
         this.isPreview = this.isInSitePreview();
@@ -85,18 +92,20 @@ export default class B2bBillingEmailVerification extends (LightningElement, Chec
         }
     }
 
+    SyncCheckoutPayment(message) {
+        this.selectedPaymentOption = message.selectedPayment;
+    }
+
     async getCurrentAccountDetails() {
         getAccountDetails()
         .then(result => {    
-            if(result.creditOnlyPaymentTerms) {
-                if(result.isOnTeam) {
-                    if(result.isAdminAccount) {
-                        this.manageTemplateVisibility();
-                    }
-                }
-                else {
+            if(result.isOnTeam) {
+                if(result.isAdminAccount) {
                     this.manageTemplateVisibility();
                 }
+            }
+            else {
+                this.manageTemplateVisibility();
             }
 
             if(this.showMyAccountTemplate || this.showCheckoutTemplate) {
@@ -255,12 +264,15 @@ export default class B2bBillingEmailVerification extends (LightningElement, Chec
     }
 
     get checkValidity() {
-        return (
-            this.existingBillingEmail.trim().length != 0 && 
-            this.existingBillingEmail != undefined && 
-            this.existingBillingEmail != null &&
-            this.emailVerified
-        );
+        if(this.selectedPaymentOption == 'invoice') {
+            return (
+                this.existingBillingEmail.trim().length != 0 && 
+                this.existingBillingEmail != undefined && 
+                this.existingBillingEmail != null &&
+                this.emailVerified
+            );
+        }
+        return true;
      }
  
      @api
