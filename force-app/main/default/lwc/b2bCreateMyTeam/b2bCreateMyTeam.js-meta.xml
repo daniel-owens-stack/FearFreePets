@@ -12,9 +12,9 @@
         <targetConfig targets="lightningCommunity__Default">
             <property name="practiceMembership" type="String" default="Practice Level Membership" label="Practice Level Membership Product Group"/>
             <property name="hasBusinessMessage" type="String" default="By purchasing a practice level membership you are becoming a team admin." label="Message when user has a Business Account but not a Team Admin"/>
-            <property name="noBusinessMessage" type="String" default="By purchasing this product you are forming a team and becoming a team admin" label="Message when user doesn't have a Business Account"/>
-            <property name="labelTeamName" type="String" default="Team Name" label="Team Name Label"/>
-            <property name="reqErrorMessage" type="String" default="Please enter a Team Name." label="Error Message when Team Name is null"/>
+            <property name="reqErrorMessage" type="String" default="Creating a Team is required to purchase a practice level membership." label="Error Message when Team Name is null"/>
+            <property name="templateTitle" type="String" default="Create My Team" label="Template Title"/>
+            <property name="flowApiName" type="String" default="Screen_Create_Business" label="FSM Screen Flow API Name"/>
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

@@ -2,6 +2,8 @@ import { wire, api } from 'lwc';
 import {CartItemsAdapter} from 'commerce/cartApi';
 import { CheckoutComponentBase } from 'commerce/checkoutApi';
 import getAccountDetails from '@salesforce/apex/B2BCreateMyTeamController.getAccountDetails';
+import { publish, MessageContext } from 'lightning/messageService';
+import MY_MESSAGE_CHANNEL from '@salesforce/messageChannel/MyMessageChannel__c';
 
 const CheckoutStage = {
     CHECK_VALIDITY_UPDATE: 'CHECK_VALIDITY_UPDATE',
@@ -16,16 +18,23 @@ export default class B2bCreateMyTeam extends CheckoutComponentBase {
 
     @api practiceMembership;
     @api hasBusinessMessage;
-    @api noBusinessMessage;
-    @api labelTeamName;
     @api reqErrorMessage;
+    @api flowApiName; 
+    @api templateTitle;
     showTemplate = false;
     hasBusinessAccount = false;
     isTeamAdmin = false;
     showhasBusinessMessage = false;
     showNoBusinessMessage = false;
     showReqError = false;
+    isPreview = false;
+    showSuccessMsg = false;
+    renderFlow = true;
     teamName;
+    successMessage;
+
+    @wire(MessageContext)
+    messageContext;
 
     @wire(CartItemsAdapter, {'cartStateOrId': 'active'}) 
     getCartItems({ data, error }) {
@@ -34,6 +43,14 @@ export default class B2bCreateMyTeam extends CheckoutComponentBase {
             this.checkforPracticeMembership();
         } else if (error) {
             console.error('Error in getCartItems : ', error);
+        }
+    }
+    async connectedCallback(){
+        this.isPreview = this.isInSitePreview();
+        if(this.isPreview){
+            this.showTemplate = true;
+            this.showhasBusinessMessage = true;
+            this.showNoBusinessMessage = true;
         }
     }
 
@@ -58,11 +75,23 @@ export default class B2bCreateMyTeam extends CheckoutComponentBase {
                 this.hasBusinessAccount = result.Business__c != null ? true : false;
                 this.isTeamAdmin = result.Admin_Account__c;
 
-                if(this.hasBusinessAccount && this.isTeamAdmin === false) {
-                    this.showhasBusinessMessage = true;
+                if(!this.renderFlow && this.hasBusinessAccount) {
+                    this.teamName = result.Business__r.Name;
+                    this.showSuccessMsg = true;
+                    this.successMessage = 'You are now an Admin of the team \'' + this.teamName + '\'.';
+                    this.publishMessage();
                 }
-                else if(this.hasBusinessAccount === false) {
+
+                if(this.hasBusinessAccount && !this.isTeamAdmin) {
+                    this.showhasBusinessMessage = true;
+                    this.showNoBusinessMessage = false;
+                }
+                else if(!this.hasBusinessAccount) {
+                    this.showhasBusinessMessage = false;
                     this.showNoBusinessMessage = true;
+                }
+                else {
+                    this.showTemplate = false;
                 }
             }
         })
@@ -71,18 +100,10 @@ export default class B2bCreateMyTeam extends CheckoutComponentBase {
         })
     }
 
-    handleTeamNameChange(event) {
-        this.teamName = event.target.value;
-        this.showReqError = (this.teamName != null && this.teamName != '') ? false : true;
-    }
-
-    handleLostFocus() {
-        console.log('Team name : ', this.teamName);
-        //TODO:Update Team Name in Backend
-    }
-
     stageAction(checkoutStage) {
         switch (checkoutStage) {
+            case CheckoutStage.REPORT_VALIDITY_SAVE:
+                return Promise.resolve(this.reportValidity());
             case CheckoutStage.BEFORE_PAYMENT:
                 return Promise.resolve(this.reportValidity());
             case CheckoutStage.CHECK_VALIDITY_UPDATE:
@@ -93,17 +114,39 @@ export default class B2bCreateMyTeam extends CheckoutComponentBase {
     }
 
     get checkValidity() {
-        if(this.hasBusinessAccount === false) {
-            return (this.teamName != undefined && this.teamName != '' && this.teamName != null);
+        if(this.showTemplate) {
+            return (this.teamName != null && this.teamName != undefined);
         }
         return true;
     }
 
     async reportValidity() {
-        if(this.hasBusinessAccount === false) {
-            this.showReqError = (this.teamName == undefined || this.teamName == '' || this.teamName == null) ? true : false;
+        if(this.showTemplate) {
+            this.showReqError = (this.teamName == null || this.teamName == undefined) ? true : false;
         }
-
         return this.checkValidity ? true : false;
+    }
+
+    handleFlowStatusChange(event) {
+        this.showReqError = false;
+        if (event.detail.status === 'FINISHED') {
+            this.renderFlow = false;
+            this.checkIsBusinessAccount();
+        }
+    }
+
+    isInSitePreview() {
+        let url = document.URL;
+        
+        return (url.indexOf('sitepreview') > 0 
+            || url.indexOf('livepreview') > 0
+            || url.indexOf('live-preview') > 0 
+            || url.indexOf('live.') > 0
+            || url.indexOf('.builder.') > 0);
+    }
+
+    publishMessage() {
+        const message = { status: 'completed' };
+        publish(this.messageContext, MY_MESSAGE_CHANNEL, message);
     }
 }

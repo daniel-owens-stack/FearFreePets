@@ -3,7 +3,7 @@ public without sharing class B2BCreateMyTeamController {
     @AuraEnabled
     public static Account getAccountDetails() {
         String accountId = B2BUtils.getUserAccountID();
-        List<Account> account = [SELECT Id, Admin_Account__c, Business__c
+        List<Account> account = [SELECT Id, Admin_Account__c, Business__c, Business__r.Name
                                  FROM Account 
                                  WHERE Id =: accountId];   
         
