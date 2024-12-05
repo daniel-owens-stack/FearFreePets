@@ -9,14 +9,14 @@ public without sharing class B2BStripePaymentController {
         
         
         Account account = [
-                SELECT ShippingAddress, StripeCustomerId__c, Business__c, Admin_Account__c
+                SELECT ShippingAddress, StripeCustomerId__c, Business__c, Admin_Account__c, Billing_Email__c
                 FROM Account
                 WHERE Id = :accountId
         ];
 
         if (account.Business__c != null && account.Admin_Account__c ==true) {
             account = [
-                SELECT Id, StripeCustomerId__c FROM Account
+                SELECT Id, StripeCustomerId__c, Billing_Email__c FROM Account
                 WHERE Id =:account.Business__c
             ];
         }
@@ -27,6 +27,7 @@ public without sharing class B2BStripePaymentController {
         if (String.isBlank(account.StripeCustomerId__c)) {
             B2BStripeWrapper.StripeCustomer response = B2BStripeService.createStripeCustomer(account.Id);
             account.StripeCustomerId__c = response.Id;
+            account.Billing_Email__c = account.Billing_Email__c ?? UserInfo.getUserEmail();
             update account;
             customerId = account.StripeCustomerId__c;
         } else {
