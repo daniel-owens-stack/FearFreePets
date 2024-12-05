@@ -54,6 +54,8 @@ export default class B2bOrderDetail extends LightningElement {
                 this.osTotalSection['shipping'] = result.osTotals.shipping;
                 this.osTotalSection['tax'] = result.osTotals.tax;
                 this.osTotalSection['total'] = result.osTotals.total; 
+                this.osTotalSection['refundedAmount'] = result.osTotals.refundedAmount;
+                this.osTotalSection['showRefundedAmount'] = result.osTotals.showRefundedAmount;
                 
                 //Shipping 
                 this.shippingAddress['street'] = result.shippingAddress.deliverToStreet;
