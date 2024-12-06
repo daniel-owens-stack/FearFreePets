@@ -26,6 +26,10 @@
                         <p class="slds-form-element__label slds-no-flex">{ccpdtNumberLabel}<lightning-helptext class="slds-p-left_xx-small" content={ccpdtNumberHelpText}></lightning-helptext></p>
                         <p>{ccpdtNumber}</p>
                     </div>
+                    <div class="slds-p-vertical_small">
+                        <p class="slds-form-element__label slds-no-flex"><b class="slds-text-color_error">*</b>{jobTitleLabel}</p>
+                        <p>{jobTitle}</p>
+                    </div>
                 </div>
             </div>
             <div if:true={showEditTemplate}>
@@ -45,6 +49,16 @@
                         onchange={handleCCPDTNumberChange}
                         field-level-help={ccpdtNumberHelpText}
                     ></lightning-input>
+                    <lightning-combobox
+                            label={jobTitleLabel}
+                            value={selectedJobTitle}
+                            options={jobTitleOptions}
+                            onchange={handleJobTitleChange}
+                            required
+                    ></lightning-combobox>
+                    <div if:true={showErrorMsg}>
+                        <p class="slds-text-color_error">Please select a Job Title.</p>
+                    </div>
                 </div>
                 <div class="slds-grid slds-wrap slds-gutters slds-grid_vertical-align-center slds-p-vertical_medium">
                     <div class="slds-col slds-size_6-of-12 slds-medium-size_6-of-12">
