@@ -14,7 +14,8 @@ public with sharing class B2BStripeService {
         Account account = B2BStripeServiceHelper.getAccountById(accountId);
         HttpResponse response = new HttpResponse();
         String endPoint = 'v1/customers';
-        String requestBody = 'email=' + account.Billing_Email__c + '&name=' + Account.Name;
+        String emailAddress = account.Billing_Email__c ?? UserInfo.getUserEmail();
+        String requestBody = 'email=' + emailAddress + '&name=' + Account.Name;
         response = makeCalloutToStripe(endPoint, POST_METHOD, requestBody, 'application/x-www-form-urlencoded');
 
         B2BStripeWrapper.StripeCustomer result = (B2BStripeWrapper.StripeCustomer) JSON.deserialize(response.getBody(), B2BStripeWrapper.StripeCustomer.class);

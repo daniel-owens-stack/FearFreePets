@@ -1,4 +1,4 @@
-public with sharing class B2BStripeServiceHelper {
+public without sharing class B2BStripeServiceHelper {
  
     public static List<String> CART_ITEMS_QUERY_FIELDS = new List<String> {
         'Quantity', 'SalesPrice', 'Product2.Name'

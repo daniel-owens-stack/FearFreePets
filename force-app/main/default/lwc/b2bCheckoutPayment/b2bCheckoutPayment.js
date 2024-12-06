@@ -12,6 +12,8 @@ import createInvoice from '@salesforce/apex/B2BStripePaymentController.createInv
 import canInvoice from '@salesforce/apex/B2BStripePaymentController.canInvoice';
 import modalWindow from 'c/b2bCustomModalWindow';
 import { CurrentPageReference } from 'lightning/navigation';
+import { publish, MessageContext } from 'lightning/messageService';
+import MY_MESSAGE_CHANNEL from '@salesforce/messageChannel/MyMessageChannel__c';
 
 const CheckoutStage = {
     CHECK_VALIDITY_UPDATE: 'CHECK_VALIDITY_UPDATE',
@@ -28,6 +30,9 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
         this.pageReference = pageReference;
         this.checkSession();
     }
+
+    @wire(MessageContext)
+    messageContext;
 
     @wire(CartSummaryAdapter, {'cartStateOrId': 'active'})
     async wiredCartSummaryData(result) {
@@ -198,21 +203,6 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
         return result;
     }
 
-    async getEffectiveAccountId() {
-        return new Promise(async (resolve, reject) => {
-            let result = null;
-            await getSessionContext()
-                .then((response) => {
-                    result = response.effectiveAccountId || response.accountId;
-                    resolve(result);
-                })
-                .catch((error) => {
-                    console.error(error);
-                    reject(result);
-                });
-        });
-    }
-
     async stageAction(checkoutStage) {
         this.showError = false;
         switch (checkoutStage) {
@@ -303,6 +293,12 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
             this.addCustomCssStyles();
             this.isRendered = true;
         }
+        this.publishMessage();
+    }
+
+    publishMessage() {
+        const message = { selectedPayment : this.paymentOption };
+        publish(this.messageContext, MY_MESSAGE_CHANNEL, message);
     }
 
     addCustomCssStyles() {
