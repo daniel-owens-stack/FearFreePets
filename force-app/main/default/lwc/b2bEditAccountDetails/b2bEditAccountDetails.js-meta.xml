@@ -14,6 +14,7 @@
             <property name="editButtonLabel" type="String" label="Edit Button Label" default="Edit"/>
             <property name="licenseNumberLabel" type="String" label="License Number Label" default="License Number"/>
             <property name="ccpdtNumberLabel" type="String" label="CCPDT Number Label" default="CCPDT Number"/>
+            <property name="jobTitleLabel" type="String" label="Job Title Label" default="Job Title"/>
             <property name="cancelButtonLabel" type="String" label="Cancel Button Label" default="Cancel"/>
             <property name="saveButtonLabel" type="String" label="Save Button Label" default="Save"/>
             <property name="licenseNumberHelpText" type="String" label="License Number Help Text" default="This field is intended for veterinarians and veterinary technicians/nurses."/>
