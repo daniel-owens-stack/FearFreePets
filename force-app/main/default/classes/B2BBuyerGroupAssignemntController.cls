@@ -13,14 +13,14 @@ public class B2BBuyerGroupAssignemntController {
 
         if(activeMemberships != null) {
             for(Account_Membership__c am : activeMemberships) {
-                List<Buyer_Group_Membership__c> bgmList = B2BBuyerGroupAssignmentServiceHelper.getBuyerGroupMembership(am.Membership__c, am.Certified__c);
+                List<Buyer_Group_Membership__c> bgmList = B2BBuyerGroupAssignmentServiceHelper.getBuyerGroupMemberships(am.Membership__c, am.Certified__c);
                 for(Buyer_Group_Membership__c bgm : bgmList) {
                     buyerGroupMembershipList.add(bgm);
                 }
             }
         }
         else {
-            List<Buyer_Group_Membership__c> bgmList = B2BBuyerGroupAssignmentServiceHelper.getBuyerGroupMembership(null, false);
+            List<Buyer_Group_Membership__c> bgmList = B2BBuyerGroupAssignmentServiceHelper.getBuyerGroupMemberships(null, false);
             for(Buyer_Group_Membership__c bgm : bgmList) {
                 buyerGroupMembershipList.add(bgm);
             }

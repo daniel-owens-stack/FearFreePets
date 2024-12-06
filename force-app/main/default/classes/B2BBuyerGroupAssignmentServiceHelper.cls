@@ -52,7 +52,7 @@ public class B2BBuyerGroupAssignmentServiceHelper {
         }
     }
 
-    public static List<Buyer_Group_Membership__c> getBuyerGroupMembership(String membershipId, Boolean isCertified) {
+    public static List<Buyer_Group_Membership__c> getBuyerGroupMemberships(String membershipId, Boolean isCertified) {
         try {
             return [
                 SELECT Id, Buyer_Group__c, Role__c 
@@ -63,7 +63,7 @@ public class B2BBuyerGroupAssignmentServiceHelper {
             ];
         }
         catch(Exception e) {
-            B2BHandleCustomException.LogException(e, 'B2BBuyerGroupAssignmentServiceHelper', 'getBuyerGroupMembership');
+            B2BHandleCustomException.LogException(e, 'B2BBuyerGroupAssignmentServiceHelper', 'getBuyerGroupMemberships');
             return null;
         }
     }
