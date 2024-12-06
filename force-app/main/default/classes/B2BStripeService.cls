@@ -140,6 +140,9 @@ public with sharing class B2BStripeService {
     }
 
     public static B2BStripeWrapper.Invoice createInvoice(String customerId, Integer daysUntilDue, String orderId) {
+        if (orderId == null) {
+            orderId ='';
+        }
         String endPoint = 'v1/invoices';
         HttpResponse response = new HttpResponse();
         String requestString = 'customer=' + customerId +
