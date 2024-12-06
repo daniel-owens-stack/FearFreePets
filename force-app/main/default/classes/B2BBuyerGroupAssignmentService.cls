@@ -88,24 +88,13 @@ public class B2BBuyerGroupAssignmentService {
 
         List<String> uniqueBuyerGroupIds = new List<String>(uniqueBuyerGroupSet);
 
-        System.debug('Final List of Unique Buyer Group IDs: ' + uniqueBuyerGroupIds);
-
         return uniqueBuyerGroupIds;
     }
 
-    public static List<String> getActiveMemberships(String accountId) {
+    public static List<Account_Membership__c> getActiveMemberships(String accountId) {
         try {
             List<Account_Membership__c> activeILMAs = B2BBuyerGroupAssignmentServiceHelper.getActiveIndividualMembershipAssignments(accountId);
-
-            List<String> membershipIds = new List<String>();
-            if(activeILMAs != null) {
-                for(Account_Membership__c am : activeILMAs) {
-                    if (!membershipIds.contains(am.Membership__c)) {
-                        membershipIds.add(am.Membership__c);
-                    }
-                }
-            }
-            return membershipIds;
+            return activeILMAs;
         }
         catch(Exception e) {
             B2BHandleCustomException.LogException(e, 'B2BBuyerGroupAssignmentService', 'getActiveMemberships');
