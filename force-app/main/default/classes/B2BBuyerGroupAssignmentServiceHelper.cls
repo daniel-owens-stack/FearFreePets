@@ -52,13 +52,14 @@ public class B2BBuyerGroupAssignmentServiceHelper {
         }
     }
 
-    public static List<Buyer_Group_Membership__c> getBuyerGroupMemberships(List<String> membershipIds) {
+    public static List<Buyer_Group_Membership__c> getBuyerGroupMemberships(String membershipId, Boolean isCertified) {
         try {
             return [
                 SELECT Id, Buyer_Group__c, Role__c 
                 FROM Buyer_Group_Membership__c
                 WHERE Role__c != 'All'
-                AND (Membership__c IN :membershipIds OR Membership__c = NULL)
+                AND Certified__c = :isCertified 
+                AND (Membership__c = :membershipId OR Membership__c = NULL)
             ];
         }
         catch(Exception e) {

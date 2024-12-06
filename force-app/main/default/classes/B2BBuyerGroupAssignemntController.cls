@@ -7,8 +7,24 @@ public class B2BBuyerGroupAssignemntController {
     }
 
     public static void handleBuyerGroupsForAccount(Account account) {
-        List<String> activeMembershipIds = B2BBuyerGroupAssignmentService.getActiveMemberships(account.Id);
-        List<Buyer_Group_Membership__c> buyerGroupMembershipList = B2BBuyerGroupAssignmentServiceHelper.getBuyerGroupMemberships(activeMembershipIds);
+        List<Account_Membership__c> activeMemberships = B2BBuyerGroupAssignmentService.getActiveMemberships(account.Id);
+
+        List<Buyer_Group_Membership__c> buyerGroupMembershipList = new List<Buyer_Group_Membership__c>();
+
+        if(activeMemberships != null) {
+            for(Account_Membership__c am : activeMemberships) {
+                List<Buyer_Group_Membership__c> bgmList = B2BBuyerGroupAssignmentServiceHelper.getBuyerGroupMemberships(am.Membership__c, am.Certified__c);
+                for(Buyer_Group_Membership__c bgm : bgmList) {
+                    buyerGroupMembershipList.add(bgm);
+                }
+            }
+        }
+        else {
+            List<Buyer_Group_Membership__c> bgmList = B2BBuyerGroupAssignmentServiceHelper.getBuyerGroupMemberships(null, false);
+            for(Buyer_Group_Membership__c bgm : bgmList) {
+                buyerGroupMembershipList.add(bgm);
+            }
+        }
 
         List<String> buyerGroupIdsToUnassign = B2BBuyerGroupAssignmentService.getBuyerGroupsToUnassign(account, buyerGroupMembershipList);
         List<String> buyerGroupIdsToAssign = B2BBuyerGroupAssignmentService.getBuyerGroupsToAssign(account, buyerGroupMembershipList);
