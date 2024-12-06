@@ -69,7 +69,7 @@ public without sharing class B2BOrderHistoryListController {
                                             Status, TotalAdjustedProductAmount, TotalAdjustedDeliveryAmount, TotalTaxAmount, 
                                             GrandTotalAmount, TotalDeliveryAmount, CreatedDate, Shipping_Address__c,
                                             Shipping_Address__Street__s, Shipping_Address__City__s, Shipping_Address__StateCode__s,
-                                            Shipping_Address__PostalCode__s, Shipping_Address__CountryCode__s
+                                            Shipping_Address__PostalCode__s, Shipping_Address__CountryCode__s, Total_Refunded_Amount__c
                                     FROM OrderSummary 
                                     WHERE Id=:orderSummaryId];      
      
@@ -99,6 +99,8 @@ public without sharing class B2BOrderHistoryListController {
         detailsWrapper.osTotals.tax = orderSummary.TotalTaxAmount;
         detailsWrapper.osTotals.total = orderSummary.GrandTotalAmount;
         detailsWrapper.osTotals.shippingSubTotal = orderSummary.TotalDeliveryAmount;
+        detailsWrapper.osTotals.refundedAmount = orderSummary.Total_Refunded_Amount__c;
+        detailsWrapper.osTotals.showRefundedAmount = orderSummary.Total_Refunded_Amount__c != 0;
         
         OrderDeliveryGroupSummary deliveryGroupSummary = getOrderDeliveryGroupSummary(orderSummaryId);
 
@@ -236,6 +238,12 @@ public without sharing class B2BOrderHistoryListController {
 
         @AuraEnabled
         public Decimal shippingSubTotal {get; set;}
+
+        @AuraEnabled
+        public Decimal refundedAmount {get; set;}
+
+        @AuraEnabled
+        public Boolean showRefundedAmount {get; set;}
     }
 
     public class shippingAddressDetails{

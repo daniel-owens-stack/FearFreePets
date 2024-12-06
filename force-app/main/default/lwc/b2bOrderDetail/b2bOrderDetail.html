@@ -76,6 +76,19 @@
 														currency-display-as="symbol">
 							</lightning-formatted-number>
 						</div>
+						<div if:true={osTotalSection.showRefundedAmount}>
+							<div class="slds-form-element__control">
+								<label class="slds-form-element__label" for="order-number"><b>Refunded Amount:</b></label>
+								<lightning-formatted-number minimum-fraction-digits="2" 
+															maximum-fraction-digits="2"
+															class="float-right" 
+															value={osTotalSection.refundedAmount} 
+															format-style="currency"
+															currency-code="USD" 
+															currency-display-as="symbol">
+								</lightning-formatted-number>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
