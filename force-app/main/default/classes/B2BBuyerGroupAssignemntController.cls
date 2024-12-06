@@ -10,8 +10,17 @@ public class B2BBuyerGroupAssignemntController {
         List<Account_Membership__c> activeMemberships = B2BBuyerGroupAssignmentService.getActiveMemberships(account.Id);
 
         List<Buyer_Group_Membership__c> buyerGroupMembershipList = new List<Buyer_Group_Membership__c>();
-        for(Account_Membership__c am : activeMemberships) {
-            List<Buyer_Group_Membership__c> bgmList = B2BBuyerGroupAssignmentServiceHelper.getBuyerGroupMembership(am.Membership__c, am.Certified__c);
+
+        if(activeMemberships != null) {
+            for(Account_Membership__c am : activeMemberships) {
+                List<Buyer_Group_Membership__c> bgmList = B2BBuyerGroupAssignmentServiceHelper.getBuyerGroupMembership(am.Membership__c, am.Certified__c);
+                for(Buyer_Group_Membership__c bgm : bgmList) {
+                    buyerGroupMembershipList.add(bgm);
+                }
+            }
+        }
+        else {
+            List<Buyer_Group_Membership__c> bgmList = B2BBuyerGroupAssignmentServiceHelper.getBuyerGroupMembership(null, false);
             for(Buyer_Group_Membership__c bgm : bgmList) {
                 buyerGroupMembershipList.add(bgm);
             }
