@@ -144,6 +144,7 @@ public with sharing class B2BStripeService {
         if (orderId == null) {
             orderId ='';
         }
+        
         String endPoint = 'v1/invoices';
         HttpResponse response = new HttpResponse();
         String requestString = 'customer=' + customerId +
