@@ -27,7 +27,7 @@ public with sharing class SchooxAPI {
         private List<String> external_ids;
 
         private List<JobData> jobs;
-        private List<Integer> unit_ids = new List<Integer>{1532475};
+        private List<Integer> unit_ids = new List<Integer>{1444104};
         private List<Integer> above_ids;
         private List<String> roles = new List<String>{'employee'};
 
@@ -59,7 +59,7 @@ public with sharing class SchooxAPI {
         private String firstname;
         private String lastname;
         private String email;
-        private List<Integer> unit_ids = new List<Integer>{1532475};
+        private List<Integer> unit_ids = new List<Integer>{1444104};
         private List<JobData> jobs;
         private LMSEditData(Contact con, List<Integer> jobIdList) {
             this.firstname = con.FirstName;
@@ -72,7 +72,7 @@ public with sharing class SchooxAPI {
     }
 
     private class JobData {
-        private Integer unit_id = 1532475;
+        private Integer unit_id = 1444104;
 		private List<Integer> jobs;
 
         private JobData(Integer jobId) {

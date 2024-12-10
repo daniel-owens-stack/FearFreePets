@@ -17,7 +17,7 @@ public class B2BHandleMembershipAssignmentInvokable {
                 List<Integer> jobIdsToAdd = new List<Integer>();
                 jobIdsToAdd.add(Integer.valueOf(membership.Job_Id__c));
                 
-               // System.enqueueJob(new B2BSchooxJobAssignmentQueueable(accountId, jobIdsToAdd));
+               System.enqueueJob(new B2BSchooxJobAssignmentQueueable(accountId, jobIdsToAdd));
                 
             }
             catch (Exception e) {
