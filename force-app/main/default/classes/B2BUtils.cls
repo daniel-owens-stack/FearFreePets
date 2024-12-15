@@ -208,21 +208,21 @@ public with sharing class B2BUtils {
         
         Integer day = today.day();
 
-        if(day != 24 || day != 7) {
+        if(day != 1 || day != 14) {
             // return null; //should be uncommented when below line is deleted
             //The below line is added for testing should be removed later
-            day = day < 15 ? 7 : 24;
+            day = day < 14 ? 1 : 14;
         }
         
         Date minDate;
         Date maxDate;
 
-        if (day == 24) {
-            minDate = today.addMonths(1).toStartOfMonth(); // 1st of next month
-            maxDate = minDate.addDays(12); // 13th of next month
+        if (day == 1) {
+            minDate = today; // 1st of current month
+            maxDate = today.addDays(12); // 13th of current month
         }
-        else if (day == 7) {
-            minDate = today.toStartOfMonth().addDays(13); // 14th of current month
+        else if (day == 14) {
+            minDate = today; // 14th of current month
             maxDate = today.toStartOfMonth().addMonths(1).addDays(-1); // End of current month
         }
 

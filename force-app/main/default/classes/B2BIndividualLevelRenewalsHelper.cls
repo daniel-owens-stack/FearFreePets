@@ -9,7 +9,7 @@ public class B2BIndividualLevelRenewalsHelper {
             String queryString = 'SELECT Id, Account_Id__c, Membership__c, Practice_Level_Membership_Assignment__c, Parent_Id__c ' +
                                  'FROM Account_Membership__c ' +
                                  'WHERE Expiration_Date__c >= ' + minDate + ' AND Expiration_Date__c <= ' + maxDate +
-                                 ' AND Status__c != \'Canceled\'' +
+                                 ' AND Status__c != \'Canceled\' AND Status__c != \'Voided\'' +
                                  ' AND Parent_Id__c = :parentAccountId';
 
             List<Account_Membership__c> memberships = Database.query(queryString);

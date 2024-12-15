@@ -9,7 +9,7 @@ public with sharing class B2BPracticeLevelRenewalsHelper {
             String queryString = 'SELECT Id, Business_Account__c, Membership__c, Renewal_DVM_Count__c' +
                                  ' FROM Practice_Level_Membership_Assignment__c' +
                                  ' WHERE Expiration_Date__c >= ' + minDate + ' AND Expiration_Date__c <= ' + maxDate + 
-                                 ' AND Status__c != \'Canceled\'' +
+                                 ' AND Status__c != \'Canceled\' AND Status__c != \'Voided\'' +
                                  ' AND Business_Account__c = :businessAccountId';
 
             List<Practice_Level_Membership_Assignment__c> memberships = Database.query(queryString);
