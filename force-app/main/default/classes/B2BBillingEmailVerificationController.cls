@@ -58,25 +58,32 @@ public without sharing class B2BBillingEmailVerificationController {
         try{
             String accountId = B2BUtils.getUserAccountID();
 
-            List<Account> account = [SELECT Id, Billing_Email__c, Billing_Email_Verified__c, Business__c
+            List<Account> account = [SELECT Id, Billing_Email__c, Billing_Email_Verified__c, Business__c, StripeCustomerId__c
                                     FROM Account 
                                     WHERE Id =: accountId
                                     ];
 
             if(account.size() > 0) {
                 if(account[0].Business__c != null) {
-                    List<Account> businessAccount = [SELECT Id, Billing_Email__c, Billing_Email_Verified__c FROM Account WHERE Id = :account[0].Business__c LIMIT 1];
+                    List<Account> businessAccount = [SELECT Id, Billing_Email__c, Billing_Email_Verified__c, StripeCustomerId__c FROM Account WHERE Id = :account[0].Business__c LIMIT 1];
 
                     if(businessAccount.size() > 0) {
                         businessAccount[0].Billing_Email__c = billingEmail;
                         businessAccount[0].Billing_Email_Verified__c = emailVerified;
 
+                        if(!emailVerified) {
+                            businessAccount[0].StripeCustomerId__c = null;
+                        }
                         update businessAccount[0];
                     }
                 }
                 else {
                     account[0].Billing_Email__c = billingEmail;
                     account[0].Billing_Email_Verified__c = emailVerified;
+
+                    if(!emailVerified) {
+                        account[0].StripeCustomerId__c = null;
+                    }
 
                     update account[0];
                 }

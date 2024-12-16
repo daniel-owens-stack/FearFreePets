@@ -10,6 +10,7 @@ import validateSession from '@salesforce/apex/B2BStripePaymentController.validat
 import convertCartToOrder from '@salesforce/apex/B2BStripePaymentController.convertCartToOrder';
 import createInvoice from '@salesforce/apex/B2BStripePaymentController.createInvoice';
 import canInvoice from '@salesforce/apex/B2BStripePaymentController.canInvoice';
+import updateBillingEmail from '@salesforce/apex/B2BStripePaymentController.updateBillingEmail';
 import modalWindow from 'c/b2bCustomModalWindow';
 import { CurrentPageReference } from 'lightning/navigation';
 import { publish, MessageContext } from 'lightning/messageService';
@@ -212,6 +213,7 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
                 return Promise.resolve(true);
             case CheckoutStage.BEFORE_PAYMENT:
                 if (this.checkValidity()) {
+                    await this.getCustomerId();
                     if (this.paymentOption == 'paynow') {
                         const href = window.location.href;
                         this.session = await this.processPayments(href);
@@ -234,11 +236,18 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
     }
 
     async processPayments(href) {
+        this.isLoading = true;
+        if(this.customerId == null) {
+            await this.doRequest(updateBillingEmail, { accountId: this.effectiveAccountId });
+            await this.getCustomerId();
+        }
+
         let { isSuccess, result, errorMessage } = await this.doRequest(processPayments, {
             webCartId: this.recordId,
             customerId: this.customerId,
             href: href
         });
+        this.isLoading = false;
         return result;
     }
 
