@@ -67,7 +67,7 @@ public with sharing class B2BUtils {
             String result = getFirstTimeLoginProduct();
             return result;
         }
-        return null;
+        return 'LoggedInMoreThanOnce';
     }
 
     public static String getFirstTimeLoginProduct() {
@@ -78,7 +78,7 @@ public with sharing class B2BUtils {
         if(account.size() > 0) {
             return account[0].First_Time_Login_Product__c;
         }
-        return null;
+        return 'No Account';
     }
 
     public static void updateUserDetails() {
