@@ -5,7 +5,7 @@ public class B2BBuyerGroupAssignmentServiceHelper {
             SELECT Id, Membership__c, Buyer_Group__c 
             FROM Buyer_Group_Membership__c 
             WHERE Certified__c =: isCertified 
-            AND Membership__c =:membershipId
+            AND (Membership__c =:membershipId OR Membership__c = NULL)
             AND (Role__c = 'All' OR Role__c =:role)
         ];
     }

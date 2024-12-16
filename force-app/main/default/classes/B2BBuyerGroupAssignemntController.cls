@@ -4,6 +4,8 @@ public class B2BBuyerGroupAssignemntController {
         List<String> buyerGroupIdList = B2BBuyerGroupAssignmentService.getElibleILMABuyerGroups(iLMA);
         B2BBuyerGroupAssignmentService.createBuyerGroupMembers(buyerGroupIdList, iLMA.Account_Id__c);
 
+        List<String> buyerGroupIdList_ToUnassign = B2BBuyerGroupAssignmentService.getInElibleILMABuyerGroups(iLMA);
+        B2BBuyerGroupAssignmentService.deleteBuyerGroupMembers(buyerGroupIdList_ToUnassign, iLMA.Account_Id__c);
     }
 
     public static void handleBuyerGroupsForAccount(Account account) {

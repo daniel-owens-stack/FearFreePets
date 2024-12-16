@@ -31,6 +31,20 @@ public class B2BBuyerGroupAssignmentService {
         return uniqueBuyerGroupIds;
     }
 
+    public static List<String> getInElibleILMABuyerGroups(Account_Membership__c iLMA) {
+        Account account = B2BBuyerGroupAssignmentServiceHelper.getAccountById(String.valueOf(iLMA.Account_Id__c));
+        List<Buyer_Group_Membership__c> buyerGroupMembershipList = 
+            B2BBuyerGroupAssignmentServiceHelper.getElibleILMABuyerGroups(iLMA.Membership__c, !iLMA.Certified__c, account.Admin_Account__c);
+        
+        Set<String> buyerGroupIdsSet = new Set<String>();
+        for (Buyer_Group_Membership__c bgm : buyerGroupMembershipList) {
+            buyerGroupIdsSet.add(bgm.Buyer_Group__c);
+        }
+        
+        List<String> buyerGroupIds = new List<String>(buyerGroupIdsSet);
+        return buyerGroupIds;
+    }
+
     public static void createBuyerGroupMembers(List<String> buyerGroupIdList, String accountId) {
         
         List<BuyerGroupMember> buyerGroupMembersToCreate = new List<BuyerGroupMember>();
