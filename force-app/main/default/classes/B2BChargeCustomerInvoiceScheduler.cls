@@ -1,9 +1,10 @@
 global class B2BChargeCustomerInvoiceScheduler implements Schedulable {
 
     global void execute(SchedulableContext sc) {
-        List<Invoice__c> invoices = [SELECT Id, Due_Date__c, Status__c, Stripe_Invoice_Id__c
+        List<Invoice__c> invoices = [SELECT Id, Due_Date__c, Status__c, Stripe_Invoice_Id__c, Terms__c
                                      FROM Invoice__c 
                                      WHERE Due_Date__c = TODAY AND Status__c = 'Active'
+                                     AND Terms__c = 'Credit Card Only'
                                     ];
 
         List<String> stripeInvoiceIds = new List<String>();
