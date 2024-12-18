@@ -35,9 +35,18 @@ public class B2BIndividualLevelRenewalsHelper {
         }
     }
 
-    public static Date getEffectiveOrderDate(String paymentTerms) {
+    public static Date getEffectiveOrderDate(B2BIndividualLevelRenewalsWrapper.ParentAccount parentAccount) {
         try {
-            return B2BUtils.getTargetRenewalDate();
+            Date targetRenewalDate;
+            if (parentAccount.business == null && parentAccount.payment_terms == 'Credit Card Only'){
+                targetRenewalDate = parentAccount.individualLevelRenewalDate;
+            } 
+            else if(parentAccount.business != null || 
+                   (parentAccount.business == null && parentAccount.payment_terms != 'Credit Card Only')) {
+                        
+                targetRenewalDate = B2BUtils.getTargetRenewalDate();
+            }
+            return targetRenewalDate;
         } catch (Exception e) {
             B2BHandleCustomException.LogException(e, 'B2BIndividualLevelRenewalsHelper', 'getEffectiveOrderDate');
             return null;
@@ -86,7 +95,8 @@ public class B2BIndividualLevelRenewalsHelper {
                 SELECT Id 
                 FROM Order 
                 WHERE AccountId = :account.Id 
-                AND IsRenewal__c = true 
+                AND IsRenewal__c = true
+                AND Status = 'Draft' 
                 AND CreatedDate = TODAY
                 ORDER BY CreatedDate DESC
                 LIMIT 1

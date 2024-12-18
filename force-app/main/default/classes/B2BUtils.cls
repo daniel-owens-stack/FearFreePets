@@ -174,7 +174,22 @@ public with sharing class B2BUtils {
     }
 
     public static Date getTargetRenewalDate() {
-        return Date.today().addDays(RENEWAL_OFFSET_IN_DAYS);
+
+        Date today = Date.today();
+        Integer day = today.day();
+
+        if(day != 1 || day != 14) {
+            day = day < 14 ? 1 : 14;
+        }
+
+        Date orderEffectiveDate;
+        if (day == 1) {
+            orderEffectiveDate = today.toStartOfMonth().addDays(6); //7th of current month
+        }
+        else if (day == 14) {
+            orderEffectiveDate = today.toStartOfMonth().addDays(20); //21st of current month
+        }
+        return orderEffectiveDate;
     }
 
     public static String getTargetRenewalDateForSOQL() {
@@ -218,11 +233,11 @@ public with sharing class B2BUtils {
         Date maxDate;
 
         if (day == 1) {
-            minDate = today; // 1st of current month
-            maxDate = today.addDays(12); // 13th of current month
+            minDate = today.toStartOfMonth(); // 1st of current month
+            maxDate = today.toStartOfMonth().addDays(12); // 13th of current month
         }
         else if (day == 14) {
-            minDate = today; // 14th of current month
+            minDate = today.toStartOfMonth().addDays(13); // 14th of current month
             maxDate = today.toStartOfMonth().addMonths(1).addDays(-1); // End of current month
         }
 

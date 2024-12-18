@@ -44,6 +44,8 @@ public class B2BIndividualLevelRenewalsService {
         parentAccount.billing_address = parentAccountSObject.BillingAddress;
         parentAccount.shipping_address = parentAccountSObject.BillingAddress;
         parentAccount.payment_terms = parentAccountSObject.Payment_Terms__c;
+        parentAccount.business = parentAccountSObject.Business__c;
+        parentAccount.individualLevelRenewalDate = parentAccountSObject.IndividualLevelRenewalDate__c;
         
         return parentAccount;
     }
@@ -55,7 +57,7 @@ public class B2BIndividualLevelRenewalsService {
         order.AccountId = parentAccount.account_id;
         order.OrderedDate = DateTime.now();
         order.PoNumber = 'Membership Renewal';
-        order.EffectiveDate = B2BIndividualLevelRenewalsHelper.getEffectiveOrderDate(parentAccount.payment_terms);
+        order.EffectiveDate = B2BIndividualLevelRenewalsHelper.getEffectiveOrderDate(parentAccount);
         order.SalesStoreId = B2BIndividualLevelRenewalsHelper.getWebStoreIdByName(WEB_STORE_NAME);
         order.Status = 'Draft';
         order.BillingStreet = parentAccount.billing_address.street;

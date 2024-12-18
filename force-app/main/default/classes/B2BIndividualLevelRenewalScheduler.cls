@@ -7,7 +7,7 @@ global class B2BIndividualLevelRenewalScheduler implements Schedulable {
             String minDate = minMaxDates.get('minDate');
             String maxDate = minMaxDates.get('maxDate');
 
-            String query = 'SELECT Id, Name, Billing_Email__c, Billing_Email_Verified__c, BillingAddress, Payment_Terms__c ' +
+            String query = 'SELECT Id, Name, Billing_Email__c, Billing_Email_Verified__c, BillingAddress, Payment_Terms__c, Business__c, IndividualLevelRenewalDate__c ' +
                         'FROM Account ' + 
                         'WHERE IndividualLevelRenewalDate__c >= ' + minDate + ' AND IndividualLevelRenewalDate__c <= ' + maxDate;
 
