@@ -69,9 +69,16 @@ public with sharing class B2BPracticeLevelRenewalsHelper {
         }
     }
     
-    public static Date getEffectiveOrderDate(String paymentTerms) {
+    public static Date getEffectiveOrderDate(B2BPracticeLevelRenewalsWrapper.BusinessAccount businessAccount) {
         try {
-            return B2BUtils.getTargetRenewalDate();
+            Date targetRenewalDate;
+            if (businessAccount.payment_terms == 'Credit Card Only'){
+                targetRenewalDate = businessAccount.practiceLevelRenewalDate;
+            } 
+            else {
+                targetRenewalDate = B2BUtils.getTargetRenewalDate();
+            }
+            return targetRenewalDate;
         } catch (Exception e) {
             B2BHandleCustomException.LogException(e, 'B2BPracticeLevelRenewalsHelper', 'getEffectiveOrderDate');
             return null;

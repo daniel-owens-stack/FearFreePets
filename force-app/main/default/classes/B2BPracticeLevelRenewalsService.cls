@@ -41,6 +41,7 @@ public class B2BPracticeLevelRenewalsService {
         businessAccount.billing_address = businessAccountSObject.BillingAddress;
         businessAccount.shipping_address = businessAccountSObject.BillingAddress;
         businessAccount.payment_terms = businessAccountSObject.Payment_Terms__c;
+        businessAccount.practiceLevelRenewalDate = businessAccountSObject.PracticeLevelRenewalDate__c;
         
         return businessAccount;
     }
@@ -52,7 +53,7 @@ public class B2BPracticeLevelRenewalsService {
         order.AccountId = businessAccount.account_id;
         order.OrderedDate = DateTime.now();
         order.PoNumber = 'Membership Renewal';
-        order.EffectiveDate = B2BPracticeLevelRenewalsHelper.getEffectiveOrderDate(businessAccount.payment_terms);
+        order.EffectiveDate = B2BPracticeLevelRenewalsHelper.getEffectiveOrderDate(businessAccount);
         order.SalesStoreId = B2BPracticeLevelRenewalsHelper.getWebStoreIdByName(WEB_STORE_NAME);
         order.Status = 'Draft';
         order.BillingStreet = businessAccount.billing_address.street;

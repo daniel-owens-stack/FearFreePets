@@ -7,6 +7,7 @@ public class B2BPracticeLevelRenewalsWrapper {
         public Address billing_address;
         public Address shipping_address;
         public String payment_terms;
+        public Date practiceLevelRenewalDate; 
    }
 
    public class PracticeLevelMembershipAssignment {

@@ -7,7 +7,7 @@ global class B2BPracticeLevelRenewalScheduler implements Schedulable {
             String minDate = minMaxDates.get('minDate');
             String maxDate = minMaxDates.get('maxDate');
 
-            String query = 'SELECT Id, Name, Billing_Email__c, Billing_Email_Verified__c, BillingAddress, Payment_Terms__c' 
+            String query = 'SELECT Id, Name, Billing_Email__c, Billing_Email_Verified__c, BillingAddress, Payment_Terms__c, PracticeLevelRenewalDate__c' 
                             + ' FROM Account'
                             + ' WHERE PracticeLevelRenewalDate__c >= ' + minDate + ' AND PracticeLevelRenewalDate__c <= ' + maxDate;
 
