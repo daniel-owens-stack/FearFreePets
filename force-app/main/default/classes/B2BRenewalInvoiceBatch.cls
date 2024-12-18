@@ -13,9 +13,7 @@ public class B2BRenewalInvoiceBatch implements Database.Batchable<sObject>, Data
     public void execute(Database.BatchableContext bc, List<Order> scope) {
         try {
             for (Order record : scope) {
-                if(record.Account.Payment_Terms__c == '	Credit Card Only') {
-                    B2BRenewalController.handleInvoiceCreation(record);
-                }
+                B2BRenewalController.handleInvoiceCreation(record);
             }
 
         } catch (Exception e) {

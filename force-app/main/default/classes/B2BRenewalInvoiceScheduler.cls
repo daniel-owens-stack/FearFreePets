@@ -1,16 +1,10 @@
 global class B2BRenewalInvoiceScheduler implements Schedulable {
     global void execute(SchedulableContext sc) {
-    
-        Map<String,String> minMaxDates = B2BUtils.calculateMinMaxRenewalOffsetRange();
 
-        if(minMaxDates != null) {
-            String minDate = minMaxDates.get('minDate');
-            String maxDate = minMaxDates.get('maxDate');
-        
-            String query = 
+        String query = 
                 'SELECT Id, AccountId, Account.StripeCustomerId__c, Account.Payment_Terms__c'
                 + ' FROM Order'
-                + ' WHERE EffectiveDate >= ' + minDate + ' AND EffectiveDate <= ' + maxDate +
+                + ' WHERE EffectiveDate = TODAY'
                 + ' AND IsRenewal__c = TRUE'
                 + ' AND Status = \'Draft\'' ;
             
@@ -18,6 +12,5 @@ global class B2BRenewalInvoiceScheduler implements Schedulable {
             
             B2BRenewalInvoiceBatch b = new B2BRenewalInvoiceBatch(query); 
             Database.executeBatch(b, batchSize);
-        }
     }
 }
