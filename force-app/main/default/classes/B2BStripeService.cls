@@ -277,10 +277,10 @@ public with sharing class B2BStripeService {
     }
     
 
-    public static Integer getInvoiceDueDate(String customerId, boolean isRenewal) {
+    public static Integer getInvoiceDueDate(String customerId, String accountId) {
         Integer daysUntilDue = 0;
         
-        Account account = B2BStripeServiceHelper.getAccountByStripeId(customerId);
+        Account account = B2BStripeServiceHelper.getAccountByStripeId(customerId, accountId);
         switch on account.Payment_Terms__c {
             when 'Net 60' {
                 daysUntilDue += NET_60_INVOICE_DUE_DATE;

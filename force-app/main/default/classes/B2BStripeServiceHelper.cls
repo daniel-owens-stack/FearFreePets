@@ -157,11 +157,12 @@ public without sharing class B2BStripeServiceHelper {
         ];
     }
 
-    public static Account getAccountByStripeId(String stripeCustomerId) {
+    public static Account getAccountByStripeId(String stripeCustomerId, String accountId) {
         return [
                 SELECT Id, Payment_Terms__c
                 FROM Account
                 WHERE StripeCustomerId__c=:stripeCustomerId 
+                AND Id = :accountId
                 LIMIT 1 
         ];
     }

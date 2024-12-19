@@ -36,6 +36,6 @@ public class B2BRenewalController {
         
         String orderId = record.Id;
         System.debug('DEBUG ' + record);
-        String stripeInvoiceId = B2BStripePaymentController.createInvoiceByOrderId(orderId, record.Account.StripeCustomerId__c);
+        String stripeInvoiceId = B2BStripePaymentController.createInvoiceByOrderId(orderId, record.Account.StripeCustomerId__c, record.Account.Id);
     }
 }

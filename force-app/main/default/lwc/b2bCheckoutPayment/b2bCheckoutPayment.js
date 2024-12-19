@@ -254,7 +254,8 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
     async sendInvoice() {
         let { isSuccess, result, errorMessage } = await this.doRequest(createInvoice, {
             webCartId: this.recordId,
-            customerId: this.customerId
+            customerId: this.customerId,
+            accountId : this.effectiveAccountId
         });
         return result;
     }

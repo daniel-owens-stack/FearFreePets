@@ -15,12 +15,14 @@ export default class B2bSyncToStripeButton extends LightningElement {
 
     invoiceId;
     customerId;
+    accountId;
 
     isDisabled = false;
 
     @wire(getRecord, { recordId: '$recordId', fields: FIELDS })
     order({ error, data }) {
         if(data) {
+            this.accountId = data.fields.AccountId.value;
             this.invoiceId = data.fields.InvoiceId__c.value;
             this.customerId = data.fields.Account.value.fields.StripeCustomerId__c.value;;
             if(this.invoiceId != null) {
@@ -35,7 +37,8 @@ export default class B2bSyncToStripeButton extends LightningElement {
     syncOrderToStripe() {
         createInvoiceByOrderId({
             orderId : this.recordId,
-            customerId : this.customerId
+            customerId : this.customerId,
+            accountId : this.accountId
         })
         .then(result => {
             if(result != null && result != undefined) {

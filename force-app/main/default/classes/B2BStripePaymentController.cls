@@ -74,8 +74,8 @@ public without sharing class B2BStripePaymentController {
     }
 
     @AuraEnabled
-    public static String createInvoice(Id webCartId, String customerId) {
-        Integer invoiceDueDate = B2BStripeService.getInvoiceDueDate(customerId, false);
+    public static String createInvoice(Id webCartId, String customerId, String accountId) {
+        Integer invoiceDueDate = B2BStripeService.getInvoiceDueDate(customerId, accountId);
         B2BStripeWrapper.Invoice invoice = B2BStripeService.createInvoice(customerId, invoiceDueDate, null);
         List<CartItem> items = B2BStripeServiceHelper.getCartItemsByCartId(webCartId);
         String stripeInvoiceId = invoice.id;
@@ -91,8 +91,8 @@ public without sharing class B2BStripePaymentController {
     }
     
     @AuraEnabled
-    public static String createInvoiceByOrderId(String orderId, String customerId)  {
-        Integer invoiceDueDate = B2BStripeService.getInvoiceDueDate(customerId, true);
+    public static String createInvoiceByOrderId(String orderId, String customerId, String accountId)  {
+        Integer invoiceDueDate = B2BStripeService.getInvoiceDueDate(customerId, accountId);
         B2BStripeWrapper.Invoice invoice = B2BStripeService.createInvoice(customerId, invoiceDueDate, orderId);
         List<OrderItem> orderItems = B2BStripeServiceHelper.getOrderItemsByOrderId(orderId);
         String stripeInvoiceId = invoice.id;
