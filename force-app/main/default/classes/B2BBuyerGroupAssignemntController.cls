@@ -2,10 +2,12 @@ public class B2BBuyerGroupAssignemntController {
 
     public static void handleBuyerGroupsForILMA(Account_Membership__c iLMA) {
         List<String> buyerGroupIdList = B2BBuyerGroupAssignmentService.getElibleILMABuyerGroups(iLMA);
-        B2BBuyerGroupAssignmentService.createBuyerGroupMembers(buyerGroupIdList, iLMA.Account_Id__c);
+        if(iLMA.Account_Id__c != null) {
+            B2BBuyerGroupAssignmentService.createBuyerGroupMembers(buyerGroupIdList, iLMA.Account_Id__c);
 
-        List<String> buyerGroupIdList_ToUnassign = B2BBuyerGroupAssignmentService.getInElibleILMABuyerGroups(iLMA);
-        B2BBuyerGroupAssignmentService.deleteBuyerGroupMembers(buyerGroupIdList_ToUnassign, iLMA.Account_Id__c);
+            List<String> buyerGroupIdList_ToUnassign = B2BBuyerGroupAssignmentService.getInElibleILMABuyerGroups(iLMA);
+            B2BBuyerGroupAssignmentService.deleteBuyerGroupMembers(buyerGroupIdList_ToUnassign, iLMA.Account_Id__c);
+        }
     }
 
     public static void handleBuyerGroupsForAccount(Account account) {
