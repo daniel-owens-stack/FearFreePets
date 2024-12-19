@@ -4,9 +4,10 @@ import Toast from 'lightning/toast';
 import ACCOUNTID from "@salesforce/schema/Order.AccountId";
 import CUSTOMERID from "@salesforce/schema/Order.Account.StripeCustomerId__c";
 import INVOICEID from "@salesforce/schema/Order.InvoiceId__c";
+import ISRENEWAL from "@salesforce/schema/Order.IsRenewal__c";
 import createInvoiceByOrderId from '@salesforce/apex/B2BStripePaymentController.createInvoiceByOrderId';
 
-const FIELDS = [ACCOUNTID, CUSTOMERID, INVOICEID];
+const FIELDS = [ACCOUNTID, CUSTOMERID, INVOICEID, ISRENEWAL];
 
 export default class B2bSyncToStripeButton extends LightningElement {
 
@@ -18,10 +19,12 @@ export default class B2bSyncToStripeButton extends LightningElement {
     accountId;
 
     isDisabled = false;
+    isRenewal = false;
 
     @wire(getRecord, { recordId: '$recordId', fields: FIELDS })
     order({ error, data }) {
         if(data) {
+            this.isRenewal = data.fields.IsRenewal__c.value;
             this.accountId = data.fields.AccountId.value;
             this.invoiceId = data.fields.InvoiceId__c.value;
             this.customerId = data.fields.Account.value.fields.StripeCustomerId__c.value;;

@@ -1,9 +1,11 @@
 <template>
-    <lightning-button
-            variant="brand"
-            label={syncToStripeButton}
-            onclick={syncOrderToStripe}
-            disabled={isDisabled}
-            stretch="true">
-    </lightning-button>
+    <template if:true={isRenewal}>
+        <lightning-button
+                variant="brand"
+                label={syncToStripeButton}
+                onclick={syncOrderToStripe}
+                disabled={isDisabled}
+                stretch="true">
+        </lightning-button>
+    </template>
 </template>
