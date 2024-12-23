@@ -10,7 +10,7 @@ public class B2BChargeCustomerInvoice {
     public static String chargeCustomerInvoice(List<String> invoiceIds) {
         try {
             //Get related orders of each invoice
-            List<Order> orders = [SELECT Id, InvoiceId__c, AccountId FROM Order WHERE InvoiceId__c IN :invoiceIds];
+            /*List<Order> orders = [SELECT Id, InvoiceId__c, AccountId FROM Order WHERE InvoiceId__c IN :invoiceIds];
 
             Map<Id, String> orderToInvoiceMap = new Map<Id, String>();
             Map<Id, Id> orderToAccountMap = new Map<Id, Id>();
@@ -106,10 +106,10 @@ public class B2BChargeCustomerInvoice {
                         invoiceIdsToCharge.remove(invoiceId);
                     }
                 }
-            }
+            }*/
             
-            if(!invoiceIdsToCharge.isEmpty()) {
-                for (String invoiceId : invoiceIdsToCharge) {
+            if(!invoiceIds.isEmpty()) {
+                for (String invoiceId : invoiceIds) {
                     B2BStripePaymentController.chargeCustomerInvoice(invoiceId);
                 }
             }
