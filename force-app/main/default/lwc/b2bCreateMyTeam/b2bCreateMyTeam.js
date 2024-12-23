@@ -32,6 +32,7 @@ export default class B2bCreateMyTeam extends CheckoutComponentBase {
     renderFlow = true;
     teamName;
     successMessage;
+    accountId;
 
     @wire(MessageContext)
     messageContext;
@@ -72,6 +73,7 @@ export default class B2bCreateMyTeam extends CheckoutComponentBase {
         getAccountDetails({})
         .then(result => {
             if(result != null) {
+                this.accountId = result.Id;
                 this.hasBusinessAccount = result.Business__c != null ? true : false;
                 this.isTeamAdmin = result.Admin_Account__c;
 
@@ -148,5 +150,11 @@ export default class B2bCreateMyTeam extends CheckoutComponentBase {
     publishMessage() {
         const message = { status: 'completed' };
         publish(this.messageContext, MY_MESSAGE_CHANNEL, message);
+    }
+
+    get flowInputVariables() {
+        return [
+            { name: 'var_AccountId', type: 'String', value: this.accountId}
+        ];
     }
 }
