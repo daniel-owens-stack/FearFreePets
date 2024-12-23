@@ -120,7 +120,7 @@ export default class B2bAccountCode extends LightningElement {
 
     appendCustomStyle() {
         let style = document.createElement('style');  
-        style.innerText = '.applyBtn .slds-button:disabled {background: rgba(217, 215, 213, 1) !important; border-color: rgba(217, 215, 213, 1) !important}';   
+        style.innerText = '.applyBtn .slds-button:disabled {background: rgba(217, 215, 213, 1) !important; border-color: rgba(217, 215, 213, 1) !important; color: rgba(18, 61, 100, 1)}';   
         this.template.querySelector('.applyButton').appendChild(style);
     }
 }
