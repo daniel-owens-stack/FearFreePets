@@ -15,8 +15,13 @@ export default class B2bChargeCustomerInvoice extends LightningElement {
             invoiceId : this.invoiceId 
         })
         .then(result => {
-            this.showTemplate = result.Stripe_Payment_URL__c != null ? false : true;
-            this.invoiceIds.push(result.Stripe_Invoice_Id__c);
+            if(result != null) {
+                this.showTemplate = result.Stripe_Payment_URL__c != null ? false : true;
+                this.invoiceIds.push(result.Stripe_Invoice_Id__c);
+            }
+            else {
+                this.showTemplate = false;
+            }
         })
         .catch((error) => {
             this.showToast('Error', 'An error occurred while getting invoice details', 'error');
