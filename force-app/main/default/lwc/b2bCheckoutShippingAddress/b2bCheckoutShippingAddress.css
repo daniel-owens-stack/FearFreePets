@@ -1,0 +1,51 @@
+.card-size {
+    width: 260px;
+    height: 180px;
+  }
+  
+  .card-padding {
+    padding: 16px;
+  }
+
+  .card-content {
+    text-align: left;
+    padding-bottom: 8px;
+  }
+
+  .card-title {
+    padding-bottom: 8px;
+  }
+  
+  .body{
+    padding: 16px;
+  }
+  
+  .full-width{
+    width: 100%;
+  }
+  
+  .visual-picker-flex{
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 16px; 
+    justify-content: flex-start; 
+  }
+
+  .card-action {
+    padding-left: 16px;
+    text-align: center;
+  }
+  
+  .slds-visual-picker + .slds-visual-picker {
+    margin-left: 0rem;
+  }
+
+  .card-tag {
+    width: 65px; /* Width of the rectangle */
+    height: 25px; /* Height of the rectangle */
+    background-color: grey; /* Grey color */
+    border-radius: 3px; /* Rounded corners */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    color: white; /* Text color */
+}

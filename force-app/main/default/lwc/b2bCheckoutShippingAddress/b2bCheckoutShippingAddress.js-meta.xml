@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>B2B Checkout Shipping Address</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property
+                name="noShippingMessage"
+                type="String"
+                label="No Shipping Message"
+                description="Message to show when the order doesn't require shipping"
+                default="Your order doesn't require shipping, please move on to the next step."
+            />
+            <property
+                name="checkoutCart"
+                type="String"
+                label="Cart Binding Expression"
+                description="Access cart data. {!Checkout.CartDetails} is the fixed text for this expression. Do not change or delete."
+                default="{!Checkout.CartDetails}"
+            />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>
