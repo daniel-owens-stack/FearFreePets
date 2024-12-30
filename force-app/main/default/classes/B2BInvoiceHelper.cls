@@ -3,22 +3,23 @@ public without sharing class B2BInvoiceHelper {
     @AuraEnabled(cacheable=true)
     public static List<InvoiceWrapper> getInvoices() {
 
-        String userId = UserInfo.getUserId();
-        User u = [SELECT Id, ContactId
-                  FROM User
-                  WHERE Id = :userId];
-
-        Contact contact = [SELECT Id, AccountId
-                           FROM Contact
-                           WHERE Id = :u.ContactId];
-        Id accountId = contact.AccountId;
+        String accountId = B2BUtils.getUserAccountID();
+        List<Account> account = [SELECT Id, StripeCustomerId__c FROM Account WHERE Id =: accountId]; 
+        
+        String customerId;
+        if(account.size() > 0) {
+            customerId = account[0].StripeCustomerId__c;
+        }
 
         List<Invoice__c> invoices = new List<Invoice__c>();
-        invoices = [SELECT Id, Name, Total__c, Amount_Charged__c, Period_Start_Date__c, Period_End_Date__c, Created_Date__c, Payment_Date__c, Stripe_PDF_URL__c, Stripe_Payment_URL__c, Status__c
-                    FROM Invoice__c
-                    WHERE Account_Id__c =:accountId AND Stripe_Payment_URL__c != null
-                    ORDER BY Created_Date__c DESC
-                   ];
+
+        if(customerId != null) {
+            invoices = [SELECT Id, Name, Total__c, Amount_Charged__c, Period_Start_Date__c, Period_End_Date__c, Created_Date__c, Payment_Date__c, Stripe_PDF_URL__c, Stripe_Payment_URL__c, Status__c
+                        FROM Invoice__c
+                        WHERE Stripe_Customer_Id__c =:customerId AND Stripe_Payment_URL__c != null
+                        ORDER BY Created_Date__c DESC
+                       ];
+        }
 
         List<InvoiceWrapper> invoiceList = new List<InvoiceWrapper>();
 
