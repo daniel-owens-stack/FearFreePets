@@ -42,6 +42,7 @@ public without sharing class B2BStripePaymentController {
         return customerId;
     }
 
+    //This method is not being used at the moment...
     @AuraEnabled
     public static void updateBillingEmail(String accountId) {
 
