@@ -33,6 +33,7 @@ export default class B2bBillingEmailVerification extends (LightningElement, Chec
     @api verificationErrorMsg;
     @api flowFinishedMsg;
     @api requiredExceptionMsg;
+    @api emailPatternMismatchMsg;
 
     showMyAccountTemplate = false;
     showBillingEmail = false;
@@ -51,6 +52,7 @@ export default class B2bBillingEmailVerification extends (LightningElement, Chec
     isPreview = false;
     showCheckoutTemplate = false;
     emailVerified = false;
+    showEmailError = false;
 
     existingBillingEmail;
     billingEmail;
@@ -59,6 +61,7 @@ export default class B2bBillingEmailVerification extends (LightningElement, Chec
     flowInputVariables;
     pathName;
     selectedPaymentOption;
+    emailRegex = /^[a-zA-Z]+(?:[._]?[a-zA-Z0-9]+)*@[a-zA-Z]+(?:\.[a-zA-Z]{2,})+$/;
 
     @wire(MessageContext)
     messageContext;
@@ -154,7 +157,11 @@ export default class B2bBillingEmailVerification extends (LightningElement, Chec
     
     handleEmailChange(event) {
         this.billingEmail = event.target.value;
-        this.disableUpdate = (this.billingEmail.trim().length != 0 && this.billingEmail != undefined && this.billingEmail != null) ? false : true;
+        this.disableUpdate = (this.billingEmail.trim().length != 0 && this.billingEmail != undefined && this.billingEmail != null && this.emailRegex.test(this.billingEmail)) ? false : true;
+    }
+
+    verifyEmailPattern() {
+        this.showEmailError = !this.emailRegex.test(this.billingEmail);
     }
 
     handleVerifyEmail() {
