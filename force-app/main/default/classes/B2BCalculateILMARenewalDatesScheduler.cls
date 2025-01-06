@@ -10,7 +10,8 @@ global class B2BCalculateILMARenewalDatesScheduler implements Schedulable {
 
             String query = 'SELECT Parent_Id__c '+
                            'FROM Account_Membership__c ' +
-                           'WHERE Expiration_Date__c >= ' + minDate + ' AND Expiration_Date__c <= ' + maxDate;
+                           'WHERE Expiration_Date__c >= ' + minDate + ' AND Expiration_Date__c <= ' + maxDate +
+                           ' AND Status__c = \'Active\'';
 
             Integer batchSize = Integer.valueOf(System.Label.B2B_Calculate_Renewal_Dates_Batch_Size);
 
