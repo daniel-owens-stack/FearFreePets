@@ -2,7 +2,7 @@ global class B2BIndividualLevelRenewalScheduler implements Schedulable {
 
     global void execute(SchedulableContext sc) {
 
-        String query = 'SELECT Id, Name, Billing_Email__c, Billing_Email_Verified__c, BillingAddress, Payment_Terms__c ' +
+        String query = 'SELECT Id, Name, Billing_Email__c, Billing_Email_Verified__c, BillingAddress, Payment_Terms__c, Business__c, IndividualLevelRenewalDate__c ' +
                        'FROM Account ' + 
                        'WHERE IndividualLevelRenewalDate__c = TODAY';
 
