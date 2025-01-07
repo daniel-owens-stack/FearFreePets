@@ -1,12 +1,10 @@
 public class B2BMembershipEndBatch implements Database.Batchable<sObject>, Database.Stateful {
 
-    private String query;
-
-    public B2BMembershipEndBatch(String query) {
-        this.query = query;
-    }
-
     public Database.QueryLocator start(Database.BatchableContext bc) {
+        String query = 'SELECT Id, Status__c, Account_Id__c, can_be_fully_reassigned__c, Membership__c ' +
+                       'FROM Account_Membership__c ' + 
+                       'WHERE Expiration_Date__c =  TODAY OR LastModifiedDate = TODAY';
+        
         return Database.getQueryLocator(query);
     }
 

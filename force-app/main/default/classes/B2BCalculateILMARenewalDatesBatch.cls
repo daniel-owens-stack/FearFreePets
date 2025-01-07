@@ -1,12 +1,15 @@
 public class B2BCalculateILMARenewalDatesBatch implements Database.Batchable<sObject>, Database.Stateful {
 
-    private String query;
-
-    public B2BCalculateILMARenewalDatesBatch(String query) {
-        this.query = query;
-    }
-
     public Database.QueryLocator start(Database.BatchableContext bc) {
+        
+        Map<String,String> minMaxDates = B2BUtils.calculateMinMaxRenewalOffsetRange();
+        String minDate = minMaxDates.get('minDate');
+        String maxDate = minMaxDates.get('maxDate');
+
+        String query = 'SELECT Parent_Id__c '+
+                       'FROM Account_Membership__c ' +
+                       'WHERE Expiration_Date__c >= ' + minDate + ' AND Expiration_Date__c <= ' + maxDate +
+                       ' AND Status__c = \'Active\'';
 
         return Database.getQueryLocator(query);
     }
