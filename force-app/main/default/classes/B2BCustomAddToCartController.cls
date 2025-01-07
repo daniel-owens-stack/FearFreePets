@@ -39,7 +39,7 @@ public without sharing class B2BCustomAddToCartController {
 
         List<Account_Membership__c> membershipList = [SELECT Id FROM Account_Membership__c 
                                                       WHERE Membership__c  =:membershipId 
-                                                      AND Account_Id__c =:accountId
+                                                      AND Parent_Id__c =:accountId
                                                       AND Status__c = 'Active'
                                                      ];
         
