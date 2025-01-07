@@ -1,12 +1,11 @@
 public class B2BPracticeLevelRenewalsBatch implements Database.Batchable<sObject>, Database.Stateful, Database.AllowsCallouts {
 
-    private String query;
-
-    public B2BPracticeLevelRenewalsBatch(String query) {
-        this.query = query;
-    }
-
     public Database.QueryLocator start(Database.BatchableContext bc) {
+
+        String query = 'SELECT Id, Name, Billing_Email__c, Billing_Email_Verified__c, BillingAddress, Payment_Terms__c, PracticeLevelRenewalDate__c' 
+                        + ' FROM Account'
+                        + ' WHERE PracticeLevelRenewalDate__c = TODAY';
+        
         return Database.getQueryLocator(query);
     }
 
@@ -21,6 +20,6 @@ public class B2BPracticeLevelRenewalsBatch implements Database.Batchable<sObject
     }
 
     public void finish(Database.BatchableContext bc) {
-        // Final actions after batch completion, e.g., sending notifications, final logging
+        
     }
 }
