@@ -13,11 +13,11 @@ public class B2BHandleMembershipAssignmentInvokable {
 
                 B2BBuyerGroupAssignemntController.handleBuyerGroupsForILMA(membership);
 
-                String accountId = membership.Account_Id__c;
-                List<Integer> jobIdsToAdd = new List<Integer>();
-                jobIdsToAdd.add(Integer.valueOf(membership.Job_Id__c));
+            //     String accountId = membership.Account_Id__c;
+            //     List<Integer> jobIdsToAdd = new List<Integer>();
+            //     jobIdsToAdd.add(Integer.valueOf(membership.Job_Id__c));
                 
-               System.enqueueJob(new B2BSchooxJobAssignmentQueueable(accountId, jobIdsToAdd));
+            //    System.enqueueJob(new B2BSchooxJobAssignmentQueueable(accountId, jobIdsToAdd));
                 
             }
             catch (Exception e) {
