@@ -8,6 +8,7 @@
             <lightning-flow 
                     if:true={renderFlow}
                     flow-api-name={flowApiName} 
+                    flow-input-variables={flowInputVariables}
                     onstatuschange={handleFlowStatusChange}
                 ></lightning-flow>
             <div if:true={showReqError} class="slds-text-color_error">{reqErrorMessage}</div>

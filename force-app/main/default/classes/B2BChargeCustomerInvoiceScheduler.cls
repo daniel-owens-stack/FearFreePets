@@ -10,6 +10,18 @@ global class B2BChargeCustomerInvoiceScheduler implements Schedulable {
         for(Invoice__c invoice : invoices) {
             stripeInvoiceIds.add(invoice.Stripe_Invoice_Id__c);
         }
-        B2BChargeCustomerInvoice.chargeCustomerInvoice(stripeInvoiceIds);
+
+        List<Order> orders = [SELECT Id, InvoiceId__c, Account.Payment_Terms__c FROM Order WHERE InvoiceId__c IN :stripeInvoiceIds];
+        
+        List<String> eligibleInvoiceIds = new List<String>();
+        for(Order order : orders) {
+            if(order.Account.Payment_Terms__c == 'Credit Card Only') {
+                eligibleInvoiceIds.add(order.InvoiceId__c);
+            }
+        }
+
+        if(!eligibleInvoiceIds.isEmpty()) {
+            B2BChargeCustomerInvoice.chargeCustomerInvoice(eligibleInvoiceIds);
+        }
     }
 }

@@ -241,23 +241,32 @@ export default class B2bAcademiaMembershipJourney extends CheckoutComponentBase 
 
     stageAction(checkoutStage) {
         switch (checkoutStage) {
-            case CheckoutStage.BEFORE_PAYMENT:
-                return Promise.resolve(this.reportValidity());
             case CheckoutStage.CHECK_VALIDITY_UPDATE:
                 return Promise.resolve(this.checkValidity);
+            case CheckoutStage.REPORT_VALIDITY_SAVE:
+                return Promise.resolve(this.reportValidity());
+            case CheckoutStage.BEFORE_PAYMENT:
+                return Promise.resolve(this.reportValidity());
             default:
                 return Promise.resolve(true);
         }
     }
 
     get checkValidity() {
-        return (this.selectedOption != undefined && this.schoolUniversity != '' && this.schoolUniversity != null);
+        this.showReqError = this.selectedOption == undefined ? true : false;
+        if(this.showReqError) {
+            return false;
+        } 
+        else {
+            this.showSchoolError = (this.showReqError == false && (this.schoolUniversity == '' || this.schoolUniversity == null)) ? true : false;
+            if(this.showSchoolError) {
+                return false;
+            }
+        }
+        return true;
     }
 
     async reportValidity() {
-        this.showReqError = this.selectedOption == undefined ? true : false;
-        this.showSchoolError = (this.showReqError == false && (this.schoolUniversity == '' || this.schoolUniversity == null)) ? true : false;
-
         return this.checkValidity ? true : false;
     }
 }

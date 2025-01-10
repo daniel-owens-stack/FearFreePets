@@ -8,7 +8,7 @@ public without sharing class B2BVeraCoreSendReq {
         // String username = 'ffp_salesforce'; //named cred
         // String password = 'dut5guz*yav4xgk3PVY';
 
-        List<OrderItemSummary> ois = [SELECT Id, Quantity, UnitPrice, OrderSummaryId FROM OrderItemSummary WHERE Id IN :orderItemSummaryIds];
+        List<OrderItemSummary> ois = [SELECT Id, Quantity, UnitPrice, OrderSummaryId, Veracore_Callout_Response__c FROM OrderItemSummary WHERE Id IN :orderItemSummaryIds];
         List<OrderSummary> os;
         if(ois.size() > 0) {
             os = [SELECT Id, OwnerId, Veracore_Order_Id__c FROM OrderSummary WHERE Id =:ois[0].OrderSummaryId];
@@ -39,11 +39,20 @@ public without sharing class B2BVeraCoreSendReq {
             String fax= user[0].Fax;
             String email= user[0].Email;
 
+            List<OrderItemSummary> responsesToUpdate = new List<OrderItemSummary>();
+
             for(OrderItemSummary item : ois) {
                 Decimal quantity = item.Quantity;
                 Decimal unitPrice = item.UnitPrice;
                 HttpResponse response = B2BSOAPApiCall.makeSOAPCall(endpoint, prefix, firstName, middleInitial, lastName, suffix, title, address1, address2, address3, city, state, postalCode, country, phone, fax, email, veraCore_OrderId, quantity, unitPrice);
                 System.debug('##B2BVeraCoreSendReq - Response: ' + response);
+
+                item.Veracore_Callout_Response__c = 'Status=' + response.getStatus() + ', StatusCode=' + response.getStatusCode();
+                responsesToUpdate.add(item);
+            }
+
+            if(!responsesToUpdate.isEmpty()){
+                update responsesToUpdate;
             }
         }
     }

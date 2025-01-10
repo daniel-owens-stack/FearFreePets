@@ -7,6 +7,8 @@ public class B2BIndividualLevelRenewalsWrapper {
         public Address billing_address;
         public Address shipping_address;
         public String payment_terms;
+        public String business;
+        public Date individualLevelRenewalDate; 
    }
 
    public class IndividualLevelMembershipAssignment {
@@ -16,6 +18,7 @@ public class B2BIndividualLevelRenewalsWrapper {
      public String renewal_product_id;
      public Decimal renewal_price;
      public Boolean invoice_exempt;
+     public Date expirationDate;
    }
 
    public class Order {

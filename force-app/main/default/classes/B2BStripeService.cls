@@ -14,8 +14,7 @@ public with sharing class B2BStripeService {
         Account account = B2BStripeServiceHelper.getAccountById(accountId);
         HttpResponse response = new HttpResponse();
         String endPoint = 'v1/customers';
-        String emailAddress = account.Billing_Email__c ?? UserInfo.getUserEmail();
-        String requestBody = 'email=' + emailAddress + '&name=' + Account.Name;
+        String requestBody = 'email=' + account.Billing_Email__c + '&name=' + Account.Name;
         response = makeCalloutToStripe(endPoint, POST_METHOD, requestBody, 'application/x-www-form-urlencoded');
 
         B2BStripeWrapper.StripeCustomer result = (B2BStripeWrapper.StripeCustomer) JSON.deserialize(response.getBody(), B2BStripeWrapper.StripeCustomer.class);
@@ -24,6 +23,27 @@ public with sharing class B2BStripeService {
             throw new B2BStripeException(result.error.type + ': ' + result.error.message);
         } else {
             return result;
+        }
+    }
+
+    public static B2BStripeWrapper.StripeCustomer getStripeCustomerByEmail(String billingEmail) {
+        
+        String endPoint = 'v1/customers/search';
+        String requestBody = 'query=email:' + '"' + billingEmail + '"';
+
+        HttpResponse response = new HttpResponse();
+        response = makeCalloutToStripe(endPoint, GET_METHOD, requestBody, 'application/x-www-form-urlencoded');
+
+        B2BStripeWrapper.StripeCustomers stripeCustomers = (B2BStripeWrapper.StripeCustomers) JSON.deserialize(response.getBody(), B2BStripeWrapper.StripeCustomers.class);
+        B2BStripeWrapper.StripeCustomer stripeCustomer = new B2BStripeWrapper.StripeCustomer();
+        if (stripeCustomers.data != null && !stripeCustomers.data.isEmpty()) {
+            stripeCustomer = stripeCustomers.data[0];
+        }
+
+        if (response.getStatusCode() != 200 && String.isNotBlank(stripeCustomers.error.message)) {
+            throw new B2BStripeException(stripeCustomers.error.type + ': ' + stripeCustomers.error.message);
+        } else {
+            return stripeCustomer;
         }
     }
 
@@ -257,12 +277,10 @@ public with sharing class B2BStripeService {
     }
     
 
-    public static Integer getInvoiceDueDate(String customerId, boolean isRenewal) {
+    public static Integer getInvoiceDueDate(String customerId, String accountId) {
         Integer daysUntilDue = 0;
-        if (isRenewal) {
-            daysUntilDue += RENEWAL_OFFSET_IN_DAYS;
-        }
-        Account account = B2BStripeServiceHelper.getAccountByStripeId(customerId);
+        
+        Account account = B2BStripeServiceHelper.getAccountByStripeId(customerId, accountId);
         switch on account.Payment_Terms__c {
             when 'Net 60' {
                 daysUntilDue += NET_60_INVOICE_DUE_DATE;

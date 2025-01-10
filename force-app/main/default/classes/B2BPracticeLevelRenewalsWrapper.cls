@@ -7,6 +7,7 @@ public class B2BPracticeLevelRenewalsWrapper {
         public Address billing_address;
         public Address shipping_address;
         public String payment_terms;
+        public Date practiceLevelRenewalDate; 
    }
 
    public class PracticeLevelMembershipAssignment {
@@ -16,6 +17,7 @@ public class B2BPracticeLevelRenewalsWrapper {
      public Decimal renewal_dvm_count;
      public String renewal_product_id;
      public Decimal renewal_price;
+     public Date expirationDate;
    }
 
    public class Order {

@@ -1,9 +1,13 @@
-import { LightningElement} from 'lwc';
+import { LightningElement, api} from 'lwc';
 import isGuest from '@salesforce/user/isGuest';
 import {NavigationMixin} from 'lightning/navigation';
 import isFirstTimeLogin from '@salesforce/apex/B2BUtils.isFirstTimeLogin';
 
 export default class B2bFirstTimeLoginRedirect extends NavigationMixin(LightningElement) {
+
+    @api pageType;
+    @api objectApiName;
+    @api categoryId;
 
     isPreview = false;
     recordId;
@@ -12,6 +16,10 @@ export default class B2bFirstTimeLoginRedirect extends NavigationMixin(Lightning
         this.isPreview = this.isInSitePreview();
         if(!isGuest && !this.isPreview) {
             this.checkLoginHistory();
+        }
+
+        if(isGuest && !this.isPreview) {
+            this.redirectToCategoryPage();
         }
     }
 
@@ -28,10 +36,20 @@ export default class B2bFirstTimeLoginRedirect extends NavigationMixin(Lightning
     checkLoginHistory() {
         isFirstTimeLogin()
         .then(result => {
-            if(result != null) {
-                this.recordId = result;
-                this.redirectToProductPage();
+            if(result == 'LoggedInMoreThanOnce' || result == 'No Account') {
+                return;
+            } else {
+                let productId = result;
+
+                if(productId == null) {
+                    this.redirectToCategoryPage();
+                }
+                else if(productId != null) {
+                    this.recordId = productId;
+                    this.redirectToProductPage();
+                }
             }
+            
         })
         .catch(error => {
             console.error('Error in checkLoginHistory: ', error);
@@ -46,6 +64,17 @@ export default class B2bFirstTimeLoginRedirect extends NavigationMixin(Lightning
                 actionName: 'view',
                 recordId: this.recordId
             },
+        });
+    }
+
+    redirectToCategoryPage() {
+        this[NavigationMixin.Navigate]({
+            type: this.pageType,
+            attributes: {
+                objectApiName: this.objectApiName,
+                actionName: 'view',
+                recordId: this.categoryId
+            }
         });
     }
 }

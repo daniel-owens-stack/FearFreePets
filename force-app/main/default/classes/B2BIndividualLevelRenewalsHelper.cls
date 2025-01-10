@@ -6,11 +6,11 @@ public class B2BIndividualLevelRenewalsHelper {
             String minDate = minMaxDates.get('minDate');
             String maxDate = minMaxDates.get('maxDate');
 
-            String queryString = 'SELECT Id, Account_Id__c, Membership__c, Practice_Level_Membership_Assignment__c, Parent_Id__c ' +
+            String queryString = 'SELECT Id, Account_Id__c, Membership__c, Practice_Level_Membership_Assignment__c, Parent_Id__c, Expiration_Date__c ' +
                                  'FROM Account_Membership__c ' +
                                  'WHERE Expiration_Date__c >= ' + minDate + ' AND Expiration_Date__c <= ' + maxDate +
-                                 ' AND Status__c != \'Canceled\'' +
-                                 ' AND Parent_Id__c = :parentAccountId';
+                                 ' AND Status__c = \'Active\'' +
+                                 ' AND Parent_Id__c = :parentAccountId ORDER BY Expiration_Date__c';
 
             List<Account_Membership__c> memberships = Database.query(queryString);
 
@@ -35,9 +35,18 @@ public class B2BIndividualLevelRenewalsHelper {
         }
     }
 
-    public static Date getEffectiveOrderDate(String paymentTerms) {
+    public static Date getEffectiveOrderDate(B2BIndividualLevelRenewalsWrapper.ParentAccount parentAccount) {
         try {
-            return B2BUtils.getTargetRenewalDate();
+            Date targetRenewalDate;
+            if (parentAccount.business == null && parentAccount.payment_terms == 'Credit Card Only'){
+                targetRenewalDate = parentAccount.individualLevelRenewalDate;
+            } 
+            else if(parentAccount.business != null || 
+                   (parentAccount.business == null && parentAccount.payment_terms != 'Credit Card Only')) {
+                        
+                targetRenewalDate = B2BUtils.getTargetRenewalDate();
+            }
+            return targetRenewalDate;
         } catch (Exception e) {
             B2BHandleCustomException.LogException(e, 'B2BIndividualLevelRenewalsHelper', 'getEffectiveOrderDate');
             return null;
@@ -86,7 +95,8 @@ public class B2BIndividualLevelRenewalsHelper {
                 SELECT Id 
                 FROM Order 
                 WHERE AccountId = :account.Id 
-                AND IsRenewal__c = true 
+                AND IsRenewal__c = true
+                AND Status = 'Draft' 
                 AND CreatedDate = TODAY
                 ORDER BY CreatedDate DESC
                 LIMIT 1

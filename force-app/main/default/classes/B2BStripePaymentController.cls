@@ -24,17 +24,45 @@ public without sharing class B2BStripePaymentController {
 
         String customerId;
 
-        if (String.isBlank(account.StripeCustomerId__c)) {
-            B2BStripeWrapper.StripeCustomer response = B2BStripeService.createStripeCustomer(account.Id);
-            account.StripeCustomerId__c = response.Id;
-            account.Billing_Email__c = account.Billing_Email__c ?? UserInfo.getUserEmail();
-            update account;
-            customerId = account.StripeCustomerId__c;
+        if (String.isBlank(account.StripeCustomerId__c) && account.Billing_Email__c != null) {
+            B2BStripeWrapper.StripeCustomer existingCustomer = B2BStripeService.getStripeCustomerByEmail(account.Billing_Email__c);
+            if(existingCustomer.id == null) {
+                B2BStripeWrapper.StripeCustomer response = B2BStripeService.createStripeCustomer(account.Id);
+                account.StripeCustomerId__c = response.Id;
+                update account;
+            } else {
+                account.StripeCustomerId__c = existingCustomer.Id;
+                update account;
+            }
+            customerId = account.StripeCustomerId__c; 
         } else {
             customerId = account.StripeCustomerId__c;
         }
 
         return customerId;
+    }
+
+    //This method is not being used at the moment...
+    @AuraEnabled
+    public static void updateBillingEmail(String accountId) {
+
+        Account account = [
+                SELECT ShippingAddress, StripeCustomerId__c, Business__c, Admin_Account__c, Billing_Email__c
+                FROM Account
+                WHERE Id = :accountId
+        ];
+
+        if (account.Business__c != null && account.Admin_Account__c ==true) {
+            account = [
+                SELECT Id, StripeCustomerId__c, Billing_Email__c FROM Account
+                WHERE Id =:account.Business__c
+            ];
+        }
+        
+        if(String.isBlank(account.Billing_Email__c)) {
+            account.Billing_Email__c = UserInfo.getUserEmail(); 
+            update account;
+        }
     }
 
     @AuraEnabled
@@ -47,8 +75,8 @@ public without sharing class B2BStripePaymentController {
     }
 
     @AuraEnabled
-    public static String createInvoice(Id webCartId, String customerId) {
-        Integer invoiceDueDate = B2BStripeService.getInvoiceDueDate(customerId, false);
+    public static String createInvoice(Id webCartId, String customerId, String accountId) {
+        Integer invoiceDueDate = B2BStripeService.getInvoiceDueDate(customerId, accountId);
         B2BStripeWrapper.Invoice invoice = B2BStripeService.createInvoice(customerId, invoiceDueDate, null);
         List<CartItem> items = B2BStripeServiceHelper.getCartItemsByCartId(webCartId);
         String stripeInvoiceId = invoice.id;
@@ -64,8 +92,8 @@ public without sharing class B2BStripePaymentController {
     }
     
     @AuraEnabled
-    public static String createInvoiceByOrderId(String orderId, String customerId)  {
-        Integer invoiceDueDate = B2BStripeService.getInvoiceDueDate(customerId, true);
+    public static String createInvoiceByOrderId(String orderId, String customerId, String accountId)  {
+        Integer invoiceDueDate = B2BStripeService.getInvoiceDueDate(customerId, accountId);
         B2BStripeWrapper.Invoice invoice = B2BStripeService.createInvoice(customerId, invoiceDueDate, orderId);
         List<OrderItem> orderItems = B2BStripeServiceHelper.getOrderItemsByOrderId(orderId);
         String stripeInvoiceId = invoice.id;

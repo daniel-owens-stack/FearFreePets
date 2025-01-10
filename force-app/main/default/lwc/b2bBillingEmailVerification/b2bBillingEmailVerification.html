@@ -55,12 +55,16 @@
                 <div if:true={showEmailInput}>
                     <div class="slds-p-top_x-small">
                         <lightning-input 
-                            type="email" 
+                            type="text" 
                             label={billingEmailLabel}
                             placeholder="username@example.com"
                             onchange={handleEmailChange}
                             value={billingEmail}
+                            onblur={verifyEmailPattern}
                         ></lightning-input>
+                        <template if:true={showEmailError}>
+                            <p class="slds-text-color_error">{emailPatternMismatchMsg}</p>
+                        </template>
                     </div>
                     <div class="slds-grid slds-wrap slds-gutters slds-grid_vertical-align-center slds-p-top_x-small">
                         <div class="slds-col slds-size_6-of-12 slds-medium-size_6-of-12">
@@ -136,10 +140,10 @@
     <!-- For Checkout Page -->
     <template if:true={showCheckoutTemplate}>
         <div class="slds-p-right_medium">
-            <div class="slds-grid slds-wrap slds-gutters slds-grid_vertical-align-center slds-grid_align-spread slds-p-vertical_x-small">
+            <div class="slds-grid slds-wrap slds-grid_vertical-align-center slds-grid_align-spread slds-p-vertical_x-small">
                 <!-- Heading -->
                 <div class="slds-col slds-size_8-of-12 slds-medium-size_8-of-12">
-                    <h2 class="dxp-text-heading-medium"><b>{billingEmailLabel}</b></h2>
+                    <h2 class="dxp-text-heading-medium"><b><span class="slds-text-color_error">*</span>{billingEmailLabel}</b></h2>
                 </div>
                 <!-- No Email <> Show Add Button -->
                 <div if:true={showAddEmail}>
@@ -166,7 +170,7 @@
             
             <!-- Has Email & Not Verified <> Show Verify Button  -->
             <div if:true={showBillingEmail}>
-                <div class="slds-grid slds-wrap slds-gutters slds-grid_vertical-align-center slds-grid_align-spread">
+                <div class="slds-grid slds-wrap slds-grid_vertical-align-center slds-grid_align-spread">
                     <div class="slds-col slds-size_12-of-12 slds-medium-size_8-of-12">
                         <p>{existingBillingEmail}</p>
                     </div>
@@ -185,13 +189,17 @@
             <div if:true={showEmailInput}>
                 <div class="slds-p-top_x-small">
                     <lightning-input 
-                        type="email" 
+                        type="text" 
                         label={billingEmailLabel}
                         placeholder="username@example.com"
                         onchange={handleEmailChange}
                         value={billingEmail}
                         variant="label-hidden"
+                        onblur={verifyEmailPattern}
                     ></lightning-input>
+                    <template if:true={showEmailError}>
+                        <p class="slds-text-color_error">{emailPatternMismatchMsg}</p>
+                    </template>
                 </div>
                 <div class="slds-grid slds-wrap slds-gutters slds-grid_vertical-align-center slds-p-top_x-small">
                     <div class="slds-col slds-size_6-of-12 slds-medium-size_6-of-12">

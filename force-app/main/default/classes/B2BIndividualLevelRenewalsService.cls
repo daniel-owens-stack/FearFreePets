@@ -18,6 +18,7 @@ public class B2BIndividualLevelRenewalsService {
             ilmaWrapper.id = ilmasSObject.Id;
             ilmaWrapper.parent_account = ilmasSObject.Account_Id__c;
             ilmaWrapper.membership_id = ilmasSObject.Membership__c;
+            ilmaWrapper.expirationDate = ilmasSObject.Expiration_Date__c;
             ilmaWrapper.renewal_product_id = B2BIndividualLevelRenewalsHelper.getRenewalProductId(ilmaWrapper.membership_id);
             ilmaWrapper.renewal_price = B2BIndividualLevelRenewalsHelper.getRenewalProductPrice(ilmasSObject.Account_Id__c, ilmaWrapper.renewal_product_id);
             
@@ -33,7 +34,7 @@ public class B2BIndividualLevelRenewalsService {
     } 
     
     
-    public static B2BIndividualLevelRenewalsWrapper.parentAccount getParentAccount(Account parentAccountSObject) {
+    public static B2BIndividualLevelRenewalsWrapper.parentAccount getParentAccount(Account parentAccountSObject, Date renewalDate) {
         
         B2BIndividualLevelRenewalsWrapper.parentAccount parentAccount = new B2BIndividualLevelRenewalsWrapper.parentAccount();
         
@@ -44,6 +45,8 @@ public class B2BIndividualLevelRenewalsService {
         parentAccount.billing_address = parentAccountSObject.BillingAddress;
         parentAccount.shipping_address = parentAccountSObject.BillingAddress;
         parentAccount.payment_terms = parentAccountSObject.Payment_Terms__c;
+        parentAccount.business = parentAccountSObject.Business__c;
+        parentAccount.individualLevelRenewalDate = renewalDate; //parentAccountSObject.IndividualLevelRenewalDate__c;
         
         return parentAccount;
     }
@@ -55,7 +58,7 @@ public class B2BIndividualLevelRenewalsService {
         order.AccountId = parentAccount.account_id;
         order.OrderedDate = DateTime.now();
         order.PoNumber = 'Membership Renewal';
-        order.EffectiveDate = B2BIndividualLevelRenewalsHelper.getEffectiveOrderDate(parentAccount.payment_terms);
+        order.EffectiveDate = B2BIndividualLevelRenewalsHelper.getEffectiveOrderDate(parentAccount);
         order.SalesStoreId = B2BIndividualLevelRenewalsHelper.getWebStoreIdByName(WEB_STORE_NAME);
         order.Status = 'Draft';
         order.BillingStreet = parentAccount.billing_address.street;

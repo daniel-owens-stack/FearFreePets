@@ -10,4 +10,11 @@
         <target>lightningCommunity__Default</target>
         <target>lightningCommunity__Page</target>
     </targets>
+    <targetConfigs>  
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="pageType" type="String" default="standard__recordPage" label="Enter Page Type"/>
+            <property name="objectApiName" type="String" default="ProductCategory" label="Enter Object API Name"/>
+            <property name="categoryId" type="String" default="0ZGTR00000004lB4AQ" label="Enter ProductCategoryId"/>
+        </targetConfig>
+    </targetConfigs>
 </LightningComponentBundle>

@@ -1,0 +1,83 @@
+<template>
+    <template if:true={showTemplate}>
+        <div if:true={isSummary}>
+            <div class="slds-col slds-size_1-of-3 slds-p-around_small">
+                <lightning-card title={workingAddress.name} class="slds-m-bottom_small">
+                    <div class="slds-p-horizontal_small">
+                        {workingAddress.street}<br />
+                        {workingAddress.city}, {workingAddress.state}
+                        {workingAddress.postalCode}, {workingAddress.country}<br />
+                    </div>
+                </lightning-card>
+            </div>
+        </div>
+        <div if:false={isSummary} class="slds-grid slds-wrap">
+                <div if:false={showNewAddress}>
+                    <div class="slds-col slds-size_1-of-1 slds-p-around_small">
+                        <fieldset class="slds-form-element">
+                            <div class="slds-form-element__control visual-picker-flex">
+                                <template for:each={shippingAddresses} for:item="sAddress" for:index='index'>
+                                    <div key={sAddress.addressId}>
+                                        <div class="slds-visual-picker slds-visual-picker_medium">
+                                            <input type="radio" id={sAddress.addressId} value={sAddress.addressId} name="shipping-address" onchange={handleAddressPick} checked={sAddress.isDelivery} disabled={isDisabled}/>
+                                            <label for={sAddress.addressId}>
+                                                <div class="card-size">
+                                                    <span class="slds-visual-picker__figure slds-visual-picker__text card-size card-padding" picker-id={sAddress.addressId}>
+                                                        <span class="card-content">
+                                                            <span class="slds-text-heading_small card-content card-title">{sAddress.name}</span>
+                                                            <lightning-formatted-address 
+                                                                class="card-content"
+                                                                street={sAddress.street}
+                                                                city={sAddress.city}
+                                                                country={sAddress.country}
+                                                                province={sAddress.region}
+                                                                postal-code={sAddress.postalCode} 
+                                                                disabled>
+                                                            </lightning-formatted-address>
+                                                            <div if:true={sAddress.isDefault}>
+                                                                <lightning-badge label="Default"></lightning-badge>
+                                                            </div>
+                                                        </span>
+                                                    </span>                                        
+                                                    <span class="slds-icon_container slds-visual-picker__text-check card-size card-padding">
+                                                        <svg class="slds-icon slds-icon-text-check slds-icon_x-small" aria-hidden="true">
+                                                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#check"></use>
+                                                        </svg>
+                                                    </span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <button class="slds-button card-action" data-address-id={sAddress.addressId} data-index={index} value={sAddress.addressId} id={sAddress.addressId} onclick={handleEditAddressClick}>Edit Address</button>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+                        </fieldset>
+                        <div class="slds-m-top_small">
+                            <lightning-button variant="brand" label="New Address" title="New Shipping Address"
+                                onclick={handleNewAddressClick} class="slds-m-top_small"></lightning-button>
+                        </div>
+                        <label if:true={showError} class="slds-text-color_error slds-m-top_small">
+                            Error: {error}
+                        </label>
+                    </div>
+                </div>
+                <div if:true={showNewAddress}>
+                    <c-b2b-address-form
+                        lwc:ref="addressForm"
+                        address={workingAddress} 
+                        country-options={validCountryCodes}
+                        all-region-options={validRegionCodeData}
+                        required="true"
+                        hide-default-checkbox="true"
+                        input-disabled={addressIsDisabled}
+                        onaddresscommit={handleAddressCommitEvent}>
+                    </c-b2b-address-form>
+                </div>
+        </div>
+    </template>
+    <template if:false={showTemplate}>
+        <div>{noShippingMessage}</div>
+    </template>
+</template>

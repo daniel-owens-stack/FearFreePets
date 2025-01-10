@@ -212,6 +212,7 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
                 return Promise.resolve(true);
             case CheckoutStage.BEFORE_PAYMENT:
                 if (this.checkValidity()) {
+                    await this.getCustomerId();
                     if (this.paymentOption == 'paynow') {
                         const href = window.location.href;
                         this.session = await this.processPayments(href);
@@ -234,18 +235,22 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
     }
 
     async processPayments(href) {
+        this.isLoading = true;
+
         let { isSuccess, result, errorMessage } = await this.doRequest(processPayments, {
             webCartId: this.recordId,
             customerId: this.customerId,
             href: href
         });
+        this.isLoading = false;
         return result;
     }
 
     async sendInvoice() {
         let { isSuccess, result, errorMessage } = await this.doRequest(createInvoice, {
             webCartId: this.recordId,
-            customerId: this.customerId
+            customerId: this.customerId,
+            accountId : this.effectiveAccountId
         });
         return result;
     }

@@ -3,14 +3,24 @@ public class B2BChargeCustomerInvoice {
     @AuraEnabled
     public static Invoice__c getInvoice(String invoiceId) {
         Invoice__c invoice= [SELECT Id, Stripe_Invoice_Id__c, Status__c,Stripe_Payment_URL__c FROM Invoice__c WHERE Id =:invoiceId];
-        return invoice;
+
+        List<Order> order = [SELECT Id, Account.Payment_Terms__c, IsRenewal__c FROM Order WHERE InvoiceId__c = :invoice.Stripe_Invoice_Id__c];
+        
+        if(order.size() > 0) {
+            if(order[0].IsRenewal__c) {
+                if(order[0].Account.Payment_Terms__c == 'Credit Card Only') {
+                    return invoice;
+                }
+            }
+        }
+        return null;
     }
     
     @AuraEnabled
     public static String chargeCustomerInvoice(List<String> invoiceIds) {
         try {
             //Get related orders of each invoice
-            List<Order> orders = [SELECT Id, InvoiceId__c, AccountId FROM Order WHERE InvoiceId__c IN :invoiceIds];
+            /*List<Order> orders = [SELECT Id, InvoiceId__c, AccountId FROM Order WHERE InvoiceId__c IN :invoiceIds];
 
             Map<Id, String> orderToInvoiceMap = new Map<Id, String>();
             Map<Id, Id> orderToAccountMap = new Map<Id, Id>();
@@ -61,13 +71,13 @@ public class B2BChargeCustomerInvoice {
             
             if (!accountIds.isEmpty() && !membershipIds.isEmpty()) {
 
-                //Check for Canceled Individual Memberships
+                //Check for Canceled or Voided Individual Memberships
                 List<Account_Membership__c> individualMemberships = [
                     SELECT Id, Membership__c, Status__c, Account_Id__c
                     FROM Account_Membership__c 
                     WHERE Membership__c IN :membershipIds 
                     AND Account_Id__c IN :accountIds
-                    AND Status__c = 'Canceled' 
+                    AND (Status__c = 'Canceled' OR Status__c = 'Voided')
                     ORDER BY CreatedDate Desc NULLS LAST
                 ];
                 
@@ -79,13 +89,13 @@ public class B2BChargeCustomerInvoice {
                 }
                 
 
-                //Check for Canceled Practice Memberships
+                //Check for Canceled or Voided Practice Memberships
                 List<Practice_Level_Membership_Assignment__c> practiceMemberships = [
                     SELECT Id, Membership__c, Status__c 
                     FROM Practice_Level_Membership_Assignment__c 
                     WHERE Membership__c IN :membershipIds 
                     AND Business_Account__c IN :businessIds
-                    AND Status__c = 'Canceled'
+                    AND (Status__c = 'Canceled' OR Status__c = 'Voided')
                     ORDER BY CreatedDate Desc NULLS LAST
                 ];
                 
@@ -106,10 +116,10 @@ public class B2BChargeCustomerInvoice {
                         invoiceIdsToCharge.remove(invoiceId);
                     }
                 }
-            }
+            }*/
             
-            if(!invoiceIdsToCharge.isEmpty()) {
-                for (String invoiceId : invoiceIdsToCharge) {
+            if(!invoiceIds.isEmpty()) {
+                for (String invoiceId : invoiceIds) {
                     B2BStripePaymentController.chargeCustomerInvoice(invoiceId);
                 }
             }

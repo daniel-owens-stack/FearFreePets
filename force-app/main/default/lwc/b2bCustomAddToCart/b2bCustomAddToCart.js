@@ -8,6 +8,7 @@ import isVariantProduct from '@salesforce/apex/B2BCustomAddToCartController.isVa
 import getProductGroup from '@salesforce/apex/B2BCustomAddToCartController.getProductGroup';
 import isAdminAccount from '@salesforce/apex/B2BCustomAddToCartController.isAdminAccount';
 import getPracticeLevelMemberships from '@salesforce/apex/B2BCustomAddToCartController.getPracticeLevelMemberships';
+import getIndividualLevelMemberships from '@salesforce/apex/B2BCustomAddToCartController.getIndividualLevelMemberships';
 import isProductPresentInCart from '@salesforce/apex/B2BCustomAddToCartController.isProductPresentInCart';
 import modalWindow from 'c/b2bCustomModalWindow';
 
@@ -112,6 +113,9 @@ export default class B2bCustomAddToCart extends LightningElement {
             if(this.productGroup === this.practiceMembership) {
                 this.checkifAccountHasPracticeLevelMembership();
             }
+            else if(this.productGroup === this.academiaMembership) {
+                this.checkifAccountHasAcademiaMembership();
+            } 
             else {
                 this.checkIsAdminAccount();
             }
@@ -143,6 +147,27 @@ export default class B2bCustomAddToCart extends LightningElement {
         })
     }
 
+    checkifAccountHasAcademiaMembership() {
+        getIndividualLevelMemberships({
+            productId : this.productId
+        })
+        .then(result => {
+            if(result.length > 0) {
+                this.showQtySelector = false;
+                this.showAddToCart = false;
+                this.showTermsOfService = false;
+                this.isLoading = false;
+            }
+            else {
+                this.checkifProductIsInCart();
+            }
+        })
+        .catch(error => {
+            console.log('Error in checkifAccountHasAcademiaMembership: ', error);
+            this.isLoading = false;
+        })
+    }
+
     checkifProductIsInCart() {
         isProductPresentInCart({
             productId : this.productId
@@ -168,7 +193,7 @@ export default class B2bCustomAddToCart extends LightningElement {
         isAdminAccount({})
         .then(result => {
             this.isAdmin = result;
-            if(this.isAdmin === false && (this.productGroup === this.academiaMembership || this.productGroup === this.individualMembership)) {
+            if(this.isAdmin === false && this.productGroup === this.individualMembership) {
                 this.checkifProductIsInCart();
             }
             else {
