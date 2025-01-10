@@ -10,15 +10,7 @@ public class B2BHandleMembershipAssignmentInvokable {
 
         for (Account_Membership__c membership : accountMembershipList) {
             try {
-
                 B2BBuyerGroupAssignemntController.handleBuyerGroupsForILMA(membership);
-
-            //     String accountId = membership.Account_Id__c;
-            //     List<Integer> jobIdsToAdd = new List<Integer>();
-            //     jobIdsToAdd.add(Integer.valueOf(membership.Job_Id__c));
-                
-            //    System.enqueueJob(new B2BSchooxJobAssignmentQueueable(accountId, jobIdsToAdd));
-                
             }
             catch (Exception e) {
                 B2BHandleCustomException.LogException(e, 'B2BHandleMembershipAssignmentInvokable', 'handleCommerceOnMembershipAssignment');
