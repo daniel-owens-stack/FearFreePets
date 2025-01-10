@@ -17,6 +17,7 @@ public class B2BPracticeLevelRenewalsWrapper {
      public Decimal renewal_dvm_count;
      public String renewal_product_id;
      public Decimal renewal_price;
+     public Date expirationDate;
    }
 
    public class Order {

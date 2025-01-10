@@ -6,7 +6,8 @@ public class B2BRenewalController {
             return;
         }
 
-        B2BPracticeLevelRenewalsWrapper.BusinessAccount businessAccount = B2BPracticeLevelRenewalsService.getBusinessAccount(record);
+        Date nearestRenewalDate = plmaList[0].expirationDate;
+        B2BPracticeLevelRenewalsWrapper.BusinessAccount businessAccount = B2BPracticeLevelRenewalsService.getBusinessAccount(record, nearestRenewalDate);
         B2BPracticeLevelRenewalsWrapper.Order order = B2BPracticeLevelRenewalsService.createOrder(businessAccount);
         B2BPracticeLevelRenewalsService.createOrderItems(plmaList, order);
     }
@@ -15,11 +16,11 @@ public class B2BRenewalController {
 
         List<B2BIndividualLevelRenewalsWrapper.IndividualLevelMembershipAssignment> ilmaList = B2BIndividualLevelRenewalsService.getIndividualLevelMembershipAssignments(record.Id);
         if (ilmaList == null || ilmaList.isEmpty()) {
-
             return;
         }
 
-        B2BIndividualLevelRenewalsWrapper.ParentAccount parentAccount = B2BIndividualLevelRenewalsService.getParentAccount(record);
+        Date nearestRenewalDate = ilmaList[0].expirationDate;
+        B2BIndividualLevelRenewalsWrapper.ParentAccount parentAccount = B2BIndividualLevelRenewalsService.getParentAccount(record, nearestRenewalDate);
     
         B2BIndividualLevelRenewalsWrapper.Order order;
         order = B2BIndividualLevelRenewalsService.getExistingOrder(record);

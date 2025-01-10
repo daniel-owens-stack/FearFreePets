@@ -18,7 +18,8 @@ public class B2BPracticeLevelRenewalsService {
             plmaWrapper.id = plmasSObject.Id;
             plmaWrapper.business_account = plmasSObject.Business_Account__c;
             plmaWrapper.membership_id = plmasSObject.Membership__c;
-            plmaWrapper.renewal_dvm_count = plmasSObject.Renewal_DVM_Count__c;
+            plmaWrapper.expirationDate = plmasSObject.Expiration_Date__c;
+            plmaWrapper.renewal_dvm_count = plmasSObject.Renewal_DVM_Count__c == 0 ? 1 : plmasSObject.Renewal_DVM_Count__c;
             
             plmaWrapper.renewal_product_id = B2BPracticeLevelRenewalsHelper.getRenewalProductId( plmaWrapper.membership_id, plmaWrapper.renewal_dvm_count);
             plmaWrapper.renewal_price = B2BPracticeLevelRenewalsHelper.getRenewalProductPrice(plmaWrapper.renewal_product_id, plmaWrapper.business_account);
@@ -30,7 +31,7 @@ public class B2BPracticeLevelRenewalsService {
     } 
     
     
-    public static B2BPracticeLevelRenewalsWrapper.BusinessAccount getBusinessAccount(Account businessAccountSObject) {
+    public static B2BPracticeLevelRenewalsWrapper.BusinessAccount getBusinessAccount(Account businessAccountSObject, Date renewalDate) {
         
         B2BPracticeLevelRenewalsWrapper.BusinessAccount businessAccount = new B2BPracticeLevelRenewalsWrapper.BusinessAccount();
         
@@ -41,7 +42,7 @@ public class B2BPracticeLevelRenewalsService {
         businessAccount.billing_address = businessAccountSObject.BillingAddress;
         businessAccount.shipping_address = businessAccountSObject.BillingAddress;
         businessAccount.payment_terms = businessAccountSObject.Payment_Terms__c;
-        businessAccount.practiceLevelRenewalDate = businessAccountSObject.PracticeLevelRenewalDate__c;
+        businessAccount.practiceLevelRenewalDate = renewalDate;//businessAccountSObject.PracticeLevelRenewalDate__c;
         
         return businessAccount;
     }

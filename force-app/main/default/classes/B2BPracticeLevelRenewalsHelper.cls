@@ -6,11 +6,11 @@ public with sharing class B2BPracticeLevelRenewalsHelper {
             String minDate = minMaxDates.get('minDate');
             String maxDate = minMaxDates.get('maxDate');
             
-            String queryString = 'SELECT Id, Business_Account__c, Membership__c, Renewal_DVM_Count__c' +
+            String queryString = 'SELECT Id, Business_Account__c, Membership__c, Renewal_DVM_Count__c, Expiration_Date__c' +
                                  ' FROM Practice_Level_Membership_Assignment__c' +
                                  ' WHERE Expiration_Date__c >= ' + minDate + ' AND Expiration_Date__c <= ' + maxDate + 
-                                 ' AND Status__c != \'Canceled\' AND Status__c != \'Voided\'' +
-                                 ' AND Business_Account__c = :businessAccountId';
+                                 ' AND Status__c = \'Active\'' +
+                                 ' AND Business_Account__c = :businessAccountId ORDER BY Expiration_Date__c';
 
             List<Practice_Level_Membership_Assignment__c> memberships = Database.query(queryString);
             

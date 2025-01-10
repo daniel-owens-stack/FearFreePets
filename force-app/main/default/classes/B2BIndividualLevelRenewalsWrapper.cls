@@ -18,6 +18,7 @@ public class B2BIndividualLevelRenewalsWrapper {
      public String renewal_product_id;
      public Decimal renewal_price;
      public Boolean invoice_exempt;
+     public Date expirationDate;
    }
 
    public class Order {
