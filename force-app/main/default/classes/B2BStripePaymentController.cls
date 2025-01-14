@@ -7,18 +7,21 @@ public without sharing class B2BStripePaymentController {
     @AuraEnabled
     public static String getCustomerId(String accountId) {
         
-        
+        Account person;
         Account account = [
                 SELECT ShippingAddress, StripeCustomerId__c, Business__c, Admin_Account__c, Billing_Email__c
                 FROM Account
                 WHERE Id = :accountId
         ];
+        person = account;
 
-        if (account.Business__c != null && account.Admin_Account__c ==true) {
+        Account business;
+        if (account.Business__c != null && account.Billing_Email__c == null) {
             account = [
                 SELECT Id, StripeCustomerId__c, Billing_Email__c FROM Account
                 WHERE Id =:account.Business__c
             ];
+            business = account;
         }
 
 
@@ -37,6 +40,11 @@ public without sharing class B2BStripePaymentController {
             customerId = account.StripeCustomerId__c; 
         } else {
             customerId = account.StripeCustomerId__c;
+        }
+
+        if(business != null) {
+            person.StripeCustomerId__c = customerId;
+            update person;
         }
 
         return customerId;
