@@ -88,6 +88,17 @@
 															currency-display-as="symbol">
 								</lightning-formatted-number>
 							</div>
+							<div class="slds-form-element__control">
+								<label class="slds-form-element__label" for="order-number"><b>Total Amount After Refund:</b></label>
+								<lightning-formatted-number minimum-fraction-digits="2" 
+															maximum-fraction-digits="2"
+															class="float-right" 
+															value={osTotalSection.totalAmountAfterRefund} 
+															format-style="currency"
+															currency-code="USD" 
+															currency-display-as="symbol">
+								</lightning-formatted-number>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -140,7 +151,7 @@
 							<!-- Product Image -->
 							<div class="slds-size_4-of-12 slds-medium-size_2-of-12">
 								<div class="slds-p-vertical_small">
-									<img src={item.productImgUrl} style="height:150px; width:150px;object-fit:contain;">
+									<img src={item.productImgUrl} style="height:150px; width:142px;object-fit:contain;">
 								</div>
 							</div>
 							<!-- Product Info -->
