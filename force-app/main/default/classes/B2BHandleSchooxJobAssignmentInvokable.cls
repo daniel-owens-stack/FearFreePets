@@ -15,7 +15,8 @@ public class B2BHandleSchooxJobAssignmentInvokable {
                 List<Integer> jobIdsToAdd = new List<Integer>();
                 jobIdsToAdd.add(Integer.valueOf(membership.Job_Id__c));
                 
-                System.enqueueJob(new B2BSchooxJobAssignmentQueueable(accountId, jobIdsToAdd));
+                // System.enqueueJob(new B2BSchooxJobAssignmentQueueable(accountId, jobIdsToAdd));
+                B2BSchooxAPIController.handleJobAssignmnet(accountId, jobIdsToAdd);
             }
             catch (Exception e) {
                 B2BHandleCustomException.LogException(e, 'B2BHandleSchooxJobAssignmentInvokable', 'handleSchooxJobAssignment');
