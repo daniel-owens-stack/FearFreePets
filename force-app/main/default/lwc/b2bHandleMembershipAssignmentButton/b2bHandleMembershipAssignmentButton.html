@@ -1,7 +1,14 @@
 <template>
     <lightning-button
-        label="Handle Membership Assignment"
+        label="Handle Schoox Job Assignment"
         onclick={handleAssignment}
-        class="slds-m-around_medium"
+        stretch="true"
     ></lightning-button>
+    <div class="slds-p-top_medium">
+        <lightning-button
+            label="Handle Schoox Job Unassignment"
+            onclick={handleUnassignment}
+            stretch="true"
+        ></lightning-button>
+    </div>
 </template>
