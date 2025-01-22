@@ -70,14 +70,17 @@ public class B2BMembershipEndHelper {
 
         List<Integer> existingJobs = schooxUser.jobs;
 
-        List<Integer> activeJobList = new List<Integer>();
-
-        for (Integer jobId : existingJobs) {
-            if (!jobIdsToRemove.contains(jobId)) {
-                activeJobList.add(jobId);
+        for (Integer jobIdToRemove : jobIdsToRemove) {
+            if (existingJobs.contains(jobIdToRemove)) {
+                existingJobs.remove(existingJobs.indexOf(jobIdToRemove));
             }
         }
-
-        SchooxAPI.updateLMSUser(accountId, activeJobList);
+        
+        if(existingJobs.isEmpty() || existingJobs == null) {
+            SchooxAPI.removeLMSUser(schooxUser.studentId);
+        } 
+        else {
+            SchooxAPI.updateLMSUser(accountId, existingJobs);
+        }
     }
 }
