@@ -220,6 +220,24 @@ public without sharing class B2BStripePaymentController {
             insert cartDeliveryToOrderGroup.values();
         }
 
+        //Check for shippable welcome kits if the address is not in the US
+        String countryCode = [SELECT DeliverToCountryCode FROM OrderDeliveryGroup WHERE orderId = :newOrder.Id]?.DeliverToCountryCode;
+        if(countryCode != null && countryCode != 'US') {
+            List<CartItem> cartItemsToUpdate = new List<CartItem>();
+            for(CartItem item : cart.CartItems) {
+                if(item.Product2.Shippable__c && item.Product2.Product_Group__c == 'Certification Kit') { 
+                    // replace the welcome kit product with the international variation
+                    if(item.Product2.International_Variation_Product__c != null) {
+                        item.Product2Id = item.Product2.International_Variation_Product__c;
+                        cartItemsToUpdate.add(item);
+                    }
+                }
+            }
+            if(!cartItemsToUpdate.isEmpty()) {
+                update cartItemsToUpdate;
+            }
+        }
+
         //Start Cart Item transfer
         for (CartItem cartItem : cart.CartItems) {
             OrderItem newOrderItem = new OrderItem();
