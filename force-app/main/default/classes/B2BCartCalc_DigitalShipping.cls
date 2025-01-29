@@ -73,7 +73,7 @@ public class B2BCartCalc_DigitalShipping extends CartExtension.ShippingCartCalcu
                 }
             }        
             Decimal calculatedShipping = (shipPrice == 0) ? 0 : shipPrice;
-            CartExtension.CartDeliveryGroupMethod cartDeliveryGroupMethod01 = new CartExtension.CartDeliveryGroupMethod('FedEX Priority (AM Delivery)', calculatedShipping, shippingProduct);
+            CartExtension.CartDeliveryGroupMethod cartDeliveryGroupMethod01 = new CartExtension.CartDeliveryGroupMethod('Shipping Charge', calculatedShipping, shippingProduct);
             cartDeliveryGroupMethod01.setCarrier('USPS');
             cartDeliveryGroupMethod01.setClassOfService('Digital Shipping');
             CartExtension.CartDeliveryGroupMethod cartDeliveryGroupMethod02 = new CartExtension.CartDeliveryGroupMethod('FedEX Priority (PM Delivery)', calculatedShipping, shippingProduct);
