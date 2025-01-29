@@ -36,6 +36,7 @@ public class B2BMembershipEndController {
             if(!membershipEndedAccounts.isEmpty()) {
 
                 List<Id> buyerGroupIds = B2BMembershipEndHelper.getBuyerGroupMemberships(membershipId);
+                List<Integer> jobIds = new List<Integer>();
 
                 for(Id accountId : membershipEndedAccounts) {
                     //Check if account currently have an active ILMA of same membership
@@ -47,7 +48,11 @@ public class B2BMembershipEndController {
                             B2BMembershipEndHelper.unassignBuyerGroups(accountId, buyerGroupIds);
                         }
 
-                        //TODO: Unassign additional commerce logic
+                        //Unassign Schoox Jobs
+                        jobIds.add(Integer.valueOf(ilma.Job_Id__c));
+                        if(jobIds != null) {
+                            B2BMembershipEndHelper.unassignSchooxJobs(accountId, jobIds);
+                        }
                     }
                 }
             }

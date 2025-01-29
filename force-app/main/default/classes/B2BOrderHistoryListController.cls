@@ -69,7 +69,7 @@ public without sharing class B2BOrderHistoryListController {
                                             Status, TotalAdjustedProductAmount, TotalAdjustedDeliveryAmount, TotalTaxAmount, 
                                             GrandTotalAmount, TotalDeliveryAmount, CreatedDate, Shipping_Address__c,
                                             Shipping_Address__Street__s, Shipping_Address__City__s, Shipping_Address__StateCode__s,
-                                            Shipping_Address__PostalCode__s, Shipping_Address__CountryCode__s, Total_Refunded_Amount__c
+                                            Shipping_Address__PostalCode__s, Shipping_Address__CountryCode__s, Total_Refunded_Amount__c, Total_Amount_After_Refund__c
                                     FROM OrderSummary 
                                     WHERE Id=:orderSummaryId];      
      
@@ -101,6 +101,7 @@ public without sharing class B2BOrderHistoryListController {
         detailsWrapper.osTotals.shippingSubTotal = orderSummary.TotalDeliveryAmount;
         detailsWrapper.osTotals.refundedAmount = orderSummary.Total_Refunded_Amount__c;
         detailsWrapper.osTotals.showRefundedAmount = orderSummary.Total_Refunded_Amount__c != 0;
+        detailsWrapper.osTotals.totalAmountAfterRefund = orderSummary.Total_Amount_After_Refund__c;
         
         OrderDeliveryGroupSummary deliveryGroupSummary = getOrderDeliveryGroupSummary(orderSummaryId);
 
@@ -160,7 +161,9 @@ public without sharing class B2BOrderHistoryListController {
 
             for(ConnectApi.ProductOverview product : productsData.products){
                 if(product.success){
-                    productToWrapperMap.get(product.id).productImgUrl = product.defaultImage.url;
+                    if(product.defaultImage != null) {
+                        productToWrapperMap.get(product.id).productImgUrl = product.defaultImage.url;
+                    }
                 }      
             }
         }
@@ -244,6 +247,9 @@ public without sharing class B2BOrderHistoryListController {
 
         @AuraEnabled
         public Boolean showRefundedAmount {get; set;}
+
+        @AuraEnabled
+        public Decimal totalAmountAfterRefund {get; set;}
     }
 
     public class shippingAddressDetails{

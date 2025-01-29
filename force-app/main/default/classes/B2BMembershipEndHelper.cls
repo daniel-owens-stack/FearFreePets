@@ -60,4 +60,27 @@ public class B2BMembershipEndHelper {
             B2BHandleCustomException.LogException(e, 'B2BMembershipEndHelper', 'unassignBuyerGroups');
         }
     }
+
+    public static void unassignSchooxJobs(String accountId, List<Integer> jobIdsToRemove) {
+        B2BSchooxAPIWrapper.SchooxUser schooxUser = B2BSchooxAPIService.getSchooxUser(accountId);
+
+        if (!schooxUser.isActive) {
+           return;
+        }
+
+        List<Integer> existingJobs = schooxUser.jobs;
+
+        for (Integer jobIdToRemove : jobIdsToRemove) {
+            if (existingJobs.contains(jobIdToRemove)) {
+                existingJobs.remove(existingJobs.indexOf(jobIdToRemove));
+            }
+        }
+        
+        if(existingJobs.isEmpty() || existingJobs == null) {
+            SchooxAPI.removeLMSUser(schooxUser.studentId);
+        } 
+        else {
+            SchooxAPI.updateLMSUser(accountId, existingJobs);
+        }
+    }
 }

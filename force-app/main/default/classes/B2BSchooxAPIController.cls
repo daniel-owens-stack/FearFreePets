@@ -21,7 +21,7 @@ public class B2BSchooxAPIController {
     }
 
     @AuraEnabled
-    public static void handleMembershipAssignmentManual(String recordId) {
+    public static void handleJobAssignmentManual(String recordId) {
         
         Account_Membership__c ilma = [
             SELECT Id, Membership__r.Job_Id__c, Account_Id__c FROM Account_Membership__c
@@ -33,6 +33,20 @@ public class B2BSchooxAPIController {
         List<Integer> jobIdsToAdd = new List<Integer>();
         jobIdsToAdd.add(Integer.valueOf(ilma.Membership__r.Job_Id__c));
         handleJobAssignmnet(accountId,jobIdsToAdd);
+    }
+
+    @AuraEnabled
+    public static void handleJobUnassignmentManual(String recordId) {
+        
+        Account_Membership__c ilma = [
+            SELECT Id, Membership__r.Job_Id__c, Account_Id__c FROM Account_Membership__c
+            WHERE Id =: recordId
+        ];
+
+        String accountId = ilma.Account_Id__c;
+        List<Integer> jobIdsToAdd = new List<Integer>();
+        jobIdsToAdd.add(Integer.valueOf(ilma.Membership__r.Job_Id__c));
+        B2BMembershipEndHelper.unassignSchooxJobs(accountId, jobIdsToAdd);
     }
 
 }

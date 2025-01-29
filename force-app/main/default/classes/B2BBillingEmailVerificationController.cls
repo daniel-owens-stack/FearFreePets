@@ -14,7 +14,7 @@ public without sharing class B2BBillingEmailVerificationController {
             aw.isOnTeam = account[0].Business__c != null ? true :false;
             aw.creditOnlyPaymentTerms = account[0].Payment_Terms__c == 'Credit Card Only' ? true : false;
 
-            if(account[0].Business__c != null) {
+            if(account[0].Business__c != null && account[0].Billing_Email__c == null) {
                 List<Account> businessAccount = [SELECT Id, Billing_Email__c, Billing_Email_Verified__c FROM Account WHERE Id = :account[0].Business__c LIMIT 1];
 
                     if(businessAccount.size() > 0) {
@@ -58,13 +58,13 @@ public without sharing class B2BBillingEmailVerificationController {
         try{
             String accountId = B2BUtils.getUserAccountID();
 
-            List<Account> account = [SELECT Id, Billing_Email__c, Billing_Email_Verified__c, Business__c, StripeCustomerId__c
+            List<Account> account = [SELECT Id, Billing_Email__c, Billing_Email_Verified__c, Business__c, StripeCustomerId__c, Admin_Account__c
                                     FROM Account 
                                     WHERE Id =: accountId
                                     ];
 
             if(account.size() > 0) {
-                if(account[0].Business__c != null) {
+                if(account[0].Business__c != null && account[0].Admin_Account__c) {
                     List<Account> businessAccount = [SELECT Id, Billing_Email__c, Billing_Email_Verified__c, StripeCustomerId__c FROM Account WHERE Id = :account[0].Business__c LIMIT 1];
 
                     if(businessAccount.size() > 0) {
