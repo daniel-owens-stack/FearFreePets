@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : Diksha
  * @group             : 
- * @last modified on  : 01-29-2025
+ * @last modified on  : 01-30-2025
  * @last modified by  : Diksha
 **/
 // This sample is for the situations where Digital Shipping is required, meaning there is no shipping cost. 
@@ -65,10 +65,18 @@ public class B2BCartCalc_DigitalShipping extends CartExtension.ShippingCartCalcu
             if (lstWebCartItem != null && !lstWebCartItem.isEmpty()){
 
                 for (CartItem record : lstWebCartItem) {
+                
+                    if (record.Product2 != null && !record.Product2.IsShippingChargeNotApplicable) {
+                        Decimal freightAmount = 0;
+                        Integer quantity = (record.Quantity != null) ? Integer.valueOf(record.Quantity) : 0;
 
-                    if (!record.Product2.IsShippingChargeNotApplicable) {
-                        Decimal freightAmount = isUS ? record.Product2.Freight_Amount_US__c : record.Product2.Freight_Amount_INTL__c;
-                        shipPrice += (freightAmount * record.Quantity);
+                        if (isUS && record.Product2.Freight_Amount_US__c != null) {
+                            freightAmount = record.Product2.Freight_Amount_US__c;
+                        } else if (!isUS && record.Product2.Freight_Amount_INTL__c != null) {
+                            freightAmount = record.Product2.Freight_Amount_INTL__c;
+                        }
+
+                        shipPrice += freightAmount * quantity;
                     }
                 }
             }        
