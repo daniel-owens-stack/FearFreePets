@@ -8,7 +8,8 @@ public without sharing class B2BVeraCoreSendReq {
         // String password = 'dut5guz*yav4xgk3PVY';
 
         List<OrderItemSummary> ois = [
-            SELECT Id, Quantity, UnitPrice, OrderSummaryId, Product2.StockKeepingUnit, Product2.International_Product_SKU__c 
+            SELECT Id, Quantity, UnitPrice, OrderSummaryId, Product2.StockKeepingUnit, Product2.International_Product_SKU__c, 
+                    Product2.Has_International_SKU__c, Product2.Product_Group__c
             FROM OrderItemSummary 
             WHERE Id IN :orderItemSummaryIds];
         
@@ -53,6 +54,8 @@ public without sharing class B2BVeraCoreSendReq {
                 offer.offerId_SKU_INTL = item.Product2.International_Product_SKU__c;
                 offer.quantity = Integer.valueOf(item.Quantity);
                 offer.unitPrice = item.UnitPrice;
+                offer.hasInternationalSKU = item.Product2.Has_International_SKU__c;
+                offer.productGroup = item.Product2.Product_Group__c;
 
                 offers.add(offer);
             }
@@ -92,5 +95,7 @@ public without sharing class B2BVeraCoreSendReq {
         public String offerId_SKU_INTL;
         public Integer quantity;
         public Decimal unitPrice;
+        public Boolean hasInternationalSKU;
+        public String productGroup;
     }
 }

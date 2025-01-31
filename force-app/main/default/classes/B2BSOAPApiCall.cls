@@ -10,7 +10,12 @@ public class B2BSOAPApiCall {
         // Construct the SOAP request body dynamically
         String offersSection = '';
         for (B2BVeraCoreSendReq.Offers offer : offers) {
-            String offerId = (isInternationalShipping && offer.offerId_SKU_INTL != null)? offer.offerId_SKU_INTL : offer.offerId_SKU;
+            String offerId = offer.offerId_SKU;
+            
+            if(isInternationalShipping && offer.productGroup == 'Certification Kit' 
+                && offer.hasInternationalSKU && offer.offerId_SKU_INTL != null) {
+                    offerId = offer.offerId_SKU_INTL;
+            }
             System.debug('Offer Id:' + offerId);
 
             offersSection += '<OfferOrdered>' +
@@ -66,7 +71,6 @@ public class B2BSOAPApiCall {
                         '</soap:Envelope>';
 
         // Set up the HTTP request
-        System.debug('SOAP Body: ' + soapBody);
         HttpRequest req = new HttpRequest();
         req.setEndpoint('callout:VeraCore');
         req.setMethod('POST');
@@ -79,17 +83,20 @@ public class B2BSOAPApiCall {
         // Send the request and handle the response
         Http http = new Http();
         HttpResponse res = http.send(req);
+        System.debug('B2B Veracore Order Creation Response: ' + res.getStatus() + ' ' + res.getStatusCode() + ' ' + res.getBody());
         if (res.getStatusCode() == 200) {
-            System.debug('##B2BSOAPApiCall - Response: ' + res.getBody());
             return res;
         } else {
-            System.debug('##B2BSOAPApiCall - Error: ' + res.getStatus() + ' ' + res.getStatusCode() + ' ' + res.getBody());
             // Log the exception
-            Id orderId = [SELECT Id FROM Order ORDER BY CreatedDate Desc LIMIT 1].Id;
+            Id orderSummaryId = [SELECT Id FROM OrderSummary WHERE Veracore_Order_Id__c = :header.veracoreOrderId].Id;
+
             ProcessException log = new ProcessException();
-            log.Message = 'Error: ' + res.getStatus() + ', Status Code: ' + res.getStatusCode();
+            log.Message = 'Error: ' + res.getStatus() + '; Status Code: ' + res.getStatusCode();
             log.Description = res.getBody();
-            log.AttachedToId = orderId;
+            log.AttachedToId = orderSummaryId;
+            log.Category = 'Veracore Order Creation';
+            log.OrderSummaryId = orderSummaryId;
+
             insert log;
 
             return res;
