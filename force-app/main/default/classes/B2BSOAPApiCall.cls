@@ -1,68 +1,77 @@
 public class B2BSOAPApiCall {
 
-    public static HttpResponse makeSOAPCall(String endpoint, String prefix, String firstName, String middleInitial, String lastName, String suffix, String title, String address1, String address2, String address3, String city, String state, String postalCode, String country, String phone, String fax, String email, String veraCore_OrderId, Decimal quantity, Decimal unitPrice) {
+    public static HttpResponse sendRequestToVeraCore(
+        B2BVeraCoreSendReq.Header header, 
+        B2BVeraCoreSendReq.OrderedBy orderedBy, 
+        List<B2BVeraCoreSendReq.Offers> offers) {
+
+        Boolean isInternationalShipping = orderedBy.countryCode != 'US';
+
         // Construct the SOAP request body dynamically
+        String offersSection = '';
+        for (B2BVeraCoreSendReq.Offers offer : offers) {
+            String offerId = (isInternationalShipping && offer.offerId_SKU_INTL != null)? offer.offerId_SKU_INTL : offer.offerId_SKU;
+            System.debug('Offer Id:' + offerId);
+
+            offersSection += '<OfferOrdered>' +
+                                '<Offer>' +
+                                    '<Header><ID>' + offerId + '</ID></Header>' +
+                                '</Offer>' +
+                                '<Quantity>' + offer.quantity + '</Quantity>' +
+                                '<UnitPrice>' + offer.unitPrice + '</UnitPrice>' +
+                                '<OrderShipTo><Key>0</Key></OrderShipTo>' +
+                             '</OfferOrdered>';
+        }
+
         String soapBody = '<?xml version="1.0" encoding="utf-8"?>' +
-                          '<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">' +
-                          '<soap:Header>' +
-                            '<AuthenticationHeader xmlns="http://omscom/">' +
-                            '<Username>{!$Credential.Username}</Username>' +
-                            '<Password>{!$Credential.Password}</Password>' +
-                            '</AuthenticationHeader>' +
-                          '</soap:Header>' +
-                          '<soap:Body>' +
-                          '<AddOrder xmlns="http://omscom/">' +
-                          '<order>' +
-                          '<Header><ID>' + veraCore_OrderId + '</ID></Header>' +
-                          '<Money></Money>' +
-                          '<Payment></Payment>' +
-                          '<OrderedBy>' +
-                          '<Prefix>' + prefix + '</Prefix>' +
-                          '<FirstName>' + firstName + '</FirstName>' +
-                          '<MiddleInitial>' + middleInitial + '</MiddleInitial>' +
-                          '<LastName>' + lastName + '</LastName>' +
-                          '<Suffix>' + suffix + '</Suffix>' +
-                          '<Title>' + title + '</Title>' +
-                          '<Address1>' + address1 + '</Address1>' +
-                          '<Address2>' + address2 + '</Address2>' +
-                          '<Address3>' + address3 + '</Address3>' +
-                          '<City>' + city + '</City>' +
-                          '<State>' + state + '</State>' +
-                          '<PostalCode>' + postalCode + '</PostalCode>' +
-                          '<Country>' + country + '</Country>' +
-                          '<Phone>' + phone + '</Phone>' +
-                          '<Fax>' + fax + '</Fax>' +
-                          '<Email>' + email + '</Email>' +
-                          '</OrderedBy>' +
-                          '<ShipTo>' +
-                          '<OrderShipTo>' +
-                          '<Flag>OrderedBy</Flag>' +
-                          '<Key>1</Key>' +
-                          '</OrderShipTo>' +
-                          '</ShipTo>' +
-                          '<BillTo>' +
-                          '<Flag>OrderedBy</Flag>' +
-                          '</BillTo>' +
-                          '<Offers>' +
-                          '<OfferOrdered>' +
-                          '<Offer>' +
-                          '<Header><ID>GW</ID></Header>' +
-                          '</Offer>' +
-                          '<Quantity>' + quantity + '</Quantity>' +
-                          '<UnitPrice>' + unitPrice + '</UnitPrice>' +
-                          '<OrderShipTo><Key>1</Key></OrderShipTo>' +
-                          '</OfferOrdered>' +
-                          '</Offers>' +
-                          '</order>' +
-                          '</AddOrder>' +
-                          '</soap:Body>' +
-                          '</soap:Envelope>';
+                        '<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">' +
+                            '<soap:Header>' +
+                                '<AuthenticationHeader xmlns="http://omscom/">' +
+                                '<Username>{!$Credential.Username}</Username>' +
+                                '<Password>{!$Credential.Password}</Password>' +
+                                '</AuthenticationHeader>' +
+                            '</soap:Header>' +
+                            '<soap:Body>' +
+                                '<AddOrder xmlns="http://omscom/">' +
+                                    '<order>' +
+                                        '<Header>' + 
+                                            '<ID>' + header.veracoreOrderId + '</ID>' + 
+                                            '<ReferenceNumber>' + header.orderSummaryNumber + '</ReferenceNumber>' +
+                                            '<PONumber>' + header.poNumber + '</PONumber>' +
+                                        '</Header>' +
+                                        '<OrderedBy>' +
+                                            '<FirstName>' + orderedBy.firstName + '</FirstName>' +
+                                            '<LastName>' + orderedBy.lastName + '</LastName>' +
+                                            '<Address1>' + orderedBy.street + '</Address1>' +
+                                            '<City>' + orderedBy.city + '</City>' +
+                                            '<State>' + orderedBy.state + '</State>' +
+                                            '<PostalCode>' + orderedBy.postalCode + '</PostalCode>' +
+                                            '<Country>' + orderedBy.country + '</Country>' +
+                                            '<Phone>' + orderedBy.phone + '</Phone>' +
+                                            '<Email>' + orderedBy.email + '</Email>' +
+                                        '</OrderedBy>' +
+                                        '<ShipTo>' +
+                                            '<OrderShipTo>' +
+                                                '<Flag>OrderedBy</Flag>' +
+                                                '<Key>0</Key>' +
+                                            '</OrderShipTo>' +
+                                        '</ShipTo>' +
+                                        '<BillTo>' +
+                                            '<Flag>OrderedBy</Flag>' +
+                                        '</BillTo>' +
+                                        '<Offers>' + offersSection + '</Offers>' +
+                                    '</order>' +
+                                '</AddOrder>' +
+                            '</soap:Body>' +
+                        '</soap:Envelope>';
 
         // Set up the HTTP request
+        System.debug('SOAP Body: ' + soapBody);
         HttpRequest req = new HttpRequest();
-        req.setEndpoint(endpoint);
+        req.setEndpoint('callout:VeraCore');
         req.setMethod('POST');
-        req.setHeader('Content-Type', 'text/xml; charset=UTF-8');
+        req.setHeader('Content-Type', 'text/xml');
+        req.setHeader('Encoding', 'utf-8');
         req.setHeader('SOAPAction', 'http://omscom/AddOrder'); 
         req.setBody(soapBody);
         req.setTimeout(20000);
