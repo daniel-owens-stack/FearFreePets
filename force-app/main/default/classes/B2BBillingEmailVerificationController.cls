@@ -3,13 +3,14 @@ public without sharing class B2BBillingEmailVerificationController {
     @AuraEnabled
     public static AccountWrapper getAccountDetails() {
         String accountId = B2BUtils.getUserAccountID();
-        List<Account> account = [SELECT Id, Admin_Account__c, Billing_Email__c, Billing_Email_Verified__c, Business__c, Payment_Terms__c
+        List<Account> account = [SELECT Id, Name, Admin_Account__c, Billing_Email__c, Billing_Email_Verified__c, Business__c, Payment_Terms__c
                                  FROM Account 
                                  WHERE Id =: accountId
                                 ];   
 
         AccountWrapper aw = new AccountWrapper();
         if(account.size() > 0) {
+            aw.accountName = account[0].Name;
             aw.isAdminAccount = account[0].Admin_Account__c;
             aw.isOnTeam = account[0].Business__c != null ? true :false;
             aw.creditOnlyPaymentTerms = account[0].Payment_Terms__c == 'Credit Card Only' ? true : false;
@@ -33,6 +34,9 @@ public without sharing class B2BBillingEmailVerificationController {
     }
 
     public class AccountWrapper {
+
+        @AuraEnabled
+        public String accountName { get; set; }
 
         @AuraEnabled
         public Boolean isAdminAccount { get; set; }

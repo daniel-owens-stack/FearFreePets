@@ -61,6 +61,7 @@ export default class B2bBillingEmailVerification extends (LightningElement, Chec
     flowInputVariables;
     pathName;
     selectedPaymentOption;
+    accountName;
     emailRegex = /^[a-zA-Z]+(?:[._]?[a-zA-Z0-9]+)*@[a-zA-Z]+(?:\.[a-zA-Z]{2,})+$/;
 
     @wire(MessageContext)
@@ -102,6 +103,7 @@ export default class B2bBillingEmailVerification extends (LightningElement, Chec
     async getCurrentAccountDetails() {
         getAccountDetails()
         .then(result => {    
+            this.accountName = result.accountName;
             this.manageTemplateVisibility();
 
             if(this.showMyAccountTemplate || this.showCheckoutTemplate) {
@@ -167,6 +169,7 @@ export default class B2bBillingEmailVerification extends (LightningElement, Chec
             this.flowInputVariables = [
                 {name: 'varEmail', type: 'String', value: this.existingBillingEmail},
                 {name: 'varCode', type: 'String', value: code},
+                {name: 'varAccountName', type: 'String', value: this.accountName},
             ];
             this.renderFlow = true;
         })
