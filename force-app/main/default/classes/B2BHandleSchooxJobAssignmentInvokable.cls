@@ -1,26 +1,48 @@
 public class B2BHandleSchooxJobAssignmentInvokable {
 
-    @InvocableMethod(label='Handle Schoox Job Assignment' description='Processes a list of Account Membership records and make callouts to Schoox API.')
-    public static void handleSchooxJobAssignment(List<List<Account_Membership__c>> accountMembershipLists) {
-        List<Account_Membership__c> accountMembershipList = accountMembershipLists[0];
-        
-        if (accountMembershipList == null || accountMembershipList.isEmpty()) {
-            return; 
+    @InvocableMethod(label='B2B Handle Schoox Job Assignment' description='Processes a list of Account Membership records and make callouts to Schoox API.')
+    public static void handleSchooxJobAssignment(List<B2BSchooxAccountJobWrapper> accountJobWrapperLists) { 
+
+        List<Account_Membership__c> accountMembershipList = accountJobWrapperLists[0].accountMemberships;
+        List<Integer> permanentMembershipJobIds = accountJobWrapperLists[0].permanentMembershipJobIds;
+        String orderSummary_AccountId = accountJobWrapperLists[0].orderSummary_AccountId;
+
+        if(accountMembershipList == null && permanentMembershipJobIds == null) {
+            return;
         }
 
-        for (Account_Membership__c membership : accountMembershipList) {
-            try {
-                String accountId = membership.Account_Id__c;
+        try {
 
-                List<Integer> jobIdsToAdd = new List<Integer>();
-                jobIdsToAdd.add(Integer.valueOf(membership.Job_Id__c));
-                
-                // System.enqueueJob(new B2BSchooxJobAssignmentQueueable(accountId, jobIdsToAdd));
-                B2BSchooxAPIController.handleJobAssignmnet(accountId, jobIdsToAdd);
+            Map<String, List<Integer>> accountJobMap = new Map<String, List<Integer>>();
+
+            if(accountMembershipList != null && !accountMembershipList.isEmpty()) {
+                for (Account_Membership__c am : accountMembershipList) {
+                    if (am.Account_Id__c != null && am.Job_Id__c != null) {
+                        if (!accountJobMap.containsKey(am.Account_Id__c)) {
+                            accountJobMap.put(am.Account_Id__c, new List<Integer>());
+                        }
+                        accountJobMap.get(am.Account_Id__c).add(Integer.valueOf(am.Job_Id__c));
+                    }
+                }
             }
-            catch (Exception e) {
-                B2BHandleCustomException.LogException(e, 'B2BHandleSchooxJobAssignmentInvokable', 'handleSchooxJobAssignment');
+
+            if(permanentMembershipJobIds != null && !permanentMembershipJobIds.isEmpty()) {
+                for (Integer jobId : permanentMembershipJobIds) {
+                    if (orderSummary_AccountId != null && jobId != null) {
+                        if (!accountJobMap.containsKey(orderSummary_AccountId)) {
+                            accountJobMap.put(orderSummary_AccountId, new List<Integer>());
+                        }
+                        accountJobMap.get(orderSummary_AccountId).add(jobId);
+                    }
+                }
             }
+            
+            for (String accountId : accountJobMap.keySet()) {
+                B2BSchooxAPIController.handleJobAssignmnet(accountId, accountJobMap.get(accountId));
+            }
+        }
+        catch (Exception e) {
+            B2BHandleCustomException.LogException(e, 'B2BHandleSchooxJobAssignmentInvokable', 'handleSchooxJobAssignment');
         }
     }
 }

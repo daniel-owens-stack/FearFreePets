@@ -1,5 +1,5 @@
 public class B2BSchooxAPIController {
-
+    @future(callout = true)
     public static void handleJobAssignmnet(String accountId, List<Integer> jobIds) {
         Account account = B2BSchooxAPIServiceHelper.getAccountById(accountId);
         String studentId = account.SX_User_Id__pc;
