@@ -116,7 +116,10 @@ public without sharing class B2BStripeServiceHelper {
         Integer unitAmount = (Integer) orderItem.TotalLineAmount
          * 100;
         Integer quantity = (Integer) orderItem.Quantity;
-        result += '&quantity=' + quantity + '&unit_amount=' + unitAmount + '&description=' + orderItem.Product2.Renewal_Product_Name__c;
+        result += '&quantity=' + quantity + '&description=' + orderItem.Product2.Name + ' - Renewal';
+        result += '&price_data[product]=' + orderItem.Product2.Stripe_Renewal_Product_Id__c ;
+        result += '&price_data[currency]=usd';
+        result += '&price_data[unit_amount]=' + unitAmount;
         return result;
     }
 
@@ -153,7 +156,7 @@ public without sharing class B2BStripeServiceHelper {
                         TotalPrice,
                         ListPrice,
                         Product2.Name,
-                        Product2.Renewal_Product_Name__c,
+                        Product2.Stripe_Renewal_Product_Id__c,
                         Product2.Membership__c,
                         Product2.Stripe_Product_Id__c,
                         SalesPrice
@@ -176,7 +179,7 @@ public without sharing class B2BStripeServiceHelper {
         return [
                 SELECT TotalLineAmount,
                         Quantity,
-                        Product2.Renewal_Product_Name__c,
+                        Product2.Stripe_Renewal_Product_Id__c,
                         InvoiceExempt__c
                 FROM OrderItem
                 WHERE orderId =:orderId AND Type = 'Order Product'
