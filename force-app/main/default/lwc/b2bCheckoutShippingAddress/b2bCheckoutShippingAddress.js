@@ -96,7 +96,7 @@ export default class B2bCheckoutShippingAddress extends useCheckoutComponent(Lig
             this.cartItems = data.cartItems;
             this.showTemplate = false;
             for(let i = 0; i < this.cartItems.length; i++) {
-                if(this.cartItems[i].cartItem.productDetails.fields.Shippable__c === 'true') {
+                if(this.cartItems[i].cartItem.productDetails.fields.IsShippingChargeNotApplicable === 'false') {
                     this.showTemplate = true;
                     break;
                 }

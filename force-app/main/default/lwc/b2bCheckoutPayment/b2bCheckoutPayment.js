@@ -69,7 +69,7 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
             this.cartItems = data.cartItems;
             this.hasShippableProducts = false;
             for(let i = 0; i < this.cartItems.length; i++) {
-                if(this.cartItems[i].cartItem.productDetails.fields.Shippable__c === 'true') {
+                if(this.cartItems[i].cartItem.productDetails.fields.IsShippingChargeNotApplicable === 'false') {
                     this.hasShippableProducts = true;
                     this.shippableCartItemIds.push(this.cartItems[i].cartItem.cartItemId);
                 }
