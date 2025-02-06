@@ -3,20 +3,26 @@ public without sharing class B2BInvoiceHelper {
     @AuraEnabled(cacheable=true)
     public static List<InvoiceWrapper> getInvoices() {
 
+        Set<String> billingEmails = new Set<String>();
+
         String accountId = B2BUtils.getUserAccountID();
-        List<Account> account = [SELECT Id, StripeCustomerId__c FROM Account WHERE Id =: accountId]; 
         
-        String customerId;
-        if(account.size() > 0) {
-            customerId = account[0].StripeCustomerId__c;
+        Account personAccount = [SELECT Id, Billing_Email__c, Admin_Account__c, Business__c FROM Account WHERE Id =: accountId LIMIT 1]; 
+        
+       billingEmails.add(personAccount.Billing_Email__c);
+
+       
+        if(personAccount.Business__c != null && personAccount.Admin_Account__c) {
+            Account businessAccount = [SELECT Id, Billing_Email__c FROM Account WHERE Id =:personAccount.Business__c LIMIT 1];
+            billingEmails.add(businessAccount.Billing_Email__c);
         }
 
         List<Invoice__c> invoices = new List<Invoice__c>();
 
-        if(customerId != null) {
-            invoices = [SELECT Id, Name, Total__c, Amount_Charged__c, Period_Start_Date__c, Period_End_Date__c, Created_Date__c, Payment_Date__c, Stripe_PDF_URL__c, Stripe_Payment_URL__c, Status__c
+        if(!billingEmails.isEmpty()) {
+            invoices = [SELECT Id, Billing_Email__c, Name, Total__c, Amount_Charged__c, Period_Start_Date__c, Period_End_Date__c, Created_Date__c, Payment_Date__c, Stripe_PDF_URL__c, Stripe_Payment_URL__c, Status__c
                         FROM Invoice__c
-                        WHERE Stripe_Customer_Id__c =:customerId AND Stripe_Payment_URL__c != null
+                        WHERE Billing_Email__c IN:billingEmails AND Stripe_Payment_URL__c != null
                         ORDER BY Created_Date__c DESC
                        ];
         }
@@ -36,6 +42,7 @@ public without sharing class B2BInvoiceHelper {
             iw.downloadLink = invoice.Stripe_PDF_URL__c;
             iw.paymentLink = invoice.Stripe_Payment_URL__c;
             iw.disablePayNow = invoice.Status__c == 'Disabled' ? true : false;
+            iw.billingEmail = invoice.Billing_Email__c;
 
             invoiceList.add(iw);
         }
@@ -74,5 +81,8 @@ public without sharing class B2BInvoiceHelper {
 
         @AuraEnabled
         public Boolean disablePayNow { get; set; }
+
+        @AuraEnabled
+        public String billingEmail { get; set; }
     }
 }

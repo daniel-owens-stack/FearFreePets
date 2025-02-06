@@ -17,6 +17,7 @@ export default class B2bInvoiceTable extends LightningElement {
     @api labelPayNow;
     @api buttonLabelDownloadLink;
     @api buttonLablePayNow;
+    @api billingEmail;
 
     connectedCallback() {
         this.setTableColumns();
@@ -59,6 +60,7 @@ export default class B2bInvoiceTable extends LightningElement {
                 },
                 fieldName: 'paymentLink'
             },
+            { label: this.billingEmail, fieldName: 'billingEmail', type: 'text' },
         ];
     }
 

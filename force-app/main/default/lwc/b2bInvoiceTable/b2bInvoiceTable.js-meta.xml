@@ -21,6 +21,7 @@
             <property name="labelPayNow" type="String" label="Pay Now Column Label" default="Pay Now"/>
 			<property name="buttonLabelDownloadLink" type="String" label="Download Link Button Label" default="PDF"/>
 			<property name="buttonLablePayNow" type="String" label="Pay Now Button Label" default="Pay Now"/>
+			<property name="billingEmail" type="String" label="Billing Email Column" default="Billing Email"/>
 		</targetConfig>
 	</targetConfigs>
 </LightningComponentBundle>
