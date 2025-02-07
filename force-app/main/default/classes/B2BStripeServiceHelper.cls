@@ -169,7 +169,7 @@ public without sharing class B2BStripeServiceHelper {
         return [
                 SELECT Id, Payment_Terms__c
                 FROM Account
-                WHERE StripeCustomerId__c=:stripeCustomerId 
+                WHERE Invoice_Stripe_Id__c=:stripeCustomerId 
                 AND Id = :accountId
                 LIMIT 1 
         ];

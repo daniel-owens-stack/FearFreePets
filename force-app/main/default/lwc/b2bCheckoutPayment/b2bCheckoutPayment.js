@@ -69,7 +69,7 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
             this.cartItems = data.cartItems;
             this.hasShippableProducts = false;
             for(let i = 0; i < this.cartItems.length; i++) {
-                if(this.cartItems[i].cartItem.productDetails.fields.Shippable__c === 'true') {
+                if(this.cartItems[i].cartItem.productDetails.fields.IsShippingChargeNotApplicable === 'false') {
                     this.hasShippableProducts = true;
                     this.shippableCartItemIds.push(this.cartItems[i].cartItem.cartItemId);
                 }
@@ -113,7 +113,7 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
 
     async selectPaymentOption(event) {
         this.paymentOption = event.target.value;
-
+        await this.getCustomerId();
         this.showModal = this.paymentOption === 'invoice' && this.hasShippableProducts === true;
         if(this.showModal) {
             //Open Modal Window
@@ -156,7 +156,7 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
     }
 
     async getCustomerId() {
-        let { isSuccess, result, errorMessage } = await this.doRequest(getCustomerId, { accountId: this.effectiveAccountId });
+        let { isSuccess, result, errorMessage } = await this.doRequest(getCustomerId, { accountId: this.effectiveAccountId, paymentOption: this.paymentOption });
         if (isSuccess) {
             this.customerId = result;
         } else {

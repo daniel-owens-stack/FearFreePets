@@ -5,46 +5,41 @@ public without sharing class B2BStripePaymentController {
     };
 
     @AuraEnabled
-    public static String getCustomerId(String accountId) {
+    public static String getCustomerId(String accountId, String paymentOption) {
         
-        Account person;
         Account account = [
-                SELECT ShippingAddress, StripeCustomerId__c, Business__c, Admin_Account__c, Billing_Email__c
+                SELECT ShippingAddress, StripeCustomerId__c, Business__c, Admin_Account__c, Billing_Email__c, Invoice_Billing_Email__c, Invoice_Stripe_Id__c
                 FROM Account
                 WHERE Id = :accountId
         ];
-        person = account;
-
-        Account business;
-        if (account.Business__c != null && account.Billing_Email__c == null) {
-            account = [
-                SELECT Id, StripeCustomerId__c, Billing_Email__c FROM Account
-                WHERE Id =:account.Business__c
-            ];
-            business = account;
-        }
-
 
         String customerId;
 
-        if (String.isBlank(account.StripeCustomerId__c) && account.Billing_Email__c != null) {
-            B2BStripeWrapper.StripeCustomer existingCustomer = B2BStripeService.getStripeCustomerByEmail(account.Billing_Email__c);
-            if(existingCustomer.id == null) {
-                B2BStripeWrapper.StripeCustomer response = B2BStripeService.createStripeCustomer(account.Id);
-                account.StripeCustomerId__c = response.Id;
-                update account;
-            } else {
-                account.StripeCustomerId__c = existingCustomer.Id;
-                update account;
-            }
+        if(paymentOption == 'paynow') {
+            if (String.isBlank(account.StripeCustomerId__c) && account.Billing_Email__c != null) {
+                B2BStripeWrapper.StripeCustomer existingCustomer = B2BStripeService.getStripeCustomerByEmail(account.Billing_Email__c);
+                if(existingCustomer.id == null) {
+                    B2BStripeWrapper.StripeCustomer response = B2BStripeService.createStripeCustomer(account.Id, account.Billing_Email__c);
+                    account.StripeCustomerId__c = response.Id; 
+                } else {
+                    account.StripeCustomerId__c = existingCustomer.Id;
+                }
+                update account; 
+            } 
             customerId = account.StripeCustomerId__c; 
-        } else {
-            customerId = account.StripeCustomerId__c;
-        }
-
-        if(business != null) {
-            person.StripeCustomerId__c = customerId;
-            update person;
+        } 
+        else if(paymentOption == 'invoice') {
+            if (String.isBlank(account.Invoice_Stripe_Id__c) && account.Invoice_Billing_Email__c != null) {
+                B2BStripeWrapper.StripeCustomer existingCustomer = B2BStripeService.getStripeCustomerByEmail(account.Invoice_Billing_Email__c);
+                if(existingCustomer.id == null) {
+                    B2BStripeWrapper.StripeCustomer response = B2BStripeService.createStripeCustomer(account.Id, account.Invoice_Billing_Email__c);
+                    account.Invoice_Stripe_Id__c = response.Id; 
+                } else {
+                    account.Invoice_Stripe_Id__c = existingCustomer.Id;
+                }
+                update account; 
+            } 
+            customerId = account.Invoice_Stripe_Id__c; 
         }
 
         return customerId;
