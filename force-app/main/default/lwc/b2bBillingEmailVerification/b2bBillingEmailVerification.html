@@ -139,11 +139,12 @@
     </template>
     <!-- For Checkout Page -->
     <template if:true={showCheckoutTemplate}>
-        <div class="slds-p-right_medium">
-            <div class="slds-grid slds-wrap slds-grid_vertical-align-center slds-grid_align-spread slds-p-vertical_x-small">
+        <p style="margin-top:-1rem;">{disclaimerText}</p>
+        <div class="slds-p-horizontal_small">
+            <div class="slds-grid slds-wrap slds-grid_align-spread slds-p-vertical_x-small">
                 <!-- Heading -->
                 <div class="slds-col slds-size_8-of-12 slds-medium-size_8-of-12">
-                    <h2 class="dxp-text-heading-medium"><b><span class="slds-text-color_error">*</span>{billingEmailLabel}</b></h2>
+                    <h2 class="dxp-text-heading-small"><b><span class="slds-text-color_error">*</span>{billingEmailLabel}</b></h2>
                 </div>
                 <!-- No Email <> Show Add Button -->
                 <div if:true={showAddEmail}>

@@ -25,6 +25,7 @@
             <property name="flowFinishedMsg" type="String" default="A verification code is sent to the above email address. Please enter the code to verify your email." label="Verification Code Sent Message"/>
             <property name="requiredExceptionMsg" type="String" default="Please verify your Billing Email before proceeding." label="Billing Email Required Exception Message"/>
             <property name="emailPatternMismatchMsg" type="String" default="Please enter a valid email." label="Billing Email Pattern Mismatch Message"/>
+            <property name="disclaimerText" type="String" default="Note: Billing email is required for invoice payment." label="Billing Email Disclaimer Text"/>
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>
