@@ -7,16 +7,15 @@ public without sharing class B2BInvoiceHelper {
 
         String accountId = B2BUtils.getUserAccountID();
         
-        Account personAccount = [SELECT Id, Billing_Email__c, Admin_Account__c, Business__c FROM Account WHERE Id =: accountId LIMIT 1]; 
+        Account personAccount = [SELECT Id, Billing_Email__c, Invoice_Billing_Email__c, Business__c FROM Account WHERE Id =: accountId LIMIT 1]; 
         
-       billingEmails.add(personAccount.Billing_Email__c);
-
-       
-        if(personAccount.Business__c != null && personAccount.Admin_Account__c) {
-            Account businessAccount = [SELECT Id, Billing_Email__c FROM Account WHERE Id =:personAccount.Business__c LIMIT 1];
-            billingEmails.add(businessAccount.Billing_Email__c);
+        if (personAccount.Billing_Email__c != null) {
+            billingEmails.add(personAccount.Billing_Email__c);
         }
 
+        if (personAccount.Invoice_Billing_Email__c != null) {
+                billingEmails.add(personAccount.Invoice_Billing_Email__c);
+        }
         List<Invoice__c> invoices = new List<Invoice__c>();
 
         if(!billingEmails.isEmpty()) {
@@ -34,7 +33,6 @@ public without sharing class B2BInvoiceHelper {
             InvoiceWrapper iw = new InvoiceWrapper();
             iw.id = invoice.Id;
             iw.invoiceNumber = invoice.Name;
-            iw.total = invoice.Total__c;
             iw.amountCharged = invoice.Amount_Charged__c;
             iw.period = String.valueOf(invoice.Period_Start_Date__c.daysBetween(invoice.Period_End_Date__c)) + ' Days';
             iw.createdDate = invoice.Created_Date__c.date();
@@ -57,9 +55,6 @@ public without sharing class B2BInvoiceHelper {
 
         @AuraEnabled
         public String invoiceNumber { get; set; }
-
-        @AuraEnabled
-        public Decimal total { get; set; }
 
         @AuraEnabled
         public Decimal amountCharged { get; set; }
