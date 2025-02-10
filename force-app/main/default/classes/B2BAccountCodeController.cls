@@ -7,22 +7,23 @@ public without sharing class B2BAccountCodeController {
             List<Account> account = [SELECT Id, Account_Code__c, Admin_Account__c, Business__c FROM Account WHERE Id=:accountId];
             
             if(account.size() > 0) {
+                List<Account> accountsToBeUpdated = new List<Account>();
+                List<Account> teamAccounts = new List<Account>();
+                if(account[0].Admin_Account__c && account[0].Business__c != null) {
+                    teamAccounts = [SELECT Account_Code__c 
+                                    FROM Account 
+                                    WHERE Business__c =:account[0].Business__c 
+                                    OR Id =:account[0].Business__c];
+                }
                 if(code != null) {
                     List<Account_Code__c> accountCode = [SELECT Id FROM Account_Code__c 
                                                     WHERE Code__c =:code ORDER BY CreatedDate Desc];
                                                     
                     if(accountCode.size() > 0) {
-                        if(account[0].Admin_Account__c && account[0].Business__c != null) {
-                            List<Account> teamAccounts = [SELECT Account_Code__c 
-                                                          FROM Account 
-                                                          WHERE Business__c =:account[0].Business__c];
-                            
-                            List<Account> accountsToBeUpdated = new List<Account>();                                
-                            if(teamAccounts.size() > 0) {
-                                for(Account acc : teamAccounts) {
-                                    acc.Account_Code__c = accountCode[0].Id;
-                                    accountsToBeUpdated.add(acc);
-                                }
+                        if(teamAccounts.size() > 0) {  
+                            for(Account acc : teamAccounts) {
+                                acc.Account_Code__c = accountCode[0].Id;
+                                accountsToBeUpdated.add(acc);
                             }
                             Database.update(accountsToBeUpdated);
                             return true;
@@ -35,9 +36,21 @@ public without sharing class B2BAccountCodeController {
                     }
                     return false;
                 }
-                account[0].Account_Code__c = null;
-                Database.update(account[0]);
-                return true;
+                else {
+                    if(teamAccounts.size() > 0) {
+                        for(Account acc : teamAccounts) {
+                            acc.Account_Code__c = null;
+                            accountsToBeUpdated.add(acc);
+                        }
+                        Database.update(accountsToBeUpdated);
+                        return true;
+                    }
+                    else if(account[0].Business__c == null) {
+                        account[0].Account_Code__c = null;
+                        Database.update(account[0]);
+                        return true;
+                    }
+                }
             }
         }
         catch(Exception e) {
