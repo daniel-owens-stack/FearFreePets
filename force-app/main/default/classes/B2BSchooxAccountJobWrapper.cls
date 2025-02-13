@@ -6,6 +6,6 @@ public class B2BSchooxAccountJobWrapper {
     @AuraEnabled @InvocableVariable(label='OrderSummary AccountId')
     public String orderSummary_AccountId;
 
-    @AuraEnabled @InvocableVariable(label='Permanent Membership Jon Id')
+    @AuraEnabled @InvocableVariable(label='Permanent Membership Job Id')
     public List<Integer> permanentMembershipJobIds;
 }
