@@ -307,6 +307,7 @@ public without sharing class B2BWelcomeKitController {
             List<Practice_Level_Membership_Assignment__c> practiceMemberships = [SELECT Welcome_Kit_Status__c, Certification_Kit_Order_Summary__c
                                                                                 FROM Practice_Level_Membership_Assignment__c
                                                                                 WHERE Business_Account__c =:businessAccount AND Membership__r.Practice_Certification_Kit__r.Id IN :productIds 
+                                                                                AND Welcome_Kit_Status__c = 'Unclaimed'
                                                                                 ];
                                                 
             List<Practice_Level_Membership_Assignment__c> itemsToUpdate = new List<Practice_Level_Membership_Assignment__c>();                                                 

@@ -89,6 +89,7 @@ public without sharing class B2BHandleCertificationKitBeforeOrder {
             List<Account_Membership__c> accountMemberships = [SELECT Id, Name, Welcome_Kit_Status__c, Certification_Kit_Order__c, Order_Summary__c
                                                             FROM Account_Membership__c
                                                             WHERE Account_Id__c =:accountId AND Membership__r.Individual_Certification_Kit__r.Id IN :productIds 
+                                                            AND Welcome_Kit_Status__c = 'Unclaimed'
                                                             ];
 
             System.debug('##Account Memeberships: ' + accountMemberships);                                                
