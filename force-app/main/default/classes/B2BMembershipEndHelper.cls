@@ -75,12 +75,11 @@ public class B2BMembershipEndHelper {
                 existingJobs.remove(existingJobs.indexOf(jobIdToRemove));
             }
         }
+
+        SchooxAPI.updateLMSUser(accountId, existingJobs);
         
         if(existingJobs.isEmpty() || existingJobs == null) {
             SchooxAPI.removeLMSUser(schooxUser.studentId);
         } 
-        else {
-            SchooxAPI.updateLMSUser(accountId, existingJobs);
-        }
     }
 }
