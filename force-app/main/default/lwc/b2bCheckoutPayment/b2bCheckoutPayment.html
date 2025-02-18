@@ -1,4 +1,11 @@
 <template>
+    <div if:true={showSpinner}>
+        <div class="spinner">
+            <lightning-spinner variant="brand" title="Loading" size="large"></lightning-spinner>
+            <p class="loadingText">{loadingMessage}</p>
+        </div>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </div>
     <div lwc:dom="manual" class="custom-css-container"></div>
     
     <div class="slds-is-relative">
@@ -6,7 +13,6 @@
             <lightning-icon icon-name="utility:error" size="small" variant="inverse"></lightning-icon>
             {errorMessage}
         </div>
-        <lightning-spinner if:true={isLoading} variant="brand"></lightning-spinner>
         <lightning-radio-group name="radioGroup"
             label=""
             variant="label-hidden"

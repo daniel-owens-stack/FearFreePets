@@ -46,16 +46,22 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
         if(this.pageReference == undefined || !this.recordId) { return; }
         let session = this.pageReference.state.session;
         if (!!session && !this.isChecked) {
+            this.showSpinner = true;
             this.isChecked = true;
             let result = await this.validateSession(session);
             if (result) {
                 const summaryNumber = await this.convertCartToOrder();
                 if(!summaryNumber){
+                    this.showSpinner = false;
                     this.showError = true;
                     this.errorMessage = 'Error occurred during order creation, please contact System Administrator.';
                 } else {
                     window.location = `${communityBasePath}/order?orderNumber=${summaryNumber}`;
+                    this.showSpinner = false;
                 }
+            }
+            else {
+                this.showSpinner = false;
             }
         }
     }
@@ -65,7 +71,6 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
         const { data, error } = wireResult;
         this.wiredCartItems = wireResult;
         if (data) {
-            this.isLoading = false;
             this.cartItems = data.cartItems;
             this.hasShippableProducts = false;
             for(let i = 0; i < this.cartItems.length; i++) {
@@ -85,12 +90,13 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
     @api updateCartButton
     @api modalMessage;
     @api modalTitle;
+    @api loadingMessage;
     hasShippableProducts = false;
     showModal = false;
     showError = false;
     isRendered = false;
     isChecked = false;
-    isLoading = false;
+    showSpinner = false;
     errorMessage = '';
     pageReference;
     paymentOption = 'paynow';
@@ -135,11 +141,9 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
     }
 
     async connectedCallback() {
-        this.isLoading = true;
         this.effectiveAccountId = await this.getEffectiveAccountId();
         await this.getCustomerId();
         await this.checkCanInvoice();
-        this.isLoading = false;
     }
 
     async checkCanInvoice() {
@@ -212,6 +216,7 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
                 return Promise.resolve(true);
             case CheckoutStage.BEFORE_PAYMENT:
                 if (this.checkValidity()) {
+                    this.showSpinner = true;
                     await this.getCustomerId();
                     if (this.paymentOption == 'paynow') {
                         const href = window.location.href;
@@ -221,9 +226,11 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
                     } else {
                         const summaryNumber = await this.sendInvoice();
                         if(!summaryNumber){
+                            this.showSpinner = false;
                             return Promise.reject('Error occurred during order creation, please contact System Administrator.');
                         } else {
                             window.location = `${communityBasePath}/order?orderNumber=${summaryNumber}`;
+                            this.showSpinner = false;
                         }
                     }
                 } else {
@@ -235,14 +242,14 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
     }
 
     async processPayments(href) {
-        this.isLoading = true;
+        this.showSpinner = true;
 
         let { isSuccess, result, errorMessage } = await this.doRequest(processPayments, {
             webCartId: this.recordId,
             customerId: this.customerId,
             href: href
         });
-        this.isLoading = false;
+        this.showSpinner = false;
         return result;
     }
 
@@ -331,12 +338,10 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
     }
 
     removeShippableItems() {
-        this.isLoading = true;
         this.shippableCartItemIds.forEach(shippableItem => {
             deleteItemFromCart(shippableItem)
             .then(() => {console.log('Items deleted successfuly!')})
             .catch(error => {console.error('Error in deleteItemFromCart: ', error);})
         })
-        this.isLoading = false;
     }
 }

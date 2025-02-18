@@ -14,6 +14,7 @@
             <property name="cancelButton" type="String" default="Cancel" label="Enter Cancel Button Label"/>
             <property name="updateCartButton" type="String" default="Update Cart So I Can Invoice" label="Enter Update Cart Button Label"/>
             <property name="modalSize" type="String" default="small" label="Enter Modal Window Size"/>
+            <property name="loadingMessage" type="String" default="Please wait while we process your order......" label="Enter Page Loading Message"/>
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>
