@@ -6,8 +6,8 @@ public class B2BMembershipEndController {
             String membershipId = ilma.Membership__c;
             Set<Id> membershipEndedAccounts = new Set<Id>(); 
 
-            //Get AccountId(s) of canceled or complete or voided ILMAs
-            if(ilma.Account_Id__c != null && (ilma.Status__c == 'Canceled' || ilma.Status__c == 'Complete' || ilma.Status__c == 'Voided')) {
+            //Get AccountId(s) of complete or voided ILMAs
+            if(ilma.Account_Id__c != null && (ilma.Status__c == 'Complete' || ilma.Status__c == 'Voided')) {
                 membershipEndedAccounts.add((Id)ilma.Account_Id__c);
             }
 
@@ -20,7 +20,7 @@ public class B2BMembershipEndController {
                     WHERE ParentId = :ilma.Id
                     AND Field = 'Account_Id__c'
                     AND DataType = 'EntityId'
-                    AND CreatedDate = TODAY
+                    AND CreatedDate = YESTERDAY
                     ORDER BY CreatedDate ASC
                 ];
 
