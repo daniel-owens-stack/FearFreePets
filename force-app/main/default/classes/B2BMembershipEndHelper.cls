@@ -62,24 +62,6 @@ public class B2BMembershipEndHelper {
     }
 
     public static void unassignSchooxJobs(String accountId, List<Integer> jobIdsToRemove) {
-        B2BSchooxAPIWrapper.SchooxUser schooxUser = B2BSchooxAPIService.getSchooxUser(accountId);
-
-        if (!schooxUser.isActive) {
-           return;
-        }
-
-        List<Integer> existingJobs = schooxUser.jobs;
-
-        for (Integer jobIdToRemove : jobIdsToRemove) {
-            if (existingJobs.contains(jobIdToRemove)) {
-                existingJobs.remove(existingJobs.indexOf(jobIdToRemove));
-            }
-        }
-
-        SchooxAPI.updateLMSUser(accountId, existingJobs);
-        
-        if(existingJobs.isEmpty() || existingJobs == null) {
-            SchooxAPI.removeLMSUser(schooxUser.studentId);
-        } 
+        B2BSchooxAPIController.handleJobUnassignment(accountId, jobIdsToRemove);
     }
 }
