@@ -58,14 +58,6 @@ public without sharing class B2BAccontMembershipListController {
 
          @AuraEnabled
         public String membershipName { get; set; }
-        // @AuraEnabled
-        // public Date startDate { get; set; }
-
-        // @AuraEnabled
-        // public Date endDate { get; set; }
-
-        // @AuraEnabled
-        // public Decimal percentComplete { get; set; }
 
         public Id parentId { get; set; }
         public Id membershipId { get; set; }
