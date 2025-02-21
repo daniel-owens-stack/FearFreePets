@@ -1,16 +1,50 @@
 <template>
+    <h2 class="dxp-text-heading-medium slds-p-left_medium"><strong>{invoiceHeading}</strong></h2>
+    <template if:true={noInvoices}>
+        <div class="slds-p-around_medium">{noInvoicesMessage}</div>
+    </template>
     <template if:true={invoices}>
-        <div class="invoiceTable">
-            <lightning-datatable
-                class="slds-max-medium-table_stacked"
-                key-field="id"
-                data={invoices}
-                columns={columns}
-                hide-checkbox-column="true"
-                onrowaction={handleRowAction}
-                wrap-table-header="all"
-                min-column-width="110">
-            </lightning-datatable>
-        </div>
+        <lightning-accordion active-section-name={activeSections} allow-multiple-sections-open>
+            <template for:each={invoices} for:item="invoice">
+                <lightning-accordion-section key={invoice.id} name={invoice.id} label={invoice.invoiceNumber}>
+                    <div class="slds-box slds-theme_default">
+                        <p><strong>{labelInvoiceNumber}:</strong> {invoice.invoiceNumber}</p>
+                        <p>
+                            <strong>{labelAmountCharged}: </strong> 
+                            <lightning-formatted-number value={invoice.amountCharged} format-style="currency" currency-code="USD"></lightning-formatted-number>  
+                        </p>
+                        <p><strong>{labelBillingEmail}:</strong> {invoice.billingEmail}</p>
+                        <p><strong>{labelCreatedDate}:</strong> {invoice.createdDate}</p>
+                        <p><strong>{labelPeriod}:</strong> {invoice.period}</p>
+                        <p><strong>{labelPaidDate}:</strong> {invoice.paidDate}</p>
+                        <div class="slds-grid">
+                            <!-- Download Invoice Button -->
+                            <div class="slds-m-top_small">
+                                <lightning-button label={buttonLabelDownloadLink}
+                                    variant="brand"
+                                    title="Download Invoice"
+                                    icon-name="utility:download"
+                                    icon-position="right"
+                                    onclick={handleDownload}
+                                    data-url={invoice.downloadLink}
+                                    data-invoice-id={invoice.id}>
+                                </lightning-button>
+                            </div>
+                            <!-- Pay Now Button -->
+                            <div class="slds-m-top_small slds-p-left_medium">
+                                <lightning-button label={buttonLablePayNow}
+                                    variant="brand"
+                                    title="Pay"
+                                    onclick={handlePayNow}
+                                    disabled={invoice.disablePayNow}
+                                    data-url={invoice.paymentLink}
+                                    data-invoice-id={invoice.id}>
+                                </lightning-button>
+                            </div>
+                        </div>
+                    </div>
+                </lightning-accordion-section>
+            </template>
+        </lightning-accordion>
     </template>
 </template>

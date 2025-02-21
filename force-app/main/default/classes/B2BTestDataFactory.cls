@@ -96,7 +96,7 @@ public class B2BTestDataFactory {
             LengthIn__c = 2.00,
             WidthIn__c = 1.00,
             HeightIn__c = 1.00,
-            Shippable__c = true
+            IsShippingChargeNotApplicable = false
         );
         insert product;
         return product.Id;

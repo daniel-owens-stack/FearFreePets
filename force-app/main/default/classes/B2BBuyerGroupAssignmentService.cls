@@ -1,8 +1,8 @@
 public class B2BBuyerGroupAssignmentService {
-    public static List<String> getElibleILMABuyerGroups(Account_Membership__c iLMA) {
+    public static List<String> getEligibleILMABuyerGroups(Account_Membership__c iLMA) {
         Account account = B2BBuyerGroupAssignmentServiceHelper.getAccountById(String.valueOf(iLMA.Account_Id__c));
         List<Buyer_Group_Membership__c> buyerGroupMembershipList = 
-            B2BBuyerGroupAssignmentServiceHelper.getElibleILMABuyerGroups(iLMA.Membership__c, iLMA.Certified__c, account.Admin_Account__c);
+            B2BBuyerGroupAssignmentServiceHelper.getEligibleILMABuyerGroups(iLMA.Membership__c, iLMA.Certified__c, account.Admin_Account__c);
         
         Set<String> buyerGroupIdsSet = new Set<String>();
         for (Buyer_Group_Membership__c bgm : buyerGroupMembershipList) {
@@ -31,10 +31,10 @@ public class B2BBuyerGroupAssignmentService {
         return uniqueBuyerGroupIds;
     }
 
-    public static List<String> getInElibleILMABuyerGroups(Account_Membership__c iLMA) {
+    public static List<String> getInEligibleILMABuyerGroups(Account_Membership__c iLMA) {
         Account account = B2BBuyerGroupAssignmentServiceHelper.getAccountById(String.valueOf(iLMA.Account_Id__c));
         List<Buyer_Group_Membership__c> buyerGroupMembershipList = 
-            B2BBuyerGroupAssignmentServiceHelper.getElibleILMABuyerGroups(iLMA.Membership__c, !iLMA.Certified__c, account.Admin_Account__c);
+            B2BBuyerGroupAssignmentServiceHelper.getInEligibleILMABuyerGroups(iLMA.Membership__c, iLMA.Certified__c, !account.Admin_Account__c);
         
         Set<String> buyerGroupIdsSet = new Set<String>();
         for (Buyer_Group_Membership__c bgm : buyerGroupMembershipList) {
@@ -67,47 +67,22 @@ public class B2BBuyerGroupAssignmentService {
         }
     }
 
-    public static List<String> getBuyerGroupsToUnassign(Account account, List<Buyer_Group_Membership__c> buyerGroupMembershipList) {
-
-        List<String> roleSpecificBuyerGroupIds = B2BBuyerGroupAssignmentServiceHelper.getRoleSpecificBuyerGroups(buyerGroupMembershipList, !(account.Admin_Account__c));
-        return roleSpecificBuyerGroupIds;
-    }
-
-    public static List<String> getBuyerGroupsToAssign(Account account, List<Buyer_Group_Membership__c> buyerGroupMembershipList) {
-
-        Set<String> buyerGroupIdsSet = new Set<String>();
-        for(Buyer_Group_Membership__c buyerGroupMembership : buyerGroupMembershipList) {
-            buyerGroupIdsSet.add(buyerGroupMembership.Buyer_Group__c);
-        }
-        
-        List<String> buyerGroupIds = new List<String>(buyerGroupIdsSet);
-        List<BuyerGroupMember> existingBuyerGroupList = B2BBuyerGroupAssignmentServiceHelper.getExistingBuyerGroupAssignments(account.Id, buyerGroupIds);
-        
-        Set<String> existingBuyerGroupIds = new Set<String>();
-        if(existingBuyerGroupList != null) {
-            for (BuyerGroupMember existing : existingBuyerGroupList) {
-                existingBuyerGroupIds.add(existing.BuyerGroupId);
-            }
-        }
-
-        List<String> roleSpecificBuyerGroupIds = B2BBuyerGroupAssignmentServiceHelper.getRoleSpecificBuyerGroups(buyerGroupMembershipList, account.Admin_Account__c);
-        
-        Set<String> uniqueBuyerGroupSet = new Set<String>();
-
-        for (String buyerGroupId : roleSpecificBuyerGroupIds) {
-            if (!existingBuyerGroupIds.contains(buyerGroupId)) {
-                uniqueBuyerGroupSet.add(buyerGroupId);
-            }
-        }
-
-        List<String> uniqueBuyerGroupIds = new List<String>(uniqueBuyerGroupSet);
-
-        return uniqueBuyerGroupIds;
-    }
-
     public static List<Account_Membership__c> getActiveMemberships(String accountId) {
         try {
             List<Account_Membership__c> activeILMAs = B2BBuyerGroupAssignmentServiceHelper.getActiveIndividualMembershipAssignments(accountId);
+            
+            if(activeILMAs != null) {
+                Map<String, Account_Membership__c> uniqueMembershipMap = new Map<String, Account_Membership__c>();
+    
+                for (Account_Membership__c am : activeILMAs) {
+                    if (!uniqueMembershipMap.containsKey(am.Membership__c)) {
+                        uniqueMembershipMap.put(am.Membership__c, am);
+                    }
+                }
+    
+                List<Account_Membership__c> uniqueAccountMemberships = new List<Account_Membership__c>(uniqueMembershipMap.values());
+                return uniqueAccountMemberships;
+            }
             return activeILMAs;
         }
         catch(Exception e) {

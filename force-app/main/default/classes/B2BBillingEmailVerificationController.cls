@@ -1,38 +1,42 @@
 public without sharing class B2BBillingEmailVerificationController {
     
     @AuraEnabled
-    public static AccountWrapper getAccountDetails() {
+    public static AccountWrapper getAccountDetails(String paymentOption) {
         String accountId = B2BUtils.getUserAccountID();
-        List<Account> account = [SELECT Id, Admin_Account__c, Billing_Email__c, Billing_Email_Verified__c, Business__c, Payment_Terms__c
-                                 FROM Account 
-                                 WHERE Id =: accountId
-                                ];   
+        Account account = [SELECT Id, Name, Admin_Account__c, Billing_Email__c, Billing_Email_Verified__c, Business__c, Payment_Terms__c, Invoice_Billing_Email__c, PersonEmail
+                           FROM Account 
+                           WHERE Id =: accountId 
+                           LIMIT 1
+                          ];   
 
         AccountWrapper aw = new AccountWrapper();
-        if(account.size() > 0) {
-            aw.isAdminAccount = account[0].Admin_Account__c;
-            aw.isOnTeam = account[0].Business__c != null ? true :false;
-            aw.creditOnlyPaymentTerms = account[0].Payment_Terms__c == 'Credit Card Only' ? true : false;
+        if(account != null) {
+            aw.accountName = account.Name;
+            aw.isAdminAccount = account.Admin_Account__c;
+            aw.isOnTeam = account.Business__c != null ? true :false;
+            aw.creditOnlyPaymentTerms = account.Payment_Terms__c == 'Credit Card Only' ? true : false;
 
-            if(account[0].Business__c != null && account[0].Billing_Email__c == null) {
-                List<Account> businessAccount = [SELECT Id, Billing_Email__c, Billing_Email_Verified__c FROM Account WHERE Id = :account[0].Business__c LIMIT 1];
-
-                    if(businessAccount.size() > 0) {
-                        aw.hasBillingEmail = businessAccount[0].Billing_Email__c != null ? true : false;
-                        aw.billingEmail = businessAccount[0].Billing_Email__c;
-                        aw.isBillingEmailVerified = businessAccount[0].Billing_Email_Verified__c;
-                    }
-            }
-            else {
-                aw.hasBillingEmail = account[0].Billing_Email__c != null ? true : false;
-                aw.billingEmail = account[0].Billing_Email__c;
-                aw.isBillingEmailVerified = account[0].Billing_Email_Verified__c;
+            if(paymentOption == 'paynow') {
+                if(account.Billing_Email__c == null) {
+                    update new Account(Id = accountId, Billing_Email__c = account.PersonEmail);
+                }
+                aw.hasBillingEmail = account.Billing_Email__c != null ? true : false;
+                aw.billingEmail = account.Billing_Email__c;
+                aw.isBillingEmailVerified = account.Billing_Email_Verified__c;
+            } 
+            else if(paymentOption == 'invoice') {
+                aw.hasBillingEmail = account.Invoice_Billing_Email__c != null ? true : false;
+                aw.billingEmail = account.Invoice_Billing_Email__c;
+                aw.isBillingEmailVerified = account.Billing_Email_Verified__c;
             }
         }
         return aw;
     }
 
     public class AccountWrapper {
+
+        @AuraEnabled
+        public String accountName { get; set; }
 
         @AuraEnabled
         public Boolean isAdminAccount { get; set; }
@@ -58,35 +62,20 @@ public without sharing class B2BBillingEmailVerificationController {
         try{
             String accountId = B2BUtils.getUserAccountID();
 
-            List<Account> account = [SELECT Id, Billing_Email__c, Billing_Email_Verified__c, Business__c, StripeCustomerId__c, Admin_Account__c
+            List<Account> account = [SELECT Id, Invoice_Billing_Email__c, Billing_Email_Verified__c, Business__c, Invoice_Stripe_Id__c, Admin_Account__c
                                     FROM Account 
                                     WHERE Id =: accountId
                                     ];
 
             if(account.size() > 0) {
-                if(account[0].Business__c != null && account[0].Admin_Account__c) {
-                    List<Account> businessAccount = [SELECT Id, Billing_Email__c, Billing_Email_Verified__c, StripeCustomerId__c FROM Account WHERE Id = :account[0].Business__c LIMIT 1];
+                account[0].Invoice_Billing_Email__c = billingEmail;
+                account[0].Billing_Email_Verified__c = emailVerified;
 
-                    if(businessAccount.size() > 0) {
-                        businessAccount[0].Billing_Email__c = billingEmail;
-                        businessAccount[0].Billing_Email_Verified__c = emailVerified;
-
-                        if(!emailVerified) {
-                            businessAccount[0].StripeCustomerId__c = null;
-                        }
-                        update businessAccount[0];
-                    }
+                if(!emailVerified) {
+                    account[0].Invoice_Stripe_Id__c = null;
                 }
-                else {
-                    account[0].Billing_Email__c = billingEmail;
-                    account[0].Billing_Email_Verified__c = emailVerified;
 
-                    if(!emailVerified) {
-                        account[0].StripeCustomerId__c = null;
-                    }
-
-                    update account[0];
-                }
+                update account[0];
             }
         }
         catch(Exception e) {

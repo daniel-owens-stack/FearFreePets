@@ -11,16 +11,16 @@
 	<targetConfigs>
 		<targetConfig targets="lightningCommunity__Default">
 		  	<property name="recordId" type="String" default="{!recordId}"></property>
-			<property name="labelInvoiceNumber" type="String" label="Invoice Number Column Label" default="Invoice Number"/>
-			<property name="labelTotal" type="String" label="Total Column Label" default="Total"/>
-			<property name="labelAmountCharged" type="String" label="Amount Charged Column Label" default="Amount Charged"/>
-            <property name="labelPeriod" type="String" label="Period Column Label" default="Period"/>
-			<property name="labelCreatedDate" type="String" label="Created Date Column Label" default="Created Date"/>
-			<property name="labelPaidDate" type="String" label="Paid Date Column Label" default="Paid Date"/>
-            <property name="labelDownloadLink" type="String" label="Download Link Column Label" default="Download Link"/>
-            <property name="labelPayNow" type="String" label="Pay Now Column Label" default="Pay Now"/>
+			<property name="labelInvoiceNumber" type="String" label="Invoice Number Label" default="Invoice Number"/>
+			<property name="labelAmountCharged" type="String" label="Amount Charged Label" default="Amount Charged"/>
+			<property name="labelBillingEmail" type="String" label="Billing Email Label" default="Billing Email"/>
+            <property name="labelPeriod" type="String" label="Period Label" default="Period"/>
+			<property name="labelCreatedDate" type="String" label="Created Date Label" default="Created Date"/>
+			<property name="labelPaidDate" type="String" label="Paid Date Label" default="Paid Date"/>
 			<property name="buttonLabelDownloadLink" type="String" label="Download Link Button Label" default="PDF"/>
 			<property name="buttonLablePayNow" type="String" label="Pay Now Button Label" default="Pay Now"/>
+			<property name="invoiceHeading" type="String" label="Invoice Heading" default="Invoices"/>
+			<property name="noInvoicesMessage" type="String" label="No Invoices Message" default="Your account does not have any invoices to pay."/>
 		</targetConfig>
 	</targetConfigs>
 </LightningComponentBundle>

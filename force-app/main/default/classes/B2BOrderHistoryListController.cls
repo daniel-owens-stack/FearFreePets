@@ -116,7 +116,7 @@ public without sharing class B2BOrderHistoryListController {
         detailsWrapper.shippingAddress.deliveryMethod = deliveryGroupSummary?.OrderDeliveryMethod.Name;
         
         //OrderSummary Items
-        List<OrderItemSummary> orderItemSummaries = [SELECT Id, Type, Quantity, UnitPrice, TotalLineAmount, Product2.Shippable__c, 
+        List<OrderItemSummary> orderItemSummaries = [SELECT Id, Type, Quantity, UnitPrice, TotalLineAmount, Product2.IsShippingChargeNotApplicable, 
                                                             Product2Id, Product2.Name, StockKeepingUnit, Product2.Description
                                                      FROM OrderItemSummary 
                                                      WHERE OrderSummaryId =:orderSummaryId
@@ -146,7 +146,7 @@ public without sharing class B2BOrderHistoryListController {
                 productIds.add(ois.Product2Id);
                 numOfItems += 1;
 
-                if(ois.Product2.Shippable__c) {
+                if(!ois.Product2.IsShippingChargeNotApplicable) {
                     detailsWrapper.osDetails.hasShippableProducts = true;
                 }
             }
