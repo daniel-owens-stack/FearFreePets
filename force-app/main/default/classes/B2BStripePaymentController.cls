@@ -45,29 +45,6 @@ public without sharing class B2BStripePaymentController {
         return customerId;
     }
 
-    //This method is not being used at the moment...
-    @AuraEnabled
-    public static void updateBillingEmail(String accountId) {
-
-        Account account = [
-                SELECT ShippingAddress, StripeCustomerId__c, Business__c, Admin_Account__c, Billing_Email__c
-                FROM Account
-                WHERE Id = :accountId
-        ];
-
-        if (account.Business__c != null && account.Admin_Account__c ==true) {
-            account = [
-                SELECT Id, StripeCustomerId__c, Billing_Email__c FROM Account
-                WHERE Id =:account.Business__c
-            ];
-        }
-        
-        if(String.isBlank(account.Billing_Email__c)) {
-            account.Billing_Email__c = UserInfo.getUserEmail(); 
-            update account;
-        }
-    }
-
     @AuraEnabled
     public static boolean canInvoice(String accountId){
         Account account = [SELECT Payment_Terms__c FROM Account WHERE Id =:accountId];
@@ -93,28 +70,6 @@ public without sharing class B2BStripePaymentController {
             B2BStripeWrapper.InvoiceLineItem invoiceLineItem = B2BStripeService.createInvoiceLineItem(invoiceId, customerId, item);
         }
     }
-    
-    @AuraEnabled
-    public static String createInvoiceByOrderId(String orderId, String customerId, String accountId)  {
-        Integer invoiceDueDate = B2BStripeService.getInvoiceDueDate(customerId, accountId);
-        B2BStripeWrapper.Invoice invoice = B2BStripeService.createInvoice(customerId, invoiceDueDate, orderId);
-        List<OrderItem> orderItems = B2BStripeServiceHelper.getOrderItemsByOrderId(orderId);
-        String stripeInvoiceId = invoice.id;
-        createInvoiceItemsByOrderItems(stripeInvoiceId, customerId, orderItems);
-        return stripeInvoiceId;
-    }
-
-    public static void createInvoiceItemsByOrderItems(String invoiceId, String customerId, List<OrderItem> orderItems) {
-        for (OrderItem orderItem : orderItems) {
-            if (orderItem.InvoiceExempt__c == false) {
-                B2BStripeWrapper.InvoiceLineItem invoiceLineItem = B2BStripeService.createInvoiceLineItemFromOrderItem(invoiceId, customerId, orderItem);
-            }
-        }
-    }
-
-    public static void chargeCustomerInvoice(String invoiceId) {
-        B2BStripeService.chargeCustomerInvoice(invoiceId);
-    }
 
     @AuraEnabled
     public static B2BStripeWrapper.CheckoutSession processPayments(Id webCartId, String customerId, string href) {
@@ -132,14 +87,6 @@ public without sharing class B2BStripePaymentController {
         validationResult.paymentIntent = result.payment_intent;
         
         return validationResult;
-    }
-
-    private static Decimal calculateAmount(List<CartItem> items) {
-        Decimal amount = 0;
-        for (CartItem item : items) {
-            amount += item.TotalPrice;
-        }
-        return amount;
     }
     
     @AuraEnabled
