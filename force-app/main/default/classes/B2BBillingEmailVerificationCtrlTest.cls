@@ -16,18 +16,19 @@ public class B2BBillingEmailVerificationCtrlTest {
         insert ac;
     }
 
-    @isTest static void testGetAccountDetails() {
+    @isTest static void testGetAccountDetails_paynow() {
         User user = [SELECT Id FROM User WHERE Username = 'testuser@gmail.com' LIMIT 1];
 
         B2BBillingEmailVerificationController.AccountWrapper result;
         Test.StartTest();
+        String paymentOption = 'paynow';
         System.runAs(user) {
-            result = B2BBillingEmailVerificationController.getAccountDetails();
+            result = B2BBillingEmailVerificationController.getAccountDetails(paymentOption);
         }
         Test.StopTest();
     }
 
-    @isTest static void testGetAccountDetails_team() {
+    @isTest static void testGetAccountDetails_invoice() {
         User user = [SELECT Id FROM User WHERE Username = 'testuser@gmail.com' LIMIT 1];
 
         Account businessAccount = new Account(
@@ -42,8 +43,9 @@ public class B2BBillingEmailVerificationCtrlTest {
 
         B2BBillingEmailVerificationController.AccountWrapper result;
         Test.StartTest();
+        String paymentOption = 'invoice';
         System.runAs(user) {
-            result = B2BBillingEmailVerificationController.getAccountDetails();
+            result = B2BBillingEmailVerificationController.getAccountDetails(paymentOption);
         }
         Test.StopTest();
     }
@@ -52,7 +54,7 @@ public class B2BBillingEmailVerificationCtrlTest {
         User user = [SELECT Id FROM User WHERE Username = 'testuser@gmail.com' LIMIT 1];
 
         String billingEmail = 'test123@gmail.com';
-        Boolean emailVerified = true;
+        Boolean emailVerified = false;
 
         Test.StartTest();
         System.runAs(user) {
