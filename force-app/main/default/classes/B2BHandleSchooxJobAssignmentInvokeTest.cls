@@ -3,7 +3,7 @@ public class B2BHandleSchooxJobAssignmentInvokeTest {
     
     @TestSetup static void makeData(){
         B2BTestDataFactory.createWebStore();
-        String accountId = B2BTestDataFactory.createAccount();
+        String accountId = B2BTestDataFactory.createPersonAccount();
 
         Membership__c m = new Membership__c(
             Name = 'Test Membership',

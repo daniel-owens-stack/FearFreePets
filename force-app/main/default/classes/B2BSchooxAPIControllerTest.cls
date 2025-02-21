@@ -3,7 +3,7 @@ public class B2BSchooxAPIControllerTest {
 
     @TestSetup static void makeData(){
         B2BTestDataFactory.createWebStore();
-        String accountId = B2BTestDataFactory.createAccount();
+        String accountId = B2BTestDataFactory.createPersonAccount();
 
         Account account = [SELECT Id, SX_User_Id__pc FROM Account WHERE Name = 'Test Account' LIMIT 1];
         account.SX_User_Id__pc = '1918259581';

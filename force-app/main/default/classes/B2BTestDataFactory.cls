@@ -260,4 +260,16 @@ public class B2BTestDataFactory {
         insert cv;
         return cv;
     }
+
+    public static Id createPersonAccount() {
+        Id personAccountRecordTypeId = [SELECT Id FROM RecordType WHERE SObjectType = 'Account' AND IsPersonType = true LIMIT 1].Id;
+        Account account = new Account(
+            FirstName = 'Test',
+            LastName = 'Account',
+            RecordTypeId = personAccountRecordTypeId
+        );
+    
+        insert account;
+        return account.Id;
+    }
 }
