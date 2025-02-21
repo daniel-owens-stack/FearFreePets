@@ -18,7 +18,8 @@ public class B2BInvoiceHelperTest {
             Stripe_PDF_URL__c = 'https://www.google.com/', 
             Stripe_Payment_URL__c = 'https://www.google.com/',
             Account_Id__c = accountId,
-            Status__c = 'Active'
+            Status__c = 'Active',
+            Billing_Email__c = 'test@gmail.com'
         );
         insert invoice;
 
@@ -33,6 +34,9 @@ public class B2BInvoiceHelperTest {
     }
 
     @isTest static void testGetInvoices() {
+        Account account = [SELECT Id, Invoice_Billing_Email__c FROM Account WHERE Name = 'Test Account' LIMIT 1];
+        account.Invoice_Billing_Email__c = 'test@gmail.com';
+        update account;
 
         User user = [SELECT Id FROM User WHERE Username = 'testuser@gmail.com' LIMIT 1];
 
