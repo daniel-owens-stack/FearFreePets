@@ -285,9 +285,9 @@ public with sharing class SchooxAPI {
         Map<String, String> responseMap = makeHTTPRequest(ApiType.User, url, 'PUT', JSON.serialize(bodyData));
         String responseBody = responseMap.get('responseBody');
         System.debug(responseBody);
-        if (String.isNotBlank(responseBody)) {
-            throw new IllegalArgumentException(responseBody);
-        }
+        // if (String.isNotBlank(responseBody)) {
+        //     throw new IllegalArgumentException(responseBody);
+        // }
     }
 
     //SchooxAPI.getUserDetails('1987174188');
@@ -600,11 +600,11 @@ public with sharing class SchooxAPI {
         System.debug(request.toString());
         Http http = new Http();
         HttpResponse response;
-        if (Test.isRunningTest()) {
-            response = testResponse;
-        } else {
+        // if (Test.isRunningTest()) {
+        //     response = testResponse;
+        // } else {
             response = http.send(request);
-        }
+        // }
         System.debug(response);
         System.debug(response.getBody());
         // System.debug('Status: ' + response.getStatus() + ' StatusCode: ' + response.getStatusCode());

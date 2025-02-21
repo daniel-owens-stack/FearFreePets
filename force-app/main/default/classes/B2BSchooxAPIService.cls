@@ -74,12 +74,7 @@ public class B2BSchooxAPIService {
         }
 
         Http http = new Http();
-        HttpResponse response;
-        if (Test.isRunningTest()) {
-            response = testResponse;
-        } else {
-            response = http.send(request);
-        }
+        HttpResponse response = http.send(request);
 
         if (response.getStatusCode() == 200 || response.getStatusCode() == 201 || response.getStatusCode() == 204) {
             apiError = false;
