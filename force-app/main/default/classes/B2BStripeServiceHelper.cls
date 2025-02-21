@@ -1,7 +1,7 @@
 public without sharing class B2BStripeServiceHelper {
  
     public static List<String> CART_ITEMS_QUERY_FIELDS = new List<String> {
-        'Quantity', 'SalesPrice', 'Product2.Name'
+        'Quantity', 'SalesPrice', 'Product2.Name', 'Product2.Stripe_Product_Id__c'
     };
 
     public static List<String> CART_QUERY_FIELDS = new List<String> {
@@ -18,7 +18,8 @@ public without sharing class B2BStripeServiceHelper {
         '[quantity]' => 'TEXT(IF(Quantity = 0, 1, Quantity))',
         '[price_data][currency]' => '{static} usd',
         '[price_data][unit_amount]' => 'TEXT(IF(ISNULL(SalesPrice), 0, ROUND(SalesPrice * 100, 0)))', //Used to convert price to cents 
-        '[price_data][product_data][name]' => 'Product2.Name'
+        // '[price_data][product_data][name]' => 'Product2.Name',
+        '[price_data][product]' => 'Product2.Stripe_Product_Id__c'
     };
     //
     public static Map<String,String> CART_METADATA_MAP = new Map<String,String> {
@@ -102,7 +103,10 @@ public without sharing class B2BStripeServiceHelper {
         String result = 'customer=' + customerId + '&currency=usd&invoice=' + invoiceId;
         
         Integer unitAmount = (Integer) cartItem.SalesPrice * 100;
-        result += '&quantity=' + cartItem.Quantity + '&unit_amount=' + unitAmount + '&description=' + cartItem.Product2.Name;
+        result += '&quantity=' + cartItem.Quantity + '&description=' + cartItem.Product2.Name;
+        result += '&price_data[product]=' + cartItem.Product2.Stripe_Product_Id__c ;
+        result += '&price_data[currency]=usd';
+        result += '&price_data[unit_amount]=' + unitAmount;
         return result;
     }
 
@@ -112,7 +116,10 @@ public without sharing class B2BStripeServiceHelper {
         Integer unitAmount = (Integer) orderItem.TotalLineAmount
          * 100;
         Integer quantity = (Integer) orderItem.Quantity;
-        result += '&quantity=' + quantity + '&unit_amount=' + unitAmount + '&description=' + orderItem.Product2.Renewal_Product_Name__c;
+        result += '&quantity=' + quantity + '&description=' + orderItem.Product2.Name + ' - Renewal';
+        result += '&price_data[product]=' + orderItem.Product2.Stripe_Renewal_Product_Id__c ;
+        result += '&price_data[currency]=usd';
+        result += '&price_data[unit_amount]=' + unitAmount;
         return result;
     }
 
@@ -149,8 +156,9 @@ public without sharing class B2BStripeServiceHelper {
                         TotalPrice,
                         ListPrice,
                         Product2.Name,
-                        Product2.Renewal_Product_Name__c,
+                        Product2.Stripe_Renewal_Product_Id__c,
                         Product2.Membership__c,
+                        Product2.Stripe_Product_Id__c,
                         SalesPrice
                 FROM CartItem
                 WHERE CartId = :cartId AND Type = 'Product'
@@ -161,7 +169,7 @@ public without sharing class B2BStripeServiceHelper {
         return [
                 SELECT Id, Payment_Terms__c
                 FROM Account
-                WHERE StripeCustomerId__c=:stripeCustomerId 
+                WHERE Invoice_Stripe_Id__c=:stripeCustomerId 
                 AND Id = :accountId
                 LIMIT 1 
         ];
@@ -171,7 +179,7 @@ public without sharing class B2BStripeServiceHelper {
         return [
                 SELECT TotalLineAmount,
                         Quantity,
-                        Product2.Renewal_Product_Name__c,
+                        Product2.Stripe_Renewal_Product_Id__c,
                         InvoiceExempt__c
                 FROM OrderItem
                 WHERE orderId =:orderId AND Type = 'Order Product'

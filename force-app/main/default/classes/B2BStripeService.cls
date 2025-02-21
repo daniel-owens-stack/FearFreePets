@@ -10,11 +10,11 @@ public with sharing class B2BStripeService {
     public class B2BStripeException extends Exception {
     }
 
-    public static B2BStripeWrapper.StripeCustomer createStripeCustomer(String accountId) {
+    public static B2BStripeWrapper.StripeCustomer createStripeCustomer(String accountId, String billingEmail) {
         Account account = B2BStripeServiceHelper.getAccountById(accountId);
         HttpResponse response = new HttpResponse();
         String endPoint = 'v1/customers';
-        String requestBody = 'email=' + account.Billing_Email__c + '&name=' + Account.Name;
+        String requestBody = 'email=' + billingEmail + '&name=' + account.Name;
         response = makeCalloutToStripe(endPoint, POST_METHOD, requestBody, 'application/x-www-form-urlencoded');
 
         B2BStripeWrapper.StripeCustomer result = (B2BStripeWrapper.StripeCustomer) JSON.deserialize(response.getBody(), B2BStripeWrapper.StripeCustomer.class);
