@@ -1,0 +1,11 @@
+@isTest
+public class B2BSchooxApiCallMock implements HttpCalloutMock {
+    public static HTTPResponse respond(HTTPRequest req) {
+        // Create a fake response
+        HttpResponse res = new HttpResponse();
+        res.setHeader('Content-Type', 'application/json');
+        res.setBody('{"id":1918259581,"firstname":"Francis","middlename":"J.","preferred_name":"Frank","lastname":"Doe","email":"Frank.Doe1@schoox.com","active":true,"hired_date":"2015-01-01","image":"https://www.schoox.com/user/images/no-user-image_small.gif","url":"https://www.schoox.com/academies/profile.php?acadId=226581108&user=1918259581","custom_fields":[{"Custom Date":"2021-07-15"},{"Custom Field Text":"Custom Text"}],"units":[{"id":1,"name":"NY-Manhattan"},{"id":2,"name":"NY-Brooklyn"}],"above_units":[{"id":1,"name":"New York"},{"id":2,"name":"Pennsylvania"}],"registration_fields":[{"registration_field_1":"sample 1"},{"registration_field_2":"sample 2"}],"address":"355 Lexington Ave, New York, NY 10017, USA","hourly_worker":false,"joined_date":"2024-07-15","last_login":1675123200,"mobile":6874119695,"phone":"999-999-999","modified_at":"2023-01-17 08:58:24","username":"FranDoe","roles":["employee"],"external_ids":["1234ACEF"]},{"id":191156645,"firstname":"John","middlename":"J.","preferred_name":"Doe","lastname":"Doe","email":"John.Doe1@schoox.com","active":true,"hired_date":"2015-01-01","image":"https://www.schoox.com/user/images/no-user-image_small.gif","url":"https://www.schoox.com/academies/profile.php?acadId=226581108&user=191156645","custom_fields":[{"Custom Date":"2021-07-20"},{"Custom Field Text":"Custom Text"}],"units":[{"id":1,"name":"NY-Manhattan"}],"above_units":[{"id":1,"name":"New York"}],"registration_fields":[{"registration_field_1":"sample 1"},{"registration_field_2":"sample 2"}],"address":"365 Lexington Ave, New York, NY 10017, USA","hourly_worker":false,"joined_date":"2024-07-15","last_login":1675123200,"mobile":6874119695,"phone":"999-999-999","modified_at":"2022-01-18 08:58:24","username":"JohnDoe","roles":["employee"],"external_ids":["1234ACEF"]}');
+        res.setStatusCode(201);
+        return res;
+    }
+}
