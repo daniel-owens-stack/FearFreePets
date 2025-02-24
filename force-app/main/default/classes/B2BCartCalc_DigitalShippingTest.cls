@@ -9,18 +9,30 @@ public class B2BCartCalc_DigitalShippingTest extends CartExtension.CartCalculate
         User user = B2BTestDataFactory.createCommunityUser(contactId);
         B2BTestDataFactory.createWebCart(webStoreId, accountId, user.Id);
 
-        B2BTestDataFactory.createProduct();
+        String productId = B2BTestDataFactory.createProduct();
         B2BTestDataFactory.createShippingProduct();
 
-        String productId = [SELECT Id FROM Product2 WHERE Name = 'Test Product1' LIMIT 1].Id;
+        Product2 product  =[SELECT Id, Freight_Amount_US__c, Freight_Amount_INTL__c, IsShippingChargeNotApplicable FROM Product2 WHERE Id = :productId LIMIT 1];
+        product.IsShippingChargeNotApplicable = false;
+        product.Freight_Amount_US__c = 0;
+        product.Freight_Amount_INTL__c = 10;
+        update product;
+
+        String cartId = [SELECT Id FROM WebCart WHERE  Name = 'Test Cart' LIMIT 1].Id;
+
+        B2BTestDataFactory.createCartDeliveryGroup(cartId, productId);
         B2BTestDataFactory.createOrderDeliveryMethod(productId);
 
     }
 
     @isTest static void testCalculate() {
 
-        CartExtension.Cart cart = CartExtension.CartTestUtil.createCart();
-        cart.setName('Test Cart');
+        Id cartId = [SELECT Id FROM WebCart WHERE Name = 'Test Cart' LIMIT 1].Id;
+        CartExtension.Cart cart = CartExtension.CartTestUtil.getCart(cartId);
+
+        CartDeliveryGroup cdg = [SELECT Id, DeliverToCountry FROM CartDeliveryGroup WHERE  Name = 'Test Cart Delivery Group' LIMIT 1];
+        cdg.DeliverToCountry = 'UK';
+        update cdg;
 
         CartExtension.CartCalculateCalculatorRequest request = new CartExtension.CartCalculateCalculatorRequest(
             cart,
