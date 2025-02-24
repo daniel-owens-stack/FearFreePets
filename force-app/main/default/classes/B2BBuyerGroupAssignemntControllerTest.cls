@@ -61,4 +61,32 @@ public class B2BBuyerGroupAssignemntControllerTest {
         B2BBuyerGroupAssignemntController.handleBuyerGroupsForAccount(account);
         Test.StopTest();
     }
+
+    @isTest static void testCreateBuyerGroupMembers() {
+        Test.StartTest();
+        
+        String accountId = [SELECT Id FROM Account WHERE Name = 'Test Account' LIMIT 1].Id;
+
+        BuyerGroup bg = new BuyerGroup(
+            Name = 'Test Buyer Group New'
+        );
+        insert bg;
+
+        List<String> buyerGroupIdList = new List<String>{bg.Id};
+
+        B2BBuyerGroupAssignmentService.createBuyerGroupMembers(buyerGroupIdList, accountId);
+        Test.StopTest();
+    }
+
+    @isTest static void testDeleteBuyerGroupMembers() {
+        Test.StartTest();
+        
+        String accountId = [SELECT Id FROM Account WHERE Name = 'Test Account' LIMIT 1].Id;
+        String buyerGroupId = [SELECT Id FROM BuyerGroup WHERE Name = 'Test Buyer Group' LIMIT 1].Id;
+
+        List<String> buyerGroupIdList = new List<String>{buyerGroupId};
+
+        B2BBuyerGroupAssignmentService.deleteBuyerGroupMembers(buyerGroupIdList, accountId);
+        Test.StopTest();
+    }
 }
