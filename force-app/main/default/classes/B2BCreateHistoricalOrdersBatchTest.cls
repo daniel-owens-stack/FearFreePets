@@ -34,11 +34,7 @@ public class B2BCreateHistoricalOrdersBatchTest {
         ho.Billing_Company__c = 'Midwest Veterinary Supply';
         ho.Billing_Email__c = 'test.123+1@gmail.com';
         ho.Billing_Phone__c = '402-677-3244';
-        ho.Billing_Address__City__s = 'Beachwood';
         ho.Billing_Address__CountryCode__s = 'US';
-        ho.Billing_Address__PostalCode__s = '44122';
-        ho.Billing_Address__StateCode__s = 'OH';
-        ho.Billing_Address__Street__s = '2000 Auburn Drive';
         ho.FFP_Professional_Role__c = 'Faculty';
         ho.First_Name__c = 'Test';
         ho.Last_Name__c = 'Toay';
@@ -46,11 +42,7 @@ public class B2BCreateHistoricalOrdersBatchTest {
         ho.Member_of_Group__c = '440830';
         ho.Successful_Insert__c = false;
         ho.User_Id__c = '12629';
-        ho.Shipping_Address__Street__s = '2000 Auburn Drive';
-        ho.Shipping_Address__City__s = 'Beachwood';
-        ho.Shipping_Address__StateCode__s = 'OH';
         ho.Shipping_Address__CountryCode__s = 'US';
-        ho.Shipping_Address__PostalCode__s = '44122';
 
         insert ho;
 
