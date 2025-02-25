@@ -5,7 +5,6 @@ public with sharing class B2BStripeService {
     private static final Integer NET_60_INVOICE_DUE_DATE = 60;
     private static final Integer NET_30_INVOICE_DUE_DATE = 30;
     private static final Integer CREDIT_CARD_ONLY_DUE_DATE = 0;
-    private static final Integer RENEWAL_OFFSET_IN_DAYS = 7;
 
     public class B2BStripeException extends Exception {
     }
@@ -46,56 +45,6 @@ public with sharing class B2BStripeService {
             return stripeCustomer;
         }
     }
-
-    public static B2BStripeWrapper.StripeCustomer updateStripeCustomerEmail(String customerId, String newEmail) {
-        String endPoint = 'v1/customers/' + customerId;
-        String requestBody = 'email=' + EncodingUtil.urlEncode(newEmail, 'UTF-8');
-        HttpResponse response = makeCalloutToStripe(endPoint, POST_METHOD, requestBody, 'application/x-www-form-urlencoded');
-        B2BStripeWrapper.StripeCustomer result = (B2BStripeWrapper.StripeCustomer) JSON.deserialize(response.getBody(), B2BStripeWrapper.StripeCustomer.class);
-    
-        if (response.getStatusCode() != 200 && String.isNotBlank(result.error.message)) {
-            throw new B2BStripeException(result.error.type + ': ' + result.error.message);
-        } else {
-            return result;
-        }
-    }
-    
-
-    // public static B2BStripeWrapper.StripeCustomer getStripeCustomerByEmailAndName(String contactId) {
-    //     Contact contact = B2BStripeServiceHelper.getContactById(contactId);
-    //     HttpResponse response = new HttpResponse();
-    //     String endPoint = 'v1/customers/search';
-    //     String requestBody = 'query=email:' + '"' + contact.Email + '" AND name:' + '"' + contact.Name + '"';
-
-    //     response = makeCalloutToStripe(endPoint, GET_METHOD, requestBody, 'application/x-www-form-urlencoded');
-
-    //     B2BStripeWrapper.StripeCustomers stripeCustomers = (B2BStripeWrapper.StripeCustomers) JSON.deserialize(response.getBody(), B2BStripeWrapper.StripeCustomers.class);
-    //     B2BStripeWrapper.StripeCustomer stripeCustomer = new B2BStripeWrapper.StripeCustomer();
-    //     if (stripeCustomers.data != null && !stripeCustomers.data.isEmpty()) {
-    //         stripeCustomer = stripeCustomers.data[0];
-    //     }
-
-    //     if (response.getStatusCode() != 200 && String.isNotBlank(stripeCustomers.error.message)) {
-    //         throw new B2BStripeException(stripeCustomers.error.type + ': ' + stripeCustomers.error.message);
-    //     } else {
-    //         return stripeCustomer;
-    //     }
-    // }
-
-    // public static B2BStripeWrapper.StripeCustomer getStripeCustomerById(String contactId) {
-    //     Contact contact = B2BStripeServiceHelper.getContactById(contactId);
-    //     HttpResponse response = new HttpResponse();
-    //     String endPoint = 'v1/customers/' + contact.Stripe_Id__c;
-
-    //     response = makeCalloutToStripe(endPoint, GET_METHOD, '', 'application/x-www-form-urlencoded');
-    //     B2BStripeWrapper.StripeCustomer result = (B2BStripeWrapper.StripeCustomer) JSON.deserialize(response.getBody(), B2BStripeWrapper.StripeCustomer.class);
-
-    //     if (response.getStatusCode() != 200 && String.isNotBlank(result.error.message)) {
-    //         throw new B2BStripeException(result.error.type + ': ' + result.error.message);
-    //     } else {
-    //         return result;
-    //     }
-    // }
 
     public static B2BStripeWrapper.CheckoutSession getCheckoutSession(String checkoutSessionId) {
         HttpResponse response = new HttpResponse();
@@ -145,21 +94,6 @@ public with sharing class B2BStripeService {
         }
     }
 
-    public static B2BStripeWrapper.InvoiceLineItem createInvoiceLineItemFromOrderItem(String invoiceId, String customerId, OrderItem orderItem) {
-        String endPoint = 'v1/invoiceitems';
-        HttpResponse response = new HttpResponse();
-        String requestString = B2BStripeServiceHelper.createInvoiceLineItemsStringFromOrderItem(invoiceId, customerId, orderItem);
-
-        response = makeCalloutToStripe(endPoint, POST_METHOD, requestString, 'application/x-www-form-urlencoded');
-        B2BStripeWrapper.InvoiceLineItem result = (B2BStripeWrapper.InvoiceLineItem) JSON.deserialize(response.getBody(), B2BStripeWrapper.InvoiceLineItem.class);
-
-        if (response.getStatusCode() != 200 && String.isNotBlank(result.error.message)) {
-            throw new B2BStripeException(result.error.type + ': ' + result.error.message);
-        } else {
-            return result;
-        }
-    }
-
     public static B2BStripeWrapper.Invoice createInvoice(String customerId, Integer daysUntilDue, String orderId) {
         if (orderId == null) {
             orderId ='';
@@ -172,30 +106,6 @@ public with sharing class B2BStripeService {
         '&days_until_due=' + daysUntilDue +
         '&metadata[salesforce_order_id]=' + EncodingUtil.urlEncode(orderId, 'UTF-8');
         response = makeCalloutToStripe(endPoint, POST_METHOD, requestString, 'application/x-www-form-urlencoded');
-        B2BStripeWrapper.Invoice result = (B2BStripeWrapper.Invoice) JSON.deserialize(response.getBody(), B2BStripeWrapper.Invoice.class);
-
-        if (response.getStatusCode() != 200 && String.isNotBlank(result.error.message)) {
-            throw new B2BStripeException(result.error.type + ': ' + result.error.message);
-        } else {
-            return result;
-        }
-    }
-
-    public static B2BStripeWrapper.Invoice sendInvoice(String invoiceId) {
-        String endPoint = 'v1/invoices/' + invoiceId + '/send';
-        HttpResponse response = makeCalloutToStripe(endPoint, POST_METHOD, '', 'application/x-www-form-urlencoded');
-        B2BStripeWrapper.Invoice result = (B2BStripeWrapper.Invoice) JSON.deserialize(response.getBody(), B2BStripeWrapper.Invoice.class);
-
-        if (response.getStatusCode() != 200 && String.isNotBlank(result.error.message)) {
-            throw new B2BStripeException(result.error.type + ': ' + result.error.message);
-        } else {
-            return result;
-        }
-    }
-
-    public static B2BStripeWrapper.Invoice getInvoice(String invoiceId) {
-        String endPoint = 'v1/invoices/' + invoiceId;
-        HttpResponse response = makeCalloutToStripe(endPoint, GET_METHOD, '', 'application/x-www-form-urlencoded');
         B2BStripeWrapper.Invoice result = (B2BStripeWrapper.Invoice) JSON.deserialize(response.getBody(), B2BStripeWrapper.Invoice.class);
 
         if (response.getStatusCode() != 200 && String.isNotBlank(result.error.message)) {
@@ -250,32 +160,6 @@ public with sharing class B2BStripeService {
             return result;
         }
     }
-
-    public static void getPaymentMethods() {
-        String endPoint = 'v1/customers/cus_Q7Hx88Pwwv1iFh/payment_methods';
-        String requestBody = 'cus_Q7Hx88Pwwv1iFh';
-        System.debug('requestBody ==  ' + requestBody);
-
-        HttpResponse response = makeCalloutToStripe(endPoint, GET_METHOD, '', 'application/x-www-form-urlencoded');
-        System.debug('response '  +response);
-
-        System.debug(response.getBody());
-
-    }
-
-    public static B2BStripeWrapper.Invoice chargeCustomerInvoice(String invoiceId) {
-        String endPoint = 'v1/invoices/' + invoiceId + '/pay';
-        HttpResponse response = makeCalloutToStripe(endPoint, POST_METHOD, '', 'application/x-www-form-urlencoded');
-        
-        B2BStripeWrapper.Invoice result = (B2BStripeWrapper.Invoice) JSON.deserialize(response.getBody(), B2BStripeWrapper.Invoice.class);
-    
-        if (response.getStatusCode() != 200 && String.isNotBlank(result.error.message)) {
-            throw new B2BStripeException(result.error.type + ': ' + result.error.message);
-        } else {
-            return result;
-        }
-    }
-    
 
     public static Integer getInvoiceDueDate(String customerId, String accountId) {
         Integer daysUntilDue = 0;

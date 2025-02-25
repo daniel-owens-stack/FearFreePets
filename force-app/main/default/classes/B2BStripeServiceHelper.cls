@@ -18,7 +18,6 @@ public without sharing class B2BStripeServiceHelper {
         '[quantity]' => 'TEXT(IF(Quantity = 0, 1, Quantity))',
         '[price_data][currency]' => '{static} usd',
         '[price_data][unit_amount]' => 'TEXT(IF(ISNULL(SalesPrice), 0, ROUND(SalesPrice * 100, 0)))', //Used to convert price to cents 
-        // '[price_data][product_data][name]' => 'Product2.Name',
         '[price_data][product]' => 'Product2.Stripe_Product_Id__c'
     };
     //
@@ -36,10 +35,6 @@ public without sharing class B2BStripeServiceHelper {
         '[DeliverToPostalCode]' => 'DeliverToPostalCode',
         '[DeliverToCountry]' => 'DeliverToCountry'
     };
-
-    public static Long getTimestamp(Datetime dateToConvert) {
-        return dateToConvert.getTime() / 1000;
-    }
 
     public static String createCheckoutRequestString(String customerId, String webCartId , String href) {
         String checkoutMode = 'payment';
@@ -89,35 +84,12 @@ public without sharing class B2BStripeServiceHelper {
         return result + '&' + String.join(params, '&');
     }
 
-    public static String createProductsSearchQuery(List<CartItem> cartItems) {
-        List<String> queryStrings = new List<String>();
-
-        for (CartItem item : cartItems) {
-            queryStrings.add('metadata["cart_item_id"]:' + '"' + item.Id + '"');
-        }
-
-        return 'query=' + String.join(queryStrings, ' OR ');
-    }
-
     public static String createInvoiceLineItemsString(String invoiceId, String customerId, CartItem cartItem) {
         String result = 'customer=' + customerId + '&currency=usd&invoice=' + invoiceId;
         
         Integer unitAmount = (Integer) cartItem.SalesPrice * 100;
         result += '&quantity=' + cartItem.Quantity + '&description=' + cartItem.Product2.Name;
         result += '&price_data[product]=' + cartItem.Product2.Stripe_Product_Id__c ;
-        result += '&price_data[currency]=usd';
-        result += '&price_data[unit_amount]=' + unitAmount;
-        return result;
-    }
-
-    public static String createInvoiceLineItemsStringFromOrderItem(String invoiceId, String customerId, OrderItem orderItem) {
-        String result = 'customer=' + customerId + '&currency=usd&invoice=' + invoiceId;
-        
-        Integer unitAmount = (Integer) orderItem.TotalLineAmount
-         * 100;
-        Integer quantity = (Integer) orderItem.Quantity;
-        result += '&quantity=' + quantity + '&description=' + orderItem.Product2.Name + ' - Renewal';
-        result += '&price_data[product]=' + orderItem.Product2.Stripe_Renewal_Product_Id__c ;
         result += '&price_data[currency]=usd';
         result += '&price_data[unit_amount]=' + unitAmount;
         return result;
@@ -172,18 +144,6 @@ public without sharing class B2BStripeServiceHelper {
                 WHERE Invoice_Stripe_Id__c=:stripeCustomerId 
                 AND Id = :accountId
                 LIMIT 1 
-        ];
-    }
-
-    public static List <OrderItem> getOrderItemsByOrderId(String orderId) {
-        return [
-                SELECT TotalLineAmount,
-                        Quantity,
-                        Product2.Stripe_Renewal_Product_Id__c,
-                        InvoiceExempt__c
-                FROM OrderItem
-                WHERE orderId =:orderId AND Type = 'Order Product'
-
         ];
     }
 }
