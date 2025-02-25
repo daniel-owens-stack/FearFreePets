@@ -88,7 +88,8 @@ public class B2BCartCalculateSampleTest extends CartExtension.CartCalculate {
             CartExtension.OptionalBuyerActionDetails.of(buyerActionDetails)
         );
     
-        B2BCartCalculateSample cartCalulate = new B2BCartCalculateSample();
+        CartExtension.CartCalculateExecutorMock executorMock = new CartExtension.CartCalculateExecutorMock();
+        B2BCartCalculateSample cartCalulate = new B2BCartCalculateSample(executorMock);
         Test.StartTest();
         cartCalulate.calculate(request);
         Test.StopTest();

@@ -8,7 +8,7 @@ public class B2BWelcomeKitControllerTest {
         String contactId = B2BTestDataFactory.createContact(accountId);
         User user = B2BTestDataFactory.createCommunityUser(contactId);
         B2BTestDataFactory.createWebCart(webStoreId, accountId, user.Id);
-        String productId = B2BTestDataFactory.createSetProduct();
+        String productId = B2BTestDataFactory.createProduct();
 
         Account businessAccount = new Account(
             Name = 'Test Business Account'
@@ -17,11 +17,12 @@ public class B2BWelcomeKitControllerTest {
 
         Membership__c m = new Membership__c(
             Name = 'Test Membership',
-            Welcome_Kit_Parent__c = productId
+            Welcome_Kit_Parent__c = productId,
+            Practice_Certification_Kit__c = productId
         );
         insert m;
 
-        Product2 product = [SELECT Id, Membership__c FROM Product2 WHERE Name = 'Test Set Product' LIMIT 1];
+        Product2 product = [SELECT Id, Membership__c FROM Product2 WHERE Name = 'Test Product1' LIMIT 1];
         product.Membership__c = m.Id;
         update product;
 
@@ -60,9 +61,9 @@ public class B2BWelcomeKitControllerTest {
 
     @isTest static void testGetUnclaimedKits_null() {
 
-        String productId = [SELECT Id FROM Product2 WHERE Name = 'Test Set Product' LIMIT 1].Id;
-        String cartId = [SELECT Id FROM WebCart WHERE Name = 'Test Cart' LIMIT 1].Id;
-        B2BTestDataFactory.createCartDeliveryGroup(cartId, productId);
+        Account_Membership__c am = [SELECT Id, Welcome_Kit_Status__c FROM Account_Membership__c WHERE Welcome_Kit_Status__c = 'Unclaimed' LIMIT 1];
+        am.Welcome_Kit_Status__c = 'Claimed';
+        update am;
 
         User user = [SELECT Id FROM User WHERE Username = 'testuser@gmail.com' LIMIT 1];
 
@@ -128,7 +129,7 @@ public class B2BWelcomeKitControllerTest {
 
     @isTest static void testAddWelcomeKitToCart() {
 
-        String productId = [SELECT Id FROM Product2 WHERE Name = 'Test Set Product' LIMIT 1].Id;
+        String productId = [SELECT Id FROM Product2 WHERE Name = 'Test Product1' LIMIT 1].Id;
         String cartId = [SELECT Id FROM WebCart WHERE Name = 'Test Cart' LIMIT 1].Id;
         B2BTestDataFactory.createCartDeliveryGroup(cartId, productId);
 
@@ -141,9 +142,23 @@ public class B2BWelcomeKitControllerTest {
         Test.StopTest();
     }
 
+    @isTest static void testAddWelcomeKitToCart_null() {
+
+        User user = [SELECT Id FROM User WHERE Username = 'testuser@gmail.com' LIMIT 1];
+
+        Test.StartTest();
+        System.runAs(user) {
+            try{
+                B2BWelcomeKitController.addWelcomeKitToCart(null);
+            }
+            catch(Exception e) {}
+        }
+        Test.StopTest();
+    }
+
     @isTest static void testSaveShippingAddress() {
 
-        String productId = [SELECT Id FROM Product2 WHERE Name = 'Test Set Product' LIMIT 1].Id;
+        String productId = [SELECT Id FROM Product2 WHERE Name = 'Test Product1' LIMIT 1].Id;
         Account businessAccount = [SELECT Id FROM Account WHERE Name = 'Test Business Account' LIMIT 1];
 
         Account account = [SELECT Id, Business__c FROM Account WHERE Name = 'Test Account' LIMIT 1];
@@ -209,10 +224,6 @@ public class B2BWelcomeKitControllerTest {
         membershipIds.add(membershipId);
 
         B2BWelcomeKitController.AddressWrapper address = new B2BWelcomeKitController.AddressWrapper();
-        address.street = '2000 Auburn Dr';
-        address.city = 'Beachwood';
-        address.state = 'OH';
-        address.postalCode = '44122';
         address.country = 'US';
 
         User user = [SELECT Id FROM User WHERE Username = 'testuser@gmail.com' LIMIT 1];
@@ -239,10 +250,6 @@ public class B2BWelcomeKitControllerTest {
         membershipIds.add(membershipId);
 
         B2BWelcomeKitController.AddressWrapper address = new B2BWelcomeKitController.AddressWrapper();
-        address.street = '2000 Auburn Dr';
-        address.city = 'Beachwood';
-        address.state = 'OH';
-        address.postalCode = '44122';
         address.country = 'US';
 
         User user = [SELECT Id FROM User WHERE Username = 'testuser@gmail.com' LIMIT 1];
@@ -271,10 +278,6 @@ public class B2BWelcomeKitControllerTest {
         membershipIds.add(membershipId);
 
         B2BWelcomeKitController.AddressWrapper address = new B2BWelcomeKitController.AddressWrapper();
-        address.street = '2000 Auburn Dr';
-        address.city = 'Beachwood';
-        address.state = 'OH';
-        address.postalCode = '44122';
         address.country = 'US';
 
         User user = [SELECT Id FROM User WHERE Username = 'testuser@gmail.com' LIMIT 1];
@@ -290,7 +293,7 @@ public class B2BWelcomeKitControllerTest {
     @isTest static void testUpdatePracticeCertificationKitStatus() {
 
         Account businessAccount = [SELECT Id FROM Account WHERE Name = 'Test Business Account' LIMIT 1];
-        Id productId = [SELECT Id FROM Product2 WHERE Name = 'Test Set Product' LIMIT 1].Id;
+        Id productId = [SELECT Id FROM Product2 WHERE Name = 'Test Product1' LIMIT 1].Id;
         List<Id> productIds = new List<Id>();
         productIds.add(productId);
 

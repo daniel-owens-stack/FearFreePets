@@ -1,4 +1,5 @@
-public with sharing class B2BStripeHttpCalloutMock implements HttpCalloutMock {
+@isTest
+public class B2BStripeHttpCalloutMock implements HttpCalloutMock {
     Long dt = DateTime.now().addDays(30).getTime() / 1000 ;
 
     public String calloutType { get; set; }

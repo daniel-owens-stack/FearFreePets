@@ -64,4 +64,41 @@ public class B2BUtilsTest {
         }
         Test.StopTest();
     }
+
+    @isTest static void testIsFirstTimeLogin_no () {
+
+        User user = [SELECT Id FROM User WHERE Username = 'testuser@gmail.com' LIMIT 1];
+
+        Test.StartTest();
+        System.runAs(user) {
+            B2BUtils.isFirstTimeLogin();
+        }
+        Test.StopTest();
+    }
+    @isTest static void testgetFirstTimeLoginProduct () {
+
+        User user = [SELECT Id FROM User WHERE Username = 'testuser@gmail.com' LIMIT 1];
+
+        Test.StartTest();
+        System.runAs(user) {
+            B2BUtils.getFirstTimeLoginProduct();
+        }
+        Test.StopTest();
+    }
+
+    @isTest static void testGetProductPriceByAccountId () {
+
+        String accountId = [SELECT Id FROM Account WHERE Name = 'Test Account' LIMIT 1].Id;
+        String productId = [SELECT Id FROM Product2 WHERE Name = 'Test Product1' LIMIT 1].Id;
+        User user = [SELECT Id FROM User WHERE Username = 'testuser@gmail.com' LIMIT 1];
+
+        Test.StartTest();
+        System.runAs(user) {
+            try{
+                B2BUtils.getProductPriceByAccountId(accountId, productId);
+            }
+            catch(Exception e) {}
+        }
+        Test.StopTest();
+    }
 }

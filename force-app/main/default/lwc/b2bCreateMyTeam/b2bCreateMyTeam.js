@@ -87,6 +87,7 @@ export default class B2bCreateMyTeam extends CheckoutComponentBase {
                 if(this.hasBusinessAccount && !this.isTeamAdmin) {
                     this.showhasBusinessMessage = true;
                     this.showNoBusinessMessage = false;
+                    this.teamName = result.Business__r.Name;
                 }
                 else if(!this.hasBusinessAccount) {
                     this.showhasBusinessMessage = false;
