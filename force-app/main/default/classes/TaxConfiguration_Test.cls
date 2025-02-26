@@ -1,6 +1,6 @@
 @isTest
 public class TaxConfiguration_Test {
-     @testSetup
+    @testSetup
     static void setup() {
         WebStore webStore = new WebStore(
             Name = 'Training',
@@ -8,11 +8,11 @@ public class TaxConfiguration_Test {
             Tax_Transaction_Type__c ='SALE'
         );
         insert webStore;
-         }
+    }
 
-  @isTest
+    @isTest
     static void testgetMetaDataDTO(){
-       WebStore webStore = [SELECT Id FROM WebStore WHERE Name = 'Training' LIMIT 1];
+        WebStore webStore = [SELECT Id FROM WebStore WHERE Name = 'Training' LIMIT 1];
         String name = 'Training';
         Tax_Provider__mdt taxMeta = getCustomMetadataRecord(name);
         Test.startTest();
@@ -20,6 +20,7 @@ public class TaxConfiguration_Test {
          System.assert(result != null);
         Test.stopTest();
     }
+
     @isTest
     static void testgetMetaDataObject(){
         Test.startTest();
@@ -27,10 +28,11 @@ public class TaxConfiguration_Test {
         System.assert(metaProviderData == null);
         Test.stopTest();
     }
-     public static Tax_Provider__mdt getCustomMetadataRecord(String myName) {
+
+    public static Tax_Provider__mdt getCustomMetadataRecord(String myName) {
         Tax_Provider__mdt testTaxProvider = new Tax_Provider__mdt(
             Context_Name__c = myName,
-            Context_Locale__c = 'en_GB',
+            Context_Locale__c = 'en_US',
             Taxation_Policy__c = 'Standard',
             Customer_Code__c = 'Cust123',
             Company_Code__c = 'Comp456',
@@ -48,11 +50,10 @@ public class TaxConfiguration_Test {
             City__c = 'Test City',
             State__c = 'Test State',
             Zip_Code__c = '12345',
-            Country_Code__c = 'USA',
-            Impl_Class__c = 'VertexTaxProvider',
+            Country_Code__c = 'US',
+            Impl_Class__c = 'TestImplClass',
             Request_Template__c = '{"request": "template"}'
       			); 
         	return testTaxProvider;
     }
-    
 }

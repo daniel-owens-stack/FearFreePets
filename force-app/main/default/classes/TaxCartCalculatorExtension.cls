@@ -7,37 +7,53 @@ public without sharing class TaxCartCalculatorExtension extends CartExtension.Ta
     private static Boolean useExternalService = false;
       
     public virtual override void calculate(CartExtension.CartCalculateCalculatorRequest request) {
-      try {
+    try {
+        if (request == null || request.getCart() == null) {
+            throw new CalloutException('Request or Cart is null.');
+        }
+
         CartExtension.Cart cart = request.getCart();
         existingCartValidationMessageCleanUp(cart);
         existingCartTaxesCleanUp(cart);
+
+        if (cart.getCartItems() == null) {
+            throw new CalloutException('Cart items are null.');
+        }
+        
         CartExtension.CartItemList cartItems = cart.getCartItems();
-        TaxMetaData taxMetaData = getMetaData(cart.getWebstoreId(),'','');
-        TaxProviderRequest taxProviderRequest = createTaxRequest(cart,taxMetaData);
-         
+        
+        String webstoreId = cart.getWebstoreId();
+        if (String.isEmpty(webstoreId)) {
+            throw new CalloutException('WebstoreId is null or empty.');
+        }
+
+        TaxMetaData taxMetaData = getMetaData(webstoreId, '', '');
+        if (taxMetaData == null) {
+            throw new CalloutException('TaxMetaData is null.');
+        }
+
+        TaxProviderRequest taxProviderRequest = createTaxRequest(cart, taxMetaData);
         if (taxMetaData.customerTaxExemption) {
-          setExemptionDetails(taxProviderRequest, taxMetaData);
+            setExemptionDetails(taxProviderRequest, taxMetaData);
         }
+
         TaxProvider tProvider = TaxProviderFactory.getTaxProvider(taxMetaData);
-          System.debug('tProvider::::'+tProvider);
-          if (tProvider != null) {
-          TaxProviderResponse tpResponse = tProvider.calculateTax(taxProviderRequest);
-              System.debug('tpResponse:::::>>'+tpResponse);
-             if(!Test.isRunningTest()){
-                setTaxInCart(cart, taxMetaData, tpResponse);
-  
-             }
+
+        if (tProvider == null || taxProviderRequest == null) {
+            throw new CalloutException('TaxProvider or TaxProviderRequest is null.');
         }
-      } catch (Exception e) {
-        // For testing purposes, this example treats exceptions as user errors, which means they are
-        // displayed to the buyer user. In production, you probably want exceptions to be admin-type
-        // errors. In that case, throw the exception here and make sure that a notification system is
-        // in place to let the admin know that the error occurred. See the README section about error
-        // handling for details about how to create that notification.
-        throw new CalloutException('There was a problem with the request.');
-      }
-      return;
+
+        TaxProviderResponse tpResponse = tProvider.calculateTax(taxProviderRequest);
+
+        if (!Test.isRunningTest()) {
+            setTaxInCart(cart, taxMetaData, tpResponse);
+        }
+        } catch (Exception e) {
+            throw new CalloutException('There was a problem with the request.');
+        }
+        return;
     }
+    
   
     public virtual void existingCartTaxesCleanUp(CartExtension.Cart cart) {
       CartExtension.CartItemList cartItemCollection = cart.getCartItems();

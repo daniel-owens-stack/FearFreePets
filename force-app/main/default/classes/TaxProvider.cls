@@ -93,42 +93,5 @@ public abstract class TaxProvider {
       Map<String, String> callOutRequest
     );
   
-    public void commitTransaction(TaxProviderRequest taxRequest){
-      System.debug(
-        '========================= Inside TaxProvider#calculateTax starts'
-      );
-  
-      TaxProviderResponse taxes;
-      Map<String, String> responseMap;
-      Boolean calloutSuccess = true;
-      try {
-        Map<String, String> callOutRequest = new Map<String, String>();
-        callOutRequest.putAll(prepareNamedCredentials(taxRequest));
-        callOutRequest.putAll(setServiceDetails(taxRequest));
-        prepareCommitTransaction(taxRequest, callOutRequest);
-  
-        responseMap = ServiceFactory.getService(
-            taxRequest.taxMetaData.serviceImplClass
-          )
-          .makeExternalCallout(callOutRequest, setRequestHeaders(taxRequest));
-        if (
-          !'201'.equals(responseMap.get(Constants.RESPONSE_REASON_CODE)) ||
-          responseMap.isEmpty()
-        ) {
-          calloutSuccess = false;
-        }
-        String response = responseMap.get(Constants.SERVICE_RESPONSE_BODY);
-        if (calloutSuccess) {
-          taxes = getTaxFromResponse(response, taxRequest);
-        }
-      } catch (Exception expObj) {
-        System.debug(
-          'Exception due to error ====' +
-            expObj.getMessage() +
-            'at Line Number ====' +
-            expObj.getLineNumber()
-        );
-      }
-    }
     public abstract void prepareCommitTransaction(TaxProviderRequest taxRequest, Map<String, String> callOutRequest);
   }

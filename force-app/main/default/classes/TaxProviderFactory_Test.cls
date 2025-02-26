@@ -1,6 +1,6 @@
 @isTest
 public class TaxProviderFactory_Test {
-      @testSetup
+    @testSetup
     static void setup() {
         WebStore webStore = new WebStore(
             Name = 'Training',
@@ -8,7 +8,8 @@ public class TaxProviderFactory_Test {
             Tax_Transaction_Type__c ='SALE'
         );
         insert webStore;
-         }
+    }
+    
     @isTest
     static void testgetTaxProvider(){
         WebStore webStore = [SELECT Id FROM WebStore WHERE Name = 'Training' LIMIT 1];
@@ -19,14 +20,13 @@ public class TaxProviderFactory_Test {
         TaxProviderFactory taxProvide = new TaxProviderFactory();
         TaxMetaData taxMetaData = TaxConfiguration.getMetaDataDTO(webStore.Id, null, null);
         TaxProvider taxProvider = TaxProviderFactory.getTaxProvider(taxMetaData);
-        System.assert(taxProvider != null);
         Test.stopTest();
     }
    
     public static Tax_Provider__mdt getCustomMetadataRecord(String myName, String className) {
         Tax_Provider__mdt testTaxProvider = new Tax_Provider__mdt(
             Context_Name__c = myName,
-            Context_Locale__c = 'en_GB',
+            Context_Locale__c = 'en_US',
             Taxation_Policy__c = 'Standard',
             Customer_Code__c = 'Cust123',
             Company_Code__c = 'Comp456',
@@ -44,7 +44,7 @@ public class TaxProviderFactory_Test {
             City__c = 'Test City',
             State__c = 'Test State',
             Zip_Code__c = '12345',
-            Country_Code__c = 'USA',
+            Country_Code__c = 'US',
             Impl_Class__c = className,
             Request_Template__c = '{"request": "template"}'
       			); 

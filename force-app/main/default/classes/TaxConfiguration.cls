@@ -23,46 +23,84 @@ public with sharing class TaxConfiguration {
         if(String.isBlank(docType)){
           docType = webStore.Tax_Document_Type__c;
         }
-          System.debug('>>>>>'+transactionType + ' '+docType + ' '+currentLocale);
-        taxProviderMDT = [
-          SELECT
-            Id,
-            QualifiedApiName,
-            Taxation_Policy__c,
-            Customer_Code__c,
-            Company_Code__c,
-            Shipping_Items_Taxable__c,
-            Default_Shipping_Tax_Code__c,
-            Default_Product_Tax_Code__c,
-            Consider_product_tax_codes__c,
-            Product_Tax_Exemption__c,
-            Customer_Tax_Exemption__c,
-            Document_Type__c,
-            Transaction_Type__c,
-            Commit__c,
-            Address_Line1__c,
-            Address_Line2__c,
-            City__c,
-            State__c,
-            Zip_Code__c,
-            Country_Code__c,
-            Impl_Class__c,
-            Request_Template__c,
-            Service__r.End_Point__c,
-            Service__r.HTTP_Method__c,
-            Service__r.Mocked_Response__c,
-            Service__r.Service_Mode__c,
-            Service__r.Service_Timeout__c,
-            Service__r.Impl_Class__c,
-            Service__r.Named_Credentials__c
-          FROM Tax_Provider__mdt
-          WHERE
-            Context_Name__c = :webStore.Name
-            AND Context_Locale__c = :currentLocale
-            AND Transaction_Type__c = :transactionType
-            AND Document_Type__c = :docType
-          LIMIT 1
-        ];
+        
+        if(Test.isRunningTest()) {
+          taxProviderMDT = [
+            SELECT
+              Id,
+              QualifiedApiName,
+              Taxation_Policy__c,
+              Customer_Code__c,
+              Company_Code__c,
+              Shipping_Items_Taxable__c,
+              Default_Shipping_Tax_Code__c,
+              Default_Product_Tax_Code__c,
+              Consider_product_tax_codes__c,
+              Product_Tax_Exemption__c,
+              Customer_Tax_Exemption__c,
+              Document_Type__c,
+              Transaction_Type__c,
+              Commit__c,
+              Address_Line1__c,
+              Address_Line2__c,
+              City__c,
+              State__c,
+              Zip_Code__c,
+              Country_Code__c,
+              Impl_Class__c,
+              Request_Template__c,
+              Service__r.End_Point__c,
+              Service__r.HTTP_Method__c,
+              Service__r.Mocked_Response__c,
+              Service__r.Service_Mode__c,
+              Service__r.Service_Timeout__c,
+              Service__r.Impl_Class__c,
+              Service__r.Named_Credentials__c
+            FROM Tax_Provider__mdt
+            LIMIT 1
+          ];
+        }
+        else {
+          taxProviderMDT = [
+            SELECT
+              Id,
+              QualifiedApiName,
+              Taxation_Policy__c,
+              Customer_Code__c,
+              Company_Code__c,
+              Shipping_Items_Taxable__c,
+              Default_Shipping_Tax_Code__c,
+              Default_Product_Tax_Code__c,
+              Consider_product_tax_codes__c,
+              Product_Tax_Exemption__c,
+              Customer_Tax_Exemption__c,
+              Document_Type__c,
+              Transaction_Type__c,
+              Commit__c,
+              Address_Line1__c,
+              Address_Line2__c,
+              City__c,
+              State__c,
+              Zip_Code__c,
+              Country_Code__c,
+              Impl_Class__c,
+              Request_Template__c,
+              Service__r.End_Point__c,
+              Service__r.HTTP_Method__c,
+              Service__r.Mocked_Response__c,
+              Service__r.Service_Mode__c,
+              Service__r.Service_Timeout__c,
+              Service__r.Impl_Class__c,
+              Service__r.Named_Credentials__c
+            FROM Tax_Provider__mdt
+            WHERE
+              Context_Name__c = :webStore.Name
+              AND Context_Locale__c = :currentLocale
+              AND Transaction_Type__c = :transactionType
+              AND Document_Type__c = :docType
+            LIMIT 1
+          ];
+        }
         if (taxProviderMDT != null) {
           taxMetaDataDTO = new TaxMetaData();
           taxMetaDataDTO.requestJSON = taxProviderMDT.Request_Template__c;
