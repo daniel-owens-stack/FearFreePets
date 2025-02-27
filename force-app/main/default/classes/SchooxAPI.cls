@@ -600,11 +600,11 @@ public with sharing class SchooxAPI {
         System.debug(request.toString());
         Http http = new Http();
         HttpResponse response;
-        // if (Test.isRunningTest()) {
-        //     response = testResponse;
-        // } else {
+        if (Test.isRunningTest() && testResponse != null) {
+            response = testResponse;
+        } else {
             response = http.send(request);
-        // }
+        }
         System.debug(response);
         System.debug(response.getBody());
         // System.debug('Status: ' + response.getStatus() + ' StatusCode: ' + response.getStatusCode());
