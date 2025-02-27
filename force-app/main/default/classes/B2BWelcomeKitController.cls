@@ -66,28 +66,6 @@ public without sharing class B2BWelcomeKitController {
         return null;
     }
 
-    @AuraEnabled
-    public static void addWelcomeKitToCart(String productId) {
-        try {
-            String cartId = B2BUtils.getAccountActiveOrCheckoutWebCart();
-            if (cartId == null) {
-            cartId = B2BUtils.createWebCart();
-            }
-            String cartDeliveryGroupId = B2BUtils.getCartDeliveryGroupId(cartId);
-            String productName = [SELECT Name FROM Product2 WHERE Id=:productId].Name;
-            CartItem ci = new CartItem();
-            ci.Product2Id = productId;
-            ci.CartId = cartId;
-            ci.CartDeliveryGroupId = cartDeliveryGroupId;
-            ci.Name = productName;
-            ci.Quantity = 1;
-            insert ci;
-        }
-        catch(Exception e) {
-            B2BHandleCustomException.LogException(e, 'B2BWelcomeKitController', 'addWelcomeKitToCart');
-        }
-    }
-
     public class WelcomeKitWrapper {
         @AuraEnabled
         public String productName {get; set;}
