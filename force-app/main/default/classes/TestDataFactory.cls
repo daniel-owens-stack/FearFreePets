@@ -49,7 +49,7 @@ public with sharing class TestDataFactory {
                 Email	   = i + 'ridowan@mi6.co.uk',
                 Phone	   = '0881234567',
                 MobilePhone= '0631226777',
-                MailingCountry = 'USA'
+                MailingCountry = 'United States'
             );
             testContacts.add(con);
         }
