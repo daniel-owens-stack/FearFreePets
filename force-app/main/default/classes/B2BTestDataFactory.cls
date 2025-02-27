@@ -69,7 +69,7 @@ public class B2BTestDataFactory {
             Username = 'testuser@gmail.com'
         );
         insert u;
-        assignPermissions(u);
+        //assignPermissions(u);
         return u;
     }
 
