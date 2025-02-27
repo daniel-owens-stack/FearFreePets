@@ -1,7 +1,5 @@
 public with sharing class B2BUtils {
     private final static String siteName = 'Fear_Free_B2B_Store1';
-    private static final Integer RENEWAL_OFFSET_IN_DAYS = Integer.valueOf(System.Label.B2B_Renewal_Offset_In_Days);
-
 
     public static String getWebstoreID() {
         String webstoreName = null;

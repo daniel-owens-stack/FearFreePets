@@ -45,7 +45,7 @@ public class B2BCartCalc_DigitalShipping extends CartExtension.ShippingCartCalcu
             
             CartDeliveryGroup cdg = [SELECT ID,DeliverToCountry FROM CartDeliveryGroup WHERE CartId =: cart.getId() LIMIT 1];
             List<CartItem> lstWebCartItem = [
-                SELECT Id, Product2Id, Product2.VolumeIn__c, 
+                SELECT Id, Product2Id,
                     Product2.Freight_Amount_US__c, Product2.Freight_Amount_INTL__c, 
                     Product2.IsShippingChargeNotApplicable, Quantity 
                 FROM CartItem 

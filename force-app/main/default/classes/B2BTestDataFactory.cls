@@ -93,9 +93,6 @@ public class B2BTestDataFactory {
             Name = 'Test Product1', 
             Family = 'TestClass',
             StockKeepingUnit = 'Test',
-            LengthIn__c = 2.00,
-            WidthIn__c = 1.00,
-            HeightIn__c = 1.00,
             IsShippingChargeNotApplicable = false
         );
         insert product;
