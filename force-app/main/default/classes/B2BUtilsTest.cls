@@ -14,16 +14,6 @@ public class B2BUtilsTest {
         B2BTestDataFactory.createCartDeliveryGroup(cartId, productId);
     }
 
-    @isTest static void testCreateWebCart () {
-
-        User user = [SELECT Id FROM User WHERE Username = 'testuser@gmail.com' LIMIT 1];
-        Test.StartTest();
-        System.runAs(user) {
-            B2BUtils.createWebCart();
-        }
-        Test.StopTest();
-    }
-
     @isTest static void testGetCartDeliveryGroupId () {
 
         String cartId = [SELECT Id FROM WebCart WHERE Name = 'Test Cart' LIMIT 1].Id;

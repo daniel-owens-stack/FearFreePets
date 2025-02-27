@@ -13,18 +13,6 @@ public with sharing class B2BUtils {
         return [SELECT AccountId FROM Contact WHERE Id = :contactId].AccountId;
     }
     
-    public static String createWebCart() {
-        String effectiveAccountId = B2BUtils.getUserAccountID();
-        String effectiveWebstoreId = B2BUtils.getWebstoreID();
-
-        if(!Test.isRunningTest()) {
-            ConnectApi.CartInput cartInput = new ConnectApi.CartInput();
-            cartInput.effectiveAccountId = null;//effectiveAccountId;
-            ConnectApi.CommerceCart.createCart(effectiveWebstoreId, cartInput);
-        }
-        return getAccountActiveOrCheckoutWebCart();
-    }
-    
     public static String getAccountActiveOrCheckoutWebCart() {
         String effectiveAccountId = getUserAccountID();
         List <WebCart> wcs = [SELECT Id FROM WebCart WHERE (Status = 'Checkout' OR Status = 'Active') AND accountId = :effectiveAccountId ORDER BY CreatedDate DESC LIMIT 1];
