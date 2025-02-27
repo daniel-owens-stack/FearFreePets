@@ -30,6 +30,19 @@ public class TaxCartCalculatorExtensionTest {
         request.getData('test');
         Test.StopTest();
     }
+
+    @isTest
+    static void testCalculate_nullrequest(){
+        CartExtension.CartCalculateCalculatorRequest Cartrequest = null; 
+      
+        Test.startTest();
+        try {
+            TaxCartCalculatorExtension taxCaluculate = new TaxCartCalculatorExtension();
+            taxCaluculate.calculate(null);
+        }
+        catch(Exception e) {}
+        Test.stopTest();
+    }
     
     @isTest
     static void testCalculate(){
@@ -83,7 +96,7 @@ public class TaxCartCalculatorExtensionTest {
         WebCart testCart = new WebCart(Name='My Cart', WebStoreId=testWebStore.Id, AccountId=testAccount.Id);
         insert testCart;
 
-        CartDeliveryGroup testDeliveryGroup = new CartDeliveryGroup(Name='My Delivery Group', CartId=testCart.Id,DeliverToStreet='415 Mission St',DeliverToCity='San Francisco',DeliverToCountry='US',DeliverToPostalCode='11098',DeliverToState='Maryland');
+        CartDeliveryGroup testDeliveryGroup = new CartDeliveryGroup(Name='My Delivery Group', CartId=testCart.Id,DeliverToStreet='415 Mission St',DeliverToCity='San Francisco',DeliverToCountry='United States',DeliverToPostalCode='11098',DeliverToState='Maryland');
         insert testDeliveryGroup;
          Product2 testProduct2 = new Product2(name='My Product2',Tax_Class_Id__c='Test',Taxable__c=false);
         insert(testProduct2);
@@ -193,7 +206,7 @@ public class TaxCartCalculatorExtensionTest {
             City__c = 'Test City',
             State__c = 'Test State',
             Zip_Code__c = '12345',
-            Country_Code__c = 'US',
+            Country_Code__c = 'USA',
             Impl_Class__c = 'TestImplClass',
             Request_Template__c = '{"request": "template"}'
       			); 
@@ -207,7 +220,7 @@ public class TaxCartCalculatorExtensionTest {
         taxProvider.city = 'Washington';
         taxProvider.state = 'Washington DC';
         taxProvider.postalCode = '20011';
-        taxProvider.country = 'US';
+        taxProvider.country = 'United States';
         taxProvider.cartId = webCart.id;
         taxProvider.hasMultipleShipments = true;
         taxProvider.taxMetaData = taxmeta;

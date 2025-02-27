@@ -50,7 +50,7 @@ public class TaxConfiguration_Test {
             City__c = 'Test City',
             State__c = 'Test State',
             Zip_Code__c = '12345',
-            Country_Code__c = 'US',
+            Country_Code__c = 'USA',
             Impl_Class__c = 'TestImplClass',
             Request_Template__c = '{"request": "template"}'
       			); 
