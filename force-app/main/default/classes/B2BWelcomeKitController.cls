@@ -14,22 +14,31 @@ public without sharing class B2BWelcomeKitController {
         }
         List<WelcomeKitWrapper> welcomeKitWrapperList = new List <WelcomeKitWrapper>();
 
-        // will check this list against items in cart currently
         String cartId = B2BUtils.getAccountActiveOrCheckoutWebCart(); 
+        Integer unclaimedKitsInCart = 0;
+        Integer unclaimedKitsAddedToWrapper = 0;
         for (Account_Membership__c accountMembership : accountMembershipList) {
             
             WelcomeKitWrapper welcomeKitWrapper = new WelcomeKitWrapper();
             welcomeKitWrapper.productName = accountMembership.Membership__r.Individual_Certification_Kit__r.Name;
             welcomeKitWrapper.productId = accountMembership.Membership__r.Individual_Certification_Kit__r.Id;
+
             if (cartId == null) {
                 welcomeKitWrapperList.add(welcomeKitWrapper);
                 continue;
             }
-            List<cartItem> cartItems = [SELECT Id FROM CartItem WHERE CartId =: cartId AND Product2Id=:welcomeKitWrapper.productId];
-            if (cartItems.isEmpty()) {
+
+            List<cartItem> cartItems = [SELECT Id, Quantity FROM CartItem WHERE CartId =: cartId AND Product2Id=:welcomeKitWrapper.productId];
+            if(!cartItems.isEmpty()) {
+                unclaimedKitsInCart = (Integer) cartItems[0].Quantity;
+            }
+
+            if((unclaimedKitsInCart + unclaimedKitsAddedToWrapper) < accountMembershipList.size()) {
+                unclaimedKitsAddedToWrapper++;
                 welcomeKitWrapperList.add(welcomeKitWrapper);
             }
         }
+
         if (welcomeKitWrapperList.isEmpty()) {
             return null;
         }

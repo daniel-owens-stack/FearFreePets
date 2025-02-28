@@ -141,7 +141,7 @@ public class B2BWelcomeKitControllerTest {
         address.city = 'Beachwood';
         address.state = 'OH';
         address.postalCode = '44122';
-        address.country = 'US';
+        address.country = 'United States';
 
         User user = [SELECT Id FROM User WHERE Username = 'testuser@gmail.com' LIMIT 1];
 
@@ -195,7 +195,7 @@ public class B2BWelcomeKitControllerTest {
         membershipIds.add(membershipId);
 
         B2BWelcomeKitController.AddressWrapper address = new B2BWelcomeKitController.AddressWrapper();
-        address.country = 'US';
+        address.country = 'United States';
 
         User user = [SELECT Id FROM User WHERE Username = 'testuser@gmail.com' LIMIT 1];
 
@@ -221,7 +221,7 @@ public class B2BWelcomeKitControllerTest {
         membershipIds.add(membershipId);
 
         B2BWelcomeKitController.AddressWrapper address = new B2BWelcomeKitController.AddressWrapper();
-        address.country = 'US';
+        address.country = 'United States';
 
         User user = [SELECT Id FROM User WHERE Username = 'testuser@gmail.com' LIMIT 1];
 
@@ -249,7 +249,7 @@ public class B2BWelcomeKitControllerTest {
         membershipIds.add(membershipId);
 
         B2BWelcomeKitController.AddressWrapper address = new B2BWelcomeKitController.AddressWrapper();
-        address.country = 'US';
+        address.country = 'United States';
 
         User user = [SELECT Id FROM User WHERE Username = 'testuser@gmail.com' LIMIT 1];
 
