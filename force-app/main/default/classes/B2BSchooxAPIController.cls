@@ -16,6 +16,7 @@ public class B2BSchooxAPIController {
         SchooxAPI.updateLMSUser(accountId, combinedJobList);
     }
 
+    @future(callout = true)
     public static void handleJobUnassignment(String accountId, List<Integer> jobIdsToRemove) {
         B2BSchooxAPIWrapper.SchooxUser schooxUser = B2BSchooxAPIService.getSchooxUser(accountId);
 
