@@ -70,6 +70,7 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
     async getCartItems(wireResult) {
         const { data, error } = wireResult;
         this.wiredCartItems = wireResult;
+        this.shippableCartItemIds = [];
         if (data) {
             this.cartItems = data.cartItems;
             this.hasShippableProducts = false;
@@ -164,7 +165,7 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
         if (isSuccess) {
             this.customerId = result;
         } else {
-            console.error(errorMessage);
+            console.error('getCustomerId: ', errorMessage);
         }
     }
 
@@ -191,7 +192,7 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
         if (isSuccess) {
             this.paymentIntent = result.paymentIntent;
         } else {
-            console.error(errorMessage);
+            console.error('validateSession: ',errorMessage);
         }
         return result.isSessionValid;
     }
@@ -202,7 +203,7 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
         if (isSuccess) {
          
         } else {
-            console.error(errorMessage);
+            console.error('convertCartToOrder: ', errorMessage);
         }
         return result;
     }
@@ -337,11 +338,11 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
         this.paymentOption = 'paynow';
     }
 
-    removeShippableItems() {
-        this.shippableCartItemIds.forEach(shippableItem => {
+    async removeShippableItems() {
+        await Promise.all(this.shippableCartItemIds.map(shippableItem => {
             deleteItemFromCart(shippableItem)
             .then(() => {console.log('Items deleted successfuly!')})
             .catch(error => {console.error('Error in deleteItemFromCart: ', error);})
-        })
+        }));
     }
 }

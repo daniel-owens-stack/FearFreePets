@@ -33,7 +33,7 @@ global class B2BCartCalculateSample extends CartExtension.CartCalculate {
         boolean runPricing = buyerActions.isCheckoutStarted() || buyerActions.isCartItemChanged();
         boolean runPromotions = buyerActions.isCheckoutStarted() || buyerActions.isCouponChanged() || buyerActions.isCartItemChanged();
         boolean runInventory = buyerActions.isCheckoutStarted();
-        boolean runShipping = buyerActions.isDeliveryGroupChanged();
+        boolean runShipping = buyerActions.isDeliveryGroupChanged() || buyerActions.isCartItemChanged();
         boolean runPostShipping = buyerActions.isDeliveryGroupChanged() || buyerActions.isDeliveryMethodSelected();
         boolean runTaxes = buyerActions.isDeliveryGroupChanged() || buyerActions.isDeliveryMethodSelected();
 
