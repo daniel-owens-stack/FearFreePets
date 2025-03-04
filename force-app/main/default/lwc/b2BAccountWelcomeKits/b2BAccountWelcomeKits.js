@@ -27,16 +27,16 @@ export default class B2BAccountWelcomeKits extends LightningElement {
 
     @wire(GET_UNCLAIMED_KITS)
     unclaimedList(result) {
+      const { data, error } = result;
       this.wiredKits = result; 
-      if (result.data) {
-        let data = result.data;
-        this.showComponent = (data != null || data.length > 0) ? true : false;
+      this.showComponent = data != null ? true : false;
+      if (data) {
         if(this.showComponent == true) {
           this.unclaimedKits = data;
         }
       } 
-      else if (result.error) {
-        console.error('Error in getUnclaimedKits : ', result.error);
+      else if (error) {
+        console.error('Error in getUnclaimedKits : ', error);
       }
     }
 
@@ -53,13 +53,9 @@ export default class B2BAccountWelcomeKits extends LightningElement {
     addKitToCart(productId) {
         addItemToCart(productId, this.quantity)
             .then(() => {
-                this.unclaimedKits = this.unclaimedKits.filter((kit, index) => {
-                    return index !== this.unclaimedKits.findIndex(k => k.productId === productId);
-                });
-                if(this.unclaimedKits.length === 0) {
-                  this.showComponent = false;
-                }
-                return refreshApex(this.wiredKits);
+                setTimeout(() => {
+                  refreshApex(this.wiredKits)
+                }, 3000)
             })
             .catch(error => {
                 console.error('Error adding kit to cart:', error);
