@@ -43,7 +43,6 @@ public class B2BCartCalc_DigitalShipping extends CartExtension.ShippingCartCalcu
             List<Product2> shippingProducts = [SELECT Id FROM Product2 WHERE Name ='Delivery Charge' AND IsActive = true];
             String shippingProduct = shippingProducts.isEmpty() ? null : Id.valueOf(shippingProducts[0].Id);
             
-            CartDeliveryGroup cdg = [SELECT ID,DeliverToCountry FROM CartDeliveryGroup WHERE CartId =: cart.getId() LIMIT 1];
             List<CartItem> lstWebCartItem = [
                 SELECT Id, Product2Id,
                     Product2.Freight_Amount_US__c, Product2.Freight_Amount_INTL__c, 
@@ -53,7 +52,7 @@ public class B2BCartCalc_DigitalShipping extends CartExtension.ShippingCartCalcu
             ];
             
             Decimal shipPrice = 0;
-            Boolean isUS = cdg.DeliverToCountry == 'US';
+            Boolean isUS = cartDeliveryGroup.getDeliverToAddress().getCountry() == 'United States';
 
             if (lstWebCartItem != null && !lstWebCartItem.isEmpty()){
 
