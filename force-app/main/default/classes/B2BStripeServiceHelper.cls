@@ -1,11 +1,12 @@
 public without sharing class B2BStripeServiceHelper {
+    public static String TAX_STRIPE_PRODUCT_ID = System.Label.B2B_Tax_Stripe_Product_Id;
  
     public static List<String> CART_ITEMS_QUERY_FIELDS = new List<String> {
         'Quantity', 'UnitAdjustedPrice', 'Product2.Name', 'Product2.Stripe_Product_Id__c', 'ListPrice', 'Type'
     };
 
     public static List<String> CART_QUERY_FIELDS = new List<String> {
-        'Id', 'Name', 'PONumber'
+        'Id', 'Name', 'PONumber', 'TotalTaxAmount'
     };
 
     public static List<String> CART_DELIVERY_GROUP_FIELDS = new List<String> {
@@ -17,10 +18,9 @@ public without sharing class B2BStripeServiceHelper {
     public static Map<String,String> CART_ITEMS_MAP = new Map<String,String> {
         '[quantity]' => 'TEXT(IF(Quantity = 0, 1, Quantity))',
         '[price_data][currency]' => '{static} usd',
-        // '[price_data][unit_amount]' => 'TEXT(IF(ISNULL(SalesPrice), 0, ROUND(SalesPrice * 100, 0)))', //Used to convert price to cents 
         '[price_data][product]' => 'Product2.Stripe_Product_Id__c'
     };
-    //
+    
     public static Map<String,String> CART_METADATA_MAP = new Map<String,String> {
         '[SF_Cart_Id]' => 'Id',
         '[SF_Cart_Name]' => 'Name',
@@ -66,6 +66,12 @@ public without sharing class B2BStripeServiceHelper {
         String cartQuery = 'SELECT ' + String.join(CART_QUERY_FIELDS, ',') + ' FROM Webcart WHERE Id =: webCartId';
         WebCart cart = Database.query(cartQuery);
 
+        //Adding Tax Line Item
+        Integer totalTaxAmount = Math.round(cart.TotalTaxAmount * 100);
+        params.add('line_items[' + items.size() + '][price_data][unit_amount]=' + totalTaxAmount);
+        params.add('line_items[' + items.size() + '][price_data][product]=' + TAX_STRIPE_PRODUCT_ID);
+        params.add('line_items[' + items.size() + '][price_data][currency]=usd');
+        params.add('line_items[' + items.size() + '][quantity]=1');
 
         for(String key : CART_METADATA_MAP.keySet()) {
             String value = getFieldValue((SObject) cart, CART_METADATA_MAP.get(key));
@@ -140,7 +146,8 @@ public without sharing class B2BStripeServiceHelper {
                         Product2.Stripe_Renewal_Product_Id__c,
                         Product2.Membership__c,
                         Product2.Stripe_Product_Id__c,
-                        UnitAdjustedPrice
+                        UnitAdjustedPrice,
+                        Type
                 FROM CartItem
                 WHERE CartId = :cartId AND Type = 'Product'
         ];
@@ -154,5 +161,18 @@ public without sharing class B2BStripeServiceHelper {
                 AND Id = :accountId
                 LIMIT 1 
         ];
+    }
+
+    public static String createTaxInvoiceLineItemsString(String invoiceId, String customerId, String cartId) {
+        String result = 'customer=' + customerId + '&currency=usd&invoice=' + invoiceId;
+
+        WebCart cart = [SELECT Id, TotalTaxAmount FROM WebCart WHERE Id = :cartId LIMIT 1];
+        Integer totalTaxAmount = Math.round(cart.TotalTaxAmount * 100);
+
+        result += '&quantity=1&description=Tax';
+        result += '&price_data[product]=' + TAX_STRIPE_PRODUCT_ID;
+        result += '&price_data[currency]=usd';
+        result += '&price_data[unit_amount]=' + totalTaxAmount;
+        return result; 
     }
 }

@@ -61,6 +61,7 @@ public without sharing class B2BStripePaymentController {
         List<CartItem> items = B2BStripeServiceHelper.getCartItemsByCartId(webCartId);
         String stripeInvoiceId = invoice.id;
         createInvoiceItems(stripeInvoiceId, customerId, items);
+        createTaxInvoiceItem(stripeInvoiceId, customerId, webCartId);
         String orderId = convertCartToOrder(webCartId, null, stripeInvoiceId );
         return orderId;
     }
@@ -69,6 +70,10 @@ public without sharing class B2BStripePaymentController {
         for (CartItem item : items) {
             B2BStripeWrapper.InvoiceLineItem invoiceLineItem = B2BStripeService.createInvoiceLineItem(invoiceId, customerId, item);
         }
+    }
+
+    public static void createTaxInvoiceItem(String invoiceId, String customerId, String cartId) {
+        B2BStripeWrapper.InvoiceLineItem invoiceLineItem = B2BStripeService.createTaxInvoiceLineItem(invoiceId, customerId, cartId);
     }
 
     @AuraEnabled

@@ -94,6 +94,21 @@ public with sharing class B2BStripeService {
         }
     }
 
+    public static B2BStripeWrapper.InvoiceLineItem createTaxInvoiceLineItem(String invoiceId, String customerId, String cartId) {
+        String endPoint = 'v1/invoiceitems';
+        HttpResponse response = new HttpResponse();
+        String requestString = B2BStripeServiceHelper.createTaxInvoiceLineItemsString(invoiceId, customerId, cartId);
+
+        response = makeCalloutToStripe(endPoint, POST_METHOD, requestString, 'application/x-www-form-urlencoded');
+        B2BStripeWrapper.InvoiceLineItem result = (B2BStripeWrapper.InvoiceLineItem) JSON.deserialize(response.getBody(), B2BStripeWrapper.InvoiceLineItem.class);
+
+        if (response.getStatusCode() != 200 && String.isNotBlank(result.error.message)) {
+            throw new B2BStripeException(result.error.type + ': ' + result.error.message);
+        } else {
+            return result;
+        }
+    }
+
     public static B2BStripeWrapper.Invoice createInvoice(String customerId, Integer daysUntilDue, String orderId) {
         if (orderId == null) {
             orderId ='';
