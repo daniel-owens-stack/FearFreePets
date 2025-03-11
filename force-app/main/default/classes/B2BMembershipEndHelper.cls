@@ -1,12 +1,18 @@
 public class B2BMembershipEndHelper {
 
-    public static List<Id> getBuyerGroupMemberships(String membershipId) {
+    public static List<Id> getBuyerGroupMemberships(String membershipId, Boolean isCertified, Boolean isAdmin) {
         try {
-            List<Buyer_Group_Membership__c> bgmList = [
-                SELECT Id, Buyer_Group__c 
-                FROM Buyer_Group_Membership__c 
-                WHERE Membership__c = :membershipId
-            ];
+            String role = isAdmin ? 'Admin' : 'Non Admin';
+            String query = 'SELECT Id, Buyer_Group__c, Role__c' + 
+                           ' FROM Buyer_Group_Membership__c' + 
+                           ' WHERE (Membership__c =:membershipId OR Membership__c = NULL)' + 
+                           ' AND Role__c =:role';
+
+            if(!isCertified) {
+                query += ' AND Certified__c = :isCertified';
+            }
+
+            List<Buyer_Group_Membership__c> bgmList = Database.query(query);
 
             List<Id> buyerGroupIds = new List<Id>();
             if(bgmList.size() > 0) {
@@ -62,6 +68,6 @@ public class B2BMembershipEndHelper {
     }
 
     public static void unassignSchooxJobs(String accountId, List<Integer> jobIdsToRemove) {
-        B2BSchooxAPIController.handleJobUnassignment(accountId, jobIdsToRemove);
+        System.enqueueJob(new B2BSchooxJobsUnassignmentQueueable(accountId, jobIdsToRemove));
     }
 }

@@ -35,10 +35,14 @@ public class B2BMembershipEndController {
 
             if(!membershipEndedAccounts.isEmpty()) {
 
-                List<Id> buyerGroupIds = B2BMembershipEndHelper.getBuyerGroupMemberships(membershipId);
                 List<Integer> jobIds = new List<Integer>();
 
                 for(Id accountId : membershipEndedAccounts) {
+                    Boolean isAdmin = getAccountRole(accountId);
+                    Boolean isCertified = ilma.Certified__c;
+
+                    List<Id> buyerGroupIds = B2BMembershipEndHelper.getBuyerGroupMemberships(membershipId, isCertified, isAdmin);
+
                     //Check if account currently have an active ILMA of same membership
                     List<Account_Membership__c> activeILMAs = B2BMembershipEndHelper.getActiveILMAofSameType(accountId, membershipId);
 
@@ -60,5 +64,9 @@ public class B2BMembershipEndController {
         catch (Exception e) {
             B2BHandleCustomException.LogException(e, 'B2BMembershipEndController', 'handleMembershipUnassignment');
         }
+    }
+
+    public static Boolean getAccountRole(String accountId) {
+        return [SELECT Admin_Account__c FROM Account WHERE Id = :accountId LIMIT 1].Admin_Account__c;
     }
 }
