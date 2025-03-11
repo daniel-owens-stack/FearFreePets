@@ -91,4 +91,19 @@ public class B2BUtilsTest {
         }
         Test.StopTest();
     }
+
+    @isTest static void testUpdateCart () {
+
+        User user = [SELECT Id FROM User WHERE Username = 'testuser@gmail.com' LIMIT 1];
+        String cartId = [SELECT Id FROM WebCart WHERE Name = 'Test Cart' LIMIT 1].Id;
+
+        Test.StartTest();
+        System.runAs(user) {
+            try{
+                B2BUtils.updateCart(cartId);
+            }
+            catch(Exception e) {}
+        }
+        Test.StopTest();
+    }
 }

@@ -87,4 +87,11 @@ public with sharing class B2BUtils {
             String.valueOf(ConnectApi.CommerceStorePricing.getProductPrice(webstoreId, productId, accountId).UnitPrice)
         );  
     }
+
+    @AuraEnabled
+    public static void updateCart(String cartId) {
+        WebCart cart = [SELECT Id, Status FROM WebCart WHERE Id = :cartId];
+        cart.Status = 'Active';
+        update cart;
+    }
 }
