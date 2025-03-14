@@ -1,11 +1,17 @@
 public class B2BMembershipEndHelper {
 
+    private static final List<String> GENERIC_BUYER_GROUPS = new List<String>{
+        System.Label.B2B_Active_Member_All_BuyerGroup,
+        System.Label.B2B_Certified_Member_All_BuyerGroup,
+        System.Label.B2B_Certified_Individual_Veterinary_All_BuyerGroup
+    };
+    
     public static List<Id> getBuyerGroupMemberships(String membershipId, Boolean isCertified, Boolean isAdmin) {
         try {
             String role = isAdmin ? 'Admin' : 'Non Admin';
             String query = 'SELECT Id, Buyer_Group__c, Role__c' + 
                            ' FROM Buyer_Group_Membership__c' + 
-                           ' WHERE (Membership__c =:membershipId OR Membership__c = NULL)' + 
+                           ' WHERE Membership__c =:membershipId' + 
                            ' AND Role__c =:role';
 
             if(!isCertified) {
@@ -67,7 +73,50 @@ public class B2BMembershipEndHelper {
         }
     }
 
-    public static void unassignSchooxJobs(String accountId, List<Integer> jobIdsToRemove) {
-        System.enqueueJob(new B2BSchooxJobsUnassignmentQueueable(accountId, jobIdsToRemove));
+    public static Boolean getAccountRole(String accountId) {
+        return [SELECT Admin_Account__c FROM Account WHERE Id = :accountId LIMIT 1].Admin_Account__c;
+    }
+
+    public static Boolean hasActiveILMAs(String accountId) {
+        try {
+            List<Account_Membership__c> activeILMAs = [SELECT Id 
+                                                       FROM Account_Membership__c 
+                                                       WHERE Account_Id__c = :accountId
+                                                       AND Status__c = 'Active'
+                                                      ];
+
+            if(activeILMAs.size() > 0) {
+                return true;
+            }
+            return false;
+        }
+        catch (Exception e) {
+            B2BHandleCustomException.LogException(e, 'B2BMembershipEndHelper', 'hasActiveILMAs');
+            return false;
+        }
+    }
+
+    public static List<Id> getBuyerGroupsFromAccount(String accountId) {
+        try {
+            List<BuyerGroupMember> bgmList = [
+                SELECT Id, BuyerGroupId
+                FROM BuyerGroupMember 
+                WHERE BuyerGroup.Name IN :GENERIC_BUYER_GROUPS 
+                AND BuyerId = :accountId
+            ];
+
+            List<Id> buyerGroupIds = new List<Id>();
+            if(bgmList.size() > 0) {
+                for(BuyerGroupMember bgm : bgmList) {
+                    buyerGroupIds.add(bgm.BuyerGroupId);
+                }
+                return buyerGroupIds;
+            }
+            return null;
+        } 
+        catch (Exception e) {
+            B2BHandleCustomException.LogException(e, 'B2BMembershipEndHelper', 'getBuyerGroupsFromAccount');
+            return null;
+        }
     }
 }

@@ -1,13 +1,14 @@
 public class B2BSchooxJobsUnassignmentQueueable implements Queueable, Database.AllowsCallouts {
-    private String accountId;
-    private List<Integer> jobIdsToRemove;
+    
+    private Map<String, List<Integer>> accountJobMap;
 
-    public B2BSchooxJobsUnassignmentQueueable(String accountId, List<Integer> jobIdsToRemove) {
-        this.accountId = accountId;
-        this.jobIdsToRemove = jobIdsToRemove;
+    public B2BSchooxJobsUnassignmentQueueable(Map<String, List<Integer>> accountJobMap) {
+        this.accountJobMap = accountJobMap;
     }
 
     public void execute(QueueableContext context) {
-        B2BSchooxAPIController.handleJobUnassignment(accountId, jobIdsToRemove);
+        for (String accountId : accountJobMap.keySet()) {
+            B2BSchooxAPIController.handleJobUnassignment(accountId, accountJobMap.get(accountId));
+        }
     }
 }

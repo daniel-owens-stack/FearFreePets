@@ -10,9 +10,7 @@ public class B2BMembershipEndBatch implements Database.Batchable<sObject>, Datab
 
     public void execute(Database.BatchableContext bc, List<Account_Membership__c> scope) {
         try {
-            for (Account_Membership__c record : scope) {
-                B2BMembershipEndController.handleMembershipUnassignment(record);
-            }
+            B2BMembershipEndController.handleMembershipUnassignments(scope);
         } catch (Exception e) {
             B2BHandleCustomException.LogException(e, 'B2BMembershipEndBatch', 'execute');
         }
