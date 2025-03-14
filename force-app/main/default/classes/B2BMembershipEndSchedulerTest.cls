@@ -89,4 +89,25 @@ public class B2BMembershipEndSchedulerTest {
         B2BMembershipEndHelper.getActiveILMAofSameType(accountId, membershipId);
         Test.StopTest();
     }
+
+    @isTest static void testGetBuyerGroupsFromAccount() {
+
+        String accountId = [SELECT Id FROM Account WHERE Name = 'Test Account' LIMIT 1].Id;
+
+        Test.StartTest();
+
+        BuyerGroup bg = new BuyerGroup(
+            Name = 'Active Member - All'
+        );
+        insert bg;
+
+        BuyerGroupMember bg_member = new BuyerGroupMember(
+            BuyerId = accountId,
+            BuyerGroupId = bg.Id
+        );
+        insert bg_member;
+
+        B2BMembershipEndHelper.getBuyerGroupsFromAccount(accountId);
+        Test.StopTest();
+    }
 }
