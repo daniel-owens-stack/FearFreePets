@@ -8,7 +8,7 @@ public class B2BSchooxAPIController {
             return;
         }
         B2BSchooxAPIWrapper.SchooxUser schooxUser = B2BSchooxAPIService.getSchooxUser(accountId);
-        Boolean updateSFAccount;
+        Boolean updateSFAccount = false;
         if (!schooxUser.isActive) {
             updateSFAccount = true;
             SchooxAPI.reActivateLMSUser(schooxUser.studentId);
