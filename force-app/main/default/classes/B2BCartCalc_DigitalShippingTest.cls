@@ -31,7 +31,7 @@ public class B2BCartCalc_DigitalShippingTest extends CartExtension.CartCalculate
         CartExtension.Cart cart = CartExtension.CartTestUtil.getCart(cartId);
 
         CartDeliveryGroup cdg = [SELECT Id, DeliverToCountry FROM CartDeliveryGroup WHERE  Name = 'Test Cart Delivery Group' LIMIT 1];
-        cdg.DeliverToCountry = 'UK';
+        cdg.DeliverToCountry = 'United Kingdom';
         update cdg;
 
         CartExtension.CartCalculateCalculatorRequest request = new CartExtension.CartCalculateCalculatorRequest(

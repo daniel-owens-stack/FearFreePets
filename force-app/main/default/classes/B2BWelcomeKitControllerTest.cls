@@ -127,35 +127,6 @@ public class B2BWelcomeKitControllerTest {
         Test.StopTest();
     }
 
-    @isTest static void testAddWelcomeKitToCart() {
-
-        String productId = [SELECT Id FROM Product2 WHERE Name = 'Test Product1' LIMIT 1].Id;
-        String cartId = [SELECT Id FROM WebCart WHERE Name = 'Test Cart' LIMIT 1].Id;
-        B2BTestDataFactory.createCartDeliveryGroup(cartId, productId);
-
-        User user = [SELECT Id FROM User WHERE Username = 'testuser@gmail.com' LIMIT 1];
-
-        Test.StartTest();
-        System.runAs(user) {
-            B2BWelcomeKitController.addWelcomeKitToCart(productId);
-        }
-        Test.StopTest();
-    }
-
-    @isTest static void testAddWelcomeKitToCart_null() {
-
-        User user = [SELECT Id FROM User WHERE Username = 'testuser@gmail.com' LIMIT 1];
-
-        Test.StartTest();
-        System.runAs(user) {
-            try{
-                B2BWelcomeKitController.addWelcomeKitToCart(null);
-            }
-            catch(Exception e) {}
-        }
-        Test.StopTest();
-    }
-
     @isTest static void testSaveShippingAddress() {
 
         String productId = [SELECT Id FROM Product2 WHERE Name = 'Test Product1' LIMIT 1].Id;
@@ -170,7 +141,7 @@ public class B2BWelcomeKitControllerTest {
         address.city = 'Beachwood';
         address.state = 'OH';
         address.postalCode = '44122';
-        address.country = 'US';
+        address.country = 'United States';
 
         User user = [SELECT Id FROM User WHERE Username = 'testuser@gmail.com' LIMIT 1];
 
@@ -224,7 +195,7 @@ public class B2BWelcomeKitControllerTest {
         membershipIds.add(membershipId);
 
         B2BWelcomeKitController.AddressWrapper address = new B2BWelcomeKitController.AddressWrapper();
-        address.country = 'US';
+        address.country = 'United States';
 
         User user = [SELECT Id FROM User WHERE Username = 'testuser@gmail.com' LIMIT 1];
 
@@ -250,7 +221,7 @@ public class B2BWelcomeKitControllerTest {
         membershipIds.add(membershipId);
 
         B2BWelcomeKitController.AddressWrapper address = new B2BWelcomeKitController.AddressWrapper();
-        address.country = 'US';
+        address.country = 'United States';
 
         User user = [SELECT Id FROM User WHERE Username = 'testuser@gmail.com' LIMIT 1];
 
@@ -278,7 +249,7 @@ public class B2BWelcomeKitControllerTest {
         membershipIds.add(membershipId);
 
         B2BWelcomeKitController.AddressWrapper address = new B2BWelcomeKitController.AddressWrapper();
-        address.country = 'US';
+        address.country = 'United States';
 
         User user = [SELECT Id FROM User WHERE Username = 'testuser@gmail.com' LIMIT 1];
 

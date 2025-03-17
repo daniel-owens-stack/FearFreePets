@@ -1,6 +1,7 @@
 import { LightningElement, wire } from 'lwc';
+import {addItemToCart} from 'commerce/cartApi';
+import { refreshApex } from '@salesforce/apex';
 import GET_UNCLAIMED_KITS from '@salesforce/apex/B2BWelcomeKitController.getUnclaimedKits';
-import ADD_KIT_TO_CART from '@salesforce/apex/B2BWelcomeKitController.addWelcomeKitToCart';
 
 const columns = [
     { label: 'Product Name', fieldName: 'productName' },
@@ -21,19 +22,19 @@ export default class B2BAccountWelcomeKits extends LightningElement {
   showComponent = false;
   columns = columns;
   unclaimedKits = [];
+  quantity = 1;
+  wiredKits;
 
     @wire(GET_UNCLAIMED_KITS)
-    unclaimedList({ error, data }) {
+    unclaimedList(result) {
+      const { data, error } = result;
+      this.wiredKits = result; 
+      this.showComponent = data != null ? true : false;
       if (data) {
-        console.log('Unclaimed Kits :', data);
-        this.showComponent = (data != null || data.length > 0) ? true : false;
-        console.log(  this.showComponent);
         if(this.showComponent == true) {
           this.unclaimedKits = data;
-          console.log(this.unclaimedKits);
         }
       } 
-      
       else if (error) {
         console.error('Error in getUnclaimedKits : ', error);
       }
@@ -41,24 +42,23 @@ export default class B2BAccountWelcomeKits extends LightningElement {
 
 
     handleClick(event) {
-    const actionName = event.detail.action.name;
-    const row = event.detail.row;
-    console.log('Action Name: ', actionName);
-    console.log('Row Data: ', row);
-    if (actionName === 'claimKit') {
-        this.addKitToCart(row.productId);
+      const actionName = event.detail.action.name;
+      const row = event.detail.row;
+      
+      if (actionName === 'claimKit') {
+          this.addKitToCart(row.productId);
+      }
     }
-}
 
-addKitToCart(productId) {
-    console.log('Adding Product ID to Cart: ', productId);
-    ADD_KIT_TO_CART({ productId: productId })
-        .then(result => {
-            console.log('Kit added to cart successfully:', result);
-            window.location.reload();
-        })
-        .catch(error => {
-            console.error('Error adding kit to cart:', error);
-        });
-}
+    addKitToCart(productId) {
+        addItemToCart(productId, this.quantity)
+            .then(() => {
+                setTimeout(() => {
+                  refreshApex(this.wiredKits)
+                }, 3000)
+            })
+            .catch(error => {
+                console.error('Error adding kit to cart:', error);
+            });
+    }
 }

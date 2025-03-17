@@ -14,16 +14,6 @@ public class B2BUtilsTest {
         B2BTestDataFactory.createCartDeliveryGroup(cartId, productId);
     }
 
-    @isTest static void testCreateWebCart () {
-
-        User user = [SELECT Id FROM User WHERE Username = 'testuser@gmail.com' LIMIT 1];
-        Test.StartTest();
-        System.runAs(user) {
-            B2BUtils.createWebCart();
-        }
-        Test.StopTest();
-    }
-
     @isTest static void testGetCartDeliveryGroupId () {
 
         String cartId = [SELECT Id FROM WebCart WHERE Name = 'Test Cart' LIMIT 1].Id;
@@ -96,6 +86,21 @@ public class B2BUtilsTest {
         System.runAs(user) {
             try{
                 B2BUtils.getProductPriceByAccountId(accountId, productId);
+            }
+            catch(Exception e) {}
+        }
+        Test.StopTest();
+    }
+
+    @isTest static void testUpdateCart () {
+
+        User user = [SELECT Id FROM User WHERE Username = 'testuser@gmail.com' LIMIT 1];
+        String cartId = [SELECT Id FROM WebCart WHERE Name = 'Test Cart' LIMIT 1].Id;
+
+        Test.StartTest();
+        System.runAs(user) {
+            try{
+                B2BUtils.updateCart(cartId);
             }
             catch(Exception e) {}
         }

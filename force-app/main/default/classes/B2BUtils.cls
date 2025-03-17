@@ -1,7 +1,5 @@
 public with sharing class B2BUtils {
     private final static String siteName = 'Fear_Free_B2B_Store1';
-    private static final Integer RENEWAL_OFFSET_IN_DAYS = Integer.valueOf(System.Label.B2B_Renewal_Offset_In_Days);
-
 
     public static String getWebstoreID() {
         String webstoreName = null;
@@ -13,18 +11,6 @@ public with sharing class B2BUtils {
         String userId = UserInfo.getUserId();
         String contactId = [SELECT ContactId FROM User WHERE Id = :userId].ContactId;
         return [SELECT AccountId FROM Contact WHERE Id = :contactId].AccountId;
-    }
-    
-    public static String createWebCart() {
-        String effectiveAccountId = B2BUtils.getUserAccountID();
-        String effectiveWebstoreId = B2BUtils.getWebstoreID();
-
-        if(!Test.isRunningTest()) {
-            ConnectApi.CartInput cartInput = new ConnectApi.CartInput();
-            cartInput.effectiveAccountId = null;//effectiveAccountId;
-            ConnectApi.CommerceCart.createCart(effectiveWebstoreId, cartInput);
-        }
-        return getAccountActiveOrCheckoutWebCart();
     }
     
     public static String getAccountActiveOrCheckoutWebCart() {
@@ -100,5 +86,12 @@ public with sharing class B2BUtils {
         return Decimal.valueOf(
             String.valueOf(ConnectApi.CommerceStorePricing.getProductPrice(webstoreId, productId, accountId).UnitPrice)
         );  
+    }
+
+    @AuraEnabled
+    public static void updateCart(String cartId) {
+        WebCart cart = [SELECT Id, Status FROM WebCart WHERE Id = :cartId];
+        cart.Status = 'Active';
+        update cart;
     }
 }

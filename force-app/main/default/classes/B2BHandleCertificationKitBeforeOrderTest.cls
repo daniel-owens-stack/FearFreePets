@@ -5,11 +5,15 @@ public class B2BHandleCertificationKitBeforeOrderTest {
         String accountId = B2BTestDataFactory.createAccount();
         String contactId = B2BTestDataFactory.createContact(accountId);
         User user = B2BTestDataFactory.createCommunityUser(contactId);
-        String productId = B2BTestDataFactory.createSetProduct();
+        String productId = B2BTestDataFactory.createProduct();
+
+        Product2 product = [SELECT Id, Product_Group__c FROM Product2 WHERE Id = :productId];
+        product.Product_Group__c = 'Certification Kit';
+        update product;
 
         Membership__c m = new Membership__c(
             Name = 'Test Membership',
-            Welcome_Kit_Parent__c = productId
+            Individual_Certification_Kit__c = productId
         );
         insert m;
 
@@ -28,18 +32,19 @@ public class B2BHandleCertificationKitBeforeOrderTest {
     @isTest static void testUpdateOrderItems() {
         String accountId = [SELECT Id FROM Account WHERE Name = 'Test Account' LIMIT 1].Id;
         User user = [SELECT Id FROM User WHERE Username = 'testuser@gmail.com' LIMIT 1];
-        String productId = [SELECT Id FROM Product2 WHERE Name = 'Test Set Product' LIMIT 1].Id;
+        String productId = [SELECT Id FROM Product2 WHERE Name = 'Test Product1' LIMIT 1].Id;
 
         Test.StartTest();
         System.runAs(user) {
-            B2BTestDataFactory.createOrder(accountId, productId);
+            String orderId = B2BTestDataFactory.createOrder(accountId, productId);
+            B2BHandleCertificationKitBeforeOrder.updateOrderItems(orderId);
         }
         Test.StopTest();
     }
 
     @isTest static void testUpdateOrderItems_exception() {
         String accountId = [SELECT Id FROM Account WHERE Name = 'Test Account' LIMIT 1].Id;
-        String productId = [SELECT Id FROM Product2 WHERE Name = 'Test Set Product' LIMIT 1].Id;
+        String productId = [SELECT Id FROM Product2 WHERE Name = 'Test Product1' LIMIT 1].Id;
 
         Test.StartTest();
         try {

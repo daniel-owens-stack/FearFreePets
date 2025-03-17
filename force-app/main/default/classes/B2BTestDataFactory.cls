@@ -69,7 +69,7 @@ public class B2BTestDataFactory {
             Username = 'testuser@gmail.com'
         );
         insert u;
-        assignPermissions(u);
+        //assignPermissions(u);
         return u;
     }
 
@@ -93,9 +93,6 @@ public class B2BTestDataFactory {
             Name = 'Test Product1', 
             Family = 'TestClass',
             StockKeepingUnit = 'Test',
-            LengthIn__c = 2.00,
-            WidthIn__c = 1.00,
-            HeightIn__c = 1.00,
             IsShippingChargeNotApplicable = false
         );
         insert product;
@@ -177,7 +174,7 @@ public class B2BTestDataFactory {
         CartDeliveryGroup cdg = new CartDeliveryGroup(
             CartId = cartId,
             Name = 'Test Cart Delivery Group',
-            DeliverToCountry = 'US'
+            DeliverToCountry = 'United States'
         );
         insert cdg;
 
@@ -216,7 +213,7 @@ public class B2BTestDataFactory {
         String odmId = createOrderDeliveryMethod(productId);
         OrderDeliveryGroup orderDeliveryGroup = new OrderDeliveryGroup(
             DeliverToName = 'Test User',
-            DeliverToCountry = 'US',
+            DeliverToCountry = 'United States',
             OrderDeliveryMethodId = odmId,
             OrderId = orderId
         );
