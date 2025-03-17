@@ -29,7 +29,8 @@ public class B2BMembershipEndSchedulerTest {
         Buyer_Group_Membership__c bg_membership = new Buyer_Group_Membership__c(
             Membership__c = m.Id,
             Buyer_Group__c = bg.Id,
-            Certified__c = true
+            Certified__c = false,
+            Role__c = 'Non Admin'
         );
         insert bg_membership;
     }
@@ -64,7 +65,7 @@ public class B2BMembershipEndSchedulerTest {
         Buyer_Group_Membership__c bgm = [SELECT Id FROM Buyer_Group_Membership__c WHERE Membership__c = :membershipId];
         delete bgm;
 
-        B2BMembershipEndHelper.getBuyerGroupMemberships(membershipId);
+        B2BMembershipEndHelper.getBuyerGroupMemberships(membershipId, false, false);
         Test.StopTest();
     }
 
@@ -86,6 +87,27 @@ public class B2BMembershipEndSchedulerTest {
 
         Test.StartTest();
         B2BMembershipEndHelper.getActiveILMAofSameType(accountId, membershipId);
+        Test.StopTest();
+    }
+
+    @isTest static void testGetBuyerGroupsFromAccount() {
+
+        String accountId = [SELECT Id FROM Account WHERE Name = 'Test Account' LIMIT 1].Id;
+
+        Test.StartTest();
+
+        BuyerGroup bg = new BuyerGroup(
+            Name = 'Active Member - All'
+        );
+        insert bg;
+
+        BuyerGroupMember bg_member = new BuyerGroupMember(
+            BuyerId = accountId,
+            BuyerGroupId = bg.Id
+        );
+        insert bg_member;
+
+        B2BMembershipEndHelper.getBuyerGroupsFromAccount(accountId);
         Test.StopTest();
     }
 }

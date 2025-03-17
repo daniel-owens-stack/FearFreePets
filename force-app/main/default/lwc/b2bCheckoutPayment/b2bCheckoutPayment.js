@@ -14,6 +14,7 @@ import modalWindow from 'c/b2bCustomModalWindow';
 import { CurrentPageReference } from 'lightning/navigation';
 import { publish, MessageContext } from 'lightning/messageService';
 import MY_MESSAGE_CHANNEL from '@salesforce/messageChannel/MyMessageChannel__c';
+import updateCart from '@salesforce/apex/B2BUtils.updateCart';
 
 const CheckoutStage = {
     CHECK_VALIDITY_UPDATE: 'CHECK_VALIDITY_UPDATE',
@@ -70,6 +71,7 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
     async getCartItems(wireResult) {
         const { data, error } = wireResult;
         this.wiredCartItems = wireResult;
+        this.shippableCartItemIds = [];
         if (data) {
             this.cartItems = data.cartItems;
             this.hasShippableProducts = false;
@@ -119,6 +121,7 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
 
     async selectPaymentOption(event) {
         this.paymentOption = event.target.value;
+        sessionStorage.setItem('selectedPayment', this.paymentOption);
         await this.getCustomerId();
         this.showModal = this.paymentOption === 'invoice' && this.hasShippableProducts === true;
         if(this.showModal) {
@@ -141,6 +144,11 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
     }
 
     async connectedCallback() {
+        const savedPayment = sessionStorage.getItem('selectedPayment');
+        if (savedPayment) {
+            this.paymentOption = savedPayment;
+        }
+        
         this.effectiveAccountId = await this.getEffectiveAccountId();
         await this.getCustomerId();
         await this.checkCanInvoice();
@@ -164,7 +172,7 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
         if (isSuccess) {
             this.customerId = result;
         } else {
-            console.error(errorMessage);
+            console.error('getCustomerId: ', errorMessage);
         }
     }
 
@@ -191,7 +199,7 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
         if (isSuccess) {
             this.paymentIntent = result.paymentIntent;
         } else {
-            console.error(errorMessage);
+            console.error('validateSession: ',errorMessage);
         }
         return result.isSessionValid;
     }
@@ -202,7 +210,7 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
         if (isSuccess) {
          
         } else {
-            console.error(errorMessage);
+            console.error('convertCartToOrder: ', errorMessage);
         }
         return result;
     }
@@ -216,6 +224,7 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
                 return Promise.resolve(true);
             case CheckoutStage.BEFORE_PAYMENT:
                 if (this.checkValidity()) {
+                    sessionStorage.removeItem('selectedPayment');
                     this.showSpinner = true;
                     await this.getCustomerId();
                     if (this.paymentOption == 'paynow') {
@@ -335,13 +344,34 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
 
     deselectInvoiceOption() {
         this.paymentOption = 'paynow';
+        sessionStorage.setItem('selectedPayment', this.paymentOption);
     }
 
-    removeShippableItems() {
-        this.shippableCartItemIds.forEach(shippableItem => {
+    async removeShippableItems() {
+        await Promise.all(this.shippableCartItemIds.map(shippableItem => {
             deleteItemFromCart(shippableItem)
             .then(() => {console.log('Items deleted successfuly!')})
             .catch(error => {console.error('Error in deleteItemFromCart: ', error);})
+        }));
+
+        setTimeout(()=> {
+            this.refreshCheckout();
+        }, 3000);
+    }
+
+    async refreshCheckout() {
+        updateCart({cartId : this.recordId})
+        .then(() => { 
+            if(this.cartItems.length == 0) {
+                let currentUrl = window.location.href;
+                let cartPage = currentUrl.replace('checkout', 'cart');
+                window.open(cartPage, '_self');
+            } else {
+                window.location.reload();
+            }
+        })
+        .catch((error) => {
+            console.error('Error in updateCart: ', error);
         })
     }
 }

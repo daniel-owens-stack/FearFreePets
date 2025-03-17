@@ -24,6 +24,7 @@ export default class B2bAccountCode extends LightningElement {
     accountcodeInfo;
 
     connectedCallback() {
+        sessionStorage.removeItem('selectedPayment');
         if(isGuest) {
             this.showTemplate = false;
         }
