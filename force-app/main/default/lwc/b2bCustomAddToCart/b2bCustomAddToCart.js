@@ -110,10 +110,7 @@ export default class B2bCustomAddToCart extends LightningElement {
         .then(result => {
             this.productGroup = result;
 
-            if(this.productGroup === this.practiceMembership) {
-                this.checkifAccountHasPracticeLevelMembership();
-            }
-            else if(this.productGroup === this.academiaMembership) {
+            if(this.productGroup === this.academiaMembership) {
                 this.checkifAccountHasAcademiaMembership();
             } 
             else {
@@ -196,6 +193,9 @@ export default class B2bCustomAddToCart extends LightningElement {
             if(this.isAdmin === false && this.productGroup === this.individualMembership) {
                 this.checkifProductIsInCart();
             }
+            else if(this.isAdmin && this.productGroup === this.practiceMembership) {
+                this.checkifAccountHasPracticeLevelMembership();
+            }
             else {
                 this.handleVisibility();               
             }
@@ -207,12 +207,17 @@ export default class B2bCustomAddToCart extends LightningElement {
     }
 
     handleVisibility() {
-        if((this.productGroup === this.academiaMembership) || (this.productGroup === this.practiceMembership) || 
+        if((this.productGroup === this.academiaMembership) || (this.productGroup === this.practiceMembership && this.isAdmin) || 
            (this.productGroup === this.individualMembership && this.isAdmin === false)) {
                 this.showQtySelector = false;
                 this.showAddToCart = true;
                 this.showTermsOfService = this.productGroup === this.practiceMembership;
                 this.disableBtn = this.showTermsOfService;
+        }
+        else if( this.productGroup === this.practiceMembership && !this.isAdmin) {
+            this.showQtySelector = false;
+            this.showAddToCart = false;
+            this.showTermsOfService = false;
         }
         else {
             this.showQtySelector = true;
