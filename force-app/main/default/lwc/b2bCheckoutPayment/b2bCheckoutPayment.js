@@ -121,6 +121,7 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
 
     async selectPaymentOption(event) {
         this.paymentOption = event.target.value;
+        sessionStorage.setItem('selectedPayment', this.paymentOption);
         await this.getCustomerId();
         this.showModal = this.paymentOption === 'invoice' && this.hasShippableProducts === true;
         if(this.showModal) {
@@ -143,6 +144,11 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
     }
 
     async connectedCallback() {
+        const savedPayment = sessionStorage.getItem('selectedPayment');
+        if (savedPayment) {
+            this.paymentOption = savedPayment;
+        }
+        
         this.effectiveAccountId = await this.getEffectiveAccountId();
         await this.getCustomerId();
         await this.checkCanInvoice();
@@ -218,6 +224,7 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
                 return Promise.resolve(true);
             case CheckoutStage.BEFORE_PAYMENT:
                 if (this.checkValidity()) {
+                    sessionStorage.removeItem('selectedPayment');
                     this.showSpinner = true;
                     await this.getCustomerId();
                     if (this.paymentOption == 'paynow') {
@@ -337,6 +344,7 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
 
     deselectInvoiceOption() {
         this.paymentOption = 'paynow';
+        sessionStorage.setItem('selectedPayment', this.paymentOption);
     }
 
     async removeShippableItems() {
