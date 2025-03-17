@@ -8,14 +8,21 @@ public class B2BSchooxAPIController {
             return;
         }
         B2BSchooxAPIWrapper.SchooxUser schooxUser = B2BSchooxAPIService.getSchooxUser(accountId);
+        Boolean updateSFAccount = false;
         if (!schooxUser.isActive) {
+            updateSFAccount = true;
             SchooxAPI.reActivateLMSUser(schooxUser.studentId);
         }
         List<Integer> existingJobs = schooxUser.jobs;
         List<Integer> combinedJobList = B2BSchooxAPIServiceHelper.combineIntegerLists(jobIds, existingJobs);
         SchooxAPI.updateLMSUser(accountId, combinedJobList);
+
+        if(updateSFAccount) {
+            updateSXUserInSF(accountId, true);
+        }
     }
 
+    @future(callout = true)
     public static void handleJobUnassignment(String accountId, List<Integer> jobIdsToRemove) {
         B2BSchooxAPIWrapper.SchooxUser schooxUser = B2BSchooxAPIService.getSchooxUser(accountId);
 
@@ -35,7 +42,17 @@ public class B2BSchooxAPIController {
         
         if(existingJobs.isEmpty() || existingJobs == null) {
             SchooxAPI.removeLMSUser(schooxUser.studentId);
+            updateSXUserInSF(accountId, false);
         } 
+    }
+
+    public static void updateSXUserInSF(String accountId, Boolean isActive) {
+        Account acc = [SELECT Name, PersonContactId FROM Account WHERE Id = :accountId LIMIT 1];
+        String contactId = acc.PersonContactId;
+
+        Contact contact = [SELECT SX_Active_User__c FROM Contact WHERE Id = :contactId LIMIT 1];
+        contact.SX_Active_User__c = isActive;
+        update contact;
     }
 
     public static void getAllJobs() {

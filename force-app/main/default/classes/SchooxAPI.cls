@@ -7,7 +7,7 @@
  * https://app.schoox.com/api-docs
  */
 
-public with sharing class SchooxAPI {
+public without sharing class SchooxAPI {
     private static String API_URL = Label.SX_API_URL;
     private static String API_KEY = Label.SX_API_Key;
     private static String ACADEMY_ID = Label.SX_Academy_Id;
@@ -283,8 +283,8 @@ public with sharing class SchooxAPI {
         System.debug(JSON.serializePretty(bodyData));
         String url = API_URL + 'users/' + con.SX_User_Id__c;
         Map<String, String> responseMap = makeHTTPRequest(ApiType.User, url, 'PUT', JSON.serialize(bodyData));
-        String responseBody = responseMap.get('responseBody');
-        System.debug(responseBody);
+        // String responseBody = responseMap.get('responseBody');
+        // System.debug(responseBody);
         // if (String.isNotBlank(responseBody)) {
         //     throw new IllegalArgumentException(responseBody);
         // }
@@ -600,11 +600,11 @@ public with sharing class SchooxAPI {
         System.debug(request.toString());
         Http http = new Http();
         HttpResponse response;
-        // if (Test.isRunningTest()) {
-        //     response = testResponse;
-        // } else {
+        if (Test.isRunningTest() && testResponse != null) {
+            response = testResponse;
+        } else {
             response = http.send(request);
-        // }
+        }
         System.debug(response);
         System.debug(response.getBody());
         // System.debug('Status: ' + response.getStatus() + ' StatusCode: ' + response.getStatusCode());
