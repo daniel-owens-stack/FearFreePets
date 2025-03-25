@@ -3,6 +3,8 @@ import isGuest from '@salesforce/user/isGuest';
 import Toast from 'lightning/toast';
 import updateAccountFields from '@salesforce/apex/B2BAccountCodeController.updateAccountFields';
 import manageAccountCode from '@salesforce/apex/B2BAccountCodeController.manageAccountCode';
+import updateCart from '@salesforce/apex/B2BUtils.updateCart';
+import { CartSummaryAdapter } from 'commerce/cartApi';
 
 export default class B2bAccountCode extends LightningElement {
 
@@ -22,6 +24,14 @@ export default class B2bAccountCode extends LightningElement {
     isRendered = false;
     accountCode;
     accountcodeInfo;
+    @api recordId;
+
+    @wire(CartSummaryAdapter, {'cartStateOrId': 'active'})
+    async wiredCartSummaryData(result) {
+        if (result.data && result.data.cartId) {
+            this.recordId = result.data.cartId;
+        }
+    }
 
     connectedCallback() {
         sessionStorage.removeItem('selectedPayment');
@@ -31,6 +41,11 @@ export default class B2bAccountCode extends LightningElement {
         else {
             this.showTemplate = true;
             this.getAccountCodeInfo();
+        }
+
+        if(this.isInSitePreview()) {
+            this.showTemplate = true;
+            this.showText = true;
         }
     }
 
@@ -81,6 +96,7 @@ export default class B2bAccountCode extends LightningElement {
                 this.showInputField = this.accountCode === null;
                 this.disableButton = true;
                 //this.showToastMessage(this.updateSuccessTitle, this.updateSuccessMessage, 'success');
+                this.updateCartStatus();
             }
             else {
                 this.showAccountCode = false;
@@ -123,5 +139,23 @@ export default class B2bAccountCode extends LightningElement {
         let style = document.createElement('style');  
         style.innerText = '.applyBtn .slds-button:disabled {background: rgba(217, 215, 213, 1) !important; border-color: rgba(217, 215, 213, 1) !important; color: rgba(18, 61, 100, 1)}';   
         this.template.querySelector('.applyButton').appendChild(style);
+    }
+
+    updateCartStatus() {
+        updateCart({cartId : this.recordId})
+        .then(() => { })
+        .catch((error) => {
+            console.error('Error in updateCart: ', error);
+        })
+    }
+
+    isInSitePreview() {
+        let url = document.URL;
+        
+        return (url.indexOf('sitepreview') > 0 
+            || url.indexOf('livepreview') > 0
+            || url.indexOf('live-preview') > 0 
+            || url.indexOf('live.') > 0
+            || url.indexOf('.builder.') > 0);
     }
 }
