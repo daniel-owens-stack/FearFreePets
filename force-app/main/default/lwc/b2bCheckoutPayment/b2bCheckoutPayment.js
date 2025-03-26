@@ -14,7 +14,6 @@ import modalWindow from 'c/b2bCustomModalWindow';
 import { CurrentPageReference } from 'lightning/navigation';
 import { publish, MessageContext } from 'lightning/messageService';
 import MY_MESSAGE_CHANNEL from '@salesforce/messageChannel/MyMessageChannel__c';
-import updateCart from '@salesforce/apex/B2BUtils.updateCart';
 
 const CheckoutStage = {
     CHECK_VALIDITY_UPDATE: 'CHECK_VALIDITY_UPDATE',
@@ -354,24 +353,16 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
             .catch(error => {console.error('Error in deleteItemFromCart: ', error);})
         }));
 
-        setTimeout(()=> {
-            this.refreshCheckout();
-        }, 3000);
+        this.refreshCheckout();
     }
 
     async refreshCheckout() {
-        updateCart({cartId : this.recordId})
-        .then(() => { 
-            if(this.cartItems.length == 0) {
-                let currentUrl = window.location.href;
-                let cartPage = currentUrl.replace('checkout', 'cart');
-                window.open(cartPage, '_self');
-            } else {
-                window.location.reload();
-            }
-        })
-        .catch((error) => {
-            console.error('Error in updateCart: ', error);
-        })
+        if(this.cartItems.length == 0) {
+            let currentUrl = window.location.href;
+            let cartPage = currentUrl.replace('checkout', 'cart');
+            window.open(cartPage, '_self');
+        } else {
+            window.location.reload();
+        }
     }
 }

@@ -44,35 +44,46 @@ public class B2BCartCalc_DigitalShipping extends CartExtension.ShippingCartCalcu
             String shippingProduct = shippingProducts.isEmpty() ? null : Id.valueOf(shippingProducts[0].Id);
             
             CartDeliveryGroup cdg = [SELECT ID,DeliverToCountry FROM CartDeliveryGroup WHERE CartId =: cart.getId() LIMIT 1];
-            List<CartItem> lstWebCartItem = [
-                SELECT Id, Product2Id,
-                    Product2.Freight_Amount_US__c, Product2.Freight_Amount_INTL__c, 
-                    Product2.IsShippingChargeNotApplicable, Quantity 
-                FROM CartItem 
-                WHERE CartId = :cart.getId()
-            ];
             
             Decimal shipPrice = 0;
-            Boolean isUS = cdg.DeliverToCountry == 'United States';
+            Boolean isUS = cdg.DeliverToCountry == 'United States';   
 
-            if (lstWebCartItem != null && !lstWebCartItem.isEmpty()){
+            if (cartItems != null && cartItems.size() > 0) {
+                Set<Id> product2Ids = new Set<Id>();
+                Iterator<CartExtension.CartItem> iterator = cartItems.iterator();
 
-                for (CartItem record : lstWebCartItem) {
-                
-                    if (record.Product2 != null && !record.Product2.IsShippingChargeNotApplicable) {
+                while (iterator.hasNext()) {
+                    CartExtension.CartItem item = iterator.next();
+                    if (item.getProduct2Id() != null) {
+                        product2Ids.add(item.getProduct2Id());
+                    }
+                }
+
+                Map<Id, Product2> productMap = new Map<Id, Product2>([
+                    SELECT Id, IsShippingChargeNotApplicable, Freight_Amount_US__c, Freight_Amount_INTL__c
+                    FROM Product2
+                    WHERE Id IN :product2Ids
+                ]);
+
+                iterator = cartItems.iterator();
+                while (iterator.hasNext()) {
+                    CartExtension.CartItem record = iterator.next();
+                    Product2 product = productMap.get(record.getProduct2Id());
+                    if (product != null && !product.IsShippingChargeNotApplicable) {
                         Decimal freightAmount = 0;
-                        Integer quantity = (record.Quantity != null) ? Integer.valueOf(record.Quantity) : 0;
+                        Integer quantity = (record.getQuantity() != null) ? Integer.valueOf(record.getQuantity()) : 0;
 
-                        if (isUS && record.Product2.Freight_Amount_US__c != null) {
-                            freightAmount = record.Product2.Freight_Amount_US__c;
-                        } else if (!isUS && record.Product2.Freight_Amount_INTL__c != null) {
-                            freightAmount = record.Product2.Freight_Amount_INTL__c;
+                        if (isUS && product.Freight_Amount_US__c != null) {
+                            freightAmount = product.Freight_Amount_US__c;
+                        } else if (!isUS && product.Freight_Amount_INTL__c != null) {
+                            freightAmount = product.Freight_Amount_INTL__c;
                         }
 
                         shipPrice += freightAmount * quantity;
                     }
                 }
-            }        
+            }
+            
             Decimal calculatedShipping = (shipPrice == 0) ? 0 : shipPrice;
             CartExtension.CartDeliveryGroupMethod cartDeliveryGroupMethod01 = new CartExtension.CartDeliveryGroupMethod('Shipping Charge', calculatedShipping, shippingProduct);
             cartDeliveryGroupMethod01.setCarrier('USPS');
