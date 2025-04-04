@@ -1,6 +1,6 @@
 import { LightningElement, api, wire } from 'lwc';
 import isGuest from '@salesforce/user/isGuest';
-import { CurrentPageReference } from 'lightning/navigation';
+import { CurrentPageReference, NavigationMixin } from 'lightning/navigation';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import ToastContainer from 'lightning/toastContainer';
 import {addItemToCart} from 'commerce/cartApi';
@@ -12,7 +12,7 @@ import getIndividualLevelMemberships from '@salesforce/apex/B2BCustomAddToCartCo
 import isProductPresentInCart from '@salesforce/apex/B2BCustomAddToCartController.isProductPresentInCart';
 import modalWindow from 'c/b2bCustomModalWindow';
 
-export default class B2bCustomAddToCart extends LightningElement {
+export default class B2bCustomAddToCart extends NavigationMixin(LightningElement) {
 
     @api academiaMembership;
     @api individualMembership;
@@ -248,13 +248,29 @@ export default class B2bCustomAddToCart extends LightningElement {
                     modalHeading: this.addToCartSuccessTitle,
                     modalContent: this.addToCartSuccessMessage,
                     button1Label: this.continueButton,
-                    button2Label: this.viewCartButton
+                    button2Label: this.viewCartButton,
+                    onselectedbutton: (event) => {
+                        this.handleSelectedButton(event);
+                    }
                 });
             })
             .catch(error => {
                 console.log('Error in AddToCart : ', error);
                 this.addToCartErrorMessage = error.body.message;
                 this.fireToastMsg('error', this.addToCartErrorTitle, this.addToCartErrorMessage);
+            });
+        }
+    }
+
+    handleSelectedButton = (event) => {
+        const selectedButton = event.detail;
+        if (selectedButton === 'viewCart') {
+            //Redirect to Cart Page
+            this[NavigationMixin.Navigate]({
+                type: 'comm__namedPage',
+                attributes: {
+                    name: 'Current_Cart',
+                },
             });
         }
     }
