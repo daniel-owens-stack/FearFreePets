@@ -11,6 +11,7 @@ public without sharing class SchooxAPI {
     private static String API_URL = Label.SX_API_URL;
     private static String API_KEY = Label.SX_API_Key;
     private static String ACADEMY_ID = Label.SX_Academy_Id;
+    private static Integer UNIT_ID = Integer.valueOf(Label.SX_Unit_Id);
     public static Boolean apiError = false;
     public static HttpResponse testResponse;
     @TestVisible
@@ -27,7 +28,7 @@ public without sharing class SchooxAPI {
         private List<String> external_ids;
 
         private List<JobData> jobs;
-        private List<Integer> unit_ids = new List<Integer>{1444104};
+        private List<Integer> unit_ids = new List<Integer>{SchooxAPI.UNIT_ID};
         private List<Integer> above_ids;
         private List<String> roles = new List<String>{'employee'};
 
@@ -59,7 +60,7 @@ public without sharing class SchooxAPI {
         private String firstname;
         private String lastname;
         private String email;
-        private List<Integer> unit_ids = new List<Integer>{1444104};
+        private List<Integer> unit_ids = new List<Integer>{SchooxAPI.UNIT_ID};
         private List<JobData> jobs;
         private LMSEditData(Contact con, List<Integer> jobIdList) {
             this.firstname = con.FirstName;
@@ -72,7 +73,7 @@ public without sharing class SchooxAPI {
     }
 
     private class JobData {
-        private Integer unit_id = 1444104;
+        private Integer unit_id = SchooxAPI.UNIT_ID;
 		private List<Integer> jobs;
 
         private JobData(Integer jobId) {
