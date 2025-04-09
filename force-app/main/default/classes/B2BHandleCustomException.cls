@@ -1,6 +1,6 @@
 public class B2BHandleCustomException extends Exception {
     
-    public static void LogException(Exception e, String category, String subcategory)
+    public static String LogException(Exception e, String category, String subcategory)
     {
         try
         {
@@ -27,6 +27,7 @@ public class B2BHandleCustomException extends Exception {
             exc.Category__c = category;
             exc.Sub_Category__c = subcategory;
             database.insert(exc);            
+            return exc.Id;
         } 
 
         finally{
