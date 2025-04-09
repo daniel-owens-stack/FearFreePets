@@ -15,8 +15,9 @@ public class B2BCreateHistoricalOrdersBatchTest {
 
         //Create Product with Historical Order Id
         Product2 product = new Product2(
-            Name = 'Delivery Charge',
-            WC_Id__c = '45931'
+            Name = 'Test Product',
+            WC_Id__c = '234567',
+            IsActive = true
         );
         insert product;
 
@@ -40,7 +41,7 @@ public class B2BCreateHistoricalOrdersBatchTest {
         ho.Last_Name__c = 'Toay';
         ho.Group_Role__c = 'Leader';
         ho.Member_of_Group__c = '440830';
-        ho.Successful_Insert__c = false;
+        ho.Successful_Insert__c = 'Pending';
         ho.User_Id__c = '12629';
         ho.Shipping_Address__CountryCode__s = 'US';
 
@@ -58,13 +59,31 @@ public class B2BCreateHistoricalOrdersBatchTest {
     }
 
     @isTest static void testB2BCreateHistoricalOrdersBatch() {
+
+        //Create a Shipping Product
+        Product2 p = new Product2(
+            Name = 'Delivery Charge',
+            IsActive = true
+        );
+        insert p;
+
+        //Create Default Delivery Method
+        OrderDeliveryMethod odm = new OrderDeliveryMethod();
+        odm.Name = 'Default Delivery Method';
+        odm.Carrier = 'Carrier Unavailable';
+        odm.ClassOfService = 'Digital Shipping';
+        odm.IsActive = true;
+        odm.ProductId = p.Id;
+
+        insert odm;
+
         Test.StartTest();
         B2BCreateHistoricalOrdersBatch b = new B2BCreateHistoricalOrdersBatch();
         Database.executeBatch(b);
         Test.StopTest();
     }
 
-    @isTest static void testB2BCreateHistoricalOrdersBatch_withShippingProduct() {
+    @isTest static void testB2BCreateHistoricalOrdersBatch_withoutDeliveryMethod() {
         //Create a Shipping Product
         Product2 p = new Product2(
             Name = 'Delivery Charge',
@@ -78,7 +97,7 @@ public class B2BCreateHistoricalOrdersBatchTest {
         Test.StopTest();
     }
 
-    @isTest static void testB2BCreateHistoricalOrdersBatch_withDeliveryMethod() {
+    @isTest static void testB2BCreateHistoricalOrdersBatch_withoutShippingProduct() {
         //Create a Shipping Product
         Product2 p = new Product2(
             Name = 'Delivery Charge'
@@ -95,6 +114,64 @@ public class B2BCreateHistoricalOrdersBatchTest {
 
         insert odm;
         
+        Test.StartTest();
+        B2BCreateHistoricalOrdersBatch b = new B2BCreateHistoricalOrdersBatch();
+        Database.executeBatch(b);
+        Test.StopTest();
+    }
+
+    @isTest static void testB2BCreateHistoricalOrdersBatch_invalidEmail() {
+
+        //Create a Shipping Product
+        Product2 p = new Product2(
+            Name = 'Delivery Charge',
+            IsActive = true
+        );
+        insert p;
+
+        //Create Default Delivery Method
+        OrderDeliveryMethod odm = new OrderDeliveryMethod();
+        odm.Name = 'Default Delivery Method';
+        odm.Carrier = 'Carrier Unavailable';
+        odm.ClassOfService = 'Digital Shipping';
+        odm.IsActive = true;
+        odm.ProductId = p.Id;
+
+        insert odm;
+
+        Historical_Order__c ho = [SELECT Id, Billing_Email__c FROM Historical_Order__c LIMIT 1];
+        ho.Billing_Email__c = 'test@gmail.com';
+        update ho;
+
+        Test.StartTest();
+        B2BCreateHistoricalOrdersBatch b = new B2BCreateHistoricalOrdersBatch();
+        Database.executeBatch(b);
+        Test.StopTest();
+    }
+
+    @isTest static void testB2BCreateHistoricalOrdersBatch_zeroQuantity() {
+
+        //Create a Shipping Product
+        Product2 p = new Product2(
+            Name = 'Delivery Charge',
+            IsActive = true
+        );
+        insert p;
+
+        //Create Default Delivery Method
+        OrderDeliveryMethod odm = new OrderDeliveryMethod();
+        odm.Name = 'Default Delivery Method';
+        odm.Carrier = 'Carrier Unavailable';
+        odm.ClassOfService = 'Digital Shipping';
+        odm.IsActive = true;
+        odm.ProductId = p.Id;
+
+        insert odm;
+
+        Historical_Order_Item__c hoi = [SELECT Id, Quantity__c FROM Historical_Order_Item__c LIMIT 1];
+        hoi.Quantity__c = 0;
+        update hoi;
+
         Test.StartTest();
         B2BCreateHistoricalOrdersBatch b = new B2BCreateHistoricalOrdersBatch();
         Database.executeBatch(b);
