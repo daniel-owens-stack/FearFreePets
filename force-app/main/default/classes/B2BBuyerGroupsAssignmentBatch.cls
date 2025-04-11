@@ -3,7 +3,7 @@ public class B2BBuyerGroupsAssignmentBatch implements Database.Batchable<sObject
     public B2BBuyerGroupsAssignmentBatch() { }
 
     public Database.QueryLocator start(Database.BatchableContext bc) {
-        String query = 'SELECT Id Account_Id__c, Certified__c, Membership__c FROM Account_Membership__c WHERE Historical_Membership__c != null and Status__c == \'Active\' AND Membership__r.Active__c == true';
+        String query = 'SELECT Id, Account_Id__c, Certified__c, Membership__c FROM Account_Membership__c WHERE Historical_Membership__c != null and Status__c == \'Active\' AND Membership__r.Active__c == true';
         return Database.getQueryLocator(query);
     }
 
