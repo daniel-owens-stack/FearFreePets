@@ -1,9 +1,12 @@
 public class B2BBuyerGroupsAssignmentBatch implements Database.Batchable<sObject>, Database.Stateful {
 
+    @TestVisible
+    public static Boolean throwException = false;
+
     public B2BBuyerGroupsAssignmentBatch() { }
 
     public Database.QueryLocator start(Database.BatchableContext bc) {
-        String query = 'SELECT Id, Account_Id__c, Certified__c, Membership__c FROM Account_Membership__c WHERE Historical_Membership__c != null and Status__c = \'Active\' AND Membership__r.Active__c = true';
+        String query = 'SELECT Id, Name, Account_Id__c, Certified__c, Membership__c FROM Account_Membership__c WHERE Historical_Membership__c != null and Status__c = \'Active\' AND Membership__r.Active__c = true';
         return Database.getQueryLocator(query);
     }
 
@@ -13,11 +16,14 @@ public class B2BBuyerGroupsAssignmentBatch implements Database.Batchable<sObject
             List<Account_Membership__c> failedBuyerGroupAssignments = new List<Account_Membership__c>();
             for(Account_Membership__c ilma : accountMemberships) {
                 try {
+                    if(Test.isRunningTest() && throwException) {
+                        throw new HistoricalMembershipsException('Test Exception');
+                    }
                     B2BBuyerGroupAssignemntController.handleBuyerGroupsForILMA(ilma);
                 }
                 catch(Exception e) {
-                    String errorMessage = 'Buyer Group Assignment Failed for Historical Membership: ' + ilma.Name;
-                    ilma.Last_Buyer_Groups_Assignment_Exception__c = B2BHandleCustomException.LogException(new HistoricalOrdersException(errorMessage), 'Historical Memberships', 'Buyer Group Assignment');
+                    String errorMessage = 'Buyer Groups Assignment Failed for the Account ' + ilma.Account_Id__c + ' for Historical Membership ' + ilma.Name;
+                    ilma.Last_Buyer_Groups_Assignment_Exception__c = B2BHandleCustomException.LogException(new HistoricalMembershipsException(errorMessage), 'Historical Memberships', 'Buyer Group Assignment');
                     failedBuyerGroupAssignments.add(ilma);
                 }
             }
@@ -32,5 +38,5 @@ public class B2BBuyerGroupsAssignmentBatch implements Database.Batchable<sObject
 
     }
 
-    public class HistoricalOrdersException extends Exception {}
+    public class HistoricalMembershipsException extends Exception {}
 }
