@@ -1,155 +1,66 @@
 @isTest
-public class B2BCreateHistoricalOrdersBatchTest {
+public class B2BCreateHistoricalMembershipsBatchTest {
 
-    @TestSetup 
-    static void makeData(){
+    @TestSetup
+    static void setupData() {
         Id recordTypeId;
         if (Schema.SObjectType.Account.getRecordTypeInfosByName().containsKey('Person Account')) {
             recordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Person Account').getRecordTypeId();
         }
 
-        Account account = new Account(
-            FirstName = 'TestFFP',
-            LastName = 'Account',
-            PersonEmail = 'test.123+1@gmail.com'
+        Account personAccount = new Account(
+            FirstName = 'Jane',
+            LastName = 'Doe',
+            PersonEmail = 'jane@example.com'
         );
         if (recordTypeId != null) {
-            account.RecordTypeId = recordTypeId;
+            personAccount.RecordTypeId = recordTypeId;
         }
-        insert account;
+        insert personAccount;
 
-        Product2 product = new Product2(
-            Name = 'Test Product',
-            WC_Id__c = '234567',
-            IsActive = true
+        Membership__c individualMembership = new Membership__c(
+            Name = 'Individual Membership',
+            WC_Id__c = 'indiv_wc_id'
         );
-        insert product;
+        insert individualMembership;
 
-        Historical_Order__c ho = new Historical_Order__c();
-        ho.Historical_Order_Id__c = '45931';
-        ho.Post_Author__c = 1;
-        ho.Post_Date__c = Date.valueOf('2017-04-20');
-        ho.Post_Title__c = 'Order &ndash; April 20, 2017 @ 05:04 PM';
-        ho.Post_Name__c = 'order-apr-20-2017-1104-pm';
-        ho.Post_Modified__c = Date.valueOf('2017-04-20');
-        ho.Guid__c = 'https://stg-fearfreepetsmainwebsite-stage.kinsta.cloud/?post_type=shop_order&#038;p=45931';
-        ho.Billing_FirstName__c = 'Test';
-        ho.Billing_LastName__c = 'Toay';
-        ho.Billing_Company__c = 'Midwest Veterinary Supply';
-        ho.Billing_Email__c = 'test.123+1@gmail.com';
-        ho.Billing_Phone__c = '402-677-3244';
-        ho.Billing_Address__CountryCode__s = 'US';
-        ho.FFP_Professional_Role__c = 'Faculty';
-        ho.First_Name__c = 'Test';
-        ho.Last_Name__c = 'Toay';
-        ho.Group_Role__c = 'Leader';
-        ho.Member_of_Group__c = '440830';
-        ho.Successful_Insert__c = 'Pending';
-        ho.User_Id__c = '12629';
-        ho.Shipping_Address__CountryCode__s = 'US';
-        insert ho;
+        Historical_Membership__c validHm = new Historical_Membership__c(
+            Start_Date__c = Date.today().addYears(-2),
+            End_Date__c = Date.today().addYears(-1),
+            Cancelled_Date__c = Date.today().addMonths(-6),
+            User_Email__c = 'jane@example.com',
+            Post_Parent__c = 'indiv_wc_id',
+            Data_Status__c = 'Pending'
+        );
 
-        Historical_Order_Item__c hoi = new Historical_Order_Item__c();
-        hoi.Historical_Order_Item_Id__c = '123456';
-        hoi.Historical_Order_Id__c = '45931';
-        hoi.Product_Id__c = '234567';
-        hoi.Quantity__c = 1;
-        hoi.Line_Total__c = 5;
-        insert hoi;
+        Historical_Membership__c missingStartDate = new Historical_Membership__c(
+            User_Email__c = 'jane@example.com',
+            Post_Parent__c = 'indiv_wc_id',
+            Data_Status__c = 'Pending'
+        );
+
+        Historical_Membership__c invalidEmail = new Historical_Membership__c(
+            Start_Date__c = Date.today().addYears(-1),
+            User_Email__c = 'notfound@example.com',
+            Post_Parent__c = 'indiv_wc_id',
+            Data_Status__c = 'Pending'
+        );
+
+        Historical_Membership__c invalidPostParent = new Historical_Membership__c(
+            Start_Date__c = Date.today().addYears(-1),
+            User_Email__c = 'jane@example.com',
+            Post_Parent__c = 'invalid_wc_id',
+            Data_Status__c = 'Pending'
+        );
+
+        insert new List<Historical_Membership__c>{ validHm, missingStartDate, invalidEmail, invalidPostParent };
     }
 
-    @isTest 
-    static void testB2BCreateHistoricalOrdersBatch() {
-        Product2 p = new Product2(Name = 'Delivery Charge', IsActive = true);
-        insert p;
-
-        OrderDeliveryMethod odm = new OrderDeliveryMethod();
-        odm.Name = 'Default Delivery Method';
-        odm.Carrier = 'Carrier Unavailable';
-        odm.ClassOfService = 'Digital Shipping';
-        odm.IsActive = true;
-        odm.ProductId = p.Id;
-        insert odm;
-
-        Test.StartTest();
-        B2BCreateHistoricalOrdersBatch b = new B2BCreateHistoricalOrdersBatch();
-        Database.executeBatch(b);
-        Test.StopTest();
-    }
-
-    @isTest 
-    static void testB2BCreateHistoricalOrdersBatch_withoutDeliveryMethod() {
-        Product2 p = new Product2(Name = 'Delivery Charge', IsActive = true);
-        insert p;
-
-        Test.StartTest();
-        B2BCreateHistoricalOrdersBatch b = new B2BCreateHistoricalOrdersBatch();
-        Database.executeBatch(b);
-        Test.StopTest();
-    }
-
-    @isTest 
-    static void testB2BCreateHistoricalOrdersBatch_withoutShippingProduct() {
-        Product2 p = new Product2(Name = 'Delivery Charge');
-        insert p;
-
-        OrderDeliveryMethod odm = new OrderDeliveryMethod();
-        odm.Name = 'Default Delivery Method';
-        odm.Carrier = 'Fedex';
-        odm.ClassOfService = 'Digital Shipping';
-        odm.IsActive = true;
-        odm.ProductId = p.Id;
-        insert odm;
-
-        Test.StartTest();
-        B2BCreateHistoricalOrdersBatch b = new B2BCreateHistoricalOrdersBatch();
-        Database.executeBatch(b);
-        Test.StopTest();
-    }
-
-    @isTest 
-    static void testB2BCreateHistoricalOrdersBatch_invalidEmail() {
-        Product2 p = new Product2(Name = 'Delivery Charge', IsActive = true);
-        insert p;
-
-        OrderDeliveryMethod odm = new OrderDeliveryMethod();
-        odm.Name = 'Default Delivery Method';
-        odm.Carrier = 'Carrier Unavailable';
-        odm.ClassOfService = 'Digital Shipping';
-        odm.IsActive = true;
-        odm.ProductId = p.Id;
-        insert odm;
-
-        Historical_Order__c ho = [SELECT Id, Billing_Email__c FROM Historical_Order__c LIMIT 1];
-        ho.Billing_Email__c = 'test@gmail.com';
-        update ho;
-
-        Test.StartTest();
-        B2BCreateHistoricalOrdersBatch b = new B2BCreateHistoricalOrdersBatch();
-        Database.executeBatch(b);
-        Test.StopTest();
-    }
-
-    @isTest 
-    static void testB2BCreateHistoricalOrdersBatch_zeroQuantity() {
-        Product2 p = new Product2(Name = 'Delivery Charge', IsActive = true);
-        insert p;
-
-        OrderDeliveryMethod odm = new OrderDeliveryMethod();
-        odm.Name = 'Default Delivery Method';
-        odm.Carrier = 'Carrier Unavailable';
-        odm.ClassOfService = 'Digital Shipping';
-        odm.IsActive = true;
-        odm.ProductId = p.Id;
-        insert odm;
-
-        Historical_Order_Item__c hoi = [SELECT Id, Quantity__c FROM Historical_Order_Item__c LIMIT 1];
-        hoi.Quantity__c = 0;
-        update hoi;
-
-        Test.StartTest();
-        B2BCreateHistoricalOrdersBatch b = new B2BCreateHistoricalOrdersBatch();
-        Database.executeBatch(b);
-        Test.StopTest();
+    @isTest
+    static void testBatchFullCoverage() {
+        Test.startTest();
+        B2BCreateHistoricalMembershipsBatch batch = new B2BCreateHistoricalMembershipsBatch();
+        Database.executeBatch(batch, 200); // Prevents multiple execute calls
+        Test.stopTest();
     }
 }
