@@ -7,6 +7,7 @@ import verifyCode from '@salesforce/apex/B2BBillingEmailVerificationController.v
 import Toast from 'lightning/toast';
 import { subscribe, MessageContext } from 'lightning/messageService';
 import MY_MESSAGE_CHANNEL from '@salesforce/messageChannel/MyMessageChannel__c';
+import { CurrentPageReference } from "lightning/navigation";
 
 const CheckoutStage = {
     CHECK_VALIDITY_UPDATE: 'CHECK_VALIDITY_UPDATE',
@@ -64,9 +65,15 @@ export default class B2bBillingEmailVerification extends (LightningElement, Chec
     selectedPaymentOption = 'paynow';
     accountName;
     emailRegex = /^[a-zA-Z]+(?:[._]?[a-zA-Z0-9]+)*@[a-zA-Z]+(?:\.[a-zA-Z]{2,})+$/;
+    currentPageName;
 
     @wire(MessageContext)
     messageContext;
+
+    @wire(CurrentPageReference)
+    printPageName(pageRef) {
+        this.currentPageName = pageRef ? pageRef.attributes.name : '';
+    }
 
     async connectedCallback(){
         subscribe(
@@ -144,11 +151,7 @@ export default class B2bBillingEmailVerification extends (LightningElement, Chec
     }
 
     manageTemplateVisibility() {
-        let path = window.location.pathname;
-        this.pathName = path.trim();
-
-        if(this.pathName == '/store/checkout') {
-            // this.showCheckoutTemplate = true;
+        if(this.currentPageName == 'Current_Checkout'){
             this.showMyAccountTemplate = false;
         }
         else {
