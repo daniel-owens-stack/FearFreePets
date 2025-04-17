@@ -7,7 +7,6 @@ import verifyCode from '@salesforce/apex/B2BBillingEmailVerificationController.v
 import Toast from 'lightning/toast';
 import { subscribe, MessageContext } from 'lightning/messageService';
 import MY_MESSAGE_CHANNEL from '@salesforce/messageChannel/MyMessageChannel__c';
-import { CurrentPageReference } from "lightning/navigation";
 
 const CheckoutStage = {
     CHECK_VALIDITY_UPDATE: 'CHECK_VALIDITY_UPDATE',
@@ -37,7 +36,6 @@ export default class B2bBillingEmailVerification extends (LightningElement, Chec
     @api emailPatternMismatchMsg;
     @api disclaimerText;
 
-    showMyAccountTemplate = false;
     showBillingEmail = false;
     showAddEmail = false;
     showEmailInput = false;
@@ -65,15 +63,9 @@ export default class B2bBillingEmailVerification extends (LightningElement, Chec
     selectedPaymentOption = 'paynow';
     accountName;
     emailRegex = /^[a-zA-Z]+(?:[._]?[a-zA-Z0-9]+)*@[a-zA-Z]+(?:\.[a-zA-Z]{2,})+$/;
-    currentPageName;
 
     @wire(MessageContext)
     messageContext;
-
-    @wire(CurrentPageReference)
-    printPageName(pageRef) {
-        this.currentPageName = pageRef ? pageRef.attributes.name : '';
-    }
 
     async connectedCallback(){
         subscribe(
@@ -90,10 +82,11 @@ export default class B2bBillingEmailVerification extends (LightningElement, Chec
 
         this.isPreview = this.isInSitePreview();
         if(this.isPreview){
-            this.showMyAccountTemplate = true;
             this.showCheckoutTemplate = true;
             this.showAddEmail = true;
         } else {
+            this.selectedPaymentOption = sessionStorage.getItem('selectedPayment');
+            this.showCheckoutTemplate = this.selectedPaymentOption == 'invoice';
             await this.getCurrentAccountDetails();
         }
     }
@@ -118,9 +111,8 @@ export default class B2bBillingEmailVerification extends (LightningElement, Chec
         })
         .then(result => {    
             this.accountName = result.accountName;
-            this.manageTemplateVisibility();
 
-            if(this.showMyAccountTemplate || this.showCheckoutTemplate) {
+            if(this.showCheckoutTemplate) {
                 if(result.hasBillingEmail) {
                     this.showBillingEmail = true;
                     this.existingBillingEmail = result.billingEmail;
@@ -148,16 +140,6 @@ export default class B2bBillingEmailVerification extends (LightningElement, Chec
         .catch(error => {
             console.error('Error in getUserAccountId: ', error);
         })
-    }
-
-    manageTemplateVisibility() {
-        if(this.currentPageName == 'Current_Checkout'){
-            this.showMyAccountTemplate = false;
-        }
-        else {
-            this.showMyAccountTemplate = true;
-            this.showCheckoutTemplate = false;
-        }
     }
     
     handleEmailChange(event) {
