@@ -353,7 +353,9 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
             .catch(error => {console.error('Error in deleteItemFromCart: ', error);})
         }));
 
-        this.refreshCheckout();
+        setTimeout(() => {
+            this.refreshCheckout();
+        },3000);
     }
 
     async refreshCheckout() {
