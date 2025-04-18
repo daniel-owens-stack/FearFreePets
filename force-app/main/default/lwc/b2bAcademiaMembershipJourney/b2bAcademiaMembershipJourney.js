@@ -253,14 +253,16 @@ export default class B2bAcademiaMembershipJourney extends CheckoutComponentBase 
     }
 
     get checkValidity() {
-        this.showReqError = this.selectedOption == undefined ? true : false;
-        if(this.showReqError) {
-            return false;
-        } 
-        else {
-            this.showSchoolError = (this.showReqError == false && (this.schoolUniversity == '' || this.schoolUniversity == null)) ? true : false;
-            if(this.showSchoolError) {
+        if(this.showTemplate){
+            this.showReqError = this.selectedOption == undefined ? true : false;
+            if(this.showReqError) {
                 return false;
+            } 
+            else {
+                this.showSchoolError = (this.showReqError == false && (this.schoolUniversity == '' || this.schoolUniversity == null)) ? true : false;
+                if(this.showSchoolError) {
+                    return false;
+                }
             }
         }
         return true;
