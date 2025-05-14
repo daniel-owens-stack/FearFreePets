@@ -162,7 +162,7 @@ public without sharing class B2BOrderHistoryListController {
             for(ConnectApi.ProductOverview product : productsData.products){
                 if(product.success){
                     if(product.defaultImage != null) {
-                        productToWrapperMap.get(product.id).productImgUrl = product.defaultImage.url;
+                        productToWrapperMap.get(product.id).productImgUrl = Site.getBaseUrl() + product.defaultImage.url;
                     }
                 }      
             }
