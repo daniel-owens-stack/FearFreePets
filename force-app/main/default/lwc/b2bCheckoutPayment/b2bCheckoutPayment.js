@@ -11,7 +11,7 @@ import convertCartToOrder from '@salesforce/apex/B2BStripePaymentController.conv
 import createInvoice from '@salesforce/apex/B2BStripePaymentController.createInvoice';
 import canInvoice from '@salesforce/apex/B2BStripePaymentController.canInvoice';
 import modalWindow from 'c/b2bCustomModalWindow';
-import { CurrentPageReference } from 'lightning/navigation';
+import { CurrentPageReference, NavigationMixin } from 'lightning/navigation';
 import { publish, MessageContext } from 'lightning/messageService';
 import MY_MESSAGE_CHANNEL from '@salesforce/messageChannel/MyMessageChannel__c';
 
@@ -24,7 +24,7 @@ const CheckoutStage = {
     PLACE_ORDER: 'PLACE_ORDER'
 };
 
-export default class B2bCheckoutPayment extends useCheckoutComponent(LightningElement) {
+export default class B2bCheckoutPayment extends NavigationMixin(useCheckoutComponent(LightningElement)) {
     @wire(CurrentPageReference) 
     handleStateChange(pageReference) {
         this.pageReference = pageReference;
@@ -56,14 +56,26 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
                     this.showError = true;
                     this.errorMessage = 'Error occurred during order creation, please contact System Administrator.';
                 } else {
-                    window.location = `${communityBasePath}/order?orderNumber=${summaryNumber}`;
                     this.showSpinner = false;
+                    this.navigateToOrderConfirmation(summaryNumber);
                 }
             }
             else {
                 this.showSpinner = false;
             }
         }
+    }
+
+    navigateToOrderConfirmation(orderNumber) {
+        this[NavigationMixin.Navigate]({
+        type: "comm__namedPage",
+        attributes: {
+            name: "Order"
+        },
+        state: {
+            orderNumber: orderNumber
+        }
+        });
     }
 
     @wire(CartItemsAdapter, {'cartStateOrId': 'active'}) 
@@ -237,8 +249,8 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
                             this.showSpinner = false;
                             return Promise.reject('Error occurred during order creation, please contact System Administrator.');
                         } else {
-                            window.location = `${communityBasePath}/order?orderNumber=${summaryNumber}`;
                             this.showSpinner = false;
+                            this.navigateToOrderConfirmation(summaryNumber);
                         }
                     }
                 } else {
