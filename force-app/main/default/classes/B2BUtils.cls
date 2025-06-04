@@ -1,5 +1,5 @@
 public with sharing class B2BUtils {
-    private final static String siteName = 'Fear_Free_B2B_Store1';
+    private final static String siteName = Label.B2B_Site_Name;
 
     public static String getWebstoreID() {
         String webstoreName = null;
