@@ -8,7 +8,7 @@ public without sharing class B2BStripePaymentController {
     public static String getCustomerId(String accountId, String paymentOption) {
         
         Account account = [
-                SELECT ShippingAddress, StripeCustomerId__c, Business__c, Admin_Account__c, Billing_Email__c, Invoice_Billing_Email__c, Invoice_Stripe_Id__c
+                SELECT ShippingAddress, StripeCustomerId__c, Business__c, Admin_Account__c, PersonEmail, Invoice_Billing_Email__c, Invoice_Stripe_Id__c
                 FROM Account
                 WHERE Id = :accountId
         ];
@@ -16,10 +16,10 @@ public without sharing class B2BStripePaymentController {
         String customerId;
 
         if(paymentOption == 'paynow') {
-            if (String.isBlank(account.StripeCustomerId__c) && account.Billing_Email__c != null) {
-                B2BStripeWrapper.StripeCustomer existingCustomer = B2BStripeService.getStripeCustomerByEmail(account.Billing_Email__c);
+            if (String.isBlank(account.StripeCustomerId__c) && account.PersonEmail != null) {
+                B2BStripeWrapper.StripeCustomer existingCustomer = B2BStripeService.getStripeCustomerByEmail(account.PersonEmail);
                 if(existingCustomer.id == null) {
-                    B2BStripeWrapper.StripeCustomer response = B2BStripeService.createStripeCustomer(account.Id, account.Billing_Email__c);
+                    B2BStripeWrapper.StripeCustomer response = B2BStripeService.createStripeCustomer(account.Id, account.PersonEmail);
                     account.StripeCustomerId__c = response.Id; 
                 } else {
                     account.StripeCustomerId__c = existingCustomer.Id;

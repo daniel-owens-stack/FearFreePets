@@ -129,7 +129,7 @@ public without sharing class B2BStripeServiceHelper {
     public static Account getAccountById(String accountId) {
         return [
                 SELECT Name,
-                        Billing_Email__c,
+                        PersonEmail,
                         StripeCustomerId__c
                 FROM Account
                 WHERE Id =:accountId
