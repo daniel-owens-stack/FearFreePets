@@ -29,6 +29,7 @@ export default class B2bCustomAddToCart extends NavigationMixin(LightningElement
     @api viewCartButton;
     @api headingLabel;
     @api flowApiName;
+    @api renewalMessage;;
     productId;
     isVariant = false;
     isLoading = false;
@@ -44,6 +45,7 @@ export default class B2bCustomAddToCart extends NavigationMixin(LightningElement
     termsAgreed = false;
     disableBtn = false;
     showFlowScreen = false;
+    showMsgToRenew = false;
 
     connectedCallback() {
         this.isPreview = this.isInSitePreview();
@@ -51,6 +53,7 @@ export default class B2bCustomAddToCart extends NavigationMixin(LightningElement
             this.showQtySelector = true;
             this.showAddToCart = true;
             this.showTermsOfService = true;
+            this.showMsgToRenew = true;
         }
     }
 
@@ -111,7 +114,7 @@ export default class B2bCustomAddToCart extends NavigationMixin(LightningElement
             this.productGroup = result;
 
             if(this.productGroup === this.academiaMembership) {
-                this.checkifAccountHasAcademiaMembership();
+                this.checkifAccountHasIndividualLevelMembership();
             } 
             else {
                 this.checkIsAdminAccount();
@@ -133,6 +136,7 @@ export default class B2bCustomAddToCart extends NavigationMixin(LightningElement
                 this.showAddToCart = false;
                 this.showTermsOfService = false;
                 this.isLoading = false;
+                this.showMsgToRenew = true;
             }
             else {
                 this.checkifProductIsInCart();
@@ -144,7 +148,7 @@ export default class B2bCustomAddToCart extends NavigationMixin(LightningElement
         })
     }
 
-    checkifAccountHasAcademiaMembership() {
+    checkifAccountHasIndividualLevelMembership() {
         getIndividualLevelMemberships({
             productId : this.productId
         })
@@ -154,13 +158,14 @@ export default class B2bCustomAddToCart extends NavigationMixin(LightningElement
                 this.showAddToCart = false;
                 this.showTermsOfService = false;
                 this.isLoading = false;
+                this.showMsgToRenew = true;
             }
             else {
                 this.checkifProductIsInCart();
             }
         })
         .catch(error => {
-            console.log('Error in checkifAccountHasAcademiaMembership: ', error);
+            console.log('Error in checkifAccountHasIndividualLevelMembership: ', error);
             this.isLoading = false;
         })
     }
@@ -191,7 +196,7 @@ export default class B2bCustomAddToCart extends NavigationMixin(LightningElement
         .then(result => {
             this.isAdmin = result;
             if(this.isAdmin === false && this.productGroup === this.individualMembership) {
-                this.checkifProductIsInCart();
+                this.checkifAccountHasIndividualLevelMembership();
             }
             else if(this.isAdmin && this.productGroup === this.practiceMembership) {
                 this.checkifAccountHasPracticeLevelMembership();
