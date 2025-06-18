@@ -144,7 +144,6 @@ public without sharing class B2BStripeServiceHelper {
                         TotalPrice,
                         ListPrice,
                         Product2.Name,
-                        Product2.Stripe_Renewal_Product_Id__c,
                         Product2.Membership__c,
                         Product2.Stripe_Product_Id__c,
                         UnitAdjustedPriceWithItemAdj,
