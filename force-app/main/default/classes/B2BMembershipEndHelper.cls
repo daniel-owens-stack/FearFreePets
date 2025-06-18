@@ -119,4 +119,22 @@ public class B2BMembershipEndHelper {
             return null;
         }
     }
+
+    public static void updateILMAsStatusAsExpired(List<Account_Membership__c> ilmas) {
+        try {
+            List<Account_Membership__c> ilmasToUpdate = new List<Account_Membership__c>();
+
+            for(Account_Membership__c ilma : ilmas) {
+                ilma.Status__c = 'Complete';
+                ilmasToUpdate.add(ilma);
+            }
+            
+            if(ilmasToUpdate.size() > 0) {
+                update ilmasToUpdate;
+            }
+        }
+        catch (Exception e) {
+            B2BHandleCustomException.LogException(e, 'B2BMembershipEndHelper', 'updateILMAsStatusAsExpired');
+        }
+    }
 }
