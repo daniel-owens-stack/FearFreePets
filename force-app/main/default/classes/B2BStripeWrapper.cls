@@ -133,4 +133,17 @@ public with sharing class B2BStripeWrapper {
         @AuraEnabled
         public String payment_method;
     }
+
+    public class Coupon extends B2BStripeError {
+        @AuraEnabled
+        public String id;
+        @AuraEnabled
+        public Decimal amount_off;
+        @AuraEnabled
+        public String duration;
+        @AuraEnabled
+        public String name;
+        @AuraEnabled
+        public Boolean valid;
+    }
 }

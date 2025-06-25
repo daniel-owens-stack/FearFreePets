@@ -6,7 +6,7 @@ public without sharing class B2BStripeServiceHelper {
     };
 
     public static List<String> CART_QUERY_FIELDS = new List<String> {
-        'Id', 'Name', 'PONumber', 'TotalTaxAmount'
+        'Id', 'Name', 'PONumber', 'TotalTaxAmount', 'TotalCartLevelAdjAmount'
     };
 
     public static List<String> CART_DELIVERY_GROUP_FIELDS = new List<String> {
@@ -73,6 +73,13 @@ public without sharing class B2BStripeServiceHelper {
         params.add('line_items[' + items.size() + '][price_data][product]=' + TAX_STRIPE_PRODUCT_ID);
         params.add('line_items[' + items.size() + '][price_data][currency]=usd');
         params.add('line_items[' + items.size() + '][quantity]=1');
+
+        //Adding Cart Level Promotion/Discount Adjustments
+        if(cart.TotalCartLevelAdjAmount < 0) {
+            Integer totalPromotionAmount = Math.round(cart.TotalCartLevelAdjAmount * (-100));
+            B2BStripeWrapper.Coupon coupon = B2BStripeService.createCoupon(totalPromotionAmount, 'usd');
+            params.add('discounts[0][coupon]=' + coupon.id);
+        }
 
         for(String key : CART_METADATA_MAP.keySet()) {
             String value = getFieldValue((SObject) cart, CART_METADATA_MAP.get(key));
