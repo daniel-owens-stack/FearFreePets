@@ -199,4 +199,22 @@ public class B2BStripePaymentControllerTest {
         }
         Test.StopTest();
     }
+
+    @isTest static void testCreateCoupon() {
+
+        Integer discountedAmount = 10;
+        String currencyCode = 'usd';
+
+        Test.StartTest();
+
+        Test.setMock(HttpCalloutMock.class, new B2BStripeHttpCalloutMock('coupon', 200, true));
+
+        try {
+            B2BStripeService.createCoupon(discountedAmount, currencyCode);
+        }
+        catch(Exception e){
+            System.debug('Exception in createCoupon: ' + e.getMessage());
+        }
+        Test.StopTest();
+    }
 }

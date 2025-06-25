@@ -60,6 +60,10 @@ public class B2BStripeHttpCalloutMock implements HttpCalloutMock {
                             '{"error" : {"message" : "Payment Intent Error"}}';
                 }
 
+                when 'coupon' {
+                    responseBody = statusCode == 200 ? '{"id": "1234567890", "amount_off": "10", "currency":"usd", "duration": "once", "name": "Test Coupon", "valid": true}' :
+                            '{"error" : {"message" : "Coupon Error"}}';
+                }
             }
 
         } else {
