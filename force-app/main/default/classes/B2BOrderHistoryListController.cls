@@ -65,7 +65,7 @@ public without sharing class B2BOrderHistoryListController {
     @AuraEnabled
     public static OrderSummaryDetailsWrapper getOrderSummaryItems(String orderSummaryId) {
 
-        OrderSummary orderSummary = [SELECT Id, OrderNumber, OrderedDate, AccountId, Account.Name, Owner.FirstName, Owner.LastName, 
+        OrderSummary orderSummary = [SELECT Id, OrderNumber, OrderedDate, AccountId, Account.Name, Owner.FirstName, Owner.LastName, Account.PersonEmail, 
                                             Status, TotalAdjustedProductAmount, TotalAdjustedDeliveryAmount, TotalTaxAmount, 
                                             GrandTotalAmount, TotalDeliveryAmount, CreatedDate, Shipping_Address__c,
                                             Shipping_Address__Street__s, Shipping_Address__City__s, Shipping_Address__StateCode__s,
@@ -91,6 +91,7 @@ public without sharing class B2BOrderHistoryListController {
         detailsWrapper.osDetails.accountName = orderSummary.Account.Name;
         detailsWrapper.osDetails.orderStatus = orderSummary.Status;
         detailsWrapper.osDetails.orderPlacedBy = ownerName;
+        detailsWrapper.osDetails.purchaserEmail = orderSummary.Account.PersonEmail;
         
         //Totals
         detailsWrapper.osTotals = new orderSummaryTotals();
@@ -223,6 +224,9 @@ public without sharing class B2BOrderHistoryListController {
 
         @AuraEnabled
         public Boolean hasShippableProducts {get; set;}
+
+        @AuraEnabled
+        public String purchaserEmail  {get; set; }
     }
 
     public class orderSummaryTotals{
