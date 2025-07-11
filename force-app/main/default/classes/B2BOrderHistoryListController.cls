@@ -37,7 +37,7 @@ public without sharing class B2BOrderHistoryListController {
                         OrderSummaryWrapper osw = new OrderSummaryWrapper();
                         osw.osId = os.Id;
                         osw.orderNumber = os.OrderNumber;
-                        osw.orderedDateText = os.OrderedDate.format('MM/dd/yyyy');
+                        osw.orderedDateText = os.OrderedDate?.format('MM/dd/yyyy');
                         osw.status = os.Status;
                         osw.total = os.GrandTotalAmount;
                         osw.orderedDate = os.Ordered_Date__c;
