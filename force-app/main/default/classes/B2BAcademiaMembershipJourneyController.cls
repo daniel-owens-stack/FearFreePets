@@ -56,10 +56,10 @@ public without sharing class B2BAcademiaMembershipJourneyController {
     }
 
     @AuraEnabled
-    public static void updateAccount(String graduationYear, String schoolUniversity, String JobTitle) {
+    public static void updateAccount(String graduationYear, String schoolUniversity, String JobTitle, Boolean isStudent, Boolean isFaculty) {
         try {
             String accountId = B2BUtils.getUserAccountID();
-            List<Account> account = [SELECT Id, Graduation_Year__c, School_University__c, Academia_Job_Title__c
+            List<Account> account = [SELECT Id, Graduation_Year__c, School_University__c, Academia_Job_Title__c, Student__c, Faculty__c
                                     FROM Account 
                                     WHERE Id =: accountId];   
             
@@ -67,6 +67,8 @@ public without sharing class B2BAcademiaMembershipJourneyController {
                 account[0].Graduation_Year__c = graduationYear;
                 account[0].School_University__c = schoolUniversity;
                 account[0].Academia_Job_Title__c = JobTitle;
+                account[0].Student__c = isStudent;
+                account[0].Faculty__c = isFaculty;
 
                 update account[0];
             }

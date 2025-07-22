@@ -44,7 +44,9 @@
                         value={graduationYear}
                         onchange={handleGraduationYearChange}
                         onblur={handleLostFocus}
+                        required
                     ></lightning-input>
+                    <div if:true={showGradYearError} class="slds-text-color_error">{gradYearErrorMessage}</div>
                 </template>
                 <!-- Job Title -->
                 <template lwc:if={showFacultyFields}>
@@ -54,7 +56,9 @@
                                         options={jobTitleOptions}
                                         onchange={handleJobTitleChange}
                                         field-level-help={jobTitleHelpText}
+                                        required
                     ></lightning-combobox>
+                    <div if:true={showJobTitleError} class="slds-text-color_error">{jobTitleErrorMessage}</div>
                 </template>
                 <template if:true={showAdditionalFields}>
                     <!-- School/University -->
@@ -87,10 +91,12 @@
                                     </div>        
                                     <lightning-input class="upload"
                                                     name="file uploader" type="file"
+                                                    required
                                                     onchange={handleFileChange}
                                                     accept={acceptedFormats} >
                                     </lightning-input>
                                 </label> 
+                                <div if:true={showFileError} class="slds-text-color_error">{fileErrorMessage}</div>
                             </lightning-layout-item>  
                         </lightning-layout>
                     </div>

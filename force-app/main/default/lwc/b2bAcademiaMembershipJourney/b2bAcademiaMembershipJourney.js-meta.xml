@@ -24,6 +24,9 @@
             <property name="jobTitleHelpText" type="String" default="Please select the option that best fits your current role." label="Job Title Help Text"/>
             <property name="reqErrorMessage" type="String" default="Please select atleast one option." label="Student/Facility Required Message"/>
             <property name="schoolErrorMessage" type="String" default="Please enter the value for School / University" label="School/University Required Message"/>
+            <property name="jobTitleErrorMessage" type="String" default="Please enter the value for Job Title" label="Job Title Required Message"/>
+            <property name="gradYearErrorMessage" type="String" default="Please enter the value for Graduation Year" label="Graduation Year Required Message"/>
+            <property name="fileErrorMessage" type="String" default="Please upload a proof that you are a student or facility" label="File Upload Required Message"/>
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>
