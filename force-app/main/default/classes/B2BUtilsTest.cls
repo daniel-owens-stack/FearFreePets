@@ -106,4 +106,18 @@ public class B2BUtilsTest {
         }
         Test.StopTest();
     }
+
+    @isTest static void testSendResetPasswordEmail() {
+        User user = [SELECT Id FROM User WHERE Username = 'testuser@gmail.com' LIMIT 1];
+        List<Id> UserIds = new List<Id>{user.Id};
+
+        Test.StartTest();
+        System.runAs(user) {
+            try{
+                B2BUtils.sendResetPasswordEmail(UserIds);
+            }
+            catch(Exception e) {}
+        }
+        Test.StopTest();
+    }
 }

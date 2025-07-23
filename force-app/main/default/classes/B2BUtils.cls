@@ -1,4 +1,4 @@
-public with sharing class B2BUtils {
+public without sharing class B2BUtils {
     private final static String siteName = Label.B2B_Site_Name;
 
     public static String getWebstoreID() {
@@ -94,4 +94,13 @@ public with sharing class B2BUtils {
         cart.Status = 'Active';
         update cart;
     }
+
+    @InvocableMethod(label='B2B Send Reset Password Email' description='Send an email to the provisioned user to reset their password')
+    public static void sendResetPasswordEmail(List<Id> UserIds) { 
+        Id userId = UserIds[0];
+        Boolean sendUserEmail = true;
+        String emailTemplateName = System.Label.B2B_Password_Reset_Email_Name;
+
+        System.ResetPasswordResult result = System.resetPasswordWithEmailTemplate (userId, sendUserEmail, emailTemplateName);
+    }  
 }
