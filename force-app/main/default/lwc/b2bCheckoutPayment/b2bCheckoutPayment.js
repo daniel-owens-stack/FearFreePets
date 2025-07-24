@@ -184,6 +184,11 @@ export default class B2bCheckoutPayment extends NavigationMixin(useCheckoutCompo
             this.customerId = result;
         } else {
             console.error('getCustomerId: ', errorMessage);
+            this.dispatchUpdateErrorAsync({
+                groupId: "checkout",
+                type: "/commerce/errors/checkout-failure",
+                exception: 'We couldn\'t get your Stripe Customer ID. Please check that your account has a valid email.',
+            });
         }
     }
 
@@ -306,7 +311,7 @@ export default class B2bCheckoutPayment extends NavigationMixin(useCheckoutCompo
                     });
                 })
                 .catch(error => {
-                    this.showError = true;
+                    // this.showError = true;
                     this.errorMessage = 'Something went wrong. Please, contact your System Administrator.';
                     setTimeout(() => {
                         this.showError = false;
