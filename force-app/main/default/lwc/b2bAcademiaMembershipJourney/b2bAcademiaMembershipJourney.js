@@ -56,7 +56,7 @@ export default class B2bAcademiaMembershipJourney extends CheckoutComponentBase 
     showGradYearError = false;
     showJobTitleError = false;
     showFileError = false;
-    maxFileSize = 1029746;//bytes
+    maxFileSize = 8388608;//bytes
     isPreview = true;
 
     connectedCallback() {
