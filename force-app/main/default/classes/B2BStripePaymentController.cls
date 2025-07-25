@@ -48,7 +48,7 @@ public without sharing class B2BStripePaymentController {
     @AuraEnabled
     public static boolean canInvoice(String accountId){
         Account account = [SELECT Payment_Terms__c FROM Account WHERE Id =:accountId];
-        if (account.Payment_Terms__c == 'Credit Card Only'){
+        if (account.Payment_Terms__c == 'Credit Card Only' || account.Payment_Terms__c == null){
             return false;
         }
         return true;
