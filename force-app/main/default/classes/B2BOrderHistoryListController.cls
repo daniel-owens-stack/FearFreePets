@@ -13,7 +13,7 @@ public without sharing class B2BOrderHistoryListController {
                 Boolean isTeamAdmin = account[0].Admin_Account__c;
                 String businessAccount = account[0].Business__c;
 
-                String osFields = 'Id, CreatedDate, GrandTotalAmount, OrderedDate, Ordered_Date__c, OrderNumber, Status, Owner.FirstName, Owner.LastName';
+                String osFields = 'Id, CreatedDate, GrandTotalAmount, OrderedDate, Ordered_Date__c, OrderNumber, Status, Owner.FirstName, Owner.LastName, Account.Name';
                 String osWhere;
 
                 if(isTeamAdmin == true && businessAccount != null) {
@@ -43,13 +43,7 @@ public without sharing class B2BOrderHistoryListController {
                         osw.orderedDate = os.Ordered_Date__c;
                         osw.ordersCount = orderSummaries.size();
                         osw.isViewDetailsDisabled = os.Status == 'Canceled' ? true : false;
-
-                        String firstName = os.Owner.FirstName;
-                        if(firstName == null) {
-                            osw.ownerName = os.Owner.LastName;
-                        } else {
-                            osw.ownerName = os.Owner.FirstName + ' ' + os.Owner.LastName;
-                        }
+                        osw.ownerName = os.Account.Name;
 
                         orderSummaryList.add(osw);
                     }
@@ -74,13 +68,7 @@ public without sharing class B2BOrderHistoryListController {
                                     WHERE Id=:orderSummaryId];      
      
                   
-        String ownerName;
-        String firstName = orderSummary.Owner.FirstName;
-        if(firstName == null) {
-            ownerName = orderSummary.Owner.LastName;
-        } else {
-            ownerName = orderSummary.Owner.FirstName + ' ' + orderSummary.Owner.LastName;
-        }
+        String ownerName = orderSummary.Account.Name;
         
         OrderSummaryDetailsWrapper detailsWrapper = new OrderSummaryDetailsWrapper();
 
