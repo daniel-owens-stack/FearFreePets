@@ -91,9 +91,9 @@ public class B2BCreateHistoricalOrdersBatch implements Database.Batchable<sObjec
                 Order order = new Order();
                 order.Name = ho.Historical_Order_Id__c;
                 order.AccountId = emailToAccountMap.get(ho.Billing_Email__c);
-                order.OrderedDate = DateTime.now();
+                order.OrderedDate = ho.Date_Created__c;
                 order.PoNumber = ho.Name;
-                order.EffectiveDate = System.Today();
+                order.EffectiveDate = ho.Order_Date__c;
                 order.SalesStoreId = System.Label.Webstore_ID;
                 order.Status = 'Draft';
                 order.BillingCountryCode = ho.Billing_Address__CountryCode__s;

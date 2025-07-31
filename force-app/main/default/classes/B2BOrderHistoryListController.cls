@@ -37,7 +37,7 @@ public without sharing class B2BOrderHistoryListController {
                         OrderSummaryWrapper osw = new OrderSummaryWrapper();
                         osw.osId = os.Id;
                         osw.orderNumber = os.OrderNumber;
-                        osw.orderedDateText = os.OrderedDate?.format('MM/dd/yyyy');
+                        osw.orderedDateText =  DateTime.newInstance(os.Ordered_Date__c, Time.newInstance(0, 0, 0, 0)).format('MM/dd/yyyy');
                         osw.status = os.Status;
                         osw.total = os.GrandTotalAmount;
                         osw.orderedDate = os.Ordered_Date__c;
@@ -59,7 +59,7 @@ public without sharing class B2BOrderHistoryListController {
     @AuraEnabled
     public static OrderSummaryDetailsWrapper getOrderSummaryItems(String orderSummaryId) {
 
-        OrderSummary orderSummary = [SELECT Id, OrderNumber, OrderedDate, AccountId, Account.Name, Owner.FirstName, Owner.LastName, Account.PersonEmail, 
+        OrderSummary orderSummary = [SELECT Id, OrderNumber, OrderedDate,Ordered_Date__c, AccountId, Account.Name, Owner.FirstName, Owner.LastName, Account.PersonEmail, 
                                             Status, TotalAdjustedProductAmount, TotalAdjustedDeliveryAmount, TotalTaxAmount, 
                                             GrandTotalAmount, TotalDeliveryAmount, CreatedDate, Shipping_Address__c,
                                             Shipping_Address__Street__s, Shipping_Address__City__s, Shipping_Address__StateCode__s,
@@ -75,7 +75,7 @@ public without sharing class B2BOrderHistoryListController {
         //Details
         detailsWrapper.osDetails = new orderSummaryDetails();
         detailsWrapper.osDetails.orderNumber = orderSummary.OrderNumber;
-        detailsWrapper.osDetails.orderedDate = orderSummary.OrderedDate.format('MM/dd/yyyy');
+        detailsWrapper.osDetails.orderedDate = DateTime.newInstance(orderSummary.Ordered_Date__c, Time.newInstance(0, 0, 0, 0)).format('MM/dd/yyyy');
         detailsWrapper.osDetails.accountName = orderSummary.Account.Name;
         detailsWrapper.osDetails.orderStatus = orderSummary.Status;
         detailsWrapper.osDetails.orderPlacedBy = ownerName;
