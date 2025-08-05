@@ -108,7 +108,7 @@ public without sharing class B2BStripePaymentController {
                 insert log;
             }
         }
-        update new WebCart(Id = webCartId, Payment_Intent__c = paymentIntent);
+        update new WebCart(Id = webCartId, Payment_Intent__c = paymentIntent, B2B_Cart_Id__c = webCartId);
 
         String cartQuery =
                 'SELECT ' + String.join(getObjectFieldsForQuery(WebCart.SObjectType), ', ') + ', ' +
@@ -145,6 +145,7 @@ public without sharing class B2BStripePaymentController {
         newOrder.SalesStoreId = B2BUtils.getWebstoreID();
         newOrder.Payment_Intent__c = paymentIntent;
         newOrder.InvoiceId__c = stripeInvoiceId;
+        newOrder.B2B_Cart_Id__c = webCartId;
         insert newOrder;
 
         //Start Delivery Group
