@@ -7,12 +7,13 @@ public without sharing class TaxCartCalculatorExtension extends CartExtension.Ta
     private static Boolean useExternalService = false;
       
     public virtual override void calculate(CartExtension.CartCalculateCalculatorRequest request) {
+    CartExtension.Cart cart = request.getCart();
     try {
         if (request == null || request.getCart() == null) {
             throw new CalloutException('Request or Cart is null.');
         }
 
-        CartExtension.Cart cart = request.getCart();
+        // CartExtension.Cart cart = request.getCart();
         existingCartValidationMessageCleanUp(cart);
         existingCartTaxesCleanUp(cart);
 
@@ -48,7 +49,20 @@ public without sharing class TaxCartCalculatorExtension extends CartExtension.Ta
         if (!Test.isRunningTest()) {
             setTaxInCart(cart, taxMetaData, tpResponse);
         }
-        } catch (Exception e) {
+        } catch (Exception e) { 
+            //Get the state value from shipping address
+            // String state = cart.getCartDeliveryGroups().get(0)?.getDeliverToAddress()?.getState() != null ? cart.getCartDeliveryGroups().get(0)?.getDeliverToAddress()?.getState() : null;
+            
+            if(!cart.getCartDeliveryGroups().isEmpty()) {
+              //Set custom error message
+              CartExtension.CartValidationOutputList cartValidationOutputList = cart.getCartValidationOutputs();
+              CartExtension.CartValidationOutput cvo = new CartExtension.CartValidationOutput(
+                CartExtension.CartValidationOutputTypeEnum.TAXES,
+                CartExtension.CartValidationOutputLevelEnum.ERROR
+              );
+              cvo.setMessage(Label.B2B_Custom_Tax_Exception_Message);
+              cartValidationOutputList.add(cvo);
+            }
             throw new CalloutException('There was a problem with the request.');
         }
         return;
