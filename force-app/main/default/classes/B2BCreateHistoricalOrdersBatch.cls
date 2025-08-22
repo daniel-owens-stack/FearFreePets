@@ -98,6 +98,7 @@ public class B2BCreateHistoricalOrdersBatch implements Database.Batchable<sObjec
                 order.Status = 'Draft';
                 order.BillingCountryCode = ho.Billing_Address__CountryCode__s;
                 order.ShippingCountryCode = ho.Shipping_Address__CountryCode__s;
+                order.Is_Historical_Order__c = true;
 
                 orders.add(order);
 

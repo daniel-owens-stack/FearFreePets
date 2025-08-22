@@ -28,6 +28,7 @@ public without sharing class B2BOrderHistoryListController {
                 if(inputParameters.containsKey('startDate') && inputParameters.containsKey('endDate')){
                     query += ' AND Ordered_Date__c >= ' + inputParameters.get('startDate') + ' AND Ordered_Date__c <= '+ inputParameters.get('endDate') ;
                 }
+                query += ' AND OriginalOrder.Is_Historical_Order__c = false';
                 
                 query += ' ORDER BY CreatedDate ' + inputParameters.get('sortingOrder') + ' NULLS LAST LIMIT 5000';
                 orderSummaries = Database.query(query);

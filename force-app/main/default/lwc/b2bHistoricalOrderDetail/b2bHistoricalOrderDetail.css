@@ -1,0 +1,24 @@
+.order-container {
+    margin-top: 0.5rem;
+  }
+
+  .shipping-container {
+    gap: 1rem;
+  }
+  
+  .float-right{
+    float: right !important;
+  }
+  
+  .slds-box {
+    border: 1px solid var(--slds-g-color-border-base-1,#282828) !important;
+    padding: 1rem 1rem 0rem 1rem !important;
+  }
+  
+  .slds-border_top {
+      border-top: 1px solid var(--slds-g-color-border-base-1, #282828) !important;
+  }
+  
+  .pointer {
+    cursor: pointer;
+  }
