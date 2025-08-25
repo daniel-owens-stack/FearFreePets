@@ -2,18 +2,18 @@
 
 	<lightning-spinner if:true={showSpinner} alternative-text="Loading" size="x-small"></lightning-spinner>
 
-	<!-- <div class="slds-grid slds-wrap slds-align_absolute-center">
+	<div class="slds-grid slds-wrap slds-align_absolute-center">
 		<div class="slds-size_12-of-12 slds-medium-size_2-of-12 slds-p-left_small adjustItems">
 			<span>Filter by date:</span>
 		</div>
 		<div class="slds-size_6-of-12 slds-medium-size_3-of-12 slds-p-left_small">
-			<lightning-input type="date" data-id="startDate" label="Start Date (MM/DD/YYYY)" date-style="short"
-				onchange={handleStartDate} value={startDate} class="formatHelp">
+			<lightning-input type="date" data-id="histStartDate" label="Start Date (MM/DD/YYYY)" date-style="short"
+				onchange={handleStartDate} value={startDate} class="dateFormatHelp">
 			</lightning-input>
 		</div>
 		<div class="slds-size_6-of-12 slds-medium-size_3-of-12 slds-p-left_medium">
-			<lightning-input type="date" data-id="endDate" label="End Date (MM/DD/YYYY)" date-style="short"
-				onchange={handleEndDate} value={endDate} class="formatHelp">
+			<lightning-input type="date" data-id="histEndDate" label="End Date (MM/DD/YYYY)" date-style="short"
+				onchange={handleEndDate} value={endDate} class="dateFormatHelp">
 			</lightning-input>
 		</div>
 		<div class="slds-size_12-of-12 slds-medium-size_4-of-12 slds-grid slds-grid_vertical-align-center slds-p-horizontal_small adjustItems">
@@ -26,7 +26,7 @@
 				<label class="button-label">Reset</label>
 			</button>
 		</div>
-	</div> -->
+	</div>
     
 	<div>
 		<lightning-combobox class="remove-border sort-dropdown" value={defaultSortingValue} options={sortOptions}

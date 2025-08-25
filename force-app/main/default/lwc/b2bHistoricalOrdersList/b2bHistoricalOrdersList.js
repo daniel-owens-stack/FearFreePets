@@ -92,8 +92,8 @@ export default class B2bHistoricalOrdersList extends NavigationMixin(LightningEl
     }
 
     validateDateFields() {
-        let endDate = this.template.querySelector('[data-id="endDate"]');
-        let startDate = this.template.querySelector('[data-id="startDate"]');
+        let endDate = this.template.querySelector('[data-id="histEndDate"]');
+        let startDate = this.template.querySelector('[data-id="histStartDate"]');
 
         if (this.endDate != undefined && this.startDate > this.endDate) {
             startDate.setCustomValidity("Start Date Should be less than end date");
@@ -183,22 +183,22 @@ export default class B2bHistoricalOrdersList extends NavigationMixin(LightningEl
             || url.indexOf('.builder.') > 0);
     }
 
-    // renderedCallback() {
-    //     if(!this.isRendered) {
-    //         this.appendCustomStyle();
-    //         this.isRendered = true;
-    //     }
-    // }
+    renderedCallback() {
+        if(!this.isRendered) {
+            this.appendCustomStyle();
+            this.isRendered = true;
+        }
+    }
 
     appendCustomStyle() {
         let style = document.createElement('style');    
         style.innerText = '.slds-form-element__help {display: none !important;}';   
-        this.template.querySelector('.formatHelp').appendChild(style);
+        this.template.querySelector('.dateFormatHelp').appendChild(style);
     }
 
     removeCustomStyle() {
         let style = document.createElement('style');    
         style.innerText = '.slds-form-element__help {display: flex !important;}';   
-        this.template.querySelector('.formatHelp').appendChild(style);
+        this.template.querySelector('.dateFormatHelp').appendChild(style);
     }
 }

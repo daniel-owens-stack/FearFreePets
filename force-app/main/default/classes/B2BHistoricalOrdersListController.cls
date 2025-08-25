@@ -12,12 +12,23 @@ public without sharing class B2BHistoricalOrdersListController {
                 String businessAccount = account[0].Business__c;
 
                 //Get Historical Orders
-                List<Historical_Order__c> historicalOrders = [
-                    SELECT Id, Historical_Order_Id__c, SF_Order__c, Order_Date__c, Shipping_Total_With_Tax__c 
-                    FROM Historical_Order__c 
-                    WHERE SF_Order__c != null 
-                    AND SF_Order__r.AccountId  =:accountId
-                ];
+                List<Historical_Order__c> historicalOrders = new List<Historical_Order__c>();
+                if(isTeamAdmin == true && businessAccount != null) {
+                    historicalOrders = [
+                        SELECT Id, Historical_Order_Id__c, SF_Order__c, Order_Date__c, Shipping_Total_With_Tax__c 
+                        FROM Historical_Order__c 
+                        WHERE SF_Order__c != null
+                        AND (SF_Order__r.AccountId  =:accountId OR SF_Order__r.Account.Business__c = :businessAccount)
+                    ];
+                }
+                else {
+                    historicalOrders = [
+                        SELECT Id, Historical_Order_Id__c, SF_Order__c, Order_Date__c, Shipping_Total_With_Tax__c 
+                        FROM Historical_Order__c 
+                        WHERE SF_Order__c != null
+                        AND SF_Order__r.AccountId  =:accountId
+                    ];
+                }
 
                 List<Id> sfOrderIds = new List<Id>();
                 Map<Id, Historical_Order__c> historicalToSFOrdermap = new Map<Id, Historical_Order__c>();
@@ -32,18 +43,11 @@ public without sharing class B2BHistoricalOrdersListController {
                 String osFields = 'Id, CreatedDate, GrandTotalAmount, OrderedDate, Ordered_Date__c, OrderNumber, Status, Owner.FirstName, Owner.LastName, Account.Name, OriginalOrderId';
                 String osWhere = 'OriginalOrderId IN :sfOrderIds AND OriginalOrder.Is_Historical_Order__c = true';
 
-                // if(isTeamAdmin == true && businessAccount != null) {
-                //     osWhere = '(AccountId = ' +  '\'' + accountId + '\' OR Business_Account__c = ' + '\'' + account[0].Business__c + '\')';
-                // }
-                // else {
-                //     osWhere = 'AccountId = ' +  '\'' + accountId + '\'';
-                // }
-
                 String query = 'SELECT ' + osFields + ' FROM OrderSummary WHERE ' + osWhere;
                 
-                // if(inputParameters.containsKey('startDate') && inputParameters.containsKey('endDate')){
-                //     query += ' AND Ordered_Date__c >= ' + inputParameters.get('startDate') + ' AND Ordered_Date__c <= '+ inputParameters.get('endDate') ;
-                // }
+                if(inputParameters.containsKey('startDate') && inputParameters.containsKey('endDate')){
+                    query += ' AND Ordered_Date__c >= ' + inputParameters.get('startDate') + ' AND Ordered_Date__c <= '+ inputParameters.get('endDate') ;
+                }
                 
                 query += ' ORDER BY CreatedDate ' + inputParameters.get('sortingOrder') + ' NULLS LAST LIMIT 5000';
                 orderSummaries = Database.query(query);
