@@ -30,7 +30,7 @@ public without sharing class B2BOrderHistoryListController {
                 }
                 query += ' AND OriginalOrder.Is_Historical_Order__c = false';
                 
-                query += ' ORDER BY CreatedDate ' + inputParameters.get('sortingOrder') + ' NULLS LAST LIMIT 5000';
+                query += ' ORDER BY Ordered_Date__c ' + inputParameters.get('sortingOrder') + ' NULLS LAST LIMIT 5000';
                 orderSummaries = Database.query(query);
 
                 if(orderSummaries.size() > 0) {
