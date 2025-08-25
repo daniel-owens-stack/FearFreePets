@@ -49,7 +49,7 @@ public without sharing class B2BHistoricalOrdersListController {
                     query += ' AND Ordered_Date__c >= ' + inputParameters.get('startDate') + ' AND Ordered_Date__c <= '+ inputParameters.get('endDate') ;
                 }
                 
-                query += ' ORDER BY CreatedDate ' + inputParameters.get('sortingOrder') + ' NULLS LAST LIMIT 5000';
+                query += ' ORDER BY Ordered_Date__c ' + inputParameters.get('sortingOrder') + ' NULLS LAST LIMIT 5000';
                 orderSummaries = Database.query(query);
 
                 if(orderSummaries.size() > 0) {
