@@ -53,8 +53,9 @@ export default class B2bCheckoutPayment extends NavigationMixin(useCheckoutCompo
                 const summaryNumber = await this.convertCartToOrder();
                 if(!summaryNumber){
                     this.showSpinner = false;
-                    this.showError = true;
+                    // this.showError = true;
                     this.errorMessage = 'Error occurred during order creation, please contact System Administrator.';
+                    this.showCheckoutErrorMsg(this.errorMessage);
                 } else {
                     this.showSpinner = false;
                     this.navigateToOrderConfirmation(summaryNumber);
@@ -62,8 +63,18 @@ export default class B2bCheckoutPayment extends NavigationMixin(useCheckoutCompo
             }
             else {
                 this.showSpinner = false;
+                this.errorMessage = 'Your payment status could not be verified at the moment. Please contact System Administrator.';
+                this.showCheckoutErrorMsg(this.errorMessage);
             }
         }
+    }
+
+    showCheckoutErrorMsg(errorMsg) {
+        this.dispatchUpdateErrorAsync({
+                groupId: "checkout",
+                type: "/commerce/errors/checkout-failure",
+                exception: errorMsg,
+            });
     }
 
     navigateToOrderConfirmation(orderNumber) {

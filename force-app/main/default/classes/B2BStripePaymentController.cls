@@ -90,7 +90,11 @@ public without sharing class B2BStripePaymentController {
 
         validationResult.isSessionValid = (result.payment_status == 'paid') && (result.metadata.sf_id == webCartId);
         validationResult.paymentIntent = result.payment_intent;
-        
+
+        if(!validationResult.isSessionValid) {
+            String errorMessage = 'Order creation failed for the Cart Id: ' + webCartId + 'as the stripe payment status is not updated to paid during checkout.| Payment Intent: ' + validationResult.paymentIntent;
+            B2BHandleCustomException.LogException(new StringException(errorMessage), 'B2BStripePaymentController', 'validateSession');
+        }
         return validationResult;
     }
     
@@ -331,4 +335,6 @@ public without sharing class B2BStripePaymentController {
         return orderMethod[0];
     }
 
+    public class B2BStripeException extends Exception {
+    }
 }
