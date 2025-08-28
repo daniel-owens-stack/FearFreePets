@@ -32,7 +32,12 @@ public without sharing class B2BCustomAddToCartController {
     @AuraEnabled
     public static List<Account_Membership__c> getIndividualLevelMemberships(String productId) {
 
-        Product2 product = [SELECT Id, Membership__c FROM Product2 WHERE Id =: productId];
+        Product2 product = [SELECT Id, Membership__c, Product_Group__c FROM Product2 WHERE Id =: productId];
+
+        List<String> statuses = new List<String>{ 'Active' };
+        if(product.Product_Group__c == 'Individual Academia Membership'){
+            statuses = new List<String>{ 'Active', 'Complete' };
+        }
 
         String membershipId = product.Membership__c;
         String accountId = B2BUtils.getUserAccountID();
@@ -40,7 +45,7 @@ public without sharing class B2BCustomAddToCartController {
         List<Account_Membership__c> membershipList = [SELECT Id FROM Account_Membership__c 
                                                       WHERE Membership__c  =:membershipId 
                                                       AND Account_Id__c =:accountId
-                                                      AND Status__c = 'Active'
+                                                      AND Status__c IN :statuses
                                                      ];
         
         return membershipList;
