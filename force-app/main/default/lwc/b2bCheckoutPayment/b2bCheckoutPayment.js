@@ -14,6 +14,7 @@ import modalWindow from 'c/b2bCustomModalWindow';
 import { CurrentPageReference, NavigationMixin } from 'lightning/navigation';
 import { publish, MessageContext } from 'lightning/messageService';
 import MY_MESSAGE_CHANNEL from '@salesforce/messageChannel/MyMessageChannel__c';
+import MaxNumOfRetries from '@salesforce/label/c.B2B_Stripe_Max_Num_of_Retries';
 
 const CheckoutStage = {
     CHECK_VALIDITY_UPDATE: 'CHECK_VALIDITY_UPDATE',
@@ -62,9 +63,19 @@ export default class B2bCheckoutPayment extends NavigationMixin(useCheckoutCompo
                 }
             }
             else {
-                this.showSpinner = false;
-                this.errorMessage = 'Your payment status could not be verified at the moment. Please contact System Administrator.';
-                this.showCheckoutErrorMsg(this.errorMessage);
+                if (this.numOfRetry < MaxNumOfRetries) {
+                    this.numOfRetry++;
+                    setTimeout(() => {
+                        this.isChecked = false;
+                        this.checkSession();
+                    }, 4000);
+                }
+                else {
+                    history.replaceState({ session: "" }, "", window.location.href.split('?')[0]);
+                    this.showSpinner = false;
+                    this.errorMessage = 'Error occurred during payment processing, please contact System Administrator.';
+                    this.showCheckoutError(this.errorMessage);
+                }
             }
         }
     }
@@ -131,6 +142,7 @@ export default class B2bCheckoutPayment extends NavigationMixin(useCheckoutCompo
     cartItems = [];
     shippableCartItemIds = [];
     wiredCartItems;
+    numOfRetry = 0;
 
     paymentOptions = [
         {label: 'Pay now', value: 'paynow'},
