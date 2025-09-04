@@ -16,7 +16,8 @@ public class B2BAccontMembershipListControllerTest {
             Parent_Id__c = accountId,
             Account_Assignment_Date__c = Date.valueOf('2024-09-01'),
             Start_Date__c = Date.valueOf('2024-09-01'),
-            Welcome_Kit_Status__c = 'Unclaimed'
+            Welcome_Kit_Status__c = 'Unclaimed',
+            Status__c = 'Active'
         );
         insert am;
     }
