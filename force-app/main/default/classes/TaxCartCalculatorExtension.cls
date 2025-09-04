@@ -49,10 +49,7 @@ public without sharing class TaxCartCalculatorExtension extends CartExtension.Ta
         if (!Test.isRunningTest()) {
             setTaxInCart(cart, taxMetaData, tpResponse);
         }
-        } catch (Exception e) { 
-            //Get the state value from shipping address
-            // String state = cart.getCartDeliveryGroups().get(0)?.getDeliverToAddress()?.getState() != null ? cart.getCartDeliveryGroups().get(0)?.getDeliverToAddress()?.getState() : null;
-            
+        } catch (Exception e) {  
             if(!cart.getCartDeliveryGroups().isEmpty()) {
               //Set custom error message
               CartExtension.CartValidationOutputList cartValidationOutputList = cart.getCartValidationOutputs();
@@ -80,7 +77,7 @@ public without sharing class TaxCartCalculatorExtension extends CartExtension.Ta
         }
         if (cartItem.getCartItemPriceAdjustments().size() > 0) {
           for (Integer k = (cartItem.getCartItemPriceAdjustments().size() - 1);k >= 0;  k--) {
-            CartExtension.CartTaxList cipaTaxes = cartItem.getCartItemPriceAdjustments() .get(i) .getCartTaxes();
+            CartExtension.CartTaxList cipaTaxes = cartItem.getCartItemPriceAdjustments() .get(k) .getCartTaxes();
             if (cipaTaxes.size() > 0) {
               for (Integer l = (cartItem.getCartItemPriceAdjustments().size() - 1);l >= 0; l-- ) {
                 cipaTaxes.remove(cipaTaxes.get(l));

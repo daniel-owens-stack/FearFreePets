@@ -13,8 +13,9 @@ const columns = [
     { label: 'Purchase Date', fieldName: 'purchaseDate', type: 'date' },
     { label: 'Assignment Date', fieldName: 'accountAssignmentDate', type: 'date' },
     { label: 'Expiration Date', fieldName: 'expirationDate', type: 'date' },
-    { label: 'Certification Status'},
-    { label: 'Course Progress'}
+    { label: 'Certification Status', fieldName: 'certificationStatus', type: 'text'},
+    { label: 'Course Progress (%)', fieldName: 'courseProgress', type: 'number'},
+    { label: 'Exemption Status', fieldName: 'exemptionStatus', type: 'text'}
 ];
 
 export default class B2bAccountMembershipList extends LightningElement {

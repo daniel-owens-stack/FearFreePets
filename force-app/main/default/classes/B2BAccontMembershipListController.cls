@@ -2,16 +2,16 @@ public without sharing class B2BAccontMembershipListController {
 
     @AuraEnabled
     public static List<List<AccountMembershipWrapper>> getAccountMemberships(String accountId) {
-        List<Account_Membership__c> accMemList = [SELECT Id, Name, Membership__c, Membership__r.Name, Account_Id__r.Name, Parent_Id__c, Account_Id__c, Account_Assignment_Date__c, Start_Date__c, Expiration_Date__c 
+        List<Account_Membership__c> accMemList = [SELECT Id, Name, Membership__c, Membership__r.Name, Account_Id__r.Name, Parent_Id__c, Account_Id__c, Account_Assignment_Date__c, Start_Date__c, Expiration_Date__c, Certified__c, Related_Course_Completion__c, Exemption_Status__c
                                                   FROM Account_Membership__c 
-                                                  WHERE Parent_Id__c =:accountId
+                                                  WHERE Parent_Id__c =:accountId AND Status__c = 'Active'
                                                   ORDER BY Membership__c,  Account_Id__r.Name NULLS FIRST
                                                  ];
                                                   
         List<AccountMembershipWrapper> wrapperList = new List<AccountMembershipWrapper>();
 
         for(Account_Membership__c am : accMemList) {
-            wrapperList.add(new AccountMembershipWrapper(am.Account_Id__r.Name, am.Membership__r.Name, am.Parent_Id__c, am.Membership__c, am.Account_Id__c, am.Id, am.Account_Assignment_Date__c, am.Start_Date__c, am.Expiration_Date__c));
+            wrapperList.add(new AccountMembershipWrapper(am.Account_Id__r.Name, am.Membership__r.Name, am.Parent_Id__c, am.Membership__c, am.Account_Id__c, am.Id, am.Account_Assignment_Date__c, am.Start_Date__c, am.Expiration_Date__c, am.Certified__c, am.Related_Course_Completion__c, am.Exemption_Status__c));
         }
         System.debug('Wrapper List : ' + wrapperList);
 
@@ -76,8 +76,15 @@ public without sharing class B2BAccontMembershipListController {
         @AuraEnabled
         public Date expirationDate{ get; set; }
 
+        @AuraEnabled
+        public String certificationStatus{ get; set; }
+        @AuraEnabled
+        public Decimal courseProgress{ get; set; }
+        @AuraEnabled
+        public String exemptionStatus{ get; set; }
 
-        public AccountMembershipWrapper(String accountName, String membershipName, Id parentId, Id membershipId, Id accId, Id Id, Date accountAssignmentDate, Date purchaseDate, Date expirationDate) {
+
+        public AccountMembershipWrapper(String accountName, String membershipName, Id parentId, Id membershipId, Id accId, Id Id, Date accountAssignmentDate, Date purchaseDate, Date expirationDate, Boolean certified, Decimal courseProgress, String exemptionStatus) {
             this.accountName = accountName;
             this.membershipName = membershipName;
             this.parentId = parentId;
@@ -88,6 +95,9 @@ public without sharing class B2BAccontMembershipListController {
             this.accountAssignmentDate = accountAssignmentDate;
             this.purchaseDate = purchaseDate;
             this.expirationDate = expirationDate;
+            this.certificationStatus = certified ? 'Certified' : 'Not Certified';
+            this.courseProgress = courseProgress;
+            this.exemptionStatus = exemptionStatus;
         }
     }
 }
