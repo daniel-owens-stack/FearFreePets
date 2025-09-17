@@ -1,3 +1,10 @@
+/**
+ * @description       : 
+ * @author            : Poojitha Anthati
+ * @group             : 
+ * @last modified on  : 09-16-2025
+ * @last modified by  : Poojitha Anthati
+**/
 public without sharing class B2BUtils {
     private final static String siteName = Label.B2B_Site_Name;
 
@@ -92,6 +99,13 @@ public without sharing class B2BUtils {
     public static void updateCart(String cartId) {
         WebCart cart = [SELECT Id, Status FROM WebCart WHERE Id = :cartId];
         cart.Status = 'Active';
+        update cart;
+    }
+
+    @AuraEnabled
+    public static void updateTaxIdOnCart(String cartId, String taxId) {
+        WebCart cart = [SELECT Id, B2B_International_Tax_Id__c FROM WebCart WHERE Id = :cartId];
+        cart.B2B_International_Tax_Id__c = taxId;
         update cart;
     }
 
