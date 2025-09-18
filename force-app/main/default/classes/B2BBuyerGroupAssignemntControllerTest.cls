@@ -1,3 +1,10 @@
+/**
+ * @description       : 
+ * @author            : Poojitha Anthati
+ * @group             : 
+ * @last modified on  : 09-18-2025
+ * @last modified by  : Poojitha Anthati
+**/
 @isTest
 public class B2BBuyerGroupAssignemntControllerTest {
     
@@ -87,6 +94,14 @@ public class B2BBuyerGroupAssignemntControllerTest {
         List<String> buyerGroupIdList = new List<String>{buyerGroupId};
 
         B2BBuyerGroupAssignmentService.deleteBuyerGroupMembers(buyerGroupIdList, accountId);
+        Test.StopTest();
+    }
+
+    @isTest static void testHandleBuyerGroupsSync() {
+        Test.StartTest();
+        Account account = [SELECT Id FROM Account WHERE Name = 'Test Account' LIMIT 1];
+
+        B2BBuyerGroupAssignemntController.handleBuyerGroupsSync(account);
         Test.StopTest();
     }
 }
