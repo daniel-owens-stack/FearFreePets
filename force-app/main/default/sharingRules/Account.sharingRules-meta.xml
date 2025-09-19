@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingGuestRules>
+        <fullName>Directory_Public_Access</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>gives public access to directory accounts</description>
+        <label>Directory Public Access</label>
+        <sharedTo>
+            <guestUser>Directory</guestUser>
+        </sharedTo>
+        <criteriaItems>
+            <field>Directory_Opt_In__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <includeHVUOwnedRecords>false</includeHVUOwnedRecords>
+    </sharingGuestRules>
+</SharingRules>

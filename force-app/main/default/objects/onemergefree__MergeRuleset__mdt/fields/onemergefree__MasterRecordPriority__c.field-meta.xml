@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>onemergefree__MasterRecordPriority__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Master Record Priority determines how how Source Record values are prioritised for Master Record determination.</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Master Record Priority determines how how Source Record values are prioritised for Master Record determination.</inlineHelpText>
+    <label>Master Record Priority</label>
+    <required>true</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Newest</fullName>
+                <default>true</default>
+                <label>Newest</label>
+            </value>
+            <value>
+                <fullName>Oldest</fullName>
+                <default>false</default>
+                <label>Oldest</label>
+            </value>
+            <value>
+                <fullName>Quality</fullName>
+                <default>false</default>
+                <label>Quality</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

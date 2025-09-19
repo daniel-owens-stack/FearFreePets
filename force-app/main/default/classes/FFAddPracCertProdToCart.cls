@@ -86,6 +86,7 @@ public without sharing class FFAddPracCertProdToCart {
                     FROM Product2 
                     WHERE Membership__c = :membershipId 
                     // AND ProductClass = 'Variation'
+                    AND Renewal_Product__c = true
                     AND Renewal_DVM_Count_Min__c <= :dvmCount 
                     AND Renewal_DVM_Count_Max__c >= :dvmCount 
                     AND IsActive = true 
@@ -172,7 +173,7 @@ public without sharing class FFAddPracCertProdToCart {
         }
         
         if (targetItem != null) {
-            targetItem.Practice_Membership_Assignment__c = PLMAId;
+            targetItem.Practice_Level_Membership_Assignment__c = PLMAId;
             update targetItem;
             System.debug('CartItem updated with PLMA successfully.');
         } else {

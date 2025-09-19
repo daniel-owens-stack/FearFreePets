@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutoResponseRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <autoResponseRule>
+        <fullName>Web to Lead Auto Response</fullName>
+        <active>false</active>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Lead.LeadSource</field>
+                <operation>equals</operation>
+                <value>PC Web-to-Lead</value>
+            </criteriaItems>
+            <senderEmail>certifyme@fearfree.com</senderEmail>
+            <senderName>Fear Free Sales Team</senderName>
+            <template>SalesTemplates/Web_To_Lead_Auto_Response_PC_1712761152115</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Lead.LeadSource</field>
+                <operation>equals</operation>
+                <value>Ind Web-to-Lead</value>
+            </criteriaItems>
+            <senderEmail>certifyme@fearfree.com</senderEmail>
+            <senderName>Fear Free Sales Team</senderName>
+            <template>SalesTemplates/Web_To_Lead_Auto_Response_Vet_Ind_1712764731286</template>
+        </ruleEntry>
+    </autoResponseRule>
+</AutoResponseRules>

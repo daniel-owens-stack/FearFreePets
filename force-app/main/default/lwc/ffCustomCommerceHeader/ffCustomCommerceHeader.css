@@ -1,0 +1,94 @@
+.ff-custom-commerce-header {
+    padding: 10px 20px;    
+    background: linear-gradient(270deg, #54A7DA 0.43%, #123D64 66.21%);
+    border-radius: 20px;
+    width:calc(100% - 24px);
+    max-width: 1380px;
+    margin: 20px auto 0 auto;
+}
+
+/* Grid layout for the header */
+.ff-header-grid {
+    display: grid;
+    grid-template-columns: 4fr 8fr; /* Adjust column widths */
+    gap: 10px; /* Space between columns */
+    align-items: center; /* Vertically align content */
+    min-height: 50px;
+    width:100%;    
+}
+
+
+
+.ff-header-column {
+    display: flex;
+    justify-content: center; /* Center content in each column */
+    align-items: center; /* Vertically align content */     
+}
+
+.ff-header-inner-grid {
+	display: grid;
+    grid-template-columns: 10fr 1fr 1fr; /* Adjust column widths */
+    gap: 5px; /* Space between columns */
+    align-items: center; /* Vertically align content */
+    min-height: 50px;
+    width:100%;
+    background-color: #FBBF32;
+    border-radius: 20px;
+
+}
+.ff-header-inner-column {
+	display: flex;
+    justify-content: center; /* Center content in each column */
+    align-items: center; /* Vertically align content */     
+}
+
+/* Example: Allow customization for specific columns */
+.ff-header-column:first-child {
+    justify-content: flex-start;
+}
+
+.ff-header-column:last-child {
+    justify-content: flex-end;
+}
+
+.ff-header-column slot {
+    justify-content: flex-end;
+    min-height: 50px;
+    display: flex;
+    align-items: center;    
+}
+.ff-mnav-mobile {
+    display: none !important;
+}
+
+.ff-page-title h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-left: 1.5rem;
+    padding: 1.2rem 0 1rem;
+    text-align: left;
+    color: #fff;
+    font-family: 'bree', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+@media screen and (max-width: 769px) {
+    .ff-mnav-mobile {
+        display: block !important;
+    }
+    .ff-mnav-mobile button.slds-button.slds-button_icon.slds-button_icon-bare {
+        color: #FBBF32;
+    }
+    .ff-mnav-desktop {
+        display: none !important;
+    }
+    .ff-header-inner-grid {
+        grid-template-columns: 2fr 5fr 5fr; /* Adjust column widths */
+        background-color: transparent;
+        border-radius: 0px;
+    }
+    .ff-header-grid {        
+        grid-template-columns: 10fr 2fr; /* Adjust column widths */       
+    }
+    
+    
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>onemergefree__IsSecondaryPriority__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Indicates that the Field is used for Secondary Priority Ordering.</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Indicates that the Field is used for Secondary Priority Ordering.</inlineHelpText>
+    <label>Is Secondary Priority?</label>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,788 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Account</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>Account_Compact_Layout</compactLayoutAssignment>
+    <label>Business Account</label>
+    <picklistValues>
+        <picklist>AVA_B2BLEX__Transport__c</picklist>
+        <values>
+            <fullName>Buyer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>None</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seller</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ThirdPartyForBuyer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ThirdPartyForSeller</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Academia_Job_Title__c</picklist>
+        <values>
+            <fullName>Administrative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leadership</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Teacher%2FProfessor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Veterinary Teaching Hospital Employee</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>AccountSource</picklist>
+        <values>
+            <fullName>Advertisement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Conference</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Corporate Program Member Lead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Corporate Veterinary Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email Campaign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employee Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FF Hosted Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facebook Group Member Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Google AdWords</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Member Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PC Web-to-Lead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Purchased List</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social Media Post</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Speaker Presentation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinar</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Audience__c</picklist>
+        <values>
+            <fullName>Animal Grooming</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Animal Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Animal Welfare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Boarding %26 Daycare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lab Animal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Multiple</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pet Parent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pet Sitting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Research</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vet - All Species</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vet - Companion Animal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vet - Exotic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vet - Farm Animal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Business_Structure__c</picklist>
+        <values>
+            <fullName>Affiliate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Franchisee</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>CPM_Level__c</picklist>
+        <values>
+            <fullName>Bronze</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Platinum</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Silver</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>White Glove</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Care_Type__c</picklist>
+        <values>
+            <fullName>Behavior</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Boarding %26 Daycare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Groomer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pet Sitter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trainer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Veterinary</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Veterinary - Emergency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Veterinary - Mobile</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Category__c</picklist>
+        <values>
+            <fullName>Anesthesia%2C Sedation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Antibiotics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biologics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biosecurity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CBD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compounding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dermatology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Diabetic Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Diagnostics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enrichment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Epilepsy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lymphoma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Microchips</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nutrition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parasiticides</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pet Genetics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pheromones</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supplements</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Treats</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wound Mgmt</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Certified_Practice_Status__c</picklist>
+        <values>
+            <fullName>Approved for Visit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Attrition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CERTIFIED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>First Year Certified</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overdue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Probation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Provisional Recert</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RRQ Not Met</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recertification Successful</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recertification Year</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renewal Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renewal Processed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SA Updates Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VOSV Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VOSV Confirmed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visit Completed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Certified_Practice__c</picklist>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Current_Level_of_Education__c</picklist>
+        <values>
+            <fullName>College</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>High School</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Historical_Jobs_Assigned__c</picklist>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Succesful</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unsuccessful</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Industry</picklist>
+        <values>
+            <fullName>Animal Grooming</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Animal Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Animal Welfare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Boarding %26 Daycare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lab Animal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pet Sitting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Research</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vet - Companion Animal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vet - Exotic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vet - Farm Animal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Invoice_Status__c</picklist>
+        <values>
+            <fullName>Declined to Renew</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Due Next Year</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invoiced</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Applicable</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Due Yet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overdue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PAID</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paid with Extension</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recert Invoice Paid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Renewal Submitted</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Job_Title__c</picklist>
+        <values>
+            <fullName>Behavioral Consultant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CSR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Certified Veterinary Technician</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dog Walker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Faculty - Veterinary Assistant Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Faculty - Veterinary Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Faculty - Veterinary Technician Program</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Groomer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kennel Attendant%2FTechnician</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28Non-Veterinary%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28Veterinary%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pet Sitter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Practice Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Student - Veterinary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Student - Veterinary Assistant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Student - Veterinary Technician</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Support Staff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trainer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Veterinarian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Veterinary Assistant</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Member_Type__c</picklist>
+        <values>
+            <fullName>Boarding %26 Daycare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Groomer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pet Sitter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vet Technician</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Ownership</picklist>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Subsidiary</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Payment_Terms__c</picklist>
+        <values>
+            <fullName>Credit Card Only</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Net 30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Net 60</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Provisioned_to_B2B_Store__c</picklist>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Successful</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unsuccessful</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Rating</picklist>
+        <values>
+            <fullName>Cold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warm</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reminders__c</picklist>
+        <values>
+            <fullName>Automated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Direct</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Select_PIP__c</picklist>
+        <values>
+            <fullName>Banfield</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sploot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thrive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VMM</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>B%26D Facility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Competitor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Current_PPP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grooming Salon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Press</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shelter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Strat Alliance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Veterinary Mobile Practice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Veterinary Practice</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

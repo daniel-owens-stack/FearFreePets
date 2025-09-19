@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Email_Action_1</name>
+        <label>Send Email Action 1</label>
+        <locationX>440</locationX>
+        <locationY>839</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Reset_Send_Reminder_Checkbox</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientId</name>
+            <value>
+                <elementReference>Get_Contact.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailTemplateId</name>
+            <value>
+                <stringValue>00XcX000000TGCfUAO</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <description>Check to see if expiration date of ILMA is 30,90, or 270 days past expiration</description>
+        <name>Check_Days_After_Expiration</name>
+        <label>Check Days After Expiration</label>
+        <locationX>440</locationX>
+        <locationY>431</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>X30_Days_Since_Expiration</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>DaysAfterExpirationDate</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>30.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Contact</targetReference>
+            </connector>
+            <label>30 Days Since Expiration</label>
+        </rules>
+        <rules>
+            <name>X90_Days_After_Expiration</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>DaysAfterExpirationDate</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>90.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Contact</targetReference>
+            </connector>
+            <label>90 Days After Expiration</label>
+        </rules>
+        <rules>
+            <name>X270_Days_After_Expiration</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>DaysAfterExpirationDate</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>270.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Contact</targetReference>
+            </connector>
+            <label>270 Days After Expiration</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Check to see if account already has a renewal purchase</description>
+        <name>Check_For_Previous_Purchase</name>
+        <label>Check For Previous Purchase</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Check_Days_After_Expiration</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Has_Previous_Membership</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Previous_Membership__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Has Previous Membership</label>
+        </rules>
+    </decisions>
+    <description>Auto email sent when ILMA expires</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Formula to calculate days after ILMA has expired</description>
+        <name>DaysAfterExpirationDate</name>
+        <dataType>Number</dataType>
+        <expression>{!$Flow.CurrentDate} - {!$Record.Expiration_Date__c}</expression>
+        <scale>0</scale>
+    </formulas>
+    <interviewLabel>FF Auto Email ILMA Expiration {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>FF Auto Email ILMA Expiration</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Contact</name>
+        <label>Get Contact</label>
+        <locationX>440</locationX>
+        <locationY>731</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Send_Email_Action_1</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Account_Id__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Reset_Send_Reminder_Checkbox</name>
+        <label>Reset Send Reminder Checkbox</label>
+        <locationX>440</locationX>
+        <locationY>947</locationY>
+        <inputAssignments>
+            <field>Send_Renewal_Reminder__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_For_Previous_Purchase</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Expired__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Expired__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Account_Membership__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

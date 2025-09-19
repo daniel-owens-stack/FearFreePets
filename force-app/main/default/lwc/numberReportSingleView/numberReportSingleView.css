@@ -1,0 +1,16 @@
+.grid-item {
+  background-color: lightblue;
+  display: flex;
+  min-width: 100px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 70px;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.label {
+  font-size: 16px;
+  padding: 20px;
+}

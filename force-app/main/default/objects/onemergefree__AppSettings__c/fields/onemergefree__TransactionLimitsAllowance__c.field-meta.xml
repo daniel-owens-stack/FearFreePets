@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>onemergefree__TransactionLimitsAllowance__c</fullName>
+    <defaultValue>95</defaultValue>
+    <deprecated>false</deprecated>
+    <description>The percentage of Transaction Governor Limits used for processing. Where limits use exceeds this allowance transactions will commit completed work only.</description>
+    <inlineHelpText>The percentage of Transaction Governor Limits used for processing. Where limits use exceeds this allowance transactions will commit completed work only.</inlineHelpText>
+    <label>Transaction Limits Allowance</label>
+    <precision>3</precision>
+    <required>true</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

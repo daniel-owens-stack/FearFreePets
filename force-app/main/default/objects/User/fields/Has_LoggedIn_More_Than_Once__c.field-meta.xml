@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Has_LoggedIn_More_Than_Once__c</fullName>
+    <defaultValue>false</defaultValue>
+    <label>Has LoggedIn More Than Once</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

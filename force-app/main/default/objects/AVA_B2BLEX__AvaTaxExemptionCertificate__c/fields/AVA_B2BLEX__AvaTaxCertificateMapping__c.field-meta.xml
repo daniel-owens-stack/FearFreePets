@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AVA_B2BLEX__AvaTaxCertificateMapping__c</fullName>
+    <deprecated>false</deprecated>
+    <inlineHelpText>AvaTax certificate and company code mapping. This field is managed by AvaTax and should not be modified by user.</inlineHelpText>
+    <label>AvaTax Certificate Mapping</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

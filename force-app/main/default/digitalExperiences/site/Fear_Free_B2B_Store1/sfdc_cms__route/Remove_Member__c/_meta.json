@@ -1,0 +1,5 @@
+{
+  "apiName" : "Remove_Member__c",
+  "type" : "sfdc_cms__route",
+  "path" : "routes"
+}

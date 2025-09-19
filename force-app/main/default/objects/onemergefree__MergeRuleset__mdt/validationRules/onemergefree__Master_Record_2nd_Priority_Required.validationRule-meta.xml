@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>onemergefree__Master_Record_2nd_Priority_Required</fullName>
+    <active>true</active>
+    <description>A Master Record 2nd Priority Field Name is required.</description>
+    <errorConditionFormula>AND(
+ NOT(ISBLANK(TEXT(onemergefree__MasterRecord2ndPriority__c))), 
+ ISBLANK( onemergefree__MasterRecord2ndPriorityFieldName__c)
+)</errorConditionFormula>
+    <errorDisplayField>onemergefree__MasterRecord2ndPriorityFieldName__c</errorDisplayField>
+    <errorMessage>A Master Record 2nd Priority Field Name is required.</errorMessage>
+</ValidationRule>

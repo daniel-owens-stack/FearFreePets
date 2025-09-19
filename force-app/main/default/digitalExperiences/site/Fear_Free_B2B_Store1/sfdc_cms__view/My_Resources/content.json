@@ -1,0 +1,712 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "My Resources",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"c46144e0-8824-4709-b4f9-0d5db625f519\",\"columns\":[{\"UUID\":\"06254461-103e-47eb-8848-6f3d250e33fd\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "checkAcademiaMembership" : false,
+                "checkAccountMembership" : false,
+                "checkBoardingMembership" : false,
+                "checkCertification" : false,
+                "checkGroomerMembership" : false,
+                "checkPracticeMembership" : false,
+                "checkPracticeMembershipER" : false,
+                "checkPracticeMembershipGP" : false,
+                "checkPracticeMembershipHC" : false,
+                "checkSitterMembership" : false,
+                "checkTrainerMembership" : false,
+                "checkVetProMembership" : false,
+                "excludeAcademia" : false,
+                "excludeBoarding" : false,
+                "excludeGroomer" : false,
+                "excludePracticeMembership" : false,
+                "excludePracticeMembershipER" : false,
+                "excludePracticeMembershipGP" : false,
+                "excludePracticeMembershipHC" : false,
+                "excludeSitter" : false,
+                "excludeTrainer" : false,
+                "excludeVetPro" : false
+              },
+              "definition" : "c:membershipCheck",
+              "id" : "4f984a8a-4412-4ecc-b0b7-5ec25db9f023",
+              "type" : "component"
+            }, {
+              "attributes" : { },
+              "definition" : "c:testSlot",
+              "id" : "7d8f9556-2d7f-4618-9706-2a81c9725684",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "checkAccountMembership" : true,
+                "checkCertification" : false,
+                "checkPracticeMembership" : false,
+                "checkPracticeMembershipGP" : false,
+                "checkVetProMembership" : false
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "activeTabBorderHighlightWeight" : "2px",
+                    "activeTabTextEmphasis" : "{\"bold\":true}",
+                    "activeTabTextStyle" : "{\"textStyle\":\"paragraph1\",\"headingTag\":\"p\",\"enableOverride\":true}",
+                    "borderColor" : "",
+                    "borderRadius" : "0px",
+                    "borderWeight" : "0px",
+                    "enableOverflowMenu" : true,
+                    "imageFit" : "cover",
+                    "imagePosition" : "center center",
+                    "overflowIconColor" : "rgb(116,116,116)",
+                    "overflowIconStyle" : "menu-icon-horizontal",
+                    "overflowMenuLabel" : "More",
+                    "tabAlignment" : "center",
+                    "tabBorderColor" : "",
+                    "tabBorderRadius" : "0px",
+                    "tabBorderWeight" : "0px",
+                    "tabHoverBorderHighlightWeight" : "1px",
+                    "tabLayout" : "horizontal",
+                    "tabPadding" : "10px",
+                    "tabTextStyle" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"p\",\"enableOverride\":true}",
+                    "tabsetConfig" : "{\"UUID\":\"039eb72c-0441-48ac-9dc0-5699f8a7daed\",\"activeTab\":null,\"useOverflowMenu\":null,\"tabs\":[{\"UUID\":\"00b064e6-8ef8-46e6-95a1-d8aec5659980\",\"tabName\":\"Marketing Resources\",\"tabKey\":\"tab1\",\"locked\":false,\"allowGuestUser\":false},{\"UUID\":\"f3210bd4-c703-4710-a42a-6f856d5aeeab\",\"tabName\":\"Client Education Resources\",\"tabKey\":\"tab2\",\"locked\":false,\"allowGuestUser\":false},{\"UUID\":\"7d1cf8be-1c5b-4a62-a241-5f52a899c8f2\",\"tabName\":\"Professional Resources\",\"tabKey\":\"tab3\",\"locked\":false,\"allowGuestUser\":false}]}",
+                    "width" : "100.00%"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"4891e81e-f076-4971-a759-34f778494871\",\"columns\":[{\"UUID\":\"b46f10d5-04e1-415d-8c86-b0316626f8b7\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"4\",\"seedComponents\":[]},{\"UUID\":\"5036dbc7-0feb-4f7e-a179-31329a68b47e\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"4\",\"seedComponents\":[]},{\"UUID\":\"46b8303a-74a9-4738-bd00-c8837119c112\",\"columnName\":\"Column 3\",\"columnKey\":\"c7a2f\",\"columnWidth\":\"4\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "rgb(237, 247, 254)",
+                            "buttonLabel" : "View Resources",
+                            "descriptionText" : "",
+                            "externalUrl" : "/store/my-resources/social-media-graphics",
+                            "fileContentId" : "MCQ5SVI6MHIBDCDNAACEYSZQI7QQ",
+                            "imageContentId" : "MCGL3D7AOIVVHHVNT7RTT2MGPWYE",
+                            "showButton" : true,
+                            "titleText" : "Social Media Graphics"
+                          },
+                          "definition" : "c:ffCardComponent",
+                          "id" : "0ead91c4-567e-43dc-b273-96d79d0295b0",
+                          "type" : "component"
+                        } ],
+                        "id" : "b46f10d5-04e1-415d-8c86-b0316626f8b7",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "rgb(255, 247, 233)",
+                            "buttonLabel" : "View Resources",
+                            "descriptionText" : "",
+                            "externalUrl" : "/store/my-resources/logos-and-credentials",
+                            "imageContentId" : "MCHLZHUUY3NBCAXBM7GVKCTLAHQA",
+                            "showButton" : true,
+                            "titleText" : "Logos & Credentials"
+                          },
+                          "definition" : "c:ffCardComponent",
+                          "id" : "c9d2178e-7345-4dcc-bac2-cc71efe0e0d7",
+                          "type" : "component"
+                        } ],
+                        "id" : "5036dbc7-0feb-4f7e-a179-31329a68b47e",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "rgb(238, 248, 248)",
+                            "buttonLabel" : "View Resources",
+                            "descriptionText" : "",
+                            "externalUrl" : "/store/my-resources/press-release-templates",
+                            "fileContentId" : "MCQ5SVI6MHIBDCDNAACEYSZQI7QQ",
+                            "imageContentId" : "MCKC4EEMR5BFARXOIOS5SDI3UX6Q",
+                            "showButton" : true,
+                            "titleText" : "Press Release Templates"
+                          },
+                          "definition" : "c:ffCardComponent",
+                          "id" : "bbc20c6f-f349-4f8f-8ba7-8194519978bd",
+                          "type" : "component"
+                        } ],
+                        "id" : "46b8303a-74a9-4738-bd00-c8837119c112",
+                        "name" : "c7a2f",
+                        "title" : "Column 3",
+                        "type" : "region"
+                      } ],
+                      "customCssClasses" : "resource-row",
+                      "definition" : "dxp_layout:columns",
+                      "id" : "4891e81e-f076-4971-a759-34f778494871",
+                      "type" : "component"
+                    } ],
+                    "id" : "00b064e6-8ef8-46e6-95a1-d8aec5659980",
+                    "name" : "tab1",
+                    "title" : "Marketing Resources",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"4b5957cd-c99b-4983-ae53-0fb303568aaf\",\"columns\":[{\"UUID\":\"95cc9198-deb4-4daf-9bea-0e283a2c77a4\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"4\",\"seedComponents\":[]},{\"UUID\":\"922fd005-eded-401f-a39f-f6dba920eaa0\",\"columnName\":\"Column 2\",\"columnKey\":\"f687d\",\"columnWidth\":\"4\",\"seedComponents\":[]},{\"UUID\":\"1b948692-a226-4900-95c9-6d908f510f94\",\"columnName\":\"Column 3\",\"columnKey\":\"e4aa9\",\"columnWidth\":\"4\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "rgb(237, 247, 254)",
+                            "buttonLabel" : "View Resources",
+                            "externalUrl" : "/store/my-resources/holiday-infographics",
+                            "fileContentId" : "MCZXQJTCAA6FA4ZEWLPUKGYEGQTY",
+                            "imageContentId" : "MCZXQJTCAA6FA4ZEWLPUKGYEGQTY",
+                            "showButton" : true,
+                            "titleText" : "Holiday Infographics"
+                          },
+                          "definition" : "c:ffCardComponent",
+                          "id" : "349abe2e-3ab7-40f4-8f4f-5a98ce298a25",
+                          "type" : "component"
+                        } ],
+                        "id" : "95cc9198-deb4-4daf-9bea-0e283a2c77a4",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "rgb(255, 247, 233)",
+                            "buttonLabel" : "View Resources",
+                            "externalUrl" : "/store/my-resources/fear-free-happy-homes-handouts",
+                            "fileContentId" : "MCTZEPC3XCZ5HEJDFA7I64QQGUYU",
+                            "imageContentId" : "MCTZEPC3XCZ5HEJDFA7I64QQGUYU",
+                            "showButton" : true,
+                            "titleText" : "Fear Free Happy Homes Handouts"
+                          },
+                          "definition" : "c:ffCardComponent",
+                          "id" : "15672d6d-506d-4715-9d53-26795879cc29",
+                          "type" : "component"
+                        } ],
+                        "id" : "922fd005-eded-401f-a39f-f6dba920eaa0",
+                        "name" : "f687d",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "rgb(238, 248, 248)",
+                            "buttonLabel" : "View Resources",
+                            "externalUrl" : "/store/my-resources/promotional-videos",
+                            "fileContentId" : "MCVKJQLGFE5BAFVMUHHLBFDO5RDE",
+                            "imageContentId" : "MCVKJQLGFE5BAFVMUHHLBFDO5RDE",
+                            "showButton" : true,
+                            "titleText" : "Promotional Videos"
+                          },
+                          "definition" : "c:ffCardComponent",
+                          "id" : "dd15d24b-eace-469f-821a-ebf357dfee32",
+                          "type" : "component"
+                        } ],
+                        "id" : "1b948692-a226-4900-95c9-6d908f510f94",
+                        "name" : "e4aa9",
+                        "title" : "Column 3",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "4b5957cd-c99b-4983-ae53-0fb303568aaf",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"23bb3ea2-0bcd-41e1-8050-d3ee8c4500c3\",\"columns\":[{\"UUID\":\"a67c7f2a-867e-469c-a24e-3e461589b763\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"4\",\"seedComponents\":[]},{\"UUID\":\"7583ccc6-c3fc-44e2-abf7-a016c93725a8\",\"columnName\":\"Column 2\",\"columnKey\":\"f687d\",\"columnWidth\":\"4\",\"seedComponents\":[]},{\"UUID\":\"654f78be-598c-4a44-9748-2846185d08fd\",\"columnName\":\"Column 3\",\"columnKey\":\"e4aa9\",\"columnWidth\":\"4\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "rgb(238, 248, 248)",
+                            "buttonLabel" : "View Resources",
+                            "externalUrl" : "/store/my-resources/french-translated-client-ed-resources",
+                            "fileContentId" : "MCTFHIVLCJGFEMDAPT6CKHO6ZP7U",
+                            "imageContentId" : "MCTFHIVLCJGFEMDAPT6CKHO6ZP7U",
+                            "showButton" : true,
+                            "titleText" : "French Translated Client Ed Resources"
+                          },
+                          "definition" : "c:ffCardComponent",
+                          "id" : "f0a55af0-9f14-4906-b780-6cdbde82788c",
+                          "type" : "component"
+                        } ],
+                        "id" : "a67c7f2a-867e-469c-a24e-3e461589b763",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "rgb(237, 247, 254)",
+                            "buttonLabel" : "View Resources",
+                            "externalUrl" : "/store/my-resources/client-facing-brochures",
+                            "fileContentId" : "MC6X7L23JAMZD6LET3XEK63EHUNU",
+                            "imageContentId" : "MC6X7L23JAMZD6LET3XEK63EHUNU",
+                            "showButton" : true,
+                            "titleText" : "Client-Facing Brochures"
+                          },
+                          "definition" : "c:ffCardComponent",
+                          "id" : "3d220727-b499-43c4-8a2f-47f4c497c48c",
+                          "type" : "component"
+                        } ],
+                        "id" : "7583ccc6-c3fc-44e2-abf7-a016c93725a8",
+                        "name" : "f687d",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "rgb(255, 247, 233)",
+                            "buttonLabel" : "View Resources",
+                            "externalUrl" : "/store/my-resources/posters",
+                            "fileContentId" : "MCFB3GEP66OVF2ZIMMXFJJAC7744",
+                            "imageContentId" : "MCFB3GEP66OVF2ZIMMXFJJAC7744",
+                            "showButton" : true,
+                            "titleText" : "Posters"
+                          },
+                          "definition" : "c:ffCardComponent",
+                          "id" : "af5eb723-5105-4af0-8211-0a90c7a3d312",
+                          "type" : "component"
+                        } ],
+                        "id" : "654f78be-598c-4a44-9748-2846185d08fd",
+                        "name" : "e4aa9",
+                        "title" : "Column 3",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "23bb3ea2-0bcd-41e1-8050-d3ee8c4500c3",
+                      "type" : "component"
+                    } ],
+                    "id" : "f3210bd4-c703-4710-a42a-6f856d5aeeab",
+                    "name" : "tab2",
+                    "title" : "Client Education Resources",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"0ca1cf8c-b4bf-453a-ae3b-1500af4a67f2\",\"columns\":[{\"UUID\":\"c5045cd1-3cbe-48f2-bc78-3636a867833b\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"4\",\"seedComponents\":[]},{\"UUID\":\"12d7b24c-4e62-413e-ac5f-efb80cb6705c\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"4\",\"seedComponents\":[]},{\"UUID\":\"8801ae2f-cf0b-46b6-b9fd-d57608388d9d\",\"columnName\":\"Column 3\",\"columnKey\":\"2c9f0\",\"columnWidth\":\"4\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "rgb(237, 247, 254)",
+                            "buttonLabel" : "View Resources",
+                            "externalUrl" : "/store/my-resources/fas-resources",
+                            "fileContentId" : "MCGLBGEPEXFBEJVINQKKW6IEZHFQ",
+                            "imageContentId" : "MCGLBGEPEXFBEJVINQKKW6IEZHFQ",
+                            "showButton" : true,
+                            "titleText" : "FAS Resources"
+                          },
+                          "definition" : "c:ffCardComponent",
+                          "id" : "20d25a5d-784a-4876-9caa-c133d25463bf",
+                          "type" : "component"
+                        } ],
+                        "id" : "c5045cd1-3cbe-48f2-bc78-3636a867833b",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "rgb(255, 247, 233)",
+                            "buttonLabel" : "View Resources",
+                            "externalUrl" : "/store/my-resources/questionnaires-and-report-cards",
+                            "fileContentId" : "MC3XS6ZNYDNZAMJCNXRO5JUN25DY",
+                            "imageContentId" : "MC3XS6ZNYDNZAMJCNXRO5JUN25DY",
+                            "showButton" : true,
+                            "titleText" : "Questionnaires & Report Cards"
+                          },
+                          "definition" : "c:ffCardComponent",
+                          "id" : "ec4d4c73-baa7-4e2f-913f-fb66c78eab87",
+                          "type" : "component"
+                        } ],
+                        "id" : "12d7b24c-4e62-413e-ac5f-efb80cb6705c",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "checkAccountMembership" : false,
+                            "checkBoardingMembership" : false,
+                            "checkCertification" : false,
+                            "checkGroomerMembership" : false,
+                            "checkPracticeMembership" : false,
+                            "checkSitterMembership" : false,
+                            "checkTrainerMembership" : false,
+                            "checkVetProMembership" : true
+                          },
+                          "children" : [ {
+                            "children" : [ {
+                              "attributes" : {
+                                "backgroundColor" : "rgb(238, 248, 248)",
+                                "buttonLabel" : "View Resources",
+                                "externalUrl" : "/store/my-resources/drug-charts",
+                                "fileContentId" : "MCFGKXU5H4DZAWHHZXPZUVKH26ME",
+                                "imageContentId" : "MCFGKXU5H4DZAWHHZXPZUVKH26ME",
+                                "showButton" : true,
+                                "titleText" : "Drug Charts"
+                              },
+                              "definition" : "c:ffCardComponent",
+                              "id" : "c0315dfb-d77e-4edd-a67e-25587d355ca4",
+                              "type" : "component"
+                            } ],
+                            "id" : "8bf2c140-bdc4-4cf5-b3cb-0e2f8ce91722",
+                            "name" : "Content-Region-Has-Membership",
+                            "title" : "Content-Region-Has-Membership",
+                            "type" : "region"
+                          }, {
+                            "id" : "14cd4108-358b-44d9-985e-8ab0307d44ed",
+                            "name" : "Content-Region-No-Membership",
+                            "title" : "Content-Region-No-Membership",
+                            "type" : "region"
+                          } ],
+                          "definition" : "c:membershipCheck",
+                          "id" : "d476b4a8-c0ed-484b-8a2b-bbb19827cdb0",
+                          "type" : "component"
+                        } ],
+                        "id" : "8801ae2f-cf0b-46b6-b9fd-d57608388d9d",
+                        "name" : "2c9f0",
+                        "title" : "Column 3",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "0ca1cf8c-b4bf-453a-ae3b-1500af4a67f2",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"c8bd41c8-436c-4d42-a356-5355d0184c88\",\"columns\":[{\"UUID\":\"058c2618-4558-4baf-9535-13f3e22c23dc\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"4\",\"seedComponents\":[]},{\"UUID\":\"b6858e60-5f12-4496-af30-af7f2dbcc4ca\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"4\",\"seedComponents\":[]},{\"UUID\":\"c62d0462-7849-4fcc-8415-57283458cbad\",\"columnName\":\"Column 3\",\"columnKey\":\"2c9f0\",\"columnWidth\":\"4\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "checkAccountMembership" : false,
+                            "checkBoardingMembership" : false,
+                            "checkCertification" : false,
+                            "checkGroomerMembership" : false,
+                            "checkPracticeMembership" : false,
+                            "checkSitterMembership" : false,
+                            "checkTrainerMembership" : false,
+                            "checkVetProMembership" : true
+                          },
+                          "children" : [ {
+                            "children" : [ {
+                              "attributes" : {
+                                "backgroundColor" : "rgb(238, 248, 248)",
+                                "buttonLabel" : "View Resources",
+                                "externalUrl" : "/store/my-resources/veterinary-professional-resources",
+                                "fileContentId" : "MCYXJNXNQMDJEN5MRASPGOWR6QGI",
+                                "imageContentId" : "MCYXJNXNQMDJEN5MRASPGOWR6QGI",
+                                "showButton" : true,
+                                "titleText" : "Veterinary Professional Resources"
+                              },
+                              "definition" : "c:ffCardComponent",
+                              "id" : "8bd1d8af-4165-4fef-9b3a-97b523296fae",
+                              "type" : "component"
+                            } ],
+                            "id" : "9b5688f0-2758-42db-a07c-6488c693f6fe",
+                            "name" : "Content-Region-Has-Membership",
+                            "title" : "Content-Region-Has-Membership",
+                            "type" : "region"
+                          }, {
+                            "id" : "2b4cf376-a2ea-4411-9068-2db293c3f66c",
+                            "name" : "Content-Region-No-Membership",
+                            "title" : "Content-Region-No-Membership",
+                            "type" : "region"
+                          } ],
+                          "definition" : "c:membershipCheck",
+                          "id" : "54c7ca27-5b78-4d88-ae90-36f465fc7f10",
+                          "type" : "component"
+                        } ],
+                        "id" : "058c2618-4558-4baf-9535-13f3e22c23dc",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "checkAccountMembership" : false,
+                            "checkBoardingMembership" : false,
+                            "checkCertification" : false,
+                            "checkGroomerMembership" : false,
+                            "checkPracticeMembership" : false,
+                            "checkSitterMembership" : false,
+                            "checkTrainerMembership" : false,
+                            "checkVetProMembership" : true
+                          },
+                          "children" : [ {
+                            "children" : [ {
+                              "attributes" : {
+                                "backgroundColor" : "rgb(237, 247, 254)",
+                                "buttonLabel" : "View Resources",
+                                "externalUrl" : "/store/my-resources/csr-and-receptionist-resources",
+                                "fileContentId" : "MCC72YVVGF55HJHJ5W5BZQLF65ZU",
+                                "imageContentId" : "MCC72YVVGF55HJHJ5W5BZQLF65ZU",
+                                "showButton" : true,
+                                "titleText" : "CSR/Receptionist Resources"
+                              },
+                              "definition" : "c:ffCardComponent",
+                              "id" : "ff8743da-7305-4f96-b2fc-f8d9b5a32dd8",
+                              "type" : "component"
+                            } ],
+                            "id" : "b1fb90b9-386c-407d-a238-cfa4389c49e3",
+                            "name" : "Content-Region-Has-Membership",
+                            "title" : "Content-Region-Has-Membership",
+                            "type" : "region"
+                          }, {
+                            "id" : "b8c7a7d7-8c2a-4b1f-8450-9d54c3278243",
+                            "name" : "Content-Region-No-Membership",
+                            "title" : "Content-Region-No-Membership",
+                            "type" : "region"
+                          } ],
+                          "definition" : "c:membershipCheck",
+                          "id" : "23d61e42-de2b-47b9-9a5e-ea07c41a9c6d",
+                          "type" : "component"
+                        } ],
+                        "id" : "b6858e60-5f12-4496-af30-af7f2dbcc4ca",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "checkAccountMembership" : false,
+                            "checkBoardingMembership" : false,
+                            "checkCertification" : false,
+                            "checkGroomerMembership" : false,
+                            "checkPracticeMembership" : false,
+                            "checkSitterMembership" : false,
+                            "checkTrainerMembership" : false,
+                            "checkVetProMembership" : true
+                          },
+                          "children" : [ {
+                            "children" : [ {
+                              "attributes" : {
+                                "backgroundColor" : "rgb(255, 247, 233)",
+                                "buttonLabel" : "View Resources",
+                                "externalUrl" : "/store/my-resources/promotional-videos",
+                                "fileContentId" : "MC3XS6ZNYDNZAMJCNXRO5JUN25DY",
+                                "imageContentId" : "MCVKJQLGFE5BAFVMUHHLBFDO5RDE",
+                                "showButton" : true,
+                                "titleText" : "Promotional Videos"
+                              },
+                              "definition" : "c:ffCardComponent",
+                              "id" : "47941701-5324-48cc-8e91-c2b276e1e88f",
+                              "type" : "component"
+                            } ],
+                            "id" : "7f1e2c32-e781-4d31-9906-f8ec4ba4a1b1",
+                            "name" : "Content-Region-Has-Membership",
+                            "title" : "Content-Region-Has-Membership",
+                            "type" : "region"
+                          }, {
+                            "id" : "1dd00e5a-f125-4d12-bf2f-3198e27617f2",
+                            "name" : "Content-Region-No-Membership",
+                            "title" : "Content-Region-No-Membership",
+                            "type" : "region"
+                          } ],
+                          "definition" : "c:membershipCheck",
+                          "id" : "fd524fc6-ccc8-4645-8733-3d5d27b00e29",
+                          "type" : "component"
+                        } ],
+                        "id" : "c62d0462-7849-4fcc-8415-57283458cbad",
+                        "name" : "2c9f0",
+                        "title" : "Column 3",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "c8bd41c8-436c-4d42-a356-5355d0184c88",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"71cd09c4-5372-4037-b56d-9c5a5626a604\",\"columns\":[{\"UUID\":\"6947ab6a-6191-412d-897c-8270d656fa22\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"4\",\"seedComponents\":[]},{\"UUID\":\"abc70c6f-4c0a-46c4-8220-0540e575f404\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"4\",\"seedComponents\":[]},{\"UUID\":\"42882cef-ffc8-4877-8c66-c760b456e7f6\",\"columnName\":\"Column 3\",\"columnKey\":\"2c9f0\",\"columnWidth\":\"4\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "checkAccountMembership" : false,
+                            "checkBoardingMembership" : false,
+                            "checkCertification" : false,
+                            "checkGroomerMembership" : false,
+                            "checkPracticeMembership" : false,
+                            "checkSitterMembership" : false,
+                            "checkTrainerMembership" : true,
+                            "checkVetProMembership" : false
+                          },
+                          "children" : [ {
+                            "children" : [ {
+                              "attributes" : {
+                                "backgroundColor" : "rgb(237, 247, 254)",
+                                "buttonLabel" : "View Resources",
+                                "externalUrl" : "/store/my-resources/trainer-resources",
+                                "fileContentId" : "MCBSS4QLDPOFDMZFHYQT3ALKZTUQ",
+                                "imageContentId" : "MCBSS4QLDPOFDMZFHYQT3ALKZTUQ",
+                                "showButton" : true,
+                                "titleText" : "Trainer Resources"
+                              },
+                              "definition" : "c:ffCardComponent",
+                              "id" : "b945b558-56b5-48f2-9057-536cd17facd1",
+                              "type" : "component"
+                            } ],
+                            "id" : "04dbccc8-def8-41db-9c69-fd662f7e6e91",
+                            "name" : "Content-Region-Has-Membership",
+                            "title" : "Content-Region-Has-Membership",
+                            "type" : "region"
+                          }, {
+                            "id" : "cfe46665-574e-4b54-9c81-0242ff4b4be2",
+                            "name" : "Content-Region-No-Membership",
+                            "title" : "Content-Region-No-Membership",
+                            "type" : "region"
+                          } ],
+                          "definition" : "c:membershipCheck",
+                          "id" : "72858209-3337-49a9-9277-2227798bbcdb",
+                          "type" : "component"
+                        } ],
+                        "id" : "6947ab6a-6191-412d-897c-8270d656fa22",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "id" : "abc70c6f-4c0a-46c4-8220-0540e575f404",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      }, {
+                        "id" : "42882cef-ffc8-4877-8c66-c760b456e7f6",
+                        "name" : "2c9f0",
+                        "title" : "Column 3",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "71cd09c4-5372-4037-b56d-9c5a5626a604",
+                      "type" : "component"
+                    } ],
+                    "id" : "7d1cf8be-1c5b-4a62-a241-5f52a899c8f2",
+                    "name" : "tab3",
+                    "title" : "Professional Resources",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:tabs",
+                  "id" : "039eb72c-0441-48ac-9dc0-5699f8a7daed",
+                  "type" : "component"
+                } ],
+                "id" : "cf20cc1e-5149-40ee-91c5-fa412673eba5",
+                "name" : "Content-Region-Has-Membership",
+                "title" : "Content-Region-Has-Membership",
+                "type" : "region"
+              }, {
+                "children" : [ {
+                  "attributes" : {
+                    "backgroundColor" : "",
+                    "isLinkable" : false,
+                    "linkAssistiveText" : "",
+                    "paddingHorizontal" : "none",
+                    "paddingVertical" : "none",
+                    "text" : "Your text",
+                    "textAlign" : "left",
+                    "textDecoration" : "{}",
+                    "textDisplayInfo" : "{\"headingTag\":\"h3\",\"textStyle\":\"heading-medium\"}"
+                  },
+                  "definition" : "dxp_base:textBlock",
+                  "id" : "617d3a54-00a3-4573-bec2-6c21b1dd6be8",
+                  "type" : "component"
+                } ],
+                "id" : "60363fe8-8c5c-4870-9850-73d0df295141",
+                "name" : "Content-Region-No-Membership",
+                "title" : "Content-Region-No-Membership",
+                "type" : "region"
+              } ],
+              "definition" : "c:membershipCheck",
+              "id" : "0b7fa5e7-134f-40f9-8ff4-a11e0e95b9ea",
+              "type" : "component"
+            } ],
+            "id" : "06254461-103e-47eb-8848-6f3d250e33fd",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "c46144e0-8824-4709-b4f9-0d5db625f519",
+          "type" : "component"
+        } ],
+        "id" : "97c77443-4df3-4c58-8eb3-1b932985f584",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "pageTitle" : "My Resources",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "eff575f0-dcb9-4cad-ad49-3dc24c06789d",
+          "type" : "component"
+        } ],
+        "id" : "6f11b2cf-aee1-44f0-a2be-f98b4291118d",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "9c5caa2d-59d1-4398-95b3-244f33700109",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-my-resources"
+  },
+  "urlName" : "my-resources"
+}

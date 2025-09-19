@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Parent_Salesforce_Ticket__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>This is a Lookup to the Salesforce Ticket this ticket was merged into.</description>
+    <inlineHelpText>This is a Lookup to the Salesforce Ticket this ticket was merged into.</inlineHelpText>
+    <label>Parent Salesforce Ticket</label>
+    <referenceTo>Salesforce_Ticket__c</referenceTo>
+    <relationshipLabel>Merged Salesforce Tickets</relationshipLabel>
+    <relationshipName>Merged_Salesforce_Tickets</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

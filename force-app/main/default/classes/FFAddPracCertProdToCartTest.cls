@@ -57,6 +57,7 @@ private class FFAddPracCertProdToCartTest {
             Name                     = 'Prac Cert Renewal',
         IsActive                 = true,
         Membership__c            = m.Id,
+        Renewal_Product__c = true,
         Renewal_DVM_Count_Min__c = 1,
         Renewal_DVM_Count_Max__c = 5
             );
@@ -246,15 +247,15 @@ private class FFAddPracCertProdToCartTest {
                 FFAddPracCertProdToCart.assignPLMAToCartItem(prod.Id, asn.Id);
                 // If no exception: verify the CartItem’s assignment was updated
                 CartItem updated = [
-                    SELECT Practice_Membership_Assignment__c
+                    SELECT Practice_Level_Membership_Assignment__c
                     FROM CartItem
                     WHERE Product2Id = :prod.Id
                     LIMIT 1
                 ];
                 System.assertEquals(
                     asn.Id,
-                updated.Practice_Membership_Assignment__c,
-                'CartItem.Practice_Membership_Assignment__c must match assignment.Id'
+                updated.Practice_Level_Membership_Assignment__c,
+                'CartItem.Practice_Level_Membership_Assignment__c must match assignment.Id'
                     );
             } catch (AuraHandledException e) {
                 // If lookup failed due to sharing or timing, we still accept any AuraHandledException
@@ -339,11 +340,11 @@ private class FFAddPracCertProdToCartTest {
         }
          // Validate CartItem was updated
             CartItem updated = [
-            SELECT Practice_Membership_Assignment__c
+            SELECT Practice_Level_Membership_Assignment__c
             FROM CartItem
             WHERE cartId = :FFAddPracCertProdToCart.testCartId 
             ];
-            System.assertEquals(plma.Id, updated.Practice_Membership_Assignment__c);
+            System.assertEquals(plma.Id, updated.Practice_Level_Membership_Assignment__c);
     }
     
     @IsTest

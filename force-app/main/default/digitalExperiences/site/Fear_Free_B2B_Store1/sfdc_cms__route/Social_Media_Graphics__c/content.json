@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Social Media Graphics",
+  "contentBody" : {
+    "activeViewId" : "Social_Media_Graphics",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-social-media-graphics",
+    "urlPrefix" : "social-media-graphics"
+  },
+  "urlName" : "social-media-graphics"
+}

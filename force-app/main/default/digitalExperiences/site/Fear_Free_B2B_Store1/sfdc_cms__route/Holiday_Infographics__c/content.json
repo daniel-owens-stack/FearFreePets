@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Holiday Infographics",
+  "contentBody" : {
+    "activeViewId" : "Holiday_Infographics",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-holiday-infographics",
+    "urlPrefix" : "holiday-infographics"
+  },
+  "urlName" : "holiday-infographics"
+}

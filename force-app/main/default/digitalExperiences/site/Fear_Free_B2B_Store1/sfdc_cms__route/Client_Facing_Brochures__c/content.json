@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Client-Facing Brochures",
+  "contentBody" : {
+    "activeViewId" : "Client_Facing_Brochures",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-client-facing-brochures",
+    "urlPrefix" : "client-facing-brochures"
+  },
+  "urlName" : "client-facing-brochures"
+}

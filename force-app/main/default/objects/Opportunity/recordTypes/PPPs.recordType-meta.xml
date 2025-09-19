@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PPPs</fullName>
+    <active>true</active>
+    <businessProcess>PPPs</businessProcess>
+    <compactLayoutAssignment>CPM_PPP</compactLayoutAssignment>
+    <label>PPPs</label>
+    <picklistValues>
+        <picklist>Category__c</picklist>
+        <values>
+            <fullName>Anesthesia%2C Sedation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Antibiotics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biologics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biosecurity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CBD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compounding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dermatology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Diabetic Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Diagnostics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enrichment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Epilepsy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lymphoma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Microchips</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nutrition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parasiticides</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pet Genetics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pheromones</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supplements</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Treats</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wound Management</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>DB_Competitor__c</picklist>
+        <values>
+            <fullName>Competitor A</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Competitor B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Competitor C</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ForecastCategoryName</picklist>
+        <values>
+            <fullName>Best Case</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Omitted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pipeline</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LeadSource</picklist>
+        <values>
+            <fullName>Advertisement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Conference</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Corporate Program Member Lead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Corporate Veterinary Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email Campaign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employee Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FF Hosted Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facebook Group Member Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Google AdWords</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Member Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PC Web-to-Lead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Purchased List</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social Media Post</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Speaker Presentation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinar</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Loss_Reason__c</picklist>
+        <values>
+            <fullName>No Budget %2F Lost Funding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Decision %2F Non-Responsive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Price</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Ind Renewal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Business</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

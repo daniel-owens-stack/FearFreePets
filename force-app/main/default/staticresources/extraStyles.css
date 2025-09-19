@@ -1,0 +1,12 @@
+.slds-map {
+    max-height: 300px;
+    min-width: auto;
+}
+
+.slds-map:before {
+    padding-top: 300px;
+}
+
+.slds-card {
+    height: 100%;
+}

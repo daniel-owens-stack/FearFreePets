@@ -1,0 +1,31 @@
+.map-container {
+    position: relative;
+}
+
+.map-with-markers {
+    position: relative;
+}
+
+.map-with-markers .slds-map__container {
+    position: relative;
+}
+
+.map-with-markers .slds-map__item {
+    position: absolute;
+}
+
+.map-with-markers .slds-map__item .map-marker-container {
+    position: absolute;
+    transform: translate(-50%, -100%);
+    top: 50%;
+    left: 50%;
+    z-index: 1000; /* Ensure markers are on top of the map */
+}
+
+.map-with-markers .slds-map__item .map-marker-container .marker-number {
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}

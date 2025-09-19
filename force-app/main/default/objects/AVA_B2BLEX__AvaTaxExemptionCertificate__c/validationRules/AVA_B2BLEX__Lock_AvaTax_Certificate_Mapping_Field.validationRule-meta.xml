@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AVA_B2BLEX__Lock_AvaTax_Certificate_Mapping_Field</fullName>
+    <active>true</active>
+    <description>User should not be able to delete AvaTax Certificate Mapping</description>
+    <errorConditionFormula>PRIORVALUE(AVA_B2BLEX__AvaTaxCertificateMapping__c) != NULL &amp;&amp; AVA_B2BLEX__AvaTaxCertificateMapping__c = NULL</errorConditionFormula>
+    <errorDisplayField>AVA_B2BLEX__AvaTaxCertificateMapping__c</errorDisplayField>
+    <errorMessage>Please do not edit/delete this value</errorMessage>
+</ValidationRule>

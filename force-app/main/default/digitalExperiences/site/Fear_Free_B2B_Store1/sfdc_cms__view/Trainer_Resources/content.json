@@ -1,0 +1,338 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Trainer Resources",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"9de72539-e585-49b8-9176-54c542e0208a\",\"columns\":[{\"UUID\":\"688e05af-c95a-43dc-bb07-049594300258\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "checkAccountMembership" : false,
+                "checkBoardingMembership" : false,
+                "checkCertification" : false,
+                "checkGroomerMembership" : false,
+                "checkPracticeMembership" : false,
+                "checkSitterMembership" : false,
+                "checkTrainerMembership" : true,
+                "checkVetProMembership" : false
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "flex-start",
+                    "dxpStyle" : {
+                      "margin" : {
+                        "bottom" : "",
+                        "left" : "",
+                        "right" : "",
+                        "top" : "40px"
+                      }
+                    },
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"972f3e48-c5c9-4ca0-8850-44b96391b8b5\",\"columns\":[{\"UUID\":\"6bd357da-25cf-4011-aade-49875bad4d09\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"a868d070-65b2-46c1-ab40-55a4ef9225b9\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "Guide to Creating Training Videos",
+                        "textAlign" : "center",
+                        "textDecoration" : "{\"bold\":true}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "9aaf68a7-bc8c-42e4-9476-1e546d64c554",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "fit" : "contain",
+                        "height" : 350,
+                        "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCNKFLBCACUJGZZJJ5JGOJF5UOME\",\"contentType\":null}}",
+                        "overlayColor" : "",
+                        "position" : "center center",
+                        "width" : 66
+                      },
+                      "definition" : "dxp_base:image",
+                      "id" : "78177740-4186-4543-82ba-078518860337",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "flex-start",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"41717306-5331-41f1-934c-646c2a869739\",\"columns\":[{\"UUID\":\"69cf7f3c-8c80-41a0-99eb-675746ccfd01\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "size" : "standard",
+                            "stretch" : "standard",
+                            "text" : "Download",
+                            "type" : "primary",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://app.schoox.com/library2/viewer.php?id=4643920&academyId=827540346\"}}}}"
+                          },
+                          "definition" : "dxp_base:button",
+                          "id" : "8a181a93-2eb4-46a9-9e38-542bfc628e01",
+                          "type" : "component"
+                        } ],
+                        "id" : "69cf7f3c-8c80-41a0-99eb-675746ccfd01",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      } ],
+                      "customCssClasses" : "button-row",
+                      "definition" : "dxp_layout:columns",
+                      "id" : "41717306-5331-41f1-934c-646c2a869739",
+                      "type" : "component"
+                    } ],
+                    "id" : "6bd357da-25cf-4011-aade-49875bad4d09",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "Conducting Online Training Sessions",
+                        "textAlign" : "center",
+                        "textDecoration" : "{\"bold\":true}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "edcf7a5f-70f4-421b-99f0-5c434ea0409c",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "fit" : "contain",
+                        "height" : 350,
+                        "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCX3E5H2CHTZAYXEDQ57PNRSZHVE\",\"contentType\":null}}",
+                        "overlayColor" : "",
+                        "position" : "center center",
+                        "width" : 66
+                      },
+                      "definition" : "dxp_base:image",
+                      "id" : "ba1cfaff-62d7-459b-aff5-59659d008544",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "flex-start",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"c95ad072-5c8c-4b8d-98c1-284c25015a21\",\"columns\":[{\"UUID\":\"b9dde63a-492b-42fa-8c1d-7d1f2f2fe3bb\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "size" : "standard",
+                            "stretch" : "standard",
+                            "text" : "Download",
+                            "type" : "primary",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://app.schoox.com/library2/viewer.php?id=4643918&academyId=827540346\"}}}}"
+                          },
+                          "definition" : "dxp_base:button",
+                          "id" : "3fb7ed5c-dfb8-4e3a-be21-6dd215829994",
+                          "type" : "component"
+                        } ],
+                        "id" : "b9dde63a-492b-42fa-8c1d-7d1f2f2fe3bb",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      } ],
+                      "customCssClasses" : "button-row",
+                      "definition" : "dxp_layout:columns",
+                      "id" : "c95ad072-5c8c-4b8d-98c1-284c25015a21",
+                      "type" : "component"
+                    } ],
+                    "id" : "a868d070-65b2-46c1-ab40-55a4ef9225b9",
+                    "name" : "col2",
+                    "title" : "Column 2",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "972f3e48-c5c9-4ca0-8850-44b96391b8b5",
+                  "type" : "component"
+                }, {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "flex-start",
+                    "dxpStyle" : {
+                      "margin" : {
+                        "bottom" : "",
+                        "left" : "",
+                        "right" : "",
+                        "top" : "40px"
+                      }
+                    },
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"205e57bc-9c20-47d7-8883-0d46ef930bb3\",\"columns\":[{\"UUID\":\"1500d0ee-7a7d-4d57-9b24-432846b1b718\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"880be65f-c9c2-4962-9e5b-5cd82c89dc90\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "How Trainers Can Help Animals in Pain",
+                        "textAlign" : "center",
+                        "textDecoration" : "{\"bold\":true}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "7a73f10e-9da4-4392-b4d1-6d849c7dc48a",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "fit" : "contain",
+                        "height" : 350,
+                        "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCDKPFKRBKIJEQLL543CLRKWPP6U\",\"contentType\":null}}",
+                        "overlayColor" : "",
+                        "position" : "center center",
+                        "width" : 66
+                      },
+                      "definition" : "dxp_base:image",
+                      "id" : "09e6f160-ff32-4b9a-a512-81724341ba5e",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "flex-start",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"4f7500d6-79ce-4a90-bea8-ff37bc2b0e03\",\"columns\":[{\"UUID\":\"9bf39b7a-ec97-4dee-90dd-d202edb431cc\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "size" : "standard",
+                            "stretch" : "standard",
+                            "text" : "Download",
+                            "type" : "primary",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://app.schoox.com/library2/viewer.php?id=4643913&academyId=827540346\"}}}}"
+                          },
+                          "definition" : "dxp_base:button",
+                          "id" : "8a7b8af0-dc29-490f-89be-5f935137c70f",
+                          "type" : "component"
+                        } ],
+                        "id" : "9bf39b7a-ec97-4dee-90dd-d202edb431cc",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      } ],
+                      "customCssClasses" : "button-row",
+                      "definition" : "dxp_layout:columns",
+                      "id" : "4f7500d6-79ce-4a90-bea8-ff37bc2b0e03",
+                      "type" : "component"
+                    } ],
+                    "id" : "1500d0ee-7a7d-4d57-9b24-432846b1b718",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  }, {
+                    "id" : "880be65f-c9c2-4962-9e5b-5cd82c89dc90",
+                    "name" : "col2",
+                    "title" : "Column 2",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "205e57bc-9c20-47d7-8883-0d46ef930bb3",
+                  "type" : "component"
+                } ],
+                "id" : "2e25d080-3273-4491-9188-4cbb08f3c28d",
+                "name" : "Content-Region-Has-Membership",
+                "title" : "Content-Region-Has-Membership",
+                "type" : "region"
+              }, {
+                "id" : "f9a5f1ab-a894-4627-9fba-1f116f72ef1e",
+                "name" : "Content-Region-No-Membership",
+                "title" : "Content-Region-No-Membership",
+                "type" : "region"
+              } ],
+              "definition" : "c:membershipCheck",
+              "id" : "1280bb22-637e-4390-bad4-19a7735d8a6e",
+              "type" : "component"
+            } ],
+            "id" : "688e05af-c95a-43dc-bb07-049594300258",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "9de72539-e585-49b8-9176-54c542e0208a",
+          "type" : "component"
+        } ],
+        "id" : "ae65c697-48c1-40b3-aa5b-11b75e1ff5e6",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "pageTitle" : "Trainer Resources",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "4ca57b69-6e1c-4883-a38d-85da565c4110",
+          "type" : "component"
+        } ],
+        "id" : "3801c26a-137d-4e80-b1a9-36655b1f3418",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "e1887f7c-4d6e-4b3e-9e1d-0cdcbb3edce2",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-trainer-resources"
+  },
+  "urlName" : "trainer-resources"
+}

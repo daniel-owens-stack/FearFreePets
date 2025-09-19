@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>onemergefree__Master_Record_Priority_Field_Equivalence</fullName>
+    <active>true</active>
+    <description>Master Record Priority and Second Priority must be different fields.</description>
+    <errorConditionFormula>AND(
+  NOT(ISBLANK(onemergefree__MasterRecordPriorityFieldName__c)),
+  NOT(ISBLANK(onemergefree__MasterRecord2ndPriorityFieldName__c)),
+  onemergefree__MasterRecordPriorityFieldName__c=onemergefree__MasterRecord2ndPriorityFieldName__c
+)</errorConditionFormula>
+    <errorDisplayField>onemergefree__MasterRecordPriorityFieldName__c</errorDisplayField>
+    <errorMessage>Master Record Priority and Second Priority must be different fields.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Promotional Videos",
+  "contentBody" : {
+    "activeViewId" : "Promotional_Videos",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-promotional-videos",
+    "urlPrefix" : "promotional-videos"
+  },
+  "urlName" : "promotional-videos"
+}

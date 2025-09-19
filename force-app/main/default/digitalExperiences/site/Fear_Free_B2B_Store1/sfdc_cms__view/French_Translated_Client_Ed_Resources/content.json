@@ -1,0 +1,1051 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "French Translated Client Ed Resources",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"950765ce-bec3-430a-aaa5-8e9e6f8a94c9\",\"columns\":[{\"UUID\":\"366f0fec-29c8-479f-8585-d03990cfbe2b\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "checkAccountMembership" : true,
+                "checkBoardingMembership" : false,
+                "checkCertification" : false,
+                "checkGroomerMembership" : false,
+                "checkPracticeMembership" : false,
+                "checkSitterMembership" : false,
+                "checkTrainerMembership" : false,
+                "checkVetProMembership" : false,
+                "dxpStyle" : {
+                  "margin" : {
+                    "bottom" : "",
+                    "left" : "",
+                    "right" : "",
+                    "top" : "40px"
+                  }
+                }
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "flex-start",
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"cc0116d2-2d83-4008-87c6-c075f6e1311c\",\"columns\":[{\"UUID\":\"2177a45c-af15-428a-98ac-aa2d04421c83\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"4f528e81-af9c-412c-af25-327ea99ec33e\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"d7a56d67-d3eb-4963-af7f-59fd58ca375c\",\"columns\":[{\"UUID\":\"cbfe09d8-db34-43e6-9dc2-020b1a8d2457\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"7764d57c-f32b-45e3-a729-1a9b63d4de7d\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "FRENCH - 10 Things That Make Fear Free Vet Visits Different",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "1c7feba0-ef1f-4290-9550-ee183775be39",
+                          "type" : "component"
+                        } ],
+                        "id" : "cbfe09d8-db34-43e6-9dc2-020b1a8d2457",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "flex-start",
+                            "buttonLabel" : "Download File",
+                            "fileContentId" : "MC33EF3QWFSZEFDOQTUFYM6KBR5Y"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "d60d2cdf-3d6e-405e-b132-7b86763009e6",
+                          "type" : "component"
+                        } ],
+                        "id" : "7764d57c-f32b-45e3-a729-1a9b63d4de7d",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "d7a56d67-d3eb-4963-af7f-59fd58ca375c",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"fdebefba-d5a7-430c-a991-654c4f6c1a86\",\"columns\":[{\"UUID\":\"c5108ca1-f7d1-4b7e-88da-bb346456af37\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"a0dd3b62-f55a-43e1-93b3-50a375e43aab\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "FRENCH - 10 Things Your Vet Team Should Know About Your Pet",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "ad308fcc-9d0f-48a3-afa8-2ffbe0f41d50",
+                          "type" : "component"
+                        } ],
+                        "id" : "c5108ca1-f7d1-4b7e-88da-bb346456af37",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "flex-start",
+                            "buttonLabel" : "Download File",
+                            "fileContentId" : "MCLVDTNU4J4VCQJJX5T7UNC5TF2M"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "217eebce-7e44-47d8-ac06-602227960b89",
+                          "type" : "component"
+                        } ],
+                        "id" : "a0dd3b62-f55a-43e1-93b3-50a375e43aab",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "fdebefba-d5a7-430c-a991-654c4f6c1a86",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"16b8617d-2bd9-4a1b-9c31-89d9421d632e\",\"columns\":[{\"UUID\":\"2193f502-9c2c-48dc-b23c-19e613d0d917\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"d21f19a0-19a9-4693-8674-0da349844466\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "FRENCH - A Fulfilled Dog is a Happy Dog",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "c97efa8e-ed64-4193-a36b-3ffd510ae6b4",
+                          "type" : "component"
+                        } ],
+                        "id" : "2193f502-9c2c-48dc-b23c-19e613d0d917",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "flex-start",
+                            "buttonLabel" : "Download File",
+                            "fileContentId" : "MCPQUBHD75V5EZBCPY5Y5GVGBUDY"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "f7720ee6-7995-4022-aaea-cf8cb3dd62c9",
+                          "type" : "component"
+                        } ],
+                        "id" : "d21f19a0-19a9-4693-8674-0da349844466",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "16b8617d-2bd9-4a1b-9c31-89d9421d632e",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"0afa6044-8413-42c7-a587-52ab8a34093f\",\"columns\":[{\"UUID\":\"c046fa51-e8f6-4473-b705-67e2d7a2d461\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"56bc71cd-514c-485b-b487-84a11963b756\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "FRENCH - Giving Medications to Your Pet: How to Put the Treat Into Treatments",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "11df72d7-74ab-435d-b3e9-604cd569c571",
+                          "type" : "component"
+                        } ],
+                        "id" : "c046fa51-e8f6-4473-b705-67e2d7a2d461",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "flex-start",
+                            "buttonLabel" : "Download File",
+                            "fileContentId" : "MCO4CVS25YOZEQTHA7XCQ2ZXWD3Y"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "999714e2-505a-4af6-8e52-a1347099cee0",
+                          "type" : "component"
+                        } ],
+                        "id" : "56bc71cd-514c-485b-b487-84a11963b756",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "0afa6044-8413-42c7-a587-52ab8a34093f",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"5671586e-fcae-4443-a1f8-49af57c45c57\",\"columns\":[{\"UUID\":\"ae15f61d-c02c-46b2-942c-d3161ecada8f\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"15325b20-ebd3-4a54-9ce1-bb35e6a1c880\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "FRENCH - How to Make the Trip to the Veterinary Hospital Fear Free",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "ebe9c242-ed5c-4851-a564-099b6ff95354",
+                          "type" : "component"
+                        } ],
+                        "id" : "ae15f61d-c02c-46b2-942c-d3161ecada8f",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "flex-start",
+                            "buttonLabel" : "Download File",
+                            "fileContentId" : "MCK465PX3QWJFS3KQKRTTSZWUGJI"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "523598ce-4206-45f3-9ce4-156f9444fc49",
+                          "type" : "component"
+                        } ],
+                        "id" : "15325b20-ebd3-4a54-9ce1-bb35e6a1c880",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "5671586e-fcae-4443-a1f8-49af57c45c57",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"117ea741-086c-4fd6-87e0-8f295c41c019\",\"columns\":[{\"UUID\":\"d4b9c431-9d9b-4403-9f7d-cec83669bdce\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"d6716176-c85f-43b2-a527-ede14e53f48c\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "FRENCH - How to Manage a Fear Free Return Home",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "f923aba1-5e97-41bb-ba48-4d4a66ddc445",
+                          "type" : "component"
+                        } ],
+                        "id" : "d4b9c431-9d9b-4403-9f7d-cec83669bdce",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "flex-start",
+                            "buttonLabel" : "Download File",
+                            "fileContentId" : "MCK4M32ZNSCZGD5ABVEA3NSHNOE4"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "87b1302c-ac28-419e-92a3-344f671846f2",
+                          "type" : "component"
+                        } ],
+                        "id" : "d6716176-c85f-43b2-a527-ede14e53f48c",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "117ea741-086c-4fd6-87e0-8f295c41c019",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"5a92dacd-5f95-4d28-a816-12aec6bdee1f\",\"columns\":[{\"UUID\":\"0135c700-efc0-42de-9627-06578d150056\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"3874996f-213f-4f1b-a991-876574149940\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "FRENCH - How to Pill Your Pet With Kindness",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "af62d56d-26c0-420e-ac09-5a1595c2ef48",
+                          "type" : "component"
+                        } ],
+                        "id" : "0135c700-efc0-42de-9627-06578d150056",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "flex-start",
+                            "buttonLabel" : "Download File",
+                            "fileContentId" : "MCSOH3CLR7TZEXHDPUCQ5RTTUIXE"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "1d89c671-4afe-4839-b2ac-d10403df3331",
+                          "type" : "component"
+                        } ],
+                        "id" : "3874996f-213f-4f1b-a991-876574149940",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "5a92dacd-5f95-4d28-a816-12aec6bdee1f",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"87173dae-468d-4b09-9069-f8ce340e5058\",\"columns\":[{\"UUID\":\"f9ad8e92-307c-4fdf-90fe-c971ae212fcf\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"406b238b-7764-43f7-bfec-897a7b08b56f\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "FRENCH - How to Prepare Your Pet for a Veterinary Visit",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "e83d50e2-a63e-4c2c-8295-7fb0a0efd4ab",
+                          "type" : "component"
+                        } ],
+                        "id" : "f9ad8e92-307c-4fdf-90fe-c971ae212fcf",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "flex-start",
+                            "buttonLabel" : "Download File",
+                            "fileContentId" : "MCOQJYALLCRVCQBLXLM4YEN4R2JQ"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "a4fb787b-302e-4ed2-9ff2-3b8e654b6de0",
+                          "type" : "component"
+                        } ],
+                        "id" : "406b238b-7764-43f7-bfec-897a7b08b56f",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "87173dae-468d-4b09-9069-f8ce340e5058",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"47ccff93-3faa-4b80-a85b-818524663d12\",\"columns\":[{\"UUID\":\"a8d3815a-9a88-43a5-8b9c-16c5e8ad131b\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"d3dae7dc-c382-4a59-85f3-ceb502decddb\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "FRENCH - Keep Calm & Muzzle On",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "a53b4d95-4369-4967-baa0-618bc54b9b8b",
+                          "type" : "component"
+                        } ],
+                        "id" : "a8d3815a-9a88-43a5-8b9c-16c5e8ad131b",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "flex-start",
+                            "buttonLabel" : "Download File",
+                            "fileContentId" : "MC2VUPLLAEUZGWBGKDDJOA7NKG5I"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "f50cbcaf-a5c1-4fd4-8ed7-a91fec41fa47",
+                          "type" : "component"
+                        } ],
+                        "id" : "d3dae7dc-c382-4a59-85f3-ceb502decddb",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "47ccff93-3faa-4b80-a85b-818524663d12",
+                      "type" : "component"
+                    } ],
+                    "id" : "2177a45c-af15-428a-98ac-aa2d04421c83",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"07431b7a-6e35-46e2-b364-379007965c5b\",\"columns\":[{\"UUID\":\"98f4e316-932e-4e78-829a-544281c68f7f\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"dfa7c7f9-01c7-43f7-80fe-416f44ff5356\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "FRENCH - Spectrum of FAS - Cat",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "1151925a-a675-4fa1-8588-26c6be1d37f1",
+                          "type" : "component"
+                        } ],
+                        "id" : "98f4e316-932e-4e78-829a-544281c68f7f",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "flex-start",
+                            "buttonLabel" : "Download File",
+                            "fileContentId" : "MCWZ4LLGAEFBDHVO7HIOVJ3KGTIE"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "1fd672a2-f74f-43a2-bd35-cbb779df5519",
+                          "type" : "component"
+                        } ],
+                        "id" : "dfa7c7f9-01c7-43f7-80fe-416f44ff5356",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "07431b7a-6e35-46e2-b364-379007965c5b",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"bd467cb6-c8a3-4659-9502-dea6c6f990f1\",\"columns\":[{\"UUID\":\"4ec1bf50-2bcb-4fa2-96f5-6c30d18265fd\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"d6f0b93f-5a3b-4167-9b6b-1cd1ed22b62a\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : true,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "FRENCH - Spectrum of FAS - Dog",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "97d7ffbe-3d1e-4e04-bc75-80034bf2fdde",
+                          "type" : "component"
+                        } ],
+                        "id" : "4ec1bf50-2bcb-4fa2-96f5-6c30d18265fd",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "flex-start",
+                            "buttonLabel" : "Download File",
+                            "fileContentId" : "MCWPU5K2QALRFO5CRBKQV6ITUONA"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "8c4fc932-8872-4015-abb7-de4ed50e6d31",
+                          "type" : "component"
+                        } ],
+                        "id" : "d6f0b93f-5a3b-4167-9b6b-1cd1ed22b62a",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "bd467cb6-c8a3-4659-9502-dea6c6f990f1",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"d3a40a35-bab8-405e-98dc-9c245909d2bd\",\"columns\":[{\"UUID\":\"412646d0-c0df-407a-859b-aa9056ebeedf\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"54b6b6c6-a631-4c12-91f2-3fc3b9d13c39\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : true,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "FRENCH - Body Language & Signs of FAS - Cats",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "0d559b5a-9867-4b2e-a364-b3646aea5697",
+                          "type" : "component"
+                        } ],
+                        "id" : "412646d0-c0df-407a-859b-aa9056ebeedf",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "flex-start",
+                            "buttonLabel" : "Download File",
+                            "fileContentId" : "MC3UMHV6HPS5EZRNM2G2O4PR55E4"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "0f6d48b7-96ab-45ce-b34a-846e06cd3182",
+                          "type" : "component"
+                        } ],
+                        "id" : "54b6b6c6-a631-4c12-91f2-3fc3b9d13c39",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "d3a40a35-bab8-405e-98dc-9c245909d2bd",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"165e3497-7043-4bf2-9c2f-4b26235fbb4b\",\"columns\":[{\"UUID\":\"0f77d4ae-37d0-4e0b-b0b0-3765337cccef\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"f1429487-f2bf-4f86-86c7-5076df097960\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "FRENCH - Body Language & Signs of FAS - Dogs",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "d75b34ba-1500-4a4c-be27-1761f962eb3a",
+                          "type" : "component"
+                        } ],
+                        "id" : "0f77d4ae-37d0-4e0b-b0b0-3765337cccef",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "flex-start",
+                            "buttonLabel" : "Download File",
+                            "fileContentId" : "MCUUSXEOMSZVGS7EGTGKX4CZOFVQ"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "253c4a0e-43d7-42d6-9886-f78274569997",
+                          "type" : "component"
+                        } ],
+                        "id" : "f1429487-f2bf-4f86-86c7-5076df097960",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "165e3497-7043-4bf2-9c2f-4b26235fbb4b",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"5d6ff43b-5737-40ef-9ef1-5b342377e752\",\"columns\":[{\"UUID\":\"49c90b77-9b02-48ba-a284-dda8d5b581de\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"372574f7-cc81-4699-a7ff-68bb5637b0f0\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "FRENCH - Food Allergies Poster",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "68028a51-1c8e-4511-beb0-27bef310a83d",
+                          "type" : "component"
+                        } ],
+                        "id" : "49c90b77-9b02-48ba-a284-dda8d5b581de",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "flex-start",
+                            "buttonLabel" : "Download File",
+                            "fileContentId" : "MCQJGEOFLABRH5VAAJEMO4RSTHUY"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "fe3c70b1-c9a6-4c25-9dc4-514523d78498",
+                          "type" : "component"
+                        } ],
+                        "id" : "372574f7-cc81-4699-a7ff-68bb5637b0f0",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "5d6ff43b-5737-40ef-9ef1-5b342377e752",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"5321a7a8-fe75-47fe-9d92-eaa5e0298472\",\"columns\":[{\"UUID\":\"7c220547-82e8-42c9-9b85-8d9bf55c9efe\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"0dc1336e-f871-4f80-bc8d-53355f0132db\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : true,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "FRENCH - Client Poster",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "88c96dcf-9630-45c4-8e06-d48c77b4cb51",
+                          "type" : "component"
+                        } ],
+                        "id" : "7c220547-82e8-42c9-9b85-8d9bf55c9efe",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "flex-start",
+                            "buttonLabel" : "Download File",
+                            "fileContentId" : "MCIK7AFY635RD3XAIH2SN7754FSY"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "c4b09aab-183f-485e-94a9-b6a2e5165d4f",
+                          "type" : "component"
+                        } ],
+                        "id" : "0dc1336e-f871-4f80-bc8d-53355f0132db",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "5321a7a8-fe75-47fe-9d92-eaa5e0298472",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"31bd32a7-c9c8-4335-9a18-0f3572fa295a\",\"columns\":[{\"UUID\":\"310a5063-05d7-4da6-a828-da71452c8c83\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"2efe7a69-d49a-4c32-b883-e938d2784eb6\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "FRENCH - Pre-Visit Client Questionnaire - Fillable",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "92602f1c-3d7a-446f-8aa9-3d401a901ff5",
+                          "type" : "component"
+                        } ],
+                        "id" : "310a5063-05d7-4da6-a828-da71452c8c83",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "flex-start",
+                            "buttonLabel" : "Download File",
+                            "fileContentId" : "MCHJ2AHW42ZNBY7G2YODSEQGVT4A"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "bc042a98-45bf-4cc3-a9b3-c4c6d11bd5bc",
+                          "type" : "component"
+                        } ],
+                        "id" : "2efe7a69-d49a-4c32-b883-e938d2784eb6",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "31bd32a7-c9c8-4335-9a18-0f3572fa295a",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"cae2814e-d64f-4655-9435-a5f279add7a7\",\"columns\":[{\"UUID\":\"5bcb7654-3cb7-4888-b406-403f33bd97a8\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"6e972631-4500-47cb-a540-c109b69351cf\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "FRENCH - Pre-Visit Client Questionnaire",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "06edcdc7-3a6a-486c-8a0c-162ca4f94f32",
+                          "type" : "component"
+                        } ],
+                        "id" : "5bcb7654-3cb7-4888-b406-403f33bd97a8",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "flex-start",
+                            "buttonLabel" : "Download File",
+                            "fileContentId" : "MCRI7JUZPSBVAOVHBZIOAAMETBTE"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "a2665459-5144-4d09-9c96-f3774e1b90ac",
+                          "type" : "component"
+                        } ],
+                        "id" : "6e972631-4500-47cb-a540-c109b69351cf",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "cae2814e-d64f-4655-9435-a5f279add7a7",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "checkAccountMembership" : false,
+                        "checkBoardingMembership" : false,
+                        "checkCertification" : false,
+                        "checkGroomerMembership" : false,
+                        "checkPracticeMembership" : true,
+                        "checkSitterMembership" : false,
+                        "checkTrainerMembership" : false,
+                        "checkVetProMembership" : false
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "columnGutterWidth" : "",
+                            "columnMinHeight" : "",
+                            "columnVerticalAlign" : "center",
+                            "layoutDirectionDesktop" : "row",
+                            "layoutDirectionMobile" : "column",
+                            "layoutDirectionTablet" : "column",
+                            "sectionConfig" : "{\"UUID\":\"25d450fc-3ac1-42da-bc81-509b90a24908\",\"columns\":[{\"UUID\":\"4821bf64-b398-4a7a-9fbd-81425a1ec482\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"485ba512-be6f-486f-b13c-89c4c02851d7\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                          },
+                          "children" : [ {
+                            "children" : [ {
+                              "attributes" : {
+                                "backgroundColor" : "",
+                                "isLinkable" : false,
+                                "linkAssistiveText" : "",
+                                "paddingHorizontal" : "none",
+                                "paddingVertical" : "none",
+                                "text" : "What to Expect at a Certified Practice Poster - FRENCH",
+                                "textAlign" : "left",
+                                "textDecoration" : "{}",
+                                "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                              },
+                              "definition" : "dxp_base:textBlock",
+                              "id" : "28dae956-7fa8-4811-bffc-ec326cc5d6f0",
+                              "type" : "component"
+                            } ],
+                            "id" : "4821bf64-b398-4a7a-9fbd-81425a1ec482",
+                            "name" : "col1",
+                            "title" : "Column 1",
+                            "type" : "region"
+                          }, {
+                            "children" : [ {
+                              "attributes" : {
+                                "alignment" : "flex-start",
+                                "buttonLabel" : "Download File",
+                                "fileContentId" : "MC42YUDDCC6RF2NHWWAR5FYVNEIA"
+                              },
+                              "definition" : "c:downloadFileButton",
+                              "id" : "e74aa5ad-9dbb-4608-8c3d-8d0b0a69d921",
+                              "type" : "component"
+                            } ],
+                            "id" : "485ba512-be6f-486f-b13c-89c4c02851d7",
+                            "name" : "col2",
+                            "title" : "Column 2",
+                            "type" : "region"
+                          } ],
+                          "definition" : "dxp_layout:columns",
+                          "id" : "25d450fc-3ac1-42da-bc81-509b90a24908",
+                          "type" : "component"
+                        } ],
+                        "id" : "d605555f-e470-4162-81e7-79d069a72a77",
+                        "name" : "Content-Region-Has-Membership",
+                        "title" : "Content-Region-Has-Membership",
+                        "type" : "region"
+                      }, {
+                        "id" : "5a4ef7b5-d326-41be-beb5-905cc854621e",
+                        "name" : "Content-Region-No-Membership",
+                        "title" : "Content-Region-No-Membership",
+                        "type" : "region"
+                      } ],
+                      "definition" : "c:membershipCheck",
+                      "id" : "a79758f8-44c0-4e7b-90d3-0f985cdcf773",
+                      "type" : "component"
+                    } ],
+                    "id" : "4f528e81-af9c-412c-af25-327ea99ec33e",
+                    "name" : "col2",
+                    "title" : "Column 2",
+                    "type" : "region"
+                  } ],
+                  "customCssClasses" : "center-page",
+                  "definition" : "dxp_layout:columns",
+                  "id" : "cc0116d2-2d83-4008-87c6-c075f6e1311c",
+                  "type" : "component"
+                } ],
+                "id" : "f25e9ec6-6da5-4d21-b3b8-40f4b9073caf",
+                "name" : "Content-Region-Has-Membership",
+                "title" : "Content-Region-Has-Membership",
+                "type" : "region"
+              }, {
+                "id" : "3b1b46d4-19e3-4a3a-b0db-474121659b9e",
+                "name" : "Content-Region-No-Membership",
+                "title" : "Content-Region-No-Membership",
+                "type" : "region"
+              } ],
+              "customCssClasses" : "center-page",
+              "definition" : "c:membershipCheck",
+              "id" : "4ed2b6ab-7445-4585-82b6-dbe2efb5083e",
+              "type" : "component"
+            } ],
+            "id" : "366f0fec-29c8-479f-8585-d03990cfbe2b",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "customCssClasses" : "center-page",
+          "definition" : "community_layout:section",
+          "id" : "950765ce-bec3-430a-aaa5-8e9e6f8a94c9",
+          "type" : "component"
+        } ],
+        "id" : "75cad074-a2a6-4245-ab14-47a72be04973",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "pageTitle" : "French Translated Client Ed Resources",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "969d44e7-c847-4a50-8f1d-383725b99d1c",
+          "type" : "component"
+        } ],
+        "id" : "091d5aec-b5d6-4ba7-8e86-cc6be184b8ab",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "9c9d32bd-34ad-4c30-8a09-c21cbc64497a",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-french-translated-client-ed-resources"
+  },
+  "urlName" : "french-translated-client-ed-resources"
+}

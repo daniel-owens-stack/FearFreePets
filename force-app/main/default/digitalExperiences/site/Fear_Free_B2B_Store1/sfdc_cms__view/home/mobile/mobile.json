@@ -1,0 +1,22 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Member Homepage",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "attributes" : {
+          "dxpStyle" : {
+            "margin" : {
+              "bottom" : "",
+              "left" : "0px",
+              "right" : "",
+              "top" : ""
+            }
+          }
+        },
+        "id" : "b7f4d177-6afb-41f3-ba1f-992e164e0adb"
+      } ]
+    }
+  },
+  "urlName" : "home"
+}

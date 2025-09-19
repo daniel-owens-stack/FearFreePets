@@ -1,0 +1,421 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Product",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "dxpStyle" : { },
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"e72128a9-11b2-4be6-a1f4-5a5a0e2ecd96\",\"columns\":[{\"UUID\":\"ce36a6af-79f6-4a78-b21f-9f504271e113\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "divider" : "chevron",
+                "dxpStyle" : { },
+                "hideOnMobile" : false,
+                "maxDepthOnMobile" : "3",
+                "showHomeLink" : false,
+                "showLastItemAsLink" : false,
+                "textSize" : "small"
+              },
+              "definition" : "commerce_builder:breadcrumbs",
+              "id" : "9a170e47-1d46-4812-a4e6-dd3fa0c186d7",
+              "type" : "component"
+            } ],
+            "id" : "ce36a6af-79f6-4a78-b21f-9f504271e113",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "e72128a9-11b2-4be6-a1f4-5a5a0e2ecd96",
+          "type" : "component"
+        }, {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "dxpStyle" : { },
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"086fd652-2def-4d56-aa97-7f146210d921\",\"columns\":[{\"UUID\":\"5700a82d-e325-4e71-95ff-dee82b8c76c4\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":null},{\"UUID\":\"edb50f01-d29c-4baa-9a2f-a57a09f8b10c\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":null}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "hoverThumbnailBorderColor" : "#1C1C1C",
+                "imageAspectRatio" : "1",
+                "imageBorderColor" : "rgba(0, 0, 0, 0)",
+                "imageSize" : "contain",
+                "productMediaGroups" : "{!Product.Details.mediaGroups}",
+                "selectOnHover" : true,
+                "selectedThumbnailBorderColor" : "#1C1C1C",
+                "thumbnailPlacement" : "left"
+              },
+              "definition" : "commerce_builder:productMediaGallery",
+              "id" : "afb0453e-17c0-4dac-901b-ae8fa51dac2b",
+              "type" : "component"
+            } ],
+            "id" : "5700a82d-e325-4e71-95ff-dee82b8c76c4",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          }, {
+            "children" : [ {
+              "attributes" : {
+                "backgroundColor" : "",
+                "isLinkable" : false,
+                "linkAssistiveText" : "",
+                "paddingHorizontal" : "none",
+                "paddingVertical" : "none",
+                "text" : "{!Product.Details.fields.Name}",
+                "textAlign" : "left",
+                "textDecoration" : "{\"bold\":true}",
+                "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+              },
+              "definition" : "dxp_base:textBlock",
+              "id" : "48a16167-30b7-4262-9066-ba535978c89a",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "imageInfos" : "",
+                "richTextValue" : "<p>{!Product.Details.fields.Product_Description_Rich_Text__c}</p>"
+              },
+              "definition" : "community_builder:richTextEditor",
+              "id" : "4c3bc95f-2de8-41ce-bfd3-225dbc7f68cf",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "dxpStyle" : { },
+                "lastLowestPriceLabel" : "Last Lowest Price:",
+                "lastLowestPriceLabelColor" : "rgb(112, 114, 117)",
+                "lastLowestPriceLabelSize" : "small",
+                "pricingType" : "2_TIER",
+                "product" : "{!Product.Details}",
+                "productPricing" : "{!Product.Pricing}",
+                "productSellingModelPriceType" : "",
+                "productTax" : "{!Product.Tax}",
+                "productVariant" : "{!Product.SelectedVariant}",
+                "promotionalMessageTextSize" : "small",
+                "promotionalPricing" : "{!Product.PromotionalPricing}",
+                "selectedProductSellingModel" : "{!Product.SelectedProductSellingModel}",
+                "showTaxIndication" : true,
+                "slot1PriceLabel" : "",
+                "slot2PriceLabel" : "",
+                "slot2PriceTextColor" : "rgb(112, 114, 117, 1)",
+                "slot3PriceTextColor" : "rgb(13, 130, 93, 1)",
+                "slot3PriceTextSize" : "small",
+                "taxIncludedLabel" : "Tax Included",
+                "taxLabelSize" : "small",
+                "unavailablePriceLabel" : "Price Unavailable"
+              },
+              "definition" : "commerce_builder:productPricingDetails",
+              "id" : "7df8ed72-ef13-49ae-924d-faf7c2e79c42",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "dxpStyle" : { },
+                "product" : "{!Product.Details}"
+              },
+              "children" : [ {
+                "id" : "dd07cb8d-4211-45b1-b929-bdfe02a058c7",
+                "name" : "heading",
+                "title" : "heading",
+                "type" : "region"
+              } ],
+              "definition" : "commerce_builder:variantSelector",
+              "id" : "4be63cde-8183-4fcd-b624-4b1deedfbcfb",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "academiaMembership" : "Individual Academia Membership",
+                "addToCartButtonLabel" : "Add To Cart",
+                "addToCartErrorMessage" : "Something went wrong. Please try again.",
+                "addToCartErrorTitle" : "Error",
+                "addToCartSuccessMessage" : "Product added to cart successfully!",
+                "addToCartSuccessTitle" : "Success",
+                "checkboxText_TOS" : "I agree to the Terms of Service and Privacy Policy",
+                "contentText_TOS" : "<p>By using this website, you agree to the following terms and conditions:</p>    <ol>     <li><strong>Acceptance of Terms:</strong> You must agree to these terms to use our services.</li>     <li><strong>User Responsibilities:</strong> You are responsible for keeping your account secure.</li>     <li><strong>Prohibited Activities:</strong> Users may not engage in the following:</li>   </ol>    <ul>     <li>Uploading malicious content</li>     <li>Violating any local or international laws</li>     <li>Harassing other users</li>   </ul>    <p>     For more information, please visit our      <a href=\"https://www.google.com/\" target=\"_blank\">Privacy Policy</a>.   </p>",
+                "continueButton" : "Continue Shopping",
+                "flowApiName" : "B2B_Guest_User_Journey",
+                "headingLabel" : "SignIn to Add Product to Cart",
+                "individualMembership" : "Individual Level Membership",
+                "modalSize" : "small",
+                "practiceMembership" : "Practice Level Membership",
+                "renewalMessage" : "<p>To renew your membership, visit the <a href=\"https://fearfreepets--partial.sandbox.my.site.com/store/mymemberships\" target=\"_self\">My Memberships</a> page.     To create a business and purchase additional memberships for team members, visit the <a href=\"https://fearfreepets--partial.sandbox.my.site.com/store/myprofile\" target=\"_self\">My Account</a> page.</p>",
+                "viewCartButton" : "View Cart"
+              },
+              "definition" : "c:b2bCustomAddToCart",
+              "id" : "85df6066-86ae-481b-8509-0e412db98e3e",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "addToCartButtonBorderRadius" : 0,
+                "addToCartButtonProcessingText" : "Adding...",
+                "addToCartButtonText" : "Add To Cart",
+                "addToListButtonBorderRadius" : 0,
+                "addToListButtonText" : "Add To List",
+                "incrementValueGuideText" : "Increment quantity is {0}",
+                "maximumValueGuideText" : "Maximum quantity is {0}",
+                "minimumValueGuideText" : "Minimum quantity is {0}",
+                "outOfStockText" : "Out of Stock",
+                "product" : "{!Product.Details}",
+                "productInventory" : "{!Product.Inventory}",
+                "productPricing" : "{!Product.Pricing}",
+                "productVariant" : "{!Product.SelectedVariant}",
+                "quantitySelectorLabel" : "QTY",
+                "selectedProductSellingModel" : "{!Product.SelectedProductSellingModel}",
+                "showAddToListButton" : false
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "backgroundColor" : "",
+                    "isLinkable" : false,
+                    "linkAssistiveText" : "",
+                    "paddingHorizontal" : "none",
+                    "paddingVertical" : "none",
+                    "text" : "Minimum Quantity is {!Product.Details.purchaseQuantityRule.minimum} • Maximum Quantity is {!Product.Details.purchaseQuantityRule.maximum} • Sold in increments of {!Product.Details.purchaseQuantityRule.increment}",
+                    "textAlign" : "left",
+                    "textDecoration" : "{}",
+                    "textDisplayInfo" : "{\"headingTag\": \"h3\", \"textStyle\": \"heading-small\"}"
+                  },
+                  "definition" : "dxp_base:textBlock",
+                  "id" : "73ee8309-ae68-44a0-bb0b-bdb261345c0a",
+                  "type" : "component"
+                } ],
+                "id" : "0b4a9621-a3f1-4d86-9153-1999a18142a4",
+                "name" : "combinedPurchaseQuantityRuleInfo",
+                "title" : "combinedPurchaseQuantityRuleInfo",
+                "type" : "region"
+              } ],
+              "definition" : "commerce_builder:purchaseOptions",
+              "id" : "f4e6a5e8-cbf7-4d0c-8244-4ff8e3b31ee3",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "imageInfos" : "",
+                "richTextValue" : "<p>Creating a team is required to purchase this membership.<a href=\"https://fearfreepets--partial.sandbox.my.site.com/store/myprofile\" rel=\"noopener noreferrer\" target=\"_self\"> Click here</a> to create your team now.</p>"
+              },
+              "definition" : "community_builder:richTextEditor",
+              "id" : "a65f678d-bccc-48e1-b1ad-7575f5972116",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "imageInfos" : "",
+                "richTextValue" : "<p>Please contact your team admin to purchase this membership.</p>"
+              },
+              "definition" : "community_builder:richTextEditor",
+              "id" : "5048e2e4-99a5-4b17-b4e4-9e303df1103d",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "alignment" : "left",
+                "size" : "standard",
+                "stretch" : "standard",
+                "text" : "View in External Site",
+                "type" : "primary",
+                "url" : "%7B%22linkInfo%22:%7B%22pageReference%22:%7B%22type%22:%22standard__webPage%22,%22attributes%22:%7B%22url%22:%22%7B!Product.Details.fields.External_URL__c%7D%22%7D%7D%7D%7D"
+              },
+              "definition" : "dxp_base:button",
+              "id" : "2c13da2c-4cfb-4be2-a9a4-fa9337138081",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "dxpStyle" : {
+                  "isVisible" : false
+                },
+                "flowArguments" : "[]",
+                "flowName" : "{\"flowName\":\"B2B_Guest_User_Journey\",\"flowLabel\":\"B2B Guest User Journey\"}"
+              },
+              "definition" : "dxp_flow:flow",
+              "id" : "373acd12-7024-4547-8f9f-8d3a76f71df1",
+              "type" : "component"
+            } ],
+            "id" : "edb50f01-d29c-4baa-9a2f-a57a09f8b10c",
+            "name" : "col2",
+            "title" : "Column 2",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "086fd652-2def-4d56-aa97-7f146210d921",
+          "type" : "component"
+        } ],
+        "id" : "f5440d8b-b0cd-412a-bc2f-1a3f8cd0f89b",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "<script type=\"application/ld+json\">\n[{\n    \"@context\": \"https://schema.org\",\n    \"@type\": \"Product\",\n    \"name\": \"{!Record.Name}\",\n    \"description\": \"{!Record.Description}\",\n    \"category\": \"{!Record.ProductCategory.Name}\",\n    \"sku\": \"{!Record.StockKeepingUnit}\",\n    \"offers\": {\n        \"@type\": \"Offer\",\n        \"price\": \"{!Record.Offers.Price}\",\n        \"priceCurrency\": \"{!Record.Offers.Currency}\"\n    },\n    \"image\": \"{!Record.ProductMedia.ProductDetailImages}\"\n},\n{\n    \"@context\": \"https://schema.org\",\n    \"@type\": \"BreadcrumbList\",\n    \"itemListElement\": \"{!Record.BreadcrumbList}\"\n}]\n</script>",
+            "description" : "{!Record.Description}",
+            "dxpStyle" : { },
+            "pageTitle" : "{!Record._Title}",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "ed600230-a5fb-467e-aa29-540ac069a351",
+          "type" : "component"
+        } ],
+        "id" : "1b1b9ba2-8873-4f86-b03f-29e102479861",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "324c9054-367e-438f-865a-874e34595f7c",
+      "type" : "component"
+    },
+    "contentOperations" : {
+      "operations" : [ {
+        "targetId" : "7df8ed72-ef13-49ae-924d-faf7c2e79c42",
+        "isHiddenOnOperationSuccess" : false,
+        "isActive" : true,
+        "rule" : {
+          "name" : "3de46c26-32aa-48ae-8f0d-66bb65602ae7",
+          "description" : "",
+          "criteriaType" : "AllCriteriaMatch",
+          "expressionCriteria" : [ {
+            "resource" : "Product.Details.fields.External__c",
+            "operator" : "Equal",
+            "value" : "false",
+            "criterionNumber" : 1
+          } ]
+        }
+      }, {
+        "targetId" : "f4e6a5e8-cbf7-4d0c-8244-4ff8e3b31ee3",
+        "isHiddenOnOperationSuccess" : false,
+        "isActive" : true,
+        "rule" : {
+          "name" : "b0aab0c5-59f4-47c4-9f4a-809709bf8e51",
+          "description" : "",
+          "criteriaType" : "AllCriteriaMatch",
+          "expressionCriteria" : [ {
+            "resource" : "Product.Details.fields.Product_Group__c",
+            "operator" : "Equal",
+            "value" : "Permanent Membership",
+            "criterionNumber" : 1
+          } ]
+        }
+      }, {
+        "targetId" : "5048e2e4-99a5-4b17-b4e4-9e303df1103d",
+        "isHiddenOnOperationSuccess" : false,
+        "isActive" : true,
+        "rule" : {
+          "name" : "ac222f37-d9db-47ba-bcb0-5dbe3cf1ffe1",
+          "description" : "",
+          "criteriaType" : "AllCriteriaMatch",
+          "expressionCriteria" : [ {
+            "resource" : "Product.Details.fields.Product_Group__c",
+            "operator" : "Equal",
+            "value" : "Practice Level Membership",
+            "criterionNumber" : 1
+          }, {
+            "resource" : "User.Commerce.EffectiveAccount.fields.Admin_Account__c",
+            "operator" : "Equal",
+            "value" : false,
+            "criterionNumber" : 2
+          }, {
+            "resource" : "User.Commerce.EffectiveAccount.fields.Has_Business__c",
+            "operator" : "Equal",
+            "value" : true,
+            "criterionNumber" : 3
+          } ]
+        }
+      }, {
+        "targetId" : "a65f678d-bccc-48e1-b1ad-7575f5972116",
+        "isHiddenOnOperationSuccess" : false,
+        "isActive" : true,
+        "rule" : {
+          "name" : "746fa957-c30a-48e4-b59f-566177ea9d29",
+          "description" : "",
+          "criteriaType" : "AllCriteriaMatch",
+          "expressionCriteria" : [ {
+            "resource" : "Product.Details.fields.Product_Group__c",
+            "operator" : "Equal",
+            "value" : "Practice Level Membership",
+            "criterionNumber" : 1
+          }, {
+            "resource" : "User.Commerce.EffectiveAccount.fields.Has_Business__c",
+            "operator" : "Equal",
+            "value" : false,
+            "criterionNumber" : 2
+          } ]
+        }
+      }, {
+        "targetId" : "2c13da2c-4cfb-4be2-a9a4-fa9337138081",
+        "isHiddenOnOperationSuccess" : false,
+        "isActive" : true,
+        "rule" : {
+          "name" : "f834c47c-2279-4bb5-bb45-275353929c7d",
+          "description" : "",
+          "criteriaType" : "AllCriteriaMatch",
+          "expressionCriteria" : [ {
+            "resource" : "Product.Details.fields.External__c",
+            "operator" : "Equal",
+            "value" : "true",
+            "criterionNumber" : 1
+          } ]
+        }
+      }, {
+        "targetId" : "85df6066-86ae-481b-8509-0e412db98e3e",
+        "isHiddenOnOperationSuccess" : false,
+        "isActive" : true,
+        "rule" : {
+          "name" : "3ddaba47-47b6-4260-b62f-a5f82e8385e4",
+          "description" : "",
+          "criteriaType" : "AllCriteriaMatch",
+          "expressionCriteria" : [ {
+            "resource" : "Product.Details.fields.External__c",
+            "operator" : "Equal",
+            "value" : "false",
+            "criterionNumber" : 1
+          }, {
+            "resource" : "Product.Details.fields.Product_Group__c",
+            "operator" : "NotEqual",
+            "value" : "Certification Kit",
+            "criterionNumber" : 2
+          }, {
+            "resource" : "Product.Details.fields.Product_Group__c",
+            "operator" : "NotEqual",
+            "value" : "Permanent Membership",
+            "criterionNumber" : 3
+          }, {
+            "resource" : "Product.Details.fields.Renewal_Product__c",
+            "operator" : "Equal",
+            "value" : "false",
+            "criterionNumber" : 4
+          } ]
+        }
+      } ]
+    },
+    "dataProviders" : [ {
+      "definition" : "sfdc_cms__commerceProductDetailDataProvider",
+      "sfdcExpressionKey" : "Product",
+      "attributes" : {
+        "recordId" : "{!recordId}"
+      }
+    } ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "detail-01t"
+  },
+  "urlName" : "product"
+}

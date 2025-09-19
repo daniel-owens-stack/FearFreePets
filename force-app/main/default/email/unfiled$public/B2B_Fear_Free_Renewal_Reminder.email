@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff !important;
+            background-color: #0070d2;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .button:hover {
+            background-color: #0056a3;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <p>Hey {!Account.Name},</p>
+
+        <p>Your Fear Free membership is coming up for renewal on <strong>{!Account_Membership__c.Expiration_Date__c}</strong>, and we wanted to remind you of the difference it can make in your business to be Fear Free Certified!</p>
+
+        <p>We know you don’t want to lose access to your exclusive member benefits, like the education library and resources, Facebook community, or your listing in our online directory, so follow the steps below to renew your membership today.</p>
+
+        <h3>To renew your membership:</h3>
+        <ol>
+            <li>Login at <a href="https://www.fearfree.com" target="_blank">www.fearfree.com</a></li>
+            <li>Navigate to "My Account"</li>
+            <li>Select "My Memberships"</li>
+            <li>Click the "Renew" button</li>
+            <li>Proceed through checkout</li>
+        </ol>
+
+        <p><a class="button" href='{!$Label.B2B_My_Memberships_Page_URL}' target="_blank">Click Here to Renew</a></p>
+
+        <p>To keep your Fear Free Certification active, we require members to maintain an active membership through annual renewal.</p>
+
+        <p><strong>Please note:</strong> If your practice has applied for Veterinary Practice Certification, your membership may not need to be renewed. Be sure to check with your team administrator.</p>
+
+        <p>Thank you for your dedication to reducing fear, anxiety, and stress in pets. If you have any questions or need assistance, please email us at <a href="mailto:wags@fearfree.com">wags@fearfree.com</a>, and we will be happy to help.</p>
+
+        <p>Wags & Purrs,<br>
+           The Fear Free Team</p>
+
+        <div class="footer">
+            This is an automated email. Please do not reply directly to this message.
+        </div>
+    </div>
+</body>
+</html>

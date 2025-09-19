@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff !important;
+            background-color: #0070d2;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .button:hover {
+            background-color: #0056a3;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <p>Hello {!Account_Membership__c.Assigned_Account_Name__c},</p>
+
+        <p>Welcome to Fear Free! You have been enrolled in the <strong>{!Account_Membership__c.Membership_Name__c} Membership</strong>, which gives you access to online educational courses and resources to help you reduce fear, anxiety, and stress for the pets in your care.</p>
+
+        <p>In this email, you will find a video to help you navigate your new account and an overview of the benefits included in your new membership.</p>
+
+        <p><a class="button" href="https://www.youtube.com" target="_blank">Watch Onboarding Video</a></p>
+
+        <h3>Member Benefits to Take Advantage of:</h3>
+        <ul>
+            <li>Join the <a href="https://www.facebook.com/groups/fearfreecertifiedpros" target="_blank">Fear Free Facebook Community</a> to share advice, get feedback, and connect with fellow members.</li>
+            <li>Browse our extensive <a href="https://www.google.com" target="_blank">Education Library</a> to enroll in additional courses.</li>
+            <li>Check out the <a href="https://www.google.com" target="_blank">educational downloads </a>and <a href="https://www.google.com" target="_blank">marketing resources</a> at your fingertips.</li>
+        </ul>
+
+        <p>If you have any questions or need help accessing your account, please do not hesitate to reach out to us at <a href="mailto:wags@fearfreepets.com">wags@fearfreepets.com</a>.</p>
+
+        <p>Happy learning!</p>
+
+        <p>Wags & Purrs,<br>
+           The Fear Free Team</p>
+
+        <div class="footer">
+            This is an automated email. Please do not reply directly to this message.
+        </div>
+    </div>
+</body>
+</html>

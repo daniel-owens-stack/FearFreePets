@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="ffCardComponent">
+    <apiVersion>62.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+
+    <!-- Expose properties only for supported page types -->
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property
+                name="backgroundColor"
+                type="Color"
+                label="Background Color"
+                default="#FFFFFF"
+            />
+            <property
+                name="imageContentId"
+                type="ContentReference"
+                label="Select Image"
+                filter="cms_image"
+                description="Selct an image for the card"
+            />
+            <property
+                name="titleText"
+                type="String"
+                label="Title"
+            />
+            <property
+                name="descriptionText"
+                type="String"
+                label="Description"
+            />
+            <property
+                name="buttonLabel"
+                type="String"
+                label="Button Label"
+                default="View Resource"
+            />
+            <property
+                name="showButton"
+                type="Boolean"
+                label="Show Button"
+                default="true"
+            />
+             <property
+                name="target"
+                type="Boolean"
+                label="Open a new tab?"
+                default="false"
+            />
+            <property
+                name="fileContentId"
+                type="ContentReference"
+                label="Select File"
+                filter="cms_document"
+            />
+            <property
+                name="externalUrl"
+                type="String"
+                label="External URL"
+            />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

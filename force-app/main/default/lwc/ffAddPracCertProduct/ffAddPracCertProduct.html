@@ -1,0 +1,65 @@
+<template>
+  <template if:true={showRenewButton}>
+    <lightning-button label="Renew Memberships" variant="brand" onclick={openModal}></lightning-button>
+  </template>
+
+  <template if:true={isModalOpen}>
+    <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+      <div class="slds-modal__container">
+        <header class="slds-modal__header">
+          <h2 class="slds-modal__title">Renew Memberships</h2>
+        </header>
+
+        <div class="slds-modal__content">
+          <template if:true={membershipAssignments.length}>
+            <template for:each={membershipAssignments} for:item="record">
+              <div key={record.Id} class="slds-box slds-m-bottom_small">
+                <p><strong>Membership:</strong> {record.Membership_Name__c}</p>
+                <p><strong>Status:</strong> {record.Status__c}</p>
+                <p><strong>Full-Time Equivalent Vets:</strong> {record.Renewal_DVM_Count__c}</p>
+                  <template if:true={record.productPrice}>
+                    <p><strong>Price:</strong> ${record.productPrice}</p>
+                  </template>
+
+                <section class="terms-check slds-m-vertical_small">
+                  <lightning-input type="checkbox" data-id={record.Id} onchange={handleCheckboxChange}
+                    checked={record.isChecked}></lightning-input>
+                  <p>I accept the <a href={termsUrl} target="_blank">Terms and Conditions</a></p>
+                </section>
+
+                <template if:false={record.statusMessage}>
+                  <lightning-button variant="brand" label="Renew" disabled={record.isButtonDisabled} data-id={record.Id}
+                    onclick={handleRenew}>
+                  </lightning-button>
+                </template>
+
+                <template if:true={record.statusMessage}>
+                  <p class="slds-text-color_success slds-m-top_small">
+                    {record.statusMessage}
+                  </p>
+                  <template if:true={record.showGoToCart}>
+                    <lightning-button class="slds-m-top_small" label="Go to Cart" variant="neutral" onclick={goToCart}>
+                    </lightning-button>
+                  </template>
+                </template>
+              </div>
+            </template>
+          </template>
+
+          <template if:true={loading}>
+            <lightning-spinner alternative-text="Processing membership renewal"></lightning-spinner>
+          </template>
+
+          <template if:true={error}>
+            <p class="slds-text-color_error">{error}</p>
+          </template>
+        </div>
+
+        <footer class="slds-modal__footer">
+          <lightning-button variant="neutral" label="Close" onclick={closeModal}></lightning-button>
+        </footer>
+      </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+  </template>
+</template>

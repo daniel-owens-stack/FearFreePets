@@ -1,0 +1,6 @@
+{
+  "apiName" : "Fear_Free_Happy_Homes_Handouts__c",
+  "type" : "sfdc_cms__route",
+  "parentId" : "sfdc_cms__route/My_Resources__c",
+  "path" : "routes"
+}

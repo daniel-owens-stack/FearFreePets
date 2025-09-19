@@ -1,0 +1,15 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "My Resources",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "attributes" : {
+          "columnVerticalAlign" : "center"
+        },
+        "id" : "4891e81e-f076-4971-a759-34f778494871"
+      } ]
+    }
+  },
+  "urlName" : "my-resources"
+}

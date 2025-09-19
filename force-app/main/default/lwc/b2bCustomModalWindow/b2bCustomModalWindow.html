@@ -1,24 +1,59 @@
 <template>
-    <lightning-modal-header label={modalHeading}></lightning-modal-header>
-    <lightning-modal-body class="slds-text-align_center">{modalContent}</lightning-modal-body>
-    <lightning-modal-footer>
-        <div class="slds-grid slds-gutters">
-            <div class="slds-col slds-size_1-of-2">
-                <lightning-button
-                    variant="neutral"
-                    onclick={handleButton1}
-                    label={button1Label}
-                    stretch="true"
-                ></lightning-button>
+    <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open"></section>
+        <lightning-modal-header label={modalHeading}></lightning-modal-header>
+        <lightning-modal-body class="slds-text-align_center">{modalContent}</lightning-modal-body>
+        <lightning-modal-footer>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-button
+                        variant="neutral"
+                        onclick={handleButton1}
+                        label={button1Label}
+                        stretch="true"
+                    ></lightning-button>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-button
+                        variant="brand"
+                        onclick={handleButton2}
+                        label={button2Label}
+                        stretch="true"
+                    ></lightning-button>
+                </div>
             </div>
-            <div class="slds-col slds-size_1-of-2">
-                <lightning-button
-                    variant="brand"
-                    onclick={handleButton2}
-                    label={button2Label}
-                    stretch="true"
-                ></lightning-button>
-            </div>
-        </div>
-    </lightning-modal-footer>
+        </lightning-modal-footer>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
 </template>
+
+<!-- <template>
+    <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+            <header class="slds-modal__header">
+                <h2 class="slds-text-heading_medium">Please provide additional information</h2>
+            </header>
+
+            <div class="slds-modal__content slds-p-around_medium">
+                <template if:true={productList}>
+                    <template for:each={productList} for:item="prod">
+                        <div key={prod.id} class="slds-box slds-m-around_small">
+                            <p><b>Product Id:</b> {prod.id}</p>
+                            <p>B2B Advocacy Summit Info: {prod.fields.B2B_Advocacy_Summit_Info__c}</p>
+                            <p>B2B Enhanced Listing Info: {prod.fields.B2B_Enhanced_Listing_Info__c}</p>
+                            <p>B2B Personalized Product Info: {prod.fields.B2B_Personalized_Product_Info__c}</p>
+                            <p>B2B Personalized Product Info Text: {prod.fields.B2B_Personalized_Product_Info_Text__c}</p>
+                            <p>Retreat Info (Disability): {prod.fields.B2B_Project_Well_Reteat_Info_Disability__c}</p>
+                            <p>Retreat Info (Meal): {prod.fields.B2B_Project_Well_Reteat_Info_Meal__c}</p>
+                        </div>
+                    </template>
+                </template>
+            </div>
+
+            <footer class="slds-modal__footer">
+                <lightning-button variant="neutral" label="Cancel" onclick={handleCancel}></lightning-button>
+                <lightning-button variant="brand" label="Confirm" onclick={handleConfirm}></lightning-button>
+            </footer>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template> -->

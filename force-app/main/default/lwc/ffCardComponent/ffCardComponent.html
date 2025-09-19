@@ -1,0 +1,39 @@
+<template>
+    <div class="card" style={cardStyle}>
+        <!-- Image Section -->
+        <div class="card-image-container">
+            <template if:true={imageUrl}>
+                <img src={imageUrl} alt="Card Image" class="card-image" />
+            </template>
+        </div>
+
+        <!-- Card Content (Title, Description, and Button) -->
+        <div class="card-content">
+            <!-- Title (conditionally shown) -->
+            <template if:true={hasTitle}>
+                <h3 class="card-title">{titleText}</h3>
+            </template>
+
+            <!-- Description (conditionally shown) -->
+            <template if:true={hasDescription}>
+                <p class="card-description">{descriptionText}</p>
+            </template>
+
+            <!-- Button (conditionally shown, prioritizing externalUrl) -->
+            <div class="card-footer">
+                <template if:true={showButton}>
+                    <template if:true={externalUrl}>
+                        <a href={externalUrl} target={openInANewTab} class="slds-button slds-button_brand">
+                            {buttonLabel}
+                        </a>
+                    </template>
+                    <template if:true={showDownloadButton}>
+                        <a href={fileUrl} target={openInANewTab} class="slds-button slds-button_brand">
+                            {buttonLabel}
+                        </a>
+                    </template>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>

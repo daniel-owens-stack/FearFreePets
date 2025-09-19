@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>5</activeVersionNumber>
+    <description>This screen flow allows the Team Admins to either grant or revoke the Team Admin Profile to the members within their team. https://basecamp.com/2583453/projects/19269730/todos/498360618</description>
+    <masterLabel>(FSM) Manage My Team - Grant or Revoke team admin profile</masterLabel>
+</FlowDefinition>

@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Grant or Revoke team admin",
+  "contentBody" : {
+    "activeViewId" : "Grant_or_Revoke_team_admin",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-grant-or-revoke-team-admin",
+    "urlPrefix" : "grant-or-revoke-team-admin"
+  },
+  "urlName" : "grant-or-revoke-team-admin"
+}

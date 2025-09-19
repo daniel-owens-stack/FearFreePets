@@ -1,0 +1,32 @@
+<!-- <template>
+    <lightning-map 
+        map-markers={mapMarkers} 
+        markers-title="Contact Addresses"
+        list-view={listView}>
+    </lightning-map>
+</template> -->
+
+<template>
+    <!-- Add a container for the map -->
+    <div class="map-container" lwc:if={zoomLevel}>
+        <lightning-map 
+        map-markers={markers}
+        zoom-level={zoomLevel}
+        list-view="hidden"
+        onmarkerselect={handleMarkerSelect}
+        class="map-with-markers"
+    > 
+    </lightning-map>     
+    </div>
+
+    <div class="map-container" lwc:else>
+        <lightning-map 
+        map-markers={markers}
+        list-view="hidden"
+        onmarkerselect={handleMarkerSelect}
+        class="map-with-markers"
+    > 
+    </lightning-map>     
+    </div>
+
+</template>

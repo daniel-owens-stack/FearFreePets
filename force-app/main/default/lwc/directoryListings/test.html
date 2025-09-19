@@ -1,0 +1,57 @@
+<template>
+    <div class="container">
+        <div class="search-container">
+            <!-- Search input, buttons, etc. -->
+            <lightning-input type="text" label="Enter City, State, or Zip Code" value={searchTerm}
+                onchange={handleSearchTermChange} onkeydown={handleKeyDown}></lightning-input>
+
+            <lightning-combobox label="Radius (in miles)" value={radius} options={radiusOptions}
+                onchange={handleRadiusChange}>
+            </lightning-combobox>
+
+            <div class="search-buttons">
+                <!-- Search button -->
+                <div>
+                    <lightning-button label="Search" variant="brand" onclick={handleSearch}
+                        disabled={searchButtonDisabled}></lightning-button>
+                </div>
+
+                <!-- Get location button -->
+                <div>
+                    <lightning-button label="Get My Location" onclick={handleGetCurrentLocationClick}
+                        disabled={locationButtonDisabled}></lightning-button>
+                </div>
+
+                <!-- Loading spinner -->
+                <div if:true={loading}>
+                    <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                </div>
+
+            </div>
+
+            <div class="slds-p-around_medium">
+                <template if:true={errorMessage}>
+                    <p>{errorMessage}</p>
+                </template>
+            </div>
+
+            <div class="map-container">
+                <!-- Map component -->
+                <c-directory-map listings={listings}></c-directory-map>
+            </div>
+
+        </div>
+
+        <div class="listings-container">
+            <!-- Listings -->
+            <template if:true={listings}>
+                <div class="directory-listings">
+                    <template for:each={listings} for:item="listing">
+                        <c-directory-listing key={listing.Id} listing={listing}>
+                        </c-directory-listing>
+                    </template>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

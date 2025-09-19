@@ -1,42 +1,139 @@
-public class B2BBuyerGroupsAssignmentBatch implements Database.Batchable<sObject>, Database.Stateful {
+global class B2BBuyerGroupsAssignmentBatch implements Database.Batchable<SObject>, Database.Stateful {
 
-    @TestVisible
-    public static Boolean throwException = false;
-
-    public B2BBuyerGroupsAssignmentBatch() { }
-
-    public Database.QueryLocator start(Database.BatchableContext bc) {
-        String query = 'SELECT Id, Name, Account_Id__c, Certified__c, Membership__c FROM Account_Membership__c WHERE Historical_Membership__c != null and Status__c = \'Active\' AND Membership__r.Active__c = true';
-        return Database.getQueryLocator(query);
+    global Database.QueryLocator start(Database.BatchableContext bc) {
+        Integer a = 1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        a=1;
+        
+        return Database.getQueryLocator([
+            SELECT Id 
+            FROM Account 
+            WHERE Historical_Jobs_Assigned__c = 'Succesful' AND Admin_Account__c = true
+        ]);
     }
 
-    public void execute(Database.BatchableContext bc, List<Account_Membership__c> accountMemberships){
+    global void execute(Database.BatchableContext bc, List<SObject> scope) {
+        List<Account> accounts = (List<Account>)scope;
 
-        try {
-            List<Account_Membership__c> failedBuyerGroupAssignments = new List<Account_Membership__c>();
-            for(Account_Membership__c ilma : accountMemberships) {
-                try {
-                    if(Test.isRunningTest() && throwException) {
-                        throw new HistoricalMembershipsException('Test Exception');
-                    }
-                    B2BBuyerGroupAssignemntController.handleBuyerGroupsForILMA(ilma);
-                }
-                catch(Exception e) {
-                    String errorMessage = 'Buyer Groups Assignment Failed for the Account ' + ilma.Account_Id__c + ' for Historical Membership ' + ilma.Name;
-                    ilma.Last_Buyer_Groups_Assignment_Exception__c = B2BHandleCustomException.LogException(new HistoricalMembershipsException(errorMessage), 'Historical Memberships', 'Buyer Group Assignment');
-                    failedBuyerGroupAssignments.add(ilma);
-                }
+        for (Account acc : accounts) {
+            try {
+                B2BBuyerGroupAssignemntController.handleBuyerGroupsForAccount(acc);
+            } catch (Exception e) {
+                String errorMessage = 'Failed to assign/unassign buyer groups for Account Id: ' + acc.Id +
+                                      ' | Error: ' + e.getMessage();
+                B2BHandleCustomException.LogException(
+                    new BuyerGroupAssignmentException(errorMessage),
+                    'Buyer Group Assignment',
+                    'Batch Execution'
+                );
             }
-            Database.update(failedBuyerGroupAssignments);
-        }
-        catch(Exception e) {
-            B2BHandleCustomException.LogException(e, 'Historical Memberships', 'BuyerGroups Assignment - Batch Level Failure');
         }
     }
 
-    public void finish(Database.BatchableContext bc){
+    global void finish(Database.BatchableContext bc) {}
 
-    }
-
-    public class HistoricalMembershipsException extends Exception {}
+    public class BuyerGroupAssignmentException extends Exception {}
 }

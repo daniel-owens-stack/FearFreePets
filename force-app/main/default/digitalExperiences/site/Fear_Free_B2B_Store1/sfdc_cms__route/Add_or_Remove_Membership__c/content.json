@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Add or Remove Membership",
+  "contentBody" : {
+    "activeViewId" : "Add_or_Remove_Membership",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-add-or-remove-membership",
+    "urlPrefix" : "add-or-remove-membership"
+  },
+  "urlName" : "add-or-remove-membership"
+}

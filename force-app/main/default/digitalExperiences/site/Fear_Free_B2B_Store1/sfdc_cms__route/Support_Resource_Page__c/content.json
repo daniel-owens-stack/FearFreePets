@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Support Resource Page",
+  "contentBody" : {
+    "activeViewId" : "Support_Resource_Page",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-support-resource-page",
+    "urlPrefix" : "support-resource-page"
+  },
+  "urlName" : "support-resource-page"
+}

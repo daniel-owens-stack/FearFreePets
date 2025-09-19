@@ -1,0 +1,5 @@
+{
+  "apiName" : "Add_New_Member",
+  "type" : "sfdc_cms__view",
+  "path" : "views"
+}

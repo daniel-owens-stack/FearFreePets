@@ -1,0 +1,9 @@
+<messaging:emailTemplate subject="RingCentral for Salesforce Install Complete" recipientType="User" >
+
+<messaging:htmlEmailBody >
+Thanks for installing the RingCentral for Salesforce package.
+Please click&nbsp;<apex:outputLink value="{!$Page.rcsfl__AdminCenter}">here</apex:outputLink> to begin configuring your
+RingCentral application using our RingCentral Admin Wizard.
+</messaging:htmlEmailBody>
+
+</messaging:emailTemplate>

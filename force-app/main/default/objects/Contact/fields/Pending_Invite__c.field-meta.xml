@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pending_Invite__c</fullName>
+    <formula>IF(Account.Pending_Business__c = &quot;&quot;, FALSE, TRUE)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Pending Invite</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

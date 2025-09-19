@@ -1,0 +1,10 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Preferred Product Program",
+  "contentBody" : {
+    "component" : {
+      "children" : [ ]
+    }
+  },
+  "urlName" : "preferred-product-program"
+}

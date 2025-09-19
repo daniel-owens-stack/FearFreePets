@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Person_Accounts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>PC_EMAIL</columns>
+    <columns>Admin_Account__c</columns>
+    <columns>Business__c</columns>
+    <columns>ACCOUNT.ADDRESS1_COUNTRY</columns>
+    <columns>Job_Title__c</columns>
+    <columns>Member_of_Certified_Practice__c</columns>
+    <columns>Last_Login__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Academia_Membership_File_Link__c</field>
+        <operation>equals</operation>
+        <value>true</value>
+    </filters>
+    <label>Person Accounts</label>
+</ListView>

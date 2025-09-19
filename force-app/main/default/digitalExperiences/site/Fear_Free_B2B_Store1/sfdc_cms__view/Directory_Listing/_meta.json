@@ -1,0 +1,5 @@
+{
+  "apiName" : "Directory_Listing",
+  "type" : "sfdc_cms__view",
+  "path" : "views"
+}

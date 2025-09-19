@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Academia_Job_Title__c</fullName>
+    <label>Academia Job Title</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Administrative</fullName>
+                <default>false</default>
+                <label>Administrative</label>
+            </value>
+            <value>
+                <fullName>Leadership</fullName>
+                <default>false</default>
+                <label>Leadership</label>
+            </value>
+            <value>
+                <fullName>Teacher/Professor</fullName>
+                <default>false</default>
+                <label>Teacher/Professor</label>
+            </value>
+            <value>
+                <fullName>Veterinary Teaching Hospital Employee</fullName>
+                <default>false</default>
+                <label>Veterinary Teaching Hospital Employee</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

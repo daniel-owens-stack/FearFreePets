@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <isExposed>true</isExposed>
+
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Page</target>
+    </targets>
+
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default,lightning__RecordPage,lightning__AppPage,lightning__HomePage">
+            <property label="Flow API Name" name="flowApiName" type="String" default=""></property>
+            <property label="Modal Label" name='modalLabel' type="String" default="Modal Window"></property>
+            <property label="Button Label" name='buttonLabel' type="String" default="Modal Window"></property>
+            <property label="Button Allignment" name="buttonAllignment" type="String" default="left" datasource="left,center,end"/>
+            <property label="Button Color (HEX #xxxxxx)" name="buttonColor" type="String" default="#ECEBEA"/>
+            <property label="Button Text Color (HEX #xxxxxx)" name="buttonTextColor" type="String" default="#ECEBEA"/>
+            <property label="Button Icon" name="buttonIcon" type="String" description="Format utility:xxxx ex. utility:download. The available icons can be found on the LDS page: https://www.lightningdesignsystem.com/icons/#utility."/>
+            <property label="Button Icon Position" name="buttonIconPosition" type="String" datasource="left,right"/>
+            <property label="Button Full Width?" description="Will make the button go full width. **Requires Button Allignment left**" name="buttonFullWidth" type="Boolean"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

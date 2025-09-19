@@ -1,0 +1,113 @@
+.listing-card-container {
+    height: 100%;
+}
+
+.lightning-card {
+    height: 100%;
+}
+
+.listing-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    height: auto;
+}
+
+.listing-title {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 18px;
+    font-weight: 600;
+    color: #123d64;
+    font-family: 'Bree', sans-serif;
+}
+
+.logo-title-container {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    
+}
+
+.listing-inner {
+    height: 100%;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+
+.logo-and-members-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: -7px;
+}
+
+.social-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.phone {
+    margin-left: 5px;
+    margin-right: 12px;
+    font-weight: 300;
+}
+
+.email {
+    margin-left: 5px;
+    font-weight: 300;
+}
+
+:host {
+    --slds-c-card-body-spacing-block-end: 0px;
+    --slds-c-card-body-spacing-block-start: 0px;
+    --slds-c-card-header-spacing-block-end: 0px;
+    --slds-c-card-header-spacing-inline-start: 9px;
+}
+
+.listing-card-address {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.directions-link {
+    color: #123d64;
+    font-weight: bold;
+}
+
+.logo {
+    max-width: 100px;
+}
+
+:host {
+    --slds-c-accordion-color-border: white; 
+    --slds-c-accordion-heading-text-color: white;
+    --slds-c-accordion-heading-text-color: unsest;
+    --sds-c-button-text-color-hover: white;
+    --slds-g-color-brand-base-40: white;
+    --slds-g-color-brand-base-20: white;
+    --dxp-s-button-color-focus: inherit;
+    --sds-c-button-text-color-hover: black;
+    --dxp-s-button-color-focus: white;
+    --_slds-g-shadow-outline-focus: none;
+}
+
+.listing-logo {
+    margin-right: 10px;
+}
+
+.member-name {
+    font-size: 14px;
+}

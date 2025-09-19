@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Case_Reason__c</fullName>
+    <label>Primary Case Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Department__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Benefits</fullName>
+                <default>false</default>
+                <label>Benefits</label>
+            </value>
+            <value>
+                <fullName>CE/Requirements</fullName>
+                <default>false</default>
+                <label>CE/Requirements</label>
+            </value>
+            <value>
+                <fullName>Course</fullName>
+                <default>false</default>
+                <label>Course</label>
+            </value>
+            <value>
+                <fullName>Dashboard</fullName>
+                <default>false</default>
+                <label>Dashboard</label>
+            </value>
+            <value>
+                <fullName>Directory</fullName>
+                <default>false</default>
+                <label>Directory</label>
+            </value>
+            <value>
+                <fullName>Experts</fullName>
+                <default>false</default>
+                <label>Experts</label>
+            </value>
+            <value>
+                <fullName>Instructions Not Clear</fullName>
+                <default>false</default>
+                <label>Instructions Not Clear</label>
+            </value>
+            <value>
+                <fullName>Login Credentials</fullName>
+                <default>false</default>
+                <label>Login Credentials</label>
+            </value>
+            <value>
+                <fullName>Membership(s)</fullName>
+                <default>false</default>
+                <label>Membership(s)</label>
+            </value>
+            <value>
+                <fullName>Membership Lead</fullName>
+                <default>false</default>
+                <label>Membership Lead</label>
+            </value>
+            <value>
+                <fullName>Membership Renewal</fullName>
+                <default>false</default>
+                <label>Membership Renewal</label>
+            </value>
+            <value>
+                <fullName>Navigation</fullName>
+                <default>false</default>
+                <label>Navigation</label>
+            </value>
+            <value>
+                <fullName>Online Store</fullName>
+                <default>false</default>
+                <label>Online Store</label>
+            </value>
+            <value>
+                <fullName>Order</fullName>
+                <default>false</default>
+                <label>Order</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>PC Lead</fullName>
+                <default>false</default>
+                <label>PC Lead</label>
+            </value>
+            <value>
+                <fullName>PC Renewal</fullName>
+                <default>false</default>
+                <label>PC Renewal</label>
+            </value>
+            <value>
+                <fullName>Pet Owner</fullName>
+                <default>false</default>
+                <label>Pet Owner</label>
+            </value>
+            <value>
+                <fullName>Pledge Violation</fullName>
+                <default>false</default>
+                <label>Pledge Violation</label>
+            </value>
+            <value>
+                <fullName>Podcast</fullName>
+                <default>false</default>
+                <label>Podcast</label>
+            </value>
+            <value>
+                <fullName>Practice Certification</fullName>
+                <default>false</default>
+                <label>Practice Certification</label>
+            </value>
+            <value>
+                <fullName>Self-Assessment</fullName>
+                <default>false</default>
+                <label>Self-Assessment</label>
+            </value>
+            <value>
+                <fullName>Shippable Product(s)</fullName>
+                <default>false</default>
+                <label>Shippable Product(s)</label>
+            </value>
+            <value>
+                <fullName>Student/Faculty</fullName>
+                <default>false</default>
+                <label>Student/Faculty</label>
+            </value>
+            <value>
+                <fullName>Trademark Violation</fullName>
+                <default>false</default>
+                <label>Trademark Violation</label>
+            </value>
+            <value>
+                <fullName>User Account</fullName>
+                <default>false</default>
+                <label>User Account</label>
+            </value>
+            <value>
+                <fullName>Virtual Visit</fullName>
+                <default>false</default>
+                <label>Virtual Visit</label>
+            </value>
+            <value>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+                <label>Webinar</label>
+            </value>
+            <value>
+                <fullName>Website</fullName>
+                <default>false</default>
+                <label>Website</label>
+            </value>
+            <value>
+                <fullName>Career Interest</fullName>
+                <default>false</default>
+                <label>Career Interest</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Support</controllingFieldValue>
+            <controllingFieldValue>PC</controllingFieldValue>
+            <controllingFieldValue>Marketing</controllingFieldValue>
+            <controllingFieldValue>Corp Accts</controllingFieldValue>
+            <valueName>Benefits</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Support</controllingFieldValue>
+            <controllingFieldValue>PC</controllingFieldValue>
+            <valueName>CE/Requirements</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Support</controllingFieldValue>
+            <controllingFieldValue>PC</controllingFieldValue>
+            <valueName>Course</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Support</controllingFieldValue>
+            <controllingFieldValue>PC</controllingFieldValue>
+            <valueName>Directory</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Support</controllingFieldValue>
+            <controllingFieldValue>PC</controllingFieldValue>
+            <valueName>Experts</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Support</controllingFieldValue>
+            <controllingFieldValue>PC</controllingFieldValue>
+            <controllingFieldValue>Corp Accts</controllingFieldValue>
+            <valueName>Instructions Not Clear</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Support</controllingFieldValue>
+            <controllingFieldValue>Sales</controllingFieldValue>
+            <controllingFieldValue>PC</controllingFieldValue>
+            <valueName>Login Credentials</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Support</controllingFieldValue>
+            <controllingFieldValue>PC</controllingFieldValue>
+            <valueName>Membership(s)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Support</controllingFieldValue>
+            <controllingFieldValue>PC</controllingFieldValue>
+            <valueName>Navigation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Support</controllingFieldValue>
+            <controllingFieldValue>PC</controllingFieldValue>
+            <controllingFieldValue>Marketing</controllingFieldValue>
+            <valueName>Online Store</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Support</controllingFieldValue>
+            <controllingFieldValue>PC</controllingFieldValue>
+            <controllingFieldValue>Marketing</controllingFieldValue>
+            <controllingFieldValue>Corp Accts</controllingFieldValue>
+            <valueName>Order</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Support</controllingFieldValue>
+            <controllingFieldValue>Sales</controllingFieldValue>
+            <controllingFieldValue>PC</controllingFieldValue>
+            <controllingFieldValue>Marketing</controllingFieldValue>
+            <controllingFieldValue>Corp Accts</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Support</controllingFieldValue>
+            <valueName>Pet Owner</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Support</controllingFieldValue>
+            <controllingFieldValue>PC</controllingFieldValue>
+            <valueName>Pledge Violation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Support</controllingFieldValue>
+            <controllingFieldValue>Marketing</controllingFieldValue>
+            <valueName>Podcast</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Support</controllingFieldValue>
+            <controllingFieldValue>PC</controllingFieldValue>
+            <controllingFieldValue>Marketing</controllingFieldValue>
+            <valueName>Shippable Product(s)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Support</controllingFieldValue>
+            <valueName>Student/Faculty</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Support</controllingFieldValue>
+            <controllingFieldValue>PC</controllingFieldValue>
+            <valueName>Trademark Violation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Support</controllingFieldValue>
+            <controllingFieldValue>PC</controllingFieldValue>
+            <valueName>User Account</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Support</controllingFieldValue>
+            <controllingFieldValue>PC</controllingFieldValue>
+            <controllingFieldValue>Marketing</controllingFieldValue>
+            <controllingFieldValue>Corp Accts</controllingFieldValue>
+            <valueName>Webinar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Support</controllingFieldValue>
+            <controllingFieldValue>PC</controllingFieldValue>
+            <controllingFieldValue>Marketing</controllingFieldValue>
+            <valueName>Website</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Support</controllingFieldValue>
+            <controllingFieldValue>Sales</controllingFieldValue>
+            <controllingFieldValue>PC</controllingFieldValue>
+            <controllingFieldValue>Marketing</controllingFieldValue>
+            <controllingFieldValue>Corp Accts</controllingFieldValue>
+            <valueName>Career Interest</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales</controllingFieldValue>
+            <controllingFieldValue>Marketing</controllingFieldValue>
+            <valueName>Membership Lead</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales</controllingFieldValue>
+            <valueName>Membership Renewal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales</controllingFieldValue>
+            <controllingFieldValue>PC</controllingFieldValue>
+            <controllingFieldValue>Marketing</controllingFieldValue>
+            <valueName>PC Lead</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales</controllingFieldValue>
+            <controllingFieldValue>PC</controllingFieldValue>
+            <valueName>PC Renewal</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PC</controllingFieldValue>
+            <valueName>Dashboard</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PC</controllingFieldValue>
+            <valueName>Self-Assessment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>PC</controllingFieldValue>
+            <valueName>Virtual Visit</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

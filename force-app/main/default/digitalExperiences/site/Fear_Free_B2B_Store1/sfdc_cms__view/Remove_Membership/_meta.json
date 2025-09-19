@@ -1,0 +1,5 @@
+{
+  "apiName" : "Remove_Membership",
+  "type" : "sfdc_cms__view",
+  "path" : "views"
+}

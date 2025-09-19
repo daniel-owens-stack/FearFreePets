@@ -1,0 +1,36 @@
+<template>
+    <template if:true={isLoadingSpinner}>
+        <div class="slds-is-relative">
+            <lightning-spinner class="slds-is-fixed" alternative-text="Loading" size="xx-large" variant="brand"></lightning-spinner>
+        </div>
+    </template>
+
+    <lightning-card title="Student Enrollment" icon-name="standard:article">
+        <div slot="footer">
+            <lightning-layout horizontal-align="spread">
+                <lightning-layout-item padding="around-small">
+                    <lightning-button label="Cancel" onclick={closeModal} ></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small">
+                    <lightning-button variant="success" label="Enroll" onclick={handleOnEnrollClick} disabled={isEnrollDisabled} ></lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+
+        <div class="slds-p-horizontal_small">
+            <div class="slds-m-bottom_medium" onkeyup={handleProductKeyUp}>
+                <lightning-input name="enter-search" label="Search when user hits the 'enter' key" type="search"></lightning-input>
+            </div>
+
+            <div style="height: 50vh;">
+                <lightning-datatable
+                    data-id="studentTable"
+                    key-field="Id"
+                    data={studentList}
+                    columns={studentColumns}
+                    show-row-number-column
+                ></lightning-datatable>
+            </div>
+        </div>        
+    </lightning-card>
+</template>

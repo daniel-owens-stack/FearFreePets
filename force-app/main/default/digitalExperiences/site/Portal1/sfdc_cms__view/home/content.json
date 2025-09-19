@@ -1,0 +1,154 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Home",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "dxpStyle" : { },
+            "sectionConfig" : "{\"UUID\":\"6ecf1476-c491-4dff-9294-fbf3e98c3b5b\",\"columns\":[{\"UUID\":\"be3c7cbb-1856-4183-81a1-aff4df1654c9\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "activeTabBorderHighlightWeight" : "2px",
+                "activeTabTextEmphasis" : "{\"bold\":true}",
+                "activeTabTextStyle" : "{\"textStyle\":\"paragraph1\",\"headingTag\":\"p\"}",
+                "borderColor" : "",
+                "borderRadius" : "0px",
+                "borderWeight" : "0px",
+                "dxpStyle" : { },
+                "enableOverflowMenu" : false,
+                "imageFit" : "cover",
+                "imagePosition" : "center center",
+                "overflowIconColor" : "rgb(116,116,116)",
+                "overflowIconStyle" : "down-arrow",
+                "overflowMenuLabel" : "More",
+                "tabAlignment" : "left",
+                "tabBorderColor" : "",
+                "tabBorderRadius" : "0px",
+                "tabBorderWeight" : "0px",
+                "tabHoverBorderHighlightWeight" : "1px",
+                "tabLayout" : "horizontal",
+                "tabPadding" : "12px",
+                "tabTextStyle" : "{\"textStyle\":\"paragraph1\",\"headingTag\":\"p\"}",
+                "tabsetConfig" : "{\"UUID\":\"fa2f8adb-2d90-4c4d-bbc1-11b8f5d94c99\",\"activeTab\":null,\"useOverflowMenu\":null,\"tabs\":[{\"UUID\":\"611f8d9a-9067-4c2b-884a-602afc402b74\",\"tabName\":\"Tab 1\",\"tabKey\":\"tab1\",\"locked\":false,\"allowGuestUser\":false},{\"UUID\":\"1ceb7acd-40de-42c2-8f45-279fc2f4adf8\",\"tabName\":\"Tab 2\",\"tabKey\":\"tab2\",\"locked\":false,\"allowGuestUser\":false},{\"UUID\":\"52252637-9772-49ca-8091-2b9e80092f40\",\"tabName\":\"Tab 3\",\"tabKey\":\"tab3\",\"locked\":false,\"allowGuestUser\":false}]}",
+                "width" : "100%"
+              },
+              "children" : [ {
+                "id" : "611f8d9a-9067-4c2b-884a-602afc402b74",
+                "name" : "tab1",
+                "title" : "Tab 1",
+                "type" : "region"
+              }, {
+                "id" : "1ceb7acd-40de-42c2-8f45-279fc2f4adf8",
+                "name" : "tab2",
+                "title" : "Tab 2",
+                "type" : "region"
+              }, {
+                "id" : "52252637-9772-49ca-8091-2b9e80092f40",
+                "name" : "tab3",
+                "title" : "Tab 3",
+                "type" : "region"
+              } ],
+              "definition" : "dxp_layout:tabs",
+              "id" : "fa2f8adb-2d90-4c4d-bbc1-11b8f5d94c99",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "dxpStyle" : { },
+                "richTextValue" : "<div style=\"display: flex; justify-content: center; align-items: center; margin: 50px 0; flex-direction: column; text-align: center;\"><div style=\"background-image: url(assets/img/desert.svg) !important; background-size: cover; background-position: center; height: 300px; width: 100%; max-width: 600px; min-width: 300px;\"></div><h1 class=\"slds-text-heading_medium slds-p-bottom_x-small\">Start Building Your Page</h1> <div>Drag and drop a component into the content slots.</div></div>"
+              },
+              "definition" : "community_builder:htmlEditor",
+              "id" : "46080da8-ad56-43be-96a2-7c40276e1896",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "activeTabBorderHighlightWeight" : "2px",
+                "activeTabTextEmphasis" : "{\"bold\":true}",
+                "activeTabTextStyle" : "{\"textStyle\":\"paragraph1\",\"headingTag\":\"p\"}",
+                "borderColor" : "",
+                "borderRadius" : "0px",
+                "borderWeight" : "0px",
+                "dxpStyle" : { },
+                "enableOverflowMenu" : false,
+                "imageFit" : "cover",
+                "imagePosition" : "center center",
+                "overflowIconColor" : "rgb(116,116,116)",
+                "overflowIconStyle" : "down-arrow",
+                "overflowMenuLabel" : "More",
+                "tabAlignment" : "left",
+                "tabBorderColor" : "",
+                "tabBorderRadius" : "0px",
+                "tabBorderWeight" : "0px",
+                "tabHoverBorderHighlightWeight" : "1px",
+                "tabLayout" : "horizontal",
+                "tabPadding" : "12px",
+                "tabTextStyle" : "{\"textStyle\":\"paragraph1\",\"headingTag\":\"p\"}",
+                "tabsetConfig" : "{\"UUID\":\"49a77f08-8679-4538-9026-02cd65b746c5\",\"activeTab\":null,\"useOverflowMenu\":null,\"tabs\":[{\"UUID\":\"30da070c-4159-4987-b974-66aea7f0efdb\",\"tabName\":\"Tab 1\",\"tabKey\":\"tab1\",\"locked\":false,\"allowGuestUser\":false},{\"UUID\":\"6d63353f-cff1-467b-91a6-5fd2bc03381c\",\"tabName\":\"Tab 2\",\"tabKey\":\"tab2\",\"locked\":false,\"allowGuestUser\":false},{\"UUID\":\"9580604b-372f-46bf-9594-dc3973d39183\",\"tabName\":\"Tab 3\",\"tabKey\":\"tab3\",\"locked\":false,\"allowGuestUser\":false}]}",
+                "width" : "100%"
+              },
+              "children" : [ {
+                "id" : "30da070c-4159-4987-b974-66aea7f0efdb",
+                "name" : "tab1",
+                "title" : "Tab 1",
+                "type" : "region"
+              }, {
+                "id" : "6d63353f-cff1-467b-91a6-5fd2bc03381c",
+                "name" : "tab2",
+                "title" : "Tab 2",
+                "type" : "region"
+              }, {
+                "id" : "9580604b-372f-46bf-9594-dc3973d39183",
+                "name" : "tab3",
+                "title" : "Tab 3",
+                "type" : "region"
+              } ],
+              "definition" : "dxp_layout:tabs",
+              "id" : "49a77f08-8679-4538-9026-02cd65b746c5",
+              "type" : "component"
+            } ],
+            "id" : "be3c7cbb-1856-4183-81a1-aff4df1654c9",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "6ecf1476-c491-4dff-9294-fbf3e98c3b5b",
+          "type" : "component"
+        } ],
+        "id" : "13a140eb-c3fd-4e8c-b5b3-54eab9e9bfe2",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "dxpStyle" : { },
+            "pageTitle" : "Home",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "094ebe8e-9029-4403-9dcd-6261dd0e7f62",
+          "type" : "component"
+        } ],
+        "id" : "762ec260-8de4-4ded-b946-c24ee3ca54f4",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "7a83e303-ff55-4ac8-8200-72222ed8f847",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "home"
+  },
+  "urlName" : "home"
+}

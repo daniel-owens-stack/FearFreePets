@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>1</activeVersionNumber>
+    <description>This flow will set the Directory Opt-in to FALSE if a Business is updated and Directory Opt-in is equal to TRUE</description>
+    <masterLabel>(FSM) Account - Set the Directory Opt-in to FALSE</masterLabel>
+</FlowDefinition>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PersonAccountCompanyLayout</fullName>
+    <fields>Name</fields>
+    <fields>Phone</fields>
+    <fields>PersonEmail</fields>
+    <fields>Member_Type__c</fields>
+    <fields>RecordTypeId</fields>
+    <fields>OwnerId</fields>
+    <label>PersonAccountCompanyLayout</label>
+</CompactLayout>

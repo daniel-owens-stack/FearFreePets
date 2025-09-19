@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stripe_Product_URL__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&quot;https://dashboard.stripe.com/test/products/&quot; &amp; Stripe_Product_Id__c, &quot;Stripe Link&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Stripe Product URL</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

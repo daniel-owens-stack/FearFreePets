@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "French Translated Client Ed Resources",
+  "contentBody" : {
+    "activeViewId" : "French_Translated_Client_Ed_Resources",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-french-translated-client-ed-resources",
+    "urlPrefix" : "french-translated-client-ed-resources"
+  },
+  "urlName" : "french-translated-client-ed-resources"
+}

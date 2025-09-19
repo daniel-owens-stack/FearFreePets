@@ -1,0 +1,72 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Add New Member",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "dxpStyle" : { },
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"5867863f-bff1-4ced-ace0-62d024aa254e\",\"columns\":[{\"UUID\":\"e872da09-ffad-431c-afbd-ab7a4ebbb594\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "dxpStyle" : { },
+                "flowName" : "{\"flowName\":\"Screen_Flow_Create_New_User\",\"flowLabel\":\"Screen Flow - Create New User\"}"
+              },
+              "definition" : "dxp_flow:flow",
+              "id" : "a2b3b0b4-e84b-4722-a24c-b861bff9d666",
+              "type" : "component"
+            } ],
+            "id" : "e872da09-ffad-431c-afbd-ab7a4ebbb594",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "5867863f-bff1-4ced-ace0-62d024aa254e",
+          "type" : "component"
+        } ],
+        "id" : "ab388140-7714-4827-93aa-578a074d7d3c",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "dxpStyle" : { },
+            "pageTitle" : "Add New Member",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "ec461b7f-a54e-4bf3-9e05-20642afd273a",
+          "type" : "component"
+        } ],
+        "id" : "84b8e771-ac14-4a4f-9c68-52c77ebf9f47",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "22fddf60-b3b6-4d9c-886f-3ad806a8ff4f",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-add-new-member"
+  },
+  "urlName" : "add-new-member"
+}

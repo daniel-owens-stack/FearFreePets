@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "FAS Resources",
+  "contentBody" : {
+    "activeViewId" : "FAS_Resources",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-fas-resources",
+    "urlPrefix" : "fas-resources"
+  },
+  "urlName" : "fas-resources"
+}

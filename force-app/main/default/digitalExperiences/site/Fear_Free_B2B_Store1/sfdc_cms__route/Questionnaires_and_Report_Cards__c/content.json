@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Questionnaires and Report Cards",
+  "contentBody" : {
+    "activeViewId" : "Questionnaires_and_Report_Cards",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-questionnaires-and-report-cards",
+    "urlPrefix" : "questionnaires-and-report-cards"
+  },
+  "urlName" : "questionnaires-and-report-cards"
+}

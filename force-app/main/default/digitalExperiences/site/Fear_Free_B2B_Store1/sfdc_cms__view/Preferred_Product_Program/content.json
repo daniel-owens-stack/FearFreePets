@@ -1,0 +1,2190 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Preferred Product Program",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"87d02276-2da0-44a3-b014-6cb333dd62b8\",\"columns\":[{\"UUID\":\"dcdf150d-3349-4afe-a0d5-3a7ef86a7a7b\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "activeTabBorderHighlightWeight" : "2px",
+                "activeTabTextEmphasis" : "{\"bold\":true}",
+                "activeTabTextStyle" : "{\"textStyle\":\"paragraph1\",\"headingTag\":\"p\",\"enableOverride\":true}",
+                "borderColor" : "",
+                "borderRadius" : "",
+                "borderWeight" : "0px",
+                "enableOverflowMenu" : true,
+                "imageFit" : "cover",
+                "imagePosition" : "center center",
+                "overflowIconColor" : "rgb(116,116,116)",
+                "overflowIconStyle" : "menu-icon-vertical",
+                "overflowMenuLabel" : "More",
+                "tabAlignment" : "left",
+                "tabBorderColor" : "",
+                "tabBorderRadius" : "5px",
+                "tabBorderWeight" : "0px",
+                "tabHoverBorderHighlightWeight" : "1px",
+                "tabLayout" : "horizontal",
+                "tabPadding" : "12px",
+                "tabTextStyle" : "{\"textStyle\":\"paragraph1\",\"headingTag\":\"p\",\"enableOverride\":true}",
+                "tabsetConfig" : "{\"UUID\":\"1ef4caa8-5095-4fa6-9df5-973468fc5ccd\",\"activeTab\":null,\"useOverflowMenu\":null,\"tabs\":[{\"UUID\":\"5315ac50-fa7b-4782-8d6f-b2dacd9c148c\",\"tabName\":\"Preferred Product Program Discounts\",\"tabKey\":\"tab2\",\"locked\":false,\"allowGuestUser\":false},{\"UUID\":\"d6e724b1-3866-493c-be9e-b76b40969a92\",\"tabName\":\"Corporate Member Program Discounts\",\"tabKey\":\"tab1\",\"locked\":false,\"allowGuestUser\":false},{\"UUID\":\"ef87c7df-9e68-46d4-86e5-b5f3b4fdffc6\",\"tabName\":\"Facility Certification Exclusive Discounts\",\"tabKey\":\"tab3\",\"locked\":false,\"allowGuestUser\":false}]}",
+                "width" : "100%"
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "checkAccountMembership" : true,
+                    "checkPracticeMembership" : false,
+                    "checkVetProMembership" : false
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "flex-start",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"490c24f1-2925-4c68-9be2-a12bdca6f6a1\",\"columns\":[{\"UUID\":\"088e32e2-3632-4583-bc61-3c9be493675c\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"4\",\"seedComponents\":[]},{\"UUID\":\"ea06b391-67a5-42e8-9e91-4a00f416a5f5\",\"columnName\":\"Column 2\",\"columnKey\":\"03b82\",\"columnWidth\":\"4\",\"seedComponents\":[]},{\"UUID\":\"d07a8143-0cb8-4a40-ad13-af7015ce1aeb\",\"columnName\":\"Column 3\",\"columnKey\":\"ae1ec\",\"columnWidth\":\"4\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "imageInfos" : "",
+                            "richTextValue" : "<ul>\n    <li><a class=\"ppp-link\" href=\"#assisi\">Assisi Animal Health</a></li>\n    <li><a class=\"ppp-link\" href=\"#bella\">Bella VMS</a></li>\n    <li><a class=\"ppp-link\" href=\"#big-barker\">Big Barker</a></li>\n    <li><a class=\"ppp-link\" href=\"#butterfly\">Butterfly</a></li>\n    <li><a class=\"ppp-link\" href=\"#specialties\">C Specialties, Inc.</a></li>\n    <li><a class=\"ppp-link\" href=\"#calmcozy\">Calm & Cozy Cat Wrap</a></li>\n    <li><a class=\"ppp-link\" href=\"#calmr\">Calmr Dog Toys</a></li>\n    <li><a class=\"ppp-link\" href=\"#casco\">CASCO Pet</a></li>\n    <li><a class=\"ppp-link\" href=\"#companion\">Companion</a></li>\n    <li><a class=\"ppp-link\" href=\"#covet\">CoVet</a></li>\n</ul>"
+                          },
+                          "definition" : "community_builder:htmlEditor",
+                          "id" : "e5abb2e4-90cb-474e-807b-4ea39e1ae007",
+                          "type" : "component"
+                        } ],
+                        "id" : "088e32e2-3632-4583-bc61-3c9be493675c",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "imageInfos" : "",
+                            "richTextValue" : "<ul>\n    <li><a class=\"ppp-link\" href=\"#ezee\">Ezee-Visit Pet Vet Mat</a></li>\n    <li><a class=\"ppp-link\" href=\"#gravity\">Gravity Payments</a></li>\n    <li><a class=\"ppp-link\" href=\"#keravet\">KeraVet Bio</a></li>\n    <li><a class=\"ppp-link\" href=\"#lenderking\">Lenderking Caging Products</a></li>\n    <li><a class=\"ppp-link\" href=\"#maven\">Maven Pet</a></li>    \n    <li><a class=\"ppp-link\" href=\"#nofear\">NoFear Pet Mats</a></li>\n    <li><a class=\"ppp-link\" href=\"#prosper\">Paw Prosper</a></li>\n    <li><a class=\"ppp-link\" href=\"#proedge\">ProEdge by Pet Therapeutics</a></li>\n    <li><a class=\"ppp-link\" href=\"#roo\">Roo</a></li>\n    <li><a class=\"ppp-link\" href=\"#shepherd\">Shepherd</a></li>\n</ul>"
+                          },
+                          "definition" : "community_builder:htmlEditor",
+                          "id" : "72129bda-7f5b-48e6-871c-77b22d6e51b9",
+                          "type" : "component"
+                        } ],
+                        "id" : "ea06b391-67a5-42e8-9e91-4a00f416a5f5",
+                        "name" : "03b82",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "imageInfos" : "",
+                            "richTextValue" : "<ul>    \n    <li><a class=\"ppp-link\" href=\"#sleepypod\">Sleepypod</a></li>\n    <li><a class=\"ppp-link\" href=\"#talkatoo\">Talkatoo</a></li>\n    <li><a class=\"ppp-link\" href=\"#tikicat\">Tiki Cat® Veterinary Solutions™</a></li>\n    <li><a class=\"ppp-link\" href=\"#unimin\">Unimin</a></li>\n    <li><a class=\"ppp-link\" href=\"#wellvu\">WellVu Thermal Imaging\n</a></li>\n</ul>"
+                          },
+                          "definition" : "community_builder:htmlEditor",
+                          "id" : "d79239a0-c163-45fd-b319-dbacd3dee493",
+                          "type" : "component"
+                        } ],
+                        "id" : "d07a8143-0cb8-4a40-ad13-af7015ce1aeb",
+                        "name" : "ae1ec",
+                        "title" : "Column 3",
+                        "type" : "region"
+                      } ],
+                      "customCssClasses" : "brand-block pale-blue-bg",
+                      "definition" : "dxp_layout:columns",
+                      "id" : "490c24f1-2925-4c68-9be2-a12bdca6f6a1",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "200px",
+                        "columnVerticalAlign" : "center",
+                        "dxpStyle" : {
+                          "padding" : {
+                            "bottom" : "",
+                            "left" : "20px",
+                            "right" : "20px",
+                            "top" : ""
+                          }
+                        },
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"bcee4241-b998-4489-a086-e1330c3a3afd\",\"columns\":[{\"UUID\":\"89018c64-af20-4cec-bdfe-39b0023f1a16\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"c1d9c4bd-1ada-42fa-8780-1b202d659a10\",\"columnName\":\"Column 2\",\"columnKey\":\"1b824\",\"columnWidth\":\"9\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "fit" : "contain",
+                            "height" : 350,
+                            "imageInfo" : "{\"imageInfoV1\":{\"url\":\"/sfsites/c/cms/delivery/media/MCP2H3HDMDMVFU3KMG4KD2ZUTUWI?lastModifiedDate=Wed Feb 12 14:48:31 GMT 2025\",\"altText\":\"\",\"contentKey\":\"MCP2H3HDMDMVFU3KMG4KD2ZUTUWI\",\"contentType\":null}}",
+                            "overlayColor" : "",
+                            "position" : "center center",
+                            "width" : 100
+                          },
+                          "definition" : "dxp_base:image",
+                          "id" : "d0d92da3-fbc4-408e-b4df-58fafc528a95",
+                          "type" : "component"
+                        } ],
+                        "id" : "89018c64-af20-4cec-bdfe-39b0023f1a16",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Assisi Animal Health",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-large\",\"headingTag\":\"h2\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "3f1a9295-63aa-441f-a510-bf8e7bbd72a0",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "imageInfos" : "",
+                            "richTextValue" : "<p id=\"assisi\">Fear Free Certified® Professionals will receive special pricing on all Assisi products. To order, Utilize the code FEARFREE to receive 10% off at checkout on the <a href=\"https://shop.assisi.zomedica.com/pages/landing/?_gl=1*1ol5u5v*_gcl_au*MTk3NjE2ODM2MC4xNzE1OTU4MjI4*_ga*MjAyMzQzNjAyNi4xNzAzMTA1MjU4*_ga_HXDQQWECSN*MTcyMjAwMzg3Mi4yNi4wLjE3MjIwMDM4NzIuNjAuMC40MzA0Mjk3MDY\" target=\"_blank\">Assisi web store!</a></p>"
+                          },
+                          "definition" : "community_builder:htmlEditor",
+                          "id" : "b00c496c-4af3-4bcb-8500-c61d8de76fe7",
+                          "type" : "component"
+                        } ],
+                        "id" : "c1d9c4bd-1ada-42fa-8780-1b202d659a10",
+                        "name" : "1b824",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "bcee4241-b998-4489-a086-e1330c3a3afd",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "200px",
+                        "columnVerticalAlign" : "center",
+                        "dxpStyle" : {
+                          "padding" : {
+                            "bottom" : "",
+                            "left" : "20px",
+                            "right" : "20px",
+                            "top" : ""
+                          }
+                        },
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"90d8d5c6-77a3-4969-a133-14b64a6bde74\",\"columns\":[{\"UUID\":\"823961e1-0b84-4307-be50-5517a168aca1\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"8e552611-f282-43eb-a348-cc35c213a850\",\"columnName\":\"Column 2\",\"columnKey\":\"1b824\",\"columnWidth\":\"9\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "fit" : "contain",
+                            "height" : 350,
+                            "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCROEGGFBABFAA5AGTGRSLMOUKPI\",\"contentType\":null}}",
+                            "overlayColor" : "",
+                            "position" : "center center",
+                            "width" : 100
+                          },
+                          "definition" : "dxp_base:image",
+                          "id" : "938f70a1-fdd2-4e6a-a70a-d5d152592993",
+                          "type" : "component"
+                        } ],
+                        "id" : "823961e1-0b84-4307-be50-5517a168aca1",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Bella VMS",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-large\",\"headingTag\":\"h2\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "e15f1fef-60db-442b-8910-d96a5d135b14",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "imageInfos" : "",
+                            "richTextValue" : "<p id=\"bella\">Take 10% off your purchase of Bella Beds by applying the code FearFree0220 when checking out at the Bella VMS Store: <a href=\"http://www.bellavms.com/\" target=\"_blank\">www.bellavms.com.</a></p>"
+                          },
+                          "definition" : "community_builder:htmlEditor",
+                          "id" : "0afdfabd-f1f2-4f18-a41e-fd6be3f0b48a",
+                          "type" : "component"
+                        } ],
+                        "id" : "8e552611-f282-43eb-a348-cc35c213a850",
+                        "name" : "1b824",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "90d8d5c6-77a3-4969-a133-14b64a6bde74",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "200px",
+                        "columnVerticalAlign" : "center",
+                        "dxpStyle" : {
+                          "padding" : {
+                            "bottom" : "",
+                            "left" : "20px",
+                            "right" : "20px",
+                            "top" : ""
+                          }
+                        },
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"2c489183-819e-4faa-91fd-1442226e5bc0\",\"columns\":[{\"UUID\":\"82bd3c1d-fca5-4c6b-9519-9db54d82c933\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"cff73dcf-e4b3-4256-a78c-3a6cfeae86dc\",\"columnName\":\"Column 2\",\"columnKey\":\"1b824\",\"columnWidth\":\"9\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "fit" : "contain",
+                            "height" : 350,
+                            "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MC437QO6BM3NHDZFEUQDYG2UPJN4\",\"contentType\":null}}",
+                            "overlayColor" : "",
+                            "position" : "center center",
+                            "width" : 100
+                          },
+                          "definition" : "dxp_base:image",
+                          "id" : "8c14f2c9-b965-40fd-8f14-189e313d693a",
+                          "type" : "component"
+                        } ],
+                        "id" : "82bd3c1d-fca5-4c6b-9519-9db54d82c933",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Big Barker",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-large\",\"headingTag\":\"h2\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "6a0ebf4d-0aad-48f1-a2f0-ccbf846dec3f",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "imageInfos" : "",
+                            "richTextValue" : "<p id=\"big-barker\">To get 20% off your next Big Barker purchase, use this link: <a href=\"https://bigbarker.attn.tv/p/SIA/landing-page\" target=\"_blank\">https://bigbarker.attn.tv/p/SIA/landing-page</a>. Your discount will be applied at checkout.</p>"
+                          },
+                          "definition" : "community_builder:htmlEditor",
+                          "id" : "46040a24-aba6-42ca-af26-a815b6a58e21",
+                          "type" : "component"
+                        } ],
+                        "id" : "cff73dcf-e4b3-4256-a78c-3a6cfeae86dc",
+                        "name" : "1b824",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "2c489183-819e-4faa-91fd-1442226e5bc0",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "200px",
+                        "columnVerticalAlign" : "center",
+                        "dxpStyle" : {
+                          "padding" : {
+                            "bottom" : "",
+                            "left" : "20px",
+                            "right" : "20px",
+                            "top" : ""
+                          }
+                        },
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"4f24e6da-beae-4b97-945e-a279065292b0\",\"columns\":[{\"UUID\":\"6fece0f4-d0c1-4646-8b8c-97757e994999\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"d5c013b2-3633-486c-986a-16705a930fe7\",\"columnName\":\"Column 2\",\"columnKey\":\"1b824\",\"columnWidth\":\"9\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "fit" : "contain",
+                            "height" : 350,
+                            "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MC6IST5FCURZFX5D7UNPYVM7AAJI\",\"contentType\":null}}",
+                            "overlayColor" : "",
+                            "position" : "center center",
+                            "width" : 100
+                          },
+                          "definition" : "dxp_base:image",
+                          "id" : "ad0f2bcf-305b-4d4d-b726-0ba158edc7a9",
+                          "type" : "component"
+                        } ],
+                        "id" : "6fece0f4-d0c1-4646-8b8c-97757e994999",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Butterfly",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-large\",\"headingTag\":\"h2\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "23e4c74b-3a8d-4e71-aebe-b35b308e0beb",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "imageInfos" : "",
+                            "richTextValue" : "<p id=\"butterfly\">Butterfly is excited to offer 5% off the purchase of each iQ+ Vet device.* Take advantage of this special offer by using code FearFree at our store or <a href=\"https://store.butterflynetwork.com/us/en/product/butterfly-iq-vet/pro/1-year/?voucherCode=FEARFREE\" target=\"_blank\">clicking this link</a>.\n\nThe Butterfly iQ+ Vet can be purchased by veterinary practitioners in approved countries at the <a href=\"http://store.butterflynetwork.com/vet\" target=\"_blank\">Butterfly store</a> or by contacting <a href=\"mailto:vetsupport@butterflynetwork.com\">vetsupport@butterflynetwork.com</a>.</p>\n\n<p>*Offer valid where applicable.</p>"
+                          },
+                          "definition" : "community_builder:htmlEditor",
+                          "id" : "dae5d2cc-3094-4f3f-acbc-89fbc0708ec3",
+                          "type" : "component"
+                        } ],
+                        "id" : "d5c013b2-3633-486c-986a-16705a930fe7",
+                        "name" : "1b824",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "4f24e6da-beae-4b97-945e-a279065292b0",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "200px",
+                        "columnVerticalAlign" : "center",
+                        "dxpStyle" : {
+                          "padding" : {
+                            "bottom" : "",
+                            "left" : "20px",
+                            "right" : "20px",
+                            "top" : ""
+                          }
+                        },
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"a84aa5fc-cf04-4536-af72-03646d61fb13\",\"columns\":[{\"UUID\":\"7b0cba3e-1846-466c-b131-dd0f653b6a0e\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"89c53056-6a9c-452d-a3af-1ab45ff50b92\",\"columnName\":\"Column 2\",\"columnKey\":\"1b824\",\"columnWidth\":\"9\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "fit" : "contain",
+                            "height" : 350,
+                            "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCS63FKHJYERDHTNQGH4HX45GFGQ\",\"contentType\":null}}",
+                            "overlayColor" : "",
+                            "position" : "center center",
+                            "width" : 100
+                          },
+                          "definition" : "dxp_base:image",
+                          "id" : "23bd7614-ad10-4f53-805c-91c0b2dbbf64",
+                          "type" : "component"
+                        } ],
+                        "id" : "7b0cba3e-1846-466c-b131-dd0f653b6a0e",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "C Specialties, Inc.",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-large\",\"headingTag\":\"h2\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "314a237e-7ade-49df-90d2-1817752299e2",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "imageInfos" : "",
+                            "richTextValue" : "<p id=\"specialties\">Take $10 off product orders over $75 on any featured product or combination. Add voucher code&nbsp;<strong>FF2020</strong>&nbsp;to your cart when checking out of the&nbsp;<a href=\"http://www.cspecialties.com/index.html\">C Specialties store</a>&nbsp;to receive your discount or call 800-234-5330 with voucher code&nbsp;<strong>FF2020</strong>.</p>\n<p>Additional shipping discounts may apply.</p>"
+                          },
+                          "definition" : "community_builder:htmlEditor",
+                          "id" : "09c50ee0-ce16-4e33-a251-08e708e5b019",
+                          "type" : "component"
+                        } ],
+                        "id" : "89c53056-6a9c-452d-a3af-1ab45ff50b92",
+                        "name" : "1b824",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "a84aa5fc-cf04-4536-af72-03646d61fb13",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "200px",
+                        "columnVerticalAlign" : "center",
+                        "dxpStyle" : {
+                          "padding" : {
+                            "bottom" : "",
+                            "left" : "20px",
+                            "right" : "20px",
+                            "top" : ""
+                          }
+                        },
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"f172f244-77a7-45a2-9f54-fb0b5e5c39b1\",\"columns\":[{\"UUID\":\"4191a2b1-6229-4d4f-907c-7a6cba049428\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"7a58199b-bc91-4130-9451-1df769a6029d\",\"columnName\":\"Column 2\",\"columnKey\":\"1b824\",\"columnWidth\":\"9\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "fit" : "contain",
+                            "height" : 350,
+                            "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCZ2F2FIR2XJGFTI3J2CJYI6EJLI\",\"contentType\":null}}",
+                            "overlayColor" : "",
+                            "position" : "center center",
+                            "width" : 100
+                          },
+                          "definition" : "dxp_base:image",
+                          "id" : "803a80c0-f5b5-4762-af23-2019c11d532f",
+                          "type" : "component"
+                        } ],
+                        "id" : "4191a2b1-6229-4d4f-907c-7a6cba049428",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Calm & Cozy Cat Wrap",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-large\",\"headingTag\":\"h2\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "a9da421a-70b1-4ab9-a722-9a8b21d40e15",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "imageInfos" : "",
+                            "richTextValue" : "<p id=\"calmcozy\">Visit <a href=\"ttps://calmcozycat.com/\" target=\"_blank\">https://calmcozycat.com/<a/> and use code FF25 at checkout for 15% off any regularly priced individual wrap. Limit one use per customer.</p>"
+                          },
+                          "definition" : "community_builder:htmlEditor",
+                          "id" : "8f54eb50-d00a-4ea6-a952-c782d0336779",
+                          "type" : "component"
+                        } ],
+                        "id" : "7a58199b-bc91-4130-9451-1df769a6029d",
+                        "name" : "1b824",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "f172f244-77a7-45a2-9f54-fb0b5e5c39b1",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "200px",
+                        "columnVerticalAlign" : "center",
+                        "dxpStyle" : {
+                          "padding" : {
+                            "bottom" : "",
+                            "left" : "20px",
+                            "right" : "20px",
+                            "top" : ""
+                          }
+                        },
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"ab882df8-12d8-4f91-a498-c6dbb68706ad\",\"columns\":[{\"UUID\":\"15ed4149-f8b4-4be5-b9d5-b06843404b68\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"7c23a2d2-7279-435a-80c2-ea4e1de79ec8\",\"columnName\":\"Column 2\",\"columnKey\":\"1b824\",\"columnWidth\":\"9\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "fit" : "contain",
+                            "height" : 350,
+                            "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCFOQ3RXQM4JBRVHEGSMHKVHLLVY\",\"contentType\":null}}",
+                            "overlayColor" : "",
+                            "position" : "center center",
+                            "width" : 100
+                          },
+                          "definition" : "dxp_base:image",
+                          "id" : "65513da7-b5bb-499c-a7e7-1111cb8b1099",
+                          "type" : "component"
+                        } ],
+                        "id" : "15ed4149-f8b4-4be5-b9d5-b06843404b68",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Calmr Dog Toys",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-large\",\"headingTag\":\"h2\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "cd2bae15-a322-4083-8448-d76be3ce4243",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "imageInfos" : "",
+                            "richTextValue" : "<p id=\"calmr\">All Fear Free Members will receive a 15% discount off their product selection(s) when utilizing the code FEARFREE at checkout. Visit&nbsp;<a href=\"http://www.calmrdog.com/\" target=\"_blank\" rel=\"noreferrer noopener\">www.calmrdog.com</a>&nbsp;to shop today!</p>"
+                          },
+                          "definition" : "community_builder:htmlEditor",
+                          "id" : "279e6c3f-20d6-4c8d-bcc4-ff51d1c75161",
+                          "type" : "component"
+                        } ],
+                        "id" : "7c23a2d2-7279-435a-80c2-ea4e1de79ec8",
+                        "name" : "1b824",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "ab882df8-12d8-4f91-a498-c6dbb68706ad",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "200px",
+                        "columnVerticalAlign" : "center",
+                        "dxpStyle" : {
+                          "padding" : {
+                            "bottom" : "",
+                            "left" : "20px",
+                            "right" : "20px",
+                            "top" : ""
+                          }
+                        },
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"f8a8f56d-1b4b-4e42-bb5e-d99bb3116a48\",\"columns\":[{\"UUID\":\"d1d1d376-8fb6-41d1-9cb2-0eb6f0021d89\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"126b2365-58e4-4930-b971-81569cb1b190\",\"columnName\":\"Column 2\",\"columnKey\":\"1b824\",\"columnWidth\":\"9\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "fit" : "contain",
+                            "height" : 350,
+                            "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MC6VUUKBSKJ5AEVFOZWJXATHYLOQ\",\"contentType\":null}}",
+                            "overlayColor" : "",
+                            "position" : "center center",
+                            "width" : 100
+                          },
+                          "definition" : "dxp_base:image",
+                          "id" : "6bf1da15-618a-4f66-9596-e69bc95eaf8c",
+                          "type" : "component"
+                        } ],
+                        "id" : "d1d1d376-8fb6-41d1-9cb2-0eb6f0021d89",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "CASCO Pet",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-large\",\"headingTag\":\"h2\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "a6d85450-0c85-46e7-848e-174982567419",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "imageInfos" : "",
+                            "richTextValue" : "<p id=\"casco\">With 5% off our clinical housing for all Fear Free members,&nbsp;<a href=\"https://go.cascopet.com/l/876851/2021-08-10/l14jlr\" target=\"_blank\" rel=\"noreferrer noopener\"><strong>download our brochure</strong></a>&nbsp;and quote<strong>&nbsp;FEARFREE5&nbsp;</strong>to claim your discount.</p>"
+                          },
+                          "definition" : "community_builder:htmlEditor",
+                          "id" : "3532ec9f-180a-47e8-afbf-6e997bb16a25",
+                          "type" : "component"
+                        } ],
+                        "id" : "126b2365-58e4-4930-b971-81569cb1b190",
+                        "name" : "1b824",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "f8a8f56d-1b4b-4e42-bb5e-d99bb3116a48",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "200px",
+                        "columnVerticalAlign" : "center",
+                        "dxpStyle" : {
+                          "padding" : {
+                            "bottom" : "",
+                            "left" : "20px",
+                            "right" : "20px",
+                            "top" : ""
+                          }
+                        },
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"7497ef0a-6ea6-40e4-aa47-25fc08ae4684\",\"columns\":[{\"UUID\":\"da979675-8e7b-4d11-914a-c105bc1b9027\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"1a55f1ab-0195-4f7c-bae2-077ac7605be5\",\"columnName\":\"Column 2\",\"columnKey\":\"1b824\",\"columnWidth\":\"9\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "fit" : "contain",
+                            "height" : 350,
+                            "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCUVCLXZEH2BCVTN774PHINZW5VU\",\"contentType\":null}}",
+                            "overlayColor" : "",
+                            "position" : "center center",
+                            "width" : 100
+                          },
+                          "definition" : "dxp_base:image",
+                          "id" : "3ca10acd-6e85-4e13-8e2a-6b43b54fc6a6",
+                          "type" : "component"
+                        } ],
+                        "id" : "da979675-8e7b-4d11-914a-c105bc1b9027",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Companion",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-large\",\"headingTag\":\"h2\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "07c409df-2e77-4166-8988-e9449ea2fedb",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "imageInfos" : "",
+                            "richTextValue" : "<p id=\"companion\">Companion is available for reservations through&nbsp;<a href=\"https://joincompanion.com/\" target=\"_blank\" rel=\"noreferrer noopener\">www.joincompanion.com</a>. Reservations require a $49 refundable deposit and orders will ship based on priority of reservation date. As of April 11, 2023, the next available ship date is February 2024.</p>"
+                          },
+                          "definition" : "community_builder:htmlEditor",
+                          "id" : "fb81f3fa-e814-4a99-9ea6-ae2c57c0df3e",
+                          "type" : "component"
+                        } ],
+                        "id" : "1a55f1ab-0195-4f7c-bae2-077ac7605be5",
+                        "name" : "1b824",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "7497ef0a-6ea6-40e4-aa47-25fc08ae4684",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "200px",
+                        "columnVerticalAlign" : "center",
+                        "dxpStyle" : {
+                          "padding" : {
+                            "bottom" : "",
+                            "left" : "20px",
+                            "right" : "20px",
+                            "top" : ""
+                          }
+                        },
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"f81ac497-b0cf-4f30-94a3-bcd2222d8ff1\",\"columns\":[{\"UUID\":\"6e90670c-a518-4aa8-a4c7-cb4cce337b01\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"14da96b9-7486-4d9b-b3be-109800cfe6b5\",\"columnName\":\"Column 2\",\"columnKey\":\"1b824\",\"columnWidth\":\"9\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "fit" : "contain",
+                            "height" : 350,
+                            "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCQQ5VBEXZKNHPROWQJBORLNX2Q4\",\"contentType\":null}}",
+                            "overlayColor" : "",
+                            "position" : "center center",
+                            "width" : 100
+                          },
+                          "definition" : "dxp_base:image",
+                          "id" : "fec2dbb1-8e40-4b6b-9936-4f26ce68396c",
+                          "type" : "component"
+                        } ],
+                        "id" : "6e90670c-a518-4aa8-a4c7-cb4cce337b01",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "CoVet",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-large\",\"headingTag\":\"h2\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "80837f45-140b-45b6-9c1c-ab39d605515b",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "imageInfos" : "",
+                            "richTextValue" : "<p id=\"covet\">Fear Free members&nbsp;<a href=\"https://co.vet/fearfree\" target=\"_blank\">click here</a>&nbsp;to receive a 15% on your purchase.</p>"
+                          },
+                          "definition" : "community_builder:htmlEditor",
+                          "id" : "4b42987f-da92-4824-8058-a7da2cabc40f",
+                          "type" : "component"
+                        } ],
+                        "id" : "14da96b9-7486-4d9b-b3be-109800cfe6b5",
+                        "name" : "1b824",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "f81ac497-b0cf-4f30-94a3-bcd2222d8ff1",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "200px",
+                        "columnVerticalAlign" : "center",
+                        "dxpStyle" : {
+                          "padding" : {
+                            "bottom" : "",
+                            "left" : "20px",
+                            "right" : "20px",
+                            "top" : ""
+                          }
+                        },
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"d365e834-433c-454a-9d77-970a7756acc1\",\"columns\":[{\"UUID\":\"8f6825cb-a628-4c65-b5ff-1bd581dd4f2b\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"2b669af4-5613-4950-a49d-e7b8d8cf1a0b\",\"columnName\":\"Column 2\",\"columnKey\":\"1b824\",\"columnWidth\":\"9\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "fit" : "contain",
+                            "height" : 350,
+                            "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCJQAP5SSIGFC7PNZBLXIF4DN6G4\",\"contentType\":null}}",
+                            "overlayColor" : "",
+                            "position" : "center center",
+                            "width" : 100
+                          },
+                          "definition" : "dxp_base:image",
+                          "id" : "44609ba7-1f1b-4592-9203-42dd19f26e85",
+                          "type" : "component"
+                        } ],
+                        "id" : "8f6825cb-a628-4c65-b5ff-1bd581dd4f2b",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Ezee-Visit Pet Vet Mat",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-large\",\"headingTag\":\"h2\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "6f23978c-165a-43d4-a0e7-0abc4f52c4d4",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "imageInfos" : "",
+                            "richTextValue" : "<p id=\"ezee\"><strong>Take 10% off the price of ALL mats!</strong> Just use code FFPPP when checking out to receive your discount.</p>"
+                          },
+                          "definition" : "community_builder:htmlEditor",
+                          "id" : "c6048679-fa44-452f-b7d8-45b26e6a63b4",
+                          "type" : "component"
+                        } ],
+                        "id" : "2b669af4-5613-4950-a49d-e7b8d8cf1a0b",
+                        "name" : "1b824",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "d365e834-433c-454a-9d77-970a7756acc1",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "200px",
+                        "columnVerticalAlign" : "center",
+                        "dxpStyle" : {
+                          "padding" : {
+                            "bottom" : "",
+                            "left" : "20px",
+                            "right" : "20px",
+                            "top" : ""
+                          }
+                        },
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"71d24824-62cd-47da-a310-79aa9be5483b\",\"columns\":[{\"UUID\":\"373a165f-8ab6-46c8-9940-807c2b07a182\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"0adc5858-b44f-4950-ab12-a71798c9c270\",\"columnName\":\"Column 2\",\"columnKey\":\"1b824\",\"columnWidth\":\"9\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "fit" : "contain",
+                            "height" : 350,
+                            "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCEQCPN25GIVGATASBTWJYBCSWWA\",\"contentType\":null}}",
+                            "overlayColor" : "",
+                            "position" : "center center",
+                            "width" : 100
+                          },
+                          "definition" : "dxp_base:image",
+                          "id" : "060f84b9-0af3-4121-bc61-b4c1f6149ad8",
+                          "type" : "component"
+                        } ],
+                        "id" : "373a165f-8ab6-46c8-9940-807c2b07a182",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Gravity Payments",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-large\",\"headingTag\":\"h2\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "6ba66597-fe37-4d22-ad65-f1aa052727cc",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "imageInfos" : "",
+                            "richTextValue" : "<p id=\"gravity\">Exclusive Offer: $500.00 toward your Fear Free Certification! <a href=\"https://gravitypayments.com/lp/fear-free/\" target=\"_blank\">Click here to learn more</a></p>"
+                          },
+                          "definition" : "community_builder:htmlEditor",
+                          "id" : "9a02d7c8-0a42-4a08-a797-6522e09f018a",
+                          "type" : "component"
+                        } ],
+                        "id" : "0adc5858-b44f-4950-ab12-a71798c9c270",
+                        "name" : "1b824",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "71d24824-62cd-47da-a310-79aa9be5483b",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "200px",
+                        "columnVerticalAlign" : "center",
+                        "dxpStyle" : {
+                          "padding" : {
+                            "bottom" : "",
+                            "left" : "20px",
+                            "right" : "20px",
+                            "top" : ""
+                          }
+                        },
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"64b0365e-3eee-472f-a849-e3844014c299\",\"columns\":[{\"UUID\":\"d4c04eae-73d8-4ef8-a21f-cf16528ac905\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"ab9225b6-32b2-4c53-91a1-87b7fb08bd1e\",\"columnName\":\"Column 2\",\"columnKey\":\"1b824\",\"columnWidth\":\"9\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "fit" : "contain",
+                            "height" : 350,
+                            "imageInfo" : "{\"imageInfoV1\":{\"url\":\"/sfsites/c/cms/delivery/media/MCWBOWGANPVJEDTEEUJNFQB3ORY4?lastModifiedDate=Wed Feb 19 15:02:15 GMT 2025\",\"altText\":\"\",\"contentKey\":\"MCWBOWGANPVJEDTEEUJNFQB3ORY4\",\"contentType\":null}}",
+                            "overlayColor" : "",
+                            "position" : "center center",
+                            "width" : 100
+                          },
+                          "definition" : "dxp_base:image",
+                          "id" : "895c6e8f-ccc0-46b2-86e5-c2e3e77b64d1",
+                          "type" : "component"
+                        } ],
+                        "id" : "d4c04eae-73d8-4ef8-a21f-cf16528ac905",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "KeraVet Bio",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-large\",\"headingTag\":\"h2\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "85f7ccde-604f-4d15-804e-6d2713245b78",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "imageInfos" : "",
+                            "richTextValue" : "<p id=\"keravet\">KeraVet Gel offers Fear Free Members a unique discount – Buy 4, Get 2 FREE using code “FearFree” when purchasing from Covetrus. <a href=\"https://northamerica.covetrus.com/Product?sku=083417\" target=\"_blank\">Click here to purchase</a>.</p> \n<p>KeraVet Gel is also available from Patterson Veterinary, Victor Medical and MWI Animal Health. \n*KeraVet Gel is a prescription-only product and available only in the U.S. For more information, contact Michelle Barson <a href=\"mailto:mbarson@keravetbio.com\">(mbarson@keravetbio.com)</a>. There are no quantity restrictions for Fear Free purchasers.</p>"
+                          },
+                          "definition" : "community_builder:htmlEditor",
+                          "id" : "9316fcdc-d26f-4367-bceb-11e5fcaae1fa",
+                          "type" : "component"
+                        } ],
+                        "id" : "ab9225b6-32b2-4c53-91a1-87b7fb08bd1e",
+                        "name" : "1b824",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "64b0365e-3eee-472f-a849-e3844014c299",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "200px",
+                        "columnVerticalAlign" : "center",
+                        "dxpStyle" : {
+                          "padding" : {
+                            "bottom" : "",
+                            "left" : "20px",
+                            "right" : "20px",
+                            "top" : ""
+                          }
+                        },
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"57c108b2-484b-45a0-a0d9-f04a0a280af0\",\"columns\":[{\"UUID\":\"2b73fd69-c189-4efa-b412-bc735e4e9f83\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"20534a7f-ec9d-49a8-8a8b-f4b1d8f30ce6\",\"columnName\":\"Column 2\",\"columnKey\":\"1b824\",\"columnWidth\":\"9\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "fit" : "contain",
+                            "height" : 350,
+                            "imageInfo" : "{\"imageInfoV1\":{\"url\":\"/sfsites/c/cms/delivery/media/MCPQHCHTCANNH3TDPWP3EUX5CN4E?lastModifiedDate=Wed Feb 19 15:04:29 GMT 2025\",\"altText\":\"\",\"contentKey\":\"MCPQHCHTCANNH3TDPWP3EUX5CN4E\",\"contentType\":null}}",
+                            "overlayColor" : "",
+                            "position" : "center center",
+                            "width" : 100
+                          },
+                          "definition" : "dxp_base:image",
+                          "id" : "60cdb490-866c-46ca-8427-44e4ba19cb8b",
+                          "type" : "component"
+                        } ],
+                        "id" : "2b73fd69-c189-4efa-b412-bc735e4e9f83",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Lenderking Caging Products",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-large\",\"headingTag\":\"h2\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "fd297dd8-b374-4778-85af-69ae6938a18d",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "imageInfos" : "",
+                            "richTextValue" : "<p id=\"lenderking\">For customers wishing to take account of the 5% discount just add <strong>FEARFREE</strong> in your subject line when asking for a quote on our products.</p>"
+                          },
+                          "definition" : "community_builder:htmlEditor",
+                          "id" : "8d2db3d1-4ad7-4a66-9fb8-b1795b136531",
+                          "type" : "component"
+                        } ],
+                        "id" : "20534a7f-ec9d-49a8-8a8b-f4b1d8f30ce6",
+                        "name" : "1b824",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "57c108b2-484b-45a0-a0d9-f04a0a280af0",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "200px",
+                        "columnVerticalAlign" : "center",
+                        "dxpStyle" : {
+                          "padding" : {
+                            "bottom" : "",
+                            "left" : "20px",
+                            "right" : "20px",
+                            "top" : ""
+                          }
+                        },
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"29eca887-a9fc-45d2-9807-74e8e9436f8e\",\"columns\":[{\"UUID\":\"7bd62d69-0d8c-4ebc-b8f8-d9ca85180631\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"d9509cdf-7dc2-4b22-8dba-0357bbdaba53\",\"columnName\":\"Column 2\",\"columnKey\":\"1b824\",\"columnWidth\":\"9\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "fit" : "contain",
+                            "height" : 350,
+                            "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MC373V76LTXRAPDPF6D5P5KUQJ5U\",\"contentType\":null}}",
+                            "overlayColor" : "",
+                            "position" : "center center",
+                            "width" : 100
+                          },
+                          "definition" : "dxp_base:image",
+                          "id" : "5fdad885-f28c-45ff-a062-42aa31ee1de1",
+                          "type" : "component"
+                        } ],
+                        "id" : "7bd62d69-0d8c-4ebc-b8f8-d9ca85180631",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Maven Pet",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-large\",\"headingTag\":\"h2\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "b4dee93e-c15c-44f8-b284-ce35fcb48a1e",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "imageInfos" : "",
+                            "richTextValue" : "<p id=\"maven\">Book a demo now, and your team’s lunch is on Maven! <a href=\"https://calendly.com/gary-maven/lunchandlearn\" target=\"_blank\"><strong>BOOK A DEMO NOW</strong></a></p>"
+                          },
+                          "definition" : "community_builder:htmlEditor",
+                          "id" : "9cbf26f9-bdba-4bb0-9010-53887ff21186",
+                          "type" : "component"
+                        } ],
+                        "id" : "d9509cdf-7dc2-4b22-8dba-0357bbdaba53",
+                        "name" : "1b824",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "29eca887-a9fc-45d2-9807-74e8e9436f8e",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "200px",
+                        "columnVerticalAlign" : "center",
+                        "dxpStyle" : {
+                          "padding" : {
+                            "bottom" : "",
+                            "left" : "20px",
+                            "right" : "20px",
+                            "top" : ""
+                          }
+                        },
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"32854432-0a07-490b-80eb-46effcc35bf5\",\"columns\":[{\"UUID\":\"cd0e90c9-2955-4fdb-a446-db1ac1255d65\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"805118e1-f259-4167-b167-ef329bc8f0df\",\"columnName\":\"Column 2\",\"columnKey\":\"1b824\",\"columnWidth\":\"9\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "fit" : "contain",
+                            "height" : 350,
+                            "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCSWRJZIDN5NHOTCEL2BPQBMEQ2Y\",\"contentType\":null}}",
+                            "overlayColor" : "",
+                            "position" : "center center",
+                            "width" : 100
+                          },
+                          "definition" : "dxp_base:image",
+                          "id" : "ac436d31-242d-4a06-9212-db744909fda3",
+                          "type" : "component"
+                        } ],
+                        "id" : "cd0e90c9-2955-4fdb-a446-db1ac1255d65",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "NoFear Pet Mats",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-large\",\"headingTag\":\"h2\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "6b232cbd-fb5d-4008-b523-f1835b57307e",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "imageInfos" : "",
+                            "richTextValue" : "<p id=\"nofear\">Visit our store to buy your new pet mats: https://nofearpetmats.com/products/. In the United States only, use code MFFC10 to receive 10% off of any non-clearance mat!</p>"
+                          },
+                          "definition" : "community_builder:htmlEditor",
+                          "id" : "c4c878d1-efd7-4d44-96ee-51c52a657308",
+                          "type" : "component"
+                        } ],
+                        "id" : "805118e1-f259-4167-b167-ef329bc8f0df",
+                        "name" : "1b824",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "32854432-0a07-490b-80eb-46effcc35bf5",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "200px",
+                        "columnVerticalAlign" : "center",
+                        "dxpStyle" : {
+                          "padding" : {
+                            "bottom" : "",
+                            "left" : "20px",
+                            "right" : "20px",
+                            "top" : ""
+                          }
+                        },
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"cfc54189-53c1-4c65-bdeb-67767ee6cbd6\",\"columns\":[{\"UUID\":\"8478c836-93d1-4c81-ac4b-ef2069a83d18\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"b9d9d5b7-f0f3-4302-962a-9aeddcc5708d\",\"columnName\":\"Column 2\",\"columnKey\":\"1b824\",\"columnWidth\":\"9\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "fit" : "contain",
+                            "height" : 350,
+                            "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCH42Z5B3PWRA2NH6O54PCMT3IEY\",\"contentType\":null}}",
+                            "overlayColor" : "",
+                            "position" : "center center",
+                            "width" : 100
+                          },
+                          "definition" : "dxp_base:image",
+                          "id" : "3c3f54e3-c87b-4a5d-b9f6-73ca4e2945cc",
+                          "type" : "component"
+                        } ],
+                        "id" : "8478c836-93d1-4c81-ac4b-ef2069a83d18",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Paw Prosper",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-large\",\"headingTag\":\"h2\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "e5e2b979-4016-4fe2-afa9-d32522f9d9a7",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "imageInfos" : "",
+                            "richTextValue" : "<p id=\"prosper\">Purchase instructions coming soon.</p>"
+                          },
+                          "definition" : "community_builder:htmlEditor",
+                          "id" : "908d7591-e37d-40a7-9c0a-4126982cd7b3",
+                          "type" : "component"
+                        } ],
+                        "id" : "b9d9d5b7-f0f3-4302-962a-9aeddcc5708d",
+                        "name" : "1b824",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "cfc54189-53c1-4c65-bdeb-67767ee6cbd6",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "200px",
+                        "columnVerticalAlign" : "center",
+                        "dxpStyle" : {
+                          "padding" : {
+                            "bottom" : "",
+                            "left" : "20px",
+                            "right" : "20px",
+                            "top" : ""
+                          }
+                        },
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"1bee6a74-db8b-4102-8416-ea3f2758ba6e\",\"columns\":[{\"UUID\":\"889b9b6c-e3ac-43bf-ab26-cdd3e41a6358\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"5905fda2-cd69-4be7-b722-5dce0bdc4820\",\"columnName\":\"Column 2\",\"columnKey\":\"1b824\",\"columnWidth\":\"9\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "fit" : "contain",
+                            "height" : 350,
+                            "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCI7DWK63XHRHLZCZLAGK34SL5BE\",\"contentType\":null}}",
+                            "overlayColor" : "",
+                            "position" : "center center",
+                            "width" : 100
+                          },
+                          "definition" : "dxp_base:image",
+                          "id" : "71fe4304-3a59-4db8-8bea-56a5346c33ac",
+                          "type" : "component"
+                        } ],
+                        "id" : "889b9b6c-e3ac-43bf-ab26-cdd3e41a6358",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "ProEdge by Pet Therapeutics",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-large\",\"headingTag\":\"h2\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "740d132a-e23f-4c79-b3e2-1dd437eb652a",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "imageInfos" : "",
+                            "richTextValue" : "<p id=\"proedge\">All Fear Free Members receive a 5% discount when using the code FFREE5 at <a href=\"http://www.pettherapeutics.net/\" target=\"_blank\">checkout</a>.</p>"
+                          },
+                          "definition" : "community_builder:htmlEditor",
+                          "id" : "fdc87319-fd1d-4783-b5b8-991cba53966c",
+                          "type" : "component"
+                        } ],
+                        "id" : "5905fda2-cd69-4be7-b722-5dce0bdc4820",
+                        "name" : "1b824",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "1bee6a74-db8b-4102-8416-ea3f2758ba6e",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "200px",
+                        "columnVerticalAlign" : "center",
+                        "dxpStyle" : {
+                          "padding" : {
+                            "bottom" : "",
+                            "left" : "20px",
+                            "right" : "20px",
+                            "top" : ""
+                          }
+                        },
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"3f825cf7-756c-4df3-b3bf-7ae392501e59\",\"columns\":[{\"UUID\":\"9f5ceba1-e93f-4f75-9d64-f1d60c1c480a\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"8897e7df-49ce-4892-b8fe-7d3a841f7028\",\"columnName\":\"Column 2\",\"columnKey\":\"1b824\",\"columnWidth\":\"9\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "fit" : "contain",
+                            "height" : 350,
+                            "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCMFMK5BD6VRAIHFL76HRA4IALJE\",\"contentType\":null}}",
+                            "overlayColor" : "",
+                            "position" : "center center",
+                            "width" : 100
+                          },
+                          "definition" : "dxp_base:image",
+                          "id" : "1adc243d-c0c6-40bc-9474-d4abf6769457",
+                          "type" : "component"
+                        } ],
+                        "id" : "9f5ceba1-e93f-4f75-9d64-f1d60c1c480a",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Roo",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-large\",\"headingTag\":\"h2\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "bd0688a2-dd46-4c55-baf4-47eeeb01c34e",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "imageInfos" : "",
+                            "richTextValue" : "<p id=\"roo\">Veterinarians, technicians, and hospitals can join Roo for free to access thousands of relief shifts and talented professionals.</p>"
+                          },
+                          "definition" : "community_builder:htmlEditor",
+                          "id" : "0787d3c9-1537-41fb-b451-f1d76d43a41c",
+                          "type" : "component"
+                        } ],
+                        "id" : "8897e7df-49ce-4892-b8fe-7d3a841f7028",
+                        "name" : "1b824",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "3f825cf7-756c-4df3-b3bf-7ae392501e59",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "200px",
+                        "columnVerticalAlign" : "center",
+                        "dxpStyle" : {
+                          "padding" : {
+                            "bottom" : "",
+                            "left" : "20px",
+                            "right" : "20px",
+                            "top" : ""
+                          }
+                        },
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"b6f20f6d-619b-4121-8e41-9096e62c1367\",\"columns\":[{\"UUID\":\"78c437f5-7c6e-4742-a7d0-0f6b77f729d7\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"8d90bede-25ec-48a2-891d-75dd1c016e53\",\"columnName\":\"Column 2\",\"columnKey\":\"1b824\",\"columnWidth\":\"9\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "fit" : "contain",
+                            "height" : 350,
+                            "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCF5Q3COA7OZHL7CDRPEHKC3QGHY\",\"contentType\":null}}",
+                            "overlayColor" : "",
+                            "position" : "center center",
+                            "width" : 100
+                          },
+                          "definition" : "dxp_base:image",
+                          "id" : "27bd7916-2b27-404d-b6bd-073442682076",
+                          "type" : "component"
+                        } ],
+                        "id" : "78c437f5-7c6e-4742-a7d0-0f6b77f729d7",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Shepherd",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-large\",\"headingTag\":\"h2\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "d06a5cd9-f665-49a3-b2f1-99653f38ec8e",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "imageInfos" : "",
+                            "richTextValue" : "<p id=\"shepherd\">Our custom-built integration is available exclusively for Fear Free Certified Practices at no additional cost. Getting curious about Shepherd and ready to schedule a demo? Schedule time with us at <a href=\"https://www.shepherd.vet/schedule-a-demo\" target=\"_blank\">www.shepherd.vet/schedule-a-demo</a> today!</p>"
+                          },
+                          "definition" : "community_builder:htmlEditor",
+                          "id" : "6bb2cfdd-c22f-4b17-94a1-57702097fa84",
+                          "type" : "component"
+                        } ],
+                        "id" : "8d90bede-25ec-48a2-891d-75dd1c016e53",
+                        "name" : "1b824",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "b6f20f6d-619b-4121-8e41-9096e62c1367",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "200px",
+                        "columnVerticalAlign" : "center",
+                        "dxpStyle" : {
+                          "padding" : {
+                            "bottom" : "",
+                            "left" : "20px",
+                            "right" : "20px",
+                            "top" : ""
+                          }
+                        },
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"c927957d-4d02-4a63-a354-5eee8e9df46e\",\"columns\":[{\"UUID\":\"3a8498ea-56e8-43de-a712-15853cb5b939\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"6fbc70d8-621b-4c00-8bcb-0f5e9e6edf95\",\"columnName\":\"Column 2\",\"columnKey\":\"1b824\",\"columnWidth\":\"9\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "fit" : "contain",
+                            "height" : 350,
+                            "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCT5J537DTGRDMBLYA24WTSOW7LA\",\"contentType\":null}}",
+                            "overlayColor" : "",
+                            "position" : "center center",
+                            "width" : 100
+                          },
+                          "definition" : "dxp_base:image",
+                          "id" : "4d3ae655-e420-47f2-9e56-9e94cde76e9d",
+                          "type" : "component"
+                        } ],
+                        "id" : "3a8498ea-56e8-43de-a712-15853cb5b939",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Sleepypod",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-large\",\"headingTag\":\"h2\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "cc69868c-cd31-4123-94b6-dc344501e0e0",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "imageInfos" : "",
+                            "richTextValue" : "<p id=\"sleepypod\">Fear Free Certified Professionals receive a 25% discount off of Sleepypod products from Sleepypod’s online web store at <a href=\"https://sleepypod.com\" target=\"_blank\">Sleepypod.com</a>. Use code FF25 at checkout.</p>\n<p>Fear Free Certified Professionals making purchases for their veterinary facility’s retail store will receive a 5% discount in addition to Sleepypod’s regular wholesale discount of 45%. The minimum wholesale order is $300. Please contact sales <a href=\"mailto:sales@sleepypod.com\">(sales@sleepypod.com)</a> to place your wholesale order.</p>"
+                          },
+                          "definition" : "community_builder:htmlEditor",
+                          "id" : "05802451-7503-4aa9-8f9e-112aede48cb9",
+                          "type" : "component"
+                        } ],
+                        "id" : "6fbc70d8-621b-4c00-8bcb-0f5e9e6edf95",
+                        "name" : "1b824",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "c927957d-4d02-4a63-a354-5eee8e9df46e",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "200px",
+                        "columnVerticalAlign" : "center",
+                        "dxpStyle" : {
+                          "padding" : {
+                            "bottom" : "",
+                            "left" : "20px",
+                            "right" : "20px",
+                            "top" : ""
+                          }
+                        },
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"f04f37bc-38b2-4acd-b008-fb7bd76ccfe9\",\"columns\":[{\"UUID\":\"a85502c8-03b9-48cb-aa39-9233ec21577a\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"391d1b2f-ca0a-4114-ad36-26130157fdc9\",\"columnName\":\"Column 2\",\"columnKey\":\"1b824\",\"columnWidth\":\"9\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "fit" : "contain",
+                            "height" : 350,
+                            "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCQZNC2PWY3ZGZXPYACT2B3HKLJM\",\"contentType\":null}}",
+                            "overlayColor" : "",
+                            "position" : "center center",
+                            "width" : 100
+                          },
+                          "definition" : "dxp_base:image",
+                          "id" : "5d73d7aa-48e0-47a4-89a4-0abdf30bde1f",
+                          "type" : "component"
+                        } ],
+                        "id" : "a85502c8-03b9-48cb-aa39-9233ec21577a",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Talkatoo",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-large\",\"headingTag\":\"h2\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "f69996d5-9fe0-4d54-b486-443e898101ad",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "imageInfos" : "",
+                            "richTextValue" : "<p id=\"talkatoo\">Purchase instructions coming soon.</p>"
+                          },
+                          "definition" : "community_builder:htmlEditor",
+                          "id" : "9272fdda-454b-47fc-9232-fe5286dd0b89",
+                          "type" : "component"
+                        } ],
+                        "id" : "391d1b2f-ca0a-4114-ad36-26130157fdc9",
+                        "name" : "1b824",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "f04f37bc-38b2-4acd-b008-fb7bd76ccfe9",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "200px",
+                        "columnVerticalAlign" : "center",
+                        "dxpStyle" : {
+                          "padding" : {
+                            "bottom" : "",
+                            "left" : "20px",
+                            "right" : "20px",
+                            "top" : ""
+                          }
+                        },
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"3be23e4e-5dfb-42db-9494-1c27ae845c3d\",\"columns\":[{\"UUID\":\"7d5aee5a-b9fe-4456-ad0e-d05146c8c7d0\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"238db392-fab8-4453-b0eb-eac23d803d3e\",\"columnName\":\"Column 2\",\"columnKey\":\"1b824\",\"columnWidth\":\"9\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "fit" : "contain",
+                            "height" : 350,
+                            "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCVV6ZMSKVSRF7PDQOH7LOHXELNU\",\"contentType\":null}}",
+                            "overlayColor" : "",
+                            "position" : "center center",
+                            "width" : 100
+                          },
+                          "definition" : "dxp_base:image",
+                          "id" : "4eddb279-88e9-4f66-a877-d1d57fc083a8",
+                          "type" : "component"
+                        } ],
+                        "id" : "7d5aee5a-b9fe-4456-ad0e-d05146c8c7d0",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Tiki Cat® Veterinary Solutions™",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-large\",\"headingTag\":\"h2\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "3334362d-72cb-4b62-b20f-12ad871401ad",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "imageInfos" : "",
+                            "richTextValue" : "<h5 id=\"tikicat\">Fear Free Members may obtain exclusive discounts here:<h5>\n<br>\n<a href=\"https://northamerica.covetrus.com/search?q=tiki%20cat\" target=\"_blank\">Covetrus:</a>\n<p><strong>Code: TCVSFF10</strong></p>\n<p>This discount is for 10% off and no minimum purchase required.</p>\n<br>\n<a href=\"https://www.chewy.com/brands/tiki-cat-7617\" target=\"_blank\">Chewy:</a>\n<p><strong>Code: TIKIVETFEARFREE</strong></p>\n<p>This discount applies to the 70ct mousse stix jars only. Buy 3 and get 10% off!</p>"
+                          },
+                          "definition" : "community_builder:htmlEditor",
+                          "id" : "36694723-976c-4976-a4b0-a7ac89b00e07",
+                          "type" : "component"
+                        } ],
+                        "id" : "238db392-fab8-4453-b0eb-eac23d803d3e",
+                        "name" : "1b824",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "3be23e4e-5dfb-42db-9494-1c27ae845c3d",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "200px",
+                        "columnVerticalAlign" : "center",
+                        "dxpStyle" : {
+                          "padding" : {
+                            "bottom" : "",
+                            "left" : "20px",
+                            "right" : "20px",
+                            "top" : ""
+                          }
+                        },
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"67925ef6-71a9-46c6-9990-f3cd1fabbece\",\"columns\":[{\"UUID\":\"789770fe-3f70-44b1-9563-abe5209f4603\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"6e164a2a-36ec-47fc-8e8a-55cafab05e5e\",\"columnName\":\"Column 2\",\"columnKey\":\"1b824\",\"columnWidth\":\"9\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "fit" : "contain",
+                            "height" : 350,
+                            "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCX2XAE6V7Y5BNFCJAINCNU2QHSY\",\"contentType\":null}}",
+                            "overlayColor" : "",
+                            "position" : "center center",
+                            "width" : 100
+                          },
+                          "definition" : "dxp_base:image",
+                          "id" : "1640cb0b-8726-408c-86a6-dc4937c5e235",
+                          "type" : "component"
+                        } ],
+                        "id" : "789770fe-3f70-44b1-9563-abe5209f4603",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "UNIMIN",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-large\",\"headingTag\":\"h2\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "34c8e2b1-8f2e-440c-a82e-bd1b21d22ebc",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "imageInfos" : "",
+                            "richTextValue" : "<p id=\"unimin\">Visit <a href=\"https://uniminpet.com\" target=\"_blank\">Sleepypod.com</a> to receive the best discount available! Fear Free Members receive an exclusive 20% discount with code FEARFREEPP20 (no minimum amount required).</p>"
+                          },
+                          "definition" : "community_builder:htmlEditor",
+                          "id" : "9cc10baa-a4de-4f06-b250-39365d7afdcf",
+                          "type" : "component"
+                        } ],
+                        "id" : "6e164a2a-36ec-47fc-8e8a-55cafab05e5e",
+                        "name" : "1b824",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "67925ef6-71a9-46c6-9990-f3cd1fabbece",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "200px",
+                        "columnVerticalAlign" : "center",
+                        "dxpStyle" : {
+                          "padding" : {
+                            "bottom" : "",
+                            "left" : "20px",
+                            "right" : "20px",
+                            "top" : ""
+                          }
+                        },
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"909cf1f8-9240-45a6-a437-0fa6b9f99200\",\"columns\":[{\"UUID\":\"c2b9284a-37f4-4cb9-af91-3fe4fb12d9b3\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"79d1ce9b-4d10-453d-b06d-52fabf1af065\",\"columnName\":\"Column 2\",\"columnKey\":\"1b824\",\"columnWidth\":\"9\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "fit" : "contain",
+                            "height" : 350,
+                            "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCYTDXEN5UHVEFBIZYEVIBLPKJ2U\",\"contentType\":null}}",
+                            "overlayColor" : "",
+                            "position" : "center center",
+                            "width" : 100
+                          },
+                          "definition" : "dxp_base:image",
+                          "id" : "9180647c-9aaf-4d25-a21b-de577efbe60a",
+                          "type" : "component"
+                        } ],
+                        "id" : "c2b9284a-37f4-4cb9-af91-3fe4fb12d9b3",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "WellVu Thermal Imaging",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-large\",\"headingTag\":\"h2\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "c4161a66-1b4a-404d-ab4c-7ea77d550380",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "imageInfos" : "",
+                            "richTextValue" : "<p id=\"wellvu\">To take advantage of Free Free Member pricing, contact your local WellVu representative today at <a href=\"https://wellvuimaging.com/veterinary-contact-fear-free\" target=\"_blank\">https://wellvuimaging.com/veterinary-contact-fear-free</a></p>"
+                          },
+                          "definition" : "community_builder:htmlEditor",
+                          "id" : "6331be93-f3ca-40b2-86d3-44b6f8febcdb",
+                          "type" : "component"
+                        } ],
+                        "id" : "79d1ce9b-4d10-453d-b06d-52fabf1af065",
+                        "name" : "1b824",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "909cf1f8-9240-45a6-a437-0fa6b9f99200",
+                      "type" : "component"
+                    } ],
+                    "id" : "d7dfc5b6-b2f5-484c-81d8-627a6ff76433",
+                    "name" : "Content-Region-Has-Membership",
+                    "title" : "Content-Region-Has-Membership",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "You must have an active membership to view product discounts.",
+                        "textAlign" : "left",
+                        "textDecoration" : "{}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "66dd0da0-a24b-4adc-a6fa-688bac607402",
+                      "type" : "component"
+                    } ],
+                    "id" : "9e2034d8-a3cb-49e2-9950-1fd110c3276e",
+                    "name" : "Content-Region-No-Membership",
+                    "title" : "Content-Region-No-Membership",
+                    "type" : "region"
+                  } ],
+                  "definition" : "c:membershipCheck",
+                  "id" : "9251f436-9434-4c81-9db8-9d7518ad96ce",
+                  "type" : "component"
+                } ],
+                "id" : "5315ac50-fa7b-4782-8d6f-b2dacd9c148c",
+                "name" : "tab2",
+                "title" : "Preferred Product Program Discounts",
+                "type" : "region"
+              }, {
+                "children" : [ {
+                  "attributes" : {
+                    "checkAccountMembership" : false,
+                    "checkCertification" : true,
+                    "checkPracticeMembership" : false,
+                    "checkVetProMembership" : false
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"bb4cfcfe-f1fc-47c0-b57e-29e0e16fff43\",\"columns\":[{\"UUID\":\"b6e0b938-8735-43df-9f3b-89b6e0a95f63\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"4\",\"seedComponents\":[]},{\"UUID\":\"119a30c2-755a-4004-a74d-f61b16599ada\",\"columnName\":\"Column 2\",\"columnKey\":\"78e1c\",\"columnWidth\":\"4\",\"seedComponents\":[]},{\"UUID\":\"f2a8aa5c-bb9e-47da-890d-7e6a2af7c6c6\",\"columnName\":\"Column 3\",\"columnKey\":\"3cc37\",\"columnWidth\":\"4\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "imageInfos" : "",
+                            "richTextValue" : "<ul>\n    <li><a class=\"ppp-link\" href=\"#bSerene\">bSerene</a></li>\n    <li><a class=\"ppp-link\" href=\"#chou2pharma\">Bella VMS</a></li>\n</ul>"
+                          },
+                          "definition" : "community_builder:htmlEditor",
+                          "id" : "5ca0cf1f-8bc9-43ac-80a2-e71ae404740d",
+                          "type" : "component"
+                        } ],
+                        "id" : "b6e0b938-8735-43df-9f3b-89b6e0a95f63",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "id" : "119a30c2-755a-4004-a74d-f61b16599ada",
+                        "name" : "78e1c",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      }, {
+                        "id" : "f2a8aa5c-bb9e-47da-890d-7e6a2af7c6c6",
+                        "name" : "3cc37",
+                        "title" : "Column 3",
+                        "type" : "region"
+                      } ],
+                      "customCssClasses" : "brand-block pale-blue-bg",
+                      "definition" : "dxp_layout:columns",
+                      "id" : "bb4cfcfe-f1fc-47c0-b57e-29e0e16fff43",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "200px",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"c4c6da64-0aef-4c95-84de-2d13243309b5\",\"columns\":[{\"UUID\":\"0a3dcd6c-a124-4d94-bf19-5403a1542480\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"3d26201b-ec8c-43ff-b4a7-7cb86b7d6d95\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"9\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "fit" : "contain",
+                            "height" : 350,
+                            "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCIISEHTKUXBHD5MS2MHAQHMUKGQ\",\"contentType\":null}}",
+                            "overlayColor" : "",
+                            "position" : "center center",
+                            "width" : 100
+                          },
+                          "definition" : "dxp_base:image",
+                          "id" : "e0c76b8b-5234-4346-b049-2cf4c30c73d2",
+                          "type" : "component"
+                        } ],
+                        "id" : "0a3dcd6c-a124-4d94-bf19-5403a1542480",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "bSerene",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-large\",\"headingTag\":\"h2\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "a5ea05eb-0226-492d-8cd6-2e2c2a35eb80",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "imageInfos" : "",
+                            "richTextValue" : "<p id=\"bSerene\">As a Fear Free Certified Member, you may receive 20% off of products at <a href=\"https://www.bserene.com/\" target=\"_blank\">bSerene.com</a> with code FearFree20!</p>"
+                          },
+                          "definition" : "community_builder:htmlEditor",
+                          "id" : "b2b715e3-c106-40de-85ea-a5961ca36d9f",
+                          "type" : "component"
+                        } ],
+                        "id" : "3d26201b-ec8c-43ff-b4a7-7cb86b7d6d95",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "c4c6da64-0aef-4c95-84de-2d13243309b5",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "200px",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"7714c32d-8ea8-4f46-bcb0-d82802a2d5d2\",\"columns\":[{\"UUID\":\"e4b5e7cd-0e75-4441-8802-424a15bcb51f\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"043ceb36-a9e7-44a6-8235-2a3dd4f0c73c\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"9\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "fit" : "contain",
+                            "height" : 350,
+                            "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCHP7TVLRYQZGTHAQ636D2JSZHW4\",\"contentType\":null}}",
+                            "overlayColor" : "",
+                            "position" : "center center",
+                            "width" : 100
+                          },
+                          "definition" : "dxp_base:image",
+                          "id" : "2ddc690b-7545-44a3-b5d9-0ecd4e8f579f",
+                          "type" : "component"
+                        } ],
+                        "id" : "e4b5e7cd-0e75-4441-8802-424a15bcb51f",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Chou2 (shu-tu) Pharma",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-large\",\"headingTag\":\"h2\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "3cb9e59b-6133-44bb-9c48-e41ff00376d1",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "imageInfos" : "",
+                            "richTextValue" : "<p id=\"chou2pharma\">As a Fear Free Certified Member, you may receive 15% off of products at <a href=\"https://www.bserene.com/\" target=\"_blank\">https://chou2pharma.com/</a> with code FEARFREE!</p>"
+                          },
+                          "definition" : "community_builder:htmlEditor",
+                          "id" : "790484db-6777-4140-b001-0e372c0e72e2",
+                          "type" : "component"
+                        } ],
+                        "id" : "043ceb36-a9e7-44a6-8235-2a3dd4f0c73c",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "7714c32d-8ea8-4f46-bcb0-d82802a2d5d2",
+                      "type" : "component"
+                    } ],
+                    "id" : "c85ea86c-aa17-4c99-a692-10227da3f504",
+                    "name" : "Content-Region-Has-Membership",
+                    "title" : "Content-Region-Has-Membership",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "You must have an active membership to view product discounts.",
+                        "textAlign" : "left",
+                        "textDecoration" : "{}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "b533f168-5a27-4e89-9b7e-595013f2bd6f",
+                      "type" : "component"
+                    } ],
+                    "id" : "50343358-931a-4aca-98d3-8ebc2c4153df",
+                    "name" : "Content-Region-No-Membership",
+                    "title" : "Content-Region-No-Membership",
+                    "type" : "region"
+                  } ],
+                  "definition" : "c:membershipCheck",
+                  "id" : "a6819b92-9eab-4552-b82e-ed0f9fa2e5c3",
+                  "type" : "component"
+                } ],
+                "id" : "d6e724b1-3866-493c-be9e-b76b40969a92",
+                "name" : "tab1",
+                "title" : "Corporate Member Program Discounts",
+                "type" : "region"
+              }, {
+                "children" : [ {
+                  "attributes" : {
+                    "checkAccountMembership" : false,
+                    "checkPracticeMembership" : false,
+                    "checkVetProMembership" : false
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "Coming soon!",
+                        "textAlign" : "left",
+                        "textDecoration" : "{}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "c989aee2-c50d-4b8c-a2c4-b694e3835776",
+                      "type" : "component"
+                    } ],
+                    "id" : "3d5dfd83-4478-4bf4-9abf-890efe7c0e28",
+                    "name" : "Content-Region-Has-Membership",
+                    "title" : "Content-Region-Has-Membership",
+                    "type" : "region"
+                  }, {
+                    "id" : "1acb7051-0fbc-4bb3-9f47-705dc77fab7c",
+                    "name" : "Content-Region-No-Membership",
+                    "title" : "Content-Region-No-Membership",
+                    "type" : "region"
+                  } ],
+                  "definition" : "c:membershipCheck",
+                  "id" : "20f273de-a6bf-433f-8314-21ad63f53f56",
+                  "type" : "component"
+                } ],
+                "id" : "ef87c7df-9e68-46d4-86e5-b5f3b4fdffc6",
+                "name" : "tab3",
+                "title" : "Facility Certification Exclusive Discounts",
+                "type" : "region"
+              } ],
+              "definition" : "dxp_layout:tabs",
+              "id" : "1ef4caa8-5095-4fa6-9df5-973468fc5ccd",
+              "type" : "component"
+            } ],
+            "id" : "dcdf150d-3349-4afe-a0d5-3a7ef86a7a7b",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "87d02276-2da0-44a3-b014-6cb333dd62b8",
+          "type" : "component"
+        } ],
+        "id" : "d4fcccfa-a955-4fbb-a8e5-973f4319223c",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "pageTitle" : "Preferred Product Program",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "6627fc48-ede2-4eff-bafb-2f7f3af48e9b",
+          "type" : "component"
+        } ],
+        "id" : "5f29bfce-a360-411b-927a-77cf417e0074",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "4f94d890-cb3b-4193-8296-29477858c8f4",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-preferred-product-program"
+  },
+  "urlName" : "preferred-product-program"
+}

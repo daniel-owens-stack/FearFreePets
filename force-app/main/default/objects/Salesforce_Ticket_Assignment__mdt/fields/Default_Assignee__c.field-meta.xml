@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Default_Assignee__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Only one Salesforce Ticket Assignment record should be marked as Default and that Assignment will be used any time there is not a specific match.</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Only one Salesforce Ticket Assignment record should be marked as Default and that Assignment will be used any time there is not a specific match.</inlineHelpText>
+    <label>Default Assignee</label>
+    <type>Checkbox</type>
+</CustomField>

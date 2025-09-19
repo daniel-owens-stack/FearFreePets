@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AVA_B2BLEX__ExposureZone__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>State where the exemption applies.</description>
+    <inlineHelpText>State where the exemption applies.</inlineHelpText>
+    <label>Exposure Zone</label>
+    <referenceTo>AVA_B2BLEX__AvaTaxExposureZone__c</referenceTo>
+    <relationshipLabel>AvaTax Exemption Certificates</relationshipLabel>
+    <relationshipName>AvaTaxExemptionCertificates</relationshipName>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

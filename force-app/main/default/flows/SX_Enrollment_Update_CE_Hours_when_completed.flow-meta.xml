@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <environments>Default</environments>
+    <formulas>
+        <name>formula_CEHours</name>
+        <dataType>Number</dataType>
+        <expression>{!$Record.Student_ID__r.SF_Contact__r.Account.CE_Credits__c} + {!$Record.SX_Course__r.CE_Hours__c}</expression>
+        <scale>0</scale>
+    </formulas>
+    <interviewLabel>SX Enrollment - Update CE Hours when completed {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>SX Enrollment - Update CE Hours when completed</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>update_Member</name>
+        <label>update_Member</label>
+        <locationX>685</locationX>
+        <locationY>417</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Student_ID__r.SF_Contact__r.AccountId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>CE_Credits__c</field>
+            <value>
+                <elementReference>formula_CEHours</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <start>
+        <locationX>562</locationX>
+        <locationY>64</locationY>
+        <connector>
+            <targetReference>update_Member</targetReference>
+        </connector>
+        <filterFormula>AND(
+{!$Record.SX_percent_Completed__c} = 1,
+{!$Record.SX_Course__r.CE_Hours__c} &gt; 0,
+OR(
+ISNEW(),
+ISCHANGED({!$Record.SX_percent_Completed__c})
+)
+)</filterFormula>
+        <object>SX_Enrollment__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

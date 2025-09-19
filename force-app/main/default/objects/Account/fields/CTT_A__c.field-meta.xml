@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CTT_A__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Canine Training Technician (Accredited)</inlineHelpText>
+    <label>CTT-A</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

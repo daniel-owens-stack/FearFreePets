@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Invoke_the_Selected_Batchable_Apex</name>
+        <label>Invoke the Selected Batchable Apex</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <actionName>B2BBatchApexInvocable</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Finish_Screen</targetReference>
+        </connector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <inputParameters>
+            <name>apexclassNames</name>
+            <value>
+                <elementReference>Batchable_Apex_Class</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>B2BBatchApexInvocable</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <choices>
+        <name>calculateIndividualRenewalDates</name>
+        <choiceText>Calculate Individual Renewal Date on Accounts</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>B2BCalculateILMARenewalDatesBatch</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>calculatePracticeRenewalDates</name>
+        <choiceText>Calculate Practice Renewal Date on Accounts</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>B2BCalculatePLMARenewalDatesBatch</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>individualLevelRenewals</name>
+        <choiceText>&lt;span style=&quot;font-size: 13px;&quot;&gt;Create Individual Level Membership Renewals&lt;/span&gt;</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>B2BIndividualLevelRenewalsBatch</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>individualMembershipEndScheduler</name>
+        <choiceText>Handle Individual Level Membership Unassignment</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>B2BMembershipEndBatch</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>practiceLevelRenewals</name>
+        <choiceText>Create Practice Level Membership Renewals</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>B2BPracticeLevelRenewalsBatch</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>renewalInvoiceScheduler</name>
+        <choiceText>&lt;span style=&quot;font-size: 13px;&quot;&gt;Create Invoices for Renewal Orders&lt;/span&gt;</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>B2BRenewalInvoiceBatch</stringValue>
+        </value>
+    </choices>
+    <environments>Default</environments>
+    <interviewLabel>B2B Test Auto Renewals {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>B2B Test Auto Renewals</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <screens>
+        <name>Finish_Screen</name>
+        <label>Finish Screen</label>
+        <locationX>176</locationX>
+        <locationY>350</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>finishMessage</name>
+            <fieldText>&lt;p&gt;Successfully invoked the &apos; &lt;strong&gt;{!Batchable_Apex_Class} &lt;/strong&gt;&apos; to run immediately. Click &apos;Finish&apos; to close the screen.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Select_Class_Name</name>
+        <label>Select Class Name</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Invoke_the_Selected_Batchable_Apex</targetReference>
+        </connector>
+        <fields>
+            <name>selectionText</name>
+            <fieldText>&lt;p&gt;Select any one Action to run it immediately.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <fields>
+            <name>Batchable_Apex_Class</name>
+            <choiceReferences>calculatePracticeRenewalDates</choiceReferences>
+            <choiceReferences>calculateIndividualRenewalDates</choiceReferences>
+            <choiceReferences>practiceLevelRenewals</choiceReferences>
+            <choiceReferences>individualLevelRenewals</choiceReferences>
+            <choiceReferences>renewalInvoiceScheduler</choiceReferences>
+            <choiceReferences>individualMembershipEndScheduler</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Batchable Apex Classes</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Select_Class_Name</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>25</activeVersionNumber>
+    <description>Enable users to view available memberships, select a membership type, and assign memberships to team members without existing memberships.
+
+V10 - update Individual Assignment to set Assigned ID to be Account and not Membership</description>
+    <masterLabel>(FSM) Assign Memberships Flow</masterLabel>
+</FlowDefinition>

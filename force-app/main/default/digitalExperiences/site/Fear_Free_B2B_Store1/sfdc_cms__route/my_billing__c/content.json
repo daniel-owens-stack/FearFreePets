@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "My Billing",
+  "contentBody" : {
+    "activeViewId" : "My_Billing",
+    "configurationTags" : [ ],
+    "pageAccess" : "RequiresLogin",
+    "routeType" : "custom-my-billing",
+    "urlPrefix" : "my-billing"
+  },
+  "urlName" : "my-billing"
+}

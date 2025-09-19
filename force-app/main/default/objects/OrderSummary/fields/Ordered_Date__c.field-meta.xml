@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ordered_Date__c</fullName>
+    <formula>IF(
+    NOT(ISBLANK(Historical_Order_Date__c)),
+    DATEVALUE(Historical_Order_Date__c),
+    DATEVALUE(OrderedDate)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Ordered Date</label>
+    <required>false</required>
+    <type>Date</type>
+</CustomField>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>14</activeVersionNumber>
+    <description>This Flow displays all memberships assigned to the Member running user: https://basecamp.com/2583453/projects/19269730/todos/498992475</description>
+    <masterLabel>(Deprecated) (FSM) My Account - My Memberships</masterLabel>
+</FlowDefinition>

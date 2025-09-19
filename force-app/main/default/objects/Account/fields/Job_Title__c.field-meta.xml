@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Job_Title__c</fullName>
+    <businessStatus>Active</businessStatus>
+    <label>Job Title</label>
+    <required>false</required>
+    <securityClassification>Public</securityClassification>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Veterinarian</fullName>
+                <default>false</default>
+                <label>Veterinarian</label>
+            </value>
+            <value>
+                <fullName>Certified Veterinary Technician</fullName>
+                <default>false</default>
+                <label>Certified Veterinary Technician</label>
+            </value>
+            <value>
+                <fullName>Veterinary Assistant</fullName>
+                <default>false</default>
+                <label>Veterinary Assistant</label>
+            </value>
+            <value>
+                <fullName>Practice Manager</fullName>
+                <default>false</default>
+                <label>Practice Manager</label>
+            </value>
+            <value>
+                <fullName>Support Staff</fullName>
+                <default>false</default>
+                <label>Support Staff</label>
+            </value>
+            <value>
+                <fullName>CSR</fullName>
+                <default>false</default>
+                <label>CSR</label>
+            </value>
+            <value>
+                <fullName>Kennel Attendant/Technician</fullName>
+                <default>false</default>
+                <label>Kennel Attendant/Technician</label>
+            </value>
+            <value>
+                <fullName>Faculty - Veterinary Program</fullName>
+                <default>false</default>
+                <label>Faculty - Veterinary Program</label>
+            </value>
+            <value>
+                <fullName>Faculty - Veterinary Assistant Program</fullName>
+                <default>false</default>
+                <label>Faculty - Veterinary Assistant Program</label>
+            </value>
+            <value>
+                <fullName>Faculty - Veterinary Technician Program</fullName>
+                <default>false</default>
+                <label>Faculty - Veterinary Technician Program</label>
+            </value>
+            <value>
+                <fullName>Student - Veterinary</fullName>
+                <default>false</default>
+                <label>Student - Veterinary</label>
+            </value>
+            <value>
+                <fullName>Student - Veterinary Assistant</fullName>
+                <default>false</default>
+                <label>Student - Veterinary Assistant</label>
+            </value>
+            <value>
+                <fullName>Student - Veterinary Technician</fullName>
+                <default>false</default>
+                <label>Student - Veterinary Technician</label>
+            </value>
+            <value>
+                <fullName>Behavioral Consultant</fullName>
+                <default>false</default>
+                <label>Behavioral Consultant</label>
+            </value>
+            <value>
+                <fullName>Trainer</fullName>
+                <default>false</default>
+                <label>Trainer</label>
+            </value>
+            <value>
+                <fullName>Groomer</fullName>
+                <default>false</default>
+                <label>Groomer</label>
+            </value>
+            <value>
+                <fullName>Pet Sitter</fullName>
+                <default>false</default>
+                <label>Pet Sitter</label>
+            </value>
+            <value>
+                <fullName>Dog Walker</fullName>
+                <default>false</default>
+                <label>Dog Walker</label>
+            </value>
+            <value>
+                <fullName>Other (Veterinary)</fullName>
+                <default>false</default>
+                <label>Other (Veterinary)</label>
+            </value>
+            <value>
+                <fullName>Other (Non-Veterinary)</fullName>
+                <default>false</default>
+                <label>Other (Non-Veterinary)</label>
+            </value>
+            <value>
+                <fullName>Team Admin</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Team Admin</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

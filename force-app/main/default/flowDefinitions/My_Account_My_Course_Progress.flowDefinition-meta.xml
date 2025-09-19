@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>8</activeVersionNumber>
+    <description>This flow displays all completed courses to the Member running user: https://basecamp.com/2583453/projects/19269730/todos/498992475
+
+V7 - Changed the Screen to display CE Credits</description>
+    <masterLabel>(FSM) My Account - My Courses</masterLabel>
+</FlowDefinition>

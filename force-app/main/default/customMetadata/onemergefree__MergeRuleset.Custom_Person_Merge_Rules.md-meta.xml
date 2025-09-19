@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Custom Person Merge Rules</label>
+    <protected>false</protected>
+    <values>
+        <field>onemergefree__IdentifierFieldName__c</field>
+        <value xsi:type="xsd:string">onemergefree__MergeRulesetIdentifier__c</value>
+    </values>
+    <values>
+        <field>onemergefree__IsAbortOnCrossObjectMatch__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>onemergefree__IsAbortOnInvalidMergeRule__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>onemergefree__IsActive__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>onemergefree__IsMergeMasterCheckboxFieldName__c</field>
+        <value xsi:type="xsd:string">onemergefree__IsMergeMasterRecord__c</value>
+    </values>
+    <values>
+        <field>onemergefree__IsTest__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>onemergefree__LastMergedDateFieldName__c</field>
+        <value xsi:type="xsd:string">onemergefree__LastMergedDate__c</value>
+    </values>
+    <values>
+        <field>onemergefree__MasterRecord2ndPriorityFieldName__c</field>
+        <value xsi:type="xsd:string">onemergefree__MasterRecordPriority__c</value>
+    </values>
+    <values>
+        <field>onemergefree__MasterRecord2ndPriority__c</field>
+        <value xsi:type="xsd:string">Quality</value>
+    </values>
+    <values>
+        <field>onemergefree__MasterRecordPriorityFieldName__c</field>
+        <value xsi:type="xsd:string">CreatedDate</value>
+    </values>
+    <values>
+        <field>onemergefree__MasterRecordPriority__c</field>
+        <value xsi:type="xsd:string">Newest</value>
+    </values>
+    <values>
+        <field>onemergefree__SObjectSubType__c</field>
+        <value xsi:type="xsd:string">PersonAccount</value>
+    </values>
+    <values>
+        <field>onemergefree__SObjectType__c</field>
+        <value xsi:type="xsd:string">Account</value>
+    </values>
+</CustomMetadata>

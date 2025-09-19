@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>onemergefree__MasterRecordPriorityFieldName__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The API Field Name for the field on the SObject Type which returns the record-level priority scale used to detemine which Matched Record becomes the Master Record for the group.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>The API Field Name for the field on the SObject Type which returns the record-level priority scale used to detemine which Matched Record becomes the Master Record for the group.</inlineHelpText>
+    <label>Master Record Priority Field Name</label>
+    <length>100</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

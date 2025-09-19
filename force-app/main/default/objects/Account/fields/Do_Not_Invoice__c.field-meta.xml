@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Do_Not_Invoice__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>For Sales &amp; PC: notate what person and business accounts should not be invoiced.</description>
+    <label>Do Not Invoice</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

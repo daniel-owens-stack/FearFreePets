@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_Reason_Merge__c</fullName>
+    <description>This field returns the Case Reason checkbox.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+    Directory__c, &quot;Directory, &quot;, 
+    &quot;&quot;) &amp; 
+IF(
+    Login_Credentials__c, &quot;Login Credentials, &quot;,
+    &quot;&quot;) &amp;
+IF(
+    Website__c, &quot;Website, &quot;,
+    &quot;&quot;) &amp;
+IF(
+    Navigation__c, &quot;Navigation, &quot;,
+    &quot;&quot;) &amp;
+IF(
+    Instructions_Not_Clear__c, &quot;Instructions Not Clear, &quot;,
+    &quot;&quot;) &amp;
+IF(
+    Experts__c, &quot;Experts, &quot;,
+    &quot;&quot;) &amp;
+IF(
+    Order__c, &quot;Order, &quot;,
+    &quot;&quot;) &amp;
+IF(
+    Webinar__c, &quot;Webinar, &quot;,
+    &quot;&quot;) &amp;
+IF(
+    Course__c, &quot;Course, &quot;,
+    &quot;&quot;) &amp;
+IF(
+    Membership_s__c, &quot;Membership, &quot;,
+    &quot;&quot;) &amp;
+IF(
+    Benefits__c, &quot;Benefits, &quot;,
+    &quot;&quot;) &amp;
+IF(
+    User_Account__c, &quot;User Account, &quot;,
+    &quot;&quot;) &amp;
+IF(
+    CE_Requirements__c, &quot;CE Requirements, &quot;,
+    &quot;&quot;) &amp;
+IF(
+    Student_Faculty__c, &quot;Student Faculty, &quot;,
+    &quot;&quot;) &amp;
+IF(
+    Trademark_Violation__c, &quot;Trademark Violation, &quot;,
+    &quot;&quot;) &amp;
+IF(
+    Pledge_Violation__c, &quot;Pledge Violation, &quot;,
+    &quot;&quot;) &amp;
+IF(
+    PC_Lead__c, &quot;PC Lead, &quot;,
+    &quot;&quot;) &amp;
+IF(
+    Membership_Lead__c, &quot;Membership Lead, &quot;,
+    &quot;&quot;) &amp;
+IF(
+    PC_Dashboard__c, &quot;PC Dashboard, &quot;,
+    &quot;&quot;) &amp;
+IF(
+    PC_Order__c, &quot;PC Order, &quot;,
+    &quot;&quot;) &amp;
+IF(
+    PC_Self_Assessment__c, &quot;PC Self-Assessment, &quot;,
+    &quot;&quot;) &amp;
+IF(
+    PC_Virtual_Visit__c, &quot;PC Virtual Visit, &quot;,
+    &quot;&quot;) &amp;
+IF(
+    Other__c, &quot;Other&quot;, 
+    &quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Case Reason Merge</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

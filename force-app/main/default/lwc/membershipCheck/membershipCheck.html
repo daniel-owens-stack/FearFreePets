@@ -1,0 +1,15 @@
+<template>
+    <template if:true={showMemberContent}>
+        <!-- The <slot> tag allows Experience Builder content/components to be injected here -->
+        <div>
+            <slot name="Content-Region-Has-Membership"></slot>
+        </div>
+    </template>
+
+    <template if:true={showNonMemberContent}>
+        <!-- Show this message if the user does not have any active membership -->
+        <div>
+            <slot name="Content-Region-No-Membership"></slot>
+        </div>
+    </template>
+</template>

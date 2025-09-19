@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Manage My Team",
+  "contentBody" : {
+    "activeViewId" : "Manage_My_Team",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-manage-my-team",
+    "urlPrefix" : "manage-my-team"
+  },
+  "urlName" : "manage-my-team"
+}

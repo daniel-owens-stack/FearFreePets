@@ -1,0 +1,97 @@
+<template>
+  <!-- Launch -->
+  <lightning-button label="Refund" onclick={openModal} variant="brand"></lightning-button>
+
+  <template if:true={showModal}>
+    <!-- widen the modal -->
+    <section role="dialog" class="slds-modal slds-fade-in-open slds-modal_large">
+      <div class="slds-modal__container slds-modal_large">
+        <header class="slds-modal__header">
+          <h2 class="slds-text-heading_medium">Process Refund</h2>
+        </header>
+
+        <div class="slds-modal__content slds-p-around_medium modal-relative">
+          <!-- Reason (required) -->
+          <lightning-input
+            label="Refund Reason"
+            required
+            value={refundReason}
+            onchange={handleReasonChange}
+            disabled={isLoading}>
+          </lightning-input>
+
+          <table class="slds-table slds-table_cell-buffer slds-m-top_medium">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <template if:true={showMembershipCol}>
+                  <th>Assigned Account</th>
+                </template>
+                <th>Quantity</th>
+                <th>Already Refunded</th>
+                <th>Qty Refund</th>
+                <th>Partial Refund ($)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <template for:each={items} for:item="item">
+                <tr key={item.Id} class={item.rowClass}>
+                  <td style="max-width:420px;white-space:normal;word-break:break-word;">
+                    {item.ProductName}
+                    <!-- Removed extra Renewal badge -->
+                  </td>
+
+                  <template if:true={showMembershipCol}>
+                    <td>
+                      <template if:true={item.IlmaAccountName}>
+                        {item.IlmaAccountName}
+                      </template>
+                    </td>
+                  </template>
+
+                  <td>{item.Quantity}</td>
+                  <td>${item.alreadyRefunded}</td>
+                  <td>
+                    <lightning-combobox
+                      data-id={item.Id}
+                      value={item.qtyToRefund}
+                      options={item.qtyOptions}
+                      onchange={handleQtyChange}
+                      disabled={item.disabledCombobox}>
+                    </lightning-combobox>
+                  </td>
+                  <td>
+                    <lightning-input
+                      class="refund-input"
+                      type="number"
+                      data-id={item.Id}
+                      value={item.partialAmount}
+                      step="0.01"
+                      min="0"
+                      max={item.partialMax}
+                      onchange={handlePartialChange}
+                      disabled={item.disabledPartial}>
+                    </lightning-input>
+                  </td>
+                </tr>
+              </template>
+            </tbody>
+          </table>
+
+          <p class="slds-m-top_medium"><b>Total Refund: ${totalRefund}</b></p>
+        </div>
+
+        <footer class="slds-modal__footer">
+          <lightning-button label="Cancel" onclick={closeModal}></lightning-button>
+          <lightning-button
+            label="Submit Refund"
+            variant="brand"
+            onclick={submitRefund}
+            disabled={isSubmitDisabled}>
+          </lightning-button>
+        </footer>
+      </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+  </template>
+</template>

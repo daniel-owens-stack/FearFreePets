@@ -1,0 +1,1484 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Fear Free Happy Homes Handouts",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "dxpStyle" : {
+              "margin" : {
+                "bottom" : "",
+                "left" : "",
+                "right" : "",
+                "top" : "40px"
+              }
+            },
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"efef5608-0ff7-4db0-9657-98a1503792c6\",\"columns\":[{\"UUID\":\"b04d7f34-72e3-43a9-a08b-9a58ecd94909\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "center"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "checkAccountMembership" : true,
+                "checkBoardingMembership" : false,
+                "checkCertification" : false,
+                "checkGroomerMembership" : false,
+                "checkPracticeMembership" : false,
+                "checkSitterMembership" : false,
+                "checkTrainerMembership" : false,
+                "checkVetProMembership" : false
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "flex-start",
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"a555b34a-927b-4fdb-8156-3cac1852ee81\",\"columns\":[{\"UUID\":\"2d28c433-4b97-4056-a2b0-24b3dae45bce\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"ce3d1113-3c59-4d63-b055-5273f9b5f66d\",\"columnName\":\"Column 2\",\"columnKey\":\"6da10\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"cf85ceb2-9fb7-4979-9d11-4680b4c0f076\",\"columns\":[{\"UUID\":\"51ba4881-64d9-4237-8de2-6e30c22f2977\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"87960958-627a-4ccc-ae52-b513b7738f5a\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Giving Your Horse Oral Medication",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/24607/\"}}}}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "847e037c-e250-4281-8e71-49ce0ff9b602",
+                          "type" : "component"
+                        } ],
+                        "id" : "51ba4881-64d9-4237-8de2-6e30c22f2977",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "left",
+                            "size" : "standard",
+                            "stretch" : "standard",
+                            "text" : "Download",
+                            "type" : "primary",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/24607/\"}}}}"
+                          },
+                          "definition" : "dxp_base:button",
+                          "id" : "91ad5c3e-890c-415c-a19d-432b10b86b3f",
+                          "type" : "component"
+                        } ],
+                        "id" : "87960958-627a-4ccc-ae52-b513b7738f5a",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "cf85ceb2-9fb7-4979-9d11-4680b4c0f076",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"3896e5cb-f236-450d-b199-cd58cf82587c\",\"columns\":[{\"UUID\":\"148a9762-4e3b-4e8d-8323-0c0c7165af9d\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"c4ce4cb1-4bfc-4610-a49d-38ae8f1a4cd7\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Tips for Safer, Happier Trailer Travel",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/24607/\"}}}}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "7182c18e-72d2-43b5-9452-ae18ff89ed1e",
+                          "type" : "component"
+                        } ],
+                        "id" : "148a9762-4e3b-4e8d-8323-0c0c7165af9d",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "flex-start",
+                            "buttonLabel" : "Download",
+                            "fileContentId" : "MCETV2PTBO75CBBPDAGWHKH57YEA"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "3aa084b2-bfb2-448b-a432-dda173c0d743",
+                          "type" : "component"
+                        } ],
+                        "id" : "c4ce4cb1-4bfc-4610-a49d-38ae8f1a4cd7",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "3896e5cb-f236-450d-b199-cd58cf82587c",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"370f8e50-b8e4-4c64-924d-60096b12f6f7\",\"columns\":[{\"UUID\":\"4014dbb8-9366-4d60-b282-3075b46aeb1e\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"b3f8a6df-b0e5-442d-832c-6d5aa148be9c\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "How to Train a Horse to Load into a Trailer",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/24607/\"}}}}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "71e706c4-b0c4-4eab-ba8c-278ddc2493d8",
+                          "type" : "component"
+                        } ],
+                        "id" : "4014dbb8-9366-4d60-b282-3075b46aeb1e",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "left",
+                            "size" : "standard",
+                            "stretch" : "standard",
+                            "text" : "Download",
+                            "type" : "primary",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/24613/\"}}}}"
+                          },
+                          "definition" : "dxp_base:button",
+                          "id" : "dc2604f7-34f1-4e3e-9304-1bb1786fcd00",
+                          "type" : "component"
+                        } ],
+                        "id" : "b3f8a6df-b0e5-442d-832c-6d5aa148be9c",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "370f8e50-b8e4-4c64-924d-60096b12f6f7",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"32c641de-c2f9-4114-89b9-5117473988c4\",\"columns\":[{\"UUID\":\"96f6367a-66c0-432d-9ed6-bac590563551\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"d96df01b-fd7c-40dd-978b-0e81b4b88010\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Training Horses to Voluntarily Take Oral Medications Via a Syringe",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/24607/\"}}}}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "f7ee7f6b-d7ce-46fc-8061-865e0dd5155f",
+                          "type" : "component"
+                        } ],
+                        "id" : "96f6367a-66c0-432d-9ed6-bac590563551",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "left",
+                            "size" : "standard",
+                            "stretch" : "standard",
+                            "text" : "Download",
+                            "type" : "primary",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/24599/\"}}}}"
+                          },
+                          "definition" : "dxp_base:button",
+                          "id" : "982dfa0e-7939-45bd-9e7c-62b4916b05d1",
+                          "type" : "component"
+                        } ],
+                        "id" : "d96df01b-fd7c-40dd-978b-0e81b4b88010",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "32c641de-c2f9-4114-89b9-5117473988c4",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"3af429b4-5286-408d-b4e6-42edd84fa9e5\",\"columns\":[{\"UUID\":\"4e906218-4a83-49c7-8bc6-a5ed9e2167da\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"12d3ae6e-9300-4593-884b-fb4e76686336\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "How to Prepare Your Pet for a Veterinary Visit",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/24607/\"}}}}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "8b529843-0733-49b4-9568-096b34a4712c",
+                          "type" : "component"
+                        } ],
+                        "id" : "4e906218-4a83-49c7-8bc6-a5ed9e2167da",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "flex-start",
+                            "buttonLabel" : "Download",
+                            "fileContentId" : "MC2UF6PDQHGZAIFAZDYPYXPK3KEU"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "c96a36f9-b3af-4c59-8673-792a4ce959df",
+                          "type" : "component"
+                        } ],
+                        "id" : "12d3ae6e-9300-4593-884b-fb4e76686336",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "3af429b4-5286-408d-b4e6-42edd84fa9e5",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"0c7460c3-8116-4196-81ee-0f4a04aadfe5\",\"columns\":[{\"UUID\":\"8d616914-5ebb-428d-aee1-fba475197c2a\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"3d8de81f-cadd-4c2c-9267-9b2cf88e4fe1\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Giving Medications to Your Pet: How to Put the Treat Into Treatment",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/24607/\"}}}}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "67ff0d0f-5c0c-4e14-963b-87eda945ef3f",
+                          "type" : "component"
+                        } ],
+                        "id" : "8d616914-5ebb-428d-aee1-fba475197c2a",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "flex-start",
+                            "buttonLabel" : "Download",
+                            "fileContentId" : "MCWB6AO4JNANAG7JVI4OURTI5JPM"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "2510d2a0-0232-456e-b7ef-914145ee9bc9",
+                          "type" : "component"
+                        } ],
+                        "id" : "3d8de81f-cadd-4c2c-9267-9b2cf88e4fe1",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "0c7460c3-8116-4196-81ee-0f4a04aadfe5",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"dd49f934-f61e-4225-9787-2c5000062a8d\",\"columns\":[{\"UUID\":\"5dd52c4e-9dbd-4a4a-a8c1-8f063a32a522\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"4f653341-387c-4fd2-acd4-89775a29d173\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "10 Things That Make Fear Free Veterinary Visits Different",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/24607/\"}}}}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "7bbb43cf-dde9-4fbf-a21f-d4e564567b4e",
+                          "type" : "component"
+                        } ],
+                        "id" : "5dd52c4e-9dbd-4a4a-a8c1-8f063a32a522",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "flex-start",
+                            "buttonLabel" : "Download",
+                            "fileContentId" : "MC75CWUDHYPBCKLKOHRI74WITECU"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "0f94fa0d-dfe0-44d1-b61b-b8712dd701b0",
+                          "type" : "component"
+                        } ],
+                        "id" : "4f653341-387c-4fd2-acd4-89775a29d173",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "dd49f934-f61e-4225-9787-2c5000062a8d",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"420cf572-e31a-4d6a-beef-64071b5c2ee5\",\"columns\":[{\"UUID\":\"df3c9793-a46c-4410-854b-f6e0e937acbc\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"d81c2ccd-c9a0-43ad-b16a-6607fa19fab9\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "10 Things Your Veterinary Team Should Know About Your Pet",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/24607/\"}}}}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "41d679f8-c560-4cf7-a874-42ac3712a74e",
+                          "type" : "component"
+                        } ],
+                        "id" : "df3c9793-a46c-4410-854b-f6e0e937acbc",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "left",
+                            "size" : "standard",
+                            "stretch" : "standard",
+                            "text" : "Download",
+                            "type" : "primary",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/19013/\"}}}}"
+                          },
+                          "definition" : "dxp_base:button",
+                          "id" : "fc599d65-de04-4bee-873f-6097c9953ef8",
+                          "type" : "component"
+                        } ],
+                        "id" : "d81c2ccd-c9a0-43ad-b16a-6607fa19fab9",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "420cf572-e31a-4d6a-beef-64071b5c2ee5",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"1efd8a3e-dab6-4adf-8ec1-723e7f87fc0c\",\"columns\":[{\"UUID\":\"3c1bb714-2681-421a-a5b7-00d8afec64e7\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"d9561acd-ffc1-48f2-a65d-1fc8f22a84d2\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "How to Manage a Fear Free Return Home",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/24607/\"}}}}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "d33c2f00-521f-4518-b12d-786e11813302",
+                          "type" : "component"
+                        } ],
+                        "id" : "3c1bb714-2681-421a-a5b7-00d8afec64e7",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "left",
+                            "size" : "standard",
+                            "stretch" : "standard",
+                            "text" : "Download",
+                            "type" : "primary",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/19156/\"}}}}"
+                          },
+                          "definition" : "dxp_base:button",
+                          "id" : "5a3610a0-78f1-4684-8dbd-2164969227ba",
+                          "type" : "component"
+                        } ],
+                        "id" : "d9561acd-ffc1-48f2-a65d-1fc8f22a84d2",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "1efd8a3e-dab6-4adf-8ec1-723e7f87fc0c",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"cf5886f5-5880-46a5-aee0-f35434302f95\",\"columns\":[{\"UUID\":\"2a62efe7-1f6d-4862-a387-464ca9c5bfc9\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"a248213b-2684-4cd7-a525-ea64cf745a23\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Muzzle Training Education",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/24607/\"}}}}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "95b5cc55-7fcb-4352-b9f7-90354495be93",
+                          "type" : "component"
+                        } ],
+                        "id" : "2a62efe7-1f6d-4862-a387-464ca9c5bfc9",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "flex-start",
+                            "buttonLabel" : "Download",
+                            "fileContentId" : "MCOVAEHPOCZFD2XN4E2PQJWJSTUM"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "cb326c9c-c255-4b1e-a139-b534eab1d636",
+                          "type" : "component"
+                        } ],
+                        "id" : "a248213b-2684-4cd7-a525-ea64cf745a23",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "cf5886f5-5880-46a5-aee0-f35434302f95",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"51e5807e-75ad-44ea-9c1a-42ff3af1552a\",\"columns\":[{\"UUID\":\"8b16008a-c6d4-421c-a549-8a4be0d38b77\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"71862d7d-c60e-4a58-be2c-f13f3fac1d64\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "A Fulfilled Dog is a Happy Dog",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/24607/\"}}}}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "ebf75e5d-2626-4a43-bbaa-3c0e6282d6ea",
+                          "type" : "component"
+                        } ],
+                        "id" : "8b16008a-c6d4-421c-a549-8a4be0d38b77",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "flex-start",
+                            "buttonLabel" : "Download",
+                            "fileContentId" : "MCALKB4KJJUZGVXIXYKZKBKOPYJI"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "9258d062-93c1-477d-81af-5b22ad94e2e0",
+                          "type" : "component"
+                        } ],
+                        "id" : "71862d7d-c60e-4a58-be2c-f13f3fac1d64",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "51e5807e-75ad-44ea-9c1a-42ff3af1552a",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"99622825-ef4f-4ea6-af58-e6fc90218d9d\",\"columns\":[{\"UUID\":\"1f8125a3-bc44-41e2-86e4-2b9011d89e3c\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"19ba5e9d-6f25-408f-91bd-5d92e4deca98\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Training Session Length",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/24607/\"}}}}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "2445f178-812f-4c94-b817-590120918d7b",
+                          "type" : "component"
+                        } ],
+                        "id" : "1f8125a3-bc44-41e2-86e4-2b9011d89e3c",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "left",
+                            "size" : "standard",
+                            "stretch" : "standard",
+                            "text" : "Download",
+                            "type" : "primary",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/think-training-sessions-need-to-be-long-find-out-why-shorter-is-smarter/fearfreehappyhomes.com/download/22405/\"}}}}"
+                          },
+                          "definition" : "dxp_base:button",
+                          "id" : "de1621c8-319f-46fa-a533-9d8834711421",
+                          "type" : "component"
+                        } ],
+                        "id" : "19ba5e9d-6f25-408f-91bd-5d92e4deca98",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "99622825-ef4f-4ea6-af58-e6fc90218d9d",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"66c82d58-21e6-4717-8eb1-288934df3289\",\"columns\":[{\"UUID\":\"fb396ccc-7418-47e0-8000-dc465f31177f\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"be6c32af-18fd-4807-874f-229ae2a1d4e2\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "The Dangers of “Training” Collars",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/24607/\"}}}}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "368009ba-156a-48fb-9b28-17c23c47380b",
+                          "type" : "component"
+                        } ],
+                        "id" : "fb396ccc-7418-47e0-8000-dc465f31177f",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "left",
+                            "size" : "standard",
+                            "stretch" : "standard",
+                            "text" : "Download",
+                            "type" : "primary",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/23189/\"}}}}"
+                          },
+                          "definition" : "dxp_base:button",
+                          "id" : "d5177136-609d-4094-94a8-98636226997b",
+                          "type" : "component"
+                        } ],
+                        "id" : "be6c32af-18fd-4807-874f-229ae2a1d4e2",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "66c82d58-21e6-4717-8eb1-288934df3289",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"0e574389-e74b-4a84-a92b-5182628f25cb\",\"columns\":[{\"UUID\":\"17875252-8cf6-472f-8699-2bddb4abba7d\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"d6bfa942-e1fc-4704-974b-128919286982\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "DIY Enrichment Ideas for Dogs",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/24607/\"}}}}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "176422bc-3d65-4256-9b8e-b500bcf0a915",
+                          "type" : "component"
+                        } ],
+                        "id" : "17875252-8cf6-472f-8699-2bddb4abba7d",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "flex-start",
+                            "buttonLabel" : "Download",
+                            "fileContentId" : "MCPS7WRJUV3JCURG67VES33VMPCY"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "f3b74387-be08-47cf-9286-3ce91a78cd78",
+                          "type" : "component"
+                        } ],
+                        "id" : "d6bfa942-e1fc-4704-974b-128919286982",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "0e574389-e74b-4a84-a92b-5182628f25cb",
+                      "type" : "component"
+                    } ],
+                    "id" : "2d28c433-4b97-4056-a2b0-24b3dae45bce",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"dc276d8a-f10b-44bb-b639-f41ceba4cee1\",\"columns\":[{\"UUID\":\"ddc86b94-eead-440e-9a48-b36c455f02fa\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"6b333382-566a-4ae7-af7c-405125385806\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Preventing Separation Anxiety ",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/24607/\"}}}}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "379d848d-58d3-4521-86bf-696f27ad34a5",
+                          "type" : "component"
+                        } ],
+                        "id" : "ddc86b94-eead-440e-9a48-b36c455f02fa",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "flex-start",
+                            "buttonLabel" : "Download",
+                            "fileContentId" : "MCFTTZWYKDBNHVBB5TGMGUE55FMI"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "afc2e716-3fb8-49ed-8f1c-19614d8d87bc",
+                          "type" : "component"
+                        } ],
+                        "id" : "6b333382-566a-4ae7-af7c-405125385806",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "dc276d8a-f10b-44bb-b639-f41ceba4cee1",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"f9230d34-7f59-4bd5-bd98-d9b332a27169\",\"columns\":[{\"UUID\":\"0ae6733e-4106-43f4-9991-f922e2bb322c\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"1d55edbc-1a3b-4b9e-8b2c-7ffc7855d1e2\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Nail Trims: Trimming Away the Terror",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/24607/\"}}}}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "760807e9-597b-4190-b837-156ff3c3739d",
+                          "type" : "component"
+                        } ],
+                        "id" : "0ae6733e-4106-43f4-9991-f922e2bb322c",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "left",
+                            "size" : "standard",
+                            "stretch" : "standard",
+                            "text" : "Download",
+                            "type" : "primary",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/19259/\"}}}}"
+                          },
+                          "definition" : "dxp_base:button",
+                          "id" : "e998ea6a-b2a6-437b-8521-4c047ce2ab1e",
+                          "type" : "component"
+                        } ],
+                        "id" : "1d55edbc-1a3b-4b9e-8b2c-7ffc7855d1e2",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "f9230d34-7f59-4bd5-bd98-d9b332a27169",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"3c6eb420-250c-4681-94ee-04d9c3cfaf75\",\"columns\":[{\"UUID\":\"84083c0a-abb8-4b69-a4a7-47fa603bbb53\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"9a90c967-1ff7-4892-849a-58a6ddeef645\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Training as Enrichment: Basic Skills",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/24607/\"}}}}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "f28d3313-4eae-4fc5-b9ef-8ccbbe82b2e1",
+                          "type" : "component"
+                        } ],
+                        "id" : "84083c0a-abb8-4b69-a4a7-47fa603bbb53",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "flex-start",
+                            "buttonLabel" : "Download",
+                            "fileContentId" : "MCKOCM3T7NVBAGXGGXGPDUZOA4SA"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "a042cc82-0ad9-4746-8fdc-c55252f6986e",
+                          "type" : "component"
+                        } ],
+                        "id" : "9a90c967-1ff7-4892-849a-58a6ddeef645",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "3c6eb420-250c-4681-94ee-04d9c3cfaf75",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"30309db8-eb73-4d2c-8415-632f0c0e923e\",\"columns\":[{\"UUID\":\"b86f2dc5-f6ca-4f28-89a7-7ca0103677cc\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"c082be8f-118c-4e9c-8991-754080b346cc\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Training as Enrichment: Walking & Moving",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/24607/\"}}}}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "afbb4a49-679e-4a6c-a223-58f4783242a4",
+                          "type" : "component"
+                        } ],
+                        "id" : "b86f2dc5-f6ca-4f28-89a7-7ca0103677cc",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "flex-start",
+                            "buttonLabel" : "Download",
+                            "fileContentId" : "MCEUQ3OIXNPNBOHJC3P5YCSWN2S4"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "1065d8a3-8bd6-4a4d-88b0-ece2bf8cd084",
+                          "type" : "component"
+                        } ],
+                        "id" : "c082be8f-118c-4e9c-8991-754080b346cc",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "30309db8-eb73-4d2c-8415-632f0c0e923e",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"1597f582-4bb7-406d-927d-f64997e5ddcf\",\"columns\":[{\"UUID\":\"20bef7aa-78ac-497a-84c7-8c7c13b79ff5\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"46850504-d832-4aa8-8e53-8d1c63d69ab6\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Training as Enrichment: Doggie “Spaw” Day",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/24607/\"}}}}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "42b6ed43-af32-4843-ab25-cbb5779ee296",
+                          "type" : "component"
+                        } ],
+                        "id" : "20bef7aa-78ac-497a-84c7-8c7c13b79ff5",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "flex-start",
+                            "buttonLabel" : "Download",
+                            "fileContentId" : "MCGG3SVC6L7FDK3OCTPZSAJAPPYY"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "4c046767-df66-45cd-a088-b2f6d7154fb2",
+                          "type" : "component"
+                        } ],
+                        "id" : "46850504-d832-4aa8-8e53-8d1c63d69ab6",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "1597f582-4bb7-406d-927d-f64997e5ddcf",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"b59aff2e-c9ef-43ea-9b7a-a0de115d16de\",\"columns\":[{\"UUID\":\"452ddfe4-2fcf-4020-ad6d-94ef230034b9\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"ee58c66a-425c-41d7-8ad3-037134205c64\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Senior Dogs: Special Concerns & Solutions",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/24607/\"}}}}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "9f76172c-35bc-4fb6-b93c-38a661193f33",
+                          "type" : "component"
+                        } ],
+                        "id" : "452ddfe4-2fcf-4020-ad6d-94ef230034b9",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "flex-start",
+                            "buttonLabel" : "Download",
+                            "fileContentId" : "MCHYOAE5NANNDA7C3EYAQ3CHB5OU"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "17f99c05-623c-4df2-90ad-6e6cd8a42912",
+                          "type" : "component"
+                        } ],
+                        "id" : "ee58c66a-425c-41d7-8ad3-037134205c64",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "b59aff2e-c9ef-43ea-9b7a-a0de115d16de",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"8df5a904-516d-4833-9147-8cfdbacb8589\",\"columns\":[{\"UUID\":\"7abbd5e1-0b30-442f-bef2-7e0c8f8ff93f\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"78bdd46c-394f-40a3-a550-4fb0915c348f\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Frustrated Fido: Addressing Leash Reactivity",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/24607/\"}}}}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "9ac25f51-f02a-4139-8dbe-59c72e7e649e",
+                          "type" : "component"
+                        } ],
+                        "id" : "7abbd5e1-0b30-442f-bef2-7e0c8f8ff93f",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "flex-start",
+                            "buttonLabel" : "Download",
+                            "fileContentId" : "MCEZ6JE6NUBRDTTMUGVM3DEQQVLA"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "83361f55-8f5d-4f33-9553-85f20483308c",
+                          "type" : "component"
+                        } ],
+                        "id" : "78bdd46c-394f-40a3-a550-4fb0915c348f",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "8df5a904-516d-4833-9147-8cfdbacb8589",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"8b89a2a9-d0c7-470f-84c4-2c33fd58dd2e\",\"columns\":[{\"UUID\":\"ddf4c195-1f79-44a1-bff6-e9e1b1bb794a\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"ee700c1b-4bf2-4823-9de2-5c77d79ce933\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Cat Got Your Couch? Try This",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/24607/\"}}}}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "69dc2e43-c748-4dae-a292-4592ada57a99",
+                          "type" : "component"
+                        } ],
+                        "id" : "ddf4c195-1f79-44a1-bff6-e9e1b1bb794a",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "flex-start",
+                            "buttonLabel" : "Download",
+                            "fileContentId" : "MC65HNGNO7YNBOJBZYGQ666C4MHE"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "4b5eca7e-cff1-4314-a880-fde58224b755",
+                          "type" : "component"
+                        } ],
+                        "id" : "ee700c1b-4bf2-4823-9de2-5c77d79ce933",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "8b89a2a9-d0c7-470f-84c4-2c33fd58dd2e",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"e56048c6-d7bc-4486-93fc-84fac0832bfa\",\"columns\":[{\"UUID\":\"be43e37e-32c5-42d1-883d-24bc9e27d11e\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"a3c33348-ef0d-4ae9-9a35-64ba7afc3461\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "What is Fear Free Grooming?",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/24607/\"}}}}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "9a1ff5c2-943b-43a0-aaf0-2ffc833244c5",
+                          "type" : "component"
+                        } ],
+                        "id" : "be43e37e-32c5-42d1-883d-24bc9e27d11e",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "flex-start",
+                            "buttonLabel" : "Download",
+                            "fileContentId" : "MCECR7PCNCYBDQJONQGR4AJ6YJV4"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "c5b93667-7dfe-4bc6-a22a-754a422d393b",
+                          "type" : "component"
+                        } ],
+                        "id" : "a3c33348-ef0d-4ae9-9a35-64ba7afc3461",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "e56048c6-d7bc-4486-93fc-84fac0832bfa",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"a4d076be-bc35-4049-b3d0-3a4f79f317d8\",\"columns\":[{\"UUID\":\"2fee49bf-c2b2-43d9-9661-0a00b77b78c9\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"e9622690-4b64-490b-99dc-09337e5628ef\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "How to Make the Trip to the Veterinary Hospital Fear Free",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/24607/\"}}}}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "ba53ddce-a2f1-4236-884f-f1424e3e3571",
+                          "type" : "component"
+                        } ],
+                        "id" : "2fee49bf-c2b2-43d9-9661-0a00b77b78c9",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "left",
+                            "size" : "standard",
+                            "stretch" : "standard",
+                            "text" : "Download",
+                            "type" : "primary",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/19034/\"}}}}"
+                          },
+                          "definition" : "dxp_base:button",
+                          "id" : "e3ffb8b4-a402-4390-8d15-9385df4530ed",
+                          "type" : "component"
+                        } ],
+                        "id" : "e9622690-4b64-490b-99dc-09337e5628ef",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "a4d076be-bc35-4049-b3d0-3a4f79f317d8",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"21b8a9a7-62da-4752-bc6b-84e0deb8f03d\",\"columns\":[{\"UUID\":\"8153fdfd-a77b-4576-93eb-8f231efa9ce2\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"5ab1fa52-86d2-4c83-b977-0bc510e3ffb6\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Can my Dog Catch a Cold?",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/24607/\"}}}}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "dfac17f9-cfd2-4273-9a72-3c6975cf04a3",
+                          "type" : "component"
+                        } ],
+                        "id" : "8153fdfd-a77b-4576-93eb-8f231efa9ce2",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "left",
+                            "size" : "standard",
+                            "stretch" : "standard",
+                            "text" : "Download",
+                            "type" : "primary",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/26373/\"}}}}"
+                          },
+                          "definition" : "dxp_base:button",
+                          "id" : "ec589a4a-fa5d-4c60-84b8-6bb86ffe0a25",
+                          "type" : "component"
+                        } ],
+                        "id" : "5ab1fa52-86d2-4c83-b977-0bc510e3ffb6",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "21b8a9a7-62da-4752-bc6b-84e0deb8f03d",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"bb4255b1-1310-4f7d-9780-675787c2f6e0\",\"columns\":[{\"UUID\":\"ed62e405-d37c-405b-99c5-6796e81ca9e2\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"0a856d77-d64e-4a00-baec-e41d44f98bda\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Dealing with Resource Guarding in the Moment",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/24607/\"}}}}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "07bd1614-43bb-4dde-9eee-a0d464a62d54",
+                          "type" : "component"
+                        } ],
+                        "id" : "ed62e405-d37c-405b-99c5-6796e81ca9e2",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "left",
+                            "size" : "standard",
+                            "stretch" : "standard",
+                            "text" : "Download",
+                            "type" : "primary",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://www.fearfreehappyhomes.com/download/23172/\"}}}}"
+                          },
+                          "definition" : "dxp_base:button",
+                          "id" : "2b963598-709f-47f6-ab3f-600cfba9f125",
+                          "type" : "component"
+                        } ],
+                        "id" : "0a856d77-d64e-4a00-baec-e41d44f98bda",
+                        "name" : "col2",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "bb4255b1-1310-4f7d-9780-675787c2f6e0",
+                      "type" : "component"
+                    } ],
+                    "id" : "ce3d1113-3c59-4d63-b055-5273f9b5f66d",
+                    "name" : "6da10",
+                    "title" : "Column 2",
+                    "type" : "region"
+                  } ],
+                  "customCssClasses" : "center-page",
+                  "definition" : "dxp_layout:columns",
+                  "id" : "a555b34a-927b-4fdb-8156-3cac1852ee81",
+                  "type" : "component"
+                } ],
+                "id" : "98f4571e-6baa-4ccc-a854-52b808ee4b83",
+                "name" : "Content-Region-Has-Membership",
+                "title" : "Content-Region-Has-Membership",
+                "type" : "region"
+              }, {
+                "id" : "38df16f9-5c9e-4578-99ba-641d08176184",
+                "name" : "Content-Region-No-Membership",
+                "title" : "Content-Region-No-Membership",
+                "type" : "region"
+              } ],
+              "customCssClasses" : "center-page",
+              "definition" : "c:membershipCheck",
+              "id" : "b4d05bf7-0613-4df7-a0f9-8c9d2a46c8d7",
+              "type" : "component"
+            } ],
+            "id" : "b04d7f34-72e3-43a9-a08b-9a58ecd94909",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "customCssClasses" : "center-page",
+          "definition" : "community_layout:section",
+          "id" : "efef5608-0ff7-4db0-9657-98a1503792c6",
+          "type" : "component"
+        } ],
+        "id" : "5fbe801e-7832-4c5a-986f-2f12750c42fe",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "pageTitle" : "Fear Free Happy Homes Handouts",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "3cd600c9-3942-4ddf-9cd0-e3a95b52ba2b",
+          "type" : "component"
+        } ],
+        "id" : "4d552400-0cad-4b6f-af8f-1b86a6da1b2f",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "49e1f7e9-cf4a-404c-b3db-96abed68c152",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-fear-free-happy-homes-handouts"
+  },
+  "urlName" : "fear-free-happy-homes-handouts"
+}

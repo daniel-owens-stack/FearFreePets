@@ -1,0 +1,292 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Promotional Videos",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"2a2f9f32-1272-4ae4-bec1-abcc9d499160\",\"columns\":[{\"UUID\":\"ab435e0d-d956-43f1-b6e8-bb06c13bc224\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "checkAccountMembership" : true,
+                "checkBoardingMembership" : false,
+                "checkCertification" : false,
+                "checkGroomerMembership" : false,
+                "checkPracticeMembership" : false,
+                "checkSitterMembership" : false,
+                "checkTrainerMembership" : false,
+                "checkVetProMembership" : false
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "columnGutterWidth" : "2rem",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "center",
+                    "dxpStyle" : {
+                      "margin" : {
+                        "bottom" : "",
+                        "left" : "",
+                        "right" : "",
+                        "top" : "40px"
+                      }
+                    },
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"9d9ba21f-d3be-40d6-854a-1814b4409267\",\"columns\":[{\"UUID\":\"091707ba-b7eb-4e40-8d0e-d64f170e5d50\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"a7343493-e8c6-450e-9720-c64a1ea4e3ed\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "Veterinarian Gives Abandoned Dog Hope and Healing with Fear Free",
+                        "textAlign" : "left",
+                        "textDecoration" : "{}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "8815c9ba-8ef3-42c5-9a81-202ee8588341",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "imageInfos" : "",
+                        "richTextValue" : "<div><iframe width=\"100%\" height=\"375\" src=\"https://www.youtube.com/embed/7DvEGJ6u7ks?si=76EgiZfyuDMmCPNN\" title=\"YouTube video player\" frameborder=\"0\" align=\"center\" allowfullscreen=\"allowfullscreen\" allowfullscreen></iframe></div>"
+                      },
+                      "definition" : "community_builder:htmlEditor",
+                      "id" : "58a69041-830a-480a-aa25-168ac24be78a",
+                      "type" : "component"
+                    } ],
+                    "id" : "091707ba-b7eb-4e40-8d0e-d64f170e5d50",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "How Pet Owners Can Enjoy Veterinary Visits with Their Pets",
+                        "textAlign" : "left",
+                        "textDecoration" : "{}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "7fa69aff-e879-4afb-97cd-8f5179267d37",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "imageInfos" : "",
+                        "richTextValue" : "<div><iframe width=\"100%\" height=\"375\" src=\"https://www.youtube.com/embed/bpPzqWS2Mo0?si=3eTS8c-Lrv02pGdN\" title=\"YouTube video player\" frameborder=\"0\" align=\"center\" allowfullscreen=\"allowfullscreen\" allowfullscreen></iframe></div>"
+                      },
+                      "definition" : "community_builder:htmlEditor",
+                      "id" : "2b1ed222-6034-4732-a49d-112fb2e722af",
+                      "type" : "component"
+                    } ],
+                    "id" : "a7343493-e8c6-450e-9720-c64a1ea4e3ed",
+                    "name" : "col2",
+                    "title" : "Column 2",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "9d9ba21f-d3be-40d6-854a-1814b4409267",
+                  "type" : "component"
+                }, {
+                  "attributes" : {
+                    "columnGutterWidth" : "2rem",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "center",
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"06ea58b4-a115-4fef-9aeb-1e69194ae9cd\",\"columns\":[{\"UUID\":\"d4a26e25-90d6-4a06-a780-807b8b18d455\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"84b14c79-5480-4cda-a344-bd5d32e7d245\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "checkAccountMembership" : false,
+                        "checkBoardingMembership" : false,
+                        "checkCertification" : false,
+                        "checkGroomerMembership" : false,
+                        "checkPracticeMembership" : false,
+                        "checkSitterMembership" : false,
+                        "checkTrainerMembership" : false,
+                        "checkVetProMembership" : true
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : " A Transformative Initiative for Veterinary Professionals",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "08fe1c0e-4bbf-4b3a-ba0d-6a8ede1ce033",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "imageInfos" : "",
+                            "richTextValue" : "<div><iframe width=\"100%\" height=\"375\" src=\"https://www.youtube.com/embed/tT55oYtVNfk?si=zEIKulWQ5-EGiiXN\" title=\"YouTube video player\" frameborder=\"0\" align=\"center\" allowfullscreen=\"allowfullscreen\" allowfullscreen></iframe></div>"
+                          },
+                          "definition" : "community_builder:htmlEditor",
+                          "id" : "a8dbfaf3-a3e6-46b3-a418-a2a46c2d00f2",
+                          "type" : "component"
+                        } ],
+                        "id" : "8af46a12-d109-4040-a0cb-b7ddb64e1cfa",
+                        "name" : "Content-Region-Has-Membership",
+                        "title" : "Content-Region-Has-Membership",
+                        "type" : "region"
+                      }, {
+                        "id" : "b9a06779-6795-4527-8b78-7ad648b160bc",
+                        "name" : "Content-Region-No-Membership",
+                        "title" : "Content-Region-No-Membership",
+                        "type" : "region"
+                      } ],
+                      "definition" : "c:membershipCheck",
+                      "id" : "dbbaff85-3738-4795-8a21-081df148a23a",
+                      "type" : "component"
+                    } ],
+                    "id" : "d4a26e25-90d6-4a06-a780-807b8b18d455",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : {
+                        "checkAccountMembership" : false,
+                        "checkBoardingMembership" : false,
+                        "checkCertification" : false,
+                        "checkGroomerMembership" : false,
+                        "checkPracticeMembership" : false,
+                        "checkSitterMembership" : false,
+                        "checkTrainerMembership" : false,
+                        "checkVetProMembership" : true
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Practice Like You've Always Dreamed",
+                            "textAlign" : "left",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "0317b3c1-3213-4b28-8f97-dccaff35e30d",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "imageInfos" : "",
+                            "richTextValue" : "<div><iframe width=\"100%\" height=\"375\" src=\"https://www.youtube.com/embed/KFgJAanVBdo?si=KvnOqcpTY-KlPgEp\" title=\"YouTube video player\" frameborder=\"0\" align=\"center\" allowfullscreen=\"allowfullscreen\" allowfullscreen></iframe></div>"
+                          },
+                          "definition" : "community_builder:htmlEditor",
+                          "id" : "5cbecb4d-3601-4172-a568-8b0cda431e62",
+                          "type" : "component"
+                        } ],
+                        "id" : "1fc55a7f-d83a-4262-ae4d-db54b23ce9e8",
+                        "name" : "Content-Region-Has-Membership",
+                        "title" : "Content-Region-Has-Membership",
+                        "type" : "region"
+                      }, {
+                        "id" : "ae4b6b73-7950-4019-99f9-ad182b59ae1c",
+                        "name" : "Content-Region-No-Membership",
+                        "title" : "Content-Region-No-Membership",
+                        "type" : "region"
+                      } ],
+                      "definition" : "c:membershipCheck",
+                      "id" : "128fd444-64ad-4529-aa5d-216d2cb9b83f",
+                      "type" : "component"
+                    } ],
+                    "id" : "84b14c79-5480-4cda-a344-bd5d32e7d245",
+                    "name" : "col2",
+                    "title" : "Column 2",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "06ea58b4-a115-4fef-9aeb-1e69194ae9cd",
+                  "type" : "component"
+                } ],
+                "id" : "9430912c-4e25-42d5-bee6-715b43ad9f05",
+                "name" : "Content-Region-Has-Membership",
+                "title" : "Content-Region-Has-Membership",
+                "type" : "region"
+              }, {
+                "id" : "977bee84-c07c-4249-87cc-671e7461234c",
+                "name" : "Content-Region-No-Membership",
+                "title" : "Content-Region-No-Membership",
+                "type" : "region"
+              } ],
+              "definition" : "c:membershipCheck",
+              "id" : "f28e7d36-64af-4e54-9e20-88262d95046f",
+              "type" : "component"
+            } ],
+            "id" : "ab435e0d-d956-43f1-b6e8-bb06c13bc224",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "2a2f9f32-1272-4ae4-bec1-abcc9d499160",
+          "type" : "component"
+        } ],
+        "id" : "0a54912b-3a87-4a1b-b77f-447c7dd31a4a",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "pageTitle" : "Promotional Videos",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "e9e021fd-0da9-4c1e-9139-6b8ecb9eff5f",
+          "type" : "component"
+        } ],
+        "id" : "c7379fe8-08aa-466a-8137-6a150eddf5a2",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "9119522b-da10-41f7-99c3-bdf605d88393",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-promotional-videos"
+  },
+  "urlName" : "promotional-videos"
+}

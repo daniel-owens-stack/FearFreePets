@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expiration_Date__c</fullName>
+    <formula>IF( Membership_Level__c = &apos;Practice&apos;, Practice_Level_Membership_Assignment__r.Expiration_Date__c,
+				IF(
+    NOT(ISBLANK(Account_Assignment_Date__c)),
+    ADDMONTHS(Account_Assignment_Date__c, 12),
+    ADDMONTHS(DATEVALUE(CreatedDate) , 12)
+))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Expiration Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

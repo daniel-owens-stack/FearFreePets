@@ -1,0 +1,5 @@
+{
+  "apiName" : "Guest_Sign_Up",
+  "type" : "sfdc_cms__view",
+  "path" : "views"
+}

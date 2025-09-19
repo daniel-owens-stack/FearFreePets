@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>onemergefree__MergeLogEntryCompactLayout</fullName>
+    <fields>Name</fields>
+    <fields>onemergefree__LogType__c</fields>
+    <fields>onemergefree__FunctionalArea__c</fields>
+    <fields>onemergefree__Component__c</fields>
+    <fields>CreatedById</fields>
+    <label>Merge Log Entry Compact Layout</label>
+</CompactLayout>

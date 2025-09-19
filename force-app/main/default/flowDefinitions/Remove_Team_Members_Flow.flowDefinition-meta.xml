@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>16</activeVersionNumber>
+    <description>This flow allows a team admin to view a list of team members, select which members to remove, and then remove the selected members from the team. The flow clears the Business__c and Account_Code__c fields for the selected members and sends an email notification informing them of their removal.
+
+V.11 - Added check for Admins, updating admin users with correct Profile, and changed delete PIMA records to update PIMA records.</description>
+    <masterLabel>(FSM) Remove Team Members Flow</masterLabel>
+</FlowDefinition>

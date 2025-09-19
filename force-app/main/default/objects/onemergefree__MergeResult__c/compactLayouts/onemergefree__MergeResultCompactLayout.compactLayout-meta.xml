@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>onemergefree__MergeResultCompactLayout</fullName>
+    <fields>Name</fields>
+    <fields>onemergefree__DuplicateRuleName__c</fields>
+    <fields>onemergefree__MergeRulesetName__c</fields>
+    <fields>onemergefree__RecordCount__c</fields>
+    <fields>CreatedById</fields>
+    <label>Merge Result Compact Layout</label>
+</CompactLayout>

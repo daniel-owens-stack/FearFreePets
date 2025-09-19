@@ -1,0 +1,335 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Veterinary Professional Resources",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"c4e4e7ca-0e7e-4e7c-8236-a5ed1fdb30fa\",\"columns\":[{\"UUID\":\"cf153a8b-e711-4a71-8ed9-9c90839dcbae\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "checkAccountMembership" : false,
+                "checkBoardingMembership" : false,
+                "checkCertification" : false,
+                "checkGroomerMembership" : false,
+                "checkPracticeMembership" : false,
+                "checkSitterMembership" : false,
+                "checkTrainerMembership" : false,
+                "checkVetProMembership" : true
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "flex-start",
+                    "dxpStyle" : {
+                      "margin" : {
+                        "bottom" : "",
+                        "left" : "",
+                        "right" : "",
+                        "top" : "40px"
+                      }
+                    },
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"5d429120-e5e7-4faf-9f76-aa4637c5ec3e\",\"columns\":[{\"UUID\":\"c0d961e3-0e46-44df-aa19-2031450109b0\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"6ed9207f-3940-4c2a-90d6-2bc8207422ec\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "Fasted Blood Work",
+                        "textAlign" : "center",
+                        "textDecoration" : "{\"bold\":true}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "e520d22a-aaeb-47ba-9af9-97e6bb738c32",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "fit" : "contain",
+                        "height" : 350,
+                        "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCNM2X3HWQZJGQ3GT7GHJ2Y6MB7U\",\"contentType\":null}}",
+                        "overlayColor" : "",
+                        "position" : "center center",
+                        "width" : 70
+                      },
+                      "definition" : "dxp_base:image",
+                      "id" : "64378054-076d-40c7-9f88-baab5f2d736f",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "flex-start",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"c4915243-ef73-49df-b5c2-16cab27b6cf5\",\"columns\":[{\"UUID\":\"cbcdcbb4-5d28-449d-afc9-d5023832ee43\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "size" : "standard",
+                            "stretch" : "standard",
+                            "text" : "Download",
+                            "type" : "primary",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://app.schoox.com/library2/viewer.php?id=4643902&academyId=827540346\"}}}}"
+                          },
+                          "definition" : "dxp_base:button",
+                          "id" : "9f4db475-1470-4a29-8e30-a6e2f0346c72",
+                          "type" : "component"
+                        } ],
+                        "id" : "cbcdcbb4-5d28-449d-afc9-d5023832ee43",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      } ],
+                      "customCssClasses" : "button-row",
+                      "definition" : "dxp_layout:columns",
+                      "id" : "c4915243-ef73-49df-b5c2-16cab27b6cf5",
+                      "type" : "component"
+                    } ],
+                    "id" : "c0d961e3-0e46-44df-aa19-2031450109b0",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "Helping Clients Embrace PVPs",
+                        "textAlign" : "center",
+                        "textDecoration" : "{\"bold\":true}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "2c0cb551-4ef2-4445-af11-b9abc8ffca79",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "fit" : "contain",
+                        "height" : 350,
+                        "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCZHGVZJ5KOBFHNCUJKWYUCWYRGU\",\"contentType\":null}}",
+                        "overlayColor" : "",
+                        "position" : "center center",
+                        "width" : 42
+                      },
+                      "definition" : "dxp_base:image",
+                      "id" : "82b068c8-29a6-42d1-b055-b369c87e32f4",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "flex-start",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"9234f823-3f6b-4454-9286-b9bc3d5d1f80\",\"columns\":[{\"UUID\":\"d8c04bf9-696e-4821-81d5-b190f4bdd63d\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "buttonLabel" : "Download",
+                            "fileContentId" : "MC3QNGQKR7VNE5LG7EKTSK27YFYU"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "b39c10f2-8742-4f0b-9290-c99224e41003",
+                          "type" : "component"
+                        } ],
+                        "id" : "d8c04bf9-696e-4821-81d5-b190f4bdd63d",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      } ],
+                      "customCssClasses" : "button-row",
+                      "definition" : "dxp_layout:columns",
+                      "id" : "9234f823-3f6b-4454-9286-b9bc3d5d1f80",
+                      "type" : "component"
+                    } ],
+                    "id" : "6ed9207f-3940-4c2a-90d6-2bc8207422ec",
+                    "name" : "col2",
+                    "title" : "Column 2",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "5d429120-e5e7-4faf-9f76-aa4637c5ec3e",
+                  "type" : "component"
+                }, {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "flex-start",
+                    "dxpStyle" : {
+                      "margin" : {
+                        "bottom" : "",
+                        "left" : "",
+                        "right" : "",
+                        "top" : "40px"
+                      }
+                    },
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"947b4511-485f-45c4-9c78-d1994bb32c6c\",\"columns\":[{\"UUID\":\"faf99c32-57db-4038-b378-b5b65e33c7eb\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"4c033701-ad1e-4d93-a6ee-2288612ae165\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "Think SPAW - List of Must-Haves for your Practice",
+                        "textAlign" : "center",
+                        "textDecoration" : "{\"bold\":true}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "bfb39e02-9d30-4ed6-ab33-26f3afb36a6e",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "fit" : "contain",
+                        "height" : 350,
+                        "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCTQP4NEAFBFE57DH3UKZAVZVLTQ\",\"contentType\":null}}",
+                        "overlayColor" : "",
+                        "position" : "center center",
+                        "width" : 70
+                      },
+                      "definition" : "dxp_base:image",
+                      "id" : "f4a1d093-7d08-4709-8e97-c8ccbc402a90",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "flex-start",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"9193c290-024d-4ca0-8b7c-565e8e2fa2b5\",\"columns\":[{\"UUID\":\"0032adcf-0d4f-4556-816e-466ad057c2e3\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "size" : "standard",
+                            "stretch" : "standard",
+                            "text" : "Download",
+                            "type" : "primary",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://app.schoox.com/library2/viewer.php?id=4643916&academyId=827540346\"}}}}"
+                          },
+                          "definition" : "dxp_base:button",
+                          "id" : "dfe87e9f-6a95-49d9-9d19-5c1cd7974543",
+                          "type" : "component"
+                        } ],
+                        "id" : "0032adcf-0d4f-4556-816e-466ad057c2e3",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      } ],
+                      "customCssClasses" : "button-row",
+                      "definition" : "dxp_layout:columns",
+                      "id" : "9193c290-024d-4ca0-8b7c-565e8e2fa2b5",
+                      "type" : "component"
+                    } ],
+                    "id" : "faf99c32-57db-4038-b378-b5b65e33c7eb",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  }, {
+                    "id" : "4c033701-ad1e-4d93-a6ee-2288612ae165",
+                    "name" : "col2",
+                    "title" : "Column 2",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "947b4511-485f-45c4-9c78-d1994bb32c6c",
+                  "type" : "component"
+                } ],
+                "id" : "f3b2f05d-fd40-4b71-a160-71e571a3aeba",
+                "name" : "Content-Region-Has-Membership",
+                "title" : "Content-Region-Has-Membership",
+                "type" : "region"
+              }, {
+                "id" : "2448992b-e9b8-41d7-9301-b70563b34b74",
+                "name" : "Content-Region-No-Membership",
+                "title" : "Content-Region-No-Membership",
+                "type" : "region"
+              } ],
+              "definition" : "c:membershipCheck",
+              "id" : "1d708d71-52a2-4090-aba7-72c14f852ef9",
+              "type" : "component"
+            } ],
+            "id" : "cf153a8b-e711-4a71-8ed9-9c90839dcbae",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "c4e4e7ca-0e7e-4e7c-8236-a5ed1fdb30fa",
+          "type" : "component"
+        } ],
+        "id" : "38f559cf-409a-4183-a220-81aa500f4a26",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "pageTitle" : "Veterinary Professional Resources",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "2ac4913d-e9d3-45fe-a1f3-ca9eb004ef39",
+          "type" : "component"
+        } ],
+        "id" : "818d2590-4aba-48ec-8f3f-1676d57c96bc",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "918def4b-0d35-41a7-9b37-32c95473aa05",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-veterinary-professional-resources"
+  },
+  "urlName" : "veterinary-professional-resources"
+}

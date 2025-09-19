@@ -1,0 +1,151 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "My Learning",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "dxpStyle" : { },
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"e199c1b2-29d5-47f8-8c95-9cb62d9e4c48\",\"columns\":[{\"UUID\":\"b5305d0b-c696-4da5-b0a4-c203c8ec0242\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : { },
+              "definition" : "c:ffUpdateSXEnrollmentData",
+              "id" : "d73789f0-34e8-4964-9db1-b6a0226fd708",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "backgroundColor" : "",
+                "dxpStyle" : { },
+                "isLinkable" : false,
+                "linkAssistiveText" : "",
+                "paddingHorizontal" : "none",
+                "paddingVertical" : "none",
+                "text" : "My Learning",
+                "textAlign" : "center",
+                "textDecoration" : "{\"underline\":true,\"bold\":true}",
+                "textDisplayInfo" : "{\"textStyle\":\"heading-large\",\"headingTag\":\"h2\",\"enableOverride\":false}"
+              },
+              "definition" : "dxp_base:textBlock",
+              "id" : "a3f54002-f999-4487-b4dc-66b90f423836",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "backgroundColor" : "",
+                "dxpStyle" : { },
+                "isLinkable" : true,
+                "linkAssistiveText" : "",
+                "paddingHorizontal" : "none",
+                "paddingVertical" : "none",
+                "text" : "Click here to access your learning!",
+                "textAlign" : "center",
+                "textDecoration" : "{}",
+                "textDisplayInfo" : "{\"textStyle\":\"body-regular\",\"headingTag\":\"p\",\"enableOverride\":false}",
+                "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://app.schoox.com/login.php\"}}}}"
+              },
+              "definition" : "dxp_base:textBlock",
+              "id" : "e728acc6-9798-4a88-8a8b-0055e260e9b5",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "columnGutterWidth" : "",
+                "columnMinHeight" : "",
+                "columnVerticalAlign" : "flex-start",
+                "layoutDirectionDesktop" : "row",
+                "layoutDirectionMobile" : "column",
+                "layoutDirectionTablet" : "column",
+                "sectionConfig" : "{\"UUID\":\"03e4a8d8-e13b-4bb9-8fa8-895dea431f06\",\"columns\":[{\"UUID\":\"7df9642b-5425-4a35-9b56-ed26e4bbd9a9\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "backgroundColor" : "",
+                    "isLinkable" : false,
+                    "linkAssistiveText" : "",
+                    "paddingHorizontal" : "none",
+                    "paddingVertical" : "none",
+                    "text" : "My Courses:",
+                    "textAlign" : "center",
+                    "textColor" : "rgb(204, 154, 44)",
+                    "textDecoration" : "{}",
+                    "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\"}"
+                  },
+                  "definition" : "dxp_base:textBlock",
+                  "id" : "4f7d8a59-a176-42e8-b99c-ec2d30340c53",
+                  "type" : "component"
+                }, {
+                  "attributes" : {
+                    "flowName" : "{\"flowName\":\"My_Account_My_Course_Progress\",\"flowLabel\":\"My Account - My Courses\"}"
+                  },
+                  "definition" : "dxp_flow:flow",
+                  "id" : "d1ed8aee-1ad8-4b81-af52-23029862ca64",
+                  "type" : "component"
+                } ],
+                "id" : "7df9642b-5425-4a35-9b56-ed26e4bbd9a9",
+                "name" : "col1",
+                "title" : "Column 1",
+                "type" : "region"
+              } ],
+              "definition" : "dxp_layout:columns",
+              "id" : "03e4a8d8-e13b-4bb9-8fa8-895dea431f06",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "alignment" : "center",
+                "dxpStyle" : { },
+                "lineStyle" : "solid",
+                "size" : 1,
+                "width" : 100
+              },
+              "definition" : "dxp_base:horizontalLine",
+              "id" : "2c358009-8dfe-4096-896a-778d2ba26c9c",
+              "type" : "component"
+            } ],
+            "id" : "b5305d0b-c696-4da5-b0a4-c203c8ec0242",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "e199c1b2-29d5-47f8-8c95-9cb62d9e4c48",
+          "type" : "component"
+        } ],
+        "id" : "2fae7e91-e41e-4cdf-a376-549feb84c229",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "dxpStyle" : { },
+            "pageTitle" : "My Learning",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "54088ac9-a51d-407d-88a6-227e903095b9",
+          "type" : "component"
+        } ],
+        "id" : "d83d32fb-3b7e-4543-9f4f-3c7d0b4c04ea",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "ea5e4993-0f4d-45c7-8845-f0fec604c267",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-my-learning"
+  },
+  "urlName" : "my-learning"
+}

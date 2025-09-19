@@ -1,0 +1,754 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Logos and Credentials",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"1a2ced69-a3e3-42c8-bd0c-8a1d577ef3de\",\"columns\":[{\"UUID\":\"2d45607c-67cd-4c1c-9016-2d9eb619ff70\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "columnGutterWidth" : "2rem",
+                "columnMinHeight" : "",
+                "columnVerticalAlign" : "center",
+                "layoutDirectionDesktop" : "row",
+                "layoutDirectionMobile" : "column",
+                "layoutDirectionTablet" : "column",
+                "sectionConfig" : "{\"UUID\":\"b70b7ff9-764c-4990-9892-747eb55be77a\",\"columns\":[{\"UUID\":\"4e1b4a72-aa6e-4d27-9fb3-4c9449c5ae23\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"4\",\"seedComponents\":[]},{\"UUID\":\"2754f896-a894-4cbf-bbe7-5df267bfbd0b\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"4\",\"seedComponents\":[]},{\"UUID\":\"1c649981-baf8-44ea-90e1-a4f2eacfb4c5\",\"columnName\":\"Column 3\",\"columnKey\":\"00103\",\"columnWidth\":\"4\",\"seedComponents\":[]}]}"
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "checkAccountMembership" : false,
+                    "checkBoardingMembership" : false,
+                    "checkCertification" : false,
+                    "checkGroomerMembership" : false,
+                    "checkPracticeMembership" : true,
+                    "checkSitterMembership" : false,
+                    "checkTrainerMembership" : false,
+                    "checkVetProMembership" : false,
+                    "dxpStyle" : {
+                      "margin" : {
+                        "bottom" : "10px",
+                        "left" : "",
+                        "right" : "",
+                        "top" : ""
+                      }
+                    }
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "rgb(237, 247, 254)",
+                        "buttonLabel" : "Download",
+                        "fileContentId" : "MCT7ALN7MRHZD2VPKYT2TEA2K35I",
+                        "imageContentId" : "MC3NII4MJFXVHYPL3PO3PXZLTAHM",
+                        "showButton" : true,
+                        "titleText" : "Fear Free Certified Practice Logo - General Practice"
+                      },
+                      "definition" : "c:ffCardComponent",
+                      "id" : "d263714d-0e7b-435e-8608-6b0d2dc3aaf4",
+                      "type" : "component"
+                    } ],
+                    "id" : "d2de9072-defb-454d-9bf0-cc5a85d507a4",
+                    "name" : "Content-Region-Has-Membership",
+                    "title" : "Content-Region-Has-Membership",
+                    "type" : "region"
+                  }, {
+                    "id" : "1303cbcf-8315-4eda-8306-bc72e24af749",
+                    "name" : "Content-Region-No-Membership",
+                    "title" : "Content-Region-No-Membership",
+                    "type" : "region"
+                  } ],
+                  "definition" : "c:membershipCheck",
+                  "id" : "39457227-2135-4823-9c32-d36e2ca0f359",
+                  "type" : "component"
+                } ],
+                "id" : "4e1b4a72-aa6e-4d27-9fb3-4c9449c5ae23",
+                "name" : "col1",
+                "title" : "Column 1",
+                "type" : "region"
+              }, {
+                "children" : [ {
+                  "attributes" : {
+                    "checkAccountMembership" : false,
+                    "checkBoardingMembership" : false,
+                    "checkCertification" : false,
+                    "checkGroomerMembership" : false,
+                    "checkPracticeMembership" : true,
+                    "checkSitterMembership" : false,
+                    "checkTrainerMembership" : false,
+                    "checkVetProMembership" : false,
+                    "dxpStyle" : {
+                      "margin" : {
+                        "bottom" : "10px",
+                        "left" : "",
+                        "right" : "",
+                        "top" : ""
+                      }
+                    }
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "rgb(255, 247, 233)",
+                        "buttonLabel" : "Download",
+                        "fileContentId" : "MCRJC7LX4L4FFXDI42KHLZMH7LAY",
+                        "imageContentId" : "MCNT4ODZULFRCF5KFM674EPPGCJI",
+                        "showButton" : true,
+                        "titleText" : "Fear Free Certified Practice Logo - ER & Urgent Care"
+                      },
+                      "definition" : "c:ffCardComponent",
+                      "id" : "911fcc46-f13f-4036-afe0-3d5b717ce9f5",
+                      "type" : "component"
+                    } ],
+                    "id" : "7c7da58a-f750-41e4-837c-9a04b6ab80be",
+                    "name" : "Content-Region-Has-Membership",
+                    "title" : "Content-Region-Has-Membership",
+                    "type" : "region"
+                  }, {
+                    "id" : "77c0a9ba-83ee-4fa5-9818-60006af05836",
+                    "name" : "Content-Region-No-Membership",
+                    "title" : "Content-Region-No-Membership",
+                    "type" : "region"
+                  } ],
+                  "definition" : "c:membershipCheck",
+                  "id" : "443de464-e005-4fd3-8aba-fd7d6dee96c1",
+                  "type" : "component"
+                } ],
+                "id" : "2754f896-a894-4cbf-bbe7-5df267bfbd0b",
+                "name" : "col2",
+                "title" : "Column 2",
+                "type" : "region"
+              }, {
+                "children" : [ {
+                  "attributes" : {
+                    "checkAccountMembership" : false,
+                    "checkBoardingMembership" : false,
+                    "checkCertification" : false,
+                    "checkGroomerMembership" : false,
+                    "checkPracticeMembership" : true,
+                    "checkSitterMembership" : false,
+                    "checkTrainerMembership" : false,
+                    "checkVetProMembership" : false,
+                    "dxpStyle" : {
+                      "margin" : {
+                        "bottom" : "10px",
+                        "left" : "",
+                        "right" : "",
+                        "top" : ""
+                      }
+                    }
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "rgb(238, 248, 248)",
+                        "buttonLabel" : "Download",
+                        "fileContentId" : "MCRHMSDMH2TVB6JKVTFWUYTMM6EE",
+                        "imageContentId" : "MC7OQIGCFW65ET5NSYRUG2XVWA5Q",
+                        "showButton" : true,
+                        "titleText" : "Fear Free Certified Practice Logo - House Call"
+                      },
+                      "definition" : "c:ffCardComponent",
+                      "id" : "5c207bd1-410c-49ed-bff2-67557f53f337",
+                      "type" : "component"
+                    } ],
+                    "id" : "74db842b-110f-45bf-8af9-b2f18a5c29ff",
+                    "name" : "Content-Region-Has-Membership",
+                    "title" : "Content-Region-Has-Membership",
+                    "type" : "region"
+                  }, {
+                    "id" : "f447fba5-e688-45a3-b6ae-b0e4b02f90de",
+                    "name" : "Content-Region-No-Membership",
+                    "title" : "Content-Region-No-Membership",
+                    "type" : "region"
+                  } ],
+                  "definition" : "c:membershipCheck",
+                  "id" : "e0a4bc7b-ec9f-4b10-b752-d0f4004a1ea7",
+                  "type" : "component"
+                } ],
+                "id" : "1c649981-baf8-44ea-90e1-a4f2eacfb4c5",
+                "name" : "00103",
+                "title" : "Column 3",
+                "type" : "region"
+              } ],
+              "customCssClasses" : "logos-creds",
+              "definition" : "dxp_layout:columns",
+              "id" : "b70b7ff9-764c-4990-9892-747eb55be77a",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "columnGutterWidth" : "2rem",
+                "columnMinHeight" : "",
+                "columnVerticalAlign" : "center",
+                "dxpStyle" : {
+                  "margin" : {
+                    "bottom" : "",
+                    "left" : "",
+                    "right" : "",
+                    "top" : "20px"
+                  }
+                },
+                "layoutDirectionDesktop" : "row",
+                "layoutDirectionMobile" : "column",
+                "layoutDirectionTablet" : "column",
+                "sectionConfig" : "{\"UUID\":\"10678363-6f74-4e7e-82dc-7e56c7160e7c\",\"columns\":[{\"UUID\":\"338378ff-18ab-47ef-a47c-edc457a24bff\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"4\",\"seedComponents\":[]},{\"UUID\":\"ac704999-54aa-40bd-95d2-59066fc63a7e\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"4\",\"seedComponents\":[]},{\"UUID\":\"61583550-84ee-418f-800d-e09381782eb7\",\"columnName\":\"Column 3\",\"columnKey\":\"00103\",\"columnWidth\":\"4\",\"seedComponents\":[]}]}"
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "checkAccountMembership" : true,
+                    "checkBoardingMembership" : false,
+                    "checkCertification" : false,
+                    "checkGroomerMembership" : false,
+                    "checkPracticeMembership" : false,
+                    "checkSitterMembership" : false,
+                    "checkTrainerMembership" : false,
+                    "checkVetProMembership" : false,
+                    "dxpStyle" : {
+                      "padding" : {
+                        "bottom" : "10px",
+                        "left" : "",
+                        "right" : "",
+                        "top" : ""
+                      }
+                    }
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "rgb(238, 248, 248)",
+                        "buttonLabel" : "Download",
+                        "fileContentId" : "MCYKJCWUFGRZF43DEJOHGXPXIP3Y",
+                        "imageContentId" : "MCSUPFE3ASLRGJPEMVD75PCQNXQQ",
+                        "showButton" : true,
+                        "titleText" : "Fear Free Certified Professional Logo"
+                      },
+                      "definition" : "c:ffCardComponent",
+                      "id" : "151e0ec2-ec72-455f-86ea-f1364d516fef",
+                      "type" : "component"
+                    } ],
+                    "id" : "9b450f23-ddeb-4fd3-ae4d-149a4b725089",
+                    "name" : "Content-Region-Has-Membership",
+                    "title" : "Content-Region-Has-Membership",
+                    "type" : "region"
+                  }, {
+                    "id" : "1508a725-8a27-4468-846f-9602219237df",
+                    "name" : "Content-Region-No-Membership",
+                    "title" : "Content-Region-No-Membership",
+                    "type" : "region"
+                  } ],
+                  "definition" : "c:membershipCheck",
+                  "id" : "5c79c8c4-b966-4e6a-9b95-4e21a386f434",
+                  "type" : "component"
+                } ],
+                "id" : "338378ff-18ab-47ef-a47c-edc457a24bff",
+                "name" : "col1",
+                "title" : "Column 1",
+                "type" : "region"
+              }, {
+                "children" : [ {
+                  "attributes" : {
+                    "checkAccountMembership" : true,
+                    "checkBoardingMembership" : false,
+                    "checkCertification" : false,
+                    "checkGroomerMembership" : false,
+                    "checkPracticeMembership" : false,
+                    "checkSitterMembership" : false,
+                    "checkTrainerMembership" : false,
+                    "checkVetProMembership" : false,
+                    "dxpStyle" : {
+                      "margin" : {
+                        "bottom" : "10px",
+                        "left" : "",
+                        "right" : "",
+                        "top" : ""
+                      }
+                    }
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "rgb(237, 247, 254)",
+                        "buttonLabel" : "Download",
+                        "fileContentId" : "MCNWSMU5GGURBOBANPLEPZACMZCQ",
+                        "imageContentId" : "MCYEVTWLAGBBEYXMPJAZWTLEMIGE",
+                        "showButton" : true,
+                        "titleText" : "Fear Free Corporate Logo"
+                      },
+                      "definition" : "c:ffCardComponent",
+                      "id" : "0b7b6ea2-64ae-4206-8a12-bc74f19ec432",
+                      "type" : "component"
+                    } ],
+                    "id" : "8847d010-8cc8-4d05-a9a3-e7525fe774ad",
+                    "name" : "Content-Region-Has-Membership",
+                    "title" : "Content-Region-Has-Membership",
+                    "type" : "region"
+                  }, {
+                    "id" : "207f6c86-10df-4c3f-9e3d-fdc93373a60a",
+                    "name" : "Content-Region-No-Membership",
+                    "title" : "Content-Region-No-Membership",
+                    "type" : "region"
+                  } ],
+                  "definition" : "c:membershipCheck",
+                  "id" : "691f9503-9ea0-497c-be40-daa8ceaa4826",
+                  "type" : "component"
+                } ],
+                "id" : "ac704999-54aa-40bd-95d2-59066fc63a7e",
+                "name" : "col2",
+                "title" : "Column 2",
+                "type" : "region"
+              }, {
+                "children" : [ {
+                  "attributes" : {
+                    "checkAccountMembership" : false,
+                    "checkBoardingMembership" : false,
+                    "checkCertification" : false,
+                    "checkGroomerMembership" : false,
+                    "checkPracticeMembership" : false,
+                    "checkSitterMembership" : false,
+                    "checkTrainerMembership" : false,
+                    "checkVetProMembership" : true,
+                    "dxpStyle" : {
+                      "margin" : {
+                        "bottom" : "10px",
+                        "left" : "",
+                        "right" : "",
+                        "top" : ""
+                      }
+                    }
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "rgb(255, 247, 233)",
+                        "buttonLabel" : "Download",
+                        "fileContentId" : "MCQ5FKIYLPIVGNXFLZQF3BRYS4AQ",
+                        "imageContentId" : "MCU7M2S47IRBGIZIK276EIN76UWY",
+                        "showButton" : true,
+                        "titleText" : "Elite Fear Free Certification Logo"
+                      },
+                      "definition" : "c:ffCardComponent",
+                      "id" : "79ef4212-8d5d-491f-ba46-69f8a7bef22a",
+                      "type" : "component"
+                    } ],
+                    "id" : "da167ce3-2aa9-4348-a4a7-27ec32fca045",
+                    "name" : "Content-Region-Has-Membership",
+                    "title" : "Content-Region-Has-Membership",
+                    "type" : "region"
+                  }, {
+                    "id" : "ab289fa6-4573-4101-8809-12ab0015ccf3",
+                    "name" : "Content-Region-No-Membership",
+                    "title" : "Content-Region-No-Membership",
+                    "type" : "region"
+                  } ],
+                  "definition" : "c:membershipCheck",
+                  "id" : "fb31cc37-7fee-4005-aacd-8f364da516ac",
+                  "type" : "component"
+                } ],
+                "id" : "61583550-84ee-418f-800d-e09381782eb7",
+                "name" : "00103",
+                "title" : "Column 3",
+                "type" : "region"
+              } ],
+              "customCssClasses" : "logos-creds",
+              "definition" : "dxp_layout:columns",
+              "id" : "10678363-6f74-4e7e-82dc-7e56c7160e7c",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "columnGutterWidth" : "2rem",
+                "columnMinHeight" : "",
+                "columnVerticalAlign" : "center",
+                "layoutDirectionDesktop" : "row",
+                "layoutDirectionMobile" : "column",
+                "layoutDirectionTablet" : "column",
+                "sectionConfig" : "{\"UUID\":\"fd9404f9-41eb-43d1-b04a-dc3daeabd0c7\",\"columns\":[{\"UUID\":\"f862fa7b-2241-4d07-b50e-eda9df12e3ee\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"4\",\"seedComponents\":[]},{\"UUID\":\"81726bde-81b9-4b9d-ac3f-40fa32b6686d\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"4\",\"seedComponents\":[]},{\"UUID\":\"c92c67b1-4165-4b3e-852a-f7b883514857\",\"columnName\":\"Column 3\",\"columnKey\":\"00103\",\"columnWidth\":\"4\",\"seedComponents\":[]}]}"
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "checkAccountMembership" : true,
+                    "checkBoardingMembership" : false,
+                    "checkCertification" : false,
+                    "checkGroomerMembership" : false,
+                    "checkPracticeMembership" : false,
+                    "checkSitterMembership" : false,
+                    "checkTrainerMembership" : false,
+                    "checkVetProMembership" : false,
+                    "dxpStyle" : {
+                      "margin" : {
+                        "bottom" : "10px",
+                        "left" : "",
+                        "right" : "",
+                        "top" : ""
+                      }
+                    }
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "rgb(237, 247, 254)",
+                        "buttonLabel" : "Download",
+                        "fileContentId" : "MCDQKRDPFQVJENHHWWPS4IZEGEP4",
+                        "imageContentId" : "MC5MHXLU4GQBDZDKEU4TFKAN7WNQ",
+                        "showButton" : true,
+                        "titleText" : "Fear Free Certified Professional Email Signature Option #1"
+                      },
+                      "definition" : "c:ffCardComponent",
+                      "id" : "76f35638-e56b-4151-aa6c-6e2be8d4f252",
+                      "type" : "component"
+                    } ],
+                    "id" : "853d1183-f783-4767-9826-a79594aed37e",
+                    "name" : "Content-Region-Has-Membership",
+                    "title" : "Content-Region-Has-Membership",
+                    "type" : "region"
+                  }, {
+                    "id" : "06fb4410-8bfa-4ac6-83ed-7408937f724c",
+                    "name" : "Content-Region-No-Membership",
+                    "title" : "Content-Region-No-Membership",
+                    "type" : "region"
+                  } ],
+                  "definition" : "c:membershipCheck",
+                  "id" : "88f9a664-3bb7-4bb6-a416-c366942c01b6",
+                  "type" : "component"
+                } ],
+                "id" : "f862fa7b-2241-4d07-b50e-eda9df12e3ee",
+                "name" : "col1",
+                "title" : "Column 1",
+                "type" : "region"
+              }, {
+                "children" : [ {
+                  "attributes" : {
+                    "checkAccountMembership" : true,
+                    "checkBoardingMembership" : false,
+                    "checkCertification" : false,
+                    "checkGroomerMembership" : false,
+                    "checkPracticeMembership" : false,
+                    "checkSitterMembership" : false,
+                    "checkTrainerMembership" : false,
+                    "checkVetProMembership" : false,
+                    "dxpStyle" : {
+                      "margin" : {
+                        "bottom" : "10px",
+                        "left" : "",
+                        "right" : "",
+                        "top" : ""
+                      }
+                    }
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "rgb(255, 247, 233)",
+                        "buttonLabel" : "Download",
+                        "fileContentId" : "MC2RTKGCV355FGNI35EZXBJUVHOE",
+                        "imageContentId" : "MCLL4LGHIJSZCCBOZMB5AYEQKW4M",
+                        "showButton" : true,
+                        "titleText" : "Fear Free Certified Professional Email Signature Option #2"
+                      },
+                      "definition" : "c:ffCardComponent",
+                      "id" : "bcf782a6-f856-4263-83f7-40470d980a3d",
+                      "type" : "component"
+                    } ],
+                    "id" : "05c1f6ff-b90e-409a-b5fd-7bd7e0621a56",
+                    "name" : "Content-Region-Has-Membership",
+                    "title" : "Content-Region-Has-Membership",
+                    "type" : "region"
+                  }, {
+                    "id" : "e3b5d1e3-c9cf-4d3c-97a7-d9fac09cfddf",
+                    "name" : "Content-Region-No-Membership",
+                    "title" : "Content-Region-No-Membership",
+                    "type" : "region"
+                  } ],
+                  "definition" : "c:membershipCheck",
+                  "id" : "dee730fd-57e8-4b22-a814-d27ddaf890cf",
+                  "type" : "component"
+                } ],
+                "id" : "81726bde-81b9-4b9d-ac3f-40fa32b6686d",
+                "name" : "col2",
+                "title" : "Column 2",
+                "type" : "region"
+              }, {
+                "children" : [ {
+                  "attributes" : {
+                    "checkAccountMembership" : true,
+                    "checkBoardingMembership" : false,
+                    "checkCertification" : false,
+                    "checkGroomerMembership" : false,
+                    "checkPracticeMembership" : false,
+                    "checkSitterMembership" : false,
+                    "checkTrainerMembership" : false,
+                    "checkVetProMembership" : false,
+                    "dxpStyle" : {
+                      "margin" : {
+                        "bottom" : "10px",
+                        "left" : "",
+                        "right" : "",
+                        "top" : ""
+                      }
+                    }
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "rgb(238, 248, 248)",
+                        "buttonLabel" : "Download",
+                        "fileContentId" : "MCYSVA5ACNRJARTFXLWFBCYE5QII",
+                        "imageContentId" : "MCYSVA5ACNRJARTFXLWFBCYE5QII",
+                        "showButton" : true,
+                        "titleText" : "Fear Free Happy Homes Email Signature"
+                      },
+                      "definition" : "c:ffCardComponent",
+                      "id" : "1b611d43-5549-491f-ad13-72496517b56f",
+                      "type" : "component"
+                    } ],
+                    "id" : "17e921d3-b130-4454-b237-a4574d63eee1",
+                    "name" : "Content-Region-Has-Membership",
+                    "title" : "Content-Region-Has-Membership",
+                    "type" : "region"
+                  }, {
+                    "id" : "ef6fcf98-48e1-424a-a814-34cae577f5f2",
+                    "name" : "Content-Region-No-Membership",
+                    "title" : "Content-Region-No-Membership",
+                    "type" : "region"
+                  } ],
+                  "definition" : "c:membershipCheck",
+                  "id" : "1a66bdaa-1ffc-4f72-b3ac-7d8a32d63294",
+                  "type" : "component"
+                } ],
+                "id" : "c92c67b1-4165-4b3e-852a-f7b883514857",
+                "name" : "00103",
+                "title" : "Column 3",
+                "type" : "region"
+              } ],
+              "customCssClasses" : "logos-creds",
+              "definition" : "dxp_layout:columns",
+              "id" : "fd9404f9-41eb-43d1-b04a-dc3daeabd0c7",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "columnGutterWidth" : "2rem",
+                "columnMinHeight" : "",
+                "columnVerticalAlign" : "center",
+                "layoutDirectionDesktop" : "row",
+                "layoutDirectionMobile" : "column",
+                "layoutDirectionTablet" : "column",
+                "sectionConfig" : "{\"UUID\":\"cde45414-5bbb-4859-89de-0a1398105445\",\"columns\":[{\"UUID\":\"d0638c7c-7c08-4f70-8550-8eac719c7b22\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"4\",\"seedComponents\":[]},{\"UUID\":\"f3d8587e-bc14-4565-bc77-ada03076937c\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"4\",\"seedComponents\":[]},{\"UUID\":\"d35090ef-c656-4962-9b83-98366f32a368\",\"columnName\":\"Column 3\",\"columnKey\":\"00103\",\"columnWidth\":\"4\",\"seedComponents\":[]}]}"
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "checkAccountMembership" : true,
+                    "checkBoardingMembership" : false,
+                    "checkCertification" : false,
+                    "checkGroomerMembership" : false,
+                    "checkPracticeMembership" : false,
+                    "checkSitterMembership" : false,
+                    "checkTrainerMembership" : false,
+                    "checkVetProMembership" : false,
+                    "dxpStyle" : {
+                      "margin" : {
+                        "bottom" : "10px",
+                        "left" : "",
+                        "right" : "",
+                        "top" : ""
+                      }
+                    }
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "rgb(238, 248, 248)",
+                        "buttonLabel" : "Download",
+                        "fileContentId" : "MC3XKXYPHL4FDRXM5MNDT5WSGUFI",
+                        "imageContentId" : "MCIX4JLAP23NENLINPMQF7IXGY6A",
+                        "showButton" : true,
+                        "titleText" : "Fear Free Certification Credentials"
+                      },
+                      "definition" : "c:ffCardComponent",
+                      "id" : "85647247-8b56-48e2-bf0e-c6de856bc3f8",
+                      "type" : "component"
+                    } ],
+                    "id" : "dbae5293-8e47-4af2-8d11-e998aaa3513b",
+                    "name" : "Content-Region-Has-Membership",
+                    "title" : "Content-Region-Has-Membership",
+                    "type" : "region"
+                  }, {
+                    "id" : "74d489cf-7b63-4f73-9ffd-d9f3e9eb0c7b",
+                    "name" : "Content-Region-No-Membership",
+                    "title" : "Content-Region-No-Membership",
+                    "type" : "region"
+                  } ],
+                  "definition" : "c:membershipCheck",
+                  "id" : "496df911-f47b-4344-b338-eca8a315df46",
+                  "type" : "component"
+                } ],
+                "id" : "d0638c7c-7c08-4f70-8550-8eac719c7b22",
+                "name" : "col1",
+                "title" : "Column 1",
+                "type" : "region"
+              }, {
+                "children" : [ {
+                  "attributes" : {
+                    "checkAccountMembership" : false,
+                    "checkBoardingMembership" : false,
+                    "checkCertification" : false,
+                    "checkGroomerMembership" : false,
+                    "checkPracticeMembership" : true,
+                    "checkSitterMembership" : false,
+                    "checkTrainerMembership" : false,
+                    "checkVetProMembership" : false,
+                    "dxpStyle" : {
+                      "margin" : {
+                        "bottom" : "10px",
+                        "left" : "",
+                        "right" : "",
+                        "top" : ""
+                      }
+                    }
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "rgb(238, 248, 248)",
+                        "buttonLabel" : "Download",
+                        "fileContentId" : "MCFUF3AKJRAZED3P3NZS75ULFDRE",
+                        "imageContentId" : "MCFUF3AKJRAZED3P3NZS75ULFDRE",
+                        "showButton" : true,
+                        "titleText" : "Fear Free Certified Practice Email Signature Option #1"
+                      },
+                      "definition" : "c:ffCardComponent",
+                      "id" : "e2dd42df-bd00-41f6-86cb-8e3216c261da",
+                      "type" : "component"
+                    } ],
+                    "id" : "5ed4d717-c0d2-44c9-bf8e-e70d86e0fabc",
+                    "name" : "Content-Region-Has-Membership",
+                    "title" : "Content-Region-Has-Membership",
+                    "type" : "region"
+                  }, {
+                    "id" : "a9258437-3448-4ef2-a1c8-838d582ecf97",
+                    "name" : "Content-Region-No-Membership",
+                    "title" : "Content-Region-No-Membership",
+                    "type" : "region"
+                  } ],
+                  "definition" : "c:membershipCheck",
+                  "id" : "bb74201a-3fd5-4bca-9d58-2d6ed8045e18",
+                  "type" : "component"
+                } ],
+                "id" : "f3d8587e-bc14-4565-bc77-ada03076937c",
+                "name" : "col2",
+                "title" : "Column 2",
+                "type" : "region"
+              }, {
+                "children" : [ {
+                  "attributes" : {
+                    "checkAccountMembership" : false,
+                    "checkBoardingMembership" : false,
+                    "checkCertification" : false,
+                    "checkGroomerMembership" : false,
+                    "checkPracticeMembership" : true,
+                    "checkSitterMembership" : false,
+                    "checkTrainerMembership" : false,
+                    "checkVetProMembership" : false,
+                    "dxpStyle" : {
+                      "margin" : {
+                        "bottom" : "10px",
+                        "left" : "",
+                        "right" : "",
+                        "top" : ""
+                      }
+                    }
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "rgb(255, 247, 233)",
+                        "buttonLabel" : "Download",
+                        "fileContentId" : "MCWLNESCR3WZC6PG3MDML3K7OHIE",
+                        "imageContentId" : "MCWLNESCR3WZC6PG3MDML3K7OHIE",
+                        "showButton" : true,
+                        "titleText" : "Fear Free Certified Practice Email Signature Option #2"
+                      },
+                      "definition" : "c:ffCardComponent",
+                      "id" : "79d9ff16-ad3c-4464-8662-803782ac91f3",
+                      "type" : "component"
+                    } ],
+                    "id" : "c5643e23-fe18-48fc-8fbc-f708d8690f03",
+                    "name" : "Content-Region-Has-Membership",
+                    "title" : "Content-Region-Has-Membership",
+                    "type" : "region"
+                  }, {
+                    "id" : "18ecf30a-1ceb-4393-b99f-67a9dd61c797",
+                    "name" : "Content-Region-No-Membership",
+                    "title" : "Content-Region-No-Membership",
+                    "type" : "region"
+                  } ],
+                  "definition" : "c:membershipCheck",
+                  "id" : "292064b5-e2a9-42e7-b553-84beb62d9837",
+                  "type" : "component"
+                } ],
+                "id" : "d35090ef-c656-4962-9b83-98366f32a368",
+                "name" : "00103",
+                "title" : "Column 3",
+                "type" : "region"
+              } ],
+              "customCssClasses" : "logos-creds",
+              "definition" : "dxp_layout:columns",
+              "id" : "cde45414-5bbb-4859-89de-0a1398105445",
+              "type" : "component"
+            } ],
+            "id" : "2d45607c-67cd-4c1c-9016-2d9eb619ff70",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "1a2ced69-a3e3-42c8-bd0c-8a1d577ef3de",
+          "type" : "component"
+        } ],
+        "id" : "85094e61-fd3a-45db-866b-e9ea8e339cde",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "pageTitle" : "Logos and Credentials",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "474472dd-0a0b-4bb0-95a7-2ab34ebc0357",
+          "type" : "component"
+        } ],
+        "id" : "c9107605-6caf-4859-908a-5d7035af3cbf",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "5634286e-489c-4413-af03-f9f43e7ba680",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-logos-and-credentials"
+  },
+  "urlName" : "logos-and-credentials"
+}

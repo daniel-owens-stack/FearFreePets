@@ -1,0 +1,5 @@
+{
+  "apiName" : "Preferred_Product_Program__c",
+  "type" : "sfdc_cms__route",
+  "path" : "routes"
+}

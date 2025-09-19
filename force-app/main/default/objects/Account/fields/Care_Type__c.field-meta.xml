@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Care_Type__c</fullName>
+    <label>Directory Care Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Veterinary</fullName>
+                <default>true</default>
+                <label>Veterinary</label>
+            </value>
+            <value>
+                <fullName>Veterinary - Emergency</fullName>
+                <default>false</default>
+                <label>Veterinary - Emergency</label>
+            </value>
+            <value>
+                <fullName>Veterinary - Mobile</fullName>
+                <default>false</default>
+                <label>Veterinary - Mobile</label>
+            </value>
+            <value>
+                <fullName>Trainer</fullName>
+                <default>false</default>
+                <label>Trainer</label>
+            </value>
+            <value>
+                <fullName>Groomer</fullName>
+                <default>false</default>
+                <label>Groomer</label>
+            </value>
+            <value>
+                <fullName>Pet Sitter</fullName>
+                <default>false</default>
+                <label>Pet Sitter</label>
+            </value>
+            <value>
+                <fullName>Boarding &amp; Daycare</fullName>
+                <default>false</default>
+                <label>Boarding &amp; Daycare</label>
+            </value>
+            <value>
+                <fullName>Behavior</fullName>
+                <default>false</default>
+                <label>Behavior</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>3</visibleLines>
+</CustomField>

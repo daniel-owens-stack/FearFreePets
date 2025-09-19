@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CPDT_KA_or_CPDT_KSA__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Certified Professional Dog Trainer</inlineHelpText>
+    <label>CPDT-KA or CPDT-KSA</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

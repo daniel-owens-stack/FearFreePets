@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>onemergefree__IsSkipped__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Indicates that the Field is skipped and not merged. Used for fields that define priority only.</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Indicates that the Field is skipped and not merged. Used for fields that define priority only.</inlineHelpText>
+    <label>Is Skipped?</label>
+    <type>Checkbox</type>
+</CustomField>

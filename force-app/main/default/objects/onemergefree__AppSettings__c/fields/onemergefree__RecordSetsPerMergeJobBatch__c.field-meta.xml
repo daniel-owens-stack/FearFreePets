@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>onemergefree__RecordSetsPerMergeJobBatch__c</fullName>
+    <defaultValue>10</defaultValue>
+    <deprecated>false</deprecated>
+    <description>The number of Duplicate Record Sets merged by a Merge Job Batch in the 1-100 range. A high number reduces the consumption of the asynchronous transaction platform limit. A lower number increases concurrency and allows more complex Merge Rules. The default value is 10.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The number of Duplicate Record Sets merged by a Merge Job Batch in the 1-100 range. A high number reduces the consumption of the asynchronous transaction platform limit. A lower number increases concurrency and allows more complex Merge Rules. The default value is 10.</inlineHelpText>
+    <label>Duplicate Record Sets Per Job Batch</label>
+    <precision>5</precision>
+    <required>true</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

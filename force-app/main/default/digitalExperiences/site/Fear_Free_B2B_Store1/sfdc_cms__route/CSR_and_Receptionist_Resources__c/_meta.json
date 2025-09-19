@@ -1,0 +1,6 @@
+{
+  "apiName" : "CSR_and_Receptionist_Resources__c",
+  "type" : "sfdc_cms__route",
+  "parentId" : "sfdc_cms__route/My_Resources__c",
+  "path" : "routes"
+}
