@@ -1,68 +1,66 @@
 @isTest
 public class B2BCreateHistoricalMembershipsBatchTest {
-    
-    @TestSetup static void makeData(){
-        Historical_Membership__c hm = new Historical_Membership__c();
-        hm.Course_Id__c = '12345';
-        hm.Product_Id__c = '234567';
-        hm.User_Membership_Date__c = Date.valueOf('2020-09-10');
-        hm.Start_Date__c = Date.valueOf('2020-09-09');
-        hm.End_Date__c = Date.valueOf('2022-09-09');
-        hm.Historical_Order_Id__c = '45176';
-        hm.User_Id__c = '888';
-        hm.Cancelled_Date__c = Date.valueOf('2022-07-02');
-        hm.Successful_Insert__c = false;
 
-        insert hm;
+    @TestSetup
+    static void setupData() {
+        Id recordTypeId;
+        if (Schema.SObjectType.Account.getRecordTypeInfosByName().containsKey('Person Account')) {
+            recordTypeId = Schema.SObjectType.Account.getRecordTypeInfosByName().get('Person Account').getRecordTypeId();
+        }
 
-        Historical_Membership__c hm1 = new Historical_Membership__c();
-        hm1.Course_Id__c = '123456';
-        hm1.Product_Id__c = '934567';
-        hm1.User_Membership_Date__c = Date.valueOf('2020-09-10');
-        hm1.Start_Date__c = Date.valueOf('2020-09-09');
-        hm1.End_Date__c = Date.valueOf('2022-09-09');
-        hm1.Historical_Order_Id__c = '45176';
-        hm1.User_Id__c = '888';
-        hm1.Cancelled_Date__c = Date.valueOf('2022-07-02');
-        hm1.Successful_Insert__c = false;
+        Account personAccount = new Account(
+            FirstName = 'Jane',
+            LastName = 'Doe',
+            PersonEmail = 'jane@example.com'
+        );
+        if (recordTypeId != null) {
+            personAccount.RecordTypeId = recordTypeId;
+        }
+        insert personAccount;
 
-        insert hm1;
-
-        //Create Memberships
-        Membership__c individualMembership = new Membership__c();
-        individualMembership.Membership_Level__c = 'Individual';
-        individualMembership.Name = 'Test Individual Membership';
-
+        Membership__c individualMembership = new Membership__c(
+            Name = 'Individual Membership',
+            WC_Id__c = 'indiv_wc_id'
+        );
         insert individualMembership;
 
-        Membership__c practiceMembership = new Membership__c();
-        practiceMembership.Membership_Level__c = 'Practice';
-        practiceMembership.Name = 'Test Practice Membership';
-
-        insert practiceMembership;
-
-        //Create Products
-        Product2 imp = new Product2(
-            Name = 'Individual Membership Product',
-            WC_Id__c = '234567',
-            Membership__c = individualMembership.Id
+        Historical_Membership__c validHm = new Historical_Membership__c(
+            Start_Date__c = Date.today().addYears(-2),
+            End_Date__c = Date.today().addYears(-1),
+            Cancelled_Date__c = Date.today().addMonths(-6),
+            User_Email__c = 'jane@example.com',
+            Post_Parent__c = 'indiv_wc_id',
+            Data_Status__c = 'Pending'
         );
-        insert imp;
 
-        Product2 pmp = new Product2(
-            Name = 'Practice Membership Product',
-            WC_Id__c = '934567',
-            Membership__c = practiceMembership.Id
+        Historical_Membership__c missingStartDate = new Historical_Membership__c(
+            User_Email__c = 'jane@example.com',
+            Post_Parent__c = 'indiv_wc_id',
+            Data_Status__c = 'Pending'
         );
-        insert pmp;
+
+        Historical_Membership__c invalidEmail = new Historical_Membership__c(
+            Start_Date__c = Date.today().addYears(-1),
+            User_Email__c = 'notfound@example.com',
+            Post_Parent__c = 'indiv_wc_id',
+            Data_Status__c = 'Pending'
+        );
+
+        Historical_Membership__c invalidPostParent = new Historical_Membership__c(
+            Start_Date__c = Date.today().addYears(-1),
+            User_Email__c = 'jane@example.com',
+            Post_Parent__c = 'invalid_wc_id',
+            Data_Status__c = 'Pending'
+        );
+
+        insert new List<Historical_Membership__c>{ validHm, missingStartDate, invalidEmail, invalidPostParent };
     }
 
-    @isTest static void testCreateHistoricalMembershipBatch_noMembership() {
-
-        Test.StartTest();
-        B2BCreateHistoricalMembershipsBatch b = new B2BCreateHistoricalMembershipsBatch();
-        Database.executeBatch(b);
-        Test.StopTest();
+    @isTest
+    static void testBatchFullCoverage() {
+        Test.startTest();
+        B2BCreateHistoricalMembershipsBatch batch = new B2BCreateHistoricalMembershipsBatch();
+        Database.executeBatch(batch, 200); // Prevents multiple execute calls
+        Test.stopTest();
     }
-
 }
