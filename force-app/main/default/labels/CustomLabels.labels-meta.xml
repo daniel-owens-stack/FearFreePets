@@ -197,13 +197,6 @@
         <value>Fear Free B2B Store</value>
     </labels>
     <labels>
-        <fullName>SX_API_Key</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>SX API Key</shortDescription>
-        <value>238bfb3790140f7ab4d5c775aaa52985</value>
-    </labels>
-    <labels>
         <fullName>SX_API_URL</fullName>
         <language>en_US</language>
         <protected>false</protected>
@@ -223,20 +216,6 @@
         <protected>false</protected>
         <shortDescription>SX Unit Id</shortDescription>
         <value>1418705</value>
-    </labels>
-    <labels>
-        <fullName>SX_WEBHOOK_SECRET</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>SX_WEBHOOK_SECRET</shortDescription>
-        <value>alPInLm6qHLjiZucwEAMP9D7ap/y67Lv</value>
-    </labels>
-    <labels>
-        <fullName>Stripe_Secret_Key</fullName>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>Stripe_Secret_Key</shortDescription>
-        <value>sk_test_51QUDWgPJl2LXkLv6h8wSpsZG5Ag2EWTFjXaGvYZyCzbwl4jMWMJBcxmB3oPwLxYZoeIrdVssdboG6Zqh1NqHwzEd00lfYlgVhG</value>
     </labels>
     <labels>
         <fullName>Webstore_ID</fullName>
