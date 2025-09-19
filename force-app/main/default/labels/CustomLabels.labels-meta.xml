@@ -232,6 +232,13 @@
         <value>alPInLm6qHLjiZucwEAMP9D7ap/y67Lv</value>
     </labels>
     <labels>
+        <fullName>Stripe_Secret_Key</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Stripe_Secret_Key</shortDescription>
+        <value>sk_test_51QUDWgPJl2LXkLv6h8wSpsZG5Ag2EWTFjXaGvYZyCzbwl4jMWMJBcxmB3oPwLxYZoeIrdVssdboG6Zqh1NqHwzEd00lfYlgVhG</value>
+    </labels>
+    <labels>
         <fullName>Webstore_ID</fullName>
         <language>en_US</language>
         <protected>false</protected>
