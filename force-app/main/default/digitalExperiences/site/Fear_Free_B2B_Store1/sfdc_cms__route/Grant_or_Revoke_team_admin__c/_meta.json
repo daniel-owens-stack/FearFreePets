@@ -1,0 +1,5 @@
+{
+  "apiName" : "Grant_or_Revoke_team_admin__c",
+  "type" : "sfdc_cms__route",
+  "path" : "routes"
+}

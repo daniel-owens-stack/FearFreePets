@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>onemergefree__Master_Record_Priority_Required</fullName>
+    <active>true</active>
+    <description>A Master Record Priority Field Name is required.</description>
+    <errorConditionFormula>AND(
+ NOT(ISBLANK(TEXT(onemergefree__MasterRecordPriority__c))), 
+ ISBLANK( onemergefree__MasterRecordPriorityFieldName__c)
+)</errorConditionFormula>
+    <errorDisplayField>onemergefree__MasterRecordPriorityFieldName__c</errorDisplayField>
+    <errorMessage>A Master Record Priority Field Name is required.</errorMessage>
+</ValidationRule>

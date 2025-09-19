@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Salesforce_Application__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Please select the option you feel is most closely related to your request.</description>
+    <inlineHelpText>Please select the option you feel is most closely related to your request.</inlineHelpText>
+    <label>Salesforce Application</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Accounting Seed</fullName>
+                <default>false</default>
+                <label>Accounting Seed</label>
+            </value>
+            <value>
+                <fullName>ACT!</fullName>
+                <default>false</default>
+                <label>ACT!</label>
+            </value>
+            <value>
+                <fullName>Audience Studio</fullName>
+                <default>false</default>
+                <label>Audience Studio</label>
+            </value>
+            <value>
+                <fullName>Autofy</fullName>
+                <default>false</default>
+                <label>Autofy</label>
+            </value>
+            <value>
+                <fullName>Automation</fullName>
+                <default>false</default>
+                <label>Automation</label>
+            </value>
+            <value>
+                <fullName>Automation Studio</fullName>
+                <default>false</default>
+                <label>Automation Studio</label>
+            </value>
+            <value>
+                <fullName>Avalara Tax</fullName>
+                <default>false</default>
+                <label>Avalara Tax</label>
+            </value>
+            <value>
+                <fullName>Basecamp</fullName>
+                <default>false</default>
+                <label>Basecamp</label>
+            </value>
+            <value>
+                <fullName>Box</fullName>
+                <default>false</default>
+                <label>Box</label>
+            </value>
+            <value>
+                <fullName>Calendar Anything</fullName>
+                <default>false</default>
+                <label>Calendar Anything</label>
+            </value>
+            <value>
+                <fullName>Campaign Monitor</fullName>
+                <default>false</default>
+                <label>Campaign Monitor</label>
+            </value>
+            <value>
+                <fullName>Cases</fullName>
+                <default>false</default>
+                <label>Cases</label>
+            </value>
+            <value>
+                <fullName>CCPA</fullName>
+                <default>false</default>
+                <label>CCPA</label>
+            </value>
+            <value>
+                <fullName>CDP</fullName>
+                <default>false</default>
+                <label>CDP</label>
+            </value>
+            <value>
+                <fullName>Chargent</fullName>
+                <default>false</default>
+                <label>Chargent</label>
+            </value>
+            <value>
+                <fullName>Cirrus Files for Google Drive</fullName>
+                <default>false</default>
+                <label>Cirrus Files for Google Drive</label>
+            </value>
+            <value>
+                <fullName>CloudComp</fullName>
+                <default>false</default>
+                <label>CloudComp</label>
+            </value>
+            <value>
+                <fullName>CloudPages</fullName>
+                <default>false</default>
+                <label>CloudPages</label>
+            </value>
+            <value>
+                <fullName>Commercient</fullName>
+                <default>false</default>
+                <label>Commercient</label>
+            </value>
+            <value>
+                <fullName>Conga</fullName>
+                <default>false</default>
+                <label>Conga</label>
+            </value>
+            <value>
+                <fullName>Console</fullName>
+                <default>false</default>
+                <label>Console</label>
+            </value>
+            <value>
+                <fullName>Constant Contact</fullName>
+                <default>false</default>
+                <label>Constant Contact</label>
+            </value>
+            <value>
+                <fullName>CPQ</fullName>
+                <default>false</default>
+                <label>CPQ</label>
+            </value>
+            <value>
+                <fullName>Custom Object</fullName>
+                <default>false</default>
+                <label>Custom Object</label>
+            </value>
+            <value>
+                <fullName>Dashboard</fullName>
+                <default>false</default>
+                <label>Dashboard</label>
+            </value>
+            <value>
+                <fullName>Data.com</fullName>
+                <default>false</default>
+                <label>Data.com</label>
+            </value>
+            <value>
+                <fullName>Dataloader.io</fullName>
+                <default>false</default>
+                <label>Dataloader.io</label>
+            </value>
+            <value>
+                <fullName>DBSync</fullName>
+                <default>false</default>
+                <label>DBSync</label>
+            </value>
+            <value>
+                <fullName>DocuSign</fullName>
+                <default>false</default>
+                <label>DocuSign</label>
+            </value>
+            <value>
+                <fullName>Dropbox</fullName>
+                <default>false</default>
+                <label>Dropbox</label>
+            </value>
+            <value>
+                <fullName>Dwolla</fullName>
+                <default>false</default>
+                <label>Dwolla</label>
+            </value>
+            <value>
+                <fullName>Dynamics (ERP)</fullName>
+                <default>false</default>
+                <label>Dynamics (ERP)</label>
+            </value>
+            <value>
+                <fullName>Einstein</fullName>
+                <default>false</default>
+                <label>Einstein</label>
+            </value>
+            <value>
+                <fullName>Einstein Chatbot</fullName>
+                <default>false</default>
+                <label>Einstein Chatbot</label>
+            </value>
+            <value>
+                <fullName>Email</fullName>
+                <default>false</default>
+                <label>Email</label>
+            </value>
+            <value>
+                <fullName>Email Studio</fullName>
+                <default>false</default>
+                <label>Email Studio</label>
+            </value>
+            <value>
+                <fullName>Engage</fullName>
+                <default>false</default>
+                <label>Engage</label>
+            </value>
+            <value>
+                <fullName>Engineering (Flexi KanBan)</fullName>
+                <default>false</default>
+                <label>Engineering (Flexi KanBan)</label>
+            </value>
+            <value>
+                <fullName>Enhanced Lightning Grid</fullName>
+                <default>false</default>
+                <label>Enhanced Lightning Grid</label>
+            </value>
+            <value>
+                <fullName>Experience Cloud</fullName>
+                <default>false</default>
+                <label>Experience Cloud</label>
+            </value>
+            <value>
+                <fullName>Field Service Lightning</fullName>
+                <default>false</default>
+                <label>Field Service Lightning</label>
+            </value>
+            <value>
+                <fullName>Field Service Mobile App</fullName>
+                <default>false</default>
+                <label>Field Service Mobile App</label>
+            </value>
+            <value>
+                <fullName>Files Connect</fullName>
+                <default>false</default>
+                <label>Files Connect</label>
+            </value>
+            <value>
+                <fullName>Financial Force</fullName>
+                <default>false</default>
+                <label>Financial Force</label>
+            </value>
+            <value>
+                <fullName>Financial Services Cloud</fullName>
+                <default>false</default>
+                <label>Financial Services Cloud</label>
+            </value>
+            <value>
+                <fullName>Form Assembly</fullName>
+                <default>false</default>
+                <label>Form Assembly</label>
+            </value>
+            <value>
+                <fullName>Formsite</fullName>
+                <default>false</default>
+                <label>Formsite</label>
+            </value>
+            <value>
+                <fullName>Formstack</fullName>
+                <default>false</default>
+                <label>Formstack</label>
+            </value>
+            <value>
+                <fullName>GDPR</fullName>
+                <default>false</default>
+                <label>GDPR</label>
+            </value>
+            <value>
+                <fullName>Google Apps</fullName>
+                <default>false</default>
+                <label>Google Apps</label>
+            </value>
+            <value>
+                <fullName>Google Drive</fullName>
+                <default>false</default>
+                <label>Google Drive</label>
+            </value>
+            <value>
+                <fullName>Google Tag Manager</fullName>
+                <default>false</default>
+                <label>Google Tag Manager</label>
+            </value>
+            <value>
+                <fullName>GridBuddy Pro</fullName>
+                <default>false</default>
+                <label>GridBuddy Pro</label>
+            </value>
+            <value>
+                <fullName>Health Cloud</fullName>
+                <default>false</default>
+                <label>Health Cloud</label>
+            </value>
+            <value>
+                <fullName>High Velocity Sales (HVS)</fullName>
+                <default>false</default>
+                <label>High Velocity Sales (HVS)</label>
+            </value>
+            <value>
+                <fullName>Hubspot</fullName>
+                <default>false</default>
+                <label>Hubspot</label>
+            </value>
+            <value>
+                <fullName>iContact</fullName>
+                <default>false</default>
+                <label>iContact</label>
+            </value>
+            <value>
+                <fullName>Interaction Studio</fullName>
+                <default>false</default>
+                <label>Interaction Studio</label>
+            </value>
+            <value>
+                <fullName>Jira</fullName>
+                <default>false</default>
+                <label>Jira</label>
+            </value>
+            <value>
+                <fullName>Jitterbit</fullName>
+                <default>false</default>
+                <label>Jitterbit</label>
+            </value>
+            <value>
+                <fullName>Journey Builder</fullName>
+                <default>false</default>
+                <label>Journey Builder</label>
+            </value>
+            <value>
+                <fullName>Kenandy ERP</fullName>
+                <default>false</default>
+                <label>Kenandy ERP</label>
+            </value>
+            <value>
+                <fullName>Knowledge</fullName>
+                <default>false</default>
+                <label>Knowledge</label>
+            </value>
+            <value>
+                <fullName>Lightning Dialer</fullName>
+                <default>false</default>
+                <label>Lightning Dialer</label>
+            </value>
+            <value>
+                <fullName>Linkedin Sales Navigator</fullName>
+                <default>false</default>
+                <label>Linkedin Sales Navigator</label>
+            </value>
+            <value>
+                <fullName>Magento</fullName>
+                <default>false</default>
+                <label>Magento</label>
+            </value>
+            <value>
+                <fullName>Mailchimp</fullName>
+                <default>false</default>
+                <label>Mailchimp</label>
+            </value>
+            <value>
+                <fullName>Manufacturing Cloud</fullName>
+                <default>false</default>
+                <label>Manufacturing Cloud</label>
+            </value>
+            <value>
+                <fullName>Marketing Cloud</fullName>
+                <default>false</default>
+                <label>Marketing Cloud</label>
+            </value>
+            <value>
+                <fullName>Marketing Cloud Account Engagement (Pardot)</fullName>
+                <default>false</default>
+                <label>Marketing Cloud Account Engagement (Pardot)</label>
+            </value>
+            <value>
+                <fullName>MassMailer</fullName>
+                <default>false</default>
+                <label>MassMailer</label>
+            </value>
+            <value>
+                <fullName>Microsoft Office</fullName>
+                <default>false</default>
+                <label>Microsoft Office</label>
+            </value>
+            <value>
+                <fullName>Milestones PM</fullName>
+                <default>false</default>
+                <label>Milestones PM</label>
+            </value>
+            <value>
+                <fullName>Mobile Studio</fullName>
+                <default>false</default>
+                <label>Mobile Studio</label>
+            </value>
+            <value>
+                <fullName>Mulesoft</fullName>
+                <default>false</default>
+                <label>Mulesoft</label>
+            </value>
+            <value>
+                <fullName>NetSuite</fullName>
+                <default>false</default>
+                <label>NetSuite</label>
+            </value>
+            <value>
+                <fullName>Nintex Drawloop</fullName>
+                <default>false</default>
+                <label>Nintex Drawloop</label>
+            </value>
+            <value>
+                <fullName>Non-Profit Starter Pack</fullName>
+                <default>false</default>
+                <label>Non-Profit Starter Pack</label>
+            </value>
+            <value>
+                <fullName>Office 365</fullName>
+                <default>false</default>
+                <label>Office 365</label>
+            </value>
+            <value>
+                <fullName>Omni Channel</fullName>
+                <default>false</default>
+                <label>Omni Channel</label>
+            </value>
+            <value>
+                <fullName>Plaid</fullName>
+                <default>false</default>
+                <label>Plaid</label>
+            </value>
+            <value>
+                <fullName>Procurement</fullName>
+                <default>false</default>
+                <label>Procurement</label>
+            </value>
+            <value>
+                <fullName>Query Studio</fullName>
+                <default>false</default>
+                <label>Query Studio</label>
+            </value>
+            <value>
+                <fullName>Quick Action</fullName>
+                <default>false</default>
+                <label>Quick Action</label>
+            </value>
+            <value>
+                <fullName>Quickbooks</fullName>
+                <default>false</default>
+                <label>Quickbooks</label>
+            </value>
+            <value>
+                <fullName>Quip</fullName>
+                <default>false</default>
+                <label>Quip</label>
+            </value>
+            <value>
+                <fullName>Quosal</fullName>
+                <default>false</default>
+                <label>Quosal</label>
+            </value>
+            <value>
+                <fullName>Quotewerks</fullName>
+                <default>false</default>
+                <label>Quotewerks</label>
+            </value>
+            <value>
+                <fullName>Redox</fullName>
+                <default>false</default>
+                <label>Redox</label>
+            </value>
+            <value>
+                <fullName>Reports</fullName>
+                <default>false</default>
+                <label>Reports</label>
+            </value>
+            <value>
+                <fullName>Rollup Helper</fullName>
+                <default>false</default>
+                <label>Rollup Helper</label>
+            </value>
+            <value>
+                <fullName>Sage</fullName>
+                <default>false</default>
+                <label>Sage</label>
+            </value>
+            <value>
+                <fullName>Sales Cloud</fullName>
+                <default>false</default>
+                <label>Sales Cloud</label>
+            </value>
+            <value>
+                <fullName>Salesforce IQ</fullName>
+                <default>false</default>
+                <label>Salesforce IQ</label>
+            </value>
+            <value>
+                <fullName>Salesforce - Other</fullName>
+                <default>false</default>
+                <label>Salesforce - Other</label>
+            </value>
+            <value>
+                <fullName>Salesforce to Salesforce</fullName>
+                <default>false</default>
+                <label>Salesforce to Salesforce</label>
+            </value>
+            <value>
+                <fullName>Scribe</fullName>
+                <default>false</default>
+                <label>Scribe</label>
+            </value>
+            <value>
+                <fullName>SDocs</fullName>
+                <default>false</default>
+                <label>SDocs</label>
+            </value>
+            <value>
+                <fullName>Service Cloud</fullName>
+                <default>false</default>
+                <label>Service Cloud</label>
+            </value>
+            <value>
+                <fullName>SFMC Key Management</fullName>
+                <default>false</default>
+                <label>SFMC Key Management</label>
+            </value>
+            <value>
+                <fullName>Simple Signature</fullName>
+                <default>false</default>
+                <label>Simple Signature</label>
+            </value>
+            <value>
+                <fullName>SMS Magic</fullName>
+                <default>false</default>
+                <label>SMS Magic</label>
+            </value>
+            <value>
+                <fullName>Social Studio</fullName>
+                <default>false</default>
+                <label>Social Studio</label>
+            </value>
+            <value>
+                <fullName>Stripe</fullName>
+                <default>false</default>
+                <label>Stripe</label>
+            </value>
+            <value>
+                <fullName>Survey Force</fullName>
+                <default>false</default>
+                <label>Survey Force</label>
+            </value>
+            <value>
+                <fullName>Syspro</fullName>
+                <default>false</default>
+                <label>Syspro</label>
+            </value>
+            <value>
+                <fullName>Talend</fullName>
+                <default>false</default>
+                <label>Talend</label>
+            </value>
+            <value>
+                <fullName>TaskRay</fullName>
+                <default>false</default>
+                <label>TaskRay</label>
+            </value>
+            <value>
+                <fullName>Textey</fullName>
+                <default>false</default>
+                <label>Textey</label>
+            </value>
+            <value>
+                <fullName>Timekeeping</fullName>
+                <default>false</default>
+                <label>Timekeeping</label>
+            </value>
+            <value>
+                <fullName>Unofficial Salesforce Package</fullName>
+                <default>false</default>
+                <label>Unofficial Salesforce Package</label>
+            </value>
+            <value>
+                <fullName>USPS (Postal Service) Shipping App</fullName>
+                <default>false</default>
+                <label>USPS (Postal Service) Shipping App</label>
+            </value>
+            <value>
+                <fullName>Validation Rule</fullName>
+                <default>false</default>
+                <label>Validation Rule</label>
+            </value>
+            <value>
+                <fullName>VerticalResponse</fullName>
+                <default>false</default>
+                <label>VerticalResponse</label>
+            </value>
+            <value>
+                <fullName>Wordpress</fullName>
+                <default>false</default>
+                <label>Wordpress</label>
+            </value>
+            <value>
+                <fullName>Workflow</fullName>
+                <default>false</default>
+                <label>Workflow</label>
+            </value>
+            <value>
+                <fullName>xFiles Pro</fullName>
+                <default>false</default>
+                <label>xFiles Pro</label>
+            </value>
+            <value>
+                <fullName>ZenKraft</fullName>
+                <default>false</default>
+                <label>ZenKraft</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

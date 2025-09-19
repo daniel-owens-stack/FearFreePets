@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CBCC_KA__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Certified Behavior Counselor Canine</inlineHelpText>
+    <label>CBCC-KA</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

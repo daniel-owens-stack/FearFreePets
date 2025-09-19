@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>onemergefree__SObjectSubType__c</fullName>
+    <deprecated>false</deprecated>
+    <description>SObjectSubType for which the Merge Ruleset applies e.g. PersonAccount.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>SObjectSubType for which the Merge Ruleset applies e.g. PersonAccount.</inlineHelpText>
+    <label>SObject Sub Type</label>
+    <length>80</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

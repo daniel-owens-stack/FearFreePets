@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Practice_Level_Membership_Assignment__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Practice Level Membership Assignment</label>
+    <referenceTo>Practice_Level_Membership_Assignment__c</referenceTo>
+    <relationshipLabel>Carts</relationshipLabel>
+    <relationshipName>Carts</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

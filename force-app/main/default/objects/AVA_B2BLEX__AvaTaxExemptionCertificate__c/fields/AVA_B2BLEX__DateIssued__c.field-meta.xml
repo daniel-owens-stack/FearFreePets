@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AVA_B2BLEX__DateIssued__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Issuing date of the certificate.</description>
+    <inlineHelpText>Issuing date of the certificate.</inlineHelpText>
+    <label>Signed Date</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

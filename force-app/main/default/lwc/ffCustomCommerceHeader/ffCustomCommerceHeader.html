@@ -1,0 +1,39 @@
+<template>
+    <header class="ff-custom-commerce-header">
+        <div class="ff-header-grid">
+            <!-- Left Column -->
+            <div class="ff-header-column">
+                <div>
+                    <slot class="ff-mnav-mobile" name="mobile-nav"></slot>
+                </div>
+                <div>
+                    <slot name="logo"></slot>
+                </div>
+               
+            </div>
+        
+            <!-- Center Column -->
+            <div class="ff-header-column">
+				<div class="ff-header-inner-grid">
+					<div class="ff-header-inner-column">
+	                <slot class="ff-mnav-desktop" name="desktop-nav"></slot>
+	            </div>
+	            
+
+	            <!-- Right Column -->
+		            <div class="ff-header-inner-column ff-profile-nav">
+		                <slot name="profile-nav"></slot>
+		            </div>
+		            <div class="ff-header-inner-column ff-cart-link">
+		                <slot name="cart"></slot>
+		            </div>
+	            </div> 
+        
+	        </div>
+	    </div>
+        <div if:true={pageTitle} class="ff-page-title">
+            <h1 style="visibility: hidden">{pageTitle}</h1>
+        </div>
+
+    </header>
+</template>

@@ -1,0 +1,16 @@
+<!--
+  @description       : 
+  @testing           : 
+  @author            : FSM
+  @last modified on  : 09-20-2024
+  @last modified by  : FSM
+-->
+<template>
+
+  <template for:each={mapData} for:item="dataObj">
+    <div class="grid-item" key={dataObj.key}>{dataObj.value}
+      <div class="label">{dataObj.key}</div>
+    </div>
+  </template>
+
+</template>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>onemergefree__IdentifierFieldName__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The text field on the Master Record populated with the Merge Ruleset Identifier e.g. Account onemergefree__MergeRulesetIdentifier__c.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>The text field on the Master Record populated with the Merge Ruleset Identifier e.g. Account onemergefree__MergeRulesetIdentifier__c.</inlineHelpText>
+    <label>Identifier Field Name</label>
+    <length>100</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

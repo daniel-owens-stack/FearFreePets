@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>onemergefree__FieldName__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The API Name of the referenced field e.g. BillingStreet.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>The API Name of the referenced field e.g. BillingStreet.</inlineHelpText>
+    <label>Field Name</label>
+    <length>80</length>
+    <required>true</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Contact Support",
+  "contentBody" : {
+    "activeViewId" : "Contact_Support",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-contact-support",
+    "urlPrefix" : "contact-support"
+  },
+  "urlName" : "contact-support"
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Consolidator_Accounts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <columns>MOU_Expiration_Date__c</columns>
+    <columns>Business_Structure__c</columns>
+    <columns>Committed_to_PC__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>ACCOUNT.LAST_ACTIVITY</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.Consolidators</value>
+    </filters>
+    <label>Consolidator Accounts</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>Sales_Marketing_Management</roleAndSubordinatesInternal>
+        <roleAndSubordinatesInternal>Sales_Team_Member</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

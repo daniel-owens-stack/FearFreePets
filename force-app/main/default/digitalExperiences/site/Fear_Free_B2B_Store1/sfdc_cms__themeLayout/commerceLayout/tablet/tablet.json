@@ -1,0 +1,24 @@
+{
+  "type" : "sfdc_cms__themeLayout",
+  "title" : "Commerce Layout",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "attributes" : {
+          "dxpStyle" : {
+            "isVisible" : true
+          }
+        },
+        "id" : "e47004d8-4822-4362-ada2-c8e6099da603"
+      }, {
+        "id" : "bc5de7bc-bbd0-4eef-bf11-efb7e4418019",
+        "attributes" : {
+          "dxpStyle" : {
+            "isVisible" : true
+          }
+        }
+      } ]
+    }
+  },
+  "urlName" : "commerce-layout"
+}

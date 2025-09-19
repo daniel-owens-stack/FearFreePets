@@ -1,0 +1,67 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Contact Support",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "dxpStyle" : { },
+            "maxContentWidth" : "1000px",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"c4af6cc6-eaf6-4c4e-9d9b-c2da799e26f1\",\"columns\":[{\"UUID\":\"d974f0c0-7193-4ca5-8ad0-99ab05d707a5\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "dxpStyle" : { },
+                "flowName" : "{\"flowName\":\"Case_Submit_A_Case_Screen_Flow\",\"flowLabel\":\"Case: Submit A Case Screen Flow\"}"
+              },
+              "definition" : "dxp_flow:flow",
+              "id" : "29ea0787-3855-4d15-9bb3-fe0485742efb",
+              "type" : "component"
+            } ],
+            "id" : "d974f0c0-7193-4ca5-8ad0-99ab05d707a5",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "c4af6cc6-eaf6-4c4e-9d9b-c2da799e26f1",
+          "type" : "component"
+        } ],
+        "id" : "377c1843-e99b-4ee4-ab67-dcb895c8480a",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "dxpStyle" : { },
+            "pageTitle" : "Contact Support",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "6d4b796d-e422-4311-8bc1-61be524f6d7c",
+          "type" : "component"
+        } ],
+        "id" : "9a3e6062-7d9d-4dfe-9d87-04d42c7c6fb8",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "171f2d87-73de-4186-b7fe-fbfa50d96945",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-contact-support"
+  },
+  "urlName" : "contact-support"
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NetworkBranding xmlns="http://soap.sforce.com/2006/04/metadata">
+    <loginFooterText>Fear Free Pets</loginFooterText>
+    <loginLogo>Experiences_Shared_Document_Folder/FFP_Logo_png1.png</loginLogo>
+    <loginLogoName>FFP Logo.png</loginLogoName>
+    <loginPrimaryColor>#FBBF32</loginPrimaryColor>
+    <loginQuaternaryColor>#16325C</loginQuaternaryColor>
+    <network>Fear Free B2B Store</network>
+    <primaryColor>#1797C0</primaryColor>
+    <primaryComplementColor>#FFFFFF</primaryComplementColor>
+    <quaternaryColor>#B1BAC1</quaternaryColor>
+    <quaternaryComplementColor>#222222</quaternaryComplementColor>
+    <secondaryColor>#51606E</secondaryColor>
+    <tertiaryColor>#DDE4E9</tertiaryColor>
+    <tertiaryComplementColor>#222222</tertiaryComplementColor>
+    <zeronaryColor>#51606E</zeronaryColor>
+    <zeronaryComplementColor>#FFFFFF</zeronaryComplementColor>
+</NetworkBranding>

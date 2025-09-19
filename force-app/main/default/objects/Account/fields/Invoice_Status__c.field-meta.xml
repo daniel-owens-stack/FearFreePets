@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invoice_Status__c</fullName>
+    <description>For certified practices: status of initial and annual invoices.</description>
+    <label>Invoice Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Due Yet</fullName>
+                <default>false</default>
+                <label>Not Due Yet</label>
+            </value>
+            <value>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+                <label>Not Applicable</label>
+            </value>
+            <value>
+                <fullName>Due Next Year</fullName>
+                <default>false</default>
+                <label>Due Next Year</label>
+            </value>
+            <value>
+                <fullName>Renewal Submitted</fullName>
+                <default>false</default>
+                <label>Renewal Submitted</label>
+            </value>
+            <value>
+                <fullName>Overdue</fullName>
+                <default>false</default>
+                <label>Overdue</label>
+            </value>
+            <value>
+                <fullName>Invoiced</fullName>
+                <default>false</default>
+                <label>Invoiced</label>
+            </value>
+            <value>
+                <fullName>Recert Invoice Paid</fullName>
+                <default>false</default>
+                <label>Recert Invoice Paid</label>
+            </value>
+            <value>
+                <fullName>PAID</fullName>
+                <default>false</default>
+                <label>PAID</label>
+            </value>
+            <value>
+                <fullName>Paid with Extension</fullName>
+                <default>false</default>
+                <label>Paid with Extension</label>
+            </value>
+            <value>
+                <fullName>Declined to Renew</fullName>
+                <default>false</default>
+                <label>Declined to Renew</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

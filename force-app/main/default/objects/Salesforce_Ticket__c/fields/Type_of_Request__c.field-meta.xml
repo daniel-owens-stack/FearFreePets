@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_of_Request__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The Type of Request helps the moderators to identify priority and appropriately address your request.</description>
+    <inlineHelpText>The Type of Request helps the moderators to identify priority and appropriately address your request.</inlineHelpText>
+    <label>Type of Request</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Problem/Error</fullName>
+                <default>false</default>
+                <label>Problem/Error</label>
+            </value>
+            <value>
+                <fullName>Feedback/Question</fullName>
+                <default>false</default>
+                <label>Feedback/Question</label>
+            </value>
+            <value>
+                <fullName>New Feature Request</fullName>
+                <default>false</default>
+                <label>New Feature Request</label>
+            </value>
+            <value>
+                <fullName>Config Audits &amp; Changes</fullName>
+                <default>false</default>
+                <label>Config Audits &amp; Changes</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

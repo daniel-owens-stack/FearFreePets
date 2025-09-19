@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Logos and Credentials",
+  "contentBody" : {
+    "activeViewId" : "Logos_and_Credentials",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-logos-and-credentials",
+    "urlPrefix" : "logos-and-credentials"
+  },
+  "urlName" : "logos-and-credentials"
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>onemergefree__PriorityField__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The field which provides the Merge Rule Priority. If set to a blank value, a Merge Rule Field record should be added with a matching data type and flagged with Is Priority?. 
+
+E.g. Merge Rule Field: Address Last Updated, Is Priority?=TRUE.</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>The field which provides the Merge Rule Priority. If set to a blank value, a Merge Rule Field record should be added with a matching data type and flagged with Is Priority?. 
+
+E.g. Merge Rule Field: Address Last Updated, Is Priority?=TRUE.</inlineHelpText>
+    <label>Priority Field</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CreatedDate</fullName>
+                <default>false</default>
+                <label>Created Date</label>
+            </value>
+            <value>
+                <fullName>LastModifiedDate</fullName>
+                <default>false</default>
+                <label>Last Modified Date</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

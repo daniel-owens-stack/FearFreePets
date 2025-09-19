@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AVA_B2BLEX__AvaTaxExemptionCustomerId__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Use this field to pass unique value to Avatax for exemption. E.g- Account ID or update it as per the need using automation.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Use this field to pass unique value to Avatax for exemption. E.g- Account ID or update it as per the need using automation.</inlineHelpText>
+    <label>AvaTax Exemption Customer Id</label>
+    <length>18</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

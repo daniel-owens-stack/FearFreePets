@@ -1,0 +1,20 @@
+<template>
+    <template if:true={showBillingButton}>
+        <div class="stripe-button-container" style="position: relative;">
+            <lightning-button label={buttonLabel} onclick={handleClick} variant="brand">
+            </lightning-button>
+
+            <template if:true={isLoading}>
+                <div class="spinner-overlay">
+                    <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                </div>
+            </template>
+        </div>
+    </template>
+    <div if:false={showBillingButton}>
+        <p>
+            Your billing account hasn't been set up yet! A billing account will be created upon your first order placed
+            through this user portal. To view your order history, simply visit the <a href="/OrderSummary/OrderSummary/Default">Order History</a> page.
+        </p>
+    </div>
+</template>

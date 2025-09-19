@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Default_Salesforce_Ticket_Queue_Salesforce_Ticket</fullName>
+    <columns>NAME</columns>
+    <columns>Type_of_Request__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Status__c</columns>
+    <columns>Salesforce_Application__c</columns>
+    <columns>Requester__c</columns>
+    <filterScope>Queue</filterScope>
+    <label>Default Salesforce Ticket Queue</label>
+    <queue>Default_Salesforce_Ticket_Queue</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

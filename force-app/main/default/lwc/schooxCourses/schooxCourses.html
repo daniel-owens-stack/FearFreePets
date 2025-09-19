@@ -1,0 +1,36 @@
+<template>
+    <div class="slds-scrollable_y" style="height: 70vh;"> 
+        <template for:each={enrolledCourses} for:item="course">
+            <div key={course.Id} class="slds-var-p-bottom_xx-small">
+                <lightning-card>
+                    <lightning-button label="Launch" slot="actions" data-item={course.Course_URL} onclick={handleOnLaunch}></lightning-button>
+
+                    <h3 slot="title">
+                        <span class="slds-avatar slds-avatar_circle">
+                            <img alt={course.Name} src={course.Course_Image_URL_Link} title="Course avatar" />
+                        </span>
+                        <a class="slds-truncate slds-m-left_x-small" data-item={course.courseId} onclick={handleOnClick}>
+                            <span class="slds-truncate" title={course.Name}>{course.Name}</span>
+                        </a>
+                    </h3>
+
+                    <div>
+                        <lightning-layout multiple-rows>
+                            <lightning-layout-item padding="horizontal-small" size="8">
+                                <ul class="slds-var-p-left_small">
+                                    <li> Status: {course.Course_Status}</li>
+                                    <li> Enrollment Date: {course.Enrollment_Date}</li>
+                                    <li> Completed_Date: {course.Completed_Date}</li>
+                                    <li> Completed Percentage: <lightning-formatted-number value={course.Completed_Percentage} format-style="percent"></lightning-formatted-number></li>
+                                </ul>
+                            </lightning-layout-item>
+                            <lightning-layout-item padding="horizontal-small" size="4">
+                                <img alt={course.Name} src={course.Course_Image_URL_Link} title="Course image" />
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </div>
+                </lightning-card>
+            </div>
+        </template>
+    </div>
+</template>

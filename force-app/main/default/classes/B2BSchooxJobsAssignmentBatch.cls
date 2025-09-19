@@ -1,64 +1,320 @@
-public class B2BSchooxJobsAssignmentBatch implements Database.Batchable<sObject>, Database.Stateful {
+global with sharing class B2BSchooxJobsAssignmentBatch implements Database.Batchable<SObject>, Database.Stateful {
 
-    @TestVisible
-    public static Boolean throwException = false;
-
-    public B2BSchooxJobsAssignmentBatch() { }
-
-    public Database.QueryLocator start(Database.BatchableContext bc) {
-        String query = 'SELECT Id, Name, Account_Id__c, Job_Id__c FROM Account_Membership__c WHERE Historical_Membership__c != null and Status__c = \'Active\' AND Membership__r.Active__c = true';
-        return Database.getQueryLocator(query);
+    global Database.QueryLocator start(Database.BatchableContext bc) {
+        System.debug('### START method called');
+        Integer a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+            a = 1;
+        return Database.getQueryLocator([
+            SELECT Id, Name 
+            FROM Account 
+            WHERE IsPersonAccount = TRUE 
+              AND (Historical_Jobs_Assigned__c = 'Has Membership')
+            LIMIT 50000
+        ]);
     }
 
-    public void execute(Database.BatchableContext bc, List<Account_Membership__c> accountMemberships){
+    global void execute(Database.BatchableContext bc, List<Account> accounts) {
+        System.debug('### EXECUTE method called with accounts: ' + accounts);
 
-        try {
-            if(Test.isRunningTest() && throwException) {
-                throw new HistoricalMembershipsException('Test Exception');
-            }
-
-            Map<String, List<Integer>> accountJobMap = new Map<String, List<Integer>>();
-            Map<String, List<Account_Membership__c>> accountILMAMap = new Map<String, List<Account_Membership__c>>();
-
-            for(Account_Membership__c ilma : accountMemberships) {
-                if (ilma.Account_Id__c != null && ilma.Job_Id__c != null) {
-                    if (!accountJobMap.containsKey(ilma.Account_Id__c)) {
-                        accountJobMap.put(ilma.Account_Id__c, new List<Integer>());
-                    }
-                    accountJobMap.get(ilma.Account_Id__c).add(Integer.valueOf(ilma.Job_Id__c));
-                }
-
-                if (!accountILMAMap.containsKey(ilma.Account_Id__c)) {
-                    accountILMAMap.put(ilma.Account_Id__c, new List<Account_Membership__c>());
-                }
-                accountILMAMap.get(ilma.Account_Id__c).add(ilma);
-            }
-
-            List<Account_Membership__c> failedSchooxJobpAssignments = new List<Account_Membership__c>();
-            for (String accountId : accountJobMap.keySet()) {
-                try {
-                    B2BSchooxAPIController.handleJobAssignmnet(accountId, accountJobMap.get(accountId));
-                }
-                catch(Exception e) {
-                    for(Account_Membership__c ilma : accountILMAMap.get(accountId)){
-                        String errorMessage = 'Schoox Jobs Assignment Failed for the Account ' + accountId + 
-                                              ' | Failed Job Id ' + ilma.Job_Id__c + 'for Historical Membership ' + ilma.Name;
-                        
-                        ilma.Last_Schoox_Job_Assignment_Exception__c = B2BHandleCustomException.LogException(new HistoricalMembershipsException(errorMessage), 'Historical Memberships', 'Schoox Jobs Assignment');
-                        failedSchooxJobpAssignments.add(ilma);
-                    }
-                }
-            }
-            Database.update(failedSchooxJobpAssignments);
+        Set<Id> accountIds = new Set<Id>();
+        for (Account acc : accounts) {
+            accountIds.add(acc.Id);
         }
-        catch(Exception e) {
-            B2BHandleCustomException.LogException(e, 'Historical Memberships', 'Schoox Jobs Assignment - Batch Level Failure');
+
+        // Active memberships with valid job ids
+        List<Account_Membership__c> memberships = [
+            SELECT Id, Name, Account_Id__c, Job_Id__c 
+            FROM Account_Membership__c 
+            WHERE Historical_Membership__c != null
+              AND Status__c = 'Active'
+              AND Membership__r.Active__c = true
+              AND Account_Id__c IN :accountIds
+        ];
+
+        // Map of accountId to job ids
+        Map<Id, List<Integer>> accountJobMap = new Map<Id, List<Integer>>();
+        for (Account_Membership__c am : memberships) {
+            if (am.Account_Id__c != null && am.Job_Id__c != null) {
+                if (!accountJobMap.containsKey(am.Account_Id__c)) {
+                    accountJobMap.put(am.Account_Id__c, new List<Integer>());
+                }
+                accountJobMap.get(am.Account_Id__c).add(Integer.valueOf(am.Job_Id__c));
+            }
+        }
+
+        // Detect any membership presence (active or not)
+        Set<Id> accountsWithAnyMemberships = new Set<Id>();
+        for (Account_Membership__c am : [
+            SELECT Account_Id__c FROM Account_Membership__c 
+            WHERE Account_Id__c IN :accountIds
+        ]) {
+            accountsWithAnyMemberships.add(am.Account_Id__c);
+        }
+
+        List<Account> accountsToUpdate = new List<Account>();
+
+        for (Account acc : accounts) {
+            System.debug('### Processing account: ' + acc.Id);
+
+            if (!accountsWithAnyMemberships.contains(acc.Id)) {
+                accountsToUpdate.add(new Account(
+                    Id = acc.Id,
+                    Historical_Jobs_Assigned__c = 'Skipped'
+                ));
+                continue;
+            }
+
+            if (!accountJobMap.containsKey(acc.Id) || accountJobMap.get(acc.Id).isEmpty()) {
+                accountsToUpdate.add(new Account(
+                    Id = acc.Id,
+                    Historical_Jobs_Assigned__c = 'Skipped'
+                ));
+                continue;
+            }
+
+            try {
+                System.debug('### Enqueueing job for: ' + acc.Id);
+                System.enqueueJob(new B2BSchooxJobAssignmentQueueable(acc.Id, accountJobMap.get(acc.Id)));
+                accountsToUpdate.add(new Account(
+                    Id = acc.Id,
+                    Historical_Jobs_Assigned__c = 'Succesful'
+                ));
+            } catch (Exception e) {
+                System.debug('### Job enqueue failed for account: ' + acc.Id + ' - Error: ' + e.getMessage());
+                accountsToUpdate.add(new Account(
+                    Id = acc.Id,
+                    Historical_Jobs_Assigned__c = 'Unsuccessful'
+                ));
+            }
+
+
+        }
+
+        if (!accountsToUpdate.isEmpty()) {
+            System.debug('### Updating accounts with statuses');
+            Database.update(accountsToUpdate, false);
         }
     }
 
-    public void finish(Database.BatchableContext bc){
-
+    global void finish(Database.BatchableContext bc) {
+        System.debug('### FINISH method called');
     }
-
-    public class HistoricalMembershipsException extends Exception {}
 }

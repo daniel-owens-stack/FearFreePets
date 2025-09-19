@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Fear Free Happy Homes Handouts",
+  "contentBody" : {
+    "activeViewId" : "Fear_Free_Happy_Homes_Handouts",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-fear-free-happy-homes-handouts",
+    "urlPrefix" : "fear-free-happy-homes-handouts"
+  },
+  "urlName" : "fear-free-happy-homes-handouts"
+}

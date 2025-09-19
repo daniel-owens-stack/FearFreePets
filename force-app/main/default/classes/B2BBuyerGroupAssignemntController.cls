@@ -38,6 +38,8 @@ public class B2BBuyerGroupAssignemntController {
 
     public static void handleBuyerGroupsSync(Account account) {
         List<String> existingBuyerGroupIds = B2BBuyerGroupAssignmentService.getAllBuyerGroupAssignments(account.Id);
+        System.debug('## Existing Buyer Groups:' + existingBuyerGroupIds);
+
         List<Account_Membership__c> activeILMAs = B2BBuyerGroupAssignmentService.getActiveMemberships(account.Id);
 
         if(activeILMAs != null) {
@@ -47,6 +49,7 @@ public class B2BBuyerGroupAssignemntController {
                 eligibleBuyerGroupIdsSet.addAll(B2BBuyerGroupAssignmentService.getEligibleBuyerGroups(am));
             }
             List<String> buyerGroupIdsToAssign = new List<String>(eligibleBuyerGroupIdsSet);
+            System.debug('## Buyer group ids to Assign:' + buyerGroupIdsToAssign);
 
             List<String> buyerGroupIdsToUnassign = new List<String>();
             for (String id : existingBuyerGroupIds) {
@@ -54,7 +57,7 @@ public class B2BBuyerGroupAssignemntController {
                     buyerGroupIdsToUnassign.add(id);
                 }
             }
-            
+            System.debug('## Buyer group ids to Unassign:' + buyerGroupIdsToUnassign);
             if(buyerGroupIdsToUnassign != null) {
                 B2BBuyerGroupAssignmentService.deleteBuyerGroupMembers(buyerGroupIdsToUnassign, account.Id); 
             }
@@ -65,7 +68,7 @@ public class B2BBuyerGroupAssignemntController {
                     missedBuyerGroupIdsToAssign.add(id);
                 }
             }
-            
+            System.debug('## Missed Buyer group ids to Assign:' + missedBuyerGroupIdsToAssign);
             if(missedBuyerGroupIdsToAssign != null){
                 B2BBuyerGroupAssignmentService.createBuyerGroupMembers(missedBuyerGroupIdsToAssign, account.Id);
             }

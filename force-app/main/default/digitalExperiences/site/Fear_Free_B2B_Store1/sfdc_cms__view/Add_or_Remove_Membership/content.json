@@ -1,0 +1,72 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Add or Remove Membership",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "dxpStyle" : { },
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"1fe70faa-9f4a-422f-a2bb-b3218a90a512\",\"columns\":[{\"UUID\":\"5763a099-83c1-45a3-b2e1-ea0d6bff316a\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "dxpStyle" : { },
+                "flowName" : "{!flowName}"
+              },
+              "definition" : "dxp_flow:flow",
+              "id" : "f5e6268c-efae-4ef6-9ac7-1cbf6bfce32f",
+              "type" : "component"
+            } ],
+            "id" : "5763a099-83c1-45a3-b2e1-ea0d6bff316a",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "1fe70faa-9f4a-422f-a2bb-b3218a90a512",
+          "type" : "component"
+        } ],
+        "id" : "439368b4-68ee-4516-8f93-4e4e723cd10d",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "dxpStyle" : { },
+            "pageTitle" : "Add or Remove Membership",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "e9b51070-5b98-4a52-b9f7-7df3410cdd4f",
+          "type" : "component"
+        } ],
+        "id" : "9344aa39-5ba4-4eaf-b05e-3ac7decd83e2",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "9e927b29-b083-4b77-9b80-49daac6b771d",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-add-or-remove-membership"
+  },
+  "urlName" : "add-or-remove-membership"
+}

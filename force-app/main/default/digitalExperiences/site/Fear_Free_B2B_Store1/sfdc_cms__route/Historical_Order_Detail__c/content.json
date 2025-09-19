@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Historical Order Detail",
+  "contentBody" : {
+    "activeViewId" : "Historical_Order_Detail",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-historical-order-detail",
+    "urlPrefix" : "historical-order-detail"
+  },
+  "urlName" : "historical-order-detail"
+}

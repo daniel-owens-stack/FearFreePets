@@ -1,0 +1,250 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "My Profile",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "dxpStyle" : { },
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"34f838f7-150c-47cf-928e-a2b14009e7eb\",\"columns\":[{\"UUID\":\"504f4151-6401-4497-9e6f-729097a5c302\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "buttonAllignment" : "center",
+                "buttonColor" : "#fbbf32",
+                "buttonFullWidth" : false,
+                "buttonIconPosition" : "left",
+                "buttonLabel" : "Accept or Deny Team Invitation",
+                "buttonTextColor" : "#00000",
+                "flowApiName" : "Member_Accept_or_Deny_Team_Invitation",
+                "modalLabel" : "Accept or Deny Team Invitation"
+              },
+              "definition" : "c:modalScreenFlowParent",
+              "id" : "ed2cf8d5-2c2a-47bd-8842-d38004a9c623",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "backgroundColor" : "",
+                "dxpStyle" : { },
+                "isLinkable" : false,
+                "linkAssistiveText" : "",
+                "paddingHorizontal" : "none",
+                "paddingVertical" : "small",
+                "text" : "Account Details",
+                "textAlign" : "left",
+                "textDecoration" : "{\"bold\": true}",
+                "textDisplayInfo" : "{\"textStyle\": \"heading-medium\", \"headingTag\": \"h2\"}"
+              },
+              "definition" : "dxp_base:textBlock",
+              "id" : "47ff9e4c-7289-43e8-b401-de1308c94fe8",
+              "type" : "component"
+            } ],
+            "id" : "504f4151-6401-4497-9e6f-729097a5c302",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "34f838f7-150c-47cf-928e-a2b14009e7eb",
+          "type" : "component"
+        }, {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "dxpStyle" : { },
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"b0cd443b-5e28-4ae3-8b48-2f3da1c37b32\",\"columns\":[{\"UUID\":\"5fca4215-1e9b-4220-b61b-a26da657adde\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"84635475-2c3d-4b42-bd88-f9b09c0d0450\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":null}]}"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "dxpStyle" : { },
+                "emailLabel" : "Email",
+                "firstNameLabel" : "First Name",
+                "lastNameLabel" : "Last Name",
+                "phoneNumberLabel" : "Phone Number",
+                "requiredPhoneNumber" : true,
+                "showPhoneNumber" : true
+              },
+              "customCssClasses" : "ff-account-details",
+              "definition" : "commerce_builder:myAccountProfile",
+              "id" : "239181f2-3429-4660-ad79-9afd5a7ce545",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "cancelButtonLabel" : "Cancel",
+                "ccpdtNumberHelpText" : "This field is intended for Certified Professional Dog Trainers.",
+                "ccpdtNumberLabel" : "CCPDT Number",
+                "editButtonLabel" : "Edit",
+                "editTemplateTitle" : "Edit Additional Information",
+                "jobTitleLabel" : "Job Title",
+                "licenseNumberHelpText" : "This field is intended for veterinarians and veterinary technicians/nurses.",
+                "licenseNumberLabel" : "License Number",
+                "readTemplateTitle" : "Additional Information",
+                "saveButtonLabel" : "Save"
+              },
+              "customCssClasses" : "ff-account-details",
+              "definition" : "c:b2bEditAccountDetails",
+              "id" : "e2b16dcd-8164-4eb4-a0dc-5ebd9608c7a8",
+              "type" : "component"
+            } ],
+            "id" : "5fca4215-1e9b-4220-b61b-a26da657adde",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          }, {
+            "children" : [ {
+              "attributes" : {
+                "dxpStyle" : { }
+              },
+              "customCssClasses" : "ff-account-details",
+              "definition" : "commerce_builder:myAccountPassword",
+              "id" : "9b07fcf2-95ac-43bd-924c-33b26b4bd46e",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "dxpStyle" : { },
+                "flowName" : "{\"flowName\":\"Screen_Create_Business\",\"flowLabel\":\"Screen - Create Business\"}"
+              },
+              "customCssClasses" : "ff-account-details",
+              "definition" : "dxp_flow:flow",
+              "id" : "2c7b9faa-7cec-45c9-ac6a-f2d51cd14e81",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "dxpStyle" : { },
+                "flowName" : "{\"flowName\":\"Screen_Leave_Team\",\"flowLabel\":\"Screen - Leave Team\"}"
+              },
+              "customCssClasses" : "ff-account-details",
+              "definition" : "dxp_flow:flow",
+              "id" : "afa15d46-586c-437e-9976-9a89a8f14f03",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "buttonAllignment" : "left",
+                "buttonColor" : "#fbbf32",
+                "buttonFullWidth" : false,
+                "buttonIcon" : "utility:edit",
+                "buttonIconPosition" : "left",
+                "buttonLabel" : "Edit Team Name",
+                "buttonTextColor" : "#00000",
+                "flowApiName" : "Screen_Flow_Update_Business_Name",
+                "modalLabel" : "Edit Team Name"
+              },
+              "definition" : "c:modalScreenFlowParent",
+              "id" : "9ccb2e0e-6ad6-4da3-95c2-68017b612039",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "accountCodeLinkLabel" : "Enter Account Code",
+                "applyButtonLabel" : "Apply",
+                "inputPlaceHolder" : "Account code...",
+                "updateErrorMessage" : "Account Code didn't match. Please try again.",
+                "updateErrorTitle" : "Error",
+                "updateSuccessMessage" : "Account Code has been updated successfully.",
+                "updateSuccessTitle" : "Success"
+              },
+              "customCssClasses" : "ff-account-code",
+              "definition" : "c:b2bAccountCode",
+              "id" : "c35067cf-5a60-4b17-8dc7-13a23061f8a9",
+              "type" : "component"
+            } ],
+            "id" : "84635475-2c3d-4b42-bd88-f9b09c0d0450",
+            "name" : "col2",
+            "title" : "Column 2",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "b0cd443b-5e28-4ae3-8b48-2f3da1c37b32",
+          "type" : "component"
+        } ],
+        "id" : "731727a7-06da-4a4f-b83b-2d9ed88d3e62",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "dxpStyle" : { },
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "723933fe-e7ad-4732-b06d-d07fbdc1bed4",
+          "type" : "component"
+        } ],
+        "id" : "1f9d7ee0-3129-47f4-8e63-fcd4ff354ee8",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "7dbc9ee1-7ece-43b7-9803-a970080aa8c8",
+      "type" : "component"
+    },
+    "contentOperations" : {
+      "operations" : [ {
+        "targetId" : "2c7b9faa-7cec-45c9-ac6a-f2d51cd14e81",
+        "isHiddenOnOperationSuccess" : false,
+        "isActive" : true,
+        "rule" : {
+          "name" : "2948bff8-0385-4a2a-a519-994a74152e70",
+          "description" : "",
+          "criteriaType" : "AllCriteriaMatch",
+          "expressionCriteria" : [ {
+            "resource" : "User.Record.Contact.No_Business__c",
+            "operator" : "Equal",
+            "value" : true,
+            "criterionNumber" : 1
+          } ]
+        }
+      }, {
+        "targetId" : "afa15d46-586c-437e-9976-9a89a8f14f03",
+        "isHiddenOnOperationSuccess" : false,
+        "isActive" : true,
+        "rule" : {
+          "name" : "1b430e9e-eff8-47ec-b748-19c3fabd54b0",
+          "description" : "",
+          "criteriaType" : "AllCriteriaMatch",
+          "expressionCriteria" : [ {
+            "resource" : "User.Record.Contact.No_Business__c",
+            "operator" : "Equal",
+            "value" : false,
+            "criterionNumber" : 1
+          } ]
+        }
+      }, {
+        "targetId" : "ed2cf8d5-2c2a-47bd-8842-d38004a9c623",
+        "isHiddenOnOperationSuccess" : false,
+        "isActive" : true,
+        "rule" : {
+          "name" : "f619f529-a458-4ce2-b16c-58527ed80f44",
+          "description" : "",
+          "criteriaType" : "AllCriteriaMatch",
+          "expressionCriteria" : [ {
+            "resource" : "User.Record.Contact.Pending_Invite__c",
+            "operator" : "Equal",
+            "value" : true,
+            "criterionNumber" : 1
+          } ]
+        }
+      } ]
+    },
+    "dataProviders" : [ {
+      "definition" : "sfdc_cms__commerceMyProfileDataProvider",
+      "sfdcExpressionKey" : "MyProfile",
+      "attributes" : { }
+    } ],
+    "themeLayoutType" : "MyAccount",
+    "viewType" : "my-profile"
+  },
+  "urlName" : "my-profile"
+}

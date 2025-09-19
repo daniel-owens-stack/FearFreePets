@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Salesforce_Ticket__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The Lookup identifies the Salesforce Ticket this Vote contributes to. This is auto-populated through Upvoting or Downvoting on the Salesforce Ticket page.</description>
+    <inlineHelpText>The Lookup identifies the Salesforce Ticket this Vote contributes to. This is auto-populated through Upvoting or Downvoting on the Salesforce Ticket page.</inlineHelpText>
+    <label>Salesforce Ticket</label>
+    <referenceTo>Salesforce_Ticket__c</referenceTo>
+    <relationshipLabel>Votes</relationshipLabel>
+    <relationshipName>Votes</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

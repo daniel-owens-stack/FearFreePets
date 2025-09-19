@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Certified_Veterinary_Practices</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.ADDRESS1_COUNTRY</columns>
+    <columns>Number_of_DVMs__c</columns>
+    <columns>Practice_Certification_Date_Achieved__c</columns>
+    <columns>Certified_Practice_Status__c</columns>
+    <columns>Invoice_Status__c</columns>
+    <columns>Recertification_Date__c</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <columns>ACCOUNT.LAST_ACTIVITY</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Certified_Practice__c</field>
+        <operation>equals</operation>
+        <value>Completed</value>
+    </filters>
+    <label>Certified Veterinary Practices</label>
+    <sharedTo>
+        <role>PC_Team_Member</role>
+        <role>Sales_Marketing_Management</role>
+        <roleAndSubordinatesInternal>Corporate_Accounts</roleAndSubordinatesInternal>
+        <roleAndSubordinatesInternal>Corporate_Accounts_Team_Member</roleAndSubordinatesInternal>
+        <roleAndSubordinatesInternal>Executive</roleAndSubordinatesInternal>
+        <roleAndSubordinatesInternal>Marketing_Team_Member</roleAndSubordinatesInternal>
+        <roleAndSubordinatesInternal>Sales_Team_Member</roleAndSubordinatesInternal>
+        <roleAndSubordinatesInternal>Support_Team_Member</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

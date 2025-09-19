@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "My Certificates",
+  "contentBody" : {
+    "activeViewId" : "My_Certificates",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-my-certificates",
+    "urlPrefix" : "my-certificates"
+  },
+  "urlName" : "my-certificates"
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Historical_PLMA__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Historical PLMA</label>
+    <referenceTo>Historical_PLMA__c</referenceTo>
+    <relationshipLabel>Practice Level Membership Assignments</relationshipLabel>
+    <relationshipName>Practice_Level_Membership_Assignments</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

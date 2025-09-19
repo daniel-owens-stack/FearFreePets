@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AVA_MAPPER__Request_Log__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The request transactional details for the tax call sent to AvaTax</description>
+    <inlineHelpText>The request transactional details for the tax call sent to AvaTax</inlineHelpText>
+    <label>Request Log</label>
+    <length>131072</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

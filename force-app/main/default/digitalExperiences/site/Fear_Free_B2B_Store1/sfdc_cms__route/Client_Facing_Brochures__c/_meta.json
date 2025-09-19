@@ -1,0 +1,6 @@
+{
+  "apiName" : "Client_Facing_Brochures__c",
+  "type" : "sfdc_cms__route",
+  "parentId" : "sfdc_cms__route/My_Resources__c",
+  "path" : "routes"
+}

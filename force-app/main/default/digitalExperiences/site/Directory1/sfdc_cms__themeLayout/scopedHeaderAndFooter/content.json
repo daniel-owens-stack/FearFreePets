@@ -1,0 +1,110 @@
+{
+  "type" : "sfdc_cms__themeLayout",
+  "title" : "Scoped Header and Footer",
+  "contentBody" : {
+    "component" : {
+      "attributes" : { },
+      "children" : [ {
+        "children" : [ {
+          "attributes" : { },
+          "children" : [ {
+            "id" : "99d519d2-af81-48a7-9496-1201c50b73a2",
+            "name" : "mobile-nav",
+            "title" : "mobile-nav",
+            "type" : "region"
+          }, {
+            "id" : "96c429bb-8216-4f09-9856-17ddb314c9fb",
+            "name" : "logo",
+            "title" : "logo",
+            "type" : "region"
+          }, {
+            "id" : "05b5f484-d02f-4234-9f3b-5d5f679a3238",
+            "name" : "desktop-nav",
+            "title" : "desktop-nav",
+            "type" : "region"
+          }, {
+            "id" : "550f9ba3-e8a4-4de6-ab01-fd6f55c823eb",
+            "name" : "profile-nav",
+            "title" : "profile-nav",
+            "type" : "region"
+          }, {
+            "id" : "32f80109-1a0d-494f-8f1c-de10cd9f8906",
+            "name" : "cart",
+            "title" : "cart",
+            "type" : "region"
+          } ],
+          "definition" : "c:ffCustomCommerceHeader",
+          "id" : "d97b6be2-5a3f-46c0-81f0-db74b2911358",
+          "type" : "component"
+        }, {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "dxpStyle" : { },
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"921fdc82-ac8c-48be-a752-57600611cc06\",\"columns\":[{\"UUID\":\"17ccd02d-b1c9-46f8-bba3-14a9f8f2fc17\",\"columnName\":\"Column 1\",\"columnKey\":\"headerSection\",\"columnWidth\":\"12\",\"seedComponents\":null}]}"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "dxpStyle" : {
+                  "padding" : {
+                    "bottom" : "",
+                    "left" : "",
+                    "right" : "",
+                    "top" : ""
+                  }
+                }
+              },
+              "definition" : "c:directoryListings",
+              "id" : "0921f15f-6132-4067-bcf3-704fd354d625",
+              "type" : "component"
+            } ],
+            "id" : "17ccd02d-b1c9-46f8-bba3-14a9f8f2fc17",
+            "name" : "headerSection",
+            "title" : "Theme Header",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "921fdc82-ac8c-48be-a752-57600611cc06",
+          "type" : "component"
+        } ],
+        "id" : "3e7d27ce-098c-454e-9573-b2be9262061d",
+        "name" : "header",
+        "title" : "Theme Header",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "dxpStyle" : { },
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"ad57e3d9-c636-4e81-9fa3-884ec21cb9ec\",\"columns\":[{\"UUID\":\"ee8ee0ff-b21b-4069-92eb-d9c9702fd924\",\"columnName\":\"Column 1\",\"columnKey\":\"footerSection\",\"columnWidth\":\"12\",\"seedComponents\":null}]}"
+          },
+          "children" : [ {
+            "id" : "ee8ee0ff-b21b-4069-92eb-d9c9702fd924",
+            "name" : "footerSection",
+            "title" : "Theme Footer",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "ad57e3d9-c636-4e81-9fa3-884ec21cb9ec",
+          "type" : "component"
+        } ],
+        "id" : "ce44b61a-1ccb-49d1-ac9b-e38012c6ba78",
+        "name" : "footer",
+        "title" : "Theme Footer",
+        "type" : "region"
+      } ],
+      "definition" : "community_byo:scopedHeaderAndFooter",
+      "id" : "a5ad0ad4-78cf-4c13-a52e-c5ebdb610ac0",
+      "type" : "component"
+    }
+  },
+  "urlName" : "scoped-header-and-footer"
+}

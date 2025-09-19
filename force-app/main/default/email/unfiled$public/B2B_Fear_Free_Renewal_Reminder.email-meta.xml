@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>B2B Fear Free Renewal Reminder</name>
+    <style>none</style>
+    <subject>Renewal Reminder: Fear Free {!Account_Membership__c.Membership_Name__c}</subject>
+    <textOnly>Hey {!Account.Name},
+
+Your Fear Free membership is coming up for renewal on {!Account_Membership__c.Expiration_Date__c}, and we wanted to remind you of the difference it can make in your business to be Fear Free Certified!
+
+We know you don’t want to lose access to your exclusive member benefits, like the education library and resources, Facebook community, or your listing in our online directory, so follow the steps below to renew your membership today.
+
+To renew your membership:
+
+Login at www.fearfree.com
+Navigate to &quot;My Account&quot;
+Select &quot;My Memberships&quot;
+Click the &quot;Renew&quot; button
+Proceed through checkout
+
+Click Here to Renew
+
+To keep your Fear Free Certification active, we require members to maintain an active membership through annual renewal.
+
+Please note: If your practice has applied for Veterinary Practice Certification, your membership may not need to be renewed. Be sure to check with your team administrator.
+
+Thank you for your dedication to reducing fear, anxiety, and stress in pets. If you have any questions or need assistance, please email us at wags@fearfree.com, and we will be happy to help.
+
+Wags &amp; Purrs,
+The Fear Free Team
+
+This is an automated email. Please do not reply directly to this message.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

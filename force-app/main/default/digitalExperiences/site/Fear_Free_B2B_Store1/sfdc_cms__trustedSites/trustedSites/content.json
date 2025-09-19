@@ -1,0 +1,16 @@
+{
+  "type" : "sfdc_cms__trustedSites",
+  "title" : "trustedSites",
+  "contentBody" : {
+    "trustedSites" : [ {
+      "isActive" : true,
+      "source" : "https://www.youtube.com",
+      "sourceName" : "youtube"
+    }, {
+      "isActive" : true,
+      "source" : "https://www.youtube-nocookie.com",
+      "sourceName" : "youtube2"
+    } ]
+  },
+  "urlName" : "trustedsites"
+}

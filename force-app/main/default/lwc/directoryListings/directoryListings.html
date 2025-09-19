@@ -1,0 +1,112 @@
+<template>
+    <div class="container">
+        <div class="search-container">
+            <h1>Find a Fear Free Certified® Professional!</h1>
+            <!-- Search input, buttons, etc. -->
+            <div class="search-wrapper">
+                <div class="search-input">
+                    <input class="search-box" type="text" value={searchTerm} onchange={handleSearchTermChange}
+                        onkeydown={handleKeyDown} placeholder="Enter City+State or Postal Code">
+                    <button class="search-button" onclick={handleSearch} disabled={searchButtonDisabled}><i
+                            class="fa-solid fa-magnifying-glass-location"></i></button>
+                </div>
+                <!-- Get location button -->
+                <div>
+                    <button class="search-icon wide-button" onclick={handleGetCurrentLocationClick}
+                        disabled={locationButtonDisabled}><i class="fa-solid fa-location-crosshairs"></i>Locate
+                        Me</button>
+                </div>
+                <!-- Settings icon button -->
+                <div>
+                    <button class="search-icon" onclick={handleSettingsClick}><i
+                            class="fa-solid fa-sliders"></i></button>
+                </div>
+                <div class="loading-spinner" if:true={loading}>
+                    <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                </div>
+            </div>
+
+            <!-- Popup/modal for settings -->
+            <div if:true={showSettingsModal} class="settings-modal">
+                <div class="settings-modal--close">
+                    <div class="settings-modal--close-top-container">
+                        <div>
+                            <p class="settings-modal--label">Filters</p>
+                        </div>
+                        <div onclick={handleCloseFiltersButton}>
+                            <i class="fa-regular fa-rectangle-xmark"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <hr>
+                    </div>
+                </div>
+                <div class="modal-content">
+
+                    <div class="modal-section">
+                        <h3 class="slds-modal__title filters-label">Radius (In Miles)</h3>
+                        <!-- Filter options for radius -->
+                        <lightning-radio-group options={radiusOptions} value={radius} type="button"
+                            onchange={handleRadiusChange}>
+                        </lightning-radio-group>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3 class="slds-modal__title filters-label">Species:</h3>
+                        <!-- Filter options for species -->
+                        <lightning-checkbox-group options={speciesTypeOptions} value={selectedSpeciesTypes}
+                            onchange={handleSpeciesTypeChange}></lightning-checkbox-group>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3 class="slds-modal__title filters-label">Care Type:</h3>
+                        <!-- Filter options for care type -->
+                        <lightning-checkbox-group options={careTypeOptions} value={selectedCareTypes}
+                            onchange={handleCareTypeChange}></lightning-checkbox-group>
+                    </div>
+
+                    <div class="modal-section">
+                        <h3 class="slds-modal__title filters-label">Contact Type:</h3>
+                        <!-- Filter options for contact type -->
+                        <lightning-checkbox-group options={contactTypeOptions} value={selectedContactTypes}
+                            onchange={handleContactTypeChange}></lightning-checkbox-group>
+                    </div>
+
+                    <!-- Apply button -->
+                    <lightning-button label="Apply Filters" variant="brand" class="settings-button"
+                        onclick={handleApplyFiltersButton}></lightning-button>
+                </div>
+            </div>
+
+            <div class="slds-p-around_medium">
+                <template if:true={errorMessage}>
+                    <p>{errorMessage}</p>
+                </template>
+            </div>
+
+        </div>
+        <div class="map-container">
+            <!-- Map component -->
+            <c-directory-map listings={finalListings} onmapmarkerselected={handleMarkerSelected}></c-directory-map>
+        </div>
+
+
+        <div class="listings-container">
+            <!-- Listings -->
+            <template if:true={finalListings}>
+                <div class="directory-listings">
+                    <template for:each={finalListings} for:item="listing">
+                        <div if:true={listing.acc.Name} key={listing.acc.Name} data-listing-id={listing.acc.Name}
+                            class="listing-item">
+                            <c-directory-listing listing={listing}></c-directory-listing>
+                        </div>
+                    </template>
+                </div>
+            </template>
+        </div>
+
+    </div>
+    <!-- overlay -->
+    <div if:true={showSettingsModal} class="overlay">
+    </div>
+</template>

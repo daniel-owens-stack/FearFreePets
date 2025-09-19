@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>B2B Custom New Member Welcome Email</name>
+    <style>none</style>
+    <subject>Welcome to Fear Free Community!</subject>
+    <textOnly>Hello {!Receiving_User.FirstName},  
+
+Welcome to the Fear Free community! Your account has been successfully created, and you&apos;re just one step away from accessing Fear Free education, resources, and benefits.  
+
+Click the link below to log in for the first time and set your password. Your username is your email address.  
+
+{!Community_Url} 
+
+Once you log in, take a moment to complete your profile.  
+
+In order to access certification programs, additional courses, and member-exclusive resources, you will need an active membership. You can purchase for yourself or purchase for multiple individuals as a team.  
+
+Read more about individual versus team versus practice certification memberships here.  
+
+Have questions about the right membership for you or your team? Contact certifyme@fearfree.com.  
+
+If you have any questions or need help with your account, don’t hesitate to contact us at wags@fearfree.com or visit our Help Center.   
+
+
+For the love of animals, 
+The Fear Free Team.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

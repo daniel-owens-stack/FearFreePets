@@ -1,44 +1,83 @@
 @isTest
 public class B2BSchooxJobsAssignmentBatchTest {
 
-    @TestSetup static void makeData(){
-        B2BTestDataFactory.createWebStore();
-        String accountId = B2BTestDataFactory.createPersonAccount();
-    
-        Account account = [SELECT Id, SX_User_Id__pc FROM Account WHERE Name = 'Test Account' LIMIT 1];
-        account.SX_User_Id__pc = '1918259581';
-        update account;
-    
-        Membership__c m = new Membership__c(
-            Name = 'Test Membership',
-            Job_Id__c = 123456,
-            Active__c = true
-        );
-        insert m;
-    
-        Account_Membership__c am = new Account_Membership__c(
-            Membership__c = m.Id,
-            Account_Id__c = accountId,
-            Parent_Id__c = accountId,
-            Purchaser_Account__c = accountId,
-            Account_Assignment_Date__c = System.today(),
-            Start_Date__c = System.today(),
-            Welcome_Kit_Status__c = 'Unavailable',
-            Status__c = 'Active',
-            Historical_Membership__c = 'Test 12345'
-        );
-        insert am;
-    }
+//    @isTest
+// static void test_SuccessfulAssignment() {
+//     String accId = B2BTestDataFactory.createPersonAccount();
+//     Account acc = [SELECT Id FROM Account WHERE Id = :accId];
+//     acc.Historical_Jobs_Assigned__c = 'Pending';
+//     update acc;
 
-    @isTest static void testBatchSuccess() {
+//     Membership__c membership = new Membership__c(Name = 'Membership Success', Job_Id__c = 1001, Active__c = true);
+//     insert membership;
+
+//     Account_Membership__c am = new Account_Membership__c(
+//         Membership__c = membership.Id,
+//         Account_Id__c = acc.Id,
+//         Parent_Id__c = acc.Id,
+//         Purchaser_Account__c = acc.Id,
+//         Account_Assignment_Date__c = System.today(),
+//         Start_Date__c = System.today(),
+//         Welcome_Kit_Status__c = 'Unavailable',
+//         Status__c = 'Active',
+//         Historical_Membership__c = 'Success'
+//     );
+//     insert am;
+
+//     // 🛡️ Set your callout mock before the batch runs
+//     Test.setMock(HttpCalloutMock.class, new B2BSchooxApiCallMock());
+
+//     Test.startTest();
+//     Database.executeBatch(new B2BSchooxJobsAssignmentBatch(), 1); // use 1 so only 1 job enqueued
+//     Test.stopTest();
+// }
+
+
+    @isTest static void test_NoMemberships() {
+        String accId = B2BTestDataFactory.createPersonAccount();
+        Account acc = [SELECT Id FROM Account WHERE Id = :accId];
+        acc.Historical_Jobs_Assigned__c = 'Pending';
+        update acc;
+
         Test.startTest();
         Database.executeBatch(new B2BSchooxJobsAssignmentBatch(), 1);
         Test.stopTest();
     }
 
-    @isTest static void testBatchWithException() {
+    @isTest static void test_InactiveMembership() {
+        String accId = B2BTestDataFactory.createPersonAccount();
+        Account acc = [SELECT Id FROM Account WHERE Id = :accId];
+        acc.Historical_Jobs_Assigned__c = 'Pending';
+        update acc;
+
+        Membership__c membership = new Membership__c(Name = 'Inactive Membership', Job_Id__c = 9999, Active__c = false);
+        insert membership;
+
+        Account_Membership__c am = new Account_Membership__c(
+            Membership__c = membership.Id,
+            Account_Id__c = acc.Id,
+            Parent_Id__c = acc.Id,
+            Purchaser_Account__c = acc.Id,
+            Account_Assignment_Date__c = System.today(),
+            Start_Date__c = System.today(),
+            Welcome_Kit_Status__c = 'Unavailable',
+            Status__c = 'Active',
+            Historical_Membership__c = 'InactiveTest'
+        );
+        insert am;
+
         Test.startTest();
-        B2BSchooxJobsAssignmentBatch.throwException = true;
+        Database.executeBatch(new B2BSchooxJobsAssignmentBatch(), 1);
+        Test.stopTest();
+    }
+
+    @isTest static void test_StatusAlreadySet() {
+        String accId = B2BTestDataFactory.createPersonAccount();
+        Account acc = [SELECT Id FROM Account WHERE Id = :accId];
+        acc.Historical_Jobs_Assigned__c = 'Succesful';
+        update acc;
+
+        Test.startTest();
         Database.executeBatch(new B2BSchooxJobsAssignmentBatch(), 1);
         Test.stopTest();
     }

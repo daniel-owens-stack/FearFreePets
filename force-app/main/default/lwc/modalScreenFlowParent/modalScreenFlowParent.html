@@ -1,0 +1,22 @@
+<!--
+  @description       : 
+  @testing           : 
+  @author            : FSM
+  @last modified on  : 01-21-2025 - FSM
+  @last modified by  : FSM
+-->
+<template>
+    <lightning-layout horizontal-align={buttonAllignment}>
+        <lightning-layout-item flexibility="auto" padding="around-small">
+            <lightning-button class={buttonClassName} 
+                                label={buttonLabel} 
+                                title={buttonLabel} 
+                                variant="brand" 
+                                icon-name={buttonIcon}
+                                icon-position={buttonIconPosition}
+                                stretch={buttonFullWidth}
+                                onclick={openModal}>
+            </lightning-button>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

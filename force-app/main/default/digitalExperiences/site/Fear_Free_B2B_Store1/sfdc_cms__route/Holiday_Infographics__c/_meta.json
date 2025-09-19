@@ -1,0 +1,6 @@
+{
+  "apiName" : "Holiday_Infographics__c",
+  "type" : "sfdc_cms__route",
+  "parentId" : "sfdc_cms__route/My_Resources__c",
+  "path" : "routes"
+}

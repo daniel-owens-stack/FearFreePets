@@ -1,0 +1,478 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Press Release Templates",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"5afd8c48-82ed-41fb-a8a4-322442f03a92\",\"columns\":[{\"UUID\":\"0f624bd0-4e47-419a-ba94-eff7dd301151\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "checkAccountMembership" : true,
+                "checkBoardingMembership" : false,
+                "checkGroomerMembership" : false,
+                "checkPracticeMembership" : false,
+                "checkSitterMembership" : false,
+                "checkTrainerMembership" : false,
+                "checkVetProMembership" : false
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "center",
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"e060887f-1bb6-42be-b22b-7a1b398ff004\",\"columns\":[{\"UUID\":\"4636d302-1dab-4614-85f0-2913cb604121\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"4\",\"seedComponents\":[]},{\"UUID\":\"7d18c77f-36f9-4dae-bd50-56eb6923514d\",\"columnName\":\"Column 2\",\"columnKey\":\"6b2c0\",\"columnWidth\":\"8\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "fit" : "contain",
+                        "height" : 350,
+                        "imageInfo" : "{\"imageInfoV1\":{\"url\":\"/sfsites/c/cms/delivery/media/MCKC4EEMR5BFARXOIOS5SDI3UX6Q?lastModifiedDate=Tue Mar 04 20:44:52 GMT 2025\",\"altText\":\"\",\"contentKey\":\"MCKC4EEMR5BFARXOIOS5SDI3UX6Q\",\"contentType\":null}}",
+                        "overlayColor" : "",
+                        "position" : "center center",
+                        "width" : 100
+                      },
+                      "definition" : "dxp_base:image",
+                      "id" : "9bf07bd8-a148-45eb-83c2-5a7969cdca8d",
+                      "type" : "component"
+                    } ],
+                    "id" : "4636d302-1dab-4614-85f0-2913cb604121",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : {
+                        "checkAccountMembership" : false,
+                        "checkBoardingMembership" : false,
+                        "checkGroomerMembership" : false,
+                        "checkPracticeMembership" : true,
+                        "checkSitterMembership" : false,
+                        "checkTrainerMembership" : false,
+                        "checkVetProMembership" : false
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Template for Fear Free Certified Practices",
+                            "textAlign" : "center",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "542b3d9c-a844-4ce9-b6cc-ccdfd1a932f4",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "buttonLabel" : "Download",
+                            "dxpStyle" : {
+                              "margin" : {
+                                "bottom" : "",
+                                "left" : "",
+                                "right" : "",
+                                "top" : ""
+                              }
+                            },
+                            "fileContentId" : "MC2BFOSNCQOFCAJHD4TDVJ2BSO3Y"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "1d3faea1-0d38-4968-8cb0-a8010262acae",
+                          "type" : "component"
+                        } ],
+                        "id" : "6139831a-dedb-498e-899f-e0f02aca682e",
+                        "name" : "Content-Region-Has-Membership",
+                        "title" : "Content-Region-Has-Membership",
+                        "type" : "region"
+                      }, {
+                        "id" : "3437378e-cd91-4219-add1-7c6b20bafe35",
+                        "name" : "Content-Region-No-Membership",
+                        "title" : "Content-Region-No-Membership",
+                        "type" : "region"
+                      } ],
+                      "definition" : "c:membershipCheck",
+                      "id" : "8bad61e7-bfad-4946-894d-27890e7cef4d",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "checkAccountMembership" : false,
+                        "checkBoardingMembership" : false,
+                        "checkGroomerMembership" : false,
+                        "checkPracticeMembership" : true,
+                        "checkSitterMembership" : false,
+                        "checkTrainerMembership" : false,
+                        "checkVetProMembership" : true
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Template for Fear Free Certified Veterinary Professionals",
+                            "textAlign" : "center",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "f1c739b2-0657-467b-93c8-902c6ff82518",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "buttonLabel" : "Download",
+                            "dxpStyle" : {
+                              "margin" : {
+                                "bottom" : "",
+                                "left" : "",
+                                "right" : "",
+                                "top" : ""
+                              }
+                            },
+                            "fileContentId" : "MC5CP4B26CWRGW3EYBVP7T74XSHE"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "feb28873-e261-4dd2-9544-f9cfc3d7d6f8",
+                          "type" : "component"
+                        } ],
+                        "id" : "947a49db-fae2-4bf4-b6df-8efe5cd2a258",
+                        "name" : "Content-Region-Has-Membership",
+                        "title" : "Content-Region-Has-Membership",
+                        "type" : "region"
+                      }, {
+                        "id" : "7101c513-39a5-446a-9970-676fb6607427",
+                        "name" : "Content-Region-No-Membership",
+                        "title" : "Content-Region-No-Membership",
+                        "type" : "region"
+                      } ],
+                      "definition" : "c:membershipCheck",
+                      "id" : "8b472eb8-db8d-4947-a54b-f9186184f762",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "checkAccountMembership" : false,
+                        "checkBoardingMembership" : false,
+                        "checkGroomerMembership" : false,
+                        "checkPracticeMembership" : false,
+                        "checkSitterMembership" : false,
+                        "checkTrainerMembership" : true,
+                        "checkVetProMembership" : false
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Template for Fear Free Certified Trainers",
+                            "textAlign" : "center",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "c8b4b15c-9e76-470e-becc-71aee4403eab",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "buttonLabel" : "Download",
+                            "dxpStyle" : {
+                              "margin" : {
+                                "bottom" : "",
+                                "left" : "",
+                                "right" : "",
+                                "top" : ""
+                              }
+                            },
+                            "fileContentId" : "MC76ANFFXCL5EPPLGWG3K2M3JE5U"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "c405c0e0-99a0-4644-a9e0-63c37fd3e391",
+                          "type" : "component"
+                        } ],
+                        "id" : "87497773-f33d-4baa-bd93-e2ccfce0c883",
+                        "name" : "Content-Region-Has-Membership",
+                        "title" : "Content-Region-Has-Membership",
+                        "type" : "region"
+                      }, {
+                        "id" : "9afb1393-9d6b-4c38-bf80-76a6775b33aa",
+                        "name" : "Content-Region-No-Membership",
+                        "title" : "Content-Region-No-Membership",
+                        "type" : "region"
+                      } ],
+                      "definition" : "c:membershipCheck",
+                      "id" : "3dfa5ed7-d8b2-4589-821e-21887b06084a",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "checkAccountMembership" : false,
+                        "checkBoardingMembership" : false,
+                        "checkGroomerMembership" : true,
+                        "checkPracticeMembership" : false,
+                        "checkSitterMembership" : false,
+                        "checkTrainerMembership" : false,
+                        "checkVetProMembership" : false
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Template for Fear Free Certified Groomers",
+                            "textAlign" : "center",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "95a60a1b-6c1f-49be-995c-91fdbc911df7",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "buttonLabel" : "Download",
+                            "dxpStyle" : {
+                              "margin" : {
+                                "bottom" : "",
+                                "left" : "",
+                                "right" : "",
+                                "top" : ""
+                              }
+                            },
+                            "fileContentId" : "MCQD3HJDHARVHNTH46WHXRAKJBLY"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "bbbd79e0-e396-4404-9cd7-b77ea1cadc98",
+                          "type" : "component"
+                        } ],
+                        "id" : "8c2097e0-3a1c-4991-8a31-c546be812586",
+                        "name" : "Content-Region-Has-Membership",
+                        "title" : "Content-Region-Has-Membership",
+                        "type" : "region"
+                      }, {
+                        "id" : "4848c230-edce-46bb-975e-4c85c1551326",
+                        "name" : "Content-Region-No-Membership",
+                        "title" : "Content-Region-No-Membership",
+                        "type" : "region"
+                      } ],
+                      "definition" : "c:membershipCheck",
+                      "id" : "53f2c68d-f1ef-4b5b-b6d8-ffc6a8b7893a",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "checkAccountMembership" : false,
+                        "checkBoardingMembership" : false,
+                        "checkGroomerMembership" : false,
+                        "checkPracticeMembership" : false,
+                        "checkSitterMembership" : true,
+                        "checkTrainerMembership" : false,
+                        "checkVetProMembership" : false
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Template for Fear Free Certified Pet Sitters",
+                            "textAlign" : "center",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "7722add7-eaac-402b-aa99-35cdbf2c7fe1",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "buttonLabel" : "Download",
+                            "dxpStyle" : {
+                              "margin" : {
+                                "bottom" : "",
+                                "left" : "",
+                                "right" : "",
+                                "top" : ""
+                              }
+                            },
+                            "fileContentId" : "MC5IPCXHOXERDFROEIR7BNDLCNUU"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "6293f3d7-3611-4eac-a5de-05436a084ea4",
+                          "type" : "component"
+                        } ],
+                        "id" : "cf5c0fca-2122-4f85-8f6e-6e8cb6cedb36",
+                        "name" : "Content-Region-Has-Membership",
+                        "title" : "Content-Region-Has-Membership",
+                        "type" : "region"
+                      }, {
+                        "id" : "6704179d-5344-4082-8a4e-95c6950d1c5f",
+                        "name" : "Content-Region-No-Membership",
+                        "title" : "Content-Region-No-Membership",
+                        "type" : "region"
+                      } ],
+                      "definition" : "c:membershipCheck",
+                      "id" : "2dce4637-d5a7-4b6f-82e0-ee029a02bb03",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "checkAccountMembership" : false,
+                        "checkBoardingMembership" : true,
+                        "checkGroomerMembership" : false,
+                        "checkPracticeMembership" : false,
+                        "checkSitterMembership" : false,
+                        "checkTrainerMembership" : false,
+                        "checkVetProMembership" : false
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Template for Fear Free Boarding and Daycare Professionals",
+                            "textAlign" : "center",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "57351e42-5094-4d61-b493-daf4230ed3a9",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "buttonLabel" : "Download",
+                            "dxpStyle" : {
+                              "margin" : {
+                                "bottom" : "",
+                                "left" : "",
+                                "right" : "",
+                                "top" : ""
+                              }
+                            },
+                            "fileContentId" : "MCZRMJ7W4HZZATPC54VIYSJVVXBQ"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "52fecb1a-470b-4db2-91bf-64efc3b41421",
+                          "type" : "component"
+                        } ],
+                        "id" : "2010f339-af4f-45b1-8397-c8e4ddd322f1",
+                        "name" : "Content-Region-Has-Membership",
+                        "title" : "Content-Region-Has-Membership",
+                        "type" : "region"
+                      }, {
+                        "id" : "18ac75c0-7d7f-4f68-bccc-685baa44645e",
+                        "name" : "Content-Region-No-Membership",
+                        "title" : "Content-Region-No-Membership",
+                        "type" : "region"
+                      } ],
+                      "definition" : "c:membershipCheck",
+                      "id" : "3578401a-44b9-4088-8390-2c35d50f03d9",
+                      "type" : "component"
+                    } ],
+                    "id" : "7d18c77f-36f9-4dae-bd50-56eb6923514d",
+                    "name" : "6b2c0",
+                    "title" : "Column 2",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "e060887f-1bb6-42be-b22b-7a1b398ff004",
+                  "type" : "component"
+                } ],
+                "id" : "989e782e-a4f2-4669-9ab0-4dd1c52631f2",
+                "name" : "Content-Region-Has-Membership",
+                "title" : "Content-Region-Has-Membership",
+                "type" : "region"
+              }, {
+                "children" : [ {
+                  "attributes" : {
+                    "backgroundColor" : "",
+                    "isLinkable" : false,
+                    "linkAssistiveText" : "",
+                    "paddingHorizontal" : "none",
+                    "paddingVertical" : "none",
+                    "text" : "An active membership is required to view this content.",
+                    "textAlign" : "left",
+                    "textDecoration" : "{}",
+                    "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                  },
+                  "definition" : "dxp_base:textBlock",
+                  "id" : "e2dca738-0ad6-4bc1-b5cb-78ae5fa702a4",
+                  "type" : "component"
+                } ],
+                "id" : "cc69dc69-1618-4e3d-b281-aebbdb2a938b",
+                "name" : "Content-Region-No-Membership",
+                "title" : "Content-Region-No-Membership",
+                "type" : "region"
+              } ],
+              "definition" : "c:membershipCheck",
+              "id" : "27e6541e-b84b-4556-8028-dc7f18179117",
+              "type" : "component"
+            } ],
+            "id" : "0f624bd0-4e47-419a-ba94-eff7dd301151",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "5afd8c48-82ed-41fb-a8a4-322442f03a92",
+          "type" : "component"
+        } ],
+        "id" : "6c2a070e-7026-4da2-b6df-eb4c516493c3",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "pageTitle" : "Press Release Templates",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "5e3c6228-3178-4f6f-a857-dce772cb254c",
+          "type" : "component"
+        } ],
+        "id" : "5c4343d4-2f9f-4b5c-86f3-42fbae67420e",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "b3d4fd17-c126-49fb-af96-68b5efad373c",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-fear-free-press-release-templates"
+  },
+  "urlName" : "fear-free-press-release-templates"
+}

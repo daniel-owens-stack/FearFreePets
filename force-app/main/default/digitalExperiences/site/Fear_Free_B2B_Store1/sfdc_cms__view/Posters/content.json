@@ -1,0 +1,276 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Posters",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"b68c3d3b-2a96-4728-96c3-e1d59573cb06\",\"columns\":[{\"UUID\":\"9f8dab8b-726b-425c-a5d4-0679378d7026\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "checkAccountMembership" : false,
+                "checkBoardingMembership" : false,
+                "checkCertification" : false,
+                "checkGroomerMembership" : false,
+                "checkPracticeMembership" : true,
+                "checkSitterMembership" : false,
+                "checkTrainerMembership" : false,
+                "checkVetProMembership" : false
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "center",
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"cdd426ec-6177-44dc-b7a5-c84b64c4574e\",\"columns\":[{\"UUID\":\"cbb56463-a200-41fd-ba52-4e783657caaf\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"c0588e48-6221-4933-9374-cf0d4c909308\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "What to Expect at a Certified Practice Poster",
+                        "textAlign" : "center",
+                        "textDecoration" : "{\"bold\":true}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "f7a47c5f-63aa-4345-9e26-7b6edf709edb",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "fit" : "contain",
+                        "height" : 350,
+                        "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCCT2APOSW2ND5XG7HPQYQVCZTK4\",\"contentType\":null}}",
+                        "overlayColor" : "",
+                        "position" : "center center",
+                        "width" : 60
+                      },
+                      "definition" : "dxp_base:image",
+                      "id" : "de690d6b-dfa2-4968-8e50-4716fb3e51eb",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "buttonLabel" : "Download",
+                        "fileContentId" : "MC2W6P3AJOWVAK3NWVPKGAGFUAAI"
+                      },
+                      "definition" : "c:downloadFileButton",
+                      "id" : "9ac5ddf3-85d3-4f09-bd07-001ecda271cd",
+                      "type" : "component"
+                    } ],
+                    "id" : "cbb56463-a200-41fd-ba52-4e783657caaf",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "Certified Practice Poster",
+                        "textAlign" : "center",
+                        "textDecoration" : "{\"bold\":true}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "c9d42039-3119-4a4f-996d-14d3f6cc0110",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "fit" : "contain",
+                        "height" : 350,
+                        "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MC7R4SMNTNUNGBDMSBNND2GPCRBA\",\"contentType\":null}}",
+                        "overlayColor" : "",
+                        "position" : "center center",
+                        "width" : 51
+                      },
+                      "definition" : "dxp_base:image",
+                      "id" : "4f201491-c3ba-4f0f-b2f7-524e076212bd",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "buttonLabel" : "Download",
+                        "fileContentId" : "MCYC2PFACRANFGRBMJ53ANCSCYWI"
+                      },
+                      "definition" : "c:downloadFileButton",
+                      "id" : "3e6734db-0598-4f29-ab8b-8650aa3a4df3",
+                      "type" : "component"
+                    } ],
+                    "id" : "c0588e48-6221-4933-9374-cf0d4c909308",
+                    "name" : "col2",
+                    "title" : "Column 2",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "cdd426ec-6177-44dc-b7a5-c84b64c4574e",
+                  "type" : "component"
+                } ],
+                "id" : "20bf1a3b-ff17-430a-a9e2-7386580574b6",
+                "name" : "Content-Region-Has-Membership",
+                "title" : "Content-Region-Has-Membership",
+                "type" : "region"
+              }, {
+                "id" : "004ba01d-2631-4566-92b0-628278ecb3ae",
+                "name" : "Content-Region-No-Membership",
+                "title" : "Content-Region-No-Membership",
+                "type" : "region"
+              } ],
+              "definition" : "c:membershipCheck",
+              "id" : "00d5e5a9-dd42-4865-949c-532a11aa91b8",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "checkAccountMembership" : true,
+                "checkBoardingMembership" : false,
+                "checkCertification" : false,
+                "checkGroomerMembership" : false,
+                "checkPracticeMembership" : false,
+                "checkSitterMembership" : false,
+                "checkTrainerMembership" : false,
+                "checkVetProMembership" : false
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "center",
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"1b001a2b-90b7-43bd-a9d5-16599dfdc2df\",\"columns\":[{\"UUID\":\"fc11a1e6-a9c3-4a87-baf5-b1e9715923c6\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"d948af2b-f4f7-45fd-a386-2d825010b6de\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "Food Allergen Poster - with bleeds",
+                        "textAlign" : "center",
+                        "textDecoration" : "{\"bold\":true}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "7b34f33a-176f-4054-a87e-fa40c0938e7e",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "fit" : "contain",
+                        "height" : 350,
+                        "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCPV2BHS57P5CK3E6BQNU6XHPYVE\",\"contentType\":null}}",
+                        "overlayColor" : "",
+                        "position" : "center center",
+                        "width" : 60
+                      },
+                      "definition" : "dxp_base:image",
+                      "id" : "43219c6e-f3e4-455e-8b86-19d1b976a331",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "buttonLabel" : "Download",
+                        "fileContentId" : "MCLNPDP5W5IZBUJFQWSBS72OAHNA"
+                      },
+                      "definition" : "c:downloadFileButton",
+                      "id" : "c0630ff1-b7c8-46e7-beed-b2467f12f2bc",
+                      "type" : "component"
+                    } ],
+                    "id" : "fc11a1e6-a9c3-4a87-baf5-b1e9715923c6",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  }, {
+                    "id" : "d948af2b-f4f7-45fd-a386-2d825010b6de",
+                    "name" : "col2",
+                    "title" : "Column 2",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "1b001a2b-90b7-43bd-a9d5-16599dfdc2df",
+                  "type" : "component"
+                } ],
+                "id" : "ef16ddd7-7878-447e-8b41-1b77a6f17d31",
+                "name" : "Content-Region-Has-Membership",
+                "title" : "Content-Region-Has-Membership",
+                "type" : "region"
+              }, {
+                "id" : "d72da9bd-13ca-41c3-80b4-72671d319dd0",
+                "name" : "Content-Region-No-Membership",
+                "title" : "Content-Region-No-Membership",
+                "type" : "region"
+              } ],
+              "definition" : "c:membershipCheck",
+              "id" : "dfe088be-6df6-49e9-a966-f8041b2fd183",
+              "type" : "component"
+            } ],
+            "id" : "9f8dab8b-726b-425c-a5d4-0679378d7026",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "b68c3d3b-2a96-4728-96c3-e1d59573cb06",
+          "type" : "component"
+        } ],
+        "id" : "d5145526-e703-4712-bc35-90aa0cff4ff9",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "pageTitle" : "Posters",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "b45f4fda-b23c-4e2d-98cc-9e2c738c3d21",
+          "type" : "component"
+        } ],
+        "id" : "85e55714-89a7-4f9a-8c77-e8e522164d5b",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "5df02a42-e5b1-4720-8c7b-069e49abd67e",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-posters"
+  },
+  "urlName" : "posters"
+}

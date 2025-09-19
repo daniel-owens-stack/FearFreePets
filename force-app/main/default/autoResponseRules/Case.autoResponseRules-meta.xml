@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutoResponseRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <autoResponseRule>
+        <fullName>Case Responses</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8 AND 9 AND 10 AND 11</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Wags Email</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>notContain</operation>
+                <value>Out of Office</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>notContain</operation>
+                <value>OOO</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>notContain</operation>
+                <value>Notification of payment received</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>notContain</operation>
+                <value>[Fear Free Pets] New User Registration</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>notContain</operation>
+                <value>Vacation</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>notContain</operation>
+                <value>Automatic Response</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>notContain</operation>
+                <value>Automatic Reply</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>notContain</operation>
+                <value>Auto Reply</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>notContain</operation>
+                <value>notify@ringcentral.com</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Contact.Email</field>
+                <operation>notContain</operation>
+                <value>no-reply</value>
+            </criteriaItems>
+            <notifyCcRecipients>true</notifyCcRecipients>
+            <replyToEmail>wags@fearfree.com</replyToEmail>
+            <senderEmail>noreply@fearfreepets.com</senderEmail>
+            <senderName>Fear Free, LLC</senderName>
+            <template>SupportTemplates/Wags_Auto_Response_Do_not_use_1698246808218</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Practice Cert Email</value>
+            </criteriaItems>
+            <notifyCcRecipients>true</notifyCcRecipients>
+            <replyToEmail>practicecertification@fearfree.com</replyToEmail>
+            <senderEmail>noreply@fearfreepets.com</senderEmail>
+            <senderName>Fear Free, LLC</senderName>
+            <template>PCTemplates/Practice_Certification_Auto_Response_1698258135086</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Web</value>
+            </criteriaItems>
+            <notifyCcRecipients>true</notifyCcRecipients>
+            <replyToEmail>wags@fearfree.com</replyToEmail>
+            <senderEmail>noreply@fearfreepets.com</senderEmail>
+            <senderName>Fear Free, LLC</senderName>
+            <template>SupportTemplates/Wags_Auto_Response_Do_not_use_1698246808218</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>Sales Email</value>
+            </criteriaItems>
+            <notifyCcRecipients>true</notifyCcRecipients>
+            <replyToEmail>certifyme@fearfree.com</replyToEmail>
+            <senderEmail>noreply@fearfreepets.com</senderEmail>
+            <senderName>Fear Free, LLC</senderName>
+            <template>SalesTemplates/CertifyMe_Auto_Response_1715631395270</template>
+        </ruleEntry>
+    </autoResponseRule>
+</AutoResponseRules>

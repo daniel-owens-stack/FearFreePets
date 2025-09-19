@@ -1,0 +1,197 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Support Resource Page",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "dxpStyle" : { },
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"014abb7a-0a24-499f-91b3-4910b96f1af8\",\"columns\":[{\"UUID\":\"caa762fc-d2e4-48b7-9639-690475df3d45\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "columnGutterWidth" : "",
+                "columnMinHeight" : "",
+                "columnVerticalAlign" : "flex-start",
+                "dxpStyle" : { },
+                "layoutDirectionDesktop" : "row",
+                "layoutDirectionMobile" : "column",
+                "layoutDirectionTablet" : "column",
+                "sectionConfig" : "{\"UUID\":\"3e5edcfa-9dbc-41d2-903e-67b08f5c0033\",\"columns\":[{\"UUID\":\"91409749-f6ca-4fef-959b-dcfb3d1bacf3\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "backgroundColor" : "",
+                    "dxpStyle" : { },
+                    "isLinkable" : false,
+                    "linkAssistiveText" : "",
+                    "paddingHorizontal" : "none",
+                    "paddingVertical" : "none",
+                    "text" : "Support Resources ",
+                    "textAlign" : "center",
+                    "textDecoration" : "{\"bold\":true}",
+                    "textDisplayInfo" : "{\"textStyle\":\"heading-xlarge\",\"headingTag\":\"h1\"}"
+                  },
+                  "definition" : "dxp_base:textBlock",
+                  "id" : "0395326f-2f61-4dac-9d76-b7b8ad0cc0fa",
+                  "type" : "component"
+                } ],
+                "id" : "91409749-f6ca-4fef-959b-dcfb3d1bacf3",
+                "name" : "col1",
+                "title" : "Column 1",
+                "type" : "region"
+              } ],
+              "definition" : "dxp_layout:columns",
+              "id" : "3e5edcfa-9dbc-41d2-903e-67b08f5c0033",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "alignment" : "center",
+                "dxpStyle" : { },
+                "lineStyle" : "solid",
+                "size" : 1,
+                "width" : 100
+              },
+              "definition" : "dxp_base:horizontalLine",
+              "id" : "bee6b1a1-df53-48be-9cfc-9c124511666d",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "columnGutterWidth" : "",
+                "columnMinHeight" : "",
+                "columnVerticalAlign" : "flex-start",
+                "dxpStyle" : { },
+                "layoutDirectionDesktop" : "row",
+                "layoutDirectionMobile" : "column",
+                "layoutDirectionTablet" : "column",
+                "sectionConfig" : "{\"UUID\":\"220c394e-d162-4e67-b8f4-08282ce46176\",\"columns\":[{\"UUID\":\"b650476b-f414-4ebb-b601-493064477898\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"bcbb86b0-784d-468d-83b4-71fe25883ebc\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "backgroundColor" : "",
+                    "dxpStyle" : { },
+                    "isLinkable" : false,
+                    "linkAssistiveText" : "",
+                    "paddingHorizontal" : "none",
+                    "paddingVertical" : "none",
+                    "text" : "Submit a Case with the Support Team",
+                    "textAlign" : "center",
+                    "textDecoration" : "{\"underline\":true}",
+                    "textDisplayInfo" : "{}"
+                  },
+                  "definition" : "dxp_base:textBlock",
+                  "id" : "ea0996ec-f1c6-42f5-b4ec-6706f9993bd4",
+                  "type" : "component"
+                }, {
+                  "attributes" : {
+                    "alignment" : "center",
+                    "dxpStyle" : { },
+                    "size" : "standard",
+                    "stretch" : "standard",
+                    "text" : "Contact Support",
+                    "type" : "primary",
+                    "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"comm__namedPage\",\"attributes\":{\"name\":\"Contact_Support__c\"}}}}"
+                  },
+                  "definition" : "dxp_base:button",
+                  "id" : "67f8af1f-04cf-493d-8335-1d0ea89363cb",
+                  "type" : "component"
+                } ],
+                "id" : "b650476b-f414-4ebb-b601-493064477898",
+                "name" : "col1",
+                "title" : "Column 1",
+                "type" : "region"
+              }, {
+                "children" : [ {
+                  "attributes" : {
+                    "backgroundColor" : "",
+                    "dxpStyle" : { },
+                    "isLinkable" : false,
+                    "linkAssistiveText" : "",
+                    "paddingHorizontal" : "none",
+                    "paddingVertical" : "none",
+                    "text" : "Fear Free Pets Help Center",
+                    "textAlign" : "center",
+                    "textDecoration" : "{\"underline\":true}",
+                    "textDisplayInfo" : "{}"
+                  },
+                  "definition" : "dxp_base:textBlock",
+                  "id" : "04ee8821-102a-444b-83f3-c1f0cbc9111b",
+                  "type" : "component"
+                }, {
+                  "attributes" : {
+                    "alignment" : "center",
+                    "dxpStyle" : { },
+                    "size" : "standard",
+                    "stretch" : "standard",
+                    "text" : "Help Center",
+                    "type" : "primary",
+                    "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://helpdesk.fearfreepets.com/s/\"}}}}"
+                  },
+                  "definition" : "dxp_base:button",
+                  "id" : "66c1d25f-b404-4306-8fdf-54dd3b559a6c",
+                  "type" : "component"
+                } ],
+                "id" : "bcbb86b0-784d-468d-83b4-71fe25883ebc",
+                "name" : "col2",
+                "title" : "Column 2",
+                "type" : "region"
+              } ],
+              "definition" : "dxp_layout:columns",
+              "id" : "220c394e-d162-4e67-b8f4-08282ce46176",
+              "type" : "component"
+            } ],
+            "id" : "caa762fc-d2e4-48b7-9639-690475df3d45",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "014abb7a-0a24-499f-91b3-4910b96f1af8",
+          "type" : "component"
+        } ],
+        "id" : "9faa82bf-bee2-4563-bc53-7addbdb3847f",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "dxpStyle" : { },
+            "pageTitle" : "Support Resource Page",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "70c73e7a-fdc7-4b20-8786-3b2a1721022b",
+          "type" : "component"
+        } ],
+        "id" : "c10f8434-60a9-4015-b6a5-20d7126b9796",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "93c46d32-a575-4a6e-960b-59a0db5f9fcb",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-support-resource-page"
+  },
+  "urlName" : "support-resource-page"
+}

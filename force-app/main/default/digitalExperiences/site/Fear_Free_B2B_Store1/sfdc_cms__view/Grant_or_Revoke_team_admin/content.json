@@ -1,0 +1,105 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Grant or Revoke team admin",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "dxpStyle" : { },
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"f601e4b4-ab3d-4801-8289-b93366c9a1aa\",\"columns\":[{\"UUID\":\"d4e75212-4174-4a9b-8604-352024482474\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "dxpStyle" : { },
+                "flowName" : "{\"flowName\":\"Manage_My_Team_Grand_or_Revoke_team_admin_profile\",\"flowLabel\":\"Manage My Team - Grant or Revoke team admin profile\"}"
+              },
+              "definition" : "dxp_flow:flow",
+              "id" : "5d26c8a2-dfce-4879-8c6c-a9af68919334",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "columnGutterWidth" : "",
+                "columnMinHeight" : "",
+                "columnVerticalAlign" : "flex-start",
+                "layoutDirectionDesktop" : "row",
+                "layoutDirectionMobile" : "column",
+                "layoutDirectionTablet" : "column",
+                "sectionConfig" : "{\"UUID\":\"73c2ec4d-0ee9-4edc-b03a-d579b666e66b\",\"columns\":[{\"UUID\":\"48b8f7ac-f0f7-4d1a-ab82-33cc044b7ef6\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"b59596f2-0569-40f4-81ff-4caea4c304df\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "flowName" : "{\"flowName\":\"Manage_My_Team_Team_Overview\",\"flowLabel\":\"Manage My Team - Team Overview\"}"
+                  },
+                  "definition" : "dxp_flow:flow",
+                  "id" : "655600de-d913-4648-9922-5ee461771f63",
+                  "type" : "component"
+                } ],
+                "id" : "48b8f7ac-f0f7-4d1a-ab82-33cc044b7ef6",
+                "name" : "col1",
+                "title" : "Column 1",
+                "type" : "region"
+              }, {
+                "id" : "b59596f2-0569-40f4-81ff-4caea4c304df",
+                "name" : "col2",
+                "title" : "Column 2",
+                "type" : "region"
+              } ],
+              "definition" : "dxp_layout:columns",
+              "id" : "73c2ec4d-0ee9-4edc-b03a-d579b666e66b",
+              "scopedBrandingSetId" : "Header",
+              "type" : "component"
+            } ],
+            "id" : "d4e75212-4174-4a9b-8604-352024482474",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "f601e4b4-ab3d-4801-8289-b93366c9a1aa",
+          "type" : "component"
+        } ],
+        "id" : "6c00244c-4bad-4d88-bbba-a6d891f5edc4",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "dxpStyle" : { },
+            "pageTitle" : "Grant or Revoke team admin",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "7a5e65ce-97ff-445b-8b0c-eb7b928ae197",
+          "type" : "component"
+        } ],
+        "id" : "ad0ec0f8-bd4b-4169-b9bb-94b879503986",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "5e24fa97-3e5c-423a-a526-e0ab99a53927",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-grant-or-revoke-team-admin"
+  },
+  "urlName" : "grant-or-revoke-team-admin"
+}

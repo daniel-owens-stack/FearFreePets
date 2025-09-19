@@ -1,0 +1,846 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Social Media Graphics",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"908d8119-ce48-4d2d-8cf9-6f247c86b649\",\"columns\":[{\"UUID\":\"501c5981-c43d-4b1c-8966-0a955d1e9d5d\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "checkAccountMembership" : false,
+                "checkBoardingMembership" : false,
+                "checkCertification" : false,
+                "checkGroomerMembership" : false,
+                "checkPracticeMembership" : true,
+                "checkSitterMembership" : false,
+                "checkTrainerMembership" : false,
+                "checkVetProMembership" : false,
+                "dxpStyle" : {
+                  "margin" : {
+                    "bottom" : "40px",
+                    "left" : "",
+                    "right" : "",
+                    "top" : "40px"
+                  }
+                }
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "flex-start",
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"418ada67-69a7-44b3-87cd-c463f39d1b98\",\"columns\":[{\"UUID\":\"2ebc7fe8-bcb0-454c-ae14-b817bfb74b4e\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "Social Media Graphics for Fear Free Certified Practices",
+                        "textAlign" : "center",
+                        "textDecoration" : "{}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-large\",\"headingTag\":\"h2\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "7b372b85-50de-41a7-9f23-e12d3a8ad634",
+                      "type" : "component"
+                    } ],
+                    "id" : "2ebc7fe8-bcb0-454c-ae14-b817bfb74b4e",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "418ada67-69a7-44b3-87cd-c463f39d1b98",
+                  "type" : "component"
+                }, {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "flex-start",
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"52a96098-c554-4408-b9c3-2a55cd2a8f9f\",\"columns\":[{\"UUID\":\"6133f0c3-aa61-4fdd-8ba7-257eea5053e0\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"a0bff7da-718c-46a4-a9b3-1c7555b4c8eb\",\"columnName\":\"Column 2\",\"columnKey\":\"30314\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"23183fa0-590a-48b5-aebe-102c8a2b2d66\",\"columnName\":\"Column 3\",\"columnKey\":\"0ebc2\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"09988fe5-2c6e-4906-aa02-359dbccfd2a7\",\"columnName\":\"Column 4\",\"columnKey\":\"cb47c\",\"columnWidth\":\"3\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "April",
+                        "textAlign" : "center",
+                        "textDecoration" : "{}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "e8d4f1b5-08f1-4bb2-99bf-eb80dc8314b8",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "buttonLabel" : "Download File",
+                        "fileContentId" : "MCFQMJLA6TX5A2PJU5YAZL5C3BS4"
+                      },
+                      "definition" : "c:downloadFileButton",
+                      "id" : "6b5a032e-210a-48d8-8553-d8ee27bcdf5a",
+                      "type" : "component"
+                    } ],
+                    "id" : "6133f0c3-aa61-4fdd-8ba7-257eea5053e0",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "May",
+                        "textAlign" : "center",
+                        "textDecoration" : "{}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "c876d012-794d-4b73-a4fa-d6441eb728dd",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "buttonLabel" : "Download File",
+                        "fileContentId" : "MCHFWD5C5VGJDUFFFSGD7ABJMUUM"
+                      },
+                      "definition" : "c:downloadFileButton",
+                      "id" : "387a68f2-8d25-4268-aae9-5712484db181",
+                      "type" : "component"
+                    } ],
+                    "id" : "a0bff7da-718c-46a4-a9b3-1c7555b4c8eb",
+                    "name" : "30314",
+                    "title" : "Column 2",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "June",
+                        "textAlign" : "center",
+                        "textDecoration" : "{}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "a3682c34-21ef-4316-a588-aa9bee861c66",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "buttonLabel" : "Download File",
+                        "fileContentId" : "MCPOL6EZ5F7BBCZLWHMI3GD4GL4Y"
+                      },
+                      "definition" : "c:downloadFileButton",
+                      "id" : "349d160f-5b44-4bc1-9968-dd98f85938fe",
+                      "type" : "component"
+                    } ],
+                    "id" : "23183fa0-590a-48b5-aebe-102c8a2b2d66",
+                    "name" : "0ebc2",
+                    "title" : "Column 3",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "July",
+                        "textAlign" : "center",
+                        "textDecoration" : "{}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "45b95e18-2058-4063-b7b2-305e1b9a81fe",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "buttonLabel" : "Download File",
+                        "fileContentId" : "MCTIINR3444NH55LVYK56HAYIE2Q"
+                      },
+                      "definition" : "c:downloadFileButton",
+                      "id" : "ff18e1e9-f107-4a77-af35-6a5e94cd6e95",
+                      "type" : "component"
+                    } ],
+                    "id" : "09988fe5-2c6e-4906-aa02-359dbccfd2a7",
+                    "name" : "cb47c",
+                    "title" : "Column 4",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "52a96098-c554-4408-b9c3-2a55cd2a8f9f",
+                  "type" : "component"
+                }, {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "flex-start",
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"e4510a4c-a350-4607-98dd-c490e449c0c6\",\"columns\":[{\"UUID\":\"4049c9aa-a12d-4e4c-96a3-7a0027c4affd\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"32d38a94-9fef-4112-86eb-de748ee6e5ef\",\"columnName\":\"Column 2\",\"columnKey\":\"30314\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"aa697993-6f8f-4922-bd46-382029ce2248\",\"columnName\":\"Column 3\",\"columnKey\":\"0ebc2\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"c712f0d5-02eb-4af7-be4c-990b5421de90\",\"columnName\":\"Column 4\",\"columnKey\":\"cb47c\",\"columnWidth\":\"3\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "August",
+                        "textAlign" : "center",
+                        "textDecoration" : "{}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "51d024ec-27de-47be-a039-d572e389fe4f",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "buttonLabel" : "Download File",
+                        "fileContentId" : "MCJQGEZG3BLBA7TPAU7EGQUKDKWI"
+                      },
+                      "definition" : "c:downloadFileButton",
+                      "id" : "03b92817-1d7e-4a5c-87e5-1fdc63ff8d05",
+                      "type" : "component"
+                    } ],
+                    "id" : "4049c9aa-a12d-4e4c-96a3-7a0027c4affd",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "September",
+                        "textAlign" : "center",
+                        "textDecoration" : "{}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "e34e3b93-a525-4222-9626-f8d9a1097064",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "buttonLabel" : "Download File",
+                        "fileContentId" : "MCXAATZY3PTRARLMQA7L4UL6C4QM"
+                      },
+                      "definition" : "c:downloadFileButton",
+                      "id" : "9bd4090b-2ada-4245-8939-775bc7eb4fc0",
+                      "type" : "component"
+                    } ],
+                    "id" : "32d38a94-9fef-4112-86eb-de748ee6e5ef",
+                    "name" : "30314",
+                    "title" : "Column 2",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "October",
+                        "textAlign" : "center",
+                        "textDecoration" : "{}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "bf021016-a2f6-4a80-9d16-ce67b299dd79",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "buttonLabel" : "Download File",
+                        "fileContentId" : "MCNIN44ORDZ5GA5J6AVMJ4HX45DE"
+                      },
+                      "definition" : "c:downloadFileButton",
+                      "id" : "65b6163f-9926-4e8c-a3fb-6ba47ebd3ef9",
+                      "type" : "component"
+                    } ],
+                    "id" : "aa697993-6f8f-4922-bd46-382029ce2248",
+                    "name" : "0ebc2",
+                    "title" : "Column 3",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "November",
+                        "textAlign" : "center",
+                        "textDecoration" : "{}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "7dfc236e-8def-4253-abcf-81a3c483de60",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "buttonLabel" : "Download File",
+                        "fileContentId" : "MCBRWYVCJEVRB4JAWS6BTDJYTU2I"
+                      },
+                      "definition" : "c:downloadFileButton",
+                      "id" : "a44d9613-6142-4a46-8f94-ec27fb332639",
+                      "type" : "component"
+                    } ],
+                    "id" : "c712f0d5-02eb-4af7-be4c-990b5421de90",
+                    "name" : "cb47c",
+                    "title" : "Column 4",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "e4510a4c-a350-4607-98dd-c490e449c0c6",
+                  "type" : "component"
+                }, {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "flex-start",
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"5a996d4c-e0b9-4855-80cd-be63bd377731\",\"columns\":[{\"UUID\":\"8a7a739f-a5a0-4b89-b212-4c1259090cb6\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"32968664-4c79-412f-b054-adfd73b1db33\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"669287a1-284d-478c-a6eb-9d837e5554b1\",\"columnName\":\"Column 3\",\"columnKey\":\"778f0\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"670077f3-591c-498e-b094-cdaefc791216\",\"columnName\":\"Column 4\",\"columnKey\":\"09c48\",\"columnWidth\":\"3\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "December",
+                        "textAlign" : "center",
+                        "textDecoration" : "{}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "3ce655af-92a6-4b55-afc5-ed9d8ba3b87e",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "buttonLabel" : "Download File",
+                        "fileContentId" : "MCVZM26BTJFZFUHOHBK47CNAZRLU"
+                      },
+                      "definition" : "c:downloadFileButton",
+                      "id" : "7b6b3188-657e-4108-a169-c772b2a22c54",
+                      "type" : "component"
+                    } ],
+                    "id" : "8a7a739f-a5a0-4b89-b212-4c1259090cb6",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  }, {
+                    "id" : "32968664-4c79-412f-b054-adfd73b1db33",
+                    "name" : "col2",
+                    "title" : "Column 2",
+                    "type" : "region"
+                  }, {
+                    "id" : "669287a1-284d-478c-a6eb-9d837e5554b1",
+                    "name" : "778f0",
+                    "title" : "Column 3",
+                    "type" : "region"
+                  }, {
+                    "id" : "670077f3-591c-498e-b094-cdaefc791216",
+                    "name" : "09c48",
+                    "title" : "Column 4",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "5a996d4c-e0b9-4855-80cd-be63bd377731",
+                  "type" : "component"
+                } ],
+                "id" : "9fe40038-c8f0-464e-88ed-93373ae9dcb8",
+                "name" : "Content-Region-Has-Membership",
+                "title" : "Content-Region-Has-Membership",
+                "type" : "region"
+              }, {
+                "id" : "e0c03ce4-3bda-4ec0-bf42-d17658bbb99b",
+                "name" : "Content-Region-No-Membership",
+                "title" : "Content-Region-No-Membership",
+                "type" : "region"
+              } ],
+              "definition" : "c:membershipCheck",
+              "id" : "8ec005a3-2d94-4521-b350-1db94adc6ad3",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "checkAccountMembership" : false,
+                "checkBoardingMembership" : false,
+                "checkCertification" : false,
+                "checkGroomerMembership" : false,
+                "checkPracticeMembership" : false,
+                "checkSitterMembership" : false,
+                "checkTrainerMembership" : false,
+                "checkVetProMembership" : true
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "flex-start",
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"7be52dec-864a-48ef-9f61-5ed893ba267b\",\"columns\":[{\"UUID\":\"bd9b3cfd-9d38-473d-a37e-69fd3c12d502\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "Social Media Graphics for Fear Free Certified Professionals",
+                        "textAlign" : "center",
+                        "textDecoration" : "{}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-large\",\"headingTag\":\"h2\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "71a613b7-d1f1-4482-891a-3846a053ab1c",
+                      "type" : "component"
+                    } ],
+                    "id" : "bd9b3cfd-9d38-473d-a37e-69fd3c12d502",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "7be52dec-864a-48ef-9f61-5ed893ba267b",
+                  "type" : "component"
+                }, {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "flex-start",
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"0baacd6b-67ac-43ef-8178-f2e266ad7b26\",\"columns\":[{\"UUID\":\"606ad653-7cf2-4326-9f96-cf03192d6fdb\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"21596859-2eea-4ea6-b4ef-1c12926b40cf\",\"columnName\":\"Column 2\",\"columnKey\":\"30314\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"5b906855-1a78-449a-b1bd-b91f0ee7c563\",\"columnName\":\"Column 3\",\"columnKey\":\"0ebc2\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"9da4d966-67e4-4953-b4b7-d9eb8af458e8\",\"columnName\":\"Column 4\",\"columnKey\":\"cb47c\",\"columnWidth\":\"3\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "April",
+                        "textAlign" : "center",
+                        "textDecoration" : "{}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "5d987f36-c1c1-47ba-927e-0a20f8d9a5ec",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "buttonLabel" : "Download File",
+                        "fileContentId" : "MCMUPGXSEDZRAWPINBGIWXBVZSK4"
+                      },
+                      "definition" : "c:downloadFileButton",
+                      "id" : "88711cde-ed42-47a5-8897-814903b76743",
+                      "type" : "component"
+                    } ],
+                    "id" : "606ad653-7cf2-4326-9f96-cf03192d6fdb",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "May",
+                        "textAlign" : "center",
+                        "textDecoration" : "{}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "093d94d5-ccf2-4512-ba67-8abc9a3fb6ca",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "buttonLabel" : "Download File",
+                        "fileContentId" : "MCNMOS5XQHQVGOXLKZRTT2DXX4YM"
+                      },
+                      "definition" : "c:downloadFileButton",
+                      "id" : "e21cd0cb-312a-4b44-94df-bdf46a2cc5ae",
+                      "type" : "component"
+                    } ],
+                    "id" : "21596859-2eea-4ea6-b4ef-1c12926b40cf",
+                    "name" : "30314",
+                    "title" : "Column 2",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "June",
+                        "textAlign" : "center",
+                        "textDecoration" : "{}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "51927c9d-9956-4c87-bf7c-b44675327fd4",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "buttonLabel" : "Download File",
+                        "fileContentId" : "MCLZ5KQ6H4GJHS3IGTZJEVK2RQCE"
+                      },
+                      "definition" : "c:downloadFileButton",
+                      "id" : "0651d9c3-cdbd-4e6d-9c0a-2f9d55cfcb21",
+                      "type" : "component"
+                    } ],
+                    "id" : "5b906855-1a78-449a-b1bd-b91f0ee7c563",
+                    "name" : "0ebc2",
+                    "title" : "Column 3",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "July",
+                        "textAlign" : "center",
+                        "textDecoration" : "{}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "b0a2036f-51d6-4097-8e04-943815407920",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "buttonLabel" : "Download File",
+                        "fileContentId" : "MCU5WXXL5YUZGGFN4MZYTMQBNUKM"
+                      },
+                      "definition" : "c:downloadFileButton",
+                      "id" : "ab9eee48-47e1-48d3-a6a3-02d214f5260a",
+                      "type" : "component"
+                    } ],
+                    "id" : "9da4d966-67e4-4953-b4b7-d9eb8af458e8",
+                    "name" : "cb47c",
+                    "title" : "Column 4",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "0baacd6b-67ac-43ef-8178-f2e266ad7b26",
+                  "type" : "component"
+                }, {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "flex-start",
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"26d4dd4c-fe76-440d-9e03-0cfea9e2e734\",\"columns\":[{\"UUID\":\"5e31bae0-9925-4829-9356-82b9f0756be4\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"8bce8d8d-2ba3-472d-aca8-1de366e06efb\",\"columnName\":\"Column 2\",\"columnKey\":\"30314\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"37886338-047e-4855-acc8-3b7c3d5060ef\",\"columnName\":\"Column 3\",\"columnKey\":\"0ebc2\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"eb868ff4-ee11-46c8-91df-9022933557e1\",\"columnName\":\"Column 4\",\"columnKey\":\"cb47c\",\"columnWidth\":\"3\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "August",
+                        "textAlign" : "center",
+                        "textDecoration" : "{}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "f23650b8-fa66-474a-8cf4-9a24a6d73a74",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "buttonLabel" : "Download File",
+                        "fileContentId" : "MCGKV5HFH4VNALXC3V5L7MR4D6XQ"
+                      },
+                      "definition" : "c:downloadFileButton",
+                      "id" : "8027443a-e026-441e-bd8a-713650812a7b",
+                      "type" : "component"
+                    } ],
+                    "id" : "5e31bae0-9925-4829-9356-82b9f0756be4",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "September",
+                        "textAlign" : "center",
+                        "textDecoration" : "{}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "e493a698-4ea5-480c-8c7a-13fb4c552903",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "buttonLabel" : "Download File",
+                        "fileContentId" : "MCRLN5O3R4DZGNNFWWDTUCBLT75E"
+                      },
+                      "definition" : "c:downloadFileButton",
+                      "id" : "151b7268-1553-43a2-89ce-57bec580bb8e",
+                      "type" : "component"
+                    } ],
+                    "id" : "8bce8d8d-2ba3-472d-aca8-1de366e06efb",
+                    "name" : "30314",
+                    "title" : "Column 2",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "October",
+                        "textAlign" : "center",
+                        "textDecoration" : "{}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "fb672df2-c824-4fba-9e23-f34e6e8fc052",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "buttonLabel" : "Download File",
+                        "fileContentId" : "MC7KA4HEBDAVDI3O5MZRZCJYUO7A"
+                      },
+                      "definition" : "c:downloadFileButton",
+                      "id" : "47ebbd52-1e58-419e-8f57-2e3832cf77ec",
+                      "type" : "component"
+                    } ],
+                    "id" : "37886338-047e-4855-acc8-3b7c3d5060ef",
+                    "name" : "0ebc2",
+                    "title" : "Column 3",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "November",
+                        "textAlign" : "center",
+                        "textDecoration" : "{}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "e52a4218-aca5-491f-afcd-9e958aee259e",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "buttonLabel" : "Download File",
+                        "fileContentId" : "MCKJSA3NFRYFB4PF7TQR6YA2ZHHM"
+                      },
+                      "definition" : "c:downloadFileButton",
+                      "id" : "f796fc5f-3c54-4a1d-9ee4-a620e76eea82",
+                      "type" : "component"
+                    } ],
+                    "id" : "eb868ff4-ee11-46c8-91df-9022933557e1",
+                    "name" : "cb47c",
+                    "title" : "Column 4",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "26d4dd4c-fe76-440d-9e03-0cfea9e2e734",
+                  "type" : "component"
+                }, {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "flex-start",
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"805a6586-1a30-4d8e-8b69-2bddd7fb565d\",\"columns\":[{\"UUID\":\"88141738-e849-4c23-a9f5-e469cb50cacb\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"b6249f28-43d9-4613-b7b9-ccbbce04c0b0\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"35607b85-ed34-431e-820e-9b74b555e07a\",\"columnName\":\"Column 3\",\"columnKey\":\"778f0\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"b037955f-216f-4baf-b291-f05c71935b9a\",\"columnName\":\"Column 4\",\"columnKey\":\"09c48\",\"columnWidth\":\"3\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "December",
+                        "textAlign" : "center",
+                        "textDecoration" : "{}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "f650ec29-6a29-4231-8d4a-4707463a6e17",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "buttonLabel" : "Download File",
+                        "fileContentId" : "MCIT66K5DQYNBJ3A5CGMBNEY7LD4"
+                      },
+                      "definition" : "c:downloadFileButton",
+                      "id" : "efc74eff-352e-4bb6-995d-4846453159ea",
+                      "type" : "component"
+                    } ],
+                    "id" : "88141738-e849-4c23-a9f5-e469cb50cacb",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  }, {
+                    "id" : "b6249f28-43d9-4613-b7b9-ccbbce04c0b0",
+                    "name" : "col2",
+                    "title" : "Column 2",
+                    "type" : "region"
+                  }, {
+                    "id" : "35607b85-ed34-431e-820e-9b74b555e07a",
+                    "name" : "778f0",
+                    "title" : "Column 3",
+                    "type" : "region"
+                  }, {
+                    "id" : "b037955f-216f-4baf-b291-f05c71935b9a",
+                    "name" : "09c48",
+                    "title" : "Column 4",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "805a6586-1a30-4d8e-8b69-2bddd7fb565d",
+                  "type" : "component"
+                } ],
+                "id" : "2aae721f-e957-402c-be15-9c2896d5025f",
+                "name" : "Content-Region-Has-Membership",
+                "title" : "Content-Region-Has-Membership",
+                "type" : "region"
+              }, {
+                "id" : "9fd1bc96-d5f7-4ad8-9072-b7879eda795c",
+                "name" : "Content-Region-No-Membership",
+                "title" : "Content-Region-No-Membership",
+                "type" : "region"
+              } ],
+              "definition" : "c:membershipCheck",
+              "id" : "c12a63e5-a215-4183-a25d-fe09f4c7049e",
+              "type" : "component"
+            } ],
+            "id" : "501c5981-c43d-4b1c-8966-0a955d1e9d5d",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "908d8119-ce48-4d2d-8cf9-6f247c86b649",
+          "type" : "component"
+        } ],
+        "id" : "5af194a3-24cc-4d28-a981-d54c877f3177",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "pageTitle" : "Social Media Graphics",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "caffae3f-16c9-4021-a923-22a296914496",
+          "type" : "component"
+        } ],
+        "id" : "4704f7a0-0c66-412a-92cf-24d2257ec160",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "33286c05-ecd4-4f57-a606-649bbecc325c",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-social-media-graphics"
+  },
+  "urlName" : "social-media-graphics"
+}

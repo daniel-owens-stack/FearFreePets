@@ -1,0 +1,356 @@
+{
+  "type" : "sfdc_cms__themeLayout",
+  "title" : "My Account Layout",
+  "contentBody" : {
+    "component" : {
+      "attributes" : { },
+      "children" : [ {
+        "children" : [ {
+          "attributes" : { },
+          "children" : [ {
+            "id" : "7e6acc4f-c7ee-4854-8d92-c98d2aaac6b2",
+            "name" : "mobile-nav",
+            "title" : "mobile-nav",
+            "type" : "region"
+          }, {
+            "children" : [ {
+              "attributes" : {
+                "alignment" : "center",
+                "fit" : "contain",
+                "height" : 350,
+                "imageInfo" : "{\"imageInfoV1\":{\"url\":\"/sfsites/c/cms/delivery/media/MC6XWCTRKW5VFQ3N3J53B37CSM34?lastModifiedDate=Thu Sep 26 05:06:05 GMT 2024\",\"altText\":\"\",\"contentKey\":\"MC6XWCTRKW5VFQ3N3J53B37CSM34\",\"contentType\":null}}",
+                "overlayColor" : "",
+                "position" : "center center",
+                "width" : 80
+              },
+              "definition" : "dxp_base:image",
+              "id" : "5979003a-91bd-4d50-99dd-c8ccd1ee62e1",
+              "type" : "component"
+            } ],
+            "id" : "0bf4496e-4359-41f9-ab07-352d05a020cc",
+            "name" : "logo",
+            "title" : "logo",
+            "type" : "region"
+          }, {
+            "children" : [ {
+              "attributes" : {
+                "alignment" : "left",
+                "navigationMenuEditor" : "Member_Homepage_Navigation",
+                "showBackLabel" : true,
+                "showHomeLink" : false
+              },
+              "definition" : "commerce_builder:drilldownNavigation",
+              "id" : "bc7b2734-fda8-48ff-9ea6-d55028fc4054",
+              "type" : "component"
+            } ],
+            "id" : "0bc04f0d-9cab-4e12-8b7c-ce94b13f4059",
+            "name" : "desktop-nav",
+            "title" : "desktop-nav",
+            "type" : "region"
+          }, {
+            "children" : [ {
+              "attributes" : {
+                "iconStyle" : "userIcon",
+                "includeCompanyName" : false,
+                "logOutLabel" : "Log Out",
+                "loginLinkText" : "Log In",
+                "loginLinkTextDecoration" : "{\"underline\":true}",
+                "loginLinkTextOrientation" : "leftOfIcon",
+                "menuStyle" : "iconAndName",
+                "userNameTextOrientation" : "leftOfIcon",
+                "userProfileMenuNavigationMenuEditor" : "Default_User_Profile_Menu1"
+              },
+              "definition" : "commerce_builder:userProfileMenu",
+              "id" : "c114583d-5449-4849-b2a0-092ebb1fb7cf",
+              "type" : "component"
+            } ],
+            "id" : "e06f235a-039c-45c2-a260-7155497a61e4",
+            "name" : "profile-nav",
+            "title" : "profile-nav",
+            "type" : "region"
+          }, {
+            "children" : [ {
+              "attributes" : {
+                "checkoutButtonSize" : "small",
+                "checkoutButtonText" : "Checkout",
+                "continueShoppingButtonSize" : "small",
+                "continueShoppingButtonText" : "Continue Shopping",
+                "countType" : "TotalProductCount",
+                "headerText" : "My Cart",
+                "showContinueShoppingButton" : true,
+                "showCount" : false,
+                "showMiniCart" : false,
+                "showMiniCartProperties" : true,
+                "showViewCartButton" : true,
+                "viewCartButtonSize" : "small",
+                "viewCartButtonText" : "View Cart"
+              },
+              "definition" : "commerce_builder:cartBadge",
+              "id" : "795e383e-4730-48d7-b8fa-2f38b129fb51",
+              "type" : "component"
+            } ],
+            "id" : "2ed489ae-05bb-459c-a23b-6b5bf08caa78",
+            "name" : "cart",
+            "title" : "cart",
+            "type" : "region"
+          } ],
+          "definition" : "c:ffCustomCommerceHeader",
+          "id" : "286f0105-5174-47df-abcf-1a70775823ba",
+          "type" : "component"
+        } ],
+        "id" : "834500aa-ba3c-4509-a99b-d24142e72d2b",
+        "name" : "header",
+        "title" : "header",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "dxpStyle" : { }
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "alignment" : "left",
+                "dxpStyle" : { },
+                "imageInfo" : "",
+                "imageInfoMobile" : "",
+                "logoWidth" : 250
+              },
+              "definition" : "dxp_content_layout:siteLogo",
+              "id" : "01fad8d4-f3a9-4b23-b031-e728dbaa6344",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "backgroundImageConfig" : "",
+                "backgroundImageOverlay" : "rgba(0,0,0,0)",
+                "componentSpacerSize" : "",
+                "dxpStyle" : { },
+                "layoutDirectionDesktop" : "row",
+                "layoutDirectionMobile" : "column",
+                "layoutDirectionTablet" : "column",
+                "maxContentWidth" : "",
+                "sectionColumnGutterWidth" : "",
+                "sectionConfig" : "{\"UUID\":\"82028233-412e-4670-ba70-e0d65224483a\",\"columns\":[{\"UUID\":\"fbcb4215-77ef-431d-9c53-c2050adcc2f3\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"4\",\"seedComponents\":null},{\"UUID\":\"b2f62f0e-a6d8-4540-8d5f-31af8800da96\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"4\",\"seedComponents\":null},{\"UUID\":\"3ccf94c4-f617-4de5-80d7-0868f5353e06\",\"columnName\":\"Column 3\",\"columnKey\":\"col3\",\"columnWidth\":\"4\",\"seedComponents\":null}]}",
+                "sectionMinHeight" : "",
+                "sectionVerticalAlign" : "flex-start"
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "imageInfos" : "",
+                    "richTextValue" : "<ul class=\"\">\n    <li class=\"\"><a href=\"#\" class=\"\" >Fear Free Near Me</a></li>\n\t<li class=\"\"><a href=\"https://helpdesk.fearfreepets.com/s/\" class=\"\">Help Center</a></li>\n    <li class=\"\"><a href=\"#\" class=\"\">Career Center - Coming Soon</a></li>\n\t<li class=\"\"><a href=\"https://fearfree.com/contact-us/\" class=\"\">Contact</a></li>\n</ul>"
+                  },
+                  "customCssClasses" : "ff-footer-nav",
+                  "definition" : "community_builder:htmlEditor",
+                  "id" : "7f253e44-3b2a-4702-840f-fbe7a4b3124c",
+                  "type" : "component"
+                } ],
+                "id" : "fbcb4215-77ef-431d-9c53-c2050adcc2f3",
+                "name" : "col1",
+                "title" : "Column 1",
+                "type" : "region"
+              }, {
+                "id" : "b2f62f0e-a6d8-4540-8d5f-31af8800da96",
+                "name" : "col2",
+                "title" : "Column 2",
+                "type" : "region"
+              }, {
+                "id" : "3ccf94c4-f617-4de5-80d7-0868f5353e06",
+                "name" : "col3",
+                "title" : "Column 3",
+                "type" : "region"
+              } ],
+              "definition" : "community_layout:section",
+              "id" : "82028233-412e-4670-ba70-e0d65224483a",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "backgroundImageConfig" : "",
+                "backgroundImageOverlay" : "rgba(0,0,0,0)",
+                "componentSpacerSize" : "",
+                "dxpStyle" : { },
+                "layoutDirectionDesktop" : "row",
+                "layoutDirectionMobile" : "column",
+                "layoutDirectionTablet" : "column",
+                "maxContentWidth" : "",
+                "sectionColumnGutterWidth" : "",
+                "sectionConfig" : "{\"UUID\":\"713af85e-5a29-46e9-8052-ddfb51682370\",\"columns\":[{\"UUID\":\"ef1cde5c-008b-4371-b7c3-b357c9975cb0\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":null},{\"UUID\":\"f60013e9-dc66-4d20-87ad-84f5d48ddb6e\",\"columnName\":\"Column 2\",\"columnKey\":\"0c413\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}",
+                "sectionMinHeight" : "",
+                "sectionVerticalAlign" : "flex-start"
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "imageInfos" : "",
+                    "richTextValue" : "<p>8181 Arista Place Suite 100, Broomfield, CO 80021 · <a href=\"https://www.google.com/maps/place/8181+Arista+Pl+Ste+100,+Broomfield,+CO+80021/@39.9059369,-105.0917055,17z/data=!3m1!4b1!4m6!3m5!1s0x876b8b1b2aa63539:0x3e0bbaac000f8563!8m2!3d39.9059369!4d-105.0891252!16s%2Fg%2F11t_wgvcsv?entry=ttu\" target=\"_blank\" rel=\"noopener\">Map</a><br>\n303.952.0585 · <a href=\"mailto:wags@fearfreepets.com\">wags@fearfree.com</a></p>"
+                  },
+                  "customCssClasses" : "ff-footer-address",
+                  "definition" : "community_builder:htmlEditor",
+                  "id" : "b96b69cf-542d-4066-a959-ce2f2703dfb6",
+                  "type" : "component"
+                } ],
+                "id" : "ef1cde5c-008b-4371-b7c3-b357c9975cb0",
+                "name" : "col1",
+                "title" : "Column 1",
+                "type" : "region"
+              }, {
+                "children" : [ {
+                  "attributes" : {
+                    "dxpStyle" : { },
+                    "menuName" : "Default_Social_Media_Menu",
+                    "orientation" : "horizontal"
+                  },
+                  "customCssClasses" : "ff-social-menu",
+                  "definition" : "commerce_builder:socialLinks",
+                  "id" : "7367722f-ebe7-49fa-bfe3-ab078226d15b",
+                  "type" : "component"
+                } ],
+                "id" : "f60013e9-dc66-4d20-87ad-84f5d48ddb6e",
+                "name" : "0c413",
+                "title" : "Column 2",
+                "type" : "region"
+              } ],
+              "definition" : "community_layout:section",
+              "id" : "713af85e-5a29-46e9-8052-ddfb51682370",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "backgroundImageConfig" : "",
+                "backgroundImageOverlay" : "rgba(0,0,0,0)",
+                "componentSpacerSize" : "",
+                "dxpStyle" : { },
+                "layoutDirectionDesktop" : "row",
+                "layoutDirectionMobile" : "column",
+                "layoutDirectionTablet" : "column",
+                "maxContentWidth" : "",
+                "sectionColumnGutterWidth" : "",
+                "sectionConfig" : "{\"UUID\":\"8c8c478a-efd2-4d0e-97ea-05cca2b974f5\",\"columns\":[{\"UUID\":\"722a5a32-afdf-44f5-949d-c85426e9285f\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"2\",\"seedComponents\":null},{\"UUID\":\"8e898bf0-5871-4c20-aa5f-eac30d6d5c5e\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"10\",\"seedComponents\":null}]}",
+                "sectionMinHeight" : "",
+                "sectionVerticalAlign" : "flex-start"
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "countryTextAlignment" : "left",
+                    "dxpStyle" : { },
+                    "headingLabelText" : "Select Your Location",
+                    "headingPaddingVertical" : "none",
+                    "headingTextAlignment" : "center",
+                    "headingTextDisplayInfo" : "{\"textStyle\": \"heading-large\", \"headingTag\": \"h2\"}",
+                    "languageDisplayType" : "short",
+                    "pickerButtonAlignment" : "left",
+                    "pickerButtonLabelText" : "",
+                    "pickerButtonSize" : "standard",
+                    "pickerButtonStyle" : "secondary",
+                    "showGlobeIcon" : true,
+                    "sort" : "country"
+                  },
+                  "definition" : "commerce_builder:countryPicker",
+                  "id" : "f0e5e2db-a48b-417d-aecc-de06f74a3838",
+                  "type" : "component"
+                } ],
+                "id" : "722a5a32-afdf-44f5-949d-c85426e9285f",
+                "name" : "col1",
+                "title" : "Column 1",
+                "type" : "region"
+              }, {
+                "children" : [ {
+                  "attributes" : {
+                    "backgroundColor" : "",
+                    "dxpStyle" : { },
+                    "isLinkable" : false,
+                    "linkAssistiveText" : "",
+                    "paddingHorizontal" : "none",
+                    "paddingVertical" : "none",
+                    "text" : "© FearFree.com",
+                    "textAlign" : "right",
+                    "textColor" : "rgb(255, 255, 255)",
+                    "textDecoration" : "{}",
+                    "textDisplayInfo" : "{}"
+                  },
+                  "definition" : "dxp_base:textBlock",
+                  "id" : "ea32fd5c-edbc-45e4-a907-189ba011e2df",
+                  "type" : "component"
+                } ],
+                "id" : "8e898bf0-5871-4c20-aa5f-eac30d6d5c5e",
+                "name" : "col2",
+                "title" : "Column 2",
+                "type" : "region"
+              } ],
+              "definition" : "community_layout:section",
+              "id" : "8c8c478a-efd2-4d0e-97ea-05cca2b974f5",
+              "type" : "component"
+            } ],
+            "id" : "ec51bdff-5d2f-4504-addf-c3695d49849c",
+            "name" : "content",
+            "title" : "Content",
+            "type" : "region"
+          } ],
+          "customCssClasses" : "ff-footer",
+          "definition" : "commerce_builder:layoutFooter",
+          "id" : "702ad922-5e3e-4deb-8ed8-6a5489fad44d",
+          "type" : "component"
+        } ],
+        "id" : "d07dceac-54b7-4669-ab39-69347ed0a6ab",
+        "name" : "footer",
+        "title" : "footer",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "dxpStyle" : { }
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "backgroundColor" : "",
+                "dxpStyle" : { },
+                "isLinkable" : false,
+                "linkAssistiveText" : "",
+                "paddingHorizontal" : "none",
+                "paddingVertical" : "small",
+                "text" : "Hi {!User.Record.FirstName},",
+                "textAlign" : "left",
+                "textDecoration" : "{\"bold\": true}",
+                "textDisplayInfo" : "{\"textStyle\":\"heading-large\",\"headingTag\":\"h1\",\"enableOverride\":true}"
+              },
+              "definition" : "dxp_base:textBlock",
+              "id" : "2ba83d37-a5d3-4f54-a07d-fbeab9723090",
+              "type" : "component"
+            } ],
+            "id" : "f74cbacb-7166-4109-a160-24600573c8eb",
+            "name" : "welcomeMessage",
+            "title" : "welcomeMessage",
+            "type" : "region"
+          }, {
+            "children" : [ {
+              "attributes" : {
+                "navItemSpacing" : "small",
+                "navigationLinkSetDevName" : "Default_My_Account_Menu"
+              },
+              "definition" : "commerce_my_account:navigationMenuItemList",
+              "id" : "8d1d900d-90f8-4cfb-aa21-85fac1af501a",
+              "type" : "component"
+            } ],
+            "id" : "238fb87e-1534-4949-8b73-e327d164ede8",
+            "name" : "navigationMenuItemList",
+            "title" : "navigationMenuItemList",
+            "type" : "region"
+          } ],
+          "definition" : "commerce_my_account:navigationMenuContainer",
+          "id" : "2468cebc-a6df-48dc-b205-714a7a80f41a",
+          "type" : "component"
+        } ],
+        "id" : "b1b9eb10-c240-4193-9867-d870168fd798",
+        "name" : "navigation",
+        "title" : "navigation",
+        "type" : "region"
+      } ],
+      "definition" : "commerce_my_account:myAccountLayout",
+      "id" : "00682dbd-6118-411a-aef5-b60624281b95",
+      "type" : "component"
+    }
+  },
+  "urlName" : "my-account-layout"
+}

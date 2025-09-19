@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Remove Member",
+  "contentBody" : {
+    "activeViewId" : "Remove_Member",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-remove-member",
+    "urlPrefix" : "remove-member"
+  },
+  "urlName" : "remove-member"
+}

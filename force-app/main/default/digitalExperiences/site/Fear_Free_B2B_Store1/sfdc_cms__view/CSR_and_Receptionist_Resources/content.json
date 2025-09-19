@@ -1,0 +1,298 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "CSR and Receptionist Resources",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"9c73b03d-980e-4102-802b-1ec441b4b80d\",\"columns\":[{\"UUID\":\"7b5908e8-6a16-4310-b2ea-ee532b9f2f66\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "checkAccountMembership" : false,
+                "checkBoardingMembership" : false,
+                "checkCertification" : false,
+                "checkGroomerMembership" : false,
+                "checkPracticeMembership" : false,
+                "checkSitterMembership" : false,
+                "checkTrainerMembership" : false,
+                "checkVetProMembership" : true
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "flex-start",
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"22228496-3b6e-4e6e-9f71-6dd7e536065b\",\"columns\":[{\"UUID\":\"0173aabd-2fc6-43f7-b907-6b07d0aed9b6\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"4\",\"seedComponents\":[]},{\"UUID\":\"8680eb5b-cbb0-46c1-a63a-6204a7ef9de2\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"8\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "fit" : "contain",
+                        "height" : 350,
+                        "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCU3PFQZXDNFDG7MGFY2ARA2HVRQ\",\"contentType\":null}}",
+                        "overlayColor" : "",
+                        "position" : "center center",
+                        "width" : 100
+                      },
+                      "definition" : "dxp_base:image",
+                      "id" : "5e1bcdc9-3700-49cd-ad4e-324e7834b4b1",
+                      "type" : "component"
+                    } ],
+                    "id" : "0173aabd-2fc6-43f7-b907-6b07d0aed9b6",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "Talking points and resources to facilitate a successful Fear Free visit",
+                        "textAlign" : "left",
+                        "textDecoration" : "{\"bold\":true}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "438a499a-a145-4e19-82d5-47ca0c37fa73",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "Customer Service Overview - Companion Animal",
+                        "textAlign" : "left",
+                        "textDecoration" : "{}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-small\",\"headingTag\":\"h4\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "767ae7c2-cad7-4ce1-bfb3-89f8c2d8124f",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "flex-start",
+                        "buttonLabel" : "Download",
+                        "fileContentId" : "MCVNVQ2GAUAVAN3PRD4OGL2DUBJU"
+                      },
+                      "definition" : "c:downloadFileButton",
+                      "id" : "201124c1-50a1-4609-b143-4656526484e0",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "Customer Service Overview - Avian",
+                        "textAlign" : "left",
+                        "textDecoration" : "{}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-small\",\"headingTag\":\"h4\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "b6eea2a1-5690-4c11-a238-1388719de10c",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "flex-start",
+                        "buttonLabel" : "Download",
+                        "fileContentId" : "MCBHPDMOBNCFEXPCDAYITV2J45ZM"
+                      },
+                      "definition" : "c:downloadFileButton",
+                      "id" : "3a15df8e-6cb9-4d0d-b0ab-c548dea5720a",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "Talking Points - Companion Animal",
+                        "textAlign" : "left",
+                        "textDecoration" : "{}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-small\",\"headingTag\":\"h4\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "6bd631d5-bbcc-47ba-9b37-ffa108ff6f85",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "left",
+                        "size" : "standard",
+                        "stretch" : "standard",
+                        "text" : "Download",
+                        "type" : "primary",
+                        "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://app.schoox.com/library2/viewer.php?id=4643914&academyId=827540346\"}}}}"
+                      },
+                      "definition" : "dxp_base:button",
+                      "id" : "d0b0ba78-51f2-42cc-8caa-78413d11e58f",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "Talking Points - Avian",
+                        "textAlign" : "left",
+                        "textDecoration" : "{}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-small\",\"headingTag\":\"h4\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "3188d4bf-8e26-44ae-980c-3053ccf5454e",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "left",
+                        "size" : "standard",
+                        "stretch" : "standard",
+                        "text" : "Download",
+                        "type" : "primary",
+                        "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://app.schoox.com/library2/viewer.php?id=4591977&academyId=827540346\"}}}}"
+                      },
+                      "definition" : "dxp_base:button",
+                      "id" : "e8d34caa-0d87-43bc-becd-de49fec61476",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "CSR Checklist - Companion Animal",
+                        "textAlign" : "left",
+                        "textDecoration" : "{}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-small\",\"headingTag\":\"h4\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "eec3b56d-6a0b-4891-8ef4-cda0a90dbd7d",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "left",
+                        "size" : "standard",
+                        "stretch" : "standard",
+                        "text" : "Download",
+                        "type" : "primary",
+                        "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://app.schoox.com/library2/viewer.php?id=4633284&academyId=827540346\"}}}}"
+                      },
+                      "definition" : "dxp_base:button",
+                      "id" : "fc34d226-3be9-4af7-9a3c-a6e567951f8a",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "CSR Checklist - Avian",
+                        "textAlign" : "left",
+                        "textDecoration" : "{}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-small\",\"headingTag\":\"h4\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "0c189ac6-61e0-41ad-8b16-fc0971cee032",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "left",
+                        "size" : "standard",
+                        "stretch" : "standard",
+                        "text" : "Download",
+                        "type" : "primary",
+                        "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://app.schoox.com/library2/viewer.php?id=4591983&academyId=827540346\"}}}}"
+                      },
+                      "definition" : "dxp_base:button",
+                      "id" : "85d1b55c-9840-4136-9c46-4ce58998b591",
+                      "type" : "component"
+                    } ],
+                    "id" : "8680eb5b-cbb0-46c1-a63a-6204a7ef9de2",
+                    "name" : "col2",
+                    "title" : "Column 2",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "22228496-3b6e-4e6e-9f71-6dd7e536065b",
+                  "type" : "component"
+                } ],
+                "id" : "d9ae3280-e8d4-433d-b7d1-3aef0da4f55e",
+                "name" : "Content-Region-Has-Membership",
+                "title" : "Content-Region-Has-Membership",
+                "type" : "region"
+              }, {
+                "id" : "dfca8a7d-cd4a-4a05-b2a1-f5e629745df7",
+                "name" : "Content-Region-No-Membership",
+                "title" : "Content-Region-No-Membership",
+                "type" : "region"
+              } ],
+              "definition" : "c:membershipCheck",
+              "id" : "80584268-08fd-46b2-b0a8-deeea35897ba",
+              "type" : "component"
+            } ],
+            "id" : "7b5908e8-6a16-4310-b2ea-ee532b9f2f66",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "9c73b03d-980e-4102-802b-1ec441b4b80d",
+          "type" : "component"
+        } ],
+        "id" : "794fdf4b-12f6-4f41-bb7e-2bdc32ecd975",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "pageTitle" : "CSR and Receptionist Resources",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "d7fffcd4-9899-43b0-90d7-a458a470eb35",
+          "type" : "component"
+        } ],
+        "id" : "e5bf1f33-d091-4ba6-9928-ad8a40dabd0b",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "09b54801-d6a9-4095-88ab-3ede0f25141c",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-csr-and-receptionist-resources"
+  },
+  "urlName" : "csr-and-receptionist-resources"
+}

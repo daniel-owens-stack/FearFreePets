@@ -1,0 +1,99 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "My Billing",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"26e21136-e2f8-49eb-9f08-3514ae89bec3\",\"columns\":[{\"UUID\":\"71b92eb0-0879-4feb-adb0-7a196ffec112\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "alignment" : "center",
+                "size" : "standard",
+                "stretch" : "standard",
+                "text" : "Click Here to View My Billing Info",
+                "type" : "primary",
+                "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://billing.stripe.com/p/login/test_5kA01V2zXakA5LW5kk\"}}}}"
+              },
+              "definition" : "dxp_base:button",
+              "id" : "7d5fab87-931e-4dca-9bef-f6b4bcdba4a6",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "alignment" : "",
+                "buttonLabel" : "Click Here to View My Billing Info New"
+              },
+              "definition" : "c:ffMyBillingButton",
+              "id" : "75eb27bb-7ad3-442a-8e85-f4257a83a669",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "buttonLabelDownloadLink" : "PDF",
+                "buttonLablePayNow" : "Pay Now",
+                "invoiceHeading" : "Invoices",
+                "labelAmountCharged" : "Amount Charged",
+                "labelBillingEmail" : "Billing Email",
+                "labelCreatedDate" : "Created Date",
+                "labelInvoiceNumber" : "Invoice Number",
+                "labelPaidDate" : "Paid Date",
+                "labelPeriod" : "Period",
+                "noInvoicesMessage" : "Your account does not have any invoices to pay.",
+                "recordId" : "{!recordId}"
+              },
+              "definition" : "c:b2bInvoiceTable",
+              "id" : "88765034-611d-4dd5-a6ee-fea749f7f5cf",
+              "type" : "component"
+            } ],
+            "id" : "71b92eb0-0879-4feb-adb0-7a196ffec112",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "26e21136-e2f8-49eb-9f08-3514ae89bec3",
+          "type" : "component"
+        } ],
+        "id" : "c3e292d5-8aa5-40a0-865c-eb1a4de9d09e",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "pageTitle" : "My Billing",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "1fb1bef4-4633-4c5f-9daa-c40588994da5",
+          "type" : "component"
+        } ],
+        "id" : "fcf40049-e762-4fba-b5dc-96419c463b41",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "45afb6eb-53b0-49a7-94dd-cb13aa82d863",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "MyAccount",
+    "viewType" : "custom-my-billing"
+  },
+  "urlName" : "my-billing"
+}

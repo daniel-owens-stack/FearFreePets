@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VetRenewPrice__c</fullName>
+    <defaultValue>0.00</defaultValue>
+    <description>Allows the renewal price for vet memberships to be overridden</description>
+    <label>Vet Renew Price</label>
+    <precision>12</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

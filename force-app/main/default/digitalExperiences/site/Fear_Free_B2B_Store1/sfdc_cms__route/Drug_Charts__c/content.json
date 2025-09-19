@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Drug Charts",
+  "contentBody" : {
+    "activeViewId" : "Drug_Charts",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-drug-charts",
+    "urlPrefix" : "drug-charts"
+  },
+  "urlName" : "drug-charts"
+}

@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "CSR and Receptionist Resources",
+  "contentBody" : {
+    "activeViewId" : "CSR_and_Receptionist_Resources",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-csr-and-receptionist-resources",
+    "urlPrefix" : "csr-and-receptionist-resources"
+  },
+  "urlName" : "csr-and-receptionist-resources"
+}

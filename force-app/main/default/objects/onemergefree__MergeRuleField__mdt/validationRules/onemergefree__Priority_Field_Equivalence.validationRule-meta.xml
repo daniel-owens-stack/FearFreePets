@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>onemergefree__Priority_Field_Equivalence</fullName>
+    <active>true</active>
+    <description>The same field cannot be set as Is Priority and Is Secondary Priority.</description>
+    <errorConditionFormula>AND(
+ onemergefree__IsPriority__c,
+ onemergefree__IsSecondaryPriority__c
+)</errorConditionFormula>
+    <errorMessage>The same field cannot be set as Is Priority and Is Secondary Priority.</errorMessage>
+</ValidationRule>

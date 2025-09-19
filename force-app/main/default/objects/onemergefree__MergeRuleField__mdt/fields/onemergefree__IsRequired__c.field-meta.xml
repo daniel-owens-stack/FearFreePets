@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>onemergefree__IsRequired__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>If TRUE, then Source Records must have a true field value in order to be valid for merge processing.</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>If TRUE, then Source Records must have a true field value in order to be valid for merge processing.</inlineHelpText>
+    <label>Is Required?</label>
+    <type>Checkbox</type>
+</CustomField>

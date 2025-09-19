@@ -1,0 +1,8 @@
+.slds-map {
+    max-height: 400px;
+    min-width: auto;
+}
+
+.slds-map:before {
+    padding-top: 400px;
+}

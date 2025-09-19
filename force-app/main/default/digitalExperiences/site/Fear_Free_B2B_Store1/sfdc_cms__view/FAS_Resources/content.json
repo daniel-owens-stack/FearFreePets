@@ -1,0 +1,1125 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "FAS Resources",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"4bc9324c-2b65-4e6f-b410-2afc84512998\",\"columns\":[{\"UUID\":\"f4efb7b0-6b8e-4e68-a074-001e4ffc152d\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "checkAccountMembership" : true,
+                "checkBoardingMembership" : false,
+                "checkCertification" : false,
+                "checkGroomerMembership" : false,
+                "checkPracticeMembership" : false,
+                "checkSitterMembership" : false,
+                "checkTrainerMembership" : false,
+                "checkVetProMembership" : false
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "center",
+                    "dxpStyle" : {
+                      "margin" : {
+                        "bottom" : "",
+                        "left" : "",
+                        "right" : "",
+                        "top" : "40px"
+                      }
+                    },
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"49820a95-b2f4-42f1-94d9-429417ca1ae8\",\"columns\":[{\"UUID\":\"5b2eac53-5b15-4457-abe4-5a13a2aa2125\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"eab53be9-adae-4782-b189-f585cd5766dd\",\"columnName\":\"Column 2\",\"columnKey\":\"0860b\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "Fear, Anxiety, and Stress (FAS) Scale",
+                        "textAlign" : "center",
+                        "textDecoration" : "{\"bold\":true}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "72e73c45-b100-4595-80a6-09654e78787d",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "fit" : "contain",
+                        "height" : 350,
+                        "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCVV5AUCZPRVBRDBDFCWOE34YVJI\",\"contentType\":null}}",
+                        "overlayColor" : "",
+                        "position" : "center center",
+                        "width" : 50
+                      },
+                      "customCssClasses" : "",
+                      "definition" : "dxp_base:image",
+                      "id" : "f5c97de8-13f6-48fc-bfb9-5a3df425b2ea",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"d7c76935-b88b-4ef9-9f44-17e43dba9508\",\"columns\":[{\"UUID\":\"8caf696b-d968-410d-aed1-6db23bb8510f\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "buttonLabel" : "Download",
+                            "fileContentId" : "MCPRQWZDROPJFGNI5VHWHRH2BNCI"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "943a844c-99a1-49b1-a71c-076ddc698fda",
+                          "type" : "component"
+                        } ],
+                        "id" : "8caf696b-d968-410d-aed1-6db23bb8510f",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      } ],
+                      "customCssClasses" : "button-row",
+                      "definition" : "dxp_layout:columns",
+                      "id" : "d7c76935-b88b-4ef9-9f44-17e43dba9508",
+                      "type" : "component"
+                    } ],
+                    "id" : "5b2eac53-5b15-4457-abe4-5a13a2aa2125",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "Fear Free Word Choices",
+                        "textAlign" : "center",
+                        "textDecoration" : "{\"bold\":true}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "fdd3fbba-078c-4ebb-9ce3-df76e5ef071e",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "fit" : "contain",
+                        "height" : 350,
+                        "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCIIY7GSOSK5DOXAWZWCVI7OV5SY\",\"contentType\":null}}",
+                        "overlayColor" : "",
+                        "position" : "center center",
+                        "width" : 57
+                      },
+                      "definition" : "dxp_base:image",
+                      "id" : "11fab711-6624-4b97-ac98-3afcf995f8ab",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"528e1262-c474-48e8-903b-e3ed1bef391b\",\"columns\":[{\"UUID\":\"a6853b06-20d3-483d-971d-b818354431e8\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "size" : "standard",
+                            "stretch" : "standard",
+                            "text" : "Download",
+                            "type" : "primary",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://app.schoox.com/library2/viewer.php?id=4643910&academyId=827540346\"}}}}"
+                          },
+                          "definition" : "dxp_base:button",
+                          "id" : "b63b135d-62ed-40ea-8527-885652712a16",
+                          "type" : "component"
+                        } ],
+                        "id" : "a6853b06-20d3-483d-971d-b818354431e8",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      } ],
+                      "customCssClasses" : "button-row",
+                      "definition" : "dxp_layout:columns",
+                      "id" : "528e1262-c474-48e8-903b-e3ed1bef391b",
+                      "type" : "component"
+                    } ],
+                    "id" : "eab53be9-adae-4782-b189-f585cd5766dd",
+                    "name" : "0860b",
+                    "title" : "Column 2",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "49820a95-b2f4-42f1-94d9-429417ca1ae8",
+                  "type" : "component"
+                } ],
+                "id" : "09f8f377-b533-4111-8f15-479ec8741d24",
+                "name" : "Content-Region-Has-Membership",
+                "title" : "Content-Region-Has-Membership",
+                "type" : "region"
+              }, {
+                "id" : "b14360b7-89bc-4d96-b19a-3937246af884",
+                "name" : "Content-Region-No-Membership",
+                "title" : "Content-Region-No-Membership",
+                "type" : "region"
+              } ],
+              "definition" : "c:membershipCheck",
+              "id" : "f7243f55-58b3-4752-994b-bf6f5fbd7ef3",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "checkAccountMembership" : true,
+                "checkBoardingMembership" : false,
+                "checkCertification" : false,
+                "checkGroomerMembership" : false,
+                "checkPracticeMembership" : false,
+                "checkSitterMembership" : false,
+                "checkTrainerMembership" : false,
+                "checkVetProMembership" : false
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "center",
+                    "dxpStyle" : {
+                      "margin" : {
+                        "bottom" : "",
+                        "left" : "",
+                        "right" : "",
+                        "top" : "40px"
+                      }
+                    },
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"d150b615-256e-44da-abbf-eaf84f708168\",\"columns\":[{\"UUID\":\"728bc730-0833-4845-89e4-7ce077992ac0\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"60ce3b53-28e8-4656-b952-b33ca71727bd\",\"columnName\":\"Column 2\",\"columnKey\":\"0860b\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "FAS Spectrum - Cats",
+                        "textAlign" : "center",
+                        "textDecoration" : "{\"bold\":true}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "b1dca4f8-c8b7-4d3f-a700-7f4e7b70390f",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "fit" : "contain",
+                        "height" : 350,
+                        "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCK3XK56STVJF5NHX3F2765QUGV4\",\"contentType\":null}}",
+                        "overlayColor" : "",
+                        "position" : "center center",
+                        "width" : 56
+                      },
+                      "customCssClasses" : "",
+                      "definition" : "dxp_base:image",
+                      "id" : "204e961a-8c7d-4bf7-9a57-a53bb70048ef",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"61cadb70-1991-44f5-89d1-dcc834bfd6f6\",\"columns\":[{\"UUID\":\"d7dac85a-1318-4fc2-a5e6-8fbdabb1dcfb\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "buttonLabel" : "Download",
+                            "fileContentId" : "MCPAPB5KATSFFFNJSJQTRABBYGDY"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "ff6549b9-4489-4f21-9c10-cb658bd171c3",
+                          "type" : "component"
+                        } ],
+                        "id" : "d7dac85a-1318-4fc2-a5e6-8fbdabb1dcfb",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      } ],
+                      "customCssClasses" : "button-row",
+                      "definition" : "dxp_layout:columns",
+                      "id" : "61cadb70-1991-44f5-89d1-dcc834bfd6f6",
+                      "type" : "component"
+                    } ],
+                    "id" : "728bc730-0833-4845-89e4-7ce077992ac0",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "FAS Spectrum - Dogs",
+                        "textAlign" : "center",
+                        "textDecoration" : "{\"bold\":true}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "e5b1d9dc-e662-48e5-9c37-5f70eb141637",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "fit" : "contain",
+                        "height" : 350,
+                        "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MC2AILVE6QXNCHBGALGKPEWINKBI\",\"contentType\":null}}",
+                        "overlayColor" : "",
+                        "position" : "center center",
+                        "width" : 56
+                      },
+                      "definition" : "dxp_base:image",
+                      "id" : "05be4ffe-e605-40ed-b303-fac2613c6548",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"8af54243-792f-4538-8049-adeb57ed79b7\",\"columns\":[{\"UUID\":\"0b35cccc-4d4c-4a72-8a84-aed10ad165fd\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "buttonLabel" : "Download",
+                            "fileContentId" : "MCFR3CD4BYTJF65J7XAAWQJNZLPM"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "62cf9257-00b1-441b-883d-bdc096cbaefb",
+                          "type" : "component"
+                        } ],
+                        "id" : "0b35cccc-4d4c-4a72-8a84-aed10ad165fd",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      } ],
+                      "customCssClasses" : "button-row",
+                      "definition" : "dxp_layout:columns",
+                      "id" : "8af54243-792f-4538-8049-adeb57ed79b7",
+                      "type" : "component"
+                    } ],
+                    "id" : "60ce3b53-28e8-4656-b952-b33ca71727bd",
+                    "name" : "0860b",
+                    "title" : "Column 2",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "d150b615-256e-44da-abbf-eaf84f708168",
+                  "type" : "component"
+                } ],
+                "id" : "0f00ad93-b05a-4e5f-8949-17f8f34f133c",
+                "name" : "Content-Region-Has-Membership",
+                "title" : "Content-Region-Has-Membership",
+                "type" : "region"
+              }, {
+                "id" : "1c89726d-4d87-4d49-b3f1-9d5844cfe7cc",
+                "name" : "Content-Region-No-Membership",
+                "title" : "Content-Region-No-Membership",
+                "type" : "region"
+              } ],
+              "definition" : "c:membershipCheck",
+              "id" : "2943d387-49a3-4aac-96e9-87d890b7a1a2",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "checkAccountMembership" : true,
+                "checkBoardingMembership" : false,
+                "checkCertification" : false,
+                "checkGroomerMembership" : false,
+                "checkPracticeMembership" : false,
+                "checkSitterMembership" : false,
+                "checkTrainerMembership" : false,
+                "checkVetProMembership" : false
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "center",
+                    "dxpStyle" : {
+                      "margin" : {
+                        "bottom" : "",
+                        "left" : "",
+                        "right" : "",
+                        "top" : "40px"
+                      }
+                    },
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"6391057c-3baf-4fd8-b93e-0532af15137e\",\"columns\":[{\"UUID\":\"d01b627f-3d9d-4bc7-80d6-77d5f41b8b64\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"1918dd28-b903-43b1-9fd3-a8cc27980c19\",\"columnName\":\"Column 2\",\"columnKey\":\"0860b\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "FAS Spectrum - Birds",
+                        "textAlign" : "center",
+                        "textDecoration" : "{\"bold\":true}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "27918f50-8abd-41ca-926c-b131e4512d6a",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "fit" : "contain",
+                        "height" : 350,
+                        "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCKNFBIZTO5BCXZFXLVHXK2YSY34\",\"contentType\":null}}",
+                        "overlayColor" : "",
+                        "position" : "center center",
+                        "width" : 68
+                      },
+                      "customCssClasses" : "",
+                      "definition" : "dxp_base:image",
+                      "id" : "37aae6dc-7a34-4d1a-9a5b-64be859402ce",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"d86f81de-f199-40f8-b44f-66906f05974f\",\"columns\":[{\"UUID\":\"a29df0d5-83ae-4b26-81e1-e918f56b64c2\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "buttonLabel" : "Download",
+                            "fileContentId" : "MCXC77QFZAFREQ7N3Y4IE3QZK72Q"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "f3037473-2d57-4892-bd26-0a952430bd98",
+                          "type" : "component"
+                        } ],
+                        "id" : "a29df0d5-83ae-4b26-81e1-e918f56b64c2",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      } ],
+                      "customCssClasses" : "button-row",
+                      "definition" : "dxp_layout:columns",
+                      "id" : "d86f81de-f199-40f8-b44f-66906f05974f",
+                      "type" : "component"
+                    } ],
+                    "id" : "d01b627f-3d9d-4bc7-80d6-77d5f41b8b64",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "FAS Spectrum - Rats",
+                        "textAlign" : "center",
+                        "textDecoration" : "{\"bold\":true}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "d1e21f90-120c-4b99-a40e-5ec75c082e14",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "fit" : "contain",
+                        "height" : 350,
+                        "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCH23WI6CBTNDK7JJPWR2M5MJLKU\",\"contentType\":null}}",
+                        "overlayColor" : "",
+                        "position" : "center center",
+                        "width" : 49
+                      },
+                      "definition" : "dxp_base:image",
+                      "id" : "589139c1-42e0-4823-8b78-3da73da463b5",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"1d2a70f1-57ea-4b70-b585-15bab3fa183f\",\"columns\":[{\"UUID\":\"1027dff3-3318-4c2e-b313-24b4364b2bd4\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "buttonLabel" : "Download",
+                            "fileContentId" : "MCZFHZ7YPX4VETVAYCMZXXT7DWHQ"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "099d6664-133e-438b-a9ff-a5b30b540c16",
+                          "type" : "component"
+                        } ],
+                        "id" : "1027dff3-3318-4c2e-b313-24b4364b2bd4",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      } ],
+                      "customCssClasses" : "button-row",
+                      "definition" : "dxp_layout:columns",
+                      "id" : "1d2a70f1-57ea-4b70-b585-15bab3fa183f",
+                      "type" : "component"
+                    } ],
+                    "id" : "1918dd28-b903-43b1-9fd3-a8cc27980c19",
+                    "name" : "0860b",
+                    "title" : "Column 2",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "6391057c-3baf-4fd8-b93e-0532af15137e",
+                  "type" : "component"
+                } ],
+                "id" : "52239015-552a-4c0c-8673-f290e8ffbbe2",
+                "name" : "Content-Region-Has-Membership",
+                "title" : "Content-Region-Has-Membership",
+                "type" : "region"
+              }, {
+                "id" : "b59daf28-6123-4dca-b77b-16745c67bb59",
+                "name" : "Content-Region-No-Membership",
+                "title" : "Content-Region-No-Membership",
+                "type" : "region"
+              } ],
+              "definition" : "c:membershipCheck",
+              "id" : "c6c9888e-2f65-4d7e-9be5-fc94d8fb51bd",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "checkAccountMembership" : true,
+                "checkBoardingMembership" : false,
+                "checkCertification" : false,
+                "checkGroomerMembership" : false,
+                "checkPracticeMembership" : false,
+                "checkSitterMembership" : false,
+                "checkTrainerMembership" : false,
+                "checkVetProMembership" : false
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "center",
+                    "dxpStyle" : {
+                      "margin" : {
+                        "bottom" : "",
+                        "left" : "",
+                        "right" : "",
+                        "top" : "40px"
+                      }
+                    },
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"50ffc54e-4c09-45aa-9f95-bc383e3223ac\",\"columns\":[{\"UUID\":\"759deae8-47a0-40d9-8b5b-190461553461\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"0f2af1b1-59c1-4eae-9f44-0a976c2f5f4e\",\"columnName\":\"Column 2\",\"columnKey\":\"0860b\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "FAS Spectrum - Horses",
+                        "textAlign" : "center",
+                        "textDecoration" : "{\"bold\":true}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "e1748878-a718-4f37-bf6d-b1770f2aaf94",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "fit" : "contain",
+                        "height" : 350,
+                        "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCBDG4DHU6VVH33JL5X52UYIA76U\",\"contentType\":null}}",
+                        "overlayColor" : "",
+                        "position" : "center center",
+                        "width" : 68
+                      },
+                      "customCssClasses" : "",
+                      "definition" : "dxp_base:image",
+                      "id" : "ab03a5a0-f1e0-4eb6-adf7-a078f40f99c4",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"48525b32-a0c1-4e39-be21-6b464bc0aadc\",\"columns\":[{\"UUID\":\"192ea9b8-f707-40bf-8301-16a6df831b8e\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "buttonLabel" : "Download",
+                            "fileContentId" : "MCLQLFHNZLFFFMRGFYI6WRFKTDYM"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "9daaeb36-1ba7-40be-95d1-327bcc9a26e6",
+                          "type" : "component"
+                        } ],
+                        "id" : "192ea9b8-f707-40bf-8301-16a6df831b8e",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      } ],
+                      "customCssClasses" : "button-row",
+                      "definition" : "dxp_layout:columns",
+                      "id" : "48525b32-a0c1-4e39-be21-6b464bc0aadc",
+                      "type" : "component"
+                    } ],
+                    "id" : "759deae8-47a0-40d9-8b5b-190461553461",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "Body Language & Signs of FAS - Dogs",
+                        "textAlign" : "center",
+                        "textDecoration" : "{\"bold\":true}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "f8d9ae04-2f5c-44fb-822e-38b0c5574f27",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "fit" : "contain",
+                        "height" : 350,
+                        "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MC7MYS3ST66ZFLNHVPB4LISWJ7PE\",\"contentType\":null}}",
+                        "overlayColor" : "",
+                        "position" : "center center",
+                        "width" : 72
+                      },
+                      "definition" : "dxp_base:image",
+                      "id" : "895324ce-9661-4678-885e-f0e3cb96ae48",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"2edf802f-69b9-4f8f-8755-95749127410a\",\"columns\":[{\"UUID\":\"a7848b33-915e-4ab5-8514-f496606e24cd\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "buttonLabel" : "Download",
+                            "fileContentId" : "MC2WI2W775KJEFVCTXZ7VCXCQ3EQ"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "24c6ebb6-4694-4953-88ed-4a6a2fd954db",
+                          "type" : "component"
+                        } ],
+                        "id" : "a7848b33-915e-4ab5-8514-f496606e24cd",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      } ],
+                      "customCssClasses" : "button-row",
+                      "definition" : "dxp_layout:columns",
+                      "id" : "2edf802f-69b9-4f8f-8755-95749127410a",
+                      "type" : "component"
+                    } ],
+                    "id" : "0f2af1b1-59c1-4eae-9f44-0a976c2f5f4e",
+                    "name" : "0860b",
+                    "title" : "Column 2",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "50ffc54e-4c09-45aa-9f95-bc383e3223ac",
+                  "type" : "component"
+                } ],
+                "id" : "4d7e9bb0-795f-40e8-b59f-9656b88da019",
+                "name" : "Content-Region-Has-Membership",
+                "title" : "Content-Region-Has-Membership",
+                "type" : "region"
+              }, {
+                "id" : "d07e3dc6-c99f-4e10-a98b-a8cf033de4a4",
+                "name" : "Content-Region-No-Membership",
+                "title" : "Content-Region-No-Membership",
+                "type" : "region"
+              } ],
+              "definition" : "c:membershipCheck",
+              "id" : "f69dc2dd-2abc-4a02-9fa4-880dc1a9d350",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "checkAccountMembership" : true,
+                "checkBoardingMembership" : false,
+                "checkCertification" : false,
+                "checkGroomerMembership" : false,
+                "checkPracticeMembership" : false,
+                "checkSitterMembership" : false,
+                "checkTrainerMembership" : false,
+                "checkVetProMembership" : false
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "center",
+                    "dxpStyle" : {
+                      "margin" : {
+                        "bottom" : "",
+                        "left" : "",
+                        "right" : "",
+                        "top" : "40px"
+                      }
+                    },
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"edc451cf-0110-4be7-996a-c378685ffc59\",\"columns\":[{\"UUID\":\"19423962-4482-4ae4-a243-1a456109d2ac\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"519f95e1-b27d-482e-81dd-3e09ff5d2452\",\"columnName\":\"Column 2\",\"columnKey\":\"0860b\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "Body Language & Signs of FAS - Cats",
+                        "textAlign" : "center",
+                        "textDecoration" : "{\"bold\":true}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "f01f238f-5276-4c25-a895-3bb9f2ff0d7c",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "fit" : "contain",
+                        "height" : 350,
+                        "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCGQXS6E6VINEBHOGCCTNKTWOA7I\",\"contentType\":null}}",
+                        "overlayColor" : "",
+                        "position" : "center center",
+                        "width" : 70
+                      },
+                      "customCssClasses" : "",
+                      "definition" : "dxp_base:image",
+                      "id" : "c8920cf6-3093-4942-b0ec-3449f395d197",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "center",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"4fbafc6e-60a7-48b8-aa8d-a4eab133ceef\",\"columns\":[{\"UUID\":\"c78ede1d-f617-4fa8-a3b5-7cef67ef7040\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "buttonLabel" : "Download",
+                            "fileContentId" : "MC4COU2Y4J55GSHCPRU5BU6MZLV4"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "683a43ff-6999-4dc9-894f-603eb003930f",
+                          "type" : "component"
+                        } ],
+                        "id" : "c78ede1d-f617-4fa8-a3b5-7cef67ef7040",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      } ],
+                      "customCssClasses" : "button-row",
+                      "definition" : "dxp_layout:columns",
+                      "id" : "4fbafc6e-60a7-48b8-aa8d-a4eab133ceef",
+                      "type" : "component"
+                    } ],
+                    "id" : "19423962-4482-4ae4-a243-1a456109d2ac",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : {
+                        "checkAccountMembership" : false,
+                        "checkBoardingMembership" : false,
+                        "checkCertification" : false,
+                        "checkGroomerMembership" : false,
+                        "checkPracticeMembership" : false,
+                        "checkSitterMembership" : false,
+                        "checkTrainerMembership" : false,
+                        "checkVetProMembership" : true
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Feline FAS Sedation & Pain Algorithm",
+                            "textAlign" : "center",
+                            "textDecoration" : "{\"bold\":true}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "23cd9e80-38a8-4388-b39d-6cc952518d50",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "fit" : "contain",
+                            "height" : 350,
+                            "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCKUL23JCDRJDFLDY4SNDWG5LUBE\",\"contentType\":null}}",
+                            "overlayColor" : "",
+                            "position" : "center center",
+                            "width" : 75
+                          },
+                          "definition" : "dxp_base:image",
+                          "id" : "9cdb8666-7692-4f98-84cd-122f43b2c09e",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "columnGutterWidth" : "",
+                            "columnMinHeight" : "",
+                            "columnVerticalAlign" : "center",
+                            "layoutDirectionDesktop" : "row",
+                            "layoutDirectionMobile" : "column",
+                            "layoutDirectionTablet" : "column",
+                            "sectionConfig" : "{\"UUID\":\"59490965-5041-4f39-913e-65866dcb7a55\",\"columns\":[{\"UUID\":\"00530e7c-cf6f-444a-ad21-4835cc5a0422\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                          },
+                          "children" : [ {
+                            "children" : [ {
+                              "attributes" : {
+                                "alignment" : "center",
+                                "size" : "standard",
+                                "stretch" : "standard",
+                                "text" : "Download",
+                                "type" : "primary",
+                                "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://app.schoox.com/library2/viewer.php?id=4605097&academyId=827540346\"}}}}"
+                              },
+                              "definition" : "dxp_base:button",
+                              "id" : "b935f93e-4321-4745-a8e6-20c7303b2ed5",
+                              "type" : "component"
+                            } ],
+                            "id" : "00530e7c-cf6f-444a-ad21-4835cc5a0422",
+                            "name" : "col1",
+                            "title" : "Column 1",
+                            "type" : "region"
+                          } ],
+                          "customCssClasses" : "button-row",
+                          "definition" : "dxp_layout:columns",
+                          "id" : "59490965-5041-4f39-913e-65866dcb7a55",
+                          "type" : "component"
+                        } ],
+                        "id" : "733f83d1-998d-4ca3-bc0b-c4f00a0e13a9",
+                        "name" : "Content-Region-Has-Membership",
+                        "title" : "Content-Region-Has-Membership",
+                        "type" : "region"
+                      }, {
+                        "id" : "4ae55b9d-ad8b-4ec9-be09-2ee371dc74ce",
+                        "name" : "Content-Region-No-Membership",
+                        "title" : "Content-Region-No-Membership",
+                        "type" : "region"
+                      } ],
+                      "definition" : "c:membershipCheck",
+                      "id" : "0d389b8d-a83c-44c0-bacb-a7d647dd7b7a",
+                      "type" : "component"
+                    } ],
+                    "id" : "519f95e1-b27d-482e-81dd-3e09ff5d2452",
+                    "name" : "0860b",
+                    "title" : "Column 2",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "edc451cf-0110-4be7-996a-c378685ffc59",
+                  "type" : "component"
+                } ],
+                "id" : "a259e0b2-dcee-4ca6-9b32-fdbf50858e8a",
+                "name" : "Content-Region-Has-Membership",
+                "title" : "Content-Region-Has-Membership",
+                "type" : "region"
+              }, {
+                "id" : "8085f78d-750f-4fd2-a2f9-622b9ee83043",
+                "name" : "Content-Region-No-Membership",
+                "title" : "Content-Region-No-Membership",
+                "type" : "region"
+              } ],
+              "definition" : "c:membershipCheck",
+              "id" : "0cd5ec76-cdeb-4cde-b579-fcfc567cf0a1",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "checkAccountMembership" : true,
+                "checkBoardingMembership" : false,
+                "checkCertification" : false,
+                "checkGroomerMembership" : false,
+                "checkPracticeMembership" : false,
+                "checkSitterMembership" : false,
+                "checkTrainerMembership" : false,
+                "checkVetProMembership" : false
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "center",
+                    "dxpStyle" : {
+                      "margin" : {
+                        "bottom" : "",
+                        "left" : "",
+                        "right" : "",
+                        "top" : "40px"
+                      }
+                    },
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"fb434a09-98da-46c1-b23d-b966fb45c4e5\",\"columns\":[{\"UUID\":\"c232c88e-f1da-428c-9764-a9d28ca07ba3\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"829ee70c-2cf5-412c-81c1-d5cb1daae0f4\",\"columnName\":\"Column 2\",\"columnKey\":\"0860b\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "checkAccountMembership" : false,
+                        "checkBoardingMembership" : false,
+                        "checkCertification" : false,
+                        "checkGroomerMembership" : false,
+                        "checkPracticeMembership" : false,
+                        "checkSitterMembership" : false,
+                        "checkTrainerMembership" : false,
+                        "checkVetProMembership" : true
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Canine FAS Sedation & Pain Algorithm",
+                            "textAlign" : "center",
+                            "textDecoration" : "{\"bold\":true}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "d772d934-0885-43fa-90aa-4e59f0ba006d",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "fit" : "contain",
+                            "height" : 350,
+                            "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCSKNFLTNDPFA2JKBNSVFP6PGZVU\",\"contentType\":null}}",
+                            "overlayColor" : "",
+                            "position" : "center center",
+                            "width" : 75
+                          },
+                          "definition" : "dxp_base:image",
+                          "id" : "6b1a616f-5bb5-469e-9d61-1e39cb9899ea",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "columnGutterWidth" : "",
+                            "columnMinHeight" : "",
+                            "columnVerticalAlign" : "center",
+                            "layoutDirectionDesktop" : "row",
+                            "layoutDirectionMobile" : "column",
+                            "layoutDirectionTablet" : "column",
+                            "sectionConfig" : "{\"UUID\":\"3c1df7c0-497f-4314-9309-67bbefdfdc9b\",\"columns\":[{\"UUID\":\"63385d70-cbfd-4770-8bdb-b747dcf26eb0\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                          },
+                          "children" : [ {
+                            "children" : [ {
+                              "attributes" : {
+                                "alignment" : "center",
+                                "size" : "standard",
+                                "stretch" : "standard",
+                                "text" : "Download",
+                                "type" : "primary",
+                                "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://app.schoox.com/library2/viewer.php?id=4605096&academyId=827540346\"}}}}"
+                              },
+                              "definition" : "dxp_base:button",
+                              "id" : "96e2c1bf-73dd-4d16-8f55-85e16104b5f1",
+                              "type" : "component"
+                            } ],
+                            "id" : "63385d70-cbfd-4770-8bdb-b747dcf26eb0",
+                            "name" : "col1",
+                            "title" : "Column 1",
+                            "type" : "region"
+                          } ],
+                          "customCssClasses" : "button-row",
+                          "definition" : "dxp_layout:columns",
+                          "id" : "3c1df7c0-497f-4314-9309-67bbefdfdc9b",
+                          "type" : "component"
+                        } ],
+                        "id" : "5dfa1869-201c-468d-ae78-a9ae917ae0ca",
+                        "name" : "Content-Region-Has-Membership",
+                        "title" : "Content-Region-Has-Membership",
+                        "type" : "region"
+                      }, {
+                        "id" : "3de6521c-1d3b-4d66-a71c-8c160a3defd8",
+                        "name" : "Content-Region-No-Membership",
+                        "title" : "Content-Region-No-Membership",
+                        "type" : "region"
+                      } ],
+                      "definition" : "c:membershipCheck",
+                      "id" : "bdab0dcf-d40e-4816-9fb0-eadce8564051",
+                      "type" : "component"
+                    } ],
+                    "id" : "c232c88e-f1da-428c-9764-a9d28ca07ba3",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  }, {
+                    "id" : "829ee70c-2cf5-412c-81c1-d5cb1daae0f4",
+                    "name" : "0860b",
+                    "title" : "Column 2",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "fb434a09-98da-46c1-b23d-b966fb45c4e5",
+                  "type" : "component"
+                } ],
+                "id" : "b128b505-067b-49fe-a7d2-8b997c424c68",
+                "name" : "Content-Region-Has-Membership",
+                "title" : "Content-Region-Has-Membership",
+                "type" : "region"
+              }, {
+                "id" : "21f0e028-865a-45d9-8e8f-ab71f9d9ae2c",
+                "name" : "Content-Region-No-Membership",
+                "title" : "Content-Region-No-Membership",
+                "type" : "region"
+              } ],
+              "definition" : "c:membershipCheck",
+              "id" : "0f30f19e-902c-4f45-9c9b-a28bc482a04e",
+              "type" : "component"
+            } ],
+            "id" : "f4efb7b0-6b8e-4e68-a074-001e4ffc152d",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "4bc9324c-2b65-4e6f-b410-2afc84512998",
+          "type" : "component"
+        } ],
+        "id" : "048856c6-69e4-4680-8d08-e2c660a8a33c",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "pageTitle" : "FAS Resources",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "42c05cd2-4656-4c03-b08d-ebbc64bf0a17",
+          "type" : "component"
+        } ],
+        "id" : "1acd7900-4285-4225-bba7-ae7e00bcbe71",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "47dbc5f2-4314-424e-a2a2-da154a262c2f",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-fas-resources"
+  },
+  "urlName" : "fas-resources"
+}

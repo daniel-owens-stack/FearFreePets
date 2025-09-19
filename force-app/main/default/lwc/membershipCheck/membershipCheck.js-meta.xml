@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="membershipCheck">
+    <apiVersion>63.0</apiVersion>
+    <isExposed>true</isExposed>
+
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Page_Layout</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <!-- Membership Check Options -->
+            <property name="checkIsExpired" type="Boolean" label="Check for Expired Membership" />
+            <property name="checkAnyStatus" type="Boolean" label="Check for any Status"/>
+            <property name="checkCertification" type="Boolean" label="Check Certification" />
+            <property name="checkAccountMembership" type="Boolean" label="Check Account Membership" />
+            <property name="checkVetProMembership" type="Boolean" label="Check Vet Pro Membership" />
+            <property name="checkAcademiaMembership" type="Boolean" label="Check Academia Membership" />
+            <property name="checkPracticeMembership" type="Boolean" label="Check Practice Membership" />
+            <property name="checkPracticeMembershipGP" type="Boolean" label="Check Practice GP Membership" />
+            <property name="checkPracticeMembershipER" type="Boolean" label="Check Practice ER Membership" />
+            <property name="checkPracticeMembershipHC" type="Boolean" label="Check Practice HC Membership" />
+            <property name="checkGroomerMembership" type="Boolean" label="Check Groomer Membership" />
+            <property name="checkSitterMembership" type="Boolean" label="Check Pet Sitter Membership" />
+            <property name="checkTrainerMembership" type="Boolean" label="Check Trainer Membership" />
+            <property name="checkBoardingMembership" type="Boolean" label="Check Boarding Membership" />
+
+            <!-- Membership Exclusions -->
+            <property name="excludeVetPro" type="Boolean" label="Exclude Vet Pro Membership" />
+            <property name="excludeAcademia" type="Boolean" label="Exclude Academia Membership" />
+            <property name="excludePracticeMembership" type="Boolean" label="Exclude Practice Membership (All Types)" />
+            <property name="excludePracticeMembershipGP" type="Boolean" label="Exclude Practice GP Membership" />
+            <property name="excludePracticeMembershipER" type="Boolean" label="Exclude Practice ER Membership" />
+            <property name="excludePracticeMembershipHC" type="Boolean" label="Exclude Practice HC Membership" />
+            <property name="excludeGroomer" type="Boolean" label="Exclude Groomer Membership" />
+            <property name="excludeSitter" type="Boolean" label="Exclude Pet Sitter Membership" />
+            <property name="excludeTrainer" type="Boolean" label="Exclude Trainer Membership" />
+            <property name="excludeBoarding" type="Boolean" label="Exclude Boarding Membership" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

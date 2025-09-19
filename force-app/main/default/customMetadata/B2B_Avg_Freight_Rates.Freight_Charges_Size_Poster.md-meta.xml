@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Freight Charges Size Poster</label>
+    <protected>false</protected>
+    <values>
+        <field>Australia_Rates__c</field>
+        <value xsi:type="xsd:double">49.66</value>
+    </values>
+    <values>
+        <field>Canada_Rates__c</field>
+        <value xsi:type="xsd:double">27.66</value>
+    </values>
+    <values>
+        <field>Dimensions__c</field>
+        <value xsi:type="xsd:string">25x2x2</value>
+    </values>
+    <values>
+        <field>Korea_Rates__c</field>
+        <value xsi:type="xsd:double">66.46</value>
+    </values>
+    <values>
+        <field>NZ_Rates__c</field>
+        <value xsi:type="xsd:double">47.82</value>
+    </values>
+    <values>
+        <field>Size__c</field>
+        <value xsi:type="xsd:string">poster</value>
+    </values>
+    <values>
+        <field>UK_Rates__c</field>
+        <value xsi:type="xsd:double">32.87</value>
+    </values>
+    <values>
+        <field>US_Rates__c</field>
+        <value xsi:type="xsd:double">32.87</value>
+    </values>
+    <values>
+        <field>Volume__c</field>
+        <value xsi:type="xsd:double">100.0</value>
+    </values>
+    <values>
+        <field>Weight__c</field>
+        <value xsi:type="xsd:double">5.0</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stripe_Customer__c</fullName>
+    <description>Check if user has a stripe customer Id in their account</description>
+    <formula>NOT(ISBLANK(Contact.Account.StripeCustomerId__c))</formula>
+    <label>Stripe Customer</label>
+    <type>Checkbox</type>
+</CustomField>

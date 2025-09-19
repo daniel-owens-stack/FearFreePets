@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>6</activeVersionNumber>
+    <description>Allows the user to leave their own team.  This removes the Memberships that were assigned to them from the team.</description>
+    <masterLabel>(FSM) Screen - Leave Team</masterLabel>
+</FlowDefinition>

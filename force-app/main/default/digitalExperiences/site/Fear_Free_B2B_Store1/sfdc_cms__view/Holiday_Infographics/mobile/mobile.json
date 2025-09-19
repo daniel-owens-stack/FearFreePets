@@ -1,0 +1,112 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Holiday Infographics",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "attributes" : {
+          "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}",
+          "textAlign" : "center"
+        },
+        "id" : "619a43be-fd6d-4ee2-b542-2e3179a4ae75"
+      }, {
+        "id" : "aa07f4bf-8740-4720-9c9a-18e4b383a4a1",
+        "attributes" : {
+          "columnVerticalAlign" : "center"
+        }
+      }, {
+        "id" : "83058782-c89f-4002-b659-b163c95ced34",
+        "attributes" : {
+          "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}",
+          "textAlign" : "center"
+        }
+      }, {
+        "id" : "a85ace30-590a-4c4f-a46a-d4e1e981ba4a",
+        "attributes" : {
+          "columnVerticalAlign" : "center"
+        }
+      }, {
+        "id" : "a97e14fa-622e-4c7b-b8b7-c47323fdde9e",
+        "attributes" : {
+          "textAlign" : "center",
+          "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+        }
+      }, {
+        "id" : "da370ed8-4c5d-4d46-89fd-0c0a09691bbf",
+        "attributes" : {
+          "textAlign" : "center",
+          "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+        }
+      }, {
+        "id" : "fb70308f-9c38-4a6f-8fff-c6542fb985cf",
+        "attributes" : {
+          "columnVerticalAlign" : "center"
+        }
+      }, {
+        "id" : "baef0b30-522e-41c8-a2b9-a03151345cb8",
+        "attributes" : {
+          "textAlign" : "center",
+          "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+        }
+      }, {
+        "id" : "43340992-2ce7-4d2c-9128-f113a41c9e54",
+        "attributes" : {
+          "textAlign" : "center",
+          "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+        }
+      }, {
+        "id" : "cbf55200-77ec-4b92-ac5e-d5d517b5ade4",
+        "attributes" : {
+          "columnVerticalAlign" : "center"
+        }
+      }, {
+        "id" : "d38e63bf-02cd-44a7-a723-bd882420d00f",
+        "attributes" : {
+          "textAlign" : "center",
+          "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+        }
+      }, {
+        "id" : "b5062a3c-5604-4134-8ce7-a482e70f1217",
+        "attributes" : {
+          "textAlign" : "center",
+          "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+        }
+      }, {
+        "id" : "aaa9b3b7-8927-461f-b256-16521c0df89e",
+        "attributes" : {
+          "columnVerticalAlign" : "center"
+        }
+      }, {
+        "id" : "a3ee5b6a-3b12-41ac-9221-544418db3d7e",
+        "attributes" : {
+          "textAlign" : "center",
+          "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+        }
+      }, {
+        "id" : "8087f54b-1978-4a52-a31e-8d662eb5d379",
+        "attributes" : {
+          "textAlign" : "center",
+          "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+        }
+      }, {
+        "id" : "d52726c0-032a-47a7-9d97-73641b7fff6e",
+        "attributes" : {
+          "columnVerticalAlign" : "center"
+        }
+      }, {
+        "id" : "7a9507c5-3a10-4f02-9060-7ddd37737bbb",
+        "attributes" : {
+          "textAlign" : "center",
+          "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+        }
+      }, {
+        "id" : "8be3159d-ef57-429e-9d25-01950f4e4b9f",
+        "attributes" : {
+          "textAlign" : "center",
+          "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+        }
+      } ]
+    }
+  },
+  "urlName" : "holiday-infographics"
+}

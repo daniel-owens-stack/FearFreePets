@@ -1,0 +1,83 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "My Invoices",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "dxpStyle" : {
+              "padding" : {
+                "bottom" : "0px",
+                "left" : "0px",
+                "right" : "0px",
+                "top" : "0px"
+              }
+            },
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "none",
+            "sectionColumnGutterWidth" : "0rem",
+            "sectionConfig" : "{\"UUID\":\"94645d5c-1298-4b6a-a89c-bd8bba4af0ce\",\"columns\":[{\"UUID\":\"3c65c64d-5baf-46ac-9a5a-e80a6d784b79\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "alignment" : "center",
+                "size" : "large",
+                "stretch" : "standard",
+                "text" : "View my Invoices",
+                "type" : "primary",
+                "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://billing.stripe.com/p/login/test_5kA01V2zXakA5LW5kk\"}}}}"
+              },
+              "definition" : "dxp_base:button",
+              "id" : "a341519c-75ff-4164-baa4-aea865437eff",
+              "type" : "component"
+            } ],
+            "id" : "3c65c64d-5baf-46ac-9a5a-e80a6d784b79",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "94645d5c-1298-4b6a-a89c-bd8bba4af0ce",
+          "type" : "component"
+        } ],
+        "id" : "26f3e77a-d2ce-4b3a-93a8-506b8c35e1bb",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "dxpStyle" : { },
+            "pageTitle" : "My Invoices",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "c3bb6386-3a00-4672-8944-bc02965999a3",
+          "type" : "component"
+        } ],
+        "id" : "d9ea7ff2-308f-45f5-bca0-638aceeb621f",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "388e3059-b41f-4dc4-8528-511d7a01c535",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "MyAccount",
+    "viewType" : "custom-my-invoices"
+  },
+  "urlName" : "my-invoices"
+}

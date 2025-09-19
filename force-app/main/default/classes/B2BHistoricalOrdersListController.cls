@@ -2,38 +2,39 @@ public without sharing class B2BHistoricalOrdersListController {
     
     @AuraEnabled
     public static List<OrderSummaryWrapper> getHistoricalOrders(Map<String, Object> inputParameters) {
+        // Map API values -> current labels (handles “Created” → “Completed”, etc.)
+        Map<String, String> statusLabelMap = getStatusLabelMap();
+
         List<OrderSummaryWrapper> historicalOrderSummaryList = new List<OrderSummaryWrapper>();
         try {
             String accountId = B2BUtils.getUserAccountID();
             List<Account> account = [SELECT Admin_Account__c, Business__c FROM Account WHERE Id = :accountId];
 
-            if(account.size() > 0) {
+            if (account.size() > 0) {
                 Boolean isTeamAdmin = account[0].Admin_Account__c;
                 String businessAccount = account[0].Business__c;
 
-                //Get Historical Orders
+                // Get Historical Orders
                 List<Historical_Order__c> historicalOrders = new List<Historical_Order__c>();
-                if(isTeamAdmin == true && businessAccount != null) {
+                if (isTeamAdmin == true && businessAccount != null) {
                     historicalOrders = [
                         SELECT Id, Historical_Order_Id__c, SF_Order__c, Order_Date__c, Shipping_Total_With_Tax__c 
                         FROM Historical_Order__c 
                         WHERE SF_Order__c != null
-                        AND (SF_Order__r.AccountId  =:accountId OR SF_Order__r.Account.Business__c = :businessAccount)
+                        AND (SF_Order__r.AccountId  = :accountId OR SF_Order__r.Account.Business__c = :businessAccount)
                     ];
-                }
-                else {
+                } else {
                     historicalOrders = [
                         SELECT Id, Historical_Order_Id__c, SF_Order__c, Order_Date__c, Shipping_Total_With_Tax__c 
                         FROM Historical_Order__c 
                         WHERE SF_Order__c != null
-                        AND SF_Order__r.AccountId  =:accountId
+                        AND SF_Order__r.AccountId  = :accountId
                     ];
                 }
 
                 List<Id> sfOrderIds = new List<Id>();
                 Map<Id, Historical_Order__c> historicalToSFOrdermap = new Map<Id, Historical_Order__c>();
-
-                for(Historical_Order__c ho : historicalOrders) {
+                for (Historical_Order__c ho : historicalOrders) {
                     sfOrderIds.add(ho.SF_Order__c);
                     historicalToSFOrdermap.put(ho.SF_Order__c, ho);
                 }
@@ -45,35 +46,36 @@ public without sharing class B2BHistoricalOrdersListController {
 
                 String query = 'SELECT ' + osFields + ' FROM OrderSummary WHERE ' + osWhere;
                 
-                if(inputParameters.containsKey('startDate') && inputParameters.containsKey('endDate')){
-                    query += ' AND Ordered_Date__c >= ' + inputParameters.get('startDate') + ' AND Ordered_Date__c <= '+ inputParameters.get('endDate') ;
+                if (inputParameters.containsKey('startDate') && inputParameters.containsKey('endDate')) {
+                    query += ' AND Ordered_Date__c >= ' + inputParameters.get('startDate') + ' AND Ordered_Date__c <= '+ inputParameters.get('endDate');
                 }
                 
                 query += ' ORDER BY Ordered_Date__c ' + inputParameters.get('sortingOrder') + ' NULLS LAST LIMIT 5000';
                 orderSummaries = Database.query(query);
 
-                if(orderSummaries.size() > 0) {
+                if (orderSummaries.size() > 0) {
                     for (OrderSummary os : orderSummaries) {	
                         OrderSummaryWrapper osw = new OrderSummaryWrapper();
                         osw.osId = historicalToSFOrdermap.get(os.OriginalOrderId).Historical_Order_Id__c;
                         osw.orderNumber = os.OrderNumber;
-                        osw.orderedDateText =  DateTime.newInstance(os.Ordered_Date__c, Time.newInstance(0, 0, 0, 0)).format('MM/dd/yyyy');
-                        osw.status = os.Status;
+                        osw.orderedDateText = DateTime.newInstance(os.Ordered_Date__c, Time.newInstance(0, 0, 0, 0)).format('MM/dd/yyyy');
+                        // Use label if available
+                        osw.status = statusLabelMap.containsKey(os.Status) ? statusLabelMap.get(os.Status) : os.Status;
                         osw.total = 0;
                         osw.orderedDate = os.Ordered_Date__c;
                         osw.ordersCount = orderSummaries.size();
                         osw.isViewDetailsDisabled = os.Status == 'Canceled' ? true : false;
                         osw.ownerName = os.Account.Name;
 
-                        //Get Historical Order Items
+                        // Get Historical Order Items
                         List<Historical_Order_Item__c> histOrderItems = [
                             SELECT Id, Name, Historical_Order_Item_Id__c, Historical_Order_Id__c, Product_Id__c, Quantity__c, Line_Total__c, Line_Tax__c, Unit_Price__c, Unit_Price_With_Tax__c                                              
                             FROM Historical_Order_Item__c 
                             WHERE Historical_Order_Id__c = :historicalToSFOrdermap.get(os.OriginalOrderId).Historical_Order_Id__c
                             AND Quantity__c > 0
                         ];
-                        if(!histOrderItems.isEmpty()) {
-                            for(Historical_Order_Item__c hoi : histOrderItems) {
+                        if (!histOrderItems.isEmpty()) {
+                            for (Historical_Order_Item__c hoi : histOrderItems) {
                                 osw.total += hoi.Unit_Price_With_Tax__c * hoi.Quantity__c;
                             }
                             osw.total += historicalToSFOrdermap.get(os.OriginalOrderId).Shipping_Total_With_Tax__c;
@@ -83,43 +85,48 @@ public without sharing class B2BHistoricalOrdersListController {
                     }
                 }
             }
-        }
-        catch(Exception e) {
-            B2BHandleCustomException.LogException(e, 'B2BOrderHistoryListController', 'getOrderSummaries');
+        } catch (Exception e) {
+            B2BHandleCustomException.LogException(e, 'B2BHistoricalOrdersListController', 'getHistoricalOrders');
         }
         return historicalOrderSummaryList;
     }
 
     @AuraEnabled
     public static OrderSummaryDetailsWrapper getHistoricalOrderItems(String historicalOrderId) {
-        //Get Historical Order
+        // Map API values -> current labels
+        Map<String, String> statusLabelMap = getStatusLabelMap();
+
+        // Get Historical Order
         Historical_Order__c ho = [
             SELECT Id, Shipping_Total_With_Tax__c, SF_Order__c 
             FROM Historical_Order__c 
             WHERE Historical_Order_Id__c = :historicalOrderId 
-            ORDER BY CreatedDate Desc
+            ORDER BY CreatedDate DESC
             LIMIT 1
         ];
        
-        //Get OrderSummary
-        OrderSummary orderSummary = [SELECT Id, OrderNumber, OrderedDate,Ordered_Date__c, AccountId, Account.Name, Owner.FirstName, Owner.LastName, Account.PersonEmail, 
-                                            Status, TotalAdjustedProductAmount, TotalAdjustedDeliveryAmount, TotalTaxAmount, 
-                                            GrandTotalAmount, TotalDeliveryAmount, CreatedDate, Shipping_Address__c,
-                                            Shipping_Address__Street__s, Shipping_Address__City__s, Shipping_Address__StateCode__s,
-                                            Shipping_Address__PostalCode__s, Shipping_Address__CountryCode__s, Total_Refunded_Amount__c, Total_Amount_After_Refund__c
-                                    FROM OrderSummary 
-                                    WHERE OriginalOrderId = :ho.SF_Order__c];      
+        // Get OrderSummary
+        OrderSummary orderSummary = [
+            SELECT Id, OrderNumber, OrderedDate, Ordered_Date__c, AccountId, Account.Name, Owner.FirstName, Owner.LastName, Account.PersonEmail, 
+                   Status, TotalAdjustedProductAmount, TotalAdjustedDeliveryAmount, TotalTaxAmount, 
+                   GrandTotalAmount, TotalDeliveryAmount, CreatedDate, Shipping_Address__c,
+                   Shipping_Address__Street__s, Shipping_Address__City__s, Shipping_Address__StateCode__s,
+                   Shipping_Address__PostalCode__s, Shipping_Address__CountryCode__s, Total_Refunded_Amount__c, Total_Amount_After_Refund__c
+            FROM OrderSummary 
+            WHERE OriginalOrderId = :ho.SF_Order__c
+        ];      
      
         String orderSummaryId = orderSummary.Id;
         
         OrderSummaryDetailsWrapper detailsWrapper = new OrderSummaryDetailsWrapper();
 
-        //Details
+        // Details
         detailsWrapper.osDetails = new orderSummaryDetails();
         detailsWrapper.osDetails.orderNumber = orderSummary.OrderNumber;
         detailsWrapper.osDetails.orderedDate = DateTime.newInstance(orderSummary.Ordered_Date__c, Time.newInstance(0, 0, 0, 0)).format('MM/dd/yyyy');
         detailsWrapper.osDetails.accountName = orderSummary.Account.Name;
-        detailsWrapper.osDetails.orderStatus = orderSummary.Status;
+        // Use label if available
+        detailsWrapper.osDetails.orderStatus = statusLabelMap.containsKey(orderSummary.Status) ? statusLabelMap.get(orderSummary.Status) : orderSummary.Status;
         detailsWrapper.osDetails.orderPlacedBy = orderSummary.Account.Name;
         detailsWrapper.osDetails.purchaserEmail = orderSummary.Account.PersonEmail;
         
@@ -135,7 +142,7 @@ public without sharing class B2BHistoricalOrdersListController {
         detailsWrapper.shippingAddress.deliverToName = deliveryGroupSummary?.DeliverToName;
         detailsWrapper.shippingAddress.deliveryMethod = deliveryGroupSummary?.OrderDeliveryMethod.Name;
 
-        //Totals
+        // Totals (historical)
         detailsWrapper.osTotals = new orderSummaryTotals();
         detailsWrapper.osTotals.subtotal = 0;
         detailsWrapper.osTotals.shipping = 0;
@@ -146,7 +153,7 @@ public without sharing class B2BHistoricalOrdersListController {
         detailsWrapper.osTotals.showRefundedAmount = false;
         detailsWrapper.osTotals.totalAmountAfterRefund = 0;
 
-        //Get Historical Order Items
+        // Get Historical Order Items
         List<Historical_Order_Item__c> histOrderItems = [
             SELECT Id, Name, Historical_Order_Item_Id__c, Historical_Order_Id__c, Product_Id__c, Quantity__c, Line_Total__c, Line_Tax__c, Unit_Price__c, Unit_Price_With_Tax__c                                              
             FROM Historical_Order_Item__c 
@@ -154,13 +161,13 @@ public without sharing class B2BHistoricalOrdersListController {
             AND Quantity__c > 0
         ];
 
-        if(histOrderItems == null || histOrderItems.size() == 0) {
+        if (histOrderItems == null || histOrderItems.size() == 0) {
             return detailsWrapper;
         }
 
-        //Set Totals from Order Items
+        // Set Totals from Order Items
         Set<String> historicalItemProductIds = new Set<String>();
-        for(Historical_Order_Item__c hoi : histOrderItems) {
+        for (Historical_Order_Item__c hoi : histOrderItems) {
             detailsWrapper.osTotals.subtotal += hoi.Unit_Price_With_Tax__c * hoi.Quantity__c;
             historicalItemProductIds.add(hoi.Product_Id__c);
         }
@@ -173,19 +180,18 @@ public without sharing class B2BHistoricalOrdersListController {
         List<String> productIds = new List<String>();
         Integer numOfItems = 0;
 
-        if(!historicalItemProductIds.isEmpty()) {
+        if (!historicalItemProductIds.isEmpty()) {
             List<Product2> products = [
                 SELECT Id, Name, Description, IsShippingChargeNotApplicable, StockKeepingUnit, WC_Id__c 
                 FROM Product2 
-                WHERE WC_Id__c 
-                IN :historicalItemProductIds
+                WHERE WC_Id__c IN :historicalItemProductIds
             ];
-            if(products.size() > 0) {
-                for(Product2 p : products) {         
+            if (products.size() > 0) {
+                for (Product2 p : products) {         
                     historicaItemIdToProductMap.put(p.WC_Id__c, p);
                 }
 
-                for(Historical_Order_Item__c hoi : histOrderItems) {
+                for (Historical_Order_Item__c hoi : histOrderItems) {
                     Product2 product = historicaItemIdToProductMap.get(hoi.Product_Id__c);
                     orderItemSummaryWrapper itemWrapper = new orderItemSummaryWrapper();
 
@@ -194,35 +200,36 @@ public without sharing class B2BHistoricalOrdersListController {
                     itemWrapper.unitPrice = hoi.Unit_Price_With_Tax__c;
                     itemWrapper.lineSubtotal = hoi.Unit_Price_With_Tax__c * hoi.Quantity__c;
                     itemWrapper.productName = product.Name;
-                    itemWrapper.productSku =  product.StockKeepingUnit;
+                    itemWrapper.productSku = product.StockKeepingUnit;
                     itemWrapper.productDescription = product.Description;
                     
                     productToWrapperMap.put(product.Id, itemWrapper);
                     productIds.add(product.Id);
                     numOfItems += 1;
 
-                    if(!product.IsShippingChargeNotApplicable) {
+                    if (!product.IsShippingChargeNotApplicable) {
                         detailsWrapper.osDetails.hasShippableProducts = true;
                     }
                 }
                 detailsWrapper.osDetails.productCount = numOfItems;
 
-                //Get Product Images
+                // Get Product Images
                 String webStoreId = B2BUtils.getWebstoreID();
 
-                if(!Test.isRunningTest()) {
-                    ConnectApi.ProductOverviewCollection productsData = ConnectAPI.CommerceCatalog.getProducts(webStoreId, null, productIds, null, null, false, false, false, false, false, null);
+                if (!Test.isRunningTest()) {
+                    ConnectApi.ProductOverviewCollection productsData =
+                        ConnectAPI.CommerceCatalog.getProducts(webStoreId, null, productIds, null, null, false, false, false, false, false, null);
 
-                    for(ConnectApi.ProductOverview product : productsData.products){
-                        if(product.success){
-                            if(product.defaultImage != null) {
+                    for (ConnectApi.ProductOverview product : productsData.products) {
+                        if (product.success) {
+                            if (product.defaultImage != null) {
                                 productToWrapperMap.get(product.id).productImgUrl = Site.getBaseUrl() + product.defaultImage.url;
                             }
                         }      
                     }
                 }
         
-                if(!productToWrapperMap.values().isEmpty()){
+                if (!productToWrapperMap.values().isEmpty()) {
                     detailsWrapper.orderProductWrap = new List<orderItemSummaryWrapper>();
                     detailsWrapper.orderProductWrap.addAll(productToWrapperMap.values());
                 }
@@ -231,161 +238,88 @@ public without sharing class B2BHistoricalOrdersListController {
         return detailsWrapper;
     }
 
-    public static OrderDeliveryGroupSummary  getOrderDeliveryGroupSummary(String orderSummaryId){
-        List<OrderDeliveryGroupSummary > odgs = [SELECT Id, DeliverToName, DeliverToStreet, DeliverToCity, DeliverToState, DeliverToPostalCode, DeliverToCountry, OrderDeliveryMethod.Name
-                                                 FROM OrderDeliveryGroupSummary 
-                                                 WHERE OrderSummaryId =: orderSummaryId
-                                                ];
-        if(odgs == null || odgs.size() == 0) {
+    public static OrderDeliveryGroupSummary getOrderDeliveryGroupSummary(String orderSummaryId){
+        List<OrderDeliveryGroupSummary> odgs = [
+            SELECT Id, DeliverToName, DeliverToStreet, DeliverToCity, DeliverToState, DeliverToPostalCode, DeliverToCountry, OrderDeliveryMethod.Name
+            FROM OrderDeliveryGroupSummary 
+            WHERE OrderSummaryId = :orderSummaryId
+        ];
+        if (odgs == null || odgs.size() == 0) {
             return null;
         }
         return odgs[0];
     }
 
     public class OrderSummaryDetailsWrapper{
-        @AuraEnabled
-        public orderSummaryDetails osDetails;
-
-        @AuraEnabled
-        public orderSummaryTotals osTotals {get; set;}
-
-        @AuraEnabled
-        public shippingAddressDetails shippingAddress {get; set;}
-        
-        @AuraEnabled
-        public List<orderItemSummaryWrapper> orderProductWrap {get; set;}
+        @AuraEnabled public orderSummaryDetails osDetails;
+        @AuraEnabled public orderSummaryTotals  osTotals {get; set;}
+        @AuraEnabled public shippingAddressDetails shippingAddress {get; set;}
+        @AuraEnabled public List<orderItemSummaryWrapper> orderProductWrap {get; set;}
     }
 
     public class orderSummaryDetails{
-
-        @AuraEnabled
-        public String orderNumber {get; set;}
-
-        @AuraEnabled
-        public String orderedDate {get; set;}
-
-        @AuraEnabled
-        public String accountName {get; set;}
-
-        @AuraEnabled
-        public String orderPlacedBy {get; set;}
-
-        @AuraEnabled
-        public String orderStatus {get; set;}
-
-        @AuraEnabled
-        public Integer productCount {get; set;}
-
-        @AuraEnabled
-        public Boolean hasShippableProducts {get; set;}
-
-        @AuraEnabled
-        public String purchaserEmail  {get; set; }
+        @AuraEnabled public String  orderNumber {get; set;}
+        @AuraEnabled public String  orderedDate {get; set;}
+        @AuraEnabled public String  accountName {get; set;}
+        @AuraEnabled public String  orderPlacedBy {get; set;}
+        @AuraEnabled public String  orderStatus {get; set;}
+        @AuraEnabled public Integer productCount {get; set;}
+        @AuraEnabled public Boolean hasShippableProducts {get; set;}
+        @AuraEnabled public String  purchaserEmail  {get; set; }
     }
 
     public class orderSummaryTotals{
-        
-        @AuraEnabled
-        public Decimal subtotal {get; set;}
-
-        @AuraEnabled
-        public Decimal shipping {get; set;}
-
-        @AuraEnabled
-        public Decimal tax {get; set;}
-
-        @AuraEnabled
-        public Decimal total {get; set;}
-
-        @AuraEnabled
-        public Decimal shippingSubTotal {get; set;}
-
-        @AuraEnabled
-        public Decimal refundedAmount {get; set;}
-
-        @AuraEnabled
-        public Boolean showRefundedAmount {get; set;}
-
-        @AuraEnabled
-        public Decimal totalAmountAfterRefund {get; set;}
+        @AuraEnabled public Decimal subtotal {get; set;}
+        @AuraEnabled public Decimal shipping {get; set;}
+        @AuraEnabled public Decimal tax {get; set;}
+        @AuraEnabled public Decimal total {get; set;}
+        @AuraEnabled public Decimal shippingSubTotal {get; set;}
+        @AuraEnabled public Decimal refundedAmount {get; set;}
+        @AuraEnabled public Boolean showRefundedAmount {get; set;}
+        @AuraEnabled public Decimal totalAmountAfterRefund {get; set;}
     }
 
     public class shippingAddressDetails{
-
-        @AuraEnabled
-        public String deliverToName {get; set;}
-
-        @AuraEnabled
-        public String deliverToStreet {get; set;}
-
-        @AuraEnabled
-        public String deliverToCity {get; set;}
-
-        @AuraEnabled
-        public String deliverToState {get; set;}
-
-        @AuraEnabled
-        public String deliverToPostalCode {get; set;}
-
-        @AuraEnabled
-        public String deliverToCountry {get; set;}
-
-        @AuraEnabled
-        public String deliveryMethod {get; set;}
+        @AuraEnabled public String deliverToName {get; set;}
+        @AuraEnabled public String deliverToStreet {get; set;}
+        @AuraEnabled public String deliverToCity {get; set;}
+        @AuraEnabled public String deliverToState {get; set;}
+        @AuraEnabled public String deliverToPostalCode {get; set;}
+        @AuraEnabled public String deliverToCountry {get; set;}
+        @AuraEnabled public String deliveryMethod {get; set;}
     }
     
     public class orderItemSummaryWrapper{
-        @AuraEnabled
-        public String osItemId {get; set;}
-
-        @AuraEnabled
-        public String productName {get; set;}
-
-        @AuraEnabled
-        public String productDescription {get; set;}
-
-        @AuraEnabled
-        public String productSku {get; set;}
-
-        @AuraEnabled
-        public String productImgUrl {get; set;}
-
-        @AuraEnabled
-        public Decimal lineSubtotal {get; set;}
-
-        @AuraEnabled
-        public Decimal quantity {get; set;}
-
-        @AuraEnabled
-        public Decimal unitPrice {get; set;}
+        @AuraEnabled public String  osItemId {get; set;}
+        @AuraEnabled public String  productName {get; set;}
+        @AuraEnabled public String  productDescription {get; set;}
+        @AuraEnabled public String  productSku {get; set;}
+        @AuraEnabled public String  productImgUrl {get; set;}
+        @AuraEnabled public Decimal lineSubtotal {get; set;}
+        @AuraEnabled public Decimal quantity {get; set;}
+        @AuraEnabled public Decimal unitPrice {get; set;}
     }
 
     public class OrderSummaryWrapper {
-        @AuraEnabled
-        public String osId { get; set; }
+        @AuraEnabled public String  osId { get; set; }
+        @AuraEnabled public String  orderNumber { get; set; }
+        @AuraEnabled public Date    orderedDate { get; set; }
+        @AuraEnabled public String  orderedDateText { get; set; }
+        @AuraEnabled public String  status { get; set; }   // now the LABEL
+        @AuraEnabled public Decimal total { get; set; }
+        @AuraEnabled public Integer ordersCount { get; set; }
+        @AuraEnabled public Boolean isViewDetailsDisabled { get; set; }
+        @AuraEnabled public String  ownerName { get; set; }
+    }
 
-        @AuraEnabled
-        public String orderNumber { get; set; }
-
-        @AuraEnabled
-        public Date orderedDate { get; set; }
-
-        @AuraEnabled
-        public String orderedDateText { get; set; }
-
-        @AuraEnabled
-        public String status { get; set; }
-
-        @AuraEnabled
-        public Decimal total { get; set; }
-        
-        @AuraEnabled
-        public Integer ordersCount { get; set; }
-
-        @AuraEnabled
-        public Boolean isViewDetailsDisabled { get; set; }
-
-        @AuraEnabled
-        public String ownerName { get; set; }
+    // Map picklist API values -> current labels for OrderSummary.Status
+    private static Map<String, String> getStatusLabelMap() {
+        Map<String, String> labelMap = new Map<String, String>();
+        Schema.DescribeFieldResult dfr =
+            Schema.SObjectType.OrderSummary.fields.getMap().get('Status').getDescribe();
+        for (Schema.PicklistEntry ple : dfr.getPicklistValues()) {
+            labelMap.put(ple.getValue(), ple.getLabel());
+        }
+        return labelMap;
     }
 }

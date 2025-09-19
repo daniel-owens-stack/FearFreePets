@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Basecamp_AI__c</fullName>
+    <deprecated>false</deprecated>
+    <description>If this Salesforce Ticket is Accepted and FSM is assisting, create an item in Basecamp and paste the link here.</description>
+    <inlineHelpText>If this Salesforce Ticket is Accepted and FSM is assisting, create an item in Basecamp and paste the link here.</inlineHelpText>
+    <label>Basecamp AI</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Url</type>
+</CustomField>

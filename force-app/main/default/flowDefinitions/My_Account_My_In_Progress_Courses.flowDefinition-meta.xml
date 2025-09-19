@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>6</activeVersionNumber>
+    <description>This Flow displays In Progress Courses assigned to the Member running user: https://basecamp.com/2583453/projects/19269730/todos/498992475</description>
+    <masterLabel>(Deprecated) My Account - My In Progress Courses</masterLabel>
+</FlowDefinition>

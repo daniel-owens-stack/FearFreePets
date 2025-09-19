@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="memberHomeCardFour">
+    <apiVersion>62.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="cardOneTitle" type="String" default="Card 1 Title" label="Card 1 Title"/>
+            <property name="cardOneDescription" type="String" default="Card 1 Description" label="Card 1 Description"/>
+            <property name="cardOneLinkUrl" type="String" default="/link1" label="Card 1 Link URL"/>
+            <property name="cardOneOpenInNewTab" type="Boolean" default="false" label="Card 1 Open in New Tab"/>
+            <property name="cardOneColor" type="String" default="light_blue" label="Card 1 Color"/>
+
+            <property name="cardTwoTitle" type="String" default="Card 2 Title" label="Card 2 Title"/>
+            <property name="cardTwoDescription" type="String" default="Card 2 Description" label="Card 2 Description"/>
+            <property name="cardTwoLinkUrl" type="String" default="/link2" label="Card 2 Link URL"/>
+            <property name="cardTwoOpenInNewTab" type="Boolean" default="false" label="Card 2 Open in New Tab"/>
+            <property name="cardTwoColor" type="String" default="light_gold" label="Card 2 Color"/>
+
+            <property name="cardThreeTitle" type="String" default="Card 3 Title" label="Card 3 Title"/>
+            <property name="cardThreeDescription" type="String" default="Card 3 Description" label="Card 3 Description"/>
+            <property name="cardThreeLinkUrl" type="String" default="/link2" label="Card 3 Link URL"/>
+            <property name="cardThreeOpenInNewTab" type="Boolean" default="false" label="Card 3 Open in New Tab"/>
+            <property name="cardThreeColor" type="String" default="light_green" label="Card 3 Color"/>
+
+            <property name="cardFourTitle" type="String" default="Card 4 Title" label="Card 4 Title"/>
+            <property name="cardFourDescription" type="String" default="Card 4 Description" label="Card 4 Description"/>
+            <property name="cardFourLinkUrl" type="String" default="/link4" label="Card 4 Link URL"/>
+            <property name="cardFourOpenInNewTab" type="Boolean" default="false" label="Card 4 Open in New Tab"/>
+            <property name="cardFourColor" type="String" default="light_blue" label="Card 4 Color"/>       
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

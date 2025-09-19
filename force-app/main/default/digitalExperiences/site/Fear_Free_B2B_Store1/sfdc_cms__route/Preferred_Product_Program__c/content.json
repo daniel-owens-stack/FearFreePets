@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Preferred Product Program",
+  "contentBody" : {
+    "activeViewId" : "Preferred_Product_Program",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-preferred-product-program",
+    "urlPrefix" : "preferred-product-program"
+  },
+  "urlName" : "preferred-product-program"
+}

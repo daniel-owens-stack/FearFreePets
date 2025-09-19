@@ -1,0 +1,67 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "My Certificates",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"09525a5f-56ff-4ae1-a89b-278efedd6180\",\"columns\":[{\"UUID\":\"a7e49eae-7a16-4976-8e44-e5a0ff6f2304\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : { },
+              "definition" : "c:sxDownloadCertsButton",
+              "id" : "5d7911f8-913d-49ec-b45d-91ab3dbcbbca",
+              "type" : "component"
+            } ],
+            "id" : "a7e49eae-7a16-4976-8e44-e5a0ff6f2304",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "09525a5f-56ff-4ae1-a89b-278efedd6180",
+          "type" : "component"
+        } ],
+        "id" : "3ebed237-b9f4-4ff5-85a0-99914a318579",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "pageTitle" : "My Certificates",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "2473a888-82e0-48b7-930b-a7b5a3cc2844",
+          "type" : "component"
+        } ],
+        "id" : "25412075-b98f-4cef-bcc7-efe668a130e5",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "4b13587b-85c0-4cd2-b533-64e41d5597e4",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-my-certificates"
+  },
+  "urlName" : "my-certificates"
+}

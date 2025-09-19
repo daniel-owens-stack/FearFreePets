@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>onemergefree__DeleteMergeLogEntriesAfter__c</fullName>
+    <defaultValue>30</defaultValue>
+    <deprecated>false</deprecated>
+    <description>The number of days after the CreatedDate Merge Log Entries are deleted by the OneMerge Data Sweeper.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The number of days after the CreatedDate Merge Log Entries are deleted by the OneMerge Data Sweeper.</inlineHelpText>
+    <label>Delete Merge Log Entries After (Days)</label>
+    <precision>5</precision>
+    <required>true</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

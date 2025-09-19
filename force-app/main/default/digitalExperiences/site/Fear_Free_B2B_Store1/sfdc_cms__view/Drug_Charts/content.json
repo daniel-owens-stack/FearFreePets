@@ -1,0 +1,388 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Drug Charts",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"3a7f1c72-a768-4715-8553-20cfbc7372e9\",\"columns\":[{\"UUID\":\"718f9317-f8c7-4f5f-953f-ece30922b180\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "checkAccountMembership" : false,
+                "checkBoardingMembership" : false,
+                "checkCertification" : false,
+                "checkGroomerMembership" : false,
+                "checkPracticeMembership" : false,
+                "checkSitterMembership" : false,
+                "checkTrainerMembership" : false,
+                "checkVetProMembership" : true
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "flex-start",
+                    "dxpStyle" : {
+                      "margin" : {
+                        "bottom" : "40px",
+                        "left" : "",
+                        "right" : "",
+                        "top" : "40px"
+                      }
+                    },
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"8d9a4bc5-5fda-4d1c-8ee7-6a5898ad878f\",\"columns\":[{\"UUID\":\"fb0978f2-1b6c-41cd-8d21-a1cbb86c1212\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"05b6e0fc-54ac-448d-baea-38dd05734ea5\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "Pre-Visit Drug Chart",
+                        "textAlign" : "center",
+                        "textDecoration" : "{\"bold\":true}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "1fd13196-89fc-45cc-adee-c48cfe865f9b",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "fit" : "contain",
+                        "height" : 350,
+                        "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCLLYGKZFXJ5EALNGHZZLMVOLWLI\",\"contentType\":null}}",
+                        "overlayColor" : "",
+                        "position" : "center center",
+                        "width" : 100
+                      },
+                      "definition" : "dxp_base:image",
+                      "id" : "24d5d69d-9732-461c-82c7-376a38d4f8e2",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "flex-start",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"a0b5edca-8c68-4d53-aa0a-595cd439beb1\",\"columns\":[{\"UUID\":\"25a96dc0-6f40-433f-9ff3-1de459dd31a2\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "size" : "standard",
+                            "stretch" : "standard",
+                            "text" : "Download",
+                            "type" : "primary",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://app.schoox.com/library2/viewer.php?id=4590397&academyId=827540346\"}}}}"
+                          },
+                          "definition" : "dxp_base:button",
+                          "id" : "5ee49cd0-b7d1-42f5-b56c-305301e8c81e",
+                          "type" : "component"
+                        } ],
+                        "id" : "25a96dc0-6f40-433f-9ff3-1de459dd31a2",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "a0b5edca-8c68-4d53-aa0a-595cd439beb1",
+                      "type" : "component"
+                    } ],
+                    "id" : "fb0978f2-1b6c-41cd-8d21-a1cbb86c1212",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "Complementary and Alternative Medicine Chart",
+                        "textAlign" : "center",
+                        "textDecoration" : "{\"bold\":true}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "fa1632f5-2bd0-431a-8761-06cd44063737",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "fit" : "contain",
+                        "height" : 350,
+                        "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCXYYE7WIMSVD4XFGJR6EXUVGXPI\",\"contentType\":null}}",
+                        "overlayColor" : "",
+                        "position" : "center center",
+                        "width" : 76
+                      },
+                      "definition" : "dxp_base:image",
+                      "id" : "f54720ad-be4d-4097-8b97-266e5e96f42e",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "flex-start",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"ad0e7c7f-7bae-49d4-97d1-3fd50c949b95\",\"columns\":[{\"UUID\":\"1e91c97e-3be1-435f-9d5a-7c6ededf0aab\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "size" : "standard",
+                            "stretch" : "standard",
+                            "text" : "Download",
+                            "type" : "primary",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://app.schoox.com/library2/viewer.php?id=4590392&academyId=827540346\"}}}}"
+                          },
+                          "definition" : "dxp_base:button",
+                          "id" : "58285ef3-df55-4437-b7b6-8c49912fd534",
+                          "type" : "component"
+                        } ],
+                        "id" : "1e91c97e-3be1-435f-9d5a-7c6ededf0aab",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "ad0e7c7f-7bae-49d4-97d1-3fd50c949b95",
+                      "type" : "component"
+                    } ],
+                    "id" : "05b6e0fc-54ac-448d-baea-38dd05734ea5",
+                    "name" : "col2",
+                    "title" : "Column 2",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "8d9a4bc5-5fda-4d1c-8ee7-6a5898ad878f",
+                  "type" : "component"
+                }, {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "flex-start",
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"6889fd68-3cb0-4037-8d61-25ef69ab9539\",\"columns\":[{\"UUID\":\"e457e84b-8f4c-4864-a447-e7dad04ce900\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"51c83b72-4bbb-4166-a612-f96a85461d20\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "In-Hospital Drug Chart",
+                        "textAlign" : "center",
+                        "textDecoration" : "{\"bold\":true}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "00a25c38-5ecf-4fde-84ae-246b3e6df8e0",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "fit" : "contain",
+                        "height" : 350,
+                        "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCVAUB6UQTYVGSJOUQLJ233A7QPY\",\"contentType\":null}}",
+                        "overlayColor" : "",
+                        "position" : "center center",
+                        "width" : 100
+                      },
+                      "definition" : "dxp_base:image",
+                      "id" : "83c16d73-b0cd-4a67-a3a9-597244dfa1c2",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "flex-start",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"b74e647e-e01c-4432-b738-c34c23ea6c4b\",\"columns\":[{\"UUID\":\"ddf1400b-8705-4d7d-b978-991e42e58f3b\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "size" : "standard",
+                            "stretch" : "standard",
+                            "text" : "Download",
+                            "type" : "primary",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://app.schoox.com/library2/viewer.php?id=4590396&academyId=827540346\"}}}}"
+                          },
+                          "definition" : "dxp_base:button",
+                          "id" : "40b46803-b41a-4ed5-b9db-f8d44e036cee",
+                          "type" : "component"
+                        } ],
+                        "id" : "ddf1400b-8705-4d7d-b978-991e42e58f3b",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "b74e647e-e01c-4432-b738-c34c23ea6c4b",
+                      "type" : "component"
+                    } ],
+                    "id" : "e457e84b-8f4c-4864-a447-e7dad04ce900",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "In-Hospital Drugs by FAS Level and ASA Class",
+                        "textAlign" : "center",
+                        "textDecoration" : "{\"bold\":true}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "e9329983-0fe1-49b9-b4b8-31e027994d24",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "fit" : "contain",
+                        "height" : 350,
+                        "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCMAQMROQ2MBEYBKAIM2WYAPBY3Y\",\"contentType\":null}}",
+                        "overlayColor" : "",
+                        "position" : "center center",
+                        "width" : 86
+                      },
+                      "definition" : "dxp_base:image",
+                      "id" : "55d39c62-b45c-4bb7-95ee-4da34690081a",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "flex-start",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"7be54fc6-ab70-4654-88b6-3881ab5e92f2\",\"columns\":[{\"UUID\":\"2cf20a48-855b-47e4-afd5-3147257a860c\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "size" : "standard",
+                            "stretch" : "standard",
+                            "text" : "Download",
+                            "type" : "primary",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://app.schoox.com/library2/viewer.php?id=4590394&academyId=827540346\"}}}}"
+                          },
+                          "definition" : "dxp_base:button",
+                          "id" : "bcfa9f47-aea0-4c9e-a0fd-a524cc55a5c5",
+                          "type" : "component"
+                        } ],
+                        "id" : "2cf20a48-855b-47e4-afd5-3147257a860c",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      } ],
+                      "definition" : "dxp_layout:columns",
+                      "id" : "7be54fc6-ab70-4654-88b6-3881ab5e92f2",
+                      "type" : "component"
+                    } ],
+                    "id" : "51c83b72-4bbb-4166-a612-f96a85461d20",
+                    "name" : "col2",
+                    "title" : "Column 2",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "6889fd68-3cb0-4037-8d61-25ef69ab9539",
+                  "type" : "component"
+                } ],
+                "id" : "fcd8fc1d-16a6-4f67-ba34-2de3abe63f14",
+                "name" : "Content-Region-Has-Membership",
+                "title" : "Content-Region-Has-Membership",
+                "type" : "region"
+              }, {
+                "id" : "c28d1630-c7e3-4f92-93fd-e10a1c5eb44d",
+                "name" : "Content-Region-No-Membership",
+                "title" : "Content-Region-No-Membership",
+                "type" : "region"
+              } ],
+              "definition" : "c:membershipCheck",
+              "id" : "ccc8d5e7-cb4a-409f-b47d-dadba24086d6",
+              "type" : "component"
+            } ],
+            "id" : "718f9317-f8c7-4f5f-953f-ece30922b180",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "3a7f1c72-a768-4715-8553-20cfbc7372e9",
+          "type" : "component"
+        } ],
+        "id" : "ef818b1b-981f-477b-aca2-5d7fb5fd55ee",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "pageTitle" : "Drug Charts",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "ff15a6ea-0b6b-46b0-a959-da4bbc20e29b",
+          "type" : "component"
+        } ],
+        "id" : "58a5153f-2760-4acb-b978-7ccdfe6c04d4",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "a79d6067-4185-45f0-bddd-9aed82cb7c77",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-drug-charts"
+  },
+  "urlName" : "drug-charts"
+}

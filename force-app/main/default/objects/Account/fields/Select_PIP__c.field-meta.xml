@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Select_PIP__c</fullName>
+    <description>If checkbox for field &quot;Part of PIP?&quot; is selected, this field will indicate what PIP a business account is a part of.</description>
+    <label>Select PIP</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Banfield</fullName>
+                <default>false</default>
+                <label>Banfield</label>
+            </value>
+            <value>
+                <fullName>Thrive</fullName>
+                <default>false</default>
+                <label>Thrive</label>
+            </value>
+            <value>
+                <fullName>Indie Vets</fullName>
+                <default>false</default>
+                <label>Indie Vets</label>
+            </value>
+            <value>
+                <fullName>Encore</fullName>
+                <default>false</default>
+                <label>Encore</label>
+            </value>
+            <value>
+                <fullName>Sploot</fullName>
+                <default>false</default>
+                <label>Sploot</label>
+            </value>
+            <value>
+                <fullName>VMM</fullName>
+                <default>false</default>
+                <label>VMM</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

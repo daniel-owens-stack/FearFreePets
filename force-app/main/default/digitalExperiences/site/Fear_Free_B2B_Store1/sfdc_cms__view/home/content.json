@@ -1,0 +1,389 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Member Homepage",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"186a6387-9ee3-48c4-b50c-91882d125127\",\"columns\":[{\"UUID\":\"c2cf3e6d-8027-4c79-ab0c-97868eec9ab1\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "imageInfos" : "",
+                "richTextValue" : "<div style=\"background-color:#FFE6E5; padding: 15px; border: 3px solid red; border-radius: 15px\">\n    <h2 style=\"text-align: center;color: red; font-weight: bold; font-size: 24px\">Issues with your membership status or course access?</h2>    \n\t<p>If you had an account before we launched our new system, you may notice missing membership details or trouble accessing the education portal. We understand the importance of providing quality content and a seamless member experience, and our team is working hard to get everything running smoothly. We expect things to be resolved by next week. Thank you for your patience as we make improvements!<p>\t\n</div>"
+              },
+              "definition" : "community_builder:htmlEditor",
+              "id" : "882012d4-0a59-4135-bcf1-0c68e0dd3f46",
+              "type" : "component"
+            } ],
+            "id" : "c2cf3e6d-8027-4c79-ab0c-97868eec9ab1",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "186a6387-9ee3-48c4-b50c-91882d125127",
+          "type" : "component"
+        }, {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"16c36648-d45a-42b9-bbab-912ea07907a0\",\"columns\":[{\"UUID\":\"4d125f08-a15d-43e6-b6b3-a35793f35308\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"429a174f-1abe-4154-a380-c9563891a12f\",\"columnName\":\"Column 2\",\"columnKey\":\"6a3ea\",\"columnWidth\":\"3\",\"seedComponents\":[]},{\"UUID\":\"f4337fb2-b56b-477f-b272-9e2ac8564c04\",\"columnName\":\"Column 3\",\"columnKey\":\"8765b\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "center"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "backgroundColor" : "",
+                "isLinkable" : false,
+                "linkAssistiveText" : "",
+                "paddingHorizontal" : "medium",
+                "paddingVertical" : "none",
+                "text" : "{!User.Record.Name} Member Home Page",
+                "textAlign" : "left",
+                "textDecoration" : "{\"bold\":true}",
+                "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+              },
+              "definition" : "dxp_base:textBlock",
+              "id" : "d64d978f-60f9-4114-8a6b-9be041ceddb6",
+              "type" : "component"
+            } ],
+            "id" : "4d125f08-a15d-43e6-b6b3-a35793f35308",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          }, {
+            "children" : [ {
+              "attributes" : {
+                "alignment" : "left",
+                "size" : "standard",
+                "stretch" : "standard",
+                "text" : "Go to Education Portal",
+                "type" : "primary"
+              },
+              "definition" : "dxp_base:button",
+              "id" : "5ec69b03-cc98-4bfa-98ba-b993eecd6fb8",
+              "type" : "component"
+            }, {
+              "attributes" : { },
+              "definition" : "c:schooxAppRedirect",
+              "id" : "b7f4d177-6afb-41f3-ba1f-992e164e0adb",
+              "type" : "component"
+            } ],
+            "id" : "429a174f-1abe-4154-a380-c9563891a12f",
+            "name" : "6a3ea",
+            "title" : "Column 2",
+            "type" : "region"
+          }, {
+            "children" : [ {
+              "attributes" : {
+                "checkAcademiaMembership" : false,
+                "checkAccountMembership" : false,
+                "checkBoardingMembership" : false,
+                "checkCertification" : false,
+                "checkGroomerMembership" : false,
+                "checkPracticeMembership" : true,
+                "checkSitterMembership" : false,
+                "checkTrainerMembership" : false,
+                "checkVetProMembership" : false
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "alignment" : "left",
+                    "size" : "standard",
+                    "stretch" : "standard",
+                    "text" : "Go to Facility Certification Portal",
+                    "type" : "primary",
+                    "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"%7B%22linkInfo%22:%7B%22pageReference%22:%7B%22type%22:%22standard__webPage%22,%22attributes%22:%7B%22url%22:%22https://facilitycertification.fearfree.com/%22%7D%7D%7D%7D\"}}}}"
+                  },
+                  "definition" : "dxp_base:button",
+                  "id" : "d8b08c62-829f-436c-b9c9-f780ef1321ec",
+                  "type" : "component"
+                } ],
+                "id" : "9f129df7-08ce-4f45-9fd5-3fbc7af53d45",
+                "name" : "Content-Region-Has-Membership",
+                "title" : "Content-Region-Has-Membership",
+                "type" : "region"
+              }, {
+                "id" : "66b6713c-05a6-4e09-9c54-bb0519e89146",
+                "name" : "Content-Region-No-Membership",
+                "title" : "Content-Region-No-Membership",
+                "type" : "region"
+              } ],
+              "definition" : "c:membershipCheck",
+              "id" : "6b66184c-d784-4779-a1c2-7beced2bd854",
+              "type" : "component"
+            } ],
+            "id" : "f4337fb2-b56b-477f-b272-9e2ac8564c04",
+            "name" : "8765b",
+            "title" : "Column 3",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "16c36648-d45a-42b9-bbab-912ea07907a0",
+          "type" : "component"
+        }, {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "dxpStyle" : { },
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"b6c49373-39f2-44a7-af69-912aa0230105\",\"columns\":[{\"UUID\":\"c9cebf3a-66e6-40fc-925f-177076db37d0\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "columnGutterWidth" : "",
+                "columnMinHeight" : "",
+                "columnVerticalAlign" : "flex-start",
+                "layoutDirectionDesktop" : "row",
+                "layoutDirectionMobile" : "column",
+                "layoutDirectionTablet" : "column",
+                "sectionConfig" : "{\"UUID\":\"aecc8bb1-dfe7-40e6-9dff-4217ee232ff2\",\"columns\":[{\"UUID\":\"61e8b762-7625-444c-a84b-d0a67ba6a402\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : { },
+                  "definition" : "c:ffMembershipBanner",
+                  "id" : "37f2d84d-9f5b-46d4-b636-d0fc78f8fc65",
+                  "type" : "component"
+                }, {
+                  "attributes" : {
+                    "cardEightColor" : "light_gold",
+                    "cardEightDescription" : "Visit and share Fear Free’s website catered to pet owners and animal caregivers.",
+                    "cardEightLinkUrl" : "https://www.fearfreehappyhomes.com/",
+                    "cardEightOpenInNewTab" : true,
+                    "cardEightTitle" : "Fear Free Happy Homes",
+                    "cardFiveColor" : "light_gold",
+                    "cardFiveDescription" : "An active member exclusive, join to connect with like-minded professionals and share best practices.",
+                    "cardFiveLinkUrl" : "https://www.facebook.com/fearfreepets/",
+                    "cardFiveOpenInNewTab" : true,
+                    "cardFiveTitle" : "Facebook Community",
+                    "cardFourColor" : "light_blue",
+                    "cardFourDescription" : "A certified professional exclusive, opt-in and update your online directory listing.",
+                    "cardFourLinkUrl" : "/link4",
+                    "cardFourOpenInNewTab" : true,
+                    "cardFourTitle" : "My Directory Listing",
+                    "cardOneColor" : "light_blue",
+                    "cardOneDescription" : "Account details, order history, membership management, and billing management.",
+                    "cardOneLinkUrl" : "/myprofile",
+                    "cardOneOpenInNewTab" : false,
+                    "cardOneTitle" : "My Account",
+                    "cardSevenColor" : "light_blue",
+                    "cardSevenDescription" : "Find a job with a like-minded employer or find a Fear Free champion.",
+                    "cardSevenLinkUrl" : "https://fearfreepets.careerwebsite.com/home/index.cfm",
+                    "cardSevenOpenInNewTab" : true,
+                    "cardSevenTitle" : "Career Center",
+                    "cardSixColor" : "light_green",
+                    "cardSixDescription" : "An active member exclusive, get access to discounted products and services that align with Fear Free.",
+                    "cardSixLinkUrl" : "/store/preferred-product-program",
+                    "cardSixOpenInNewTab" : false,
+                    "cardSixTitle" : "Product Discounts",
+                    "cardThreeColor" : "light_green",
+                    "cardThreeDescription" : "Marketing resources, client education resources, professional resources, and more.",
+                    "cardThreeLinkUrl" : "/store/my-resources",
+                    "cardThreeOpenInNewTab" : false,
+                    "cardThreeTitle" : "My Resources",
+                    "cardTwoColor" : "light_gold",
+                    "cardTwoDescription" : "Access to education portal, client education resources, and more.",
+                    "cardTwoLinkUrl" : "/store/my-learning",
+                    "cardTwoOpenInNewTab" : false,
+                    "cardTwoTitle" : "My Learning"
+                  },
+                  "definition" : "c:memberHomeCardEight",
+                  "id" : "d8c77ead-f381-464c-9303-51b2fc36fb02",
+                  "type" : "component"
+                } ],
+                "id" : "61e8b762-7625-444c-a84b-d0a67ba6a402",
+                "name" : "col1",
+                "title" : "Column 1",
+                "type" : "region"
+              } ],
+              "definition" : "dxp_layout:columns",
+              "id" : "aecc8bb1-dfe7-40e6-9dff-4217ee232ff2",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "columnGutterWidth" : "",
+                "columnMinHeight" : "",
+                "columnVerticalAlign" : "flex-start",
+                "layoutDirectionDesktop" : "row",
+                "layoutDirectionMobile" : "column",
+                "layoutDirectionTablet" : "column",
+                "sectionConfig" : "{\"UUID\":\"0142364f-1e82-418c-838c-fd407dc23261\",\"columns\":[{\"UUID\":\"48b03372-81f0-4d63-8b94-9a0bb8cd3768\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "imageInfos" : "",
+                    "richTextValue" : "<div class=\"ffstore-link-desktop\"><a href=\"#\" target=\"_blank\"><img src=\"{!cmsMedia.MC7ZCRWWUKSVDTDBS5TEGW7O3ZSM}\"  alt=\"store\" title=\"store\"></a></div>\n<div class=\"ffstore-link-mobile\"><a href=\"#\" target=\"_blank\"><img src=\"{!cmsMedia.MCKONVWUDAUVAJRJTBBGV5BUYFK4}\"  alt=\"store\" title=\"store\"></a></div>"
+                  },
+                  "definition" : "community_builder:htmlEditor",
+                  "id" : "a4fae98d-c704-4f64-a2af-fde9683fe9fb",
+                  "type" : "component"
+                } ],
+                "id" : "48b03372-81f0-4d63-8b94-9a0bb8cd3768",
+                "name" : "col1",
+                "title" : "Column 1",
+                "type" : "region"
+              } ],
+              "definition" : "dxp_layout:columns",
+              "id" : "0142364f-1e82-418c-838c-fd407dc23261",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "backgroundColor" : "",
+                "isLinkable" : false,
+                "linkAssistiveText" : "",
+                "paddingHorizontal" : "none",
+                "paddingVertical" : "none",
+                "text" : "Checkout More Fear Free Offerings:",
+                "textAlign" : "left",
+                "textDecoration" : "{\"bold\":true}",
+                "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+              },
+              "definition" : "dxp_base:textBlock",
+              "id" : "5cb732af-1d0c-4b3e-944e-a6debfbc46b9",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "columnGutterWidth" : "",
+                "columnMinHeight" : "",
+                "columnVerticalAlign" : "flex-start",
+                "layoutDirectionDesktop" : "row",
+                "layoutDirectionMobile" : "column",
+                "layoutDirectionTablet" : "column",
+                "sectionConfig" : "{\"UUID\":\"9628d031-762b-4a07-860a-f7e34cf7b2de\",\"columns\":[{\"UUID\":\"38ed3895-3114-45af-a5c6-bfd38fbfb2b5\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "cardFourColor" : "light_blue",
+                    "cardFourDescription" : "View upcoming events that Fear Free is attending or hosting.",
+                    "cardFourLinkUrl" : "https://fearfree.com/education-resources/events/",
+                    "cardFourOpenInNewTab" : true,
+                    "cardFourTitle" : "Events",
+                    "cardOneColor" : "light_blue",
+                    "cardOneDescription" : "Read articles pertaining to Fear Free topics.",
+                    "cardOneLinkUrl" : "https://fearfree.com/education-resources/?_sft_content-type=blog",
+                    "cardOneOpenInNewTab" : true,
+                    "cardOneTitle" : "Blog",
+                    "cardThreeColor" : "light_green",
+                    "cardThreeDescription" : "View on-demand webinar recordings.",
+                    "cardThreeLinkUrl" : "https://fearfree.com/education-resources/?_sft_content-type=webinar",
+                    "cardThreeOpenInNewTab" : true,
+                    "cardThreeTitle" : "Webinars",
+                    "cardTwoColor" : "light_gold",
+                    "cardTwoDescription" : "Listen to Fear Free-hosted podcast episodes.",
+                    "cardTwoLinkUrl" : "https://fearfree.com/education-resources/?_sft_content-type=podcast",
+                    "cardTwoOpenInNewTab" : true,
+                    "cardTwoTitle" : "Podcasts"
+                  },
+                  "definition" : "c:memberHomeCardFour",
+                  "id" : "5e6eda72-7d17-436a-8238-73dc4c6fda4b",
+                  "type" : "component"
+                }, {
+                  "attributes" : {
+                    "categoryId" : "0ZGTR00000004lB4AQ",
+                    "objectApiName" : "ProductCategory",
+                    "pageType" : "standard__recordPage"
+                  },
+                  "definition" : "c:b2bFirstTimeLoginRedirect",
+                  "id" : "98458891-a3e0-4a1f-a532-847258ddafc5",
+                  "type" : "component"
+                } ],
+                "id" : "38ed3895-3114-45af-a5c6-bfd38fbfb2b5",
+                "name" : "col1",
+                "title" : "Column 1",
+                "type" : "region"
+              } ],
+              "definition" : "dxp_layout:columns",
+              "id" : "9628d031-762b-4a07-860a-f7e34cf7b2de",
+              "type" : "component"
+            } ],
+            "id" : "c9cebf3a-66e6-40fc-925f-177076db37d0",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "b6c49373-39f2-44a7-af69-912aa0230105",
+          "type" : "component"
+        } ],
+        "id" : "7dbaeb6e-c2d2-4f3a-a15f-9c6245fb8e93",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "dxpStyle" : { },
+            "pageTitle" : "Member Homepage",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "61fc1458-ae86-41cc-845d-c9f05a4afe99",
+          "type" : "component"
+        } ],
+        "id" : "0b5de100-13bf-4990-b839-3b06d2b89ac2",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "91c48bef-862b-46f7-a660-551fd2fb77be",
+      "type" : "component"
+    },
+    "contentOperations" : {
+      "operations" : [ {
+        "targetId" : "6b66184c-d784-4779-a1c2-7beced2bd854",
+        "isHiddenOnOperationSuccess" : false,
+        "isActive" : true,
+        "rule" : {
+          "name" : "1785175f-bc65-49b1-b2d3-e4dc7855ebbd",
+          "description" : "",
+          "criteriaType" : "AllCriteriaMatch",
+          "expressionCriteria" : [ {
+            "resource" : "User.Record.Admin_Account__c",
+            "operator" : "Equal",
+            "value" : true,
+            "criterionNumber" : 1
+          } ]
+        }
+      } ]
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "home"
+  },
+  "urlName" : "home"
+}

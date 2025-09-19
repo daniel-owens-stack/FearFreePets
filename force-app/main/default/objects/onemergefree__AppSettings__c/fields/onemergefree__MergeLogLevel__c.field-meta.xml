@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>onemergefree__MergeLogLevel__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Supported values; None, Normal, Debug. If no supported value present then the default is Normal.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Supported values; None, Normal, Debug. If no supported value present then the default is Normal.</inlineHelpText>
+    <label>Merge Log Level</label>
+    <length>20</length>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

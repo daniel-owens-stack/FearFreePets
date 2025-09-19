@@ -1,0 +1,102 @@
+<template>
+    <div class="listing-card-container">
+        <lightning-card class="lightning-card">
+            <div class="logo-title-container">
+                <div class="logo">
+                    <img lwc:if={listing.cp} class="listing-logo" src={heartLogoUrl} alt="certified-practice">
+                    <img lwc:elseif={listing.acc.IsPersonAccount} class="listing-logo" src={certProIndvMapMarkerUrl}
+                        alt="certified-individual-professional">
+                    <img lwc:else class="listing-logo" src={certProMapMarkerUrl} alt="certified-professional">
+                </div>
+                <div slot="title">
+                    <h3 class="listing-title">{listingName}
+                        <template lwc:if={listing.acc.Job_Title__c}>
+                            &nbsp;- {listing.acc.Job_Title__c}
+                        </template>
+                    </h3>
+                </div>
+            </div>
+            <div class="listing-body">
+                <div class="listing-info">
+                    <p class="listing-card-address">{distance} Miles away</p>
+                        <template lwc:if={listing.acc.Directory_Company__c}>
+                            <p class="listing-card-address">{listing.acc.Directory_Company__c}</p>
+                        </template>
+                    <p class="listing-card-address">{listingStreet}</p>
+                    <p class="listing-card-address">
+                        {listingCity}{listingState}{listingPostalCode}{listingCountryCode}</p>
+                        <template lwc:if={googleMapsDirectionsUrl}>
+                            <a clsss="listing-card-address directions-link" href={googleMapsDirectionsUrl} target="_blank" class="map-link">
+                                Get Directions
+                            </a>
+                        </template>  
+                        <div class="contact-info">
+                            <template lwc:if={listingPhone}>
+                                <div class="social-container">
+                                    <a href={listingPhone}><i class="fa-solid fa-phone"></i></a>
+                                </div>
+                            </template>
+                        
+                            <template lwc:if={listingEmail}>
+                                <div class="social-container">
+                                    <a href={listingEmail}><i class="fa-solid fa-envelope"></i></a>
+                                </div>
+                            </template>
+                        
+                            <template lwc:if={listingURL}>
+                                <div class="social-container">
+                                    <a href={listingURL}><i class="fa-solid fa-globe"></i></a>
+                                </div>
+                            </template>
+                        
+                            <template lwc:if={listingFacebook}>
+                                <div class="social-container">
+                                    <a href={listingFacebook}><i class="fa-brands fa-facebook"></i></a>
+                                </div>
+                            </template>
+                        
+                            <template lwc:if={listingInstagram}>
+                                <div class="social-container">
+                                    <a href={listingInstagram}><i class="fa-brands fa-square-instagram"></i></a>
+                                </div>
+                            </template>
+                        
+                            <template lwc:if={listingTwitter}>
+                                <div class="social-container">
+                                    <a href={listingTwitter}><i class="fa-brands fa-square-x-twitter"></i></a>
+                                </div>
+                            </template>
+                        
+                            <template lwc:if={listingLinkedIn}>
+                                <div class="social-container">
+                                    <a href={listingLinkedIn}><i class="fa-brands fa-linkedin"></i></a>
+                                </div>
+                            </template>
+                        </div>
+                        
+                </div>
+                <div class="logo-and-members-container">
+                    <img lwc:if={gpPracLogo} class="logo" src={gpPracLogo} alt="CP Logo" />
+                    <img lwc:if={erPracLogo} class="logo" src={erPracLogo} alt="ER CP Logo" />
+                    <img lwc:if={hcPracLogo} class="logo" src={hcPracLogo} alt="HC CP Logo" />
+                    <img lwc:if={certProLogo} class="logo" src={certProLogoUrl} alt="Certified Pro Logo" />
+                    <lightning-accordion if:true={hasChildAccounts} allow-multiple-sections-open>
+                        <lightning-accordion-section label="Members">
+                            <ul>
+                                <template for:each={childAccounts} for:item="account">
+                                    <li key={account.name}>
+                                        <p class="member-name">{account.Name}
+                                            <template lwc:if={account.Job_Title__c}>
+                                                &nbsp;- {account.Job_Title__c}
+                                            </template>
+                                        </p>
+                                    </li>
+                                </template>
+                            </ul>
+                        </lightning-accordion-section>
+                    </lightning-accordion>
+                </div>
+            </div>
+        </lightning-card>
+    </div>
+</template>

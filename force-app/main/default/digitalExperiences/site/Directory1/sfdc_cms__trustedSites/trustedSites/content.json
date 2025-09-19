@@ -1,0 +1,20 @@
+{
+  "type" : "sfdc_cms__trustedSites",
+  "title" : "trustedSites",
+  "contentBody" : {
+    "trustedSites" : [ {
+      "isActive" : true,
+      "source" : "https://maps.googleapis.com",
+      "sourceName" : "get location"
+    }, {
+      "isActive" : true,
+      "source" : "https://*.salesforce.com",
+      "sourceName" : "test"
+    }, {
+      "isActive" : true,
+      "source" : "https://use.typekit.net",
+      "sourceName" : "Bree font"
+    } ]
+  },
+  "urlName" : "trustedsites"
+}

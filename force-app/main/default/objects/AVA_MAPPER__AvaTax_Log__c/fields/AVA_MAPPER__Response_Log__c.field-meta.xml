@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AVA_MAPPER__Response_Log__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The tax call results sent back from AvaTax to Salesforce and the connector</description>
+    <inlineHelpText>The tax call results sent back from AvaTax to Salesforce and the connector</inlineHelpText>
+    <label>Response Log</label>
+    <length>131072</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

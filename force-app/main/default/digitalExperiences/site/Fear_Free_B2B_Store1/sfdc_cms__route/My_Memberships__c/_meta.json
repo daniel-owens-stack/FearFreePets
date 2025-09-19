@@ -1,0 +1,5 @@
+{
+  "apiName" : "My_Memberships__c",
+  "type" : "sfdc_cms__route",
+  "path" : "routes"
+}

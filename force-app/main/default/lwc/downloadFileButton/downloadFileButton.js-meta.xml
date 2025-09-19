@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property
+                name="fileContentId"
+                type="ContentReference"
+                label="Select File"
+                filter="cms_document"
+                description="Choose a CMS file to download."
+            />
+            <property
+                name="buttonLabel"
+                type="String"
+                label="Button Label"
+                default="Download File"
+                description="Text to display on the download button."
+            />
+             <property
+                name="alignment"
+                type="String"
+                label="Alignment"
+                default="center"
+                description="entner center, flex-start, flex-end"
+            />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

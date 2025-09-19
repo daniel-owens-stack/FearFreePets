@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>onemergefree__RecordsPerMatchingJobBatch__c</fullName>
+    <defaultValue>25</defaultValue>
+    <deprecated>false</deprecated>
+    <description>The number of Records matched by a Matching Job Batch in the 1-100 range. A high number reduces the consumption of the asynchronous transaction platform limit. The default value is 25.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The number of Records matched by a Matching Job Batch in the 1-100 range. A high number reduces the consumption of the asynchronous transaction platform limit. The default value is 25.</inlineHelpText>
+    <label>Records Per Matching Job Batch</label>
+    <precision>5</precision>
+    <required>true</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

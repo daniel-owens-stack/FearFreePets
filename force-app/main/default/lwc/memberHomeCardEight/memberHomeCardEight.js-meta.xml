@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="memberHomeCardEight">
+    <apiVersion>62.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="cardOneTitle" type="String" default="Card 1 Title" label="Card 1 Title"/>
+            <property name="cardOneDescription" type="String" default="Card 1 Description" label="Card 1 Description"/>
+            <property name="cardOneLinkUrl" type="String" default="/link1" label="Card 1 Link URL"/>
+            <property name="cardOneOpenInNewTab" type="Boolean" default="false" label="Card 1 Open in New Tab"/>
+            <property name="cardOneColor" type="String" default="light_blue" label="Card 1 Color"/>
+
+            <property name="cardTwoTitle" type="String" default="Card 2 Title" label="Card 2 Title"/>
+            <property name="cardTwoDescription" type="String" default="Card 2 Description" label="Card 2 Description"/>
+            <property name="cardTwoLinkUrl" type="String" default="/link2" label="Card 2 Link URL"/>
+            <property name="cardTwoOpenInNewTab" type="Boolean" default="false" label="Card 2 Open in New Tab"/>
+            <property name="cardTwoColor" type="String" default="light_gold" label="Card 2 Color"/>
+
+            <property name="cardThreeTitle" type="String" default="Card 3 Title" label="Card 3 Title"/>
+            <property name="cardThreeDescription" type="String" default="Card 3 Description" label="Card 3 Description"/>
+            <property name="cardThreeLinkUrl" type="String" default="/link2" label="Card 3 Link URL"/>
+            <property name="cardThreeOpenInNewTab" type="Boolean" default="false" label="Card 3 Open in New Tab"/>
+            <property name="cardThreeColor" type="String" default="light_green" label="Card 3 Color"/>
+
+            <property name="cardFourTitle" type="String" default="Card 4 Title" label="Card 4 Title"/>
+            <property name="cardFourDescription" type="String" default="Card 4 Description" label="Card 4 Description"/>
+            <property name="cardFourLinkUrl" type="String" default="/link4" label="Card 4 Link URL"/>
+            <property name="cardFourOpenInNewTab" type="Boolean" default="false" label="Card 4 Open in New Tab"/>
+            <property name="cardFourColor" type="String" default="light_blue" label="Card 4 Color"/>
+
+            <property name="cardFiveTitle" type="String" default="Card 5 Title" label="Card 5 Title"/>
+            <property name="cardFiveDescription" type="String" default="Card 5 Description" label="Card 3 Description"/>
+            <property name="cardFiveLinkUrl" type="String" default="/link5" label="Card 5 Link URL"/>
+            <property name="cardFiveOpenInNewTab" type="Boolean" default="false" label="Card 5 Open in New Tab"/>
+            <property name="cardFiveColor" type="String" default="light_gold" label="Card 5 Color"/>
+
+            <property name="cardSixTitle" type="String" default="Card 6 Title" label="Card 6 Title"/>
+            <property name="cardSixDescription" type="String" default="Card 6 Description" label="Card 6 Description"/>
+            <property name="cardSixLinkUrl" type="String" default="/link6" label="Card 6 Link URL"/>
+            <property name="cardSixOpenInNewTab" type="Boolean" default="false" label="Card 6 Open in New Tab"/>
+            <property name="cardSixColor" type="String" default="light_green" label="Card 6 Color"/>
+
+            <property name="cardSevenTitle" type="String" default="Card 7 Title" label="Card 7 Title"/>
+            <property name="cardSevenDescription" type="String" default="Card 7 Description" label="Card 7 Description"/>
+            <property name="cardSevenLinkUrl" type="String" default="/link7" label="Card 7 Link URL"/>
+            <property name="cardSevenOpenInNewTab" type="Boolean" default="false" label="Card 7 Open in New Tab"/>
+            <property name="cardSevenColor" type="String" default="light_blue" label="Card 7 Color"/>
+
+            <property name="cardEightTitle" type="String" default="Card 8 Title" label="Card 8 Title"/>
+            <property name="cardEightDescription" type="String" default="Card 8 Description" label="Card 8 Description"/>
+            <property name="cardEightLinkUrl" type="String" default="/link8" label="Card 8 Link URL"/>
+            <property name="cardEightOpenInNewTab" type="Boolean" default="false" label="Card 8 Open in New Tab"/>
+            <property name="cardEightColor" type="String" default="light_gold" label="Card 8 Color"/>
+        </targetConfig>
+        
+    </targetConfigs>
+</LightningComponentBundle>

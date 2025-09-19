@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>onemergefree__LogType__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The related log type.</description>
+    <inlineHelpText>The related log type.</inlineHelpText>
+    <label>Log Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Audit Event</fullName>
+                <default>false</default>
+                <label>Audit Event</label>
+            </value>
+            <value>
+                <fullName>Settings Error</fullName>
+                <default>false</default>
+                <label>Settings Error</label>
+            </value>
+            <value>
+                <fullName>Runtime Error</fullName>
+                <default>false</default>
+                <label>Runtime Error</label>
+            </value>
+            <value>
+                <fullName>Record Level Error</fullName>
+                <default>false</default>
+                <label>Record Level Error</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

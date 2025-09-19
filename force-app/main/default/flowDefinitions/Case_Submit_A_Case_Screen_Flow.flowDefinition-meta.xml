@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>1</activeVersionNumber>
+    <description>This screen flow allows a logged-in user to submit a case from the experience site. The flow will populate the contact and account for the logged in user on the case.</description>
+    <masterLabel>(Deprecated) Case: Submit A Case Screen Flow</masterLabel>
+</FlowDefinition>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Part_of_a_PIP__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Indicates whether a business account is part of a practice implementation group to achieve PC.</description>
+    <inlineHelpText>This field indicates whether a practice is currently a part of a practice implementation group to achieve PC.</inlineHelpText>
+    <label>Part of a PIP?</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

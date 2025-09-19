@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>On_Hold_Reason__c</fullName>
+    <deprecated>false</deprecated>
+    <description>If placing a Salesforce Ticket On Hold, please explain why you are placing it on hold.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If placing a Salesforce Ticket On Hold, please explain why you are placing it on hold.</inlineHelpText>
+    <label>On Hold Reason</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

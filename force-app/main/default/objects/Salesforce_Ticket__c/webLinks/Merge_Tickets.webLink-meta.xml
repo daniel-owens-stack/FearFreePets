@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Merge_Tickets</fullName>
+    <availability>online</availability>
+    <description>This List Button is used to launch the Flow &quot;Screen Flow - Merge Salesforce Tickets&quot; and Merge two or more SFT from a List View.</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Merge Tickets</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>/flow/Screen_Flow_Merge_Salesforce_Tickets?retURL=lightning/o/Salesforce_Ticket__c/list</url>
+</WebLink>

@@ -1,0 +1,16 @@
+<template>
+    <div class="banner-container">
+        <div if:true={showPLMAMessage} class="banner plma-banner">
+            <span>Your Veterinary Practice Certification membership is expired. Please visit the </span>
+            <a href="/mymemberships">My Memberships</a>
+            <span> page to view.</span>
+            <button if:true={isDismissable} class="dismiss-button" onclick={handleDismiss}>×</button>
+        </div>
+        <div if:true={showFallbackMessage} class="banner ilma-banner">
+            <span>You have an expired membership. Please visit the </span>
+            <a href="/mymemberships">My Memberships</a>
+            <span> page to view.</span>
+            <button if:true={isDismissable} class="dismiss-button" onclick={handleDismiss}>×</button>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>B2B Fear Free Membership Registration</name>
+    <style>none</style>
+    <subject>You&apos;re registered! Fear Free {!Account_Membership__c.Membership_Name__c}</subject>
+    <textOnly>Hello {!Account.Name},
+
+Welcome to Fear Free! You have been enrolled in the {!Membership__c.Name} Membership, which gives you access to online educational courses and resources to help you reduce fear, anxiety, and stress for the pets in your care.
+
+In this email, you will find a video to help you navigate your new account and an overview of the benefits included in your new membership.
+
+Watch Onboarding Video
+
+Member Benefits to Take Advantage of:
+
+Join the Fear Free Facebook Community to share advice, get feedback, and connect with fellow members.
+Browse our extensive Education Library to enroll in additional courses.
+Check out the educational downloads and marketing resources at your fingertips.
+
+If you have any questions or need help accessing your account, please do not hesitate to reach out to us at wags@fearfreepets.com.
+
+Happy learning!
+
+Wags &amp; Purrs,
+The Fear Free Team
+
+This is an automated email. Please do not reply directly to this message.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

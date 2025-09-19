@@ -1,0 +1,31 @@
+/* Make modal container a positioned parent for the spinner overlay */
+.modal-relative { position: relative; }
+
+/* Full-coverage overlay while loading */
+.spinner-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* Keep the amount input readable and right-aligned */
+.refund-input .slds-input {
+  width: 100%;
+  text-align: right;
+  padding-right: 1.25rem;
+}
+
+/* Hide browser number spinners so text never gets clipped */
+.refund-input input[type="number"]::-webkit-outer-spin-button,
+.refund-input input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.refund-input input[type="number"] { -moz-appearance: textfield; }
+
+/* Slightly wider modal on large screens */
+.slds-modal__container.slds-modal_large { max-width: 62rem; }

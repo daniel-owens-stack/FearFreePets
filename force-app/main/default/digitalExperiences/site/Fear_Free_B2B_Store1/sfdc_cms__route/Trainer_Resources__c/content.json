@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Trainer Resources",
+  "contentBody" : {
+    "activeViewId" : "Trainer_Resources",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-trainer-resources",
+    "urlPrefix" : "trainer-resources"
+  },
+  "urlName" : "trainer-resources"
+}

@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Press Release Templates",
+  "contentBody" : {
+    "activeViewId" : "Fear_Free_Press_Release_Templates",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-fear-free-press-release-templates",
+    "urlPrefix" : "press-release-templates"
+  },
+  "urlName" : "fear-free-press-release-templates"
+}

@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Veterinary Professional Resources",
+  "contentBody" : {
+    "activeViewId" : "Veterinary_Professional_Resources",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-veterinary-professional-resources",
+    "urlPrefix" : "veterinary-professional-resources"
+  },
+  "urlName" : "veterinary-professional-resources"
+}

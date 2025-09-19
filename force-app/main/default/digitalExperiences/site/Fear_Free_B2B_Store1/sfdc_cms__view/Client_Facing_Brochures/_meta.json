@@ -1,0 +1,5 @@
+{
+  "apiName" : "Client_Facing_Brochures",
+  "type" : "sfdc_cms__view",
+  "path" : "views"
+}

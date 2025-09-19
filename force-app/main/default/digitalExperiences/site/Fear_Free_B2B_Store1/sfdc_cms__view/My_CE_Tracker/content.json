@@ -1,0 +1,167 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "My CE Tracker",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "dxpStyle" : { },
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"fb6badb9-a285-4328-90b6-138f6845e107\",\"columns\":[{\"UUID\":\"8653c00a-c3f4-4895-a339-462e653682cc\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "backgroundColor" : "",
+                "dxpStyle" : { },
+                "isLinkable" : false,
+                "linkAssistiveText" : "",
+                "paddingHorizontal" : "none",
+                "paddingVertical" : "none",
+                "text" : "My Fear Free CE Hours\n",
+                "textAlign" : "center",
+                "textColor" : "rgb(204, 154, 44)",
+                "textDecoration" : "{\"bold\":true}",
+                "textDisplayInfo" : "{\"textStyle\":\"heading-large\",\"headingTag\":\"h2\"}"
+              },
+              "definition" : "dxp_base:textBlock",
+              "id" : "f5f6342a-80bc-4bdd-9ee1-c9ae815f50a1",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "backgroundColor" : "",
+                "dxpStyle" : { },
+                "isLinkable" : false,
+                "linkAssistiveText" : "",
+                "paddingHorizontal" : "none",
+                "paddingVertical" : "none",
+                "text" : "Total CE Hours:",
+                "textAlign" : "center",
+                "textColor" : "rgb(204, 154, 44)",
+                "textDecoration" : "{\"bold\":true}",
+                "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\"}"
+              },
+              "definition" : "dxp_base:textBlock",
+              "id" : "913970a7-39cf-425d-9337-bdad3748c91f",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "columnGutterWidth" : "",
+                "columnMinHeight" : "",
+                "columnVerticalAlign" : "flex-start",
+                "dxpStyle" : { },
+                "layoutDirectionDesktop" : "row",
+                "layoutDirectionMobile" : "column",
+                "layoutDirectionTablet" : "column",
+                "sectionConfig" : "{\"UUID\":\"31b1fe6a-b1c9-49a2-98ac-79b0b8f65d08\",\"columns\":[{\"UUID\":\"1a4b484b-6e6c-4b79-8424-e442d9e79029\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"4\",\"seedComponents\":[]},{\"UUID\":\"e5abb461-cf29-4e3d-a796-b11b8808f34a\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"4\",\"seedComponents\":[]},{\"UUID\":\"76adc223-37d1-4af8-b2d4-5ec7eafb3255\",\"columnName\":\"Column 3\",\"columnKey\":\"c3e1b\",\"columnWidth\":\"4\",\"seedComponents\":[]}]}"
+              },
+              "children" : [ {
+                "id" : "1a4b484b-6e6c-4b79-8424-e442d9e79029",
+                "name" : "col1",
+                "title" : "Column 1",
+                "type" : "region"
+              }, {
+                "children" : [ {
+                  "attributes" : {
+                    "dxpStyle" : { },
+                    "flowName" : "{\"flowName\":\"Screen_Show_CE_Hours\",\"flowLabel\":\"Screen - Show CE Hours\"}"
+                  },
+                  "definition" : "dxp_flow:flow",
+                  "id" : "767bdaed-1a0a-463a-8954-c194cced15fa",
+                  "type" : "component"
+                } ],
+                "id" : "e5abb461-cf29-4e3d-a796-b11b8808f34a",
+                "name" : "col2",
+                "title" : "Column 2",
+                "type" : "region"
+              }, {
+                "id" : "76adc223-37d1-4af8-b2d4-5ec7eafb3255",
+                "name" : "c3e1b",
+                "title" : "Column 3",
+                "type" : "region"
+              } ],
+              "definition" : "dxp_layout:columns",
+              "id" : "31b1fe6a-b1c9-49a2-98ac-79b0b8f65d08",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "alignment" : "center",
+                "dxpStyle" : { },
+                "lineStyle" : "solid",
+                "size" : 1,
+                "width" : 100
+              },
+              "definition" : "dxp_base:horizontalLine",
+              "id" : "f9a55cb7-43a2-493b-817d-5146cd6b0e6c",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "columnGutterWidth" : "",
+                "dxpStyle" : { },
+                "sectionConfig" : "{\"UUID\":\"2b54f977-a4a3-4427-9f1e-3bee7934ce5a\",\"columns\":[{\"UUID\":\"3aef33de-1774-4b43-a77e-c85ce90e03c8\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "dxpStyle" : { },
+                    "flowName" : "{\"flowName\":\"Data_Table_My_CE_Courses\",\"flowLabel\":\"Data Table - My CE Courses\"}"
+                  },
+                  "definition" : "dxp_flow:flow",
+                  "id" : "58cf6a06-d905-4027-ac61-e8179d6fa705",
+                  "type" : "component"
+                } ],
+                "id" : "3aef33de-1774-4b43-a77e-c85ce90e03c8",
+                "name" : "col1",
+                "title" : "Column 1",
+                "type" : "region"
+              } ],
+              "definition" : "dxp_layout:columns",
+              "id" : "2b54f977-a4a3-4427-9f1e-3bee7934ce5a",
+              "type" : "component"
+            } ],
+            "id" : "8653c00a-c3f4-4895-a339-462e653682cc",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "fb6badb9-a285-4328-90b6-138f6845e107",
+          "type" : "component"
+        } ],
+        "id" : "f0c5fa57-f6cb-4b05-a06e-f2a4bdff567e",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "dxpStyle" : { },
+            "pageTitle" : "My CE Tracker",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "510825ac-08ac-4518-8752-2de36c6076da",
+          "type" : "component"
+        } ],
+        "id" : "b63d6eef-96b7-41e5-90bf-4ae148a95a3c",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "77d08bbb-4ca8-4cf6-b247-038211a36fba",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-my-ce-tracker"
+  },
+  "urlName" : "my-ce-tracker"
+}

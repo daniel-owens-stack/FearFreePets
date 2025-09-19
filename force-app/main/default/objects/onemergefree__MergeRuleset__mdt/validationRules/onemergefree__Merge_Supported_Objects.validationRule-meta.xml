@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>onemergefree__Merge_Supported_Objects</fullName>
+    <active>true</active>
+    <description>Merge is supported for the standard Account, Contact, Lead and Individual objects.</description>
+    <errorConditionFormula>AND(
+ onemergefree__SObjectType__c&lt;&gt;&apos;Account&apos;,
+ onemergefree__SObjectType__c&lt;&gt;&apos;Contact&apos;,
+ onemergefree__SObjectType__c&lt;&gt;&apos;Lead&apos;,
+ onemergefree__SObjectType__c&lt;&gt;&apos;Individual&apos;
+)</errorConditionFormula>
+    <errorDisplayField>onemergefree__SObjectType__c</errorDisplayField>
+    <errorMessage>Merge is supported for the standard Account, Contact, Lead and Individual objects.</errorMessage>
+</ValidationRule>

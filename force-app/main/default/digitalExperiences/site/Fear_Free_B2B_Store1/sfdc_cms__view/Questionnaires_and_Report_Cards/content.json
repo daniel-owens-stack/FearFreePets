@@ -1,0 +1,1027 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Questionnaires and Report Cards",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"84f47884-dc1c-4c43-a862-cf691d927244\",\"columns\":[{\"UUID\":\"97cbe097-dcaf-46dd-a092-f0da28fbb4d2\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "checkAccountMembership" : false,
+                "checkBoardingMembership" : false,
+                "checkCertification" : false,
+                "checkGroomerMembership" : false,
+                "checkPracticeMembership" : false,
+                "checkSitterMembership" : false,
+                "checkTrainerMembership" : false,
+                "checkVetProMembership" : true
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "flex-start",
+                    "dxpStyle" : {
+                      "margin" : {
+                        "bottom" : "",
+                        "left" : "",
+                        "right" : "",
+                        "top" : "40px"
+                      }
+                    },
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"d1c1fba9-fbeb-4ad3-a4a2-dad6e6d0d567\",\"columns\":[{\"UUID\":\"021aab50-942a-42cf-a654-973febd9135f\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "Emotional Medical Record Templates",
+                        "textAlign" : "center",
+                        "textDecoration" : "{\"bold\":true}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "f3415d9f-8803-48ad-b29e-faedfb9b761e",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "fit" : "contain",
+                        "height" : 350,
+                        "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MC3ONH4345ONBJ5JQLJQM74RPKIA\",\"contentType\":null}}",
+                        "overlayColor" : "",
+                        "position" : "center center",
+                        "width" : 50
+                      },
+                      "definition" : "dxp_base:image",
+                      "id" : "3abfd797-5c00-4dbc-a0d3-38e2cbe1f077",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "flex-start",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"d63dea51-80e7-4c31-9805-4b7029852e21\",\"columns\":[{\"UUID\":\"5495c698-eeba-4e92-abcb-8556a15860ea\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"dc05bdf3-03ca-49c5-a2b4-d0ef73d2bf5a\",\"columnName\":\"Column 2\",\"columnKey\":\"a269e\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Fillable PDF – Dogs and Cats",
+                            "textAlign" : "center",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-small\",\"headingTag\":\"h4\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "4beee26d-5eca-4b5d-bdd4-b8abf6eb0852",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "size" : "standard",
+                            "stretch" : "standard",
+                            "text" : "Download",
+                            "type" : "primary",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://app.schoox.com/library2/viewer.php?id=4590393&academyId=827540346\"}}}}"
+                          },
+                          "definition" : "dxp_base:button",
+                          "id" : "41bdc3ca-1806-4352-a3f1-a1822a4a6963",
+                          "type" : "component"
+                        } ],
+                        "id" : "5495c698-eeba-4e92-abcb-8556a15860ea",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Fillable PDF – Birds",
+                            "textAlign" : "center",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-small\",\"headingTag\":\"h4\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "10af1a0e-be87-45de-b2fa-d44c1fedbf7d",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "size" : "standard",
+                            "stretch" : "standard",
+                            "text" : "Download",
+                            "type" : "primary",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://app.schoox.com/library2/viewer.php?id=4591982&academyId=827540346\"}}}}"
+                          },
+                          "definition" : "dxp_base:button",
+                          "id" : "872c9c0e-5f3f-4a9e-939c-9d9da99d14ad",
+                          "type" : "component"
+                        } ],
+                        "id" : "dc05bdf3-03ca-49c5-a2b4-d0ef73d2bf5a",
+                        "name" : "a269e",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      } ],
+                      "customCssClasses" : "button-row",
+                      "definition" : "dxp_layout:columns",
+                      "id" : "d63dea51-80e7-4c31-9805-4b7029852e21",
+                      "type" : "component"
+                    } ],
+                    "id" : "021aab50-942a-42cf-a654-973febd9135f",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "d1c1fba9-fbeb-4ad3-a4a2-dad6e6d0d567",
+                  "type" : "component"
+                }, {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "flex-start",
+                    "dxpStyle" : {
+                      "margin" : {
+                        "bottom" : "",
+                        "left" : "",
+                        "right" : "",
+                        "top" : "40px"
+                      }
+                    },
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"021c6b0e-a3d9-4cc7-b37e-6ee026f24edc\",\"columns\":[{\"UUID\":\"cda550c3-2d45-4419-8937-2dc04afdf9d2\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "Pre-Visit Client Questionnaires",
+                        "textAlign" : "center",
+                        "textDecoration" : "{\"bold\":true}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "b84b1ce2-d706-4f07-aa89-b23ad42f64d1",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "fit" : "contain",
+                        "height" : 350,
+                        "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCNU5C6GFHSJEBRNVVEDNLLJBNLM\",\"contentType\":null}}",
+                        "overlayColor" : "",
+                        "position" : "center center",
+                        "width" : 50
+                      },
+                      "definition" : "dxp_base:image",
+                      "id" : "0d8df679-f3e5-42fc-ae0f-3855011e157c",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "flex-end",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"20f71000-4077-4af3-906c-2abaada37035\",\"columns\":[{\"UUID\":\"55b0a751-e790-4918-9902-ca6189279108\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"4\",\"seedComponents\":[]},{\"UUID\":\"7ffa0693-b1ea-45d2-bd30-176d60c1b314\",\"columnName\":\"Column 2\",\"columnKey\":\"a269e\",\"columnWidth\":\"4\",\"seedComponents\":[]},{\"UUID\":\"06c02fac-2520-4956-8eee-e1c03ecb2d1a\",\"columnName\":\"Column 3\",\"columnKey\":\"29f07\",\"columnWidth\":\"4\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Fillable PDF – Dogs and Cats",
+                            "textAlign" : "center",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-small\",\"headingTag\":\"h4\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "42a1260e-090a-48b2-a44c-c007618caccf",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "size" : "standard",
+                            "stretch" : "standard",
+                            "text" : "Download",
+                            "type" : "primary",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://app.schoox.com/library2/viewer.php?id=4590398&academyId=827540346\"}}}}"
+                          },
+                          "definition" : "dxp_base:button",
+                          "id" : "4b8844f9-4e89-46d8-8d51-ec5ff5dbd6a0",
+                          "type" : "component"
+                        } ],
+                        "id" : "55b0a751-e790-4918-9902-ca6189279108",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Fillable PDF – Birds",
+                            "textAlign" : "center",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-small\",\"headingTag\":\"h4\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "8a8696ac-5321-4c19-b5bb-ea03a0e59baa",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "size" : "standard",
+                            "stretch" : "standard",
+                            "text" : "Download",
+                            "type" : "primary",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://app.schoox.com/library2/viewer.php?id=4643925&academyId=827540346\"}}}}"
+                          },
+                          "definition" : "dxp_base:button",
+                          "id" : "46633bac-4ea3-4d5f-abdc-ae137cbaa96b",
+                          "type" : "component"
+                        } ],
+                        "id" : "7ffa0693-b1ea-45d2-bd30-176d60c1b314",
+                        "name" : "a269e",
+                        "title" : "Column 2",
+                        "type" : "region"
+                      }, {
+                        "children" : [ {
+                          "attributes" : {
+                            "backgroundColor" : "",
+                            "isLinkable" : false,
+                            "linkAssistiveText" : "",
+                            "paddingHorizontal" : "none",
+                            "paddingVertical" : "none",
+                            "text" : "Fillable PDF – Mobile Practice",
+                            "textAlign" : "center",
+                            "textDecoration" : "{}",
+                            "textDisplayInfo" : "{\"textStyle\":\"heading-small\",\"headingTag\":\"h4\",\"enableOverride\":false}"
+                          },
+                          "definition" : "dxp_base:textBlock",
+                          "id" : "8bf387f4-4915-4c29-83e2-6cdfabcaf5db",
+                          "type" : "component"
+                        }, {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "size" : "standard",
+                            "stretch" : "standard",
+                            "text" : "Download",
+                            "type" : "primary",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://app.schoox.com/library2/viewer.php?id=4643889&academyId=827540346\"}}}}"
+                          },
+                          "definition" : "dxp_base:button",
+                          "id" : "c7d9719c-00ab-480f-ae4f-5a1f79baccc9",
+                          "type" : "component"
+                        } ],
+                        "id" : "06c02fac-2520-4956-8eee-e1c03ecb2d1a",
+                        "name" : "29f07",
+                        "title" : "Column 3",
+                        "type" : "region"
+                      } ],
+                      "customCssClasses" : "button-row",
+                      "definition" : "dxp_layout:columns",
+                      "id" : "20f71000-4077-4af3-906c-2abaada37035",
+                      "type" : "component"
+                    } ],
+                    "id" : "cda550c3-2d45-4419-8937-2dc04afdf9d2",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "021c6b0e-a3d9-4cc7-b37e-6ee026f24edc",
+                  "type" : "component"
+                }, {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "flex-start",
+                    "dxpStyle" : {
+                      "margin" : {
+                        "bottom" : "",
+                        "left" : "",
+                        "right" : "",
+                        "top" : "40px"
+                      }
+                    },
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"ec70166a-5b24-4a79-9cc5-70fb7e30eac6\",\"columns\":[{\"UUID\":\"9f05fd09-e3b8-4e88-97f9-bcc605b519ab\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "Patient Report Card",
+                        "textAlign" : "center",
+                        "textDecoration" : "{\"bold\":true}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "c5b110dc-2a02-4b60-9575-304ebb7cb048",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "fit" : "contain",
+                        "height" : 350,
+                        "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCGC32DUAPYVHSTNWLXWQUOFU5PE\",\"contentType\":null}}",
+                        "overlayColor" : "",
+                        "position" : "center center",
+                        "width" : 50
+                      },
+                      "definition" : "dxp_base:image",
+                      "id" : "202bc972-347b-41de-8f2f-c5097c734d91",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "flex-end",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"5b464df0-2ac2-4c4f-8611-7100bfc99f56\",\"columns\":[{\"UUID\":\"34f644f3-c4be-4844-b95c-7f8142f7dda2\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "size" : "standard",
+                            "stretch" : "standard",
+                            "text" : "Download",
+                            "type" : "primary",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://app.schoox.com/library2/viewer.php?id=4643923&academyId=827540346\"}}}}"
+                          },
+                          "definition" : "dxp_base:button",
+                          "id" : "0d9ce076-a0cc-4026-877d-bcb80533ea5e",
+                          "type" : "component"
+                        } ],
+                        "id" : "34f644f3-c4be-4844-b95c-7f8142f7dda2",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      } ],
+                      "customCssClasses" : "button-row",
+                      "definition" : "dxp_layout:columns",
+                      "id" : "5b464df0-2ac2-4c4f-8611-7100bfc99f56",
+                      "type" : "component"
+                    } ],
+                    "id" : "9f05fd09-e3b8-4e88-97f9-bcc605b519ab",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "ec70166a-5b24-4a79-9cc5-70fb7e30eac6",
+                  "type" : "component"
+                }, {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "flex-start",
+                    "dxpStyle" : {
+                      "margin" : {
+                        "bottom" : "",
+                        "left" : "",
+                        "right" : "",
+                        "top" : "40px"
+                      }
+                    },
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"64f83547-edba-4c88-9f69-db8d1e1ab90e\",\"columns\":[{\"UUID\":\"e33cda4e-9dc7-403d-ab2c-412a07316c81\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "Evaluate Fear Triggers in Your Hospital",
+                        "textAlign" : "center",
+                        "textDecoration" : "{\"bold\":true}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "773e0802-c53a-43e6-8f96-6768eb7f7f13",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "fit" : "contain",
+                        "height" : 350,
+                        "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MC3RRUGSIJFZFOJJ4XBO5WIKLUKE\",\"contentType\":null}}",
+                        "overlayColor" : "",
+                        "position" : "center center",
+                        "width" : 50
+                      },
+                      "definition" : "dxp_base:image",
+                      "id" : "2befd8a0-7758-47e4-a84f-2ca56b2f4bb7",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "flex-end",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"a114eadf-fa9a-4606-9073-c3be2aa950e6\",\"columns\":[{\"UUID\":\"d444ea6a-9d27-4cdd-aadc-31d0ca080ec2\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "buttonLabel" : "Download",
+                            "fileContentId" : "MCTZDRZXI6XJFINHN7JHXJBX6HSE"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "7eebeca5-f456-49bb-9345-053c04d6a64a",
+                          "type" : "component"
+                        } ],
+                        "id" : "d444ea6a-9d27-4cdd-aadc-31d0ca080ec2",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      } ],
+                      "customCssClasses" : "button-row",
+                      "definition" : "dxp_layout:columns",
+                      "id" : "a114eadf-fa9a-4606-9073-c3be2aa950e6",
+                      "type" : "component"
+                    } ],
+                    "id" : "e33cda4e-9dc7-403d-ab2c-412a07316c81",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "64f83547-edba-4c88-9f69-db8d1e1ab90e",
+                  "type" : "component"
+                } ],
+                "id" : "10da19e1-b258-4483-88d6-e4c1ac5a3647",
+                "name" : "Content-Region-Has-Membership",
+                "title" : "Content-Region-Has-Membership",
+                "type" : "region"
+              }, {
+                "id" : "50953be9-e67e-4839-b789-824422411314",
+                "name" : "Content-Region-No-Membership",
+                "title" : "Content-Region-No-Membership",
+                "type" : "region"
+              } ],
+              "definition" : "c:membershipCheck",
+              "id" : "3d8dad4f-0e3d-45e0-bf49-7bd81ae1497e",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "checkAccountMembership" : false,
+                "checkBoardingMembership" : false,
+                "checkCertification" : false,
+                "checkGroomerMembership" : true,
+                "checkPracticeMembership" : false,
+                "checkSitterMembership" : false,
+                "checkTrainerMembership" : false,
+                "checkVetProMembership" : false
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "flex-start",
+                    "dxpStyle" : {
+                      "margin" : {
+                        "bottom" : "",
+                        "left" : "",
+                        "right" : "",
+                        "top" : "40px"
+                      }
+                    },
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"60d4fc95-c621-463d-ad5a-3967104bda51\",\"columns\":[{\"UUID\":\"6ff156dd-be4a-490a-bfe6-fd230c493de9\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "Fear Free Groomer Client Report Card",
+                        "textAlign" : "center",
+                        "textDecoration" : "{\"bold\":true}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "f85721ba-418f-46e6-a8cc-dd6bf06eeea9",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "fit" : "contain",
+                        "height" : 350,
+                        "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCPWCYEDBEHZCTLADVNX4NKXTEXI\",\"contentType\":null}}",
+                        "overlayColor" : "",
+                        "position" : "center center",
+                        "width" : 50
+                      },
+                      "definition" : "dxp_base:image",
+                      "id" : "c07947ee-c5cd-4cb6-a65b-c5d76579d4eb",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "flex-end",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"27d9816d-242b-4448-ab9e-e3da0a52b87b\",\"columns\":[{\"UUID\":\"2681fde8-33a8-4fc9-adf1-fddf2df12040\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "size" : "standard",
+                            "stretch" : "standard",
+                            "text" : "Download",
+                            "type" : "primary",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://app.schoox.com/library2/viewer.php?id=4643912&academyId=827540346\"}}}}"
+                          },
+                          "definition" : "dxp_base:button",
+                          "id" : "54b1a377-23f5-4c23-9623-b3197aa42ca5",
+                          "type" : "component"
+                        } ],
+                        "id" : "2681fde8-33a8-4fc9-adf1-fddf2df12040",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      } ],
+                      "customCssClasses" : "button-row",
+                      "definition" : "dxp_layout:columns",
+                      "id" : "27d9816d-242b-4448-ab9e-e3da0a52b87b",
+                      "type" : "component"
+                    } ],
+                    "id" : "6ff156dd-be4a-490a-bfe6-fd230c493de9",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "60d4fc95-c621-463d-ad5a-3967104bda51",
+                  "type" : "component"
+                } ],
+                "id" : "27464d2e-1997-43dd-b04c-4387e9de695d",
+                "name" : "Content-Region-Has-Membership",
+                "title" : "Content-Region-Has-Membership",
+                "type" : "region"
+              }, {
+                "id" : "a89d4969-edde-4c85-9b5f-adcd4af20e7a",
+                "name" : "Content-Region-No-Membership",
+                "title" : "Content-Region-No-Membership",
+                "type" : "region"
+              } ],
+              "definition" : "c:membershipCheck",
+              "id" : "edb10435-6756-4af7-ac4e-fb919ec32b4a",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "checkAccountMembership" : false,
+                "checkBoardingMembership" : false,
+                "checkCertification" : false,
+                "checkGroomerMembership" : false,
+                "checkPracticeMembership" : false,
+                "checkSitterMembership" : false,
+                "checkTrainerMembership" : true,
+                "checkVetProMembership" : false
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "flex-start",
+                    "dxpStyle" : {
+                      "margin" : {
+                        "bottom" : "",
+                        "left" : "",
+                        "right" : "",
+                        "top" : "40px"
+                      }
+                    },
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"c58e219f-c039-4890-a0df-26761cc23309\",\"columns\":[{\"UUID\":\"3d0bc16d-aafa-4035-ad13-964af4aa7a01\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "Fear Free Trainer Client Report Card\n",
+                        "textAlign" : "center",
+                        "textDecoration" : "{\"bold\":true}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "b3763778-5ccb-4039-bf26-1f2648ce71fc",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "fit" : "contain",
+                        "height" : 350,
+                        "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCPWCYEDBEHZCTLADVNX4NKXTEXI\",\"contentType\":null}}",
+                        "overlayColor" : "",
+                        "position" : "center center",
+                        "width" : 50
+                      },
+                      "definition" : "dxp_base:image",
+                      "id" : "46f8c19a-f162-4ba6-af8a-359475f8816f",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "flex-end",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"16013e51-6088-4045-a186-946e28370721\",\"columns\":[{\"UUID\":\"9625b057-7f12-46be-b2e6-eea376627348\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "size" : "standard",
+                            "stretch" : "standard",
+                            "text" : "Download",
+                            "type" : "primary",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://app.schoox.com/library2/viewer.php?id=4643917&academyId=827540346\"}}}}"
+                          },
+                          "definition" : "dxp_base:button",
+                          "id" : "1433f213-bb36-4c88-8f52-31439800bda6",
+                          "type" : "component"
+                        } ],
+                        "id" : "9625b057-7f12-46be-b2e6-eea376627348",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      } ],
+                      "customCssClasses" : "button-row",
+                      "definition" : "dxp_layout:columns",
+                      "id" : "16013e51-6088-4045-a186-946e28370721",
+                      "type" : "component"
+                    } ],
+                    "id" : "3d0bc16d-aafa-4035-ad13-964af4aa7a01",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "c58e219f-c039-4890-a0df-26761cc23309",
+                  "type" : "component"
+                } ],
+                "id" : "cdc26040-1c67-48cf-8a0a-5210c40f4f70",
+                "name" : "Content-Region-Has-Membership",
+                "title" : "Content-Region-Has-Membership",
+                "type" : "region"
+              }, {
+                "id" : "317de00f-f103-40c1-a1b2-f950aefd881b",
+                "name" : "Content-Region-No-Membership",
+                "title" : "Content-Region-No-Membership",
+                "type" : "region"
+              } ],
+              "definition" : "c:membershipCheck",
+              "id" : "03752ad8-4d31-4c8c-a96d-a2025a37183b",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "checkAccountMembership" : false,
+                "checkBoardingMembership" : false,
+                "checkCertification" : false,
+                "checkGroomerMembership" : false,
+                "checkPracticeMembership" : false,
+                "checkSitterMembership" : true,
+                "checkTrainerMembership" : false,
+                "checkVetProMembership" : false
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "flex-start",
+                    "dxpStyle" : {
+                      "margin" : {
+                        "bottom" : "",
+                        "left" : "",
+                        "right" : "",
+                        "top" : "40px"
+                      }
+                    },
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"da8f7544-192c-4d89-9217-d2ef797961f5\",\"columns\":[{\"UUID\":\"70d15ce4-defc-45d7-a7fd-bad5625e0027\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "Preferences and Pet Peeves - Pet Sitter",
+                        "textAlign" : "center",
+                        "textDecoration" : "{\"bold\":true}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "4cef3fc5-4394-4396-9cd3-58b0bd72884c",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "fit" : "contain",
+                        "height" : 350,
+                        "imageInfo" : "{\"imageInfoV1\":{\"url\":\"\",\"altText\":\"\",\"contentKey\":\"MCIGMI663U2BDD3DXUL5ZJP7HXNI\",\"contentType\":null}}",
+                        "overlayColor" : "",
+                        "position" : "center center",
+                        "width" : 50
+                      },
+                      "definition" : "dxp_base:image",
+                      "id" : "a6af1bce-a0ed-44c8-8521-aeddd7082c4b",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "flex-end",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"089186e3-7aa6-4fda-99b0-2985b552121e\",\"columns\":[{\"UUID\":\"415ee353-8db9-4ed2-ab0b-a12835b8859c\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "buttonLabel" : "Download File",
+                            "fileContentId" : "MCLIOHQGFFOJCM5AABVCO4TJ5UPU"
+                          },
+                          "definition" : "c:downloadFileButton",
+                          "id" : "85dd6300-9e66-4bc6-8dbf-721ba5e8fa7a",
+                          "type" : "component"
+                        } ],
+                        "id" : "415ee353-8db9-4ed2-ab0b-a12835b8859c",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      } ],
+                      "customCssClasses" : "button-row",
+                      "definition" : "dxp_layout:columns",
+                      "id" : "089186e3-7aa6-4fda-99b0-2985b552121e",
+                      "type" : "component"
+                    } ],
+                    "id" : "70d15ce4-defc-45d7-a7fd-bad5625e0027",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "da8f7544-192c-4d89-9217-d2ef797961f5",
+                  "type" : "component"
+                } ],
+                "id" : "4534cb98-bdd8-46e3-aca4-45ec6304c9a7",
+                "name" : "Content-Region-Has-Membership",
+                "title" : "Content-Region-Has-Membership",
+                "type" : "region"
+              }, {
+                "id" : "53e62592-3c8f-4436-8ea8-7b760eccb8a2",
+                "name" : "Content-Region-No-Membership",
+                "title" : "Content-Region-No-Membership",
+                "type" : "region"
+              } ],
+              "definition" : "c:membershipCheck",
+              "id" : "2938f752-e35e-425f-bb4f-1224c085c9cc",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "checkAccountMembership" : false,
+                "checkBoardingMembership" : true,
+                "checkCertification" : false,
+                "checkGroomerMembership" : false,
+                "checkPracticeMembership" : false,
+                "checkSitterMembership" : false,
+                "checkTrainerMembership" : false,
+                "checkVetProMembership" : false
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "columnGutterWidth" : "",
+                    "columnMinHeight" : "",
+                    "columnVerticalAlign" : "flex-start",
+                    "dxpStyle" : {
+                      "margin" : {
+                        "bottom" : "",
+                        "left" : "",
+                        "right" : "",
+                        "top" : "40px"
+                      }
+                    },
+                    "layoutDirectionDesktop" : "row",
+                    "layoutDirectionMobile" : "column",
+                    "layoutDirectionTablet" : "column",
+                    "sectionConfig" : "{\"UUID\":\"a96f28f9-0633-449a-bdab-79618da76d69\",\"columns\":[{\"UUID\":\"cfcd4b1a-8b9e-4ebc-a172-3061124354e8\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "isLinkable" : false,
+                        "linkAssistiveText" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "Preferences and Pet Peeves - Boarding & Daycare",
+                        "textAlign" : "center",
+                        "textDecoration" : "{\"bold\":true}",
+                        "textDisplayInfo" : "{\"textStyle\":\"heading-medium\",\"headingTag\":\"h3\",\"enableOverride\":false}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "cf1e40ee-4c28-4be2-840b-2b85896b367b",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "alignment" : "center",
+                        "fit" : "contain",
+                        "height" : 350,
+                        "imageInfo" : "{\"imageInfoV1\":{\"url\":\"/sfsites/c/cms/delivery/media/MCIGMI663U2BDD3DXUL5ZJP7HXNI?lastModifiedDate=Wed Mar 19 17:37:39 GMT 2025\",\"altText\":\"\",\"contentKey\":\"MCIGMI663U2BDD3DXUL5ZJP7HXNI\",\"contentType\":null}}",
+                        "overlayColor" : "",
+                        "position" : "center center",
+                        "width" : 50
+                      },
+                      "definition" : "dxp_base:image",
+                      "id" : "b8874311-0566-4220-95e6-b73d95f85e05",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "columnGutterWidth" : "",
+                        "columnMinHeight" : "",
+                        "columnVerticalAlign" : "flex-end",
+                        "layoutDirectionDesktop" : "row",
+                        "layoutDirectionMobile" : "column",
+                        "layoutDirectionTablet" : "column",
+                        "sectionConfig" : "{\"UUID\":\"79e6f6f5-a499-4833-aac8-537c285379e8\",\"columns\":[{\"UUID\":\"18bd2e81-7c9c-4563-86bf-02d89d5fb178\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+                      },
+                      "children" : [ {
+                        "children" : [ {
+                          "attributes" : {
+                            "alignment" : "center",
+                            "size" : "standard",
+                            "stretch" : "standard",
+                            "text" : "Download",
+                            "type" : "primary",
+                            "url" : "{\"linkInfo\":{\"pageReference\":{\"type\":\"standard__webPage\",\"attributes\":{\"url\":\"https://app.schoox.com/library2/viewer.php?id=4789361&academyId=827540346\"}}}}"
+                          },
+                          "definition" : "dxp_base:button",
+                          "id" : "cad888a6-bc18-48e7-8570-96780247f3cf",
+                          "type" : "component"
+                        } ],
+                        "id" : "18bd2e81-7c9c-4563-86bf-02d89d5fb178",
+                        "name" : "col1",
+                        "title" : "Column 1",
+                        "type" : "region"
+                      } ],
+                      "customCssClasses" : "button-row",
+                      "definition" : "dxp_layout:columns",
+                      "id" : "79e6f6f5-a499-4833-aac8-537c285379e8",
+                      "type" : "component"
+                    } ],
+                    "id" : "cfcd4b1a-8b9e-4ebc-a172-3061124354e8",
+                    "name" : "col1",
+                    "title" : "Column 1",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:columns",
+                  "id" : "a96f28f9-0633-449a-bdab-79618da76d69",
+                  "type" : "component"
+                } ],
+                "id" : "1b13fec6-702d-430a-bccd-09de97e63bfb",
+                "name" : "Content-Region-Has-Membership",
+                "title" : "Content-Region-Has-Membership",
+                "type" : "region"
+              }, {
+                "id" : "5575789f-62fb-4dd9-95c2-5356f39db8f0",
+                "name" : "Content-Region-No-Membership",
+                "title" : "Content-Region-No-Membership",
+                "type" : "region"
+              } ],
+              "definition" : "c:membershipCheck",
+              "id" : "0ca474cf-4caa-49cd-ab46-8643ea25a200",
+              "type" : "component"
+            } ],
+            "id" : "97cbe097-dcaf-46dd-a092-f0da28fbb4d2",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "84f47884-dc1c-4c43-a862-cf691d927244",
+          "type" : "component"
+        } ],
+        "id" : "b839c538-ca33-4317-9eb4-928380db86cd",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "pageTitle" : "Questionnaires and Report Cards",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "dd065717-809c-479a-8dba-6c4bbaf155f3",
+          "type" : "component"
+        } ],
+        "id" : "ed260a65-3a81-4b52-b1ce-b88e74ee8db1",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "7f1630f0-f174-43c7-b220-f1770ed7c8aa",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-questionnaires-and-report-cards"
+  },
+  "urlName" : "questionnaires-and-report-cards"
+}

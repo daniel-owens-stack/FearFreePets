@@ -1,0 +1,219 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "My Memberships",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "dxpStyle" : { },
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"a8c26a35-b042-4281-b095-0b2081aab5fd\",\"columns\":[{\"UUID\":\"491a0971-278a-4d5b-af0a-2cf0d8b1acdd\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "activeTabBorderHighlightWeight" : "2px",
+                "activeTabTextEmphasis" : "{\"bold\":true}",
+                "activeTabTextStyle" : "{\"textStyle\":\"paragraph1\",\"headingTag\":\"p\",\"enableOverride\":true}",
+                "borderColor" : "",
+                "borderRadius" : "0px",
+                "borderWeight" : "0px",
+                "enableOverflowMenu" : false,
+                "imageFit" : "cover",
+                "imagePosition" : "center center",
+                "overflowIconColor" : "rgb(116,116,116)",
+                "overflowIconStyle" : "down-arrow",
+                "overflowMenuLabel" : "More",
+                "tabAlignment" : "left",
+                "tabBorderColor" : "",
+                "tabBorderRadius" : "0px",
+                "tabBorderWeight" : "0px",
+                "tabHoverBorderHighlightWeight" : "1px",
+                "tabLayout" : "horizontal",
+                "tabPadding" : "12px",
+                "tabTextStyle" : "{\"textStyle\":\"paragraph1\",\"headingTag\":\"p\",\"enableOverride\":true}",
+                "tabsetConfig" : "{\"UUID\":\"1e4db531-2620-4779-bc5f-31df2da1e777\",\"activeTab\":null,\"useOverflowMenu\":null,\"tabs\":[{\"UUID\":\"8837dd00-5667-48b5-b2f3-b12eda138654\",\"tabName\":\"My Memberships\",\"tabKey\":\"tab2\",\"locked\":false,\"allowGuestUser\":false}]}",
+                "width" : "100%"
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "flowName" : "{\"flowName\":\"My_Account_My_Expired_Memberships\",\"flowLabel\":\"My Account - My Expired Memberships\"}"
+                  },
+                  "definition" : "dxp_flow:flow",
+                  "id" : "f0bc73f3-61ea-417b-970d-b03a98dd51a2",
+                  "type" : "component"
+                } ],
+                "id" : "8837dd00-5667-48b5-b2f3-b12eda138654",
+                "name" : "tab2",
+                "title" : "My Memberships",
+                "type" : "region"
+              } ],
+              "definition" : "dxp_layout:tabs",
+              "id" : "1e4db531-2620-4779-bc5f-31df2da1e777",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "columnGutterWidth" : "",
+                "columnMinHeight" : "",
+                "columnVerticalAlign" : "flex-start",
+                "layoutDirectionDesktop" : "row",
+                "layoutDirectionMobile" : "column",
+                "layoutDirectionTablet" : "column",
+                "sectionConfig" : "{\"UUID\":\"91e5e48c-fa15-4fae-9d16-e01442d6fb74\",\"columns\":[{\"UUID\":\"f5571060-59e9-4214-9065-6ecfd2526a5d\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+              },
+              "children" : [ {
+                "children" : [ {
+                  "attributes" : {
+                    "activeTabBorderHighlightWeight" : "2px",
+                    "activeTabTextEmphasis" : "{\"bold\":true}",
+                    "activeTabTextStyle" : "{\"textStyle\":\"paragraph1\",\"headingTag\":\"p\",\"enableOverride\":true}",
+                    "borderColor" : "",
+                    "borderRadius" : "0px",
+                    "borderWeight" : "0px",
+                    "enableOverflowMenu" : false,
+                    "imageFit" : "cover",
+                    "imagePosition" : "center center",
+                    "overflowIconColor" : "rgb(116,116,116)",
+                    "overflowIconStyle" : "down-arrow",
+                    "overflowMenuLabel" : "More",
+                    "tabAlignment" : "left",
+                    "tabBorderColor" : "",
+                    "tabBorderRadius" : "0px",
+                    "tabBorderWeight" : "0px",
+                    "tabHoverBorderHighlightWeight" : "1px",
+                    "tabLayout" : "horizontal",
+                    "tabPadding" : "12px",
+                    "tabTextStyle" : "{\"textStyle\":\"paragraph1\",\"headingTag\":\"p\",\"enableOverride\":true}",
+                    "tabsetConfig" : "{\"UUID\":\"7a09a87b-5db0-44e8-83eb-5c8efb42767c\",\"activeTab\":null,\"useOverflowMenu\":null,\"tabs\":[{\"UUID\":\"d940c6bd-4ff3-4fac-bb53-cff213f4fa75\",\"tabName\":\"My Memberships\",\"tabKey\":\"a526d\",\"locked\":false,\"allowGuestUser\":false},{\"UUID\":\"e75a0488-df53-4456-80a4-d16c218adba2\",\"tabName\":\"Facility Memberships\",\"tabKey\":\"tab1\",\"locked\":false,\"allowGuestUser\":false}]}",
+                    "width" : "100%"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "flowName" : "{\"flowName\":\"My_Account_My_Expired_Memberships\",\"flowLabel\":\"My Account - My Expired Memberships\"}"
+                      },
+                      "definition" : "dxp_flow:flow",
+                      "id" : "df75b70e-39ba-4054-b600-5a2f9db61f22",
+                      "type" : "component"
+                    } ],
+                    "id" : "d940c6bd-4ff3-4fac-bb53-cff213f4fa75",
+                    "name" : "a526d",
+                    "title" : "My Memberships",
+                    "type" : "region"
+                  }, {
+                    "children" : [ {
+                      "attributes" : { },
+                      "definition" : "c:ffAddPracCertProduct",
+                      "id" : "b2ec5e79-9c8d-4dab-928b-94c50d4971e1",
+                      "type" : "component"
+                    }, {
+                      "attributes" : {
+                        "flowName" : "{\"flowName\":\"Manage_My_Team_Active_and_Expired_Practice_Memberships\",\"flowLabel\":\"Manage My Team - Active and Expired Practice Memberships\"}"
+                      },
+                      "definition" : "dxp_flow:flow",
+                      "id" : "6121c409-36e9-4ae2-a87c-ba34b64c3c58",
+                      "type" : "component"
+                    } ],
+                    "id" : "e75a0488-df53-4456-80a4-d16c218adba2",
+                    "name" : "tab1",
+                    "title" : "Facility Memberships",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_layout:tabs",
+                  "id" : "7a09a87b-5db0-44e8-83eb-5c8efb42767c",
+                  "type" : "component"
+                } ],
+                "id" : "f5571060-59e9-4214-9065-6ecfd2526a5d",
+                "name" : "col1",
+                "title" : "Column 1",
+                "type" : "region"
+              } ],
+              "definition" : "dxp_layout:columns",
+              "id" : "91e5e48c-fa15-4fae-9d16-e01442d6fb74",
+              "type" : "component"
+            } ],
+            "id" : "491a0971-278a-4d5b-af0a-2cf0d8b1acdd",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "a8c26a35-b042-4281-b095-0b2081aab5fd",
+          "type" : "component"
+        } ],
+        "id" : "a58d3d35-443e-4820-a7ba-fe6ea9b21094",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "dxpStyle" : { },
+            "pageTitle" : "My Memberships",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "736b3b38-a474-4076-a601-1be2f5b443c3",
+          "type" : "component"
+        } ],
+        "id" : "68dd392c-4ecb-4b6b-8c77-50708f0743e5",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "fecf79b3-2c78-46a8-b584-f9eaa83691a7",
+      "type" : "component"
+    },
+    "contentOperations" : {
+      "operations" : [ {
+        "targetId" : "7a09a87b-5db0-44e8-83eb-5c8efb42767c",
+        "isHiddenOnOperationSuccess" : false,
+        "isActive" : true,
+        "rule" : {
+          "name" : "551b3ed2-31ee-47bd-b41d-6a8eba410ad7",
+          "description" : "",
+          "criteriaType" : "AllCriteriaMatch",
+          "expressionCriteria" : [ {
+            "resource" : "User.Record.Admin_Account__c",
+            "operator" : "Equal",
+            "value" : true,
+            "criterionNumber" : 1
+          } ]
+        }
+      }, {
+        "targetId" : "1e4db531-2620-4779-bc5f-31df2da1e777",
+        "isHiddenOnOperationSuccess" : false,
+        "isActive" : true,
+        "rule" : {
+          "name" : "16825d97-51f5-44e2-97cb-1a59f5be36a0",
+          "description" : "",
+          "criteriaType" : "AllCriteriaMatch",
+          "expressionCriteria" : [ {
+            "resource" : "User.Record.Admin_Account__c",
+            "operator" : "Equal",
+            "value" : false,
+            "criterionNumber" : 1
+          } ]
+        }
+      } ]
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "MyAccount",
+    "viewType" : "custom-my-memberships"
+  },
+  "urlName" : "my-memberships"
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>onemergefree__MergeRule__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The parent Merge Rule.</description>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>The parent Merge Rule.</inlineHelpText>
+    <label>Merge Rule</label>
+    <referenceTo>onemergefree__MergeRule__mdt</referenceTo>
+    <relationshipLabel>Merge Rule Fields</relationshipLabel>
+    <relationshipName>MergeRuleFields</relationshipName>
+    <required>true</required>
+    <type>MetadataRelationship</type>
+    <unique>false</unique>
+</CustomField>

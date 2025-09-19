@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Membership__c</fullName>
+    <label>Membership</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Avian</fullName>
+                <default>false</default>
+                <label>Avian</label>
+            </value>
+            <value>
+                <fullName>Equine</fullName>
+                <default>false</default>
+                <label>Equine</label>
+            </value>
+            <value>
+                <fullName>Canine &amp; Feline</fullName>
+                <default>false</default>
+                <label>Canine &amp; Feline</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
