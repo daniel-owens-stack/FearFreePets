@@ -3,111 +3,167 @@ public class B2BCreateHistoricalMembershipsBatch implements Database.Batchable<s
     public B2BCreateHistoricalMembershipsBatch() { }
 
     public Database.QueryLocator start(Database.BatchableContext bc) {
-        String query = 'SELECT Id, Cancelled_Date__c, Course_Id__c, End_Date__c, First_Name__c, Historical_Order_Id__c, Last_Name__c, Name, Post_Id__c, Product_Id__c, Start_Date__c, Successful_Insert__c, User_Email__c, User_Id__c,  User_Membership_Date__c FROM Historical_Membership__c WHERE Successful_Insert__c = false';
+        String query = 'SELECT Id, Name, post_id__c, Post_Parent__c, Start_Date__c, End_Date__c, Cancelled_Date__c, User_Email__c FROM Historical_Membership__c WHERE Data_Status__c = \'Pending\'';
+        System.debug('Start method - Query: ' + query);
         return Database.getQueryLocator(query);
     }
 
-    public void execute(Database.BatchableContext bc, List<Historical_Membership__c> scope){
+    public void execute(Database.BatchableContext bc, List<Historical_Membership__c> scope) {
+        System.debug('Execute method - Scope size: ' + scope.size());
 
         try {
-            Set<String> wcIds = new Set<String>();
-            for(Historical_Membership__c hm : scope) {
-                wcIds.add(hm.Product_Id__c);
-            }
+            Set<String> userEmails = new Set<String>();
+            Set<String> postParentIds = new Set<String>();
+            Map<String, Account> emailToAccountMap = new Map<String, Account>();
+            Map<String, Id> wcIdToMembershipIdMap = new Map<String, Id>();
 
-            List<Product2> products = [SELECT Id, Name, Membership__r.Membership_Level__c, Membership__c, WC_Id__c 
-                                       FROM Product2 
-                                       WHERE WC_Id__c IN :wcIds];
-           
-            List<Map<String, String>> membershipMapList = new List<Map<String, String>>();
-            List<Map<String, String>> membershipLevelMapList = new List<Map<String, String>>();
-            if(products.size() > 0) {
-                for(Product2 p : products) {
-                    Map<String, String> membershipMap = new Map<String, String>();
-                    Map<String, String> membershipLevelMap = new Map<String, String>();
-                    
-                    if(p.WC_Id__c != null) {
-                        membershipMap.put(p.WC_Id__c, p.Membership__c);
-                        membershipMapList.add(membershipMap);
+            List<Historical_Membership__c> validMembershipsToInsert = new List<Historical_Membership__c>();
+            List<Historical_Membership__c> unsuccessfulMembershipsToUpdate = new List<Historical_Membership__c>();
 
-                        membershipLevelMap.put(p.WC_Id__c, p.Membership__r.Membership_Level__c);
-                        membershipLevelMapList.add(membershipLevelMap);
-                    }
+            for (Historical_Membership__c hm : scope) {
+                if (hm.User_Email__c != null) {
+                    userEmails.add(hm.User_Email__c.trim().toLowerCase());
                 }
-            }
-            
-            List<Account_Membership__c> accountMemberships = new List<Account_Membership__c>();
-            List<Practice_Level_Membership_Assignment__c> practiceMemberships = new List<Practice_Level_Membership_Assignment__c>();
-            for(Historical_Membership__c hm : scope) {
-
-                String membershipId;
-
-                if(membershipMapList.size() > 0) {
-                    for(Map<String, String> existingMap : membershipMapList) {
-                        if(existingMap.containsKey(hm.Product_Id__c)) {
-                            membershipId = existingMap.get(hm.Product_Id__c);
-                            break;
-                        }
-                    }
-                }
-
-                String membershipLevel;
-                if(membershipLevelMapList.size() > 0) {
-                    for(Map<String, String> existingMap : membershipLevelMapList) {
-                        if(existingMap.containsKey(hm.Product_Id__c)) {
-                            membershipLevel = existingMap.get(hm.Product_Id__c);
-                            break;
-                        }
-                    }
-                } 
-
-                if(membershipId != null && membershipLevel != null) {
-                    if(membershipLevel == 'Individual') {
-                        Account_Membership__c am = new Account_Membership__c();
-                        am.Account_Assignment_Date__c = hm.User_Membership_Date__c;
-                        am.Start_Date__c = hm.Start_Date__c;
-                        am.Historical_End_Date__c = hm.End_Date__c;
-                        am.Welcome_Kit_Status__c = 'Unavailable';
-                        am.Historical_Order_Id__c = hm.Historical_Order_Id__c;
-                        am.Historical_User_Id__c = hm.User_Id__c;
-                        am.Cancelled_Date__c = hm.Cancelled_Date__c;
-                        am.Membership__c = membershipId;
-
-                        accountMemberships.add(am);
-                    }
-                    else if(membershipLevel == 'Practice') {
-                        Practice_Level_Membership_Assignment__c pm = new Practice_Level_Membership_Assignment__c();
-                        pm.Start_Date__c = hm.Start_Date__c;
-                        pm.Welcome_Kit_Status__c = 'Unavailable';
-                        pm.Historical_Order_Id__c = hm.Historical_Order_Id__c;
-                        pm.Historical_User_Id__c = hm.User_Id__c;
-                        pm.Membership__c = membershipId;
-
-                        practiceMemberships.add(pm);
-                    }
+                if (hm.Post_Parent__c != null) {
+                    postParentIds.add(hm.Post_Parent__c.trim());
                 }
             }
 
-            List<Historical_Membership__c> historicalMembershipsToBeUpdated = new List<Historical_Membership__c>();
-            if(!accountMemberships.isEmpty()) {
-                insert accountMemberships;
-            }
-            if(!practiceMemberships.isEmpty()) {
-                insert practiceMemberships;
+            System.debug('Collected userEmails: ' + userEmails);
+            System.debug('Collected postParentIds: ' + postParentIds);
+
+            List<Account> matchingAccounts = [
+                SELECT Id, PersonEmail
+                FROM Account 
+                WHERE PersonEmail IN :userEmails
+            ];
+            for (Account acc : matchingAccounts) {
+                if (acc.PersonEmail != null) {
+                    emailToAccountMap.put(acc.PersonEmail.trim().toLowerCase(), acc);
+                }
             }
 
-            for(Historical_Membership__c hm : scope) {
-                hm.Successful_Insert__c = true;
-                historicalMembershipsToBeUpdated.add(hm);
+            System.debug('emailToAccountMap: ' + emailToAccountMap);
+
+            List<Membership__c> matchingMemberships = [
+                SELECT Id, WC_Id__c
+                FROM Membership__c
+                WHERE WC_Id__c IN :postParentIds
+            ];
+            for (Membership__c mem : matchingMemberships) {
+                if (mem.WC_Id__c != null) {
+                    wcIdToMembershipIdMap.put(mem.WC_Id__c.trim(), mem.Id);
+                }
             }
-            update historicalMembershipsToBeUpdated;
+
+            System.debug('wcIdToMembershipIdMap: ' + wcIdToMembershipIdMap);
+
+            for (Historical_Membership__c hm : scope) {
+                String emailKey = hm.User_Email__c != null ? hm.User_Email__c.trim().toLowerCase() : null;
+                String wcId = hm.Post_Parent__c != null ? hm.Post_Parent__c.trim() : null;
+
+                System.debug('Processing Historical Membership: ' + hm.Id);
+
+                if (hm.Start_Date__c == null) {
+                    System.debug('Missing Start_Date__c for Historical Membership: ' + hm.Id);
+                    hm.Exception__c = B2BHandleCustomException.LogException(
+                        new HistoricalMembershipException('Missing required field Start Date'),
+                        'Historical Memberships',
+                        'Membership Creation'
+                    );
+                    hm.Data_Status__c = 'Unsuccessful';
+                    unsuccessfulMembershipsToUpdate.add(hm);
+                    continue;
+                }
+
+                if (!emailToAccountMap.containsKey(emailKey)) {
+                    System.debug('No Account match for email: ' + emailKey);
+                    hm.Exception__c = B2BHandleCustomException.LogException(
+                        new HistoricalMembershipException('No matching Account found for User Email: ' + hm.User_Email__c),
+                        'Historical Memberships',
+                        'Membership Creation'
+                    );
+                    hm.Data_Status__c = 'Unsuccessful';
+                    unsuccessfulMembershipsToUpdate.add(hm);
+                    continue;
+                }
+
+                if (!wcIdToMembershipIdMap.containsKey(wcId)) {
+                    System.debug('No Membership match for WC_Id__c: ' + wcId);
+                    hm.Exception__c = B2BHandleCustomException.LogException(
+                        new HistoricalMembershipException('No matching Membership found for WC_Id__c: ' + wcId),
+                        'Historical Memberships',
+                        'Membership Creation'
+                    );
+                    hm.Data_Status__c = 'Unsuccessful';
+                    unsuccessfulMembershipsToUpdate.add(hm);
+                    continue;
+                }
+
+                validMembershipsToInsert.add(hm);
+            }
+
+            System.debug('Valid Memberships Count: ' + validMembershipsToInsert.size());
+            System.debug('Unsuccessful Memberships Count: ' + unsuccessfulMembershipsToUpdate.size());
+
+            List<Account_Membership__c> ilmasToInsert = new List<Account_Membership__c>();
+
+            for (Historical_Membership__c hm : validMembershipsToInsert) {
+                try {
+                    String emailKey = hm.User_Email__c.trim().toLowerCase();
+                    String wcId = hm.Post_Parent__c.trim();
+                    Account matchedAccount = emailToAccountMap.get(emailKey);
+                    Id membershipId = wcIdToMembershipIdMap.get(wcId);
+
+                    ilmasToInsert.add(new Account_Membership__c(
+                        Historical_Membership__c = hm.Id,
+                        Membership__c = membershipId,
+                        Start_Date__c = hm.Start_Date__c,
+                        Account_Id__c = matchedAccount.Id,
+                        Status__c = (hm.Cancelled_Date__c != null || hm.End_Date__c != null) ? 'Complete' : 'Active',
+                        Welcome_Kit_Status__c = 'Unavailable',
+                        Account_Assignment_Date__c = hm.Start_Date__c
+                    ));
+
+                    hm.Data_Status__c = 'Successful';
+                    System.debug('Created ILMA for Historical Membership: ' + hm.Id);
+
+                } catch (Exception e) {
+                    System.debug('Exception during ILMA creation: ' + e.getMessage());
+                    hm.Exception__c = B2BHandleCustomException.LogException(
+                        new HistoricalMembershipException('Membership creation failed: ' + e.getMessage()),
+                        'Historical Memberships',
+                        'Membership Creation'
+                    );
+                    hm.Data_Status__c = 'Unsuccessful';
+                    unsuccessfulMembershipsToUpdate.add(hm);
+                }
+            }
+
+            if (!ilmasToInsert.isEmpty()) {
+                insert ilmasToInsert;
+                System.debug('Inserted ILMAs: ' + ilmasToInsert.size());
+            }
+
+            if (!unsuccessfulMembershipsToUpdate.isEmpty()) {
+                update unsuccessfulMembershipsToUpdate;
+                System.debug('Updated Unsuccessful Memberships: ' + unsuccessfulMembershipsToUpdate.size());
+            }
+
+            if (!validMembershipsToInsert.isEmpty()) {
+                update validMembershipsToInsert;
+                System.debug('Updated Valid Memberships: ' + validMembershipsToInsert.size());
+            }
+
+        } catch (Exception e) {
+            System.debug('Batch-level exception: ' + e.getMessage());
+            B2BHandleCustomException.LogException(e, 'Historical Memberships', 'Membership Creation - Batch Level Failure');
         }
-        catch(Exception e) {
-            B2BHandleCustomException.LogException(e, 'Historical Memberships', 'Membership Creation');
-        }        
     }
 
-    public void finish(Database.BatchableContext bc){
-
+    public void finish(Database.BatchableContext bc) {
+        System.debug('Finish method called');
     }
+
+    public class HistoricalMembershipException extends Exception {}
 }
