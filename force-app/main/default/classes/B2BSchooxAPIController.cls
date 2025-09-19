@@ -24,6 +24,11 @@ public class B2BSchooxAPIController {
 
     @future(callout = true)
     public static void handleJobUnassignment(String accountId, List<Integer> jobIdsToRemove) {
+        Account account = B2BSchooxAPIServiceHelper.getAccountById(accountId);
+        String studentId = account.SX_User_Id__pc;
+        if (studentId == null) {
+            return;
+        }
         B2BSchooxAPIWrapper.SchooxUser schooxUser = B2BSchooxAPIService.getSchooxUser(accountId);
 
         if (!schooxUser.isActive) {

@@ -48,7 +48,7 @@ public class B2BMembershipEndSchedulerTest {
             Purchaser_Account__c = accountId,
             Account_Assignment_Date__c = System.today().addMonths(-12).addDays(-1),
             Welcome_Kit_Status__c = 'Claimed',
-            Status__c = 'Complete'
+            Status__c = 'Active'
         );
         insert am;
 

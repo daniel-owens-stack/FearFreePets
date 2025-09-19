@@ -13,7 +13,7 @@ public without sharing class B2BOrderHistoryListController {
                 Boolean isTeamAdmin = account[0].Admin_Account__c;
                 String businessAccount = account[0].Business__c;
 
-                String osFields = 'Id, CreatedDate, GrandTotalAmount, OrderedDate, Ordered_Date__c, OrderNumber, Status, Owner.FirstName, Owner.LastName';
+                String osFields = 'Id, CreatedDate, GrandTotalAmount, OrderedDate, Ordered_Date__c, OrderNumber, Status, Owner.FirstName, Owner.LastName, Account.Name';
                 String osWhere;
 
                 if(isTeamAdmin == true && businessAccount != null) {
@@ -28,8 +28,9 @@ public without sharing class B2BOrderHistoryListController {
                 if(inputParameters.containsKey('startDate') && inputParameters.containsKey('endDate')){
                     query += ' AND Ordered_Date__c >= ' + inputParameters.get('startDate') + ' AND Ordered_Date__c <= '+ inputParameters.get('endDate') ;
                 }
+                query += ' AND OriginalOrder.Is_Historical_Order__c = false';
                 
-                query += ' ORDER BY CreatedDate ' + inputParameters.get('sortingOrder') + ' NULLS LAST LIMIT 5000';
+                query += ' ORDER BY Ordered_Date__c ' + inputParameters.get('sortingOrder') + ' NULLS LAST LIMIT 5000';
                 orderSummaries = Database.query(query);
 
                 if(orderSummaries.size() > 0) {
@@ -37,19 +38,13 @@ public without sharing class B2BOrderHistoryListController {
                         OrderSummaryWrapper osw = new OrderSummaryWrapper();
                         osw.osId = os.Id;
                         osw.orderNumber = os.OrderNumber;
-                        osw.orderedDateText = os.OrderedDate.format('MM/dd/yyyy');
+                        osw.orderedDateText =  DateTime.newInstance(os.Ordered_Date__c, Time.newInstance(0, 0, 0, 0)).format('MM/dd/yyyy');
                         osw.status = os.Status;
                         osw.total = os.GrandTotalAmount;
                         osw.orderedDate = os.Ordered_Date__c;
                         osw.ordersCount = orderSummaries.size();
                         osw.isViewDetailsDisabled = os.Status == 'Canceled' ? true : false;
-
-                        String firstName = os.Owner.FirstName;
-                        if(firstName == null) {
-                            osw.ownerName = os.Owner.LastName;
-                        } else {
-                            osw.ownerName = os.Owner.FirstName + ' ' + os.Owner.LastName;
-                        }
+                        osw.ownerName = os.Account.Name;
 
                         orderSummaryList.add(osw);
                     }
@@ -65,7 +60,7 @@ public without sharing class B2BOrderHistoryListController {
     @AuraEnabled
     public static OrderSummaryDetailsWrapper getOrderSummaryItems(String orderSummaryId) {
 
-        OrderSummary orderSummary = [SELECT Id, OrderNumber, OrderedDate, AccountId, Account.Name, Owner.FirstName, Owner.LastName, 
+        OrderSummary orderSummary = [SELECT Id, OrderNumber, OrderedDate,Ordered_Date__c, AccountId, Account.Name, Owner.FirstName, Owner.LastName, Account.PersonEmail, 
                                             Status, TotalAdjustedProductAmount, TotalAdjustedDeliveryAmount, TotalTaxAmount, 
                                             GrandTotalAmount, TotalDeliveryAmount, CreatedDate, Shipping_Address__c,
                                             Shipping_Address__Street__s, Shipping_Address__City__s, Shipping_Address__StateCode__s,
@@ -74,23 +69,18 @@ public without sharing class B2BOrderHistoryListController {
                                     WHERE Id=:orderSummaryId];      
      
                   
-        String ownerName;
-        String firstName = orderSummary.Owner.FirstName;
-        if(firstName == null) {
-            ownerName = orderSummary.Owner.LastName;
-        } else {
-            ownerName = orderSummary.Owner.FirstName + ' ' + orderSummary.Owner.LastName;
-        }
+        String ownerName = orderSummary.Account.Name;
         
         OrderSummaryDetailsWrapper detailsWrapper = new OrderSummaryDetailsWrapper();
 
         //Details
         detailsWrapper.osDetails = new orderSummaryDetails();
         detailsWrapper.osDetails.orderNumber = orderSummary.OrderNumber;
-        detailsWrapper.osDetails.orderedDate = orderSummary.OrderedDate.format('MM/dd/yyyy');
+        detailsWrapper.osDetails.orderedDate = DateTime.newInstance(orderSummary.Ordered_Date__c, Time.newInstance(0, 0, 0, 0)).format('MM/dd/yyyy');
         detailsWrapper.osDetails.accountName = orderSummary.Account.Name;
         detailsWrapper.osDetails.orderStatus = orderSummary.Status;
         detailsWrapper.osDetails.orderPlacedBy = ownerName;
+        detailsWrapper.osDetails.purchaserEmail = orderSummary.Account.PersonEmail;
         
         //Totals
         detailsWrapper.osTotals = new orderSummaryTotals();
@@ -162,7 +152,7 @@ public without sharing class B2BOrderHistoryListController {
             for(ConnectApi.ProductOverview product : productsData.products){
                 if(product.success){
                     if(product.defaultImage != null) {
-                        productToWrapperMap.get(product.id).productImgUrl = product.defaultImage.url;
+                        productToWrapperMap.get(product.id).productImgUrl = Site.getBaseUrl() + product.defaultImage.url;
                     }
                 }      
             }
@@ -223,6 +213,9 @@ public without sharing class B2BOrderHistoryListController {
 
         @AuraEnabled
         public Boolean hasShippableProducts {get; set;}
+
+        @AuraEnabled
+        public String purchaserEmail  {get; set; }
     }
 
     public class orderSummaryTotals{

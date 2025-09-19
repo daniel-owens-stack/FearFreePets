@@ -176,6 +176,24 @@ public with sharing class B2BStripeService {
         }
     }
 
+    public static B2BStripeWrapper.Coupon createCoupon(Integer discountedAmount, String currencyCode) {
+        System.debug('CREATE COUPON');
+
+        String endPoint = 'v1/coupons';
+        HttpResponse response = new HttpResponse();
+        String requestString = 'amount_off=' + discountedAmount + '&currency=' + currencyCode + '&duration=once&name=DISCOUNT';
+
+        response = makeCalloutToStripe(endPoint, POST_METHOD, requestString, 'application/x-www-form-urlencoded');
+
+        B2BStripeWrapper.Coupon result = (B2BStripeWrapper.Coupon) JSON.deserialize(response.getBody(), B2BStripeWrapper.Coupon.class);
+        System.debug('CREATE COUPON RESULT === '  +result);
+        if (response.getStatusCode() != 200 && String.isNotBlank(result.error.message)) {
+            throw new B2BStripeException(result.error.type + ': ' + result.error.message);
+        } else {
+            return result;
+        }
+    }
+
     public static Integer getInvoiceDueDate(String customerId, String accountId) {
         Integer daysUntilDue = 0;
         

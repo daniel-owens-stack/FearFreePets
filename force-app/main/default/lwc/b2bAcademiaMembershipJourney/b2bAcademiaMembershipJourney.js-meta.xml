@@ -20,10 +20,13 @@
             <property name="labelUploadFile" type="String" default="Please upload proof that you are a student or facility" label="Upload File Label"/>
             <property name="labeluploadFileButton" type="String" default="Upload File" label="Upload File Button Label"/>
             <property name="errorMsgTitle" type="String" default="Error" label="File Upload Error Message Title"/>
-            <property name="errorMessage" type="String" default="File is too large to upload" label="File Upload Error Message"/>
+            <property name="errorMessage" type="String" default="Maximum file size is 8MB. Please crop or adjust file." label="File Upload Error Message"/>
             <property name="jobTitleHelpText" type="String" default="Please select the option that best fits your current role." label="Job Title Help Text"/>
             <property name="reqErrorMessage" type="String" default="Please select atleast one option." label="Student/Facility Required Message"/>
             <property name="schoolErrorMessage" type="String" default="Please enter the value for School / University" label="School/University Required Message"/>
+            <property name="jobTitleErrorMessage" type="String" default="Please enter the value for Job Title" label="Job Title Required Message"/>
+            <property name="gradYearErrorMessage" type="String" default="Please enter the value for Graduation Year" label="Graduation Year Required Message"/>
+            <property name="fileErrorMessage" type="String" default="Please upload a proof that you are a student or facility" label="File Upload Required Message"/>
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

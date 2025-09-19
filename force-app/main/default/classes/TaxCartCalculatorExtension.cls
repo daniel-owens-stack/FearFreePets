@@ -7,12 +7,13 @@ public without sharing class TaxCartCalculatorExtension extends CartExtension.Ta
     private static Boolean useExternalService = false;
       
     public virtual override void calculate(CartExtension.CartCalculateCalculatorRequest request) {
+    CartExtension.Cart cart = request.getCart();
     try {
         if (request == null || request.getCart() == null) {
             throw new CalloutException('Request or Cart is null.');
         }
 
-        CartExtension.Cart cart = request.getCart();
+        // CartExtension.Cart cart = request.getCart();
         existingCartValidationMessageCleanUp(cart);
         existingCartTaxesCleanUp(cart);
 
@@ -48,7 +49,17 @@ public without sharing class TaxCartCalculatorExtension extends CartExtension.Ta
         if (!Test.isRunningTest()) {
             setTaxInCart(cart, taxMetaData, tpResponse);
         }
-        } catch (Exception e) {
+        } catch (Exception e) {  
+            if(!cart.getCartDeliveryGroups().isEmpty()) {
+              //Set custom error message
+              CartExtension.CartValidationOutputList cartValidationOutputList = cart.getCartValidationOutputs();
+              CartExtension.CartValidationOutput cvo = new CartExtension.CartValidationOutput(
+                CartExtension.CartValidationOutputTypeEnum.TAXES,
+                CartExtension.CartValidationOutputLevelEnum.ERROR
+              );
+              cvo.setMessage(Label.B2B_Custom_Tax_Exception_Message);
+              cartValidationOutputList.add(cvo);
+            }
             throw new CalloutException('There was a problem with the request.');
         }
         return;
@@ -66,7 +77,7 @@ public without sharing class TaxCartCalculatorExtension extends CartExtension.Ta
         }
         if (cartItem.getCartItemPriceAdjustments().size() > 0) {
           for (Integer k = (cartItem.getCartItemPriceAdjustments().size() - 1);k >= 0;  k--) {
-            CartExtension.CartTaxList cipaTaxes = cartItem.getCartItemPriceAdjustments() .get(i) .getCartTaxes();
+            CartExtension.CartTaxList cipaTaxes = cartItem.getCartItemPriceAdjustments() .get(k) .getCartTaxes();
             if (cipaTaxes.size() > 0) {
               for (Integer l = (cartItem.getCartItemPriceAdjustments().size() - 1);l >= 0; l-- ) {
                 cipaTaxes.remove(cipaTaxes.get(l));

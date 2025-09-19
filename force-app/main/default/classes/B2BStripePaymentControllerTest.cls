@@ -3,12 +3,10 @@ public class B2BStripePaymentControllerTest {
 
     @TestSetup static void makeData(){
         B2BTestDataFactory.createWebStore();
-        String accountId = B2BTestDataFactory.createAccount();
-        String contactId = B2BTestDataFactory.createContact(accountId);
-        User user = B2BTestDataFactory.createCommunityUser(contactId);
+        String accountId = B2BTestDataFactory.createPersonAccount();
 
         String webStoreId  = [SELECT Id FROM WebStore WHERE Name = 'TestWebStore' LIMIT 1].Id;
-        B2BTestDataFactory.createWebCart(webStoreId, accountId, user.Id);
+        B2BTestDataFactory.createWebCart(webStoreId, accountId, null);
 
         String productId = B2BTestDataFactory.createProduct();
 
@@ -24,8 +22,8 @@ public class B2BStripePaymentControllerTest {
         ci.SalesPrice = 10;
         update ci;
 
-        Account account = [SELECT Id, Billing_Email__c, Invoice_Billing_Email__c  FROM Account WHERE Name = 'Test Account' LIMIT 1];
-        account.Billing_Email__c = 'customer@test.com';
+        Account account = [SELECT Id, PersonEmail, Invoice_Billing_Email__c  FROM Account WHERE Name = 'Test Account' LIMIT 1];
+        account.PersonEmail = 'customer@test.com';
         account.Invoice_Billing_Email__c = 'customer@test.com';
         update account;
     }
@@ -198,6 +196,24 @@ public class B2BStripePaymentControllerTest {
         }
         catch(Exception e){
             System.debug('Exception in testCreateInvoice: ' + e.getMessage());
+        }
+        Test.StopTest();
+    }
+
+    @isTest static void testCreateCoupon() {
+
+        Integer discountedAmount = 10;
+        String currencyCode = 'usd';
+
+        Test.StartTest();
+
+        Test.setMock(HttpCalloutMock.class, new B2BStripeHttpCalloutMock('coupon', 200, true));
+
+        try {
+            B2BStripeService.createCoupon(discountedAmount, currencyCode);
+        }
+        catch(Exception e){
+            System.debug('Exception in createCoupon: ' + e.getMessage());
         }
         Test.StopTest();
     }

@@ -11,6 +11,7 @@ public without sharing class SchooxAPI {
     private static String API_URL = Label.SX_API_URL;
     private static String API_KEY = Label.SX_API_Key;
     private static String ACADEMY_ID = Label.SX_Academy_Id;
+    private static Integer UNIT_ID = Integer.valueOf(Label.SX_Unit_Id);
     public static Boolean apiError = false;
     public static HttpResponse testResponse;
     @TestVisible
@@ -27,7 +28,7 @@ public without sharing class SchooxAPI {
         private List<String> external_ids;
 
         private List<JobData> jobs;
-        private List<Integer> unit_ids = new List<Integer>{1444104};
+        private List<Integer> unit_ids = new List<Integer>{SchooxAPI.UNIT_ID};
         private List<Integer> above_ids;
         private List<String> roles = new List<String>{'employee'};
 
@@ -59,7 +60,7 @@ public without sharing class SchooxAPI {
         private String firstname;
         private String lastname;
         private String email;
-        private List<Integer> unit_ids = new List<Integer>{1444104};
+        private List<Integer> unit_ids = new List<Integer>{SchooxAPI.UNIT_ID};
         private List<JobData> jobs;
         private LMSEditData(Contact con, List<Integer> jobIdList) {
             this.firstname = con.FirstName;
@@ -72,17 +73,17 @@ public without sharing class SchooxAPI {
     }
 
     private class JobData {
-        private Integer unit_id = 1444104;
-		private List<Integer> jobs;
+        private Integer unit_id = SchooxAPI.UNIT_ID;
+        private List<Integer> jobs;
 
         private JobData(Integer jobId) {
             this.jobs = new List<Integer>{jobId};
         }
-		private JobData(List<Integer> jobIdList) {
-			this.jobs = jobIdList;
-		}
+        private JobData(List<Integer> jobIdList) {
+            this.jobs = jobIdList;
+        }
     }
-	private class UnitData {
+    private class UnitData {
         private String name;
         private String external_id;
         private List<Integer> above_ids;
@@ -215,7 +216,7 @@ public without sharing class SchooxAPI {
         }
         if (jobIdList != null) {
             if (bodyData.jobs == null || bodyData.jobs.isEmpty()) {
-				bodyData.jobs = new List<JobData>{new JobData(jobIdList)};
+                bodyData.jobs = new List<JobData>{new JobData(jobIdList)};
             } else {
                 bodyData.jobs.add(new JobData(jobIdList));
             }
@@ -245,19 +246,19 @@ public without sharing class SchooxAPI {
             API_Response__c = responseBody,
             SX_Activation_Date__c = joined_date
         );
-		switch on String.valueOf(studentId.getSobjectType()) {
-			when 'Contact' {
-				student.RecordTypeId = Schema.SObjectType.SX_LMS_User__c.getRecordTypeInfosByDeveloperName().get('External').getRecordTypeId();
-				student.SF_Contact__c = studentId;
-			}
-			when 'User' {
-				student.RecordTypeId = Schema.SObjectType.SX_LMS_User__c.getRecordTypeInfosByDeveloperName().get('Employee').getRecordTypeId();
-				student.SF_User__c = studentId;
-			}
-			when else {
-				//
-			}
-		}
+        switch on String.valueOf(studentId.getSobjectType()) {
+            when 'Contact' {
+                student.RecordTypeId = Schema.SObjectType.SX_LMS_User__c.getRecordTypeInfosByDeveloperName().get('External').getRecordTypeId();
+                student.SF_Contact__c = studentId;
+            }
+            when 'User' {
+                student.RecordTypeId = Schema.SObjectType.SX_LMS_User__c.getRecordTypeInfosByDeveloperName().get('Employee').getRecordTypeId();
+                student.SF_User__c = studentId;
+            }
+            when else {
+                //
+            }
+        }
         if (status == 201) {
             student.SX_Active_User__c = true;
         }else {
@@ -321,8 +322,8 @@ public without sharing class SchooxAPI {
         System.debug('<-----------removeLMSUser----------->');
         String url = API_URL + 'users/' + studentId;
         Map<String, String> responseMap = makeHTTPRequest(ApiType.User, url, 'DELETE', null);
-		//System.debug(responseMap.get('responseBody'));
-		return !apiError;
+        //System.debug(responseMap.get('responseBody'));
+        return !apiError;
     }
 
     public static Boolean reActivateLMSUser(String studentId) {
@@ -332,8 +333,8 @@ public without sharing class SchooxAPI {
         };
         String url = API_URL + 'users';
         Map<String, String> responseMap = makeHTTPRequest(ApiType.User, url, 'POST', JSON.serialize(bodyMap));
-		//System.debug(responseMap.get('responseBody'));
-		return !apiError;
+        //System.debug(responseMap.get('responseBody'));
+        return !apiError;
     }
 
     //SchooxAPI.assignCourses('1987174188', new List<String>{'3021632', '3021631'});
@@ -396,30 +397,77 @@ public without sharing class SchooxAPI {
             throw new AuraHandledException(responseMap.get('responseBody'));
         }
     }
+    
+    public static void upsertEnrollments(List<SX_Enrollment__c> enrollments) {
+        if (enrollments != null && !enrollments.isEmpty()) {
+            try {
+                upsert enrollments Student_Course_Id__c;
+            } catch (DmlException e) {
+                System.debug('Error upserting enrollments: ' + e.getMessage());
+            }
+        } else {
+            System.debug('No enrollments to upsert.');
+        }
+    }
 
-    public static List<SX_Enrollment__c> parseUserCourseData(String sxUserId, String responseBody){
-        List<Object> responseBodyList = (List<Object>) JSON.deserializeUntyped(responseBody);
-        List<SX_Enrollment__c> courseEnrollList = new List<SX_Enrollment__c>();
-        if (!responseBodyList.isEmpty()) {
-            for (Object responseRec : responseBodyList) {
-                Map<String, Object> responseRecMap = (Map<String, Object>) responseRec;
-                String courseId = String.valueOf(responseRecMap.get('id'));
+
+   public static List<SX_Enrollment__c> parseUserCourseData(String sxUserId, String responseBody) {
+    List<Object> responseBodyList = (List<Object>) JSON.deserializeUntyped(responseBody);
+    List<SX_Enrollment__c> courseEnrollList = new List<SX_Enrollment__c>();
+    
+    if (!responseBodyList.isEmpty()) {
+        // Step 0: Retrieve Contact record safely
+        List<Contact> sfContact = [SELECT Id FROM Contact WHERE SX_User_Id__c = :sxUserId LIMIT 1];
+        Id contactId;
+        if (!sfContact.isEmpty()) {
+            contactId = sfContact[0].Id;
+        } else {
+            contactId = null;
+        }   
+        
+        // Step 1: Extract course IDs from the response
+        Set<String> courseIdsFromResponse = new Set<String>();
+        for (Object responseRec : responseBodyList) {
+            Map<String, Object> responseRecMap = (Map<String, Object>) responseRec;
+            courseIdsFromResponse.add(String.valueOf(responseRecMap.get('id')));
+        }
+        
+        // Step 2: Query all matching SX_Courses__c records in one SOQL call
+        Map<String, Id> courseIdToRecordId = new Map<String, Id>();
+        for (SX_Courses__c course : [
+            SELECT Id, SX_Course_ID__c 
+            FROM SX_Courses__c 
+            WHERE SX_Course_ID__c IN :courseIdsFromResponse
+        ]) {
+            courseIdToRecordId.put(course.SX_Course_ID__c, course.Id);
+        }
+        
+        // Step 3: Loop again and only create enrollments for matching courses
+        for (Object responseRec : responseBodyList) {
+            Map<String, Object> responseRecMap = (Map<String, Object>) responseRec;
+            String courseId = String.valueOf(responseRecMap.get('id'));
+            
+            if (courseIdToRecordId.containsKey(courseId)) {
                 SX_Enrollment__c tempEnroll = new SX_Enrollment__c(
                     Student_Course_Id__c = sxUserId + '#' + courseId,
-                    Student_ID__r = new SX_LMS_User__c(SX_User_ID__c = sxUserId),
-                    SX_Course__r = new SX_Courses__c(SX_Course_ID__c = courseId),
-                    SX_percent_Completed__c = Utility.decimalValue(responseRecMap.get('progress')),
-                    SX_Enrollment_Date__c = Utility.dateValue(responseRecMap.get('enroll_date')),
-                    SX_Completed_Date__c = Utility.dateValue(responseRecMap.get('timecompleted'))
-                );
+                Student_ID__r = new SX_LMS_User__c(SX_User_ID__c = sxUserId),
+                SF_Contact_Lookup__c = contactId,
+                SX_Course__c = courseIdToRecordId.get(courseId),
+                SX_percent_Completed__c = Utility.decimalValue(responseRecMap.get('progress')),
+                SX_Enrollment_Date__c = Utility.dateValue(responseRecMap.get('enroll_date')),
+                SX_Completed_Date__c = Utility.dateValue(responseRecMap.get('timecompleted'))
+                    );
                 courseEnrollList.add(tempEnroll);
             }
-            // System.debug(JSON.serializePretty(courseEnrollList));
-        } else {
-            System.debug(responseBody);
         }
-        return courseEnrollList;
+        
+        upsertEnrollments(courseEnrollList);
+    } else {
+        System.debug(responseBody);
     }
+    
+    return courseEnrollList;
+}
 
     //SchooxAPI.getAllCourse();
     public static List<SX_Courses__c> getAllCourse(String status) {
@@ -613,7 +661,7 @@ public without sharing class SchooxAPI {
         } else {
             apiError = true;
         }
-		System.debug('apiError: ' + apiError);
+        System.debug('apiError: ' + apiError);
         return new Map<String, String>{
             'headerLink' => response.getHeader('Link'),
             'responseBody' => response.getBody()

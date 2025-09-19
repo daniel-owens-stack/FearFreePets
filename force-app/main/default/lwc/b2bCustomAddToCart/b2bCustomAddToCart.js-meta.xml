@@ -26,6 +26,7 @@
             <property name="modalSize" type="String" default="small" label="Enter Modal Window Size"/>
             <property label="Guest SignIn Modal Window Heading" name="headingLabel" type="String" default="SignIn to Add Product to Cart"/>
             <property label="Flow API Name" name="flowApiName" type="String" default="B2B_Guest_User_Journey"/>
+            <property name="renewalMessage" type="String" label="Message to show info to renew membership "/>
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

@@ -11,9 +11,10 @@ import convertCartToOrder from '@salesforce/apex/B2BStripePaymentController.conv
 import createInvoice from '@salesforce/apex/B2BStripePaymentController.createInvoice';
 import canInvoice from '@salesforce/apex/B2BStripePaymentController.canInvoice';
 import modalWindow from 'c/b2bCustomModalWindow';
-import { CurrentPageReference } from 'lightning/navigation';
+import { CurrentPageReference, NavigationMixin } from 'lightning/navigation';
 import { publish, MessageContext } from 'lightning/messageService';
 import MY_MESSAGE_CHANNEL from '@salesforce/messageChannel/MyMessageChannel__c';
+import MaxNumOfRetries from '@salesforce/label/c.B2B_Stripe_Max_Num_of_Retries';
 
 const CheckoutStage = {
     CHECK_VALIDITY_UPDATE: 'CHECK_VALIDITY_UPDATE',
@@ -24,7 +25,7 @@ const CheckoutStage = {
     PLACE_ORDER: 'PLACE_ORDER'
 };
 
-export default class B2bCheckoutPayment extends useCheckoutComponent(LightningElement) {
+export default class B2bCheckoutPayment extends NavigationMixin(useCheckoutComponent(LightningElement)) {
     @wire(CurrentPageReference) 
     handleStateChange(pageReference) {
         this.pageReference = pageReference;
@@ -53,17 +54,50 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
                 const summaryNumber = await this.convertCartToOrder();
                 if(!summaryNumber){
                     this.showSpinner = false;
-                    this.showError = true;
+                    // this.showError = true;
                     this.errorMessage = 'Error occurred during order creation, please contact System Administrator.';
+                    this.showCheckoutErrorMsg(this.errorMessage);
                 } else {
-                    window.location = `${communityBasePath}/order?orderNumber=${summaryNumber}`;
                     this.showSpinner = false;
+                    this.navigateToOrderConfirmation(summaryNumber);
                 }
             }
             else {
-                this.showSpinner = false;
+                if (this.numOfRetry < MaxNumOfRetries) {
+                    this.numOfRetry++;
+                    setTimeout(() => {
+                        this.isChecked = false;
+                        this.checkSession();
+                    }, 4000);
+                }
+                else {
+                    history.replaceState({ session: "" }, "", window.location.href.split('?')[0]);
+                    this.showSpinner = false;
+                    this.errorMessage = 'Error occurred during payment processing, please contact System Administrator.';
+                    this.showCheckoutError(this.errorMessage);
+                }
             }
         }
+    }
+
+    showCheckoutErrorMsg(errorMsg) {
+        this.dispatchUpdateErrorAsync({
+                groupId: "checkout",
+                type: "/commerce/errors/checkout-failure",
+                exception: errorMsg,
+            });
+    }
+
+    navigateToOrderConfirmation(orderNumber) {
+        this[NavigationMixin.Navigate]({
+        type: "comm__namedPage",
+        attributes: {
+            name: "Order"
+        },
+        state: {
+            orderNumber: orderNumber
+        }
+        });
     }
 
     @wire(CartItemsAdapter, {'cartStateOrId': 'active'}) 
@@ -108,6 +142,7 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
     cartItems = [];
     shippableCartItemIds = [];
     wiredCartItems;
+    numOfRetry = 0;
 
     paymentOptions = [
         {label: 'Pay now', value: 'paynow'},
@@ -172,6 +207,11 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
             this.customerId = result;
         } else {
             console.error('getCustomerId: ', errorMessage);
+            this.dispatchUpdateErrorAsync({
+                groupId: "checkout",
+                type: "/commerce/errors/checkout-failure",
+                exception: 'We couldn\'t get your Stripe Customer ID. Please check that your account has a valid email.',
+            });
         }
     }
 
@@ -237,8 +277,8 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
                             this.showSpinner = false;
                             return Promise.reject('Error occurred during order creation, please contact System Administrator.');
                         } else {
-                            window.location = `${communityBasePath}/order?orderNumber=${summaryNumber}`;
                             this.showSpinner = false;
+                            this.navigateToOrderConfirmation(summaryNumber);
                         }
                     }
                 } else {
@@ -294,7 +334,7 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
                     });
                 })
                 .catch(error => {
-                    this.showError = true;
+                    // this.showError = true;
                     this.errorMessage = 'Something went wrong. Please, contact your System Administrator.';
                     setTimeout(() => {
                         this.showError = false;
@@ -353,7 +393,9 @@ export default class B2bCheckoutPayment extends useCheckoutComponent(LightningEl
             .catch(error => {console.error('Error in deleteItemFromCart: ', error);})
         }));
 
-        this.refreshCheckout();
+        setTimeout(() => {
+            this.refreshCheckout();
+        },3000);
     }
 
     async refreshCheckout() {

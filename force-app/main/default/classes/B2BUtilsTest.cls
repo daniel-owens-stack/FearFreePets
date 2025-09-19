@@ -1,3 +1,10 @@
+/**
+ * @description       : 
+ * @author            : Poojitha Anthati
+ * @group             : 
+ * @last modified on  : 09-16-2025
+ * @last modified by  : Poojitha Anthati
+**/
 @isTest
 public class B2BUtilsTest {
     
@@ -101,6 +108,35 @@ public class B2BUtilsTest {
         System.runAs(user) {
             try{
                 B2BUtils.updateCart(cartId);
+            }
+            catch(Exception e) {}
+        }
+        Test.StopTest();
+    }
+
+    @isTest static void testSendResetPasswordEmail() {
+        User user = [SELECT Id FROM User WHERE Username = 'testuser@gmail.com' LIMIT 1];
+        List<Id> UserIds = new List<Id>{user.Id};
+
+        Test.StartTest();
+        System.runAs(user) {
+            try{
+                B2BUtils.sendResetPasswordEmail(UserIds);
+            }
+            catch(Exception e) {}
+        }
+        Test.StopTest();
+    }
+
+    @isTest static void testUpdateTaxIdOnCart () {
+
+        User user = [SELECT Id FROM User WHERE Username = 'testuser@gmail.com' LIMIT 1];
+        String cartId = [SELECT Id FROM WebCart WHERE Name = 'Test Cart' LIMIT 1].Id;
+
+        Test.StartTest();
+        System.runAs(user) {
+            try{
+                B2BUtils.updateTaxIdOnCart(cartId, '12345');
             }
             catch(Exception e) {}
         }

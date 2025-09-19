@@ -1,0 +1,54 @@
+<!--
+  @description       : 
+  @author            : Poojitha Anthati
+  @group             : 
+  @last modified on  : 09-17-2025
+  @last modified by  : Poojitha Anthati
+-->
+<template>
+    <template lwc:if={showTemplate}>
+        <div>
+            <div lwc:if={showText}>
+                <a class="slds-button" onclick={handleTextClick} style="--dxp-c-base-button-margin: auto auto auto 0;">{internationalTaxLinkLabel}</a>
+            </div>
+            <div lwc:if={showInputField}>
+                <div class="slds-grid input-container">
+                    <div class="taxId">
+                        <lightning-input 
+                        class="taxIdInp"
+                        type="text" 
+                        name="taxId"
+                        label="Tax Id"
+                        placeholder={inputPlaceHolder}
+                        value={taxId}
+                        onchange={handleTaxIdChange}
+                        variant="label-hidden"
+                    ></lightning-input>
+                    </div>
+                    <div class="applyButton">
+                        <lightning-button
+                            label={applyButtonLabel}
+                            variant="brand"
+                            onclick={updateWebCart}
+                            stretch="true"
+                            disabled={disableButton}
+                            class="applyBtn"
+                        ></lightning-button>
+                    </div>
+                </div>
+            </div>
+            <div if:true={showTaxId}>
+                <div class="slds-grid slds-align_absolute-center">
+                    <div class="slds-col slds-p-top_xx-small"><b>{readOnlyTaxLabel}: </b>{taxId}</div>
+                    <div class="slds-col slds-text-align_right">
+                        <lightning-button
+                            label={changeButtonLabel}
+                            variant="base"
+                            onclick={handleChange}
+                        ></lightning-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+</template>

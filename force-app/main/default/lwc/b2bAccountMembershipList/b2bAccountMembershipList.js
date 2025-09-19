@@ -1,28 +1,83 @@
-import { LightningElement, api } from 'lwc';
+import { LightningElement, api, wire } from 'lwc';
+import { getLayout } from "lightning/uiLayoutApi";
 import getAccountMemberships from '@salesforce/apex/B2BAccontMembershipListController.getAccountMemberships';
 
-const columns = [
-    { label: 'Account Name', fieldName: 'accountLink', type:'url',
-        typeAttributes: {
-            label: { 
-                fieldName: 'accountName'
-            },
-            target : '_self'
-        }
-    },
-    { label: 'Purchase Date', fieldName: 'purchaseDate', type: 'date' },
-    { label: 'Assignment Date', fieldName: 'accountAssignmentDate', type: 'date' },
-    { label: 'Expiration Date', fieldName: 'expirationDate', type: 'date' },
-    { label: 'Certification Status'},
-    { label: 'Course Progress'}
-];
+// const columns = [
+//     { label: 'Account Name', fieldName: 'accountLink', type:'url',
+//         typeAttributes: {
+//             label: { 
+//                 fieldName: 'accountName'
+//             },
+//             target : '_self'
+//         }
+//     },
+//     // { label: 'Purchase Date', fieldName: 'purchaseDate', type: 'date' },
+//     { label: 'Status', fieldName: 'status', type: 'text' },
+//     { label: 'Assignment Date', fieldName: 'accountAssignmentDate', type: 'date' },
+//     { label: 'Expiration Date', fieldName: 'expirationDate', type: 'date' },
+//     { label: 'Certification Status', fieldName: 'certificationStatus', type: 'text'},
+//     { label: 'Course Progress (%)', fieldName: 'courseProgress', type: 'number'},
+//     { label: 'Exemption Status', fieldName: 'exemptionStatus', type: 'text'}
+// ];
 
 export default class B2bAccountMembershipList extends LightningElement {
 
     @api recordId;
     error;
-    columns = columns;
+    // columns = columns;
     groupedData = [];
+    compactFields = [];
+    tooltipX = 0;
+    tooltipY = 0;
+    hoverRecordId;
+    showCompactLayout = false;
+    hasCompactFields = false;
+
+    get popupStyle() {
+        return `top:${this.tooltipY}px; left:${this.tooltipX}px;`;
+    }
+
+    @wire(getLayout, { objectApiName: 'Account_Membership__c', layoutType: 'Compact', mode: 'View'})
+    ilmaCompactLayout({ data, error }) {
+        if (data) {
+            this.compactFields = this.extractFields(data?.sections);
+            this.hasCompactFields = true;
+        } else if (error) {
+            console.error('Error in getting Compact Layout', error);
+        }
+    }
+
+    extractFields(sections) {
+        if (!sections || !Array.isArray(sections)) return [];
+        
+        return sections.flatMap(section => 
+            (section?.layoutRows || []).flatMap(row => 
+                (row?.layoutItems || []).flatMap(item => 
+                    (item?.layoutComponents || [])
+                        .filter(comp => comp?.apiName)
+                        .map(comp => ({ apiName: comp?.apiName }))
+                )
+            )
+        );
+    }
+
+    handleMouseEnter(event) {
+        this.hoverRecordId = event.currentTarget.dataset.id;
+
+        const rect = event.currentTarget.getBoundingClientRect();
+        const container = this.template.querySelector('.membershipList');
+        const containerRect = container.getBoundingClientRect();
+
+        this.tooltipX = rect.left - containerRect.left + container.scrollLeft + rect.width;
+        this.tooltipY = rect.top - containerRect.top + container.scrollTop;
+
+        this.showCompactLayout = true;
+    }
+
+    handleMouseLeave() {
+        this.showCompactLayout = false;
+        this.hoverRecordId = null;
+    }
 
     connectedCallback() {
         console.log('record Id: ', this.recordId);

@@ -32,6 +32,10 @@ export default class B2bAcademiaMembershipJourney extends CheckoutComponentBase 
     @api jobTitleHelpText;
     @api reqErrorMessage;
     @api schoolErrorMessage;
+    @api jobTitleErrorMessage;
+    @api gradYearErrorMessage;
+    @api fileErrorMessage;
+
     @api filesData = [];
     cartItems = [];
     jobTitleOptions = [];
@@ -49,7 +53,10 @@ export default class B2bAcademiaMembershipJourney extends CheckoutComponentBase 
     showSpinner = false;
     showReqError = false;
     showSchoolError = false;
-    maxFileSize = 1029746;//bytes
+    showGradYearError = false;
+    showJobTitleError = false;
+    showFileError = false;
+    maxFileSize = 8388608;//bytes
     isPreview = true;
 
     connectedCallback() {
@@ -207,10 +214,14 @@ export default class B2bAcademiaMembershipJourney extends CheckoutComponentBase 
 
     handleGraduationYearChange(event) {
         this.graduationYear = event.target.value;
+        this.jobTitle = null;
+        this.showGradYearError = (this.graduationYear != null && this.graduationYear != '') ? false : true;
     }
 
     handleJobTitleChange(event) {
         this.jobTitle = event.target.value;
+        this.graduationYear = null;
+        this.showJobTitleError = (this.jobTitle != null && this.jobTitle != undefined) ? false : true;
         this.handleLostFocus();
     }
 
@@ -220,16 +231,20 @@ export default class B2bAcademiaMembershipJourney extends CheckoutComponentBase 
     }
 
     handleLostFocus() {
-        if(this.schoolUniversity != null && this.schoolUniversity != ''){
+        if(this.schoolUniversity != null && this.schoolUniversity != '' && ((this.graduationYear != null && this.graduationYear != '') || (this.jobTitle != null && this.jobTitle != undefined))){
             this.setFieldsOnAccount();
         }
     }
 
     setFieldsOnAccount() {
+        let isStudent = this.selectedOption == 'student' ? true : false;
+        let isFaculty = this.selectedOption == 'faculty' ? true : false;
         updateAccount({
             graduationYear : this.graduationYear,
             schoolUniversity : this.schoolUniversity,
-            JobTitle : this.jobTitle
+            JobTitle : this.jobTitle,
+            isStudent : isStudent,
+            isFaculty : isFaculty
         })
         .then(() => {
             console.log('Updated values in the Account!')
@@ -253,14 +268,20 @@ export default class B2bAcademiaMembershipJourney extends CheckoutComponentBase 
     }
 
     get checkValidity() {
-        this.showReqError = this.selectedOption == undefined ? true : false;
-        if(this.showReqError) {
-            return false;
-        } 
-        else {
-            this.showSchoolError = (this.showReqError == false && (this.schoolUniversity == '' || this.schoolUniversity == null)) ? true : false;
-            if(this.showSchoolError) {
+        if(this.showTemplate){
+            this.showReqError = this.selectedOption == undefined ? true : false;
+            if(this.showReqError) {
                 return false;
+            } 
+            else {
+                this.showSchoolError = (this.showReqError == false && (this.schoolUniversity == '' || this.schoolUniversity == null)) ? true : false;
+                this.showGradYearError = (this.showReqError == false && this.selectedOption == 'student' && (this.graduationYear == '' || this.graduationYear == null)) ? true : false;
+                this.showJobTitleError = (this.showReqError == false && this.selectedOption == 'faculty' && (this.jobTitle == undefined || this.jobTitle == null)) ? true : false;
+                this.showFileError = (this.showReqError == false && !this.isFileUploaded);
+                
+                if(this.showSchoolError || this.showJobTitleError || this.showGradYearError || this.showFileError) {
+                    return false;
+                }
             }
         }
         return true;

@@ -1,3 +1,10 @@
+/**
+ * @description       : 
+ * @author            : Poojitha Anthati
+ * @group             : 
+ * @last modified on  : 09-18-2025
+ * @last modified by  : Poojitha Anthati
+**/
 public class B2BBuyerGroupAssignmentService {
     public static List<String> getEligibleILMABuyerGroups(Account_Membership__c iLMA) {
         Account account = B2BBuyerGroupAssignmentServiceHelper.getAccountById(String.valueOf(iLMA.Account_Id__c));
@@ -87,6 +94,37 @@ public class B2BBuyerGroupAssignmentService {
         }
         catch(Exception e) {
             B2BHandleCustomException.LogException(e, 'B2BBuyerGroupAssignmentService', 'getActiveMemberships');
+            return null;
+        }
+    }
+
+    public static List<String> getEligibleBuyerGroups(Account_Membership__c iLMA) {
+        Account account = B2BBuyerGroupAssignmentServiceHelper.getAccountById(String.valueOf(iLMA.Account_Id__c));
+        List<Buyer_Group_Membership__c> buyerGroupMembershipList = 
+            B2BBuyerGroupAssignmentServiceHelper.getEligibleILMABuyerGroups(iLMA.Membership__c, iLMA.Certified__c, account.Admin_Account__c);
+        
+        Set<String> buyerGroupIdsSet = new Set<String>();
+        for (Buyer_Group_Membership__c bgm : buyerGroupMembershipList) {
+            buyerGroupIdsSet.add(bgm.Buyer_Group__c);
+        }
+        
+        return new List<String>(buyerGroupIdsSet);
+    }
+
+    public static List<String> getAllBuyerGroupAssignments(String accountId) {
+        try {
+            List<BuyerGroupMember> allBuyerGroups = B2BBuyerGroupAssignmentServiceHelper.getAllBuyerGroupAssignments(accountId);
+            List<String> buyerGroupIds = new List<String>();
+            
+            if(allBuyerGroups != null) {
+                for (BuyerGroupMember bgm : allBuyerGroups) {
+                    buyerGroupIds.add(bgm.BuyerGroupId);
+                }
+            }
+            return buyerGroupIds; 
+        }
+        catch(Exception e) {
+            B2BHandleCustomException.LogException(e, 'B2BBuyerGroupAssignmentService', 'getAllBuyerGroupAssignments');
             return null;
         }
     }

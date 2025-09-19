@@ -4,8 +4,14 @@ public class B2BMembershipEndController {
         try {
             Map<String, List<Id>> accountBuyerGroupIdsMap = new Map<String, List<Id>>();
             Map<String, List<Integer>> accountSXJobIdsMap = new Map<String, List<Integer>>();
+            List<Account_Membership__c> expiredILMAs = new List<Account_Membership__c>();
             
             for (Account_Membership__c record : accountMemberships) {
+                //Collect Expired ILMAs
+                if(record.Expired__c) {
+                    expiredILMAs.add(record);
+                }
+
                 Set<Id> membershipEndedAccounts = getMembershipEndedAccounts(record);
 
                 if(membershipEndedAccounts != null) {
@@ -26,6 +32,11 @@ public class B2BMembershipEndController {
                         accountSXJobIdsMap.get(accountId).addAll(tempSXJobMap.get(accountId));
                     }
                 }
+            }
+
+            //Update ILMAs Status as Expired
+            if(!expiredILMAs.isEmpty()) {
+                B2BMembershipEndHelper.updateILMAsStatusAsExpired(expiredILMAs);
             }
 
             //Unassign BuyerGroups
@@ -108,7 +119,7 @@ public class B2BMembershipEndController {
         Set<Id> membershipEndedAccounts = new Set<Id>();
 
         //Get AccountId(s) of complete or voided ILMAs
-        if(ilma.Account_Id__c != null && (ilma.Status__c == 'Complete' || ilma.Status__c == 'Voided')) {
+        if(ilma.Account_Id__c != null && (ilma.Expired__c || ilma.Status__c == 'Complete' || ilma.Status__c == 'Voided')) { 
             membershipEndedAccounts.add((Id)ilma.Account_Id__c);
         }
 

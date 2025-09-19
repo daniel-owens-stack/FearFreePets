@@ -48,6 +48,7 @@ export default class B2bOrderDetail extends LightningElement {
                 this.osDetailSection['orderPlacedBy'] = result.osDetails.orderPlacedBy;
                 this.osDetailSection['orderStatus'] = result.osDetails.orderStatus;
                 this.osDetailSection['productCount'] = result.osDetails.productCount;
+                this.osDetailSection['purchaserEmail'] = result.osDetails.purchaserEmail;
 
                 //Totals
                 this.osTotalSection['subtotal'] = result.osTotals.subtotal;

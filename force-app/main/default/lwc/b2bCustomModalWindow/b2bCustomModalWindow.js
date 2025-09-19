@@ -21,16 +21,9 @@ export default class B2bCustomModalWindow extends LightningModal {
     }
 
     handleButton2() {
-        if(this.lwcName === 'checkoutPayment') {
-            this.close('okay');
-            this.selectedButton = 'updateCart';
-            this.sendActionToParent();
-        } 
-        else {
-            //Redirect to Cart Page
-            this.cartPage = window.location.origin +'/store/cart';
-            window.open(this.cartPage, '_self');
-        }
+        this.close('okay');
+        this.selectedButton = this.lwcName === 'checkoutPayment' ? 'updateCart' : 'viewCart';
+        this.sendActionToParent();
     }
 
     async sendActionToParent() {

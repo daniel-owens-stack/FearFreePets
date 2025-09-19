@@ -35,7 +35,7 @@ global class B2BCartCalculateSample extends CartExtension.CartCalculate {
         boolean runInventory = buyerActions.isCheckoutStarted();
         boolean runShipping = buyerActions.isCheckoutStarted() || buyerActions.isDeliveryGroupChanged() || buyerActions.isCartItemChanged();
         boolean runPostShipping = buyerActions.isDeliveryGroupChanged() || buyerActions.isDeliveryMethodSelected();
-        boolean runTaxes = buyerActions.isCheckoutStarted() || buyerActions.isDeliveryGroupChanged() || buyerActions.isDeliveryMethodSelected();
+        boolean runTaxes = buyerActions.isDeliveryGroupChanged() || buyerActions.isDeliveryMethodSelected()|| buyerActions.isCouponChanged();
 
         // OptionalBuyerActionDetails can be used to optimize the various calculators that are invoked
         CartExtension.CartCalculateCalculatorRequest calculatorRequest = new CartExtension.CartCalculateCalculatorRequest(cart, request.getOptionalBuyerActionDetails());

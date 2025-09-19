@@ -1,25 +1,87 @@
+<!--
+  @description       : 
+  @author            : Poojitha Anthati
+  @group             : 
+  @last modified on  : 09-16-2025
+  @last modified by  : Poojitha Anthati
+-->
 <template>
     <div class="membershipList">
-        <lightning-card title="Account Memberships">
-            <template for:each={groupedData} for:item="group">
-                <div key={group.Name}>
-                    <div class="space"></div>
-                    <div class="membershipName">
-                        <h2>{group.Name}</h2>
-                        <h3> Assigned({group.count.assigned}) Unassigned({group.count.unassigned})</h3>
+        <template if:true={hasCompactFields}>
+            <lightning-card title="Account Memberships">
+                <template for:each={groupedData} for:item="group">
+                    <div key={group.Name}>
+                        <div class="space"></div>
+                        <div class="membershipName">
+                            <h2>{group.Name}</h2>
+                            <h3> Assigned({group.count.assigned}) Unassigned({group.count.unassigned})</h3>
+                        </div>
+                        <!-- <lightning-datatable
+                            key-field={group.Name}
+                            data={group.records}
+                            columns={columns}
+                            hide-checkbox-column>
+                        </lightning-datatable> -->
+                        <div class="table-container">
+                            <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                                <thead>
+                                    <tr>
+                                        <th>Account Name</th>
+                                        <th>Status</th>
+                                        <th>Assignment Date</th>
+                                        <th>Expiration Date</th>
+                                        <th>Certification Status</th>
+                                        <th>Course Progress (%)</th>
+                                        <th>Exemption Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <template for:each={group.records} for:item="record">
+                                        <tr key={record.Id}>
+                                            <td class="account-name-hover"
+                                                onmouseenter={handleMouseEnter}
+                                                onmouseleave={handleMouseLeave}
+                                                data-id={record.Id}>
+                                                <a href={record.accountLink} target="_self">
+                                                    {record.accountName}
+                                                </a>
+                                            </td>
+                                            <td>{record.status}</td>
+                                            <td>{record.accountAssignmentDate}</td>
+                                            <td>{record.expirationDate}</td>
+                                            <td>{record.certificationStatus}</td>
+                                            <td>{record.courseProgress}</td>
+                                            <td>{record.exemptionStatus}</td>
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="space"></div>
                     </div>
-                    <lightning-datatable
-                        key-field={group.Name}
-                        data={group.records}
-                        columns={columns}
-                        hide-checkbox-column>
-                    </lightning-datatable>
-                    <div class="space"></div>
-                </div>
-            </template>
-            <template if:true={error}>
-                {error}
-            </template>
-        </lightning-card>
+                </template>
+                <template if:true={error}>
+                    {error}
+                </template>
+            </lightning-card>
+        </template>
+
+        <!-- Compact Layout Popup -->
+        <template if:true={showCompactLayout}>
+            <div class="popup-card" style={popupStyle}>
+                <lightning-record-view-form
+                    record-id={hoverRecordId}
+                    object-api-name="Account_Membership__c"
+                >
+                    <div class="slds-grid slds-wrap">
+                        <template for:each={compactFields} for:item="field">
+                            <div key={field.apiName} class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                                <lightning-output-field field-name={field.apiName}></lightning-output-field>
+                            </div>
+                        </template>
+                    </div>
+                </lightning-record-view-form>
+            </div>
+        </template>
     </div>
 </template>

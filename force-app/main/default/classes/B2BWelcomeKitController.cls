@@ -6,7 +6,7 @@ public without sharing class B2BWelcomeKitController {
 
         List<Account_Membership__c> accountMembershipList = [SELECT Membership__r.Individual_Certification_Kit__c,  Membership__r.Individual_Certification_Kit__r.Name,  Membership__r.Individual_Certification_Kit__r.Id
                                                              FROM Account_Membership__c 
-                                                             WHERE Welcome_Kit_Status__c ='Unclaimed' AND Account_Id__c =:accountId
+                                                             WHERE Welcome_Kit_Status__c ='Unclaimed' AND Account_Id__c =:accountId AND Status__c = 'Active'
                                                             ];
                                                             
         if (accountMembershipList.isEmpty()) {

@@ -162,7 +162,6 @@ public class B2BTestDataFactory {
         WebCart cart = new WebCart(
             Status = 'Active',
             AccountId = accountId,
-            OwnerId = userId,
             WebStoreId = webStoreId,
             Name = 'Test Cart'
         );

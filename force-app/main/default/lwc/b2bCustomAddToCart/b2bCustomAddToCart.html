@@ -59,6 +59,9 @@
                 </div>
             </div>
         </div>
+        <div if:true={showMsgToRenew} class="slds-p-vertical_small">
+            <lightning-formatted-rich-text value={renewalMessage}></lightning-formatted-rich-text>
+        </div>
         <div lwc:if={errorMessage}>
             <p class="errorMessage">{errorMessage}</p>
         </div>

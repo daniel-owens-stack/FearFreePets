@@ -1,4 +1,13 @@
+/**
+ * @description       : 
+ * @author            : Poojitha Anthati
+ * @group             : 
+ * @last modified on  : 09-18-2025
+ * @last modified by  : Poojitha Anthati
+**/
 public class B2BBuyerGroupAssignmentServiceHelper {
+    private static final String STANDARD_BUYER_GROUPS = System.Label.B2B_Standard_Buyer_Groups;
+
     public static List<Buyer_Group_Membership__c> getEligibleILMABuyerGroups(String membershipId, Boolean isCertified, Boolean isAdmin) {
         try {
             String role = getBuyerGroupRole(isAdmin);
@@ -78,6 +87,22 @@ public class B2BBuyerGroupAssignmentServiceHelper {
             FROM BuyerGroupMember
             WHERE BuyerGroupId IN :buyerGroupIds
             AND BuyerId = :accountId
+        ];
+        return buyerGroupMembers.isEmpty() ? null : buyerGroupMembers; 
+    }
+
+    public static List<BuyerGroupMember> getAllBuyerGroupAssignments(String accountId) {
+
+        List<String> standardBuyerGroups = new List<String>();
+        if (!String.isBlank(STANDARD_BUYER_GROUPS)) {
+            standardBuyerGroups = new List<String>(STANDARD_BUYER_GROUPS.split(','));
+        }
+        
+        List<BuyerGroupMember> buyerGroupMembers = [
+            SELECT Id, BuyerGroupId, BuyerId
+            FROM BuyerGroupMember
+            WHERE BuyerId = :accountId
+            AND BuyerGroup.Name  NOT IN :standardBuyerGroups
         ];
         return buyerGroupMembers.isEmpty() ? null : buyerGroupMembers; 
     }

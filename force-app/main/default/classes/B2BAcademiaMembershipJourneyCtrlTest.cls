@@ -47,7 +47,7 @@ public class B2BAcademiaMembershipJourneyCtrlTest {
 
         Test.StartTest();
         System.runAs(user) {
-            B2BAcademiaMembershipJourneyController.updateAccount('2020', 'TEST', '');
+            B2BAcademiaMembershipJourneyController.updateAccount('2020', 'TEST', '', true, false);
         }
         Test.StopTest();
     }
@@ -58,7 +58,7 @@ public class B2BAcademiaMembershipJourneyCtrlTest {
 
         Test.StartTest();
         try {
-            B2BAcademiaMembershipJourneyController.updateAccount('2020', 'TEST', '');
+            B2BAcademiaMembershipJourneyController.updateAccount('2020', 'TEST', '', false, false);
         }
         catch(Exception e) {}
         Test.StopTest();

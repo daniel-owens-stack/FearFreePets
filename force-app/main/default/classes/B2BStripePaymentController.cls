@@ -8,7 +8,7 @@ public without sharing class B2BStripePaymentController {
     public static String getCustomerId(String accountId, String paymentOption) {
         
         Account account = [
-                SELECT ShippingAddress, StripeCustomerId__c, Business__c, Admin_Account__c, Billing_Email__c, Invoice_Billing_Email__c, Invoice_Stripe_Id__c
+                SELECT ShippingAddress, StripeCustomerId__c, Business__c, Admin_Account__c, PersonEmail, Invoice_Billing_Email__c, Invoice_Stripe_Id__c
                 FROM Account
                 WHERE Id = :accountId
         ];
@@ -16,10 +16,10 @@ public without sharing class B2BStripePaymentController {
         String customerId;
 
         if(paymentOption == 'paynow') {
-            if (String.isBlank(account.StripeCustomerId__c) && account.Billing_Email__c != null) {
-                B2BStripeWrapper.StripeCustomer existingCustomer = B2BStripeService.getStripeCustomerByEmail(account.Billing_Email__c);
+            if (String.isBlank(account.StripeCustomerId__c) && account.PersonEmail != null) {
+                B2BStripeWrapper.StripeCustomer existingCustomer = B2BStripeService.getStripeCustomerByEmail(account.PersonEmail);
                 if(existingCustomer.id == null) {
-                    B2BStripeWrapper.StripeCustomer response = B2BStripeService.createStripeCustomer(account.Id, account.Billing_Email__c);
+                    B2BStripeWrapper.StripeCustomer response = B2BStripeService.createStripeCustomer(account.Id, account.PersonEmail);
                     account.StripeCustomerId__c = response.Id; 
                 } else {
                     account.StripeCustomerId__c = existingCustomer.Id;
@@ -48,7 +48,7 @@ public without sharing class B2BStripePaymentController {
     @AuraEnabled
     public static boolean canInvoice(String accountId){
         Account account = [SELECT Payment_Terms__c FROM Account WHERE Id =:accountId];
-        if (account.Payment_Terms__c == 'Credit Card Only'){
+        if (account.Payment_Terms__c == 'Credit Card Only' || account.Payment_Terms__c == null){
             return false;
         }
         return true;
@@ -90,7 +90,11 @@ public without sharing class B2BStripePaymentController {
 
         validationResult.isSessionValid = (result.payment_status == 'paid') && (result.metadata.sf_id == webCartId);
         validationResult.paymentIntent = result.payment_intent;
-        
+
+        if(!validationResult.isSessionValid) {
+            String errorMessage = 'Order creation failed for the Cart Id: ' + webCartId + 'as the stripe payment status is not updated to paid during checkout.| Payment Intent: ' + validationResult.paymentIntent;
+            B2BHandleCustomException.LogException(new StringException(errorMessage), 'B2BStripePaymentController', 'validateSession');
+        }
         return validationResult;
     }
     
@@ -108,7 +112,7 @@ public without sharing class B2BStripePaymentController {
                 insert log;
             }
         }
-        update new WebCart(Id = webCartId, Payment_Intent__c = paymentIntent);
+        update new WebCart(Id = webCartId, Payment_Intent__c = paymentIntent, B2B_Cart_Id__c = webCartId);
 
         String cartQuery =
                 'SELECT ' + String.join(getObjectFieldsForQuery(WebCart.SObjectType), ', ') + ', ' +
@@ -145,6 +149,7 @@ public without sharing class B2BStripePaymentController {
         newOrder.SalesStoreId = B2BUtils.getWebstoreID();
         newOrder.Payment_Intent__c = paymentIntent;
         newOrder.InvoiceId__c = stripeInvoiceId;
+        newOrder.B2B_Cart_Id__c = webCartId;
         insert newOrder;
 
         //Start Delivery Group
@@ -330,4 +335,6 @@ public without sharing class B2BStripePaymentController {
         return orderMethod[0];
     }
 
+    public class B2BStripeException extends Exception {
+    }
 }
