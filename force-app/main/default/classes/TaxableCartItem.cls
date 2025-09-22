@@ -1,3 +1,10 @@
+/**
+ * @description       : 
+ * @author            : Poojitha Anthati
+ * @group             : 
+ * @last modified on  : 09-22-2025
+ * @last modified by  : Poojitha Anthati
+**/
 public with sharing class TaxableCartItem {
     public TaxableCartItem() {
     }
@@ -15,5 +22,6 @@ public with sharing class TaxableCartItem {
     public String state { get; set; }
     public String postalCode { get; set; }
     public String country { get; set;}
+    public String vatCode { get; set; }
     public List<LineItemTaxDetails> lineItemTexas = new List<LineItemTaxDetails>();
   }

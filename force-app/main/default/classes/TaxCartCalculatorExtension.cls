@@ -1,3 +1,10 @@
+/**
+ * @description       : 
+ * @author            : Poojitha Anthati
+ * @group             : 
+ * @last modified on  : 09-22-2025
+ * @last modified by  : Poojitha Anthati
+**/
 public without sharing class TaxCartCalculatorExtension extends CartExtension.TaxCartCalculator {
     // You MUST change this to be your service or you must launch your own Third Party Service
     // and add the host in Setup | Security | Remote site settings.
@@ -140,6 +147,7 @@ public without sharing class TaxCartCalculatorExtension extends CartExtension.Ta
     public virtual TaxProviderRequest createTaxRequest(CartExtension.Cart cart,TaxMetaData taxMetaData) {
       Map<String, TaxableCartItem> taxableCartItems = new Map<String, TaxableCartItem>();
       TaxProviderRequest request = new TaxProviderRequest();
+      String vatCode = (String) cart.getCustomField('B2B_International_Tax_Id__c');
       String cartId = cart.getId();
       request.cartId = cartId;
       request.taxMetaData = taxMetaData;
@@ -170,6 +178,7 @@ public without sharing class TaxCartCalculatorExtension extends CartExtension.Ta
         tcItem.amount = cartItem.getTotalAmount();
         tcItem.quantity = cartItem.getQuantity();
         tcItem.sku = cartItem.getSku();
+        tcItem.vatCode = vatCode;
         if (request.hasMultipleShipments) {
           tcItem.street = cartItem.getCartDeliveryGroup().getDeliverToAddress() .Street;
           tcItem.city = cartItem.getCartDeliveryGroup().getDeliverToAddress().City;

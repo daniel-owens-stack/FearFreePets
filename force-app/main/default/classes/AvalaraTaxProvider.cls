@@ -1,3 +1,10 @@
+/**
+ * @description       : 
+ * @author            : Poojitha Anthati
+ * @group             : 
+ * @last modified on  : 09-22-2025
+ * @last modified by  : Poojitha Anthati
+**/
 public without sharing class AvalaraTaxProvider extends TaxProvider {
   public AvalaraTaxProvider() {
   }
@@ -123,7 +130,8 @@ public without sharing class AvalaraTaxProvider extends TaxProvider {
         cartItem.productExemptionCode,
         cartItem.entityUseCode,
         taxRequest,
-        false
+        false,
+        cartItem.vatCode
       );
      
       if (hasMultipleShipments) {
@@ -151,7 +159,7 @@ public without sharing class AvalaraTaxProvider extends TaxProvider {
     String cartId = taxRequest.cartId;
     taxRequest.taxableCartItems = new Map<String, TaxableCartItem>();
     List<AvalaraTaxRequest.Lines> lines = new List<AvalaraTaxRequest.Lines>();
-    String query = 'SELECT Id, Sku, TotalLineAmount, Quantity, Type,Product2Id,Name,Product2.Family, Product2.StockKeepingUnit';
+    String query = 'SELECT Id, Sku, TotalLineAmount, Quantity, Type,Product2Id,Name,Product2.Family, Product2.StockKeepingUnit, Cart.B2B_International_Tax_Id__c';
     if (hasMultipleShipments) {
       query += ',CartDeliveryGroup.Id,CartDeliveryGroup.DeliverToStreet,CartDeliveryGroup.DeliverToCity,CartDeliveryGroup.DeliverToState,CartDeliveryGroup.DeliverToPostalCode,CartDeliveryGroup.DeliverToCountry';
     }
@@ -175,7 +183,8 @@ public without sharing class AvalaraTaxProvider extends TaxProvider {
         taxRequest.taxMetaData.productTaxExemption ? cartItem.Product2.Exemption_Code__c : null,
         taxRequest.taxMetaData.productTaxExemption ? cartItem.Product2.Entity_Use_Code__c : null,
         taxRequest,
-        true
+        true,
+        cartItem.Cart.B2B_International_Tax_Id__c
       );
       if (hasMultipleShipments) {
         AvalaraTaxRequest.Addresses addresses = new AvalaraTaxRequest.Addresses();
@@ -203,7 +212,8 @@ public without sharing class AvalaraTaxProvider extends TaxProvider {
     String exemptionCode,
     String entityUseCode,
     TaxProviderRequest taxRequest,
-    Boolean setInRequestToo
+    Boolean setInRequestToo,
+    String vatCode
   ) {
     AvalaraTaxRequest.Lines line = new AvalaraTaxRequest.Lines();
     line.number_Z = id;
@@ -221,9 +231,10 @@ public without sharing class AvalaraTaxProvider extends TaxProvider {
       tcItem.amount = taxableAmount;
       tcItem.sku = sku;
       tcItem.lineItemType = type;
+      tcItem.vatCode = vatCode;
       taxRequest.taxableCartItems.put(id, tcItem);
     }
-
+    line.vatCode = vatCode;
     return line;
   }
 

@@ -1,3 +1,10 @@
+/**
+ * @description       : 
+ * @author            : Poojitha Anthati
+ * @group             : 
+ * @last modified on  : 09-22-2025
+ * @last modified by  : Poojitha Anthati
+**/
 public class AvalaraTaxRequest {
 	
 	public class Addresses {
@@ -322,6 +329,7 @@ public class AvalaraTaxRequest {
 		public String category {get;set;} 
 		public String summary {get;set;} 
 		public Addresses addresses {get;set;} 
+		public String vatCode {get;set;} 
 
 		public Lines() {}
 		public Lines(JSONParser parser) {
@@ -383,6 +391,8 @@ public class AvalaraTaxRequest {
 							summary = parser.getText();
 						} else if (text == 'addresses') {
 							addresses = new Addresses(parser);
+						}else if (text == 'vatCode') {
+							vatCode = parser.getText();
 						} else {
 							System.debug(LoggingLevel.WARN, 'Lines consuming unrecognized property: '+text);
 							consumeObject(parser);
