@@ -1,3 +1,10 @@
+/**
+ * @description       : 
+ * @author            : Poojitha Anthati
+ * @group             : 
+ * @last modified on  : 12-08-2025
+ * @last modified by  : Poojitha Anthati
+**/
 public with sharing class B2BStripeService {
     private static final String POST_METHOD = 'POST';
     private static final String GET_METHOD = 'GET';
@@ -66,7 +73,7 @@ public with sharing class B2BStripeService {
         String endPoint = 'v1/checkout/sessions';
         HttpResponse response = new HttpResponse();
         String requestString = B2BStripeServiceHelper.createCheckoutRequestString(customerId, webCartId, href);
-
+		System.debug('FINAL STRIPE REQUEST BODY ===> ' + requestString);
         response = makeCalloutToStripe(endPoint, POST_METHOD, requestString, 'application/x-www-form-urlencoded');
 
         B2BStripeWrapper.CheckoutSession result = (B2BStripeWrapper.CheckoutSession) JSON.deserialize(response.getBody(), B2BStripeWrapper.CheckoutSession.class);
