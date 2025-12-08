@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : Poojitha Anthati
  * @group             : 
- * @last modified on  : 09-18-2025
+ * @last modified on  : 10-23-2025
  * @last modified by  : Poojitha Anthati
 **/
 public class B2BBuyerGroupAssignmentServiceHelper {
@@ -14,6 +14,7 @@ public class B2BBuyerGroupAssignmentServiceHelper {
             String query = 'SELECT Id, Membership__c, Buyer_Group__c' + 
                             ' FROM Buyer_Group_Membership__c' + 
                             ' WHERE (Membership__c =:membershipId OR Membership__c = NULL)' + 
+                            ' AND Buyer_Group__r.Exclusive_Buyer_Group__c = false' + 
                             ' AND (Role__c = \'All\' OR Role__c =:role)';
 
             if(!isCertified) {
@@ -34,6 +35,7 @@ public class B2BBuyerGroupAssignmentServiceHelper {
             String query = 'SELECT Id, Buyer_Group__c, Role__c' + 
                            ' FROM Buyer_Group_Membership__c' + 
                            ' WHERE (Membership__c =:membershipId OR Membership__c = NULL)' + 
+                           ' AND Buyer_Group__r.Exclusive_Buyer_Group__c = false' + 
                            ' AND Role__c =:role';
 
             if(!isCertified) {
@@ -87,6 +89,7 @@ public class B2BBuyerGroupAssignmentServiceHelper {
             FROM BuyerGroupMember
             WHERE BuyerGroupId IN :buyerGroupIds
             AND BuyerId = :accountId
+            AND BuyerGroup.Exclusive_Buyer_Group__c = false
         ];
         return buyerGroupMembers.isEmpty() ? null : buyerGroupMembers; 
     }
@@ -103,6 +106,7 @@ public class B2BBuyerGroupAssignmentServiceHelper {
             FROM BuyerGroupMember
             WHERE BuyerId = :accountId
             AND BuyerGroup.Name  NOT IN :standardBuyerGroups
+            AND BuyerGroup.Exclusive_Buyer_Group__c = false
         ];
         return buyerGroupMembers.isEmpty() ? null : buyerGroupMembers; 
     }
