@@ -51,16 +51,7 @@ export default class B2bCheckoutPayment extends NavigationMixin(useCheckoutCompo
             this.isChecked = true;
             let result = await this.validateSession(session);
             if (result) {
-                const summaryNumber = await this.convertCartToOrder();
-                if(!summaryNumber){
-                    this.showSpinner = false;
-                    // this.showError = true;
-                    this.errorMessage = 'Error occurred during order creation, please contact System Administrator.';
-                    this.showCheckoutErrorMsg(this.errorMessage);
-                } else {
-                    this.showSpinner = false;
-                    this.navigateToOrderConfirmation(summaryNumber);
-                }
+                this.createSalesforceOrder();
             }
             else {
                 if (this.numOfRetry < MaxNumOfRetries) {
@@ -71,12 +62,26 @@ export default class B2bCheckoutPayment extends NavigationMixin(useCheckoutCompo
                     }, 4000);
                 }
                 else {
-                    history.replaceState({ session: "" }, "", window.location.href.split('?')[0]);
-                    this.showSpinner = false;
-                    this.errorMessage = 'Error occurred during payment processing, please contact System Administrator.';
-                    this.showCheckoutError(this.errorMessage);
+                    this.createSalesforceOrder();
+                    // Commented below code so that it doesn't show an error to user when payment is delayed
+                    // history.replaceState({ session: "" }, "", window.location.href.split('?')[0]);
+                    // this.showSpinner = false;
+                    // this.errorMessage = 'Error occurred during payment processing, please contact System Administrator.';
+                    // this.showCheckoutError(this.errorMessage);
                 }
             }
+        }
+    }
+
+    async createSalesforceOrder() {
+        const summaryNumber = await this.convertCartToOrder();
+        if(!summaryNumber){
+            this.showSpinner = false;
+            this.errorMessage = 'Error occurred during order creation, please contact System Administrator.';
+            this.showCheckoutErrorMsg(this.errorMessage);
+        } else {
+            this.showSpinner = false;
+            this.navigateToOrderConfirmation(summaryNumber);
         }
     }
 

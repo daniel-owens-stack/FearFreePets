@@ -1,3 +1,10 @@
+/**
+ * @description       : 
+ * @author            : Poojitha Anthati
+ * @group             : 
+ * @last modified on  : 12-05-2025
+ * @last modified by  : Poojitha Anthati
+**/
 public without sharing class B2BStripePaymentController {
     private static final Map<String, String> TYPES_MAP = new Map <String, String>{
             'Cart' => 'Header',
@@ -269,7 +276,7 @@ public without sharing class B2BStripePaymentController {
 
         ConnectApi.OrderSummaryInputRepresentation osir = new ConnectApi.OrderSummaryInputRepresentation();
         osir.orderId = newOrder.Id;
-        osir.status = 'Created';
+        osir.status = 'Payment Processing';
         osir.name = UUID.randomUUID().toString().toUpperCase();
         osir.businessModel = 'B2B';
         osir.orderLifeCycleType = 'MANAGED';
